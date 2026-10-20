@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Build the portable MDL artifact from reviewed JSON sources; standard library only."""
+"""Validate portable template sources and optionally export MDL; standard library only."""
 
 from __future__ import annotations
 
 import argparse
 import json
 import re
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
 ROOT = Path(__file__).resolve().parent
 IDENTIFIER = re.compile(r"[A-Za-z_][A-Za-z0-9_]*\Z")
@@ -16,12 +16,6 @@ MODEL_KEYS = {"name", "displayName", "columns", "primaryKey", "uniqueKeys", "pro
 COLUMN_KEYS = {"name", "displayName", "type", "notNull", "isHidden", "isCalculated", "properties"}
 RELATIONSHIP_KEYS = {"name", "displayName", "models", "joinType", "condition", "properties"}
 PROPERTY_KEYS = {"description", "sap_b1_source", "semanticUnitKind", "semanticUnitScope"}
-DESCRIPTION = (
-    "SAP Business One 标准表与关系模板，覆盖销售、采购、库存、生产和财务。"
-    "按单据来源类型和复合键追溯，区分过账日期、凭证日期、创建日期及数量、币种和金额粒度。"
-    "模板没有公司库连接、工作区信息或客户自定义指标；导入时须核验目标数据库的表、列和版本。"
-    "库存成本、工单业务及历史余额仍需目标公司库和 SAP 标准报表验证。"
-)
 
 
 def read_json(path: Path) -> dict:
@@ -123,44 +117,73 @@ def validate(mdl: dict, reference: dict) -> None:
 
 def build(root: Path = ROOT) -> dict:
     metadata = read_json(root / "template.json")
-    if metadata["entry"] != "mdl.json" or metadata["formatVersion"] != 1:
+    if metadata.get("formatVersion") != 1 or "entry" in metadata:
         raise ValueError("Unsupported template manifest")
+    sources = metadata.get("sources")
+    if not isinstance(sources, dict) or set(sources) != {"models", "relationships"}:
+        raise ValueError("Template sources must declare model and relationship directories")
+    for field in ("catalog", "description", "defaultSchema"):
+        if not isinstance(metadata.get(field), str) or not metadata[field].strip():
+            raise ValueError(f"Template {field} must be a nonempty string")
     result = {
         "layoutVersion": metadata["layoutVersion"],
         "dataSource": metadata["dataSource"],
-        "catalog": "sap_b1",
+        "catalog": metadata["catalog"],
         "schema": metadata["defaultSchema"],
-        "description": DESCRIPTION,
+        "description": metadata["description"],
         "models": [],
         "relationships": [],
         "views": [],
         "cubes": [],
     }
-    for directory, key in (("models", "models"), ("relationships", "relationships")):
-        for path in sorted((root / directory).glob("*.json")):
+    for key in ("models", "relationships"):
+        relative = sources[key]
+        if (
+            not isinstance(relative, str)
+            or not relative
+            or PurePosixPath(relative).is_absolute()
+            or "\\" in relative
+            or any(part in ("", ".", "..") for part in relative.split("/"))
+        ):
+            raise ValueError(f"Invalid template source directory: {key}")
+        directory = root / relative
+        if (
+            not directory.is_dir()
+            or directory.is_symlink()
+            or not directory.resolve().is_relative_to(root.resolve())
+        ):
+            raise ValueError(f"Source directory must stay inside the repository: {key}")
+        for path in sorted(directory.glob("*.json")):
+            if path.is_symlink() or not path.is_file():
+                raise ValueError(f"Source must be a regular JSON file: {path.name}")
             value = read_json(path)
             if path.stem != value["name"]:
                 raise ValueError(f"Source filename must match object name: {path.name}")
             result[key].append(value)
         if not result[key]:
-            raise ValueError(f"Empty template source directory: {directory}")
+            raise ValueError(f"Empty template source directory: {relative}")
     validate(result, read_json(root / "validation" / "reference-contract.json"))
     return result
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--check", action="store_true", help="Check that committed mdl.json is current")
+    options = parser.add_mutually_exclusive_group()
+    options.add_argument(
+        "--check", action="store_true", help="Validate manifest and split sources without writing"
+    )
+    options.add_argument(
+        "--output", type=Path, help="Explicitly export assembled MDL to this optional local file"
+    )
     args = parser.parse_args()
-    expected = encode(build())
-    target = ROOT / "mdl.json"
-    if args.check:
-        if not target.exists() or target.read_text(encoding="utf-8") != expected:
-            raise SystemExit("mdl.json differs from sources; run python3 build.py")
-        print("mdl.json matches validated template sources")
+    mdl = build()
+    if args.output:
+        args.output.write_text(encode(mdl), encoding="utf-8")
+        print(f"Exported validated MDL to {args.output}")
     else:
-        target.write_text(expected, encoding="utf-8")
-        print("Built mdl.json")
+        print(
+            f"Validated {len(mdl['models'])} models and {len(mdl['relationships'])} relationships; no file written"
+        )
 
 
 if __name__ == "__main__":

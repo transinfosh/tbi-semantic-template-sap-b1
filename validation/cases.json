@@ -4,9 +4,9 @@
       "given": "已提交的模型和关系源文件",
       "id": "TPL-01",
       "status": "passed",
-      "then": "生成文件与仓库mdl.json字节一致，且不访问网络或数据库",
-      "verification": "test_committed_artifact_is_reproducible",
-      "when": "离线构建模板"
+      "then": "清单与分文件源确定性组装为同一MDL，不依赖已提交产物；默认校验不落盘",
+      "verification": "test_split_sources_assemble_deterministically_without_a_committed_artifact; test_default_and_check_commands_do_not_write_an_artifact",
+      "when": "校验分文件模板"
     },
     {
       "given": "含客户UDF、计算列、物理公司库或行级权限的修改",
@@ -71,6 +71,14 @@
       "then": "与SAP标准报表按同一筛选范围及选项对账",
       "verification": "Business acceptance against target company database and SAP reports",
       "when": "按目标日期和币种计算金额"
+    },
+    {
+      "given": "通过清单导入或使用可选本地导出",
+      "id": "TPL-10",
+      "status": "passed",
+      "then": "拒绝路径穿越、源文件符号链接和旧产物入口；只有显式output写出MDL",
+      "verification": "test_manifest_directory_cannot_escape_the_repository; test_symlink_source_is_rejected; test_manifest_does_not_accept_the_old_generated_file_entry; test_explicit_export_matches_the_assembled_sources",
+      "when": "读取源目录和JSON文件"
     }
   ],
   "status": "structural_checks_passed_business_acceptance_pending",

@@ -1,4 +1,5 @@
 {
+  "catalog": "sap_b1",
   "compatibility": {
     "diApiDocumentationVersion": "10.00.300",
     "sapBusinessOne": "10.0",
@@ -7,7 +8,7 @@
   },
   "dataSource": "MSSQL",
   "defaultSchema": "dbo",
-  "entry": "mdl.json",
+  "description": "SAP Business One 标准表与关系模板，覆盖销售、采购、库存、生产和财务。按单据来源类型和复合键追溯，区分过账日期、凭证日期、创建日期及数量、币种和金额粒度。模板没有公司库连接、工作区信息或客户自定义指标；导入时须核验目标数据库的表、列和版本。库存成本、工单业务及历史余额仍需目标公司库和 SAP 标准报表验证。",
   "formatVersion": 1,
   "id": "sap-business-one-mssql",
   "language": "zh-CN",
@@ -19,6 +20,10 @@
     "production",
     "finance"
   ],
+  "sources": {
+    "models": "models",
+    "relationships": "relationships"
+  },
   "status": "preview",
   "title": "SAP Business One 标准语义模板（SQL Server）",
   "validation": {
@@ -26,5 +31,5 @@
     "deferred": "validation/deferred.json",
     "structural": "validation/reference-contract.json"
   },
-  "version": "0.1.0"
+  "version": "0.2.0"
 }

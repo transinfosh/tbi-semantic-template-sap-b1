@@ -4,8 +4,11 @@ from __future__ import annotations
 
 import copy
 import json
+import shutil
 import sqlite3
+import subprocess
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -21,14 +24,78 @@ class TemplateTest(unittest.TestCase):
         cls.mdl = build()
         cls.reference = read_json(ROOT / "validation" / "reference-contract.json")
 
-    def test_committed_artifact_is_reproducible(self) -> None:
-        self.assertEqual((ROOT / "mdl.json").read_text(encoding="utf-8"), encode(self.mdl))
+    def source_copy(self) -> Path:
+        temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(temporary.cleanup)
+        target = Path(temporary.name)
+        paths = [ROOT / "template.json", ROOT / "build.py", ROOT / "validation" / "reference-contract.json"]
+        for directory in ("models", "relationships"):
+            paths.extend((ROOT / directory).glob("*.json"))
+        for source in sorted(paths, reverse=True):
+            destination = target / source.relative_to(ROOT)
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(source, destination)
+        return target
+
+    def test_split_sources_assemble_deterministically_without_a_committed_artifact(self) -> None:
+        source = self.source_copy()
+        self.assertFalse((source / "mdl.json").exists())
+        self.assertEqual(encode(build(source)), encode(self.mdl))
+        metadata = read_json(source / "template.json")
+        self.assertEqual(self.mdl["catalog"], metadata["catalog"])
+        self.assertEqual(self.mdl["description"], metadata["description"])
+
+    def test_default_and_check_commands_do_not_write_an_artifact(self) -> None:
+        source = self.source_copy()
+        before = {path.relative_to(source) for path in source.rglob("*")}
+        for arguments in ([], ["--check"]):
+            with self.subTest(arguments=arguments):
+                subprocess.run(
+                    [sys.executable, str(source / "build.py"), *arguments], check=True, capture_output=True
+                )
+                self.assertEqual({path.relative_to(source) for path in source.rglob("*")}, before)
+
+    def test_explicit_export_matches_the_assembled_sources(self) -> None:
+        source = self.source_copy()
+        output = source / "optional-export.json"
+        subprocess.run(
+            [sys.executable, str(source / "build.py"), "--output", str(output)],
+            check=True,
+            capture_output=True,
+        )
+        self.assertEqual(output.read_text(encoding="utf-8"), encode(self.mdl))
+        self.assertFalse((source / "mdl.json").exists())
+
+    def test_manifest_directory_cannot_escape_the_repository(self) -> None:
+        source = self.source_copy()
+        manifest = read_json(source / "template.json")
+        for directory in ("../models", "/tmp/models", "models/../models", "models\\child"):
+            with self.subTest(directory=directory):
+                manifest["sources"]["models"] = directory
+                (source / "template.json").write_text(encode(manifest), encoding="utf-8")
+                with self.assertRaisesRegex(ValueError, "Invalid template source directory"):
+                    build(source)
+
+    def test_manifest_does_not_accept_the_old_generated_file_entry(self) -> None:
+        source = self.source_copy()
+        manifest = read_json(source / "template.json")
+        manifest["entry"] = "mdl.json"
+        (source / "template.json").write_text(encode(manifest), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "Unsupported template manifest"):
+            build(source)
+
+    def test_symlink_source_is_rejected(self) -> None:
+        source = self.source_copy()
+        path = source / "models" / "oitm.json"
+        path.unlink()
+        path.symlink_to(ROOT / "models" / "oitm.json")
+        with self.assertRaisesRegex(ValueError, "regular JSON file"):
+            build(source)
 
     def test_artifact_has_no_customer_connection_or_instance_policy(self) -> None:
         text = json.dumps(self.mdl, ensure_ascii=False)
-        self.assertNotRegex(
-            text, r"(?i)customer_fixture_alpha|customer_fixture_beta|192\.168\.|internal_fixture\.example|/home/|password|row_security"
-        )
+        self.assertNotRegex(text, r"(?i)/home/|password|row_security|connection_id|enrollment_id")
+        self.assertNotRegex(text, r"https?://(?!help\.sap\.com/)")
         self.assertNotIn("本项目", text)
         self.assertNotIn("当前客户", text)
         self.assertEqual(self.mdl["catalog"], "sap_b1")

@@ -1,4 +1,5 @@
 {
+  "assembled_mdl_sha256": "2f60f47c199fd24fb2a33f03e0bcea8e783b6856d332f925d6315bfa358e2a2d",
   "business_amount_acceptance": "pending",
   "counts": {
     "columns": 2427,
@@ -9,14 +10,21 @@
   },
   "deterministic_build": {
     "command": "python3 build.py --check",
+    "mode": "validate_split_sources_without_output",
     "passed": true
+  },
+  "manifest_import_validation": {
+    "entry": "template.json",
+    "status": "pending_tbi_integration"
   },
   "production_published": false,
   "python_unittest": {
     "command": "python3 -m unittest discover -s tests -v",
     "failed": 0,
-    "passed": 15
+    "passed": 20,
+    "status": "passed"
   },
+  "semantic_content_unchanged_from": "v0.1.0",
   "target_database_queried": false,
   "tbi_mdl_validation": {
     "checks": [
@@ -28,5 +36,6 @@
     "transaction": "read_only_rollback",
     "workspace_imported": false
   },
-  "verified_at": "2026-10-20"
+  "verified_at": "2026-10-20",
+  "version": "0.2.0"
 }
