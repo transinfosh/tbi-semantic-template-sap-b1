@@ -1,0 +1,148 @@
+{
+  "columns": [
+    {
+      "displayName": "启用标记",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Active",
+      "notNull": false,
+      "properties": {
+        "description": "Y/N；不应因此丢弃历史交易。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRJ.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "记录来源",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DataSource",
+      "notNull": false,
+      "properties": {
+        "description": "项目主数据创建或更新渠道。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRJ.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "锁定标记",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Locked",
+      "notNull": false,
+      "properties": {
+        "description": "Y/N；与启用及有效期分别保留。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRJ.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "日志实例号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LogInstanc",
+      "notNull": false,
+      "properties": {
+        "description": "变更记录技术标识，不是业务阶段号。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRJ.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "项目代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PrjCode",
+      "notNull": true,
+      "properties": {
+        "description": "主键，供单据或分录Project字段连接。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRJ.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "项目名称",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PrjName",
+      "notNull": false,
+      "properties": {
+        "description": "当前项目名称，不能代替代码关联。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRJ.html"
+      },
+      "type": "VARCHAR(100)"
+    },
+    {
+      "displayName": "更新日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UpdateDate",
+      "notNull": false,
+      "properties": {
+        "description": "项目主数据更新时间。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRJ.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "创建用户标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UserSign",
+      "notNull": false,
+      "properties": {
+        "description": "项目记录的用户标识。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRJ.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "更新用户标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UserSign2",
+      "notNull": false,
+      "properties": {
+        "description": "最近更新用户标识。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRJ.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "有效起始日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ValidFrom",
+      "notNull": false,
+      "properties": {
+        "description": "项目代码有效期起始。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRJ.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "有效结束日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ValidTo",
+      "notNull": false,
+      "properties": {
+        "description": "项目代码有效期结束。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRJ.html"
+      },
+      "type": "TIMESTAMP"
+    }
+  ],
+  "displayName": "项目代码主数据",
+  "name": "oprj",
+  "primaryKey": "PrjCode",
+  "properties": {
+    "description": "每行一个财务分析项目代码，主键PrjCode；不是项目管理阶段或工单。分录表头项目与行项目可以不同，按问题选择对应粒度。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRJ.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "OPRJ"
+  },
+  "uniqueKeys": []
+}

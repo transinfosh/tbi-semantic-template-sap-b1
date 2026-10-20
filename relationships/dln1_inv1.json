@@ -1,0 +1,11 @@
+{
+  "condition": "dln1.DocEntry = inv1.BaseEntry AND dln1.LineNum = inv1.BaseLine AND inv1.BaseType = 15",
+  "displayName": "dln1_inv1",
+  "joinType": "ONE_TO_MANY",
+  "models": [
+    "dln1",
+    "inv1"
+  ],
+  "name": "dln1_inv1",
+  "properties": {}
+}

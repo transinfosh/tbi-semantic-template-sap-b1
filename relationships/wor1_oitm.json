@@ -1,0 +1,13 @@
+{
+  "condition": "wor1.ItemCode = oitm.ItemCode AND wor1.ItemType = 4",
+  "displayName": "wor1_oitm",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "wor1",
+    "oitm"
+  ],
+  "name": "wor1_oitm",
+  "properties": {
+    "description": "仅物料组件；资源290和文本-18不能无条件关联物料。"
+  }
+}

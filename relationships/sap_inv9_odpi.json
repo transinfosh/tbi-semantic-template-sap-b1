@@ -1,0 +1,12 @@
+{
+  "condition": "inv9.BaseAbs = odpi.DocEntry AND inv9.ObjType = '203'",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "inv9",
+    "odpi"
+  ],
+  "name": "sap_inv9_odpi",
+  "properties": {
+    "description": "实际抵扣所关联的预付款表头；不是普通来源行关系。贷项桥表 ObjType 未列举约束值时，须先核验现场编码。"
+  }
+}

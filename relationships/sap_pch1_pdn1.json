@@ -1,0 +1,12 @@
+{
+  "condition": "pch1.BaseEntry = pdn1.DocEntry AND pch1.BaseLine = pdn1.LineNum AND pch1.BaseType = 20",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "pch1",
+    "pdn1"
+  ],
+  "name": "sap_pch1_pdn1",
+  "properties": {
+    "description": "应付发票行的直接来源为采购收货行；必须同时匹配来源类型、内部单据键和内部行号。反向可有多个后续行，汇总前处理拆分与重复计数。"
+  }
+}

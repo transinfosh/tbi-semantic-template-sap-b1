@@ -1,0 +1,296 @@
+{
+  "columns": [
+    {
+      "displayName": "地址名称",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Address",
+      "notNull": true,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Address Name。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
+      },
+      "type": "VARCHAR(50)"
+    },
+    {
+      "displayName": "地址名称2",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Address2",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Address Name 2。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
+      },
+      "type": "VARCHAR(50)"
+    },
+    {
+      "displayName": "地址名称3",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Address3",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Address Name 3。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
+      },
+      "type": "VARCHAR(50)"
+    },
+    {
+      "displayName": "地址类型名称",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "AddrType",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Address Type。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
+      },
+      "type": "VARCHAR(100)"
+    },
+    {
+      "displayName": "地址类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "AdresType",
+      "notNull": true,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Address Type。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "备用业务伙伴名称",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "AltCrdName",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Alternative BP Name。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
+      },
+      "type": "VARCHAR(200)"
+    },
+    {
+      "displayName": "备用税号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "AltTaxId",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Alternative Tax ID。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
+      },
+      "type": "VARCHAR(32)"
+    },
+    {
+      "displayName": "街区",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Block",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Block。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
+      },
+      "type": "VARCHAR(100)"
+    },
+    {
+      "displayName": "楼宇/楼层/房间",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Building",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Building/Floor/Room。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
+      },
+      "type": "VARCHAR"
+    },
+    {
+      "displayName": "业务伙伴编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CardCode",
+      "notNull": true,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：BP Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "城市",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "City",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：City。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
+      },
+      "type": "VARCHAR(100)"
+    },
+    {
+      "displayName": "国家/地区",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Country",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Country/Region。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
+      },
+      "type": "VARCHAR(3)"
+    },
+    {
+      "displayName": "县",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "County",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：County。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
+      },
+      "type": "VARCHAR(100)"
+    },
+    {
+      "displayName": "全球位置编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "GlblLocNum",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Global Location Number。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
+      },
+      "type": "VARCHAR(50)"
+    },
+    {
+      "displayName": "税务登记号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LicTradNum",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Federal Tax ID。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
+      },
+      "type": "VARCHAR(32)"
+    },
+    {
+      "displayName": "行号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LineNum",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Row Number。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "国籍",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Ntnlty",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Nationality。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
+      },
+      "type": "VARCHAR(100)"
+    },
+    {
+      "displayName": "省/州",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "State",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：State。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
+      },
+      "type": "VARCHAR(3)"
+    },
+    {
+      "displayName": "街道",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Street",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Street。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
+      },
+      "type": "VARCHAR(100)"
+    },
+    {
+      "displayName": "门牌号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "StreetNo",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Street No.。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
+      },
+      "type": "VARCHAR(100)"
+    },
+    {
+      "displayName": "税码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TaxCode",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Tax Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "税务机关",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TaxOffice",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Tax Office。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
+      },
+      "type": "VARCHAR(50)"
+    },
+    {
+      "displayName": "邮政编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ZipCode",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Zip Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
+      },
+      "type": "VARCHAR(20)"
+    }
+  ],
+  "displayName": "业务伙伴地址",
+  "name": "crd1",
+  "primaryKey": [
+    "CardCode",
+    "Address",
+    "AdresType"
+  ],
+  "properties": {
+    "description": "业务伙伴地址主数据；记录客户或供应商的地址、城市、地区、税务及联系方式。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "CRD1"
+  },
+  "uniqueKeys": []
+}

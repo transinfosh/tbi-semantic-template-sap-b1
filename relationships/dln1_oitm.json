@@ -1,0 +1,11 @@
+{
+  "condition": "dln1.ItemCode = oitm.ItemCode",
+  "displayName": "dln1_oitm",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "dln1",
+    "oitm"
+  ],
+  "name": "dln1_oitm",
+  "properties": {}
+}

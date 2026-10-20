@@ -1,0 +1,11 @@
+{
+  "condition": "crd1.CardCode = ocrd.CardCode",
+  "displayName": "业务伙伴地址 → 业务伙伴主数据",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "crd1",
+    "ocrd"
+  ],
+  "name": "crd1_ocrd",
+  "properties": {}
+}

@@ -1,0 +1,11 @@
+{
+  "condition": "owor.Series = nnm1.Series AND nnm1.ObjectCode = '202'",
+  "displayName": "生产工单头 → 单据编号系列",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "owor",
+    "nnm1"
+  ],
+  "name": "owor_nnm1",
+  "properties": {}
+}

@@ -1,0 +1,211 @@
+{
+  "columns": [
+    {
+      "displayName": "收付款科目代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "AcctCode",
+      "notNull": false,
+      "properties": {
+        "description": "连接OACT.AcctCode。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM4.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "科目名称快照",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "AcctName",
+      "notNull": false,
+      "properties": {
+        "description": "该行记录的科目名称。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM4.html"
+      },
+      "type": "VARCHAR(100)"
+    },
+    {
+      "displayName": "税额基础类别",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "AmntBase",
+      "notNull": false,
+      "properties": {
+        "description": "E不含税、I含税。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM4.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "外币应用金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "AppliedFC",
+      "notNull": false,
+      "properties": {
+        "description": "对科目的外币应用金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM4.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "系统币应用金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "AppliedSys",
+      "notNull": false,
+      "properties": {
+        "description": "对科目的系统币应用金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM4.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "科目支付说明",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Descrip",
+      "notNull": false,
+      "properties": {
+        "description": "应用行说明。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM4.html"
+      },
+      "type": "VARCHAR(250)"
+    },
+    {
+      "displayName": "所属收付款内部标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocNum",
+      "notNull": true,
+      "properties": {
+        "description": "候选连接收付款头DocEntry；启用前核验实际数据。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM4.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "本币含税金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "GrossAmnt",
+      "notNull": false,
+      "properties": {
+        "description": "含税总额，与SumApplied分开。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM4.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "外币含税金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "GrssAmntFC",
+      "notNull": false,
+      "properties": {
+        "description": "外币含税总额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM4.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "系统币含税金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "GrssAmntSC",
+      "notNull": false,
+      "properties": {
+        "description": "系统币含税总额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM4.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "科目支付行号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LineId",
+      "notNull": true,
+      "properties": {
+        "description": "与DocNum组成主键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM4.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "项目代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Project",
+      "notNull": false,
+      "properties": {
+        "description": "科目应用行项目。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM4.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "本币应用金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SumApplied",
+      "notNull": false,
+      "properties": {
+        "description": "对科目的应用金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM4.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "本币税额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "VatAmnt",
+      "notNull": false,
+      "properties": {
+        "description": "本行税额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM4.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "外币税额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "VatAmntFC",
+      "notNull": false,
+      "properties": {
+        "description": "本行外币税额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM4.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "系统币税额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "VatAmntSC",
+      "notNull": false,
+      "properties": {
+        "description": "本行系统币税额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM4.html"
+      },
+      "type": "DECIMAL(19,6)"
+    }
+  ],
+  "displayName": "科目付款明细",
+  "name": "vpm4",
+  "primaryKey": [
+    "DocNum",
+    "LineId"
+  ],
+  "properties": {
+    "description": "每行一个科目收付款应用，复合键(DocNum,LineId)，适用于Account类别；与发票应用RCT2/VPM2是不同明细集合。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM4.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "VPM4"
+  },
+  "uniqueKeys": []
+}

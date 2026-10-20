@@ -1,0 +1,11 @@
+{
+  "condition": "por1.ItemCode = oitm.ItemCode",
+  "displayName": "por1_oitm",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "por1",
+    "oitm"
+  ],
+  "name": "por1_oitm",
+  "properties": {}
+}

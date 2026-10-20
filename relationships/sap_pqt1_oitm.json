@@ -1,0 +1,12 @@
+{
+  "condition": "pqt1.ItemCode = oitm.ItemCode",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "pqt1",
+    "oitm"
+  ],
+  "name": "sap_pqt1_oitm",
+  "properties": {
+    "description": "按内部键关联；多行连接后避免重复累计来源单据头金额。"
+  }
+}

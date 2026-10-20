@@ -1,0 +1,12 @@
+{
+  "condition": "oitr.ReconJEId = ojdt.TransId",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "oitr",
+    "ojdt"
+  ],
+  "name": "sap_oitr_ojdt",
+  "properties": {
+    "description": "核销生成的分录，可无匹配；不等于该核销的全部参与分录。"
+  }
+}

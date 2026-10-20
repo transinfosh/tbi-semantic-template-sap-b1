@@ -1,0 +1,223 @@
+{
+  "columns": [
+    {
+      "displayName": "已应用净额（本位币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ApplDrawn",
+      "notNull": false,
+      "properties": {
+        "description": "已应用的本位币净额；不是原始预付款全额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV9.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "预付款内部键",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BaseAbs",
+      "notNull": false,
+      "properties": {
+        "description": "指向 ODPI.DocEntry；不是显示单号。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV9.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "基础记录行号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BaseLine",
+      "notNull": false,
+      "properties": {
+        "description": "基础记录行号；本轮未确认其指向物料明细，禁止自动按 DPI1/DPO1.LineNum 连接。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV9.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "所属单据内部键",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocEntry",
+      "notNull": true,
+      "properties": {
+        "description": "所属 OINV 的内部单据键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV9.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "抵扣净额（本位币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DrawnSum",
+      "notNull": false,
+      "properties": {
+        "description": "本位币不含税抵扣金额；DI API AmountToDraw 对应此列，不能超过未结金额；与已应用净额区别。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV9.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "抵扣净额（外币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DrawnSumFc",
+      "notNull": false,
+      "properties": {
+        "description": "桥表保存的外币净额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV9.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "抵扣净额（系统币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DrawnSumSc",
+      "notNull": false,
+      "properties": {
+        "description": "桥表保存的系统币净额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV9.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "含税金额（本位币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Gross",
+      "notNull": false,
+      "properties": {
+        "description": "当前抵扣记录的含税金额；须区分原始、已应用与净额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV9.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "含税金额（外币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "GrossFc",
+      "notNull": false,
+      "properties": {
+        "description": "当前抵扣记录的外币含税金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV9.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "含税金额（系统币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "GrossSc",
+      "notNull": false,
+      "properties": {
+        "description": "当前抵扣记录的系统币含税金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV9.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "含税行标志",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "IsGross",
+      "notNull": false,
+      "properties": {
+        "description": "Y=含税行，N=净额行；计算时须保留此口径。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV9.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "抵扣记录行号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LineNum",
+      "notNull": true,
+      "properties": {
+        "description": "抵扣记录的行号；不能当作物料明细行号。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV9.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "当前单据对象类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ObjCode",
+      "notNull": false,
+      "properties": {
+        "description": "当前发票或贷项对象类型；与本桥表表示基础类型的 ObjType 分开使用。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV9.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "基础对象类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ObjType",
+      "notNull": false,
+      "properties": {
+        "description": "本桥表为基础对象类型；与普通营销行的 ObjType 含义不同。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV9.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "基础预付款已过账",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Posted",
+      "notNull": false,
+      "properties": {
+        "description": "基础单据是否已过账；不是当前发票的付款状态。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV9.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "目标或基础记录",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TargetBase",
+      "notNull": false,
+      "properties": {
+        "description": "B=基础，T=目标；发票和贷项表的默认值不完全相同，不统一硬编码。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV9.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "税额（本位币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Vat",
+      "notNull": false,
+      "properties": {
+        "description": "当前抵扣记录的税额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV9.html"
+      },
+      "type": "DECIMAL(19,6)"
+    }
+  ],
+  "displayName": "应收发票预付款抵扣",
+  "name": "inv9",
+  "primaryKey": [
+    "DocEntry",
+    "LineNum"
+  ],
+  "properties": {
+    "description": "应收发票与预付款抵扣记录粒度，主键 (DocEntry, LineNum)。用 BaseAbs 关联预付款表头；来源于同一订单不能替代该实际抵扣关系。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV9.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "INV9"
+  },
+  "uniqueKeys": []
+}

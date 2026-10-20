@@ -1,0 +1,12 @@
+{
+  "condition": "owor.UomEntry = ouom.UomEntry",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "owor",
+    "ouom"
+  ],
+  "name": "sap_owor_ouom",
+  "properties": {
+    "description": "生产订单计量单位，不把物料当前单位替代订单单位。"
+  }
+}

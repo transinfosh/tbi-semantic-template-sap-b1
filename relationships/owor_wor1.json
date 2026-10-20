@@ -1,0 +1,11 @@
+{
+  "condition": "owor.DocEntry = wor1.DocEntry",
+  "displayName": "owor_wor1",
+  "joinType": "ONE_TO_MANY",
+  "models": [
+    "owor",
+    "wor1"
+  ],
+  "name": "owor_wor1",
+  "properties": {}
+}

@@ -1,0 +1,12 @@
+{
+  "condition": "inv1.BaseEntry = rdr1.DocEntry AND inv1.BaseLine = rdr1.LineNum AND inv1.BaseType = 17",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "inv1",
+    "rdr1"
+  ],
+  "name": "sap_inv1_rdr1",
+  "properties": {
+    "description": "应收发票行的直接来源为销售订单行；必须同时匹配来源类型、内部单据键和内部行号。反向可有多个后续行，汇总前处理拆分与重复计数。"
+  }
+}

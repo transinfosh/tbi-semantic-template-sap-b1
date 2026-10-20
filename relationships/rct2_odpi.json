@@ -1,0 +1,13 @@
+{
+  "condition": "rct2.DocEntry = odpi.DocEntry AND rct2.InvType = '203'",
+  "displayName": "收款核销明细 → 预收款发票",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "rct2",
+    "odpi"
+  ],
+  "name": "rct2_odpi",
+  "properties": {
+    "description": "收款核销明细通过预收款发票类型关联预收款发票；用于预收款实收分析。"
+  }
+}

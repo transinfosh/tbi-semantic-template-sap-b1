@@ -1,0 +1,12 @@
+{
+  "condition": "qut1.WhsCode = owhs.WhsCode",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "qut1",
+    "owhs"
+  ],
+  "name": "sap_qut1_owhs",
+  "properties": {
+    "description": "按内部键关联；多行连接后避免重复累计来源单据头金额。"
+  }
+}

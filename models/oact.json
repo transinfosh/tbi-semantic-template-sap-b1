@@ -1,0 +1,1340 @@
+{
+  "columns": [
+    {
+      "displayName": "外部代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "AccntntCod",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：External Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "应计类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "AccrualTyp",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Accrual Type。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "科目内部代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "AcctCode",
+      "notNull": false,
+      "properties": {
+        "description": "主键，供分录Account等字段关联。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "科目名称",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "AcctName",
+      "notNull": false,
+      "properties": {
+        "description": "展示名称，不能作为连接键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(200)"
+    },
+    {
+      "displayName": "科目结构级别",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "AcctStrLe",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Account Structure Level。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(2)"
+    },
+    {
+      "displayName": "科目币种",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ActCurr",
+      "notNull": false,
+      "properties": {
+        "description": "科目指定币种。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(3)"
+    },
+    {
+      "displayName": "科目标识符",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ActId",
+      "notNull": true,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Account Identifier。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(210)"
+    },
+    {
+      "displayName": "科目类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ActType",
+      "notNull": false,
+      "properties": {
+        "description": "I收入、E费用、N其他；不是完整报表科目分类。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "预付款",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Advance",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Advance Payments。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "余额方向",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BalDirect",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Direction of Balance。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(4)"
+    },
+    {
+      "displayName": "余额已结转",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BlncTrnsfr",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Balances Transferred [Y/N]。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "禁止手工过账",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BlocManPos",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Block Manual Posting。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "银行对账计数器",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BNKCounter",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：BNK Counter。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "分支标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BPLId",
+      "notNull": false,
+      "properties": {
+        "description": "科目分支归属。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "分支名称",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BPLName",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Branch Name。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(200)"
+    },
+    {
+      "displayName": "预算",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Budget",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Budget。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "资本科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CashBox",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Capital Account [Y/N]。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "类别",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Category",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Category。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "现金流量相关",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CfwRlvnt",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Cash Flow Relevant [Y/N]。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "期末结转科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ClosingAcc",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：G/L Account Closing。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "计数器",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Counter",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Counter。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "创建日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CreateDate",
+      "notNull": false,
+      "properties": {
+        "description": "会计科目创建日期。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "当前本币余额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CurrTotal",
+      "notNull": false,
+      "properties": {
+        "description": "当前余额快照，不能直接给出历史期末余额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "DATEV科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DatevAcct",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：DATEV Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "DATEV自动科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DatevAutoA",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：DATEV Automatic Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "首次数据录入",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DatevFirst",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：First Data Entry。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "备注",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Details",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Details。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(254)"
+    },
+    {
+      "displayName": "默认税务代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DfltTax",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Default Tax Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "默认增值税组",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DfltVat",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Default VAT Group。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "维度1相关",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Dim1Relvnt",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Dimension 1 Relevant。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "维度2相关",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Dim2Relvnt",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Dimension 2 Relevant。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "维度3相关",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Dim3Relvnt",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Dimension 3 Relevant。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "维度4相关",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Dim4Relvnt",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Dimension 4 Relevant。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "维度5相关",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Dim5Relvnt",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Dimension 5 Relevant。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "期初余额字段",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "EndTotal",
+      "notNull": false,
+      "properties": {
+        "description": "官方描述Opening Balance；不得推定为任意选定期间期初。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "汇率差额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ExchRate",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Exchange Rate Differences。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "免税收入",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ExmIncome",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Tax Definition。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "数据导出代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ExportCode",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Data Export Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(10)"
+    },
+    {
+      "displayName": "附加金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ExtraSum",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Additional Amount。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "外部对账编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ExtrMatch",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：External Reconciliation No.。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "上级科目代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "FatherNum",
+      "notNull": false,
+      "properties": {
+        "description": "指向上级AcctCode；顶级可能无父节点。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "当前科目币余额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "FcTotal",
+      "notNull": false,
+      "properties": {
+        "description": "科目币种余额快照。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "现金科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Finanse",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Cash Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "主科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Fixed",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Main Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "格式化科目代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "FormatCode",
+      "notNull": false,
+      "properties": {
+        "description": "分段科目展示号码；DI示例先按FormatCode查内部AcctCode后GetByKey，分录关联仍用内部代码。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(210)"
+    },
+    {
+      "displayName": "自由标记2",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Free_2",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Free 2。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "外文名称",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "FrgnName",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Foreign Name。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(200)"
+    },
+    {
+      "displayName": "是否冻结",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Frozen",
+      "notNull": false,
+      "properties": {
+        "description": "是否冻结该会计科目。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "冻结备注",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "FrozenComm",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Inactive Remarks。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(30)"
+    },
+    {
+      "displayName": "科目停用标记",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "FrozenFor",
+      "notNull": false,
+      "properties": {
+        "description": "停用状态与可过账属性分别解释。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "冻结起始日",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "FrozenFrom",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Inactive From。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "冻结截止日",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "FrozenTo",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Inactive To。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "科目组掩码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "GroupMask",
+      "notNull": false,
+      "properties": {
+        "description": "主科目组分类；本地化及报表映射须另行确认。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "主科目组",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Groups",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Main Group。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "组内序号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "GrpLine",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Serial No. in Group。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "内部对账编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "IntrMatch",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Internal Reconciliation No.。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "上次重估余额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LastRevBal",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Last Revaluation Balance。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "上次重估日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LastRevDat",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Last Revaluation Date。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "科目层级",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Levels",
+      "notNull": false,
+      "properties": {
+        "description": "科目表层级。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "控制科目标记",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LocManTran",
+      "notNull": false,
+      "properties": {
+        "description": "Y/N；BP行仍须按业务伙伴语义识别。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "本币对账",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LocMth",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：LC Reconciliation。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "计量单位",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "MeaUnit",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Measurement Unit。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(10)"
+    },
+    {
+      "displayName": "本币对账计数器",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "MTHCounter",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：MTH Counter。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "允许多重关联",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "MultiLink",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Allow Multiple Linking。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "分摊系数代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OverCode",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Loading Factor Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "分摊系数代码2",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OverCode2",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Loading Factor Code 2。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "分摊系数代码3",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OverCode3",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Loading Factor Code 3。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "分摊系数代码4",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OverCode4",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Loading Factor Code 4。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "分摊系数代码5",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OverCode5",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Loading Factor Code 5。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "分摊类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OverType",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Loading Type。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "PCN874报表相关",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PCN874Rpt",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：PCN 874 Report Relevant。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "B1i集成信息",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PlngLevel",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：B1i Info for Integration。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(2)"
+    },
+    {
+      "displayName": "可过账科目标记",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Postable",
+      "notNull": false,
+      "properties": {
+        "description": "Y可过账科目；N标题科目。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "存在上年科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PrevYear",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：There are accounts from the previous year。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "项目相关",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PrjRelvnt",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Project Relevant。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "项目代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Project",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Project Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "保密科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Protected",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Confidential Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "科目用途代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PurpCode",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Account Purpose Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(2)"
+    },
+    {
+      "displayName": "汇率差额科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "RateDifAct",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Rate Differences Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "折算差额科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "RateTrans",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：For Conversion Differences。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "是否实际科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "RealAcct",
+      "notNull": false,
+      "properties": {
+        "description": "是否为实际科目；实际科目通常用于资产、负债和权益。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "参考科目代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "RefCode",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Referential Account Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(30)"
+    },
+    {
+      "displayName": "重估科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "RevalAcct",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Revaluation Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "重估协调",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "RevalMatch",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Revaluation Coordinated。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "SC调整",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SCAdjust",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：SC Adjustment。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "段0",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Segment_0",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Segment 0。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "段1",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Segment_1",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Segment 1。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "段2",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Segment_2",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Segment 2。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "段3",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Segment_3",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Segment 3。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "段4",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Segment_4",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Segment 4。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "段5",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Segment_5",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Segment 5。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "段6",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Segment_6",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Segment 6。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "段7",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Segment_7",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Segment 7。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "段8",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Segment_8",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Segment 8。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "段9",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Segment_9",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Segment 9。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "快照ID",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SnapShotId",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Snapshot ID。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "子分类账编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SubLedgerN",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Subledger No.。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(60)"
+    },
+    {
+      "displayName": "系统对账编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SysMatch",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：System Reconciliation No.。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "当前系统币余额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SysTotal",
+      "notNull": false,
+      "properties": {
+        "description": "当前系统币余额快照。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "应税收入",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TaxIncome",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Tax Definition。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "默认税金过账科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TaxPostAcc",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Default Tax Posting Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "交易代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TransCode",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Transaction Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(4)"
+    },
+    {
+      "displayName": "年度结转",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Transfered",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Year Transfer [Y/N]。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "更新日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UpdateDate",
+      "notNull": false,
+      "properties": {
+        "description": "会计科目最近更新日期。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "生效备注",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ValidComm",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Active Remarks。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(30)"
+    },
+    {
+      "displayName": "科目启用标记",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ValidFor",
+      "notNull": false,
+      "properties": {
+        "description": "启用状态，仍需有效期等配置。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "生效起始日",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ValidFrom",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Active From。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "生效截止日",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ValidTo",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Active To。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "允许更改增值税组",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "VatChange",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Allow Change VAT Group。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "增值税注册号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "VATRegNum",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：VAT Reg. Number。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+      },
+      "type": "VARCHAR(32)"
+    }
+  ],
+  "displayName": "总账科目主数据",
+  "name": "oact",
+  "primaryKey": "AcctCode",
+  "properties": {
+    "description": "每行一个科目，主键AcctCode；包括收入费用等科目及标题科目。当前余额不是任意历史时点财务报表。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "OACT"
+  },
+  "uniqueKeys": [
+    [
+      "ActId"
+    ]
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "condition": "oexd.VatGroupI = ovtg.Code",
+  "displayName": "附加费用 → 进项税组",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "oexd",
+    "ovtg"
+  ],
+  "name": "oexd_ovtg_input",
+  "properties": {}
+}

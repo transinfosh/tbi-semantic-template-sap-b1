@@ -1,0 +1,11 @@
+{
+  "condition": "orpc.Series = nnm1.Series AND orpc.ObjType = nnm1.ObjectCode",
+  "displayName": "orpc → 单据编号系列",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "orpc",
+    "nnm1"
+  ],
+  "name": "orpc_nnm1",
+  "properties": {}
+}

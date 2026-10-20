@@ -1,0 +1,11 @@
+{
+  "condition": "orin.SlpCode = oslp.SlpCode",
+  "displayName": "orin_oslp",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "orin",
+    "oslp"
+  ],
+  "name": "orin_oslp",
+  "properties": {}
+}

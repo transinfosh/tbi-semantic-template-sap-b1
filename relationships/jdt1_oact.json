@@ -1,0 +1,11 @@
+{
+  "condition": "jdt1.Account = oact.AcctCode",
+  "displayName": "jdt1_oact",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "jdt1",
+    "oact"
+  ],
+  "name": "jdt1_oact",
+  "properties": {}
+}

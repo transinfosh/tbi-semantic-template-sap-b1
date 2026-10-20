@@ -1,0 +1,30 @@
+{
+  "compatibility": {
+    "diApiDocumentationVersion": "10.00.300",
+    "sapBusinessOne": "10.0",
+    "sdkArchiveLabel": "10.0 FP2508",
+    "targetSchemaVerificationRequired": true
+  },
+  "dataSource": "MSSQL",
+  "defaultSchema": "dbo",
+  "entry": "mdl.json",
+  "formatVersion": 1,
+  "id": "sap-business-one-mssql",
+  "language": "zh-CN",
+  "layoutVersion": 4,
+  "modules": [
+    "sales",
+    "purchasing",
+    "inventory",
+    "production",
+    "finance"
+  ],
+  "status": "preview",
+  "title": "SAP Business One 标准语义模板（SQL Server）",
+  "validation": {
+    "cases": "validation/cases.json",
+    "deferred": "validation/deferred.json",
+    "structural": "validation/reference-contract.json"
+  },
+  "version": "0.1.0"
+}

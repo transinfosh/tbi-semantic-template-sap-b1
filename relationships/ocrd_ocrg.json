@@ -1,0 +1,11 @@
+{
+  "condition": "ocrd.GroupCode = ocrg.GroupCode",
+  "displayName": "ocrd_ocrg",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "ocrd",
+    "ocrg"
+  ],
+  "name": "ocrd_ocrg",
+  "properties": {}
+}

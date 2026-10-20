@@ -1,0 +1,12 @@
+{
+  "condition": "orsc.ResGrpCod = orsb.ResGrpCod",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "orsc",
+    "orsb"
+  ],
+  "name": "sap_orsc_orsb",
+  "properties": {
+    "description": "资源所属组；组配置不覆盖资源实例与历史工单配置。"
+  }
+}

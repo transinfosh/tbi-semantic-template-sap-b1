@@ -1,0 +1,11 @@
+{
+  "condition": "orin.Series = nnm1.Series AND orin.ObjType = nnm1.ObjectCode",
+  "displayName": "orin → 单据编号系列",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "orin",
+    "nnm1"
+  ],
+  "name": "orin_nnm1",
+  "properties": {}
+}

@@ -1,0 +1,11 @@
+{
+  "condition": "obin.WhsCode = owhs.WhsCode",
+  "displayName": "库位 → 仓库",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "obin",
+    "owhs"
+  ],
+  "name": "obin_owhs",
+  "properties": {}
+}

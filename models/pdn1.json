@@ -1,0 +1,475 @@
+{
+  "columns": [
+    {
+      "displayName": "科目代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "AcctCode",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Account Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "直接来源单据内部键",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BaseEntry",
+      "notNull": false,
+      "properties": {
+        "description": "营销单据来源内部键；只有来源类型匹配时才连接目标 DocEntry。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "直接来源内部行号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BaseLine",
+      "notNull": false,
+      "properties": {
+        "description": "营销单据来源行号；与 BaseEntry、BaseType 组成来源三元组。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "直接来源单据类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BaseType",
+      "notNull": false,
+      "properties": {
+        "description": "只记录本行直接来源类型；必须与 BaseEntry、BaseLine 一起连接，不能据流程图补造直接边。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "行价格币种",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Currency",
+      "notNull": false,
+      "properties": {
+        "description": "该行价格的币种；金额列的本币、外币、系统币口径需分别识别。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "VARCHAR(3)"
+    },
+    {
+      "displayName": "行折扣率",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DiscPrcnt",
+      "notNull": false,
+      "properties": {
+        "description": "当前单据行的折扣百分比，与整单折扣分开。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "过账日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocDate",
+      "notNull": false,
+      "properties": {
+        "description": "业务过账日期；与凭证日期、到期日期及创建日期分别使用。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "所属单据内部键",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocEntry",
+      "notNull": false,
+      "properties": {
+        "description": "所属表头内部键；与 LineNum 构成本表行主键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "物料描述",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Dscription",
+      "notNull": false,
+      "properties": {
+        "description": "单据行物料描述。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "VARCHAR(200)"
+    },
+    {
+      "displayName": "自由文本",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "FreeTxt",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Free Text。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "VARCHAR(100)"
+    },
+    {
+      "displayName": "毛利基准价",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "GrossBuyPr",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Gross Profit Base Price。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "库存单位数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "InvQty",
+      "notNull": false,
+      "properties": {
+        "description": "以库存计量单位表示的数量；不同于 Quantity，是否形成库存移动仍由单据和标志决定。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "物料编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ItemCode",
+      "notNull": false,
+      "properties": {
+        "description": "物料标识；相同物料不能证明属于同一订单、工单或来源行。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "VARCHAR(50)"
+    },
+    {
+      "displayName": "单据内部行号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LineNum",
+      "notNull": false,
+      "properties": {
+        "description": "参与复合主键及 BaseLine 来源连接；不是界面排序号 VisOrder。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "行状态",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LineStatus",
+      "notNull": false,
+      "properties": {
+        "description": "O=未清；C=关闭。关闭与取消含义不同；按业务问题显式处理，不能混合有效与取消单据。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "不含税行金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LineTotal",
+      "notNull": false,
+      "properties": {
+        "description": "FP2508 DI API 明确为不含税行金额；与外币及系统币列区分，不等同库存估价过账金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "不调整库存数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "NoInvtryMv",
+      "notNull": false,
+      "properties": {
+        "description": "不影响库存数量的标志；FP2508 DI API 说明特定应付贷项仍可调整库存价值，不能理解为完全不影响库存会计。适用范围按单据及来源核验。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "单据单位换算值",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "NumPerMsr",
+      "notNull": false,
+      "properties": {
+        "description": "本单据行保存的计量单位换算值；历史分析不得直接用当前物料主数据换算覆盖。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "当前行单据类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ObjType",
+      "notNull": false,
+      "properties": {
+        "description": "所属当前单据的对象类型，不能代替 BaseType 解释来源。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "未结库存单位数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OpenInvQty",
+      "notNull": false,
+      "properties": {
+        "description": "以库存单位表示的未结数量；用于与库存口径比较，仍属当前状态。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "未结单据单位数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OpenQty",
+      "notNull": false,
+      "properties": {
+        "description": "当前剩余未结数量；不是任意历史时点余额，也不能普遍等同未发货或未开票数量。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "单据行单价",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Price",
+      "notNull": false,
+      "properties": {
+        "description": "FP2508 DI API 定义为税前单价；本表数据库参考仅标为价格，折扣口径仍须结合相关字段。保留行币种、单位，不能当作库存估值单价。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "折前单价",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PriceBefDi",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Unit Price。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "单据单位数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Quantity",
+      "notNull": false,
+      "properties": {
+        "description": "单据销售或采购单位数量；跨单据和物料合计前须统一单位，不直接等同库存单位数量。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "汇率",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Rate",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Currency Rate。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "行交付日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ShipDate",
+      "notNull": false,
+      "properties": {
+        "description": "本行交付日期字段；区别于表头过账日期，是否实际交付须结合单据类型。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "目标单据类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TargetType",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Target Document Type。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "税务代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TaxCode",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Tax Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "行合计（外币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TotalFrgn",
+      "notNull": false,
+      "properties": {
+        "description": "行金额的外币口径；汇总时按币种分组或采用已确认的统一币种口径。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "行合计（系统币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TotalSumSy",
+      "notNull": false,
+      "properties": {
+        "description": "行金额的系统币口径；不是价格字段，也不一定等于按当前汇率换算的金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "计量单位名称",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "unitMsr",
+      "notNull": false,
+      "properties": {
+        "description": "本行计量单位显示名称；用于解释 Quantity。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "VARCHAR(100)"
+    },
+    {
+      "displayName": "计量单位代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UomCode",
+      "notNull": false,
+      "properties": {
+        "description": "本行计量单位代码；未核验一致性前不能把不同单位数量直接相加。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "计量单位内部键",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UomEntry",
+      "notNull": false,
+      "properties": {
+        "description": "本行计量单位标识；应与 UomCode 及单据保存的换算值一起使用。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "使用库存单位",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UseBaseUn",
+      "notNull": false,
+      "properties": {
+        "description": "本行库存计量单位标志；结合 Quantity、InvQty 与单位代码解释。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "税定义",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "VatGroup",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Tax Definition。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "行税率",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "VatPrcnt",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Tax Rate per Row。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "显示顺序",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "VisOrder",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Visual Order。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "仓库编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "WhsCode",
+      "notNull": false,
+      "properties": {
+        "description": "业务行对应仓库；仓库、库位和物料为不同粒度。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      },
+      "type": "VARCHAR(8)"
+    }
+  ],
+  "displayName": "采购收货明细",
+  "name": "pdn1",
+  "primaryKey": [
+    "DocEntry",
+    "LineNum"
+  ],
+  "properties": {
+    "description": "单据行粒度，主键 (DocEntry, LineNum)。采购收货单据（GRPO）；区别于通用库存收货 OIGN，也区别于应付发票。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "PDN1"
+  },
+  "uniqueKeys": []
+}

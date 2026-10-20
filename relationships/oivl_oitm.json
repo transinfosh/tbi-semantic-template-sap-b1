@@ -1,0 +1,11 @@
+{
+  "condition": "oivl.ItemCode = oitm.ItemCode",
+  "displayName": "oivl_oitm",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "oivl",
+    "oitm"
+  ],
+  "name": "oivl_oitm",
+  "properties": {}
+}

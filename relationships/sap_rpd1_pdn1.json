@@ -1,0 +1,12 @@
+{
+  "condition": "rpd1.BaseEntry = pdn1.DocEntry AND rpd1.BaseLine = pdn1.LineNum AND rpd1.BaseType = 20",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "rpd1",
+    "pdn1"
+  ],
+  "name": "sap_rpd1_pdn1",
+  "properties": {
+    "description": "采购退货行的直接来源为采购收货行；必须同时匹配来源类型、内部单据键和内部行号。反向可有多个后续行，汇总前处理拆分与重复计数。"
+  }
+}

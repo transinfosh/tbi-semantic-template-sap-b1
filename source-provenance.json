@@ -1,0 +1,672 @@
+{
+  "baseline_artifact_sha256": "b6eaea2ba2fa0160c53dadf5703bfe32a4604ab3b4a63e328d71369109d42921",
+  "created_at": "2026-10-20",
+  "domain_rule_sources": [
+    {
+      "file": "finance.json",
+      "sha256": "44fb49a324976e371257d10a11bbf34906e2bf9943a59f5fe52d7c457328c9ed"
+    },
+    {
+      "file": "inventory_production.json",
+      "sha256": "3281806ccf3f4a47acbf8a3fef3ee3a3c6ba59fda71974cacb62f3033bac5099"
+    },
+    {
+      "file": "resources.json",
+      "sha256": "616c3b46a40d97338880e44358146cf6fb2611a9347482ba9b254acdf1d480fb"
+    },
+    {
+      "file": "sales_purchasing.json",
+      "sha256": "7027667690bf0a3b044f39c4e0d69471504ad7c7f2221a4c60ac9e3cc1c057b1"
+    },
+    {
+      "file": "shared_dimensions.json",
+      "sha256": "27ef66af4ab4fd28f317e8fb181f2715d3c66a0cb7eddd743ce597c4eb9f8d7b"
+    }
+  ],
+  "notes": [
+    "未打包SDK二进制或官方文档全文，仅保留定义、说明、来源链接与哈希。",
+    "SDK归档标签及文档页版本不证明目标公司库的安装版本。",
+    "字段和类型是模板基线，不能代替每个目标数据源的结构核验。"
+  ],
+  "sdk": {
+    "archive_label": "SAP Business One SDK 10.0 FP2508",
+    "chm_sha256": {
+      "REFDB.chm": "0c830af322ac1517392bd14f596a2466b55e760dd3527e64d7c6f9ffb1100c85",
+      "REFDI.chm": "67017d7d838568a43369d71747e8a62e0909031244424c0394a8cc2c171a914c",
+      "SDK_EN.chm": "b28c9df53ad4b284b0b1ad878636bbb9c6f494345f48c35525a100efa0b4eedb"
+    },
+    "di_api_page_version": "10.00.300"
+  },
+  "source_kind": "reviewed_semantic_definition_without_business_rows",
+  "table_references": [
+    {
+      "content_sha256": "550b0c2fbcf7f0a9ea6955a910ff7b0bf329eb3112a7a83320e3b3fdf1a91358",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Business_Partners/CRD1.htm",
+      "table": "CRD1",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
+    },
+    {
+      "content_sha256": "c610108628410800a87e734fd423974472e93cbe7ca5d7e06be4226b0bfca42b",
+      "origin": "official_online_reference",
+      "table": "DLN1",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/DLN1.html"
+    },
+    {
+      "content_sha256": "b41d1870ecfe231132fec7e1d03904e8c410f3782b29b2c4cd5644ace8ab0dde",
+      "origin": "official_online_reference",
+      "table": "DPI1",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/DPI1.html"
+    },
+    {
+      "content_sha256": "e9e66dfcdc62e77565b1a6df5e336963319ece73aa694d30f989752923135d3b",
+      "origin": "official_online_reference",
+      "table": "IGE1",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGE1.html"
+    },
+    {
+      "content_sha256": "628cdb960f2c1443c120664861342b3f3d071da44c356c0117ff2c83509928ec",
+      "origin": "official_online_reference",
+      "table": "IGN1",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGN1.html"
+    },
+    {
+      "content_sha256": "887d66b3b018c82c90fc8b1540e3077fb588fcebd51d5d288602f172e5b7ed15",
+      "origin": "official_online_reference",
+      "table": "INV1",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV1.html"
+    },
+    {
+      "content_sha256": "9d4c985ca255156ad305a2960751ad7c259362345943b8ae68b7e2b287737b99",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Inventory_and_Production/ITM1.htm",
+      "table": "ITM1",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITM1.html"
+    },
+    {
+      "content_sha256": "24ba73347823cbcc51dacf150a7fffa1f82a321ffcf5dd58d760bce4ac10706a",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Banking/ITR1.htm",
+      "table": "ITR1",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITR1.html"
+    },
+    {
+      "content_sha256": "ab0f71492143a0cdfd1f2cf1b5ec25aa9686979ff89cd8ebb9ff6d0cd8c04ee0",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Inventory_and_Production/ITT1.htm",
+      "table": "ITT1",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITT1.html"
+    },
+    {
+      "content_sha256": "2f41c2ccef8e4e129288110d7f21f1b933c47971b0b32ce4f681656766ebd57a",
+      "origin": "official_online_reference",
+      "table": "JDT1",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+    },
+    {
+      "content_sha256": "d10bbfbe99caab11db078d88db1358f398877a78b13b36443530f190fc2da314",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Administration/NNM1.htm",
+      "table": "NNM1",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
+    },
+    {
+      "content_sha256": "69fdebd2253265074d85925de1b947aa0e074e6b3c157216c245e55f654768f3",
+      "origin": "official_online_reference",
+      "table": "OACT",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+    },
+    {
+      "content_sha256": "8597adf7b6c2e8471b9395ad0cd86249718aa8d22da1980bb3e8298be4bfeba0",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Administration/OADM.htm",
+      "table": "OADM",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OADM.html"
+    },
+    {
+      "content_sha256": "ccde873c2a08238cbf7ad22b8abe97dacd8aeef4593dd31a4b2f8108191f0a08",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Inventory_and_Production/OBIN.htm",
+      "table": "OBIN",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+    },
+    {
+      "content_sha256": "68b29ce8f3b0e80d47b145fbdd4960ee10c7d0de7790dad89263049fcc2b2749",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Inventory_and_Production/OBTN.htm",
+      "table": "OBTN",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
+    },
+    {
+      "content_sha256": "d2215a6284b833f520cfc25531dfac63056abeb3e344fc85ebf537ab3f811271",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Inventory_and_Production/OBTQ.htm",
+      "table": "OBTQ",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTQ.html"
+    },
+    {
+      "content_sha256": "59da9f9c67dc6627672685c5fa50b22d92020759ac642810616faead8c2c0c7a",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Sales_Opportunities/OCR1.htm",
+      "table": "OCR1",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCR1.html"
+    },
+    {
+      "content_sha256": "b471d07fe22b0d694d208ec565174915c691bd25aaf6a88303afc47bc8209f6f",
+      "origin": "official_online_reference",
+      "table": "OCRD",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+    },
+    {
+      "content_sha256": "330d31fb87cde03ffb54bff5c7cfba8ce59c84419517256fc242d0469af42146",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Business_Partners/OCRG.htm",
+      "table": "OCRG",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRG.html"
+    },
+    {
+      "content_sha256": "0b5225f3c3e4a51459eeb62e0912239c4b4742fc16f5c8b33ee35928a781f657",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Marketing_Documents/ODLN.htm",
+      "table": "ODLN",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ODLN.html"
+    },
+    {
+      "content_sha256": "4aab4639ada4a34d986f9cb46d9e1c9f8b01648eb7702852e0ddaa0552f4d5b3",
+      "origin": "official_online_reference",
+      "table": "ODPI",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ODPI.html"
+    },
+    {
+      "content_sha256": "9a5ced76c46aad28d76c0b90f7f0810f5d97d8eb5c0e450e75368f70fb0bb5af",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Administration/OEXD.htm",
+      "table": "OEXD",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
+    },
+    {
+      "content_sha256": "b2dea51cbd45a048fa0cd9102dc8bc9b22d8e537a5b92ca229fd8539a0b30c69",
+      "origin": "official_online_reference",
+      "table": "OHEM",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OHEM.html"
+    },
+    {
+      "content_sha256": "c8f1f1a2c10262a87d0d7293b86852939e13edb9ef0416ceb2f58af515169922",
+      "origin": "official_online_reference",
+      "table": "OIGE",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIGE.html"
+    },
+    {
+      "content_sha256": "331d6717664be6a60a00f1e398231297ef6a53bae630406bf749b65f91e79eac",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Inventory_and_Production/OIGN.htm",
+      "table": "OIGN",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIGN.html"
+    },
+    {
+      "content_sha256": "3503fb9e7e859f4a2291da9f0ab384194f3776e7b1c1d0944ecbbf6d625cc95e",
+      "origin": "official_online_reference",
+      "table": "OINV",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OINV.html"
+    },
+    {
+      "content_sha256": "1d00f1f774319f4b52b3d56202d841c198d6e05e5caadb67c1586cd23f6d0ee4",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Inventory_and_Production/OITB.htm",
+      "table": "OITB",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+    },
+    {
+      "content_sha256": "5ae6dca01144bd40b76e6cc0439120d6a487d742fcfb5ba81895524f8c90e6b5",
+      "origin": "official_online_reference",
+      "table": "OITM",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+    },
+    {
+      "content_sha256": "f3ffd79c904bae1ea79397b853379871dc109d8da9c386e736b4396163f716ea",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Banking/OITR.htm",
+      "table": "OITR",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITR.html"
+    },
+    {
+      "content_sha256": "ad4d85ac8a73ba7b3addeca8baace91446b7320bb12ab565a424df831647895c",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Inventory_and_Production/OITT.htm",
+      "table": "OITT",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITT.html"
+    },
+    {
+      "content_sha256": "94de63bc1e0d41288729b6545159d025268433f617e938d1b4c25b1eae60b112",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Inventory_and_Production/OITW.htm",
+      "table": "OITW",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITW.html"
+    },
+    {
+      "content_sha256": "91ba83940d59f95a18317da649f2a3ffdb2904fddea95b00a99ab6ab99e0ddcf",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Inventory_and_Production/OIVL.htm",
+      "table": "OIVL",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
+    },
+    {
+      "content_sha256": "1a3351510800d4a5ca96c80d97ae9a0d7344a2a8cfb6feba58710742c38ad65d",
+      "origin": "official_online_reference",
+      "table": "OJDT",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
+    },
+    {
+      "content_sha256": "c9cc8d824e4a11a2135a633aed92628b681bd1910a6d2e80e5b30da978696fec",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Inventory_and_Production/OMRC.htm",
+      "table": "OMRC",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OMRC.html"
+    },
+    {
+      "content_sha256": "fdca936766efb94f964bf264a02b8500dda21e4bbca761b7147da18c6ea3f49b",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Sales_Opportunities/OOCR.htm",
+      "table": "OOCR",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OOCR.html"
+    },
+    {
+      "content_sha256": "ba3131f7911988d073e95d6fbe543b9e895a137f4a0d5adcbd8fd7ffbf4ed10d",
+      "origin": "official_online_reference",
+      "table": "OPCH",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPCH.html"
+    },
+    {
+      "content_sha256": "c6997fe2bdeeb847c9b362db9d9c8260b6354b375bb27ef7591f0f720649db5e",
+      "origin": "official_online_reference",
+      "table": "OPDN",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPDN.html"
+    },
+    {
+      "content_sha256": "59c0b4580eeaeb822605157ea206cb389fb0c48e9a7367a5b32c7b4936e4cf67",
+      "origin": "official_online_reference",
+      "table": "OPOR",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPOR.html"
+    },
+    {
+      "content_sha256": "b388a3222d74cb93b939b683cd9114429241d430edc4db70fa52076d500708b9",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Marketing_Documents/OQUT.htm",
+      "table": "OQUT",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
+    },
+    {
+      "content_sha256": "d0a029cf03f1b99e7c5e7ebc100e591684e4c53d8bcf9a20a78ac08716380abb",
+      "origin": "official_online_reference",
+      "table": "ORCT",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
+    },
+    {
+      "content_sha256": "c8b41b134bc596a898c56064a78774dcf778d442a50dc402e60ca953f3a147f1",
+      "origin": "official_online_reference",
+      "table": "ORDN",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORDN.html"
+    },
+    {
+      "content_sha256": "174671ec86a7d08e2d9bbaf862052983a93640691c504d5744af35441e000700",
+      "origin": "official_online_reference",
+      "table": "ORDR",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORDR.html"
+    },
+    {
+      "content_sha256": "3187f83f74c703f5a0a9efa190bd1e315ab3fdbbe8c59fbe8fb79634d5455597",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Marketing_Documents/ORIN.htm",
+      "table": "ORIN",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
+    },
+    {
+      "content_sha256": "5097690308da2065a78175e4140e50d426a87b3120c4ae0bd594355b668814d2",
+      "origin": "official_online_reference",
+      "table": "ORPC",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORPC.html"
+    },
+    {
+      "content_sha256": "1be31152d33c7c3841943f74aca9bd069260a70d8914f1a674215b323249d0f4",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Business_Partners/OSLP.htm",
+      "table": "OSLP",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSLP.html"
+    },
+    {
+      "content_sha256": "215aa4205bb44fde0253d97588f6433f21c29c3ad575c7c050b37770552c6580",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Banking/OUDP.htm",
+      "table": "OUDP",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OUDP.html"
+    },
+    {
+      "content_sha256": "475e6e5299f7bb17e1853353402fc54e4ae523842443f2e326613d87a64d3c75",
+      "origin": "official_online_reference",
+      "table": "OVPM",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OVPM.html"
+    },
+    {
+      "content_sha256": "1d146c0c2b15f798a8104c79e89aae2e2b84b540ef9f3ef7a58d08884f46b8c7",
+      "origin": "official_online_reference",
+      "table": "OVTG",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OVTG.html"
+    },
+    {
+      "content_sha256": "0567b9f19b08b9308c07623ff345f28606a52fb39a9e43bc99f39f29fc57d2eb",
+      "origin": "official_online_reference",
+      "table": "OWHS",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWHS.html"
+    },
+    {
+      "content_sha256": "a1027c737fd462af3283b70079231c6e3d70dba22355d527afee5f5b7915e525",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Inventory_and_Production/OWOR.htm",
+      "table": "OWOR",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+    },
+    {
+      "content_sha256": "02e5fb31de102286dde82185811588869f36dcf3c95e97cf5b1dd84b816f6fe0",
+      "origin": "official_online_reference",
+      "table": "OWTQ",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+    },
+    {
+      "content_sha256": "392c8ccc616c2f8564acc806c6ef56e5cd268b2078b542ad64da540e2b42d0de",
+      "origin": "official_online_reference",
+      "table": "OWTR",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTR.html"
+    },
+    {
+      "content_sha256": "f3008d698f0c21f293011b6c402b72176be07b4796c48726f9dd0e995d0e5c92",
+      "origin": "official_online_reference",
+      "table": "PCH1",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PCH1.html"
+    },
+    {
+      "content_sha256": "080cafd90ed113b6b5ed45a72a4ac5c2376a7af2af7b671f56a1a36954847c68",
+      "origin": "official_online_reference",
+      "table": "PDN1",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+    },
+    {
+      "content_sha256": "efdd93703ded105afd73351c05f9e84ba8520c25c7477052e10b89f17225762f",
+      "origin": "official_online_reference",
+      "table": "POR1",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/POR1.html"
+    },
+    {
+      "content_sha256": "f6a129cda7e0859d0889dd95e121b3d04309fd2c5df4e49c0507e2cfd26c3836",
+      "origin": "official_online_reference",
+      "table": "QUT1",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/QUT1.html"
+    },
+    {
+      "content_sha256": "f3d21e0cdf9814991715854355f32247dbb441d1059b5dab5503da531835aa9f",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Banking/RCT2.htm",
+      "table": "RCT2",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RCT2.html"
+    },
+    {
+      "content_sha256": "2f8e2042252bad30096ee5ee04f74eb7aae7251ac606d45dbd20da2162d95b57",
+      "origin": "official_online_reference",
+      "table": "RDN1",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDN1.html"
+    },
+    {
+      "content_sha256": "307b7e142363d42fb8f391cd0be999d3749da225c9f96ee02f49f63cd1219796",
+      "origin": "official_online_reference",
+      "table": "RDR1",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
+    },
+    {
+      "content_sha256": "26e2c856d0c84d4c88092740344d0a9dc171b2c9bbea891f92cbfc67599d7f1c",
+      "origin": "official_online_reference",
+      "table": "RIN1",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN1.html"
+    },
+    {
+      "content_sha256": "16fe8f7b1798d79a5677c102fca5966fb052caa7e22cee8acc0f0473be1c01b4",
+      "origin": "official_online_reference",
+      "table": "RPC1",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RPC1.html"
+    },
+    {
+      "content_sha256": "cba8a9da11819fb04ce127deab547de3031d48a0eb196635989743550294a37c",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Banking/VPM2.htm",
+      "table": "VPM2",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
+    },
+    {
+      "content_sha256": "f89f583104f1f514ee11c17837387fcca25896a4f1560e07b451014214573755",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Inventory_and_Production/WOR1.htm",
+      "table": "WOR1",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
+    },
+    {
+      "content_sha256": "e46455baed6d17865f7523ce02fa068e0bf02e12e150feaa790a47f7c0e941de",
+      "origin": "official_online_reference",
+      "table": "WTQ1",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WTQ1.html"
+    },
+    {
+      "content_sha256": "cbbac29af2858d3bfc058c685e5b608db10f786f9a9ed47db9925a5a4db0ba85",
+      "origin": "official_online_reference",
+      "table": "WTR1",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WTR1.html"
+    },
+    {
+      "content_sha256": "cf9012c23208c54e58229abfe73b5bc66fbf430bc33ce9b41eeb021ad0da7dcc",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Marketing_Documents/DPO1.htm",
+      "table": "DPO1",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/DPO1.html"
+    },
+    {
+      "content_sha256": "853859f7f05ecfea4c919d99f8d3f1128f7f6f62bf05627ba94f4f614224f457",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Marketing_Documents/INV11.htm",
+      "table": "INV11",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+    },
+    {
+      "content_sha256": "f6b76e37511953b15e9bfc9bfd950e0a9801e28e51766d855389dd4e09e8e8fb",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Marketing_Documents/INV9.htm",
+      "table": "INV9",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV9.html"
+    },
+    {
+      "content_sha256": "2dac28be27591fbbd2a6e12f3ba46de7094afdcc39079db6818df3853a0c04a6",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Inventory_and_Production/ITL1.htm",
+      "table": "ITL1",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITL1.html"
+    },
+    {
+      "content_sha256": "adf9e85db86a8ae6177fa7d1bd38a6be8746114f61f2cbb523a242e6484d1d54",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Inventory_and_Production/IVL1.htm",
+      "table": "IVL1",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IVL1.html"
+    },
+    {
+      "content_sha256": "c8411dea3bf5207a738f2b1a510d6164a0889af13c7bf5e0681f40d0cfa2c846",
+      "origin": "official_online_reference",
+      "table": "ODPO",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ODPO.html"
+    },
+    {
+      "content_sha256": "3c171f57a374d3a53b19981195ff3b60f094c0960ef03d7249b7c1447ae865ab",
+      "origin": "official_online_reference",
+      "table": "OILM",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OILM.html"
+    },
+    {
+      "content_sha256": "55e7a6becd00adab0a8fe85d4c59b8a2bb54f0df716225789b3a8b6a5c88bb62",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Inventory_and_Production/OITL.htm",
+      "table": "OITL",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITL.html"
+    },
+    {
+      "content_sha256": "2f4f56750a0a5c65a5e6c6a372a90ccfcb400e54a830a1f46393056a0774b9c9",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Marketing_Documents/OPQT.htm",
+      "table": "OPQT",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPQT.html"
+    },
+    {
+      "content_sha256": "18e8157f029ed7fd98c92ed68049f657924906f925be4ac006c4aed75c5eeb16",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Sales_Opportunities/OPRC.htm",
+      "table": "OPRC",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRC.html"
+    },
+    {
+      "content_sha256": "7deb58abfd0c3e3d673502aab0bbdb7a18b96f4d3006ee1345fe8e7bbf67c266",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Finance/OPRJ.htm",
+      "table": "OPRJ",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRJ.html"
+    },
+    {
+      "content_sha256": "6084d4ab5f8f87b53036a7b4dbb2dce848e29f492eb96181b59dd5b45a7118a8",
+      "origin": "official_online_reference",
+      "table": "OPRQ",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRQ.html"
+    },
+    {
+      "content_sha256": "ced84dbd19dfae6e5b47d6c8da62adc774f8bbd5603949738a1b6eeaa521fbe5",
+      "origin": "official_online_reference",
+      "table": "ORPD",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORPD.html"
+    },
+    {
+      "content_sha256": "a8cc325ace4bb5545ad9e69282df79882d2162cf3db5d2eaa4f1493a3c60d752",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/General/ORSB.htm",
+      "table": "ORSB",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSB.html"
+    },
+    {
+      "content_sha256": "08d8632f00f319a92b85f9956cbdb3d2720525a702a5ce4bda89d8f9594e8c87",
+      "origin": "official_online_reference",
+      "table": "ORSC",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSC.html"
+    },
+    {
+      "content_sha256": "132aae85ef39ab9797420e837a189030cd604a896182602f0c5b2c1f51f4e1f3",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Finance/ORTT.htm",
+      "table": "ORTT",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORTT.html"
+    },
+    {
+      "content_sha256": "28675a301f455ca5c371af363da2e3d62003e021aa02b8c4f67fadf5ed1adda1",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Inventory_and_Production/OSRN.htm",
+      "table": "OSRN",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSRN.html"
+    },
+    {
+      "content_sha256": "cd2408c45fc90f82468cf6e674aaea6a0313e25acd9b46018a158a96ae1549d5",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Inventory_and_Production/OUGP.htm",
+      "table": "OUGP",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OUGP.html"
+    },
+    {
+      "content_sha256": "729dd2f0ba59528defbbebead5cb07a3b091bca23ccc5a089810913b9eb123e9",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Inventory_and_Production/OUOM.htm",
+      "table": "OUOM",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OUOM.html"
+    },
+    {
+      "content_sha256": "4d0a43eb76a72bce852ae27f25e807f75937ee32c042167c4511c389e7d6843b",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Marketing_Documents/PCH11.htm",
+      "table": "PCH11",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PCH11.html"
+    },
+    {
+      "content_sha256": "166c8fd3745c5b31eae5c77e88b2fcfcafb8de3de1a5a70afae52acc102e6a52",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Marketing_Documents/PCH9.htm",
+      "table": "PCH9",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PCH9.html"
+    },
+    {
+      "content_sha256": "a84c9a98f54835b51d10242ecc5dbf39426008186f3ccc3c7f0f7fe4e12f00bf",
+      "origin": "official_online_reference",
+      "table": "PQT1",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PQT1.html"
+    },
+    {
+      "content_sha256": "87375cc8b92fc7d1e81cdab63bd43b5ff7037737b7b9f85b8785ae41d882d783",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Marketing_Documents/PRQ1.htm",
+      "table": "PRQ1",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PRQ1.html"
+    },
+    {
+      "content_sha256": "4aff9fe4c359df850fd6c953db6a22f81ed5075f62ffc086c17afdf934021a4c",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Banking/RCT4.htm",
+      "table": "RCT4",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RCT4.html"
+    },
+    {
+      "content_sha256": "e295425f42f0335e958a382583d9d36a682ddda90fbcfa41173fea22759e7271",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Marketing_Documents/RIN11.htm",
+      "table": "RIN11",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
+    },
+    {
+      "content_sha256": "305a0c5476bb5056a2d3a69406b611d46f08ded9efe4055d03b3ac0f753b462f",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Marketing_Documents/RIN9.htm",
+      "table": "RIN9",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN9.html"
+    },
+    {
+      "content_sha256": "ce1bbc3c4ddbcb4dd4788ef68f5905c9f738b1ccd6a8dead8d82e2b3f7d59e1e",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Marketing_Documents/RPC11.htm",
+      "table": "RPC11",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RPC11.html"
+    },
+    {
+      "content_sha256": "a52292f60eaf4916852a5189a6b1db7e5d93e71eadd96468e5544e0969f5e213",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Marketing_Documents/RPC9.htm",
+      "table": "RPC9",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RPC9.html"
+    },
+    {
+      "content_sha256": "8d34411cc977f0336655c7516c0632230defdfd059e4cd69b5946e2e9e858c9c",
+      "origin": "official_online_reference",
+      "table": "RPD1",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RPD1.html"
+    },
+    {
+      "content_sha256": "af40c7338500001f5731dfd8c4b229211d8c2d607dddb08794ed0f0fe39f1e9a",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Inventory_and_Production/UGP1.htm",
+      "table": "UGP1",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/UGP1.html"
+    },
+    {
+      "content_sha256": "5d25c2a9ca65bb1596bb5ce158192296a23c540071fc0713e655dee9885d4bbd",
+      "origin": "sdk_refdb",
+      "sdk_path": "REFDB/Banking/VPM4.htm",
+      "table": "VPM4",
+      "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM4.html"
+    }
+  ]
+}

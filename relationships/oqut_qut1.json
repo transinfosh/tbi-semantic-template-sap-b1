@@ -1,0 +1,13 @@
+{
+  "condition": "oqut.DocEntry = qut1.DocEntry",
+  "displayName": "销售报价主表 → 销售报价明细",
+  "joinType": "ONE_TO_MANY",
+  "models": [
+    "oqut",
+    "qut1"
+  ],
+  "name": "oqut_qut1",
+  "properties": {
+    "description": "一张销售报价单对应多条明细；按物料分析时使用。"
+  }
+}

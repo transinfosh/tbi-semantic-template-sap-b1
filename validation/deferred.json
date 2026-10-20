@@ -1,0 +1,1182 @@
+{
+  "excluded_legacy_relationships": [
+    {
+      "condition": "dpi1.BaseEntry = dln1.DocEntry AND dpi1.BaseLine = dln1.LineNum AND dpi1.BaseType = 15",
+      "name": "dpi1_dln1",
+      "reason": "通用领域包标记为待业务复核，运行实例保留不等于可作为模板默认。"
+    },
+    {
+      "condition": "orct.CardCode = ocrd.CardCode",
+      "name": "orct_ocrd",
+      "reason": "使用含收付款类别及业务伙伴类型过滤的替代关系，避免科目类记录误用业务伙伴连接。"
+    },
+    {
+      "condition": "orct.DocEntry = rct2.DocNum",
+      "name": "orct_rct2",
+      "reason": "通用领域包标记为待业务复核，运行实例保留不等于可作为模板默认。"
+    },
+    {
+      "condition": "ovpm.CardCode = ocrd.CardCode",
+      "name": "ovpm_ocrd",
+      "reason": "使用含收付款类别及业务伙伴类型过滤的替代关系，避免科目类记录误用业务伙伴连接。"
+    },
+    {
+      "condition": "ovpm.DocEntry = vpm2.DocNum",
+      "name": "ovpm_vpm2",
+      "reason": "通用领域包标记为待业务复核，运行实例保留不等于可作为模板默认。"
+    }
+  ],
+  "notes": [
+    "特定公司库的样本支持不能自动解除通用模板的待审状态。",
+    "同表来源需要角色别名，未在模板中生成自关联。",
+    "支付应用所属单据键需要DocEntry与DocNum不同的有判别力样本。",
+    "库存估价来源连接、生产组件归属、成本金额与历史核销余额仍需目标库和SAP报表验收。"
+  ],
+  "relationships": [
+    {
+      "description": "支付应用所属收付款；SDK只明确相关表，需用DocEntry≠DocNum的实样核验本连接后启用。",
+      "field_mappings": [
+        [
+          "DocNum",
+          "DocEntry"
+        ]
+      ],
+      "filters": [],
+      "from_table": "RCT2",
+      "sdk_sources": [
+        "REFDB/Banking/RCT2.htm",
+        "REFDI/SAPbobsCOM~Payments_Invoices.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~DocEntry.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~DocNum.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~DocLine.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~LineNum.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~InstallmentId.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~PaidSum.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~AppliedFC.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~LinkDate.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~Add a new payment line_E.html"
+      ],
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RCT2.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/ORCT.html"
+      ],
+      "to_table": "ORCT"
+    },
+    {
+      "description": "候选被支付分录行关系；需覆盖多分期及手工分录实样后启用，不能把DocLine当商品行。",
+      "field_mappings": [
+        [
+          "DocTransId",
+          "TransId"
+        ],
+        [
+          "DocLine",
+          "Line_ID"
+        ]
+      ],
+      "filters": [],
+      "from_table": "RCT2",
+      "sdk_sources": [
+        "REFDB/Banking/RCT2.htm",
+        "REFDI/SAPbobsCOM~Payments_Invoices.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~DocEntry.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~DocNum.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~DocLine.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~LineNum.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~InstallmentId.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~PaidSum.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~AppliedFC.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~LinkDate.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~Add a new payment line_E.html"
+      ],
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RCT2.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/JDT1.html"
+      ],
+      "to_table": "JDT1"
+    },
+    {
+      "description": "科目应用所属收付款；需实际数据核验DocNum至头DocEntry连接。",
+      "field_mappings": [
+        [
+          "DocNum",
+          "DocEntry"
+        ]
+      ],
+      "filters": [
+        {
+          "column": "DocType",
+          "side": "to",
+          "value": "A"
+        }
+      ],
+      "from_table": "RCT4",
+      "sdk_sources": [
+        "REFDB/Banking/RCT4.htm",
+        "REFDI/SAPbobsCOM~Payments_Accounts.html",
+        "REFDI/SAPbobsCOM~Payments_Accounts~AccountCode.html",
+        "REFDI/SAPbobsCOM~Payments_Accounts~SumPaid.html",
+        "REFDI/SAPbobsCOM~Payments_Accounts~Add a payment line sample_E.html"
+      ],
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RCT4.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/ORCT.html"
+      ],
+      "to_table": "ORCT"
+    },
+    {
+      "description": "支付应用所属收付款；SDK只明确相关表，需用DocEntry≠DocNum的实样核验本连接后启用。",
+      "field_mappings": [
+        [
+          "DocNum",
+          "DocEntry"
+        ]
+      ],
+      "filters": [],
+      "from_table": "VPM2",
+      "sdk_sources": [
+        "REFDB/Banking/VPM2.htm",
+        "REFDI/SAPbobsCOM~Payments_Invoices.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~DocEntry.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~DocNum.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~DocLine.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~LineNum.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~InstallmentId.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~PaidSum.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~AppliedFC.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~LinkDate.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~Add a new payment line_E.html"
+      ],
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/VPM2.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OVPM.html"
+      ],
+      "to_table": "OVPM"
+    },
+    {
+      "description": "候选被支付分录行关系；需覆盖多分期及手工分录实样后启用，不能把DocLine当商品行。",
+      "field_mappings": [
+        [
+          "DocTransId",
+          "TransId"
+        ],
+        [
+          "DocLine",
+          "Line_ID"
+        ]
+      ],
+      "filters": [],
+      "from_table": "VPM2",
+      "sdk_sources": [
+        "REFDB/Banking/VPM2.htm",
+        "REFDI/SAPbobsCOM~Payments_Invoices.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~DocEntry.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~DocNum.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~DocLine.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~LineNum.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~InstallmentId.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~PaidSum.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~AppliedFC.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~LinkDate.html",
+        "REFDI/SAPbobsCOM~Payments_Invoices~Add a new payment line_E.html"
+      ],
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/VPM2.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/JDT1.html"
+      ],
+      "to_table": "JDT1"
+    },
+    {
+      "description": "科目应用所属收付款；需实际数据核验DocNum至头DocEntry连接。",
+      "field_mappings": [
+        [
+          "DocNum",
+          "DocEntry"
+        ]
+      ],
+      "filters": [
+        {
+          "column": "DocType",
+          "side": "to",
+          "value": "A"
+        }
+      ],
+      "from_table": "VPM4",
+      "sdk_sources": [
+        "REFDB/Banking/VPM4.htm",
+        "REFDI/SAPbobsCOM~Payments_Accounts.html",
+        "REFDI/SAPbobsCOM~Payments_Accounts~AccountCode.html",
+        "REFDI/SAPbobsCOM~Payments_Accounts~SumPaid.html",
+        "REFDI/SAPbobsCOM~Payments_Accounts~Add a payment line sample_E.html"
+      ],
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/VPM4.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OVPM.html"
+      ],
+      "to_table": "OVPM"
+    },
+    {
+      "description": "生产来源组件行候选；不能用当前发料LineNum连接生产组件。须实库核验拆卸、倒冲及特殊来源行。",
+      "field_mappings": [
+        [
+          "BaseEntry",
+          "DocEntry"
+        ],
+        [
+          "BaseLine",
+          "LineNum"
+        ]
+      ],
+      "filters": [
+        {
+          "column": "BaseType",
+          "side": "from",
+          "value": 202
+        }
+      ],
+      "from_table": "IGE1",
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGE1.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
+      ],
+      "to_table": "WOR1"
+    },
+    {
+      "description": "依据官方交易类型与单据键/行号语义的候选连接；需实库验证覆盖及SAP审计报告对账。同一单据行可有多条OIVL，绝不声明一对一。",
+      "field_mappings": [
+        [
+          "CreatedBy",
+          "DocEntry"
+        ],
+        [
+          "DocLineNum",
+          "LineNum"
+        ]
+      ],
+      "filters": [
+        {
+          "column": "TransType",
+          "side": "from",
+          "value": 60
+        }
+      ],
+      "from_table": "OIVL",
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGE1.html"
+      ],
+      "to_table": "IGE1"
+    },
+    {
+      "description": "依据官方交易类型与单据键/行号语义的候选连接；需实库验证覆盖及SAP审计报告对账。同一单据行可有多条OIVL，绝不声明一对一。",
+      "field_mappings": [
+        [
+          "CreatedBy",
+          "DocEntry"
+        ],
+        [
+          "DocLineNum",
+          "LineNum"
+        ]
+      ],
+      "filters": [
+        {
+          "column": "TransType",
+          "side": "from",
+          "value": 59
+        }
+      ],
+      "from_table": "OIVL",
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGN1.html"
+      ],
+      "to_table": "IGN1"
+    },
+    {
+      "description": "依据官方交易类型与单据键/行号语义的候选连接；需实库验证覆盖及SAP审计报告对账。同一单据行可有多条OIVL，绝不声明一对一。",
+      "field_mappings": [
+        [
+          "CreatedBy",
+          "DocEntry"
+        ],
+        [
+          "DocLineNum",
+          "LineNum"
+        ]
+      ],
+      "filters": [
+        {
+          "column": "TransType",
+          "side": "from",
+          "value": 67
+        }
+      ],
+      "from_table": "OIVL",
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WTR1.html"
+      ],
+      "to_table": "WTR1"
+    },
+    {
+      "description": "BOM 资源组件候选：官方指南确认资源行选择资源主数据，但通用 DI ItemCode 属性页仍只写 Items，未找到直接数据库连接说明；发布前核验内部编码样本。",
+      "field_mappings": [
+        [
+          "Code",
+          "ResCode"
+        ]
+      ],
+      "filters": [
+        {
+          "column": "Type",
+          "side": "from",
+          "value": 290
+        }
+      ],
+      "from_table": "ITT1",
+      "sdk_sources": [
+        "REFDI/SAPbobsCOM~ProductTrees_Lines~ItemCode.html",
+        "REFDI/SAPbobsCOM~ProductTrees_Lines~ItemType.html",
+        "REFDI/SAPbobsCOM~Resource~Code.html"
+      ],
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITT1.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSC.html",
+        "https://help.sap.com/doc/10311afc90c643b3aaceeaa87a52bf5f/10.0/en-US/How_to_Work_with_Resources_and_Production_in_SAP_Business_One.pdf#page=42"
+      ],
+      "to_table": "ORSC"
+    },
+    {
+      "description": "销售交货行的直接来源为销售退货行；必须同时匹配来源类型、内部单据键和内部行号。反向可有多个后续行，汇总前处理拆分与重复计数。 官方枚举支持，但同类复制、退回再交付、预留发票、跨域采购或预付款特殊流程须结合现场样本审核后启用。",
+      "field_mappings": [
+        [
+          "BaseEntry",
+          "DocEntry"
+        ],
+        [
+          "BaseLine",
+          "LineNum"
+        ]
+      ],
+      "filters": [
+        {
+          "column": "BaseType",
+          "side": "from",
+          "value": 16
+        }
+      ],
+      "from_table": "DLN1",
+      "sdk_sources": [
+        "REFDI/SAPbobsCOM~Document_Lines~BaseType.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseEntry.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseLine.html"
+      ],
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/DLN1.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDN1.html"
+      ],
+      "to_table": "RDN1"
+    },
+    {
+      "description": "销售交货行的直接来源为应收发票行；必须同时匹配来源类型、内部单据键和内部行号。反向可有多个后续行，汇总前处理拆分与重复计数。 官方枚举支持，但同类复制、退回再交付、预留发票、跨域采购或预付款特殊流程须结合现场样本审核后启用。 须结合来源表头 OINV.isIns 区分预留发票。",
+      "field_mappings": [
+        [
+          "BaseEntry",
+          "DocEntry"
+        ],
+        [
+          "BaseLine",
+          "LineNum"
+        ]
+      ],
+      "filters": [
+        {
+          "column": "BaseType",
+          "side": "from",
+          "value": 13
+        }
+      ],
+      "from_table": "DLN1",
+      "sdk_sources": [
+        "REFDI/SAPbobsCOM~Document_Lines~BaseType.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseEntry.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseLine.html"
+      ],
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/DLN1.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV1.html"
+      ],
+      "to_table": "INV1"
+    },
+    {
+      "description": "销售交货行的直接来源为销售交货行；必须同时匹配来源类型、内部单据键和内部行号。反向可有多个后续行，汇总前处理拆分与重复计数。 官方枚举支持，但同类复制、退回再交付、预留发票、跨域采购或预付款特殊流程须结合现场样本审核后启用。",
+      "field_mappings": [
+        [
+          "BaseEntry",
+          "DocEntry"
+        ],
+        [
+          "BaseLine",
+          "LineNum"
+        ]
+      ],
+      "filters": [
+        {
+          "column": "BaseType",
+          "side": "from",
+          "value": 15
+        }
+      ],
+      "from_table": "DLN1",
+      "sdk_sources": [
+        "REFDI/SAPbobsCOM~Document_Lines~BaseType.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseEntry.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseLine.html"
+      ],
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/DLN1.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/DLN1.html"
+      ],
+      "to_table": "DLN1"
+    },
+    {
+      "description": "应收发票行的直接来源为应收发票行；必须同时匹配来源类型、内部单据键和内部行号。反向可有多个后续行，汇总前处理拆分与重复计数。 官方枚举支持，但同类复制、退回再交付、预留发票、跨域采购或预付款特殊流程须结合现场样本审核后启用。",
+      "field_mappings": [
+        [
+          "BaseEntry",
+          "DocEntry"
+        ],
+        [
+          "BaseLine",
+          "LineNum"
+        ]
+      ],
+      "filters": [
+        {
+          "column": "BaseType",
+          "side": "from",
+          "value": 13
+        }
+      ],
+      "from_table": "INV1",
+      "sdk_sources": [
+        "REFDI/SAPbobsCOM~Document_Lines~BaseType.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseEntry.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseLine.html"
+      ],
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV1.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV1.html"
+      ],
+      "to_table": "INV1"
+    },
+    {
+      "description": "销售退货行的直接来源为销售退货行；必须同时匹配来源类型、内部单据键和内部行号。反向可有多个后续行，汇总前处理拆分与重复计数。 官方枚举支持，但同类复制、退回再交付、预留发票、跨域采购或预付款特殊流程须结合现场样本审核后启用。",
+      "field_mappings": [
+        [
+          "BaseEntry",
+          "DocEntry"
+        ],
+        [
+          "BaseLine",
+          "LineNum"
+        ]
+      ],
+      "filters": [
+        {
+          "column": "BaseType",
+          "side": "from",
+          "value": 16
+        }
+      ],
+      "from_table": "RDN1",
+      "sdk_sources": [
+        "REFDI/SAPbobsCOM~Document_Lines~BaseType.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseEntry.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseLine.html"
+      ],
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDN1.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDN1.html"
+      ],
+      "to_table": "RDN1"
+    },
+    {
+      "description": "应收贷项凭证行的直接来源为应收预付款行；必须同时匹配来源类型、内部单据键和内部行号。反向可有多个后续行，汇总前处理拆分与重复计数。 官方枚举支持，但同类复制、退回再交付、预留发票、跨域采购或预付款特殊流程须结合现场样本审核后启用。",
+      "field_mappings": [
+        [
+          "BaseEntry",
+          "DocEntry"
+        ],
+        [
+          "BaseLine",
+          "LineNum"
+        ]
+      ],
+      "filters": [
+        {
+          "column": "BaseType",
+          "side": "from",
+          "value": 203
+        }
+      ],
+      "from_table": "RIN1",
+      "sdk_sources": [
+        "REFDI/SAPbobsCOM~Document_Lines~BaseType.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseEntry.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseLine.html"
+      ],
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN1.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/DPI1.html"
+      ],
+      "to_table": "DPI1"
+    },
+    {
+      "description": "应收贷项凭证行的直接来源为应收贷项凭证行；必须同时匹配来源类型、内部单据键和内部行号。反向可有多个后续行，汇总前处理拆分与重复计数。 官方枚举支持，但同类复制、退回再交付、预留发票、跨域采购或预付款特殊流程须结合现场样本审核后启用。",
+      "field_mappings": [
+        [
+          "BaseEntry",
+          "DocEntry"
+        ],
+        [
+          "BaseLine",
+          "LineNum"
+        ]
+      ],
+      "filters": [
+        {
+          "column": "BaseType",
+          "side": "from",
+          "value": 14
+        }
+      ],
+      "from_table": "RIN1",
+      "sdk_sources": [
+        "REFDI/SAPbobsCOM~Document_Lines~BaseType.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseEntry.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseLine.html"
+      ],
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN1.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN1.html"
+      ],
+      "to_table": "RIN1"
+    },
+    {
+      "description": "应收预付款行的直接来源为销售交货行；必须同时匹配来源类型、内部单据键和内部行号。反向可有多个后续行，汇总前处理拆分与重复计数。 官方枚举支持，但同类复制、退回再交付、预留发票、跨域采购或预付款特殊流程须结合现场样本审核后启用。",
+      "field_mappings": [
+        [
+          "BaseEntry",
+          "DocEntry"
+        ],
+        [
+          "BaseLine",
+          "LineNum"
+        ]
+      ],
+      "filters": [
+        {
+          "column": "BaseType",
+          "side": "from",
+          "value": 15
+        }
+      ],
+      "from_table": "DPI1",
+      "sdk_sources": [
+        "REFDI/SAPbobsCOM~Document_Lines~BaseType.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseEntry.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseLine.html"
+      ],
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/DPI1.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/DLN1.html"
+      ],
+      "to_table": "DLN1"
+    },
+    {
+      "description": "应收预付款行的直接来源为应收预付款行；必须同时匹配来源类型、内部单据键和内部行号。反向可有多个后续行，汇总前处理拆分与重复计数。 官方枚举支持，但同类复制、退回再交付、预留发票、跨域采购或预付款特殊流程须结合现场样本审核后启用。",
+      "field_mappings": [
+        [
+          "BaseEntry",
+          "DocEntry"
+        ],
+        [
+          "BaseLine",
+          "LineNum"
+        ]
+      ],
+      "filters": [
+        {
+          "column": "BaseType",
+          "side": "from",
+          "value": 203
+        }
+      ],
+      "from_table": "DPI1",
+      "sdk_sources": [
+        "REFDI/SAPbobsCOM~Document_Lines~BaseType.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseEntry.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseLine.html"
+      ],
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/DPI1.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/DPI1.html"
+      ],
+      "to_table": "DPI1"
+    },
+    {
+      "description": "采购申请行的直接来源为销售订单行；必须同时匹配来源类型、内部单据键和内部行号。反向可有多个后续行，汇总前处理拆分与重复计数。 官方枚举支持，但同类复制、退回再交付、预留发票、跨域采购或预付款特殊流程须结合现场样本审核后启用。",
+      "field_mappings": [
+        [
+          "BaseEntry",
+          "DocEntry"
+        ],
+        [
+          "BaseLine",
+          "LineNum"
+        ]
+      ],
+      "filters": [
+        {
+          "column": "BaseType",
+          "side": "from",
+          "value": 17
+        }
+      ],
+      "from_table": "PRQ1",
+      "sdk_sources": [
+        "REFDB/Marketing_Documents/PRQ1.htm",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseType.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseEntry.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseLine.html"
+      ],
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PRQ1.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
+      ],
+      "to_table": "RDR1"
+    },
+    {
+      "description": "采购申请行的直接来源为销售报价行；必须同时匹配来源类型、内部单据键和内部行号。反向可有多个后续行，汇总前处理拆分与重复计数。 官方枚举支持，但同类复制、退回再交付、预留发票、跨域采购或预付款特殊流程须结合现场样本审核后启用。",
+      "field_mappings": [
+        [
+          "BaseEntry",
+          "DocEntry"
+        ],
+        [
+          "BaseLine",
+          "LineNum"
+        ]
+      ],
+      "filters": [
+        {
+          "column": "BaseType",
+          "side": "from",
+          "value": 23
+        }
+      ],
+      "from_table": "PRQ1",
+      "sdk_sources": [
+        "REFDB/Marketing_Documents/PRQ1.htm",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseType.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseEntry.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseLine.html"
+      ],
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PRQ1.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/QUT1.html"
+      ],
+      "to_table": "QUT1"
+    },
+    {
+      "description": "采购报价行的直接来源为销售订单行；必须同时匹配来源类型、内部单据键和内部行号。反向可有多个后续行，汇总前处理拆分与重复计数。 官方枚举支持，但同类复制、退回再交付、预留发票、跨域采购或预付款特殊流程须结合现场样本审核后启用。",
+      "field_mappings": [
+        [
+          "BaseEntry",
+          "DocEntry"
+        ],
+        [
+          "BaseLine",
+          "LineNum"
+        ]
+      ],
+      "filters": [
+        {
+          "column": "BaseType",
+          "side": "from",
+          "value": 17
+        }
+      ],
+      "from_table": "PQT1",
+      "sdk_sources": [
+        "REFDI/SAPbobsCOM~Document_Lines~BaseType.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseEntry.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseLine.html"
+      ],
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PQT1.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
+      ],
+      "to_table": "RDR1"
+    },
+    {
+      "description": "采购报价行的直接来源为销售报价行；必须同时匹配来源类型、内部单据键和内部行号。反向可有多个后续行，汇总前处理拆分与重复计数。 官方枚举支持，但同类复制、退回再交付、预留发票、跨域采购或预付款特殊流程须结合现场样本审核后启用。",
+      "field_mappings": [
+        [
+          "BaseEntry",
+          "DocEntry"
+        ],
+        [
+          "BaseLine",
+          "LineNum"
+        ]
+      ],
+      "filters": [
+        {
+          "column": "BaseType",
+          "side": "from",
+          "value": 23
+        }
+      ],
+      "from_table": "PQT1",
+      "sdk_sources": [
+        "REFDI/SAPbobsCOM~Document_Lines~BaseType.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseEntry.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseLine.html"
+      ],
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PQT1.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/QUT1.html"
+      ],
+      "to_table": "QUT1"
+    },
+    {
+      "description": "采购订单行的直接来源为销售订单行；必须同时匹配来源类型、内部单据键和内部行号。反向可有多个后续行，汇总前处理拆分与重复计数。 官方枚举支持，但同类复制、退回再交付、预留发票、跨域采购或预付款特殊流程须结合现场样本审核后启用。",
+      "field_mappings": [
+        [
+          "BaseEntry",
+          "DocEntry"
+        ],
+        [
+          "BaseLine",
+          "LineNum"
+        ]
+      ],
+      "filters": [
+        {
+          "column": "BaseType",
+          "side": "from",
+          "value": 17
+        }
+      ],
+      "from_table": "POR1",
+      "sdk_sources": [
+        "REFDI/SAPbobsCOM~Document_Lines~BaseType.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseEntry.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseLine.html"
+      ],
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/POR1.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
+      ],
+      "to_table": "RDR1"
+    },
+    {
+      "description": "采购订单行的直接来源为采购订单行；必须同时匹配来源类型、内部单据键和内部行号。反向可有多个后续行，汇总前处理拆分与重复计数。 官方枚举支持，但同类复制、退回再交付、预留发票、跨域采购或预付款特殊流程须结合现场样本审核后启用。",
+      "field_mappings": [
+        [
+          "BaseEntry",
+          "DocEntry"
+        ],
+        [
+          "BaseLine",
+          "LineNum"
+        ]
+      ],
+      "filters": [
+        {
+          "column": "BaseType",
+          "side": "from",
+          "value": 22
+        }
+      ],
+      "from_table": "POR1",
+      "sdk_sources": [
+        "REFDI/SAPbobsCOM~Document_Lines~BaseType.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseEntry.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseLine.html"
+      ],
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/POR1.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/POR1.html"
+      ],
+      "to_table": "POR1"
+    },
+    {
+      "description": "采购订单行的直接来源为销售报价行；必须同时匹配来源类型、内部单据键和内部行号。反向可有多个后续行，汇总前处理拆分与重复计数。 官方枚举支持，但同类复制、退回再交付、预留发票、跨域采购或预付款特殊流程须结合现场样本审核后启用。",
+      "field_mappings": [
+        [
+          "BaseEntry",
+          "DocEntry"
+        ],
+        [
+          "BaseLine",
+          "LineNum"
+        ]
+      ],
+      "filters": [
+        {
+          "column": "BaseType",
+          "side": "from",
+          "value": 23
+        }
+      ],
+      "from_table": "POR1",
+      "sdk_sources": [
+        "REFDI/SAPbobsCOM~Document_Lines~BaseType.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseEntry.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseLine.html"
+      ],
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/POR1.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/QUT1.html"
+      ],
+      "to_table": "QUT1"
+    },
+    {
+      "description": "采购收货行的直接来源为采购退货行；必须同时匹配来源类型、内部单据键和内部行号。反向可有多个后续行，汇总前处理拆分与重复计数。 官方枚举支持，但同类复制、退回再交付、预留发票、跨域采购或预付款特殊流程须结合现场样本审核后启用。",
+      "field_mappings": [
+        [
+          "BaseEntry",
+          "DocEntry"
+        ],
+        [
+          "BaseLine",
+          "LineNum"
+        ]
+      ],
+      "filters": [
+        {
+          "column": "BaseType",
+          "side": "from",
+          "value": 21
+        }
+      ],
+      "from_table": "PDN1",
+      "sdk_sources": [
+        "REFDI/SAPbobsCOM~Document_Lines~BaseType.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseEntry.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseLine.html"
+      ],
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RPD1.html"
+      ],
+      "to_table": "RPD1"
+    },
+    {
+      "description": "采购收货行的直接来源为应付发票行；必须同时匹配来源类型、内部单据键和内部行号。反向可有多个后续行，汇总前处理拆分与重复计数。 官方枚举支持，但同类复制、退回再交付、预留发票、跨域采购或预付款特殊流程须结合现场样本审核后启用。 须结合来源表头 OPCH.isIns 区分预留发票。",
+      "field_mappings": [
+        [
+          "BaseEntry",
+          "DocEntry"
+        ],
+        [
+          "BaseLine",
+          "LineNum"
+        ]
+      ],
+      "filters": [
+        {
+          "column": "BaseType",
+          "side": "from",
+          "value": 18
+        }
+      ],
+      "from_table": "PDN1",
+      "sdk_sources": [
+        "REFDI/SAPbobsCOM~Document_Lines~BaseType.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseEntry.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseLine.html"
+      ],
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PCH1.html"
+      ],
+      "to_table": "PCH1"
+    },
+    {
+      "description": "采购收货行的直接来源为采购收货行；必须同时匹配来源类型、内部单据键和内部行号。反向可有多个后续行，汇总前处理拆分与重复计数。 官方枚举支持，但同类复制、退回再交付、预留发票、跨域采购或预付款特殊流程须结合现场样本审核后启用。",
+      "field_mappings": [
+        [
+          "BaseEntry",
+          "DocEntry"
+        ],
+        [
+          "BaseLine",
+          "LineNum"
+        ]
+      ],
+      "filters": [
+        {
+          "column": "BaseType",
+          "side": "from",
+          "value": 20
+        }
+      ],
+      "from_table": "PDN1",
+      "sdk_sources": [
+        "REFDI/SAPbobsCOM~Document_Lines~BaseType.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseEntry.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseLine.html"
+      ],
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      ],
+      "to_table": "PDN1"
+    },
+    {
+      "description": "应付发票行的直接来源为应付发票行；必须同时匹配来源类型、内部单据键和内部行号。反向可有多个后续行，汇总前处理拆分与重复计数。 官方枚举支持，但同类复制、退回再交付、预留发票、跨域采购或预付款特殊流程须结合现场样本审核后启用。",
+      "field_mappings": [
+        [
+          "BaseEntry",
+          "DocEntry"
+        ],
+        [
+          "BaseLine",
+          "LineNum"
+        ]
+      ],
+      "filters": [
+        {
+          "column": "BaseType",
+          "side": "from",
+          "value": 18
+        }
+      ],
+      "from_table": "PCH1",
+      "sdk_sources": [
+        "REFDI/SAPbobsCOM~Document_Lines~BaseType.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseEntry.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseLine.html"
+      ],
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PCH1.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PCH1.html"
+      ],
+      "to_table": "PCH1"
+    },
+    {
+      "description": "采购退货行的直接来源为采购退货行；必须同时匹配来源类型、内部单据键和内部行号。反向可有多个后续行，汇总前处理拆分与重复计数。 官方枚举支持，但同类复制、退回再交付、预留发票、跨域采购或预付款特殊流程须结合现场样本审核后启用。",
+      "field_mappings": [
+        [
+          "BaseEntry",
+          "DocEntry"
+        ],
+        [
+          "BaseLine",
+          "LineNum"
+        ]
+      ],
+      "filters": [
+        {
+          "column": "BaseType",
+          "side": "from",
+          "value": 21
+        }
+      ],
+      "from_table": "RPD1",
+      "sdk_sources": [
+        "REFDI/SAPbobsCOM~Document_Lines~BaseType.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseEntry.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseLine.html"
+      ],
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RPD1.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RPD1.html"
+      ],
+      "to_table": "RPD1"
+    },
+    {
+      "description": "应付贷项凭证行的直接来源为应付预付款行；必须同时匹配来源类型、内部单据键和内部行号。反向可有多个后续行，汇总前处理拆分与重复计数。 官方枚举支持，但同类复制、退回再交付、预留发票、跨域采购或预付款特殊流程须结合现场样本审核后启用。",
+      "field_mappings": [
+        [
+          "BaseEntry",
+          "DocEntry"
+        ],
+        [
+          "BaseLine",
+          "LineNum"
+        ]
+      ],
+      "filters": [
+        {
+          "column": "BaseType",
+          "side": "from",
+          "value": 204
+        }
+      ],
+      "from_table": "RPC1",
+      "sdk_sources": [
+        "REFDB/Marketing_Documents/DPO1.htm",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseType.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseEntry.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseLine.html"
+      ],
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RPC1.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/DPO1.html"
+      ],
+      "to_table": "DPO1"
+    },
+    {
+      "description": "应付贷项凭证行的直接来源为应付贷项凭证行；必须同时匹配来源类型、内部单据键和内部行号。反向可有多个后续行，汇总前处理拆分与重复计数。 官方枚举支持，但同类复制、退回再交付、预留发票、跨域采购或预付款特殊流程须结合现场样本审核后启用。",
+      "field_mappings": [
+        [
+          "BaseEntry",
+          "DocEntry"
+        ],
+        [
+          "BaseLine",
+          "LineNum"
+        ]
+      ],
+      "filters": [
+        {
+          "column": "BaseType",
+          "side": "from",
+          "value": 19
+        }
+      ],
+      "from_table": "RPC1",
+      "sdk_sources": [
+        "REFDI/SAPbobsCOM~Document_Lines~BaseType.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseEntry.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseLine.html"
+      ],
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RPC1.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RPC1.html"
+      ],
+      "to_table": "RPC1"
+    },
+    {
+      "description": "应付预付款行的直接来源为采购收货行；必须同时匹配来源类型、内部单据键和内部行号。反向可有多个后续行，汇总前处理拆分与重复计数。 官方枚举支持，但同类复制、退回再交付、预留发票、跨域采购或预付款特殊流程须结合现场样本审核后启用。",
+      "field_mappings": [
+        [
+          "BaseEntry",
+          "DocEntry"
+        ],
+        [
+          "BaseLine",
+          "LineNum"
+        ]
+      ],
+      "filters": [
+        {
+          "column": "BaseType",
+          "side": "from",
+          "value": 20
+        }
+      ],
+      "from_table": "DPO1",
+      "sdk_sources": [
+        "REFDB/Marketing_Documents/DPO1.htm",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseType.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseEntry.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseLine.html"
+      ],
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/DPO1.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
+      ],
+      "to_table": "PDN1"
+    },
+    {
+      "description": "应付预付款行的直接来源为应付预付款行；必须同时匹配来源类型、内部单据键和内部行号。反向可有多个后续行，汇总前处理拆分与重复计数。 官方枚举支持，但同类复制、退回再交付、预留发票、跨域采购或预付款特殊流程须结合现场样本审核后启用。",
+      "field_mappings": [
+        [
+          "BaseEntry",
+          "DocEntry"
+        ],
+        [
+          "BaseLine",
+          "LineNum"
+        ]
+      ],
+      "filters": [
+        {
+          "column": "BaseType",
+          "side": "from",
+          "value": 204
+        }
+      ],
+      "from_table": "DPO1",
+      "sdk_sources": [
+        "REFDB/Marketing_Documents/DPO1.htm",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseType.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseEntry.html",
+        "REFDI/SAPbobsCOM~Document_Lines~BaseLine.html"
+      ],
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/DPO1.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/DPO1.html"
+      ],
+      "to_table": "DPO1"
+    },
+    {
+      "description": "实际抵扣所关联的预付款表头；不是普通来源行关系。贷项桥表 ObjType 未列举约束值时，须先核验现场编码。",
+      "field_mappings": [
+        [
+          "BaseAbs",
+          "DocEntry"
+        ]
+      ],
+      "filters": [
+        {
+          "column": "ObjType",
+          "side": "from",
+          "value": "203"
+        }
+      ],
+      "from_table": "RIN9",
+      "sdk_sources": [
+        "REFDB/Marketing_Documents/RIN9.htm",
+        "REFDI/SAPbobsCOM~DownPaymentsToDraw~DocEntry.html"
+      ],
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN9.html"
+      ],
+      "to_table": "ODPI"
+    },
+    {
+      "description": "实际抵扣所关联的预付款表头；不是普通来源行关系。贷项桥表 ObjType 未列举约束值时，须先核验现场编码。",
+      "field_mappings": [
+        [
+          "BaseAbs",
+          "DocEntry"
+        ]
+      ],
+      "filters": [
+        {
+          "column": "ObjType",
+          "side": "from",
+          "value": "204"
+        }
+      ],
+      "from_table": "RPC9",
+      "sdk_sources": [
+        "REFDB/Marketing_Documents/RPC9.htm",
+        "REFDI/SAPbobsCOM~DownPaymentsToDraw~DocEntry.html"
+      ],
+      "sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC9.html"
+      ],
+      "to_table": "ODPO"
+    }
+  ],
+  "status": "review_required"
+}

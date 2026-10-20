@@ -1,0 +1,13 @@
+{
+  "condition": "opor.DocEntry = por1.DocEntry",
+  "displayName": "采购订单主表 → 采购订单明细",
+  "joinType": "ONE_TO_MANY",
+  "models": [
+    "opor",
+    "por1"
+  ],
+  "name": "opor_por1",
+  "properties": {
+    "description": "一张采购订单对应多条明细；按物料或仓库分析时使用。"
+  }
+}

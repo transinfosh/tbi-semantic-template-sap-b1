@@ -1,0 +1,13 @@
+{
+  "condition": "odpi.DocEntry = dpi1.DocEntry",
+  "displayName": "预收款发票主表 → 预收款发票明细",
+  "joinType": "ONE_TO_MANY",
+  "models": [
+    "odpi",
+    "dpi1"
+  ],
+  "name": "odpi_dpi1",
+  "properties": {
+    "description": "一张预收款发票对应多条明细；用于追溯来源订单或交货。"
+  }
+}

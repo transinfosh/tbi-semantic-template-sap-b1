@@ -1,0 +1,11 @@
+{
+  "condition": "oqut.SlpCode = oslp.SlpCode",
+  "displayName": "oqut_oslp",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "oqut",
+    "oslp"
+  ],
+  "name": "oqut_oslp",
+  "properties": {}
+}

@@ -1,0 +1,11 @@
+{
+  "condition": "itr1.TransId = jdt1.TransId AND itr1.TransRowId = jdt1.Line_ID",
+  "displayName": "itr1_jdt1",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "itr1",
+    "jdt1"
+  ],
+  "name": "itr1_jdt1",
+  "properties": {}
+}

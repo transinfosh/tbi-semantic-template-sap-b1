@@ -1,0 +1,12 @@
+{
+  "condition": "rct2.DocEntry = odpo.DocEntry AND rct2.InvType = '204'",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "rct2",
+    "odpo"
+  ],
+  "name": "sap_rct2_odpo",
+  "properties": {
+    "description": "支付应用目标单据，多对一；只在指定InvType内有效。发票头金额不能按应用行重复累加。"
+  }
+}

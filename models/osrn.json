@@ -1,0 +1,165 @@
+{
+  "columns": [
+    {
+      "displayName": "主数据内部标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "AbsEntry",
+      "notNull": true,
+      "properties": {
+        "description": "本表主键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSRN.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "主数据余额字段",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Balance",
+      "notNull": false,
+      "properties": {
+        "description": "不能未经核验当作历史估价余额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSRN.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "主数据成本字段",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CostTotal",
+      "notNull": false,
+      "properties": {
+        "description": "受估价配置影响；不代表某张发料单成本。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSRN.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "序列号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DistNumber",
+      "notNull": false,
+      "properties": {
+        "description": "业务显示编号；官方索引不保证单独或与物料组合唯一。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSRN.html"
+      },
+      "type": "VARCHAR(36)"
+    },
+    {
+      "displayName": "到期日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ExpDate",
+      "notNull": false,
+      "properties": {
+        "description": "主数据有效期截止日期。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSRN.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "接收日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "InDate",
+      "notNull": false,
+      "properties": {
+        "description": "主数据接收日期。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSRN.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "物料编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ItemCode",
+      "notNull": true,
+      "properties": {
+        "description": "与SysNumber组成系统唯一键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSRN.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "制造日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "MnfDate",
+      "notNull": false,
+      "properties": {
+        "description": "批次或序列主数据的制造日期，不是库存过账日期。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSRN.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "主数据数量字段",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Quantity",
+      "notNull": false,
+      "properties": {
+        "description": "不具备仓库或历史时点粒度，不能替代仓库批序列库存数量。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSRN.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "状态编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Status",
+      "notNull": false,
+      "properties": {
+        "description": "批次与序列号枚举语义不同，按所属表解释。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSRN.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "系统编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SysNumber",
+      "notNull": true,
+      "properties": {
+        "description": "必须在物料与管理类型上下文使用。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSRN.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "更新日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UpdateDate",
+      "notNull": false,
+      "properties": {
+        "description": "主数据最近更新日期。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSRN.html"
+      },
+      "type": "TIMESTAMP"
+    }
+  ],
+  "displayName": "序列号主数据",
+  "name": "osrn",
+  "primaryKey": "AbsEntry",
+  "properties": {
+    "description": "每个AbsEntry一条主数据；ItemCode与SysNumber另有唯一键，显示编号不是单独唯一。无仓库粒度，不作为仓库库存余额或历史库存。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSRN.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "OSRN"
+  },
+  "uniqueKeys": [
+    [
+      "ItemCode",
+      "SysNumber"
+    ]
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "condition": "oitm.FirmCode = omrc.FirmCode",
+  "displayName": "oitm_omrc",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "oitm",
+    "omrc"
+  ],
+  "name": "oitm_omrc",
+  "properties": {}
+}

@@ -1,0 +1,116 @@
+{
+  "columns": [
+    {
+      "displayName": "基准单位内部标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BaseUom",
+      "notNull": false,
+      "properties": {
+        "description": "关联OUOM.UomEntry。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OUGP.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "创建日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CreateDate",
+      "notNull": false,
+      "properties": {
+        "description": "单位组创建日期，不是换算生效起始日。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OUGP.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "是否锁定",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Locked",
+      "notNull": false,
+      "properties": {
+        "description": "单位组锁定标志。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OUGP.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "日志版本号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LogInstanc",
+      "notNull": false,
+      "properties": {
+        "description": "记录的日志版本字段。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OUGP.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "单位组编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UgpCode",
+      "notNull": true,
+      "properties": {
+        "description": "单位组业务编码。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OUGP.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "单位组内部标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UgpEntry",
+      "notNull": true,
+      "properties": {
+        "description": "单位组主键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OUGP.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "单位组名称",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UgpName",
+      "notNull": false,
+      "properties": {
+        "description": "单位组显示名称。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OUGP.html"
+      },
+      "type": "VARCHAR(100)"
+    },
+    {
+      "displayName": "更新日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UpdateDate",
+      "notNull": false,
+      "properties": {
+        "description": "当前记录更新时间，不提供完整历史换算版本。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OUGP.html"
+      },
+      "type": "TIMESTAMP"
+    }
+  ],
+  "displayName": "计量单位组",
+  "name": "ougp",
+  "primaryKey": "UgpEntry",
+  "properties": {
+    "description": "每个单位组内部标识一行；定义基准单位，具体换算关系在UGP1。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OUGP.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "OUGP"
+  },
+  "uniqueKeys": [
+    [
+      "UgpCode"
+    ]
+  ]
+}

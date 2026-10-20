@@ -1,0 +1,968 @@
+{
+  "columns": [
+    {
+      "displayName": "是否预警",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Alert",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Alert。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "采购贷项科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "APCMAct",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Purchase Credit Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "欧盟采购贷项科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "APCMEUAct",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Purchase Credit Account - EU。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "国外采购贷项科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "APCMFrnAct",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Purchase Credit Account - Foreign。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "销售贷项科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ARCMAct",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Sales Credit Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "欧盟销售贷项科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ARCMEUAct",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Sales Credit Account - EU。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "免税贷项科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ARCMExpAct",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Tax Exempt Credit Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "国外销售贷项科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ARCMFrnAct",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Sales Credit Account - Foreign。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "货物清算科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BalanceAcc",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Goods Clearing Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "默认库存科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BalInvntAc",
+      "notNull": false,
+      "properties": {
+        "description": "默认库存会计科目编码，不是库存金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "组件仓库",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CompoWH",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Component Warehouse。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "销售成本重估科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CostRvlAct",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：COGS Revaluation Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "创建日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "createDate",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Creation Date - History。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "销售成本重估抵减科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CstOffsAct",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：COGS Revaluation Offset Acct。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "周期代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CycleCode",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Cycle Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "库存冲减科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DecreasAc",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Inventory Offset - Decrease Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "总账减少科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DecresGlAc",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：G/L Decrease Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "欧盟费用科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "EUExpensAc",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Expense Account - EU。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "欧盟收入科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "EURevenuAc",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Revenue Account - EU。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "汇兑差异科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ExchangeAc",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Exchange Rate Differences Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "免税收入科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ExmptIncom",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Exempt Revenue Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "费用清算科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ExpClrAct",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Expense Clearing Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "费用科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ExpensesAc",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Expense Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "费用抵减科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ExpOfstAct",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Expense Offset Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "免费采购科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "FreeChrgPU",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Free of Charge Purchase Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "免费销售科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "FreeChrgSA",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Free of Charge Sales Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "国外费用科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "FrExpensAc",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Expense Account - Foreign。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "国外收入科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "FrRevenuAc",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Revenue Account - Foreign。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "库存增加科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "IncreasAc",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Inventory Offset - Increase Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "总账增加科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "IncresGlAc",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：G/L Increase Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "库存系统",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "InvntSys",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Inventory System。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "接收服务编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ISvcCode",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Incoming Service Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "服务或物料",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ItemClass",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Service or Material。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "物料组编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ItmsGrpCod",
+      "notNull": false,
+      "properties": {
+        "description": "物料组唯一键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "物料组名称",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ItmsGrpNam",
+      "notNull": false,
+      "properties": {
+        "description": "业务分类名称；钢材等业务口径需由企业确认。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(100)"
+    },
+    {
+      "displayName": "默认库存单位",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "IUoMEntry",
+      "notNull": false,
+      "properties": {
+        "description": "物料组默认库存单位。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "提前期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LeadTime",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Lead Time。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "是否锁定",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Locked",
+      "notNull": false,
+      "properties": {
+        "description": "主数据锁定标志。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "日志实例",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "logInstanc",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Log Instance - History。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "物料组",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "MatGrp",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Material Group。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "物料类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "MatType",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Material Type。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(3)"
+    },
+    {
+      "displayName": "最小订购数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "MinOrdrQty",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Minimum Order Quantity。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "NCM编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "NCMCode",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：NCM Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "负库存调整科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "NegStckAct",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Negative Inventory Adjustment Acct。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "对象类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Object",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Object Type - History。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "订购间隔",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OrdrIntrvl",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Order Interval。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "订购倍数",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OrdrMulti",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Order Multiple。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "发出服务编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OSvcCode",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Outgoing Service Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "采购退回科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PAReturnAc",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Purchase Return Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "计划方法",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PlaningSys",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Planning Method。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "采购方法",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PrcrmntMtd",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Procurement Method。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "价格差异科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PriceDifAc",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Price Difference Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "产品来源",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ProductSrc",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Product Source。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(2)"
+    },
+    {
+      "displayName": "采购余额科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PurBalAct",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Purchase Balance Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "采购科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PurchaseAc",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Purchase Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "采购抵减科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PurchOfsAc",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Purchase Offset Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "销售退回科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ReturnAc",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Sales Returns Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "收入科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "RevenuesAc",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Revenue Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "收入退回科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "RevRetAct",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Revenue Returns Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "检查规则编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "RuleCode",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Checking Rule Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(2)"
+    },
+    {
+      "displayName": "默认销售成本科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SaleCostAc",
+      "notNull": false,
+      "properties": {
+        "description": "默认销售成本会计科目。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "服务组",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ServiceGrp",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Service Group。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "发出商品科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ShpdGdsAct",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Shipped Goods Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "在途库存科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "StkInTnAct",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Stock In Transit Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "库存重估抵减科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "StkOffsAct",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Inventory Revaluation Offset Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "库存损益抵减科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "StockOffst",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Inventory Offset P&L Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "库存重估科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "StokRvlAct",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Inventory Revaluation Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "容差天数",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ToleranDay",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Tolerance Days。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "调拨科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TransferAc",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Allocation Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "默认单位组",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UgpEntry",
+      "notNull": false,
+      "properties": {
+        "description": "物料组默认单位组，不替代具体物料实际单位配置。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "更新日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "updateDate",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Date of Update - History。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "更新用户",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "userSign2",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Updating User - History。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "差异科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "VarianceAc",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Variance Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "收入增值税科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "VatRevAct",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：VAT in Revenue Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "入库CENVAT科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "WhICenAct",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Incoming CENVAT Account (WH)。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "出库CENVAT科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "WhOCenAct",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Outgoing CENVAT Account (WH)。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "默认在制品科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "WipAcct",
+      "notNull": false,
+      "properties": {
+        "description": "默认在制品库存会计科目。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "在制品损益抵减科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "WipOffset",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：WIP Offset P&L Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "在制品库存差异科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "WipVarAcct",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：WIP Inventory Variance Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+      },
+      "type": "VARCHAR(15)"
+    }
+  ],
+  "displayName": "物料组",
+  "name": "oitb",
+  "primaryKey": "ItmsGrpCod",
+  "properties": {
+    "description": "每个物料组编码一行；用于物料分类及默认配置，财务科目字段是配置而非发生额。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "OITB"
+  },
+  "uniqueKeys": [
+    [
+      "ItmsGrpNam"
+    ]
+  ]
+}

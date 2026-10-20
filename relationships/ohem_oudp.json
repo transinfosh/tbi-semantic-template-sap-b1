@@ -1,0 +1,11 @@
+{
+  "condition": "ohem.dept = oudp.Code",
+  "displayName": "员工主数据 → 部门",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "ohem",
+    "oudp"
+  ],
+  "name": "ohem_oudp",
+  "properties": {}
+}

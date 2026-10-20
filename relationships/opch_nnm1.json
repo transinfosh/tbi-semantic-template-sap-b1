@@ -1,0 +1,11 @@
+{
+  "condition": "opch.Series = nnm1.Series AND opch.ObjType = nnm1.ObjectCode",
+  "displayName": "opch → 单据编号系列",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "opch",
+    "nnm1"
+  ],
+  "name": "opch_nnm1",
+  "properties": {}
+}

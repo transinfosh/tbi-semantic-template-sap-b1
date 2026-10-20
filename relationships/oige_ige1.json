@@ -1,0 +1,11 @@
+{
+  "condition": "oige.DocEntry = ige1.DocEntry",
+  "displayName": "oige_ige1",
+  "joinType": "ONE_TO_MANY",
+  "models": [
+    "oige",
+    "ige1"
+  ],
+  "name": "oige_ige1",
+  "properties": {}
+}

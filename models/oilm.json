@@ -1,0 +1,256 @@
+{
+  "columns": [
+    {
+      "displayName": "来源单据内部标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BaseAbsEnt",
+      "notNull": false,
+      "properties": {
+        "description": "本表来源键叫BaseAbsEnt，不是BaseEntry。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OILM.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "来源单据行号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BaseLine",
+      "notNull": false,
+      "properties": {
+        "description": "来源行号，不是DocLineNum。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OILM.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "来源交易类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BaseType",
+      "notNull": false,
+      "properties": {
+        "description": "与BaseAbsEnt及BaseLine配套。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OILM.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "日志创建日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CreateDate",
+      "notNull": false,
+      "properties": {
+        "description": "系统创建日期。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OILM.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "单据币种",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Currency",
+      "notNull": false,
+      "properties": {
+        "description": "区别于PriceCurr等价格币种。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OILM.html"
+      },
+      "type": "VARCHAR(3)"
+    },
+    {
+      "displayName": "单据动作类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocAction",
+      "notNull": false,
+      "properties": {
+        "description": "不可忽略动作差异直接汇总日志。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OILM.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "单据日期字段",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocDate",
+      "notNull": false,
+      "properties": {
+        "description": "本日志记录的单据日期。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OILM.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "单据内部标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocEntry",
+      "notNull": false,
+      "properties": {
+        "description": "本条日志关联单据内部键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OILM.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "单据行号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocLineNum",
+      "notNull": false,
+      "properties": {
+        "description": "本单据行号，不同于BaseLine。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OILM.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "库存影响数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "EffectQty",
+      "notNull": false,
+      "properties": {
+        "description": "库存影响数量字段，不默认与单据数量同义。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OILM.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "物料编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ItemCode",
+      "notNull": false,
+      "properties": {
+        "description": "关联OITM。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OILM.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "位置仓库代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LocCode",
+      "notNull": false,
+      "properties": {
+        "description": "需结合LocType与交易上下文确认仓库范围。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OILM.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "库存消息标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "MessageID",
+      "notNull": true,
+      "properties": {
+        "description": "日志主键；OIVL.MessageID引用此键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OILM.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "单据数量字段",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Quantity",
+      "notNull": false,
+      "properties": {
+        "description": "日志内单据数量，与EffectQty分别解释。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OILM.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "批次序列类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SnBType",
+      "notNull": false,
+      "properties": {
+        "description": "10000044批次、10000045序列、4普通物料。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OILM.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "单据子行号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SubLineNum",
+      "notNull": false,
+      "properties": {
+        "description": "同一单据行可细分子行。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OILM.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "库存外币总额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TotalFC",
+      "notNull": false,
+      "properties": {
+        "description": "日志外币库存价值字段。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OILM.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "库存本币总额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TotalLC",
+      "notNull": false,
+      "properties": {
+        "description": "日志本币库存价值字段；不能未经对账将所有日志求和当过账金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OILM.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "库存系统币总额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TotalSC",
+      "notNull": false,
+      "properties": {
+        "description": "日志系统币库存价值字段。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OILM.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "交易类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TransType",
+      "notNull": false,
+      "properties": {
+        "description": "跨单据类型定位必须保留。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OILM.html"
+      },
+      "type": "INTEGER"
+    }
+  ],
+  "displayName": "库存交易消息日志",
+  "name": "oilm",
+  "primaryKey": "MessageID",
+  "properties": {
+    "description": "每个MessageID一条日志；包含单据、来源及数量价值上下文。单据行索引非唯一，不能把日志数量直接当唯一库存过账。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OILM.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "OILM"
+  },
+  "uniqueKeys": []
+}

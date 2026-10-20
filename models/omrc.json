@@ -1,0 +1,44 @@
+{
+  "columns": [
+    {
+      "displayName": "制造商代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "FirmCode",
+      "notNull": true,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OMRC.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "制造商名称",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "FirmName",
+      "notNull": true,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Manufacturer Name。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OMRC.html"
+      },
+      "type": "VARCHAR(30)"
+    }
+  ],
+  "displayName": "制造商",
+  "name": "omrc",
+  "primaryKey": "FirmCode",
+  "properties": {
+    "description": "制造商编码与名称主数据，通过物料主数据的FirmCode关联。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OMRC.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "OMRC"
+  },
+  "uniqueKeys": [
+    [
+      "FirmName"
+    ]
+  ]
+}

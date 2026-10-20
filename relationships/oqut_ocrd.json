@@ -1,0 +1,11 @@
+{
+  "condition": "oqut.CardCode = ocrd.CardCode",
+  "displayName": "oqut_ocrd",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "oqut",
+    "ocrd"
+  ],
+  "name": "oqut_ocrd",
+  "properties": {}
+}

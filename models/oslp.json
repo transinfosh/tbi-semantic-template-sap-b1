@@ -1,0 +1,164 @@
+{
+  "columns": [
+    {
+      "displayName": "启用标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Active",
+      "notNull": false,
+      "properties": {
+        "description": "销售员是否启用。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSLP.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "佣金率",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Commission",
+      "notNull": false,
+      "properties": {
+        "description": "销售员佣金率。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSLP.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "电子邮件",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Email",
+      "notNull": false,
+      "properties": {
+        "description": "电子邮件地址。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSLP.html"
+      },
+      "type": "VARCHAR(100)"
+    },
+    {
+      "displayName": "员工编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "EmpID",
+      "notNull": false,
+      "properties": {
+        "description": "关联员工主数据的编号。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSLP.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "传真",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Fax",
+      "notNull": false,
+      "properties": {
+        "description": "传真号码。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSLP.html"
+      },
+      "type": "VARCHAR(50)"
+    },
+    {
+      "displayName": "销售员组编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "GroupCode",
+      "notNull": false,
+      "properties": {
+        "description": "销售员所属组编码。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSLP.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "锁定标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Locked",
+      "notNull": false,
+      "properties": {
+        "description": "销售员是否被锁定。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSLP.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "备注",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Memo",
+      "notNull": false,
+      "properties": {
+        "description": "备注信息。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSLP.html"
+      },
+      "type": "VARCHAR(50)"
+    },
+    {
+      "displayName": "手机",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Mobil",
+      "notNull": false,
+      "properties": {
+        "description": "手机号码。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSLP.html"
+      },
+      "type": "VARCHAR(50)"
+    },
+    {
+      "displayName": "销售员编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SlpCode",
+      "notNull": false,
+      "properties": {
+        "description": "销售员内部编码，关联销售员主数据。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSLP.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "销售员姓名",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SlpName",
+      "notNull": false,
+      "properties": {
+        "description": "销售员名称。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSLP.html"
+      },
+      "type": "VARCHAR(155)"
+    },
+    {
+      "displayName": "电话",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Telephone",
+      "notNull": false,
+      "properties": {
+        "description": "联系电话。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSLP.html"
+      },
+      "type": "VARCHAR(50)"
+    }
+  ],
+  "displayName": "销售员",
+  "name": "oslp",
+  "primaryKey": "SlpCode",
+  "properties": {
+    "description": "销售员，用于SAP Business One业务分析、经营分析和智能问答。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSLP.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "OSLP"
+  },
+  "uniqueKeys": [
+    [
+      "SlpName"
+    ]
+  ]
+}

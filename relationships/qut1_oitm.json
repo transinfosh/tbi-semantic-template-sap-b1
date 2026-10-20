@@ -1,0 +1,11 @@
+{
+  "condition": "qut1.ItemCode = oitm.ItemCode",
+  "displayName": "qut1_oitm",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "qut1",
+    "oitm"
+  ],
+  "name": "qut1_oitm",
+  "properties": {}
+}

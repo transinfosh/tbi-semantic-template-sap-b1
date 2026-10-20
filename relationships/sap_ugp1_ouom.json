@@ -1,0 +1,12 @@
+{
+  "condition": "ugp1.UomEntry = ouom.UomEntry",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "ugp1",
+    "ouom"
+  ],
+  "name": "sap_ugp1_ouom",
+  "properties": {
+    "description": "官方表参考明确目标表及键；可选或手工单位特殊值可能无匹配，查询不应强制要求所有行均有目标。"
+  }
+}

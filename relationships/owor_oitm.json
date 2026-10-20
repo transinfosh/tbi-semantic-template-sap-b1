@@ -1,0 +1,11 @@
+{
+  "condition": "owor.ItemCode = oitm.ItemCode",
+  "displayName": "owor_oitm",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "owor",
+    "oitm"
+  ],
+  "name": "owor_oitm",
+  "properties": {}
+}

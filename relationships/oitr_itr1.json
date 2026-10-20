@@ -1,0 +1,11 @@
+{
+  "condition": "oitr.ReconNum = itr1.ReconNum",
+  "displayName": "oitr_itr1",
+  "joinType": "ONE_TO_MANY",
+  "models": [
+    "oitr",
+    "itr1"
+  ],
+  "name": "oitr_itr1",
+  "properties": {}
+}

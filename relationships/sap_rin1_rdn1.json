@@ -1,0 +1,12 @@
+{
+  "condition": "rin1.BaseEntry = rdn1.DocEntry AND rin1.BaseLine = rdn1.LineNum AND rin1.BaseType = 16",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "rin1",
+    "rdn1"
+  ],
+  "name": "sap_rin1_rdn1",
+  "properties": {
+    "description": "应收贷项凭证行的直接来源为销售退货行；必须同时匹配来源类型、内部单据键和内部行号。反向可有多个后续行，汇总前处理拆分与重复计数。"
+  }
+}

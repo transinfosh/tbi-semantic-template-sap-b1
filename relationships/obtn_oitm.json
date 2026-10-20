@@ -1,0 +1,11 @@
+{
+  "condition": "obtn.ItemCode = oitm.ItemCode",
+  "displayName": "obtn_oitm",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "obtn",
+    "oitm"
+  ],
+  "name": "obtn_oitm",
+  "properties": {}
+}

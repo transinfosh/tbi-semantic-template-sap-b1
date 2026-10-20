@@ -1,0 +1,40 @@
+{
+  "columns": [
+    {
+      "displayName": "税组代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Code",
+      "notNull": false,
+      "properties": {
+        "description": "税组唯一代码。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OVTG.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "税组名称",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Name",
+      "notNull": false,
+      "properties": {
+        "description": "税组名称。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OVTG.html"
+      },
+      "type": "VARCHAR(100)"
+    }
+  ],
+  "displayName": "税组",
+  "name": "ovtg",
+  "primaryKey": "Code",
+  "properties": {
+    "description": "SAP Business One 税组主数据。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OVTG.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "OVTG"
+  },
+  "uniqueKeys": []
+}

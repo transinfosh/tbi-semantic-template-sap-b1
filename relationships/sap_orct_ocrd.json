@@ -1,0 +1,12 @@
+{
+  "condition": "orct.CardCode = ocrd.CardCode AND orct.DocType = 'C' AND ocrd.CardType = 'C'",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "orct",
+    "ocrd"
+  ],
+  "name": "sap_orct_ocrd",
+  "properties": {
+    "description": "仅客户或供应商类别的业务伙伴关系；科目与本地化类别不能套用。"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "condition": "rct2.DocEntry = oinv.DocEntry AND rct2.InvType = '13'",
+  "displayName": "收款核销明细 → 销售发票",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "rct2",
+    "oinv"
+  ],
+  "name": "rct2_oinv",
+  "properties": {
+    "description": "收款核销明细通过销售发票类型关联销售发票；用于销售发票实收金额分析。"
+  }
+}

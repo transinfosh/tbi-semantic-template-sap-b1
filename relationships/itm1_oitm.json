@@ -1,0 +1,11 @@
+{
+  "condition": "itm1.ItemCode = oitm.ItemCode",
+  "displayName": "物料价格 → 物料主数据",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "itm1",
+    "oitm"
+  ],
+  "name": "itm1_oitm",
+  "properties": {}
+}

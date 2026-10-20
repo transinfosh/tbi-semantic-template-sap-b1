@@ -1,0 +1,11 @@
+{
+  "condition": "oinv.TransId = jdt1.TransId",
+  "displayName": "oinv_jdt1",
+  "joinType": "ONE_TO_MANY",
+  "models": [
+    "oinv",
+    "jdt1"
+  ],
+  "name": "oinv_jdt1",
+  "properties": {}
+}

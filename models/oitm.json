@@ -1,0 +1,543 @@
+{
+  "columns": [
+    {
+      "displayName": "当前物料成本字段",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "AvgPrice",
+      "notNull": false,
+      "properties": {
+        "description": "现存物料成本字段；移动平均价随收发交易更新，不能用当前价格替代历史领料单价，其他估价方法另按配置解释。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "采购单位名称",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BuyUnitMsr",
+      "notNull": false,
+      "properties": {
+        "description": "采购业务单位，不默认等于库存单位。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "VARCHAR(100)"
+    },
+    {
+      "displayName": "首选供应商编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CardCode",
+      "notNull": false,
+      "properties": {
+        "description": "物料首选供应商编码。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "创建日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CreateDate",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Production Date。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "默认仓库",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DfltWH",
+      "notNull": false,
+      "properties": {
+        "description": "默认配置，不代表所有实际交易仓库。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "库存估价方法",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "EvalSystem",
+      "notNull": false,
+      "properties": {
+        "description": "A移动平均、S标准、F先进先出、B批次/序列号估价；批次管理开关与批次估价方法是不同属性。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "制造商代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "FirmCode",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Manufacturer。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "外文名称",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "FrgnName",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Foreign Name。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "VARCHAR(200)"
+    },
+    {
+      "displayName": "是否库存物料",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "InvntItem",
+      "notNull": false,
+      "properties": {
+        "description": "区分库存物料与不影响库存数量的物料。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "库存单位名称",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "InvntryUom",
+      "notNull": false,
+      "properties": {
+        "description": "数量统计应统一到库存单位，不能与采购或销售单位直接相加。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "VARCHAR(100)"
+    },
+    {
+      "displayName": "当前承诺数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "IsCommited",
+      "notNull": false,
+      "properties": {
+        "description": "当前已承诺数量，不等同实际发货或发料量。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "物料类别",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ItemClass",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Service or Material。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "物料编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ItemCode",
+      "notNull": false,
+      "properties": {
+        "description": "物料主数据业务键；不是单据行唯一键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "VARCHAR(50)"
+    },
+    {
+      "displayName": "物料名称",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ItemName",
+      "notNull": false,
+      "properties": {
+        "description": "当前主数据名称；历史单据描述可能不同。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "VARCHAR(200)"
+    },
+    {
+      "displayName": "物料类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ItemType",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Item Type。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "物料组编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ItmsGrpCod",
+      "notNull": false,
+      "properties": {
+        "description": "关联OITB，用业务确认的组定义钢材等分类，不靠少量物料编码猜测。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "库存单位内部标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "IUoMEntry",
+      "notNull": false,
+      "properties": {
+        "description": "关联OUOM，不用单位名称作为键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "最近采购日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LastPurDat",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Last Purchase Date。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "最近采购价格",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LastPurPrc",
+      "notNull": false,
+      "properties": {
+        "description": "最近采购价格，不是库存估价流水金额或历史生产领料成本。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "采购提前期（天）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LeadTime",
+      "notNull": false,
+      "properties": {
+        "description": "物料采购或补货提前期，单位为天。"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "最近评估价格",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LstEvlPric",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Last Evaluated Price。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "是否批次管理",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ManBtchNum",
+      "notNull": false,
+      "properties": {
+        "description": "批次管理开关；不能据此单独断言按批次估价。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "是否序列号管理",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ManSerNum",
+      "notNull": false,
+      "properties": {
+        "description": "序列号管理开关。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "最低库存",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "MinLevel",
+      "notNull": false,
+      "properties": {
+        "description": "物料主数据维护的最低库存水平。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "管理方式",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "MngMethod",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Management Method。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "每采购单位数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "NumInBuy",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Items per Purchasing Unit。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "每销售单位数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "NumInSale",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：No. of Items per Sales Unit。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "当前在手数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OnHand",
+      "notNull": false,
+      "properties": {
+        "description": "当前余额；本字段没有历史截止日维度。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "当前订购数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OnOrder",
+      "notNull": false,
+      "properties": {
+        "description": "当前订购数量，不等同已收货数量。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "采购物料",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PrchseItem",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Purchasing Item。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "销售换算率1",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SalFactor1",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Sales Factor 1。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "销售换算率2",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SalFactor2",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Sales Factor 2。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "销售单位名称",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SalUnitMsr",
+      "notNull": false,
+      "properties": {
+        "description": "销售业务单位，不默认等于库存单位。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "VARCHAR(100)"
+    },
+    {
+      "displayName": "销售物料",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SellItem",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Sales Item。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "制造商目录编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SuppCatNum",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Mfr Catalog No.。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "VARCHAR(50)"
+    },
+    {
+      "displayName": "附加标识符",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SWW",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Additional Identifier。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "VARCHAR(16)"
+    },
+    {
+      "displayName": "计量单位组内部标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UgpEntry",
+      "notNull": false,
+      "properties": {
+        "description": "关联OUGP，须核对手工单位等特殊值。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "更新日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UpdateDate",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Date of Update。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "物料备注",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UserText",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Item Remarks。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "VARCHAR"
+    },
+    {
+      "displayName": "是否有效",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "validFor",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Active。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "生效日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "validFrom",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Active From。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "失效日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "validTo",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Active To。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "销售税组",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "VatGourpSa",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Sales Tax Definition。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "采购税组",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "VatGroupPu",
+      "notNull": false,
+      "properties": {
+        "description": "物料采购税组代码，关联税组主数据。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "VARCHAR(8)"
+    }
+  ],
+  "displayName": "物料主数据",
+  "name": "oitm",
+  "primaryKey": "ItemCode",
+  "properties": {
+    "description": "每个物料编码一行；提供当前分类、库存管理及单位属性。当前数量与价格不能作为历史工单发料或历史成本。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "OITM"
+  },
+  "uniqueKeys": []
+}

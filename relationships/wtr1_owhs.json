@@ -1,0 +1,11 @@
+{
+  "condition": "wtr1.WhsCode = owhs.WhsCode",
+  "displayName": "wtr1_owhs",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "wtr1",
+    "owhs"
+  ],
+  "name": "wtr1_owhs",
+  "properties": {}
+}

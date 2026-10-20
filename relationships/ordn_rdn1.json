@@ -1,0 +1,13 @@
+{
+  "condition": "ordn.DocEntry = rdn1.DocEntry",
+  "displayName": "销售退货主表 → 销售退货明细",
+  "joinType": "ONE_TO_MANY",
+  "models": [
+    "ordn",
+    "rdn1"
+  ],
+  "name": "ordn_rdn1",
+  "properties": {
+    "description": "一张销售退货单对应多条明细；按物料或仓库分析时使用。"
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "columns": [
+    {
+      "displayName": "已应用含税额（本位币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ApplGross",
+      "notNull": false,
+      "properties": {
+        "description": "抵扣明细已应用含税金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "已应用税额（本位币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ApplVat",
+      "notNull": false,
+      "properties": {
+        "description": "抵扣明细的已应用税额，区别于基础税额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "预付款内部键",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BaseAbs",
+      "notNull": false,
+      "properties": {
+        "description": "指向 ODPI.DocEntry；不是显示单号。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "基础含税额（本位币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BaseGross",
+      "notNull": false,
+      "properties": {
+        "description": "抵扣明细基础含税金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "预付款对象类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BaseType",
+      "notNull": false,
+      "properties": {
+        "description": "基础预付款对象类型 203；与 BaseAbs 配对连接预付款表头。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "基础税额（本位币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BaseVat",
+      "notNull": false,
+      "properties": {
+        "description": "抵扣明细的基础税额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "所属单据内部键",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocEntry",
+      "notNull": true,
+      "properties": {
+        "description": "所属 OINV 的内部单据键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "含税金额（本位币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Gross",
+      "notNull": false,
+      "properties": {
+        "description": "当前抵扣记录的含税金额；须区分原始、已应用与净额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "含税金额（外币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "GrossFc",
+      "notNull": false,
+      "properties": {
+        "description": "当前抵扣记录的外币含税金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "含税金额（系统币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "GrossSc",
+      "notNull": false,
+      "properties": {
+        "description": "当前抵扣记录的系统币含税金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "含税行标志",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "IsGross",
+      "notNull": false,
+      "properties": {
+        "description": "Y=含税行，N=净额行；计算时须保留此口径。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "抵扣记录行号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LineNum",
+      "notNull": true,
+      "properties": {
+        "description": "抵扣记录的行号；不能当作物料明细行号。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "明细序号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LineSeq",
+      "notNull": true,
+      "properties": {
+        "description": "与 DocEntry、LineNum 共同构成主键；不能省略后直接聚合或当作商品行。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "抵扣明细类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LineType",
+      "notNull": false,
+      "properties": {
+        "description": "D=单据行，R=币种舍入，H=预付款单据舍入；汇总需保留舍入类型。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "当前单据类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ObjType",
+      "notNull": false,
+      "properties": {
+        "description": "本明细所属当前发票或贷项的对象类型。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+      },
+      "type": "VARCHAR(20)"
+    }
+  ],
+  "displayName": "应收发票预付款抵扣明细",
+  "name": "inv11",
+  "primaryKey": [
+    "DocEntry",
+    "LineNum",
+    "LineSeq"
+  ],
+  "properties": {
+    "description": "应收发票预付款抵扣的税额/舍入明细，主键 (DocEntry, LineNum, LineSeq)。与物料行不同粒度；不能与同单据全部物料行直接连接后求和。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "INV11"
+  },
+  "uniqueKeys": []
+}

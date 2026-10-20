@@ -1,0 +1,12 @@
+{
+  "condition": "ige1.BaseEntry = owor.DocEntry AND ige1.BaseType = 202",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "ige1",
+    "owor"
+  ],
+  "name": "sap_ige1_owor",
+  "properties": {
+    "description": "只连接BaseType=202的生产订单来源。生产订单键为DocEntry，非DocNum；IGN1还需区分产品收货与组件退回。"
+  }
+}

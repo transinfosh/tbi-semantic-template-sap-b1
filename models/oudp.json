@@ -1,0 +1,44 @@
+{
+  "columns": [
+    {
+      "displayName": "部门编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Code",
+      "notNull": false,
+      "properties": {
+        "description": "部门唯一编码。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OUDP.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "部门名称",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Name",
+      "notNull": false,
+      "properties": {
+        "description": "部门名称。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OUDP.html"
+      },
+      "type": "VARCHAR(20)"
+    }
+  ],
+  "displayName": "部门",
+  "name": "oudp",
+  "primaryKey": "Code",
+  "properties": {
+    "description": "部门编码及名称。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OUDP.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "OUDP"
+  },
+  "uniqueKeys": [
+    [
+      "Name"
+    ]
+  ]
+}

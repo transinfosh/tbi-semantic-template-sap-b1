@@ -1,0 +1,12 @@
+{
+  "condition": "wtr1.BaseEntry = wtq1.DocEntry AND wtr1.BaseLine = wtq1.LineNum AND wtr1.BaseType = 1250000001",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "wtr1",
+    "wtq1"
+  ],
+  "name": "sap_wtr1_wtq1",
+  "properties": {
+    "description": "调拨执行行追溯调拨申请行；保留来源类型1250000001，部分执行可能使一申请行对应多次调拨。"
+  }
+}

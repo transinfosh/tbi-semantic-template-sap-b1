@@ -1,0 +1,160 @@
+{
+  "columns": [
+    {
+      "displayName": "配置记录键",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Code",
+      "notNull": true,
+      "properties": {
+        "description": "官方与真实源主键；不得假定跨公司全局唯一。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OADM.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "公司名称",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CompnyName",
+      "notNull": false,
+      "properties": {
+        "description": "当前公司配置名称。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OADM.html"
+      },
+      "type": "VARCHAR(100)"
+    },
+    {
+      "displayName": "永续盘存管理标记",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ContInvnt",
+      "notNull": false,
+      "properties": {
+        "description": "Y/N；不能假定所有公司库存业务均采用相同财务过账机制。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OADM.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "国家地区代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Country",
+      "notNull": false,
+      "properties": {
+        "description": "公司国家或地区，涉及本地化语义。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OADM.html"
+      },
+      "type": "VARCHAR(3)"
+    },
+    {
+      "displayName": "汇率方向配置",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DirectRate",
+      "notNull": false,
+      "properties": {
+        "description": "Y直接汇率、N间接汇率；换算须结合此设置及客户样例，不盲目统一乘Rate。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OADM.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "永续盘存方法配置",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "InvntSystm",
+      "notNull": false,
+      "properties": {
+        "description": "A移动平均、S标准、F先进先出；不覆盖物料级实际估价方法与历史设置。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OADM.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "公司本币",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "MainCurncy",
+      "notNull": false,
+      "properties": {
+        "description": "本地账簿币种；解释各事实的LC金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OADM.html"
+      },
+      "type": "VARCHAR(3)"
+    },
+    {
+      "displayName": "汇率显示精度",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "RateDec",
+      "notNull": false,
+      "properties": {
+        "description": "汇率精度配置，不能用显示舍入值重算历史过账额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OADM.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "金额显示精度",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SumDec",
+      "notNull": false,
+      "properties": {
+        "description": "总金额精度配置，不能替代实际存储精度和业务舍入规则。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OADM.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "系统币",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SysCurrncy",
+      "notNull": false,
+      "properties": {
+        "description": "并行记账币种；解释各事实的SC金额，不能与本币混同。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OADM.html"
+      },
+      "type": "VARCHAR(3)"
+    },
+    {
+      "displayName": "配置更新日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UpdateDate",
+      "notNull": false,
+      "properties": {
+        "description": "记录更新日期，不代表每个设置的完整历史生效区间。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OADM.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "启用多成本维度",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UseMltDims",
+      "notNull": false,
+      "properties": {
+        "description": "Y/N；影响分配规则维度1至5的解释。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OADM.html"
+      },
+      "type": "VARCHAR(1)"
+    }
+  ],
+  "displayName": "公司级系统配置",
+  "name": "oadm",
+  "primaryKey": "Code",
+  "properties": {
+    "description": "主键Code；公司数据库配置，不是交易事实。通过配置读取解释币种、汇率方向和成本维度，禁止与事实无条件连接。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OADM.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "OADM"
+  },
+  "uniqueKeys": []
+}

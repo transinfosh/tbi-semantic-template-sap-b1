@@ -1,0 +1,115 @@
+{
+  "columns": [
+    {
+      "displayName": "估价层库存余额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Balance",
+      "notNull": false,
+      "properties": {
+        "description": "层余额字段，不是单据行金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IVL1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "估价层计算价格",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CalcPrice",
+      "notNull": false,
+      "properties": {
+        "description": "按估价层保存的计算价格；不能简单平均后称交易单价。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IVL1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "估价层标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LayerID",
+      "notNull": true,
+      "properties": {
+        "description": "与TransSeq组成主键，不单独唯一。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IVL1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "估价层入库数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LayerInQty",
+      "notNull": false,
+      "properties": {
+        "description": "层级入库数量。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IVL1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "估价层出库数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LayerOutQ",
+      "notNull": false,
+      "properties": {
+        "description": "层级出库数量，官方字段为LayerOutQ。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IVL1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "估价层重估金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "RevalTotal",
+      "notNull": false,
+      "properties": {
+        "description": "重估价值字段；零数量价值调整不能除数量计算单价。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IVL1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "库存估价交易序号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TransSeq",
+      "notNull": true,
+      "properties": {
+        "description": "关联OIVL.TransSeq。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IVL1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "估价层交易价值",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TransValue",
+      "notNull": false,
+      "properties": {
+        "description": "估价层交易价值；符号、币种和重估覆盖须与官方库存审计报告对账。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IVL1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    }
+  ],
+  "displayName": "库存估价交易层",
+  "name": "ivl1",
+  "primaryKey": [
+    "TransSeq",
+    "LayerID"
+  ],
+  "properties": {
+    "description": "每个TransSeq与LayerID组合一行；同一库存交易可拆成多个估价层。聚合层金额后再回连交易，避免复制交易数量。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IVL1.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "IVL1"
+  },
+  "uniqueKeys": []
+}

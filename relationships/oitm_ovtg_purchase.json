@@ -1,0 +1,11 @@
+{
+  "condition": "oitm.VatGroupPu = ovtg.Code",
+  "displayName": "物料主数据 → 进项税组",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "oitm",
+    "ovtg"
+  ],
+  "name": "oitm_ovtg_purchase",
+  "properties": {}
+}

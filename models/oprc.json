@@ -1,0 +1,160 @@
+{
+  "columns": [
+    {
+      "displayName": "启用标记",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Active",
+      "notNull": false,
+      "properties": {
+        "description": "Y/N；历史分录不得仅因当前停用而被丢弃。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRC.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "余额字段",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Balance",
+      "notNull": false,
+      "properties": {
+        "description": "官方仅说明Balance；币种、期间和累计口径未明确，不直接作为利润指标。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRC.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "成本中心类型代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CCTypeCode",
+      "notNull": false,
+      "properties": {
+        "description": "成本中心类型标识。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRC.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "所属成本维度",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DimCode",
+      "notNull": false,
+      "properties": {
+        "description": "成本中心所属维度；有效维度配置另由ODIM管理。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRC.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "成本中心分组代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "GrpCode",
+      "notNull": false,
+      "properties": {
+        "description": "分组信息，不是成本中心主键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRC.html"
+      },
+      "type": "VARCHAR(4)"
+    },
+    {
+      "displayName": "锁定标记",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Locked",
+      "notNull": false,
+      "properties": {
+        "description": "Y/N；与启用及有效期分别解释。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRC.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "成本中心代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PrcCode",
+      "notNull": true,
+      "properties": {
+        "description": "全表主键；不得伪造(PrcCode,DimCode)为官方复合主键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRC.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "成本中心名称",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PrcName",
+      "notNull": false,
+      "properties": {
+        "description": "当前显示名称。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRC.html"
+      },
+      "type": "VARCHAR(30)"
+    },
+    {
+      "displayName": "更新日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UpdateDate",
+      "notNull": false,
+      "properties": {
+        "description": "主数据更新时间。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRC.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "创建用户标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UserSign",
+      "notNull": false,
+      "properties": {
+        "description": "创建记录的用户标识。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRC.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "有效起始日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ValidFrom",
+      "notNull": false,
+      "properties": {
+        "description": "成本中心有效期起始。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRC.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "有效结束日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ValidTo",
+      "notNull": false,
+      "properties": {
+        "description": "成本中心有效期结束；不是财务分析期间。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRC.html"
+      },
+      "type": "TIMESTAMP"
+    }
+  ],
+  "displayName": "成本中心主数据",
+  "name": "oprc",
+  "primaryKey": "PrcCode",
+  "properties": {
+    "description": "每行一个成本中心，主键仅PrcCode；DimCode是所属维度属性。成本中心与分配规则OOCR不同，分录ProfitCode不能无条件直接连接本表。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRC.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "OPRC"
+  },
+  "uniqueKeys": []
+}

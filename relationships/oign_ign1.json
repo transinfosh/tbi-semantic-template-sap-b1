@@ -1,0 +1,11 @@
+{
+  "condition": "oign.DocEntry = ign1.DocEntry",
+  "displayName": "oign_ign1",
+  "joinType": "ONE_TO_MANY",
+  "models": [
+    "oign",
+    "ign1"
+  ],
+  "name": "oign_ign1",
+  "properties": {}
+}

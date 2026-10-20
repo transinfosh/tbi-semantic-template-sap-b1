@@ -1,0 +1,13 @@
+{
+  "condition": "vpm2.DocEntry = opch.DocEntry AND vpm2.InvType = '18'",
+  "displayName": "付款核销明细 → 采购发票",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "vpm2",
+    "opch"
+  ],
+  "name": "vpm2_opch",
+  "properties": {
+    "description": "付款核销明细通过采购发票类型关联采购发票；用于采购发票实付金额分析。"
+  }
+}

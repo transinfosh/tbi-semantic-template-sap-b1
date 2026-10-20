@@ -1,0 +1,192 @@
+{
+  "columns": [
+    {
+      "displayName": "附加用量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "AdditQty",
+      "notNull": false,
+      "properties": {
+        "description": "附加组件数量，从BOM复制后可在订单手工调整；DI API另有手工发料与副产品限制，不能默认所有组件适用。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "组件基准数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BaseQty",
+      "notNull": false,
+      "properties": {
+        "description": "DI API定义为每生产一个父项所需的组件数量；是计划用量基数，不是已发料数量。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "组件完成金额字段",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CompTotal",
+      "notNull": false,
+      "properties": {
+        "description": "官方组件完成金额字段；不直接等同本期库存领料过账金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "生产订单内部标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocEntry",
+      "notNull": false,
+      "properties": {
+        "description": "关联OWOR.DocEntry。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "组件已发数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "IssuedQty",
+      "notNull": false,
+      "properties": {
+        "description": "官方定义为已经为生产订单发出的组件累计数量；期间明细需交易单据。DI API该页另带计划乘积措辞存在歧义，不据其重算或覆盖实际已发数量。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "发料方式",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "IssueType",
+      "notNull": false,
+      "properties": {
+        "description": "M手工、B倒冲；倒冲交易不能假定都是用户手工创建。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "组件编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ItemCode",
+      "notNull": false,
+      "properties": {
+        "description": "结合ItemType区分物料和资源。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
+      },
+      "type": "VARCHAR(50)"
+    },
+    {
+      "displayName": "组件类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ItemType",
+      "notNull": false,
+      "properties": {
+        "description": "4物料、290资源、-18文本；只有物料类型可直接关联OITM。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "生产订单组件行号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LineNum",
+      "notNull": false,
+      "properties": {
+        "description": "与DocEntry组成主键；IGE1来源行应使用BaseLine关联而不是发料LineNum。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "计划组件数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PlannedQty",
+      "notNull": false,
+      "properties": {
+        "description": "DI API组件计划量公式为父项计划量乘组件BaseQty再加AdditQty；订单行是执行计划，不能当实际领料。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "组件单位编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UomCode",
+      "notNull": false,
+      "properties": {
+        "description": "组件行单位代码。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "组件计量单位标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UomEntry",
+      "notNull": false,
+      "properties": {
+        "description": "关联OUOM。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "组件显示顺序",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "VisOrder",
+      "notNull": true,
+      "properties": {
+        "description": "界面顺序，不替代LineNum。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "组件仓库编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "wareHouse",
+      "notNull": false,
+      "properties": {
+        "description": "字段大小写按源表保留，关联OWHS。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
+      },
+      "type": "VARCHAR(8)"
+    }
+  ],
+  "displayName": "生产订单组件行",
+  "name": "wor1",
+  "primaryKey": [
+    "DocEntry",
+    "LineNum"
+  ],
+  "properties": {
+    "description": "每个DocEntry与LineNum组合一行；订单实际组件结构，可含物料、资源和文本，不能用当前BOM替代历史订单组件。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "WOR1"
+  },
+  "uniqueKeys": [
+    [
+      "DocEntry",
+      "VisOrder"
+    ]
+  ]
+}

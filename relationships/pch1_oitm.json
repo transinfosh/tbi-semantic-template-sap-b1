@@ -1,0 +1,13 @@
+{
+  "condition": "pch1.ItemCode = oitm.ItemCode",
+  "displayName": "采购发票明细 → 物料",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "pch1",
+    "oitm"
+  ],
+  "name": "pch1_oitm",
+  "properties": {
+    "description": "通过物料编码关联物料主数据；按物料或物料组分析采购时使用。"
+  }
+}

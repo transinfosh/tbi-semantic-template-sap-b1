@@ -1,0 +1,12 @@
+{
+  "condition": "oilm.ItemCode = oitm.ItemCode",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "oilm",
+    "oitm"
+  ],
+  "name": "sap_oilm_oitm",
+  "properties": {
+    "description": "官方物料维度关联；不能以相同物料代替单据或生产订单归属。"
+  }
+}

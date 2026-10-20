@@ -1,0 +1,12 @@
+{
+  "condition": "rct4.AcctCode = oact.AcctCode",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "rct4",
+    "oact"
+  ],
+  "name": "sap_rct4_oact",
+  "properties": {
+    "description": "科目收付款行对应总账科目。"
+  }
+}

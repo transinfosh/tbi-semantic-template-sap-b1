@@ -1,0 +1,12 @@
+{
+  "condition": "oivl.MessageID = oilm.MessageID",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "oivl",
+    "oilm"
+  ],
+  "name": "sap_oivl_oilm",
+  "properties": {
+    "description": "库存估价交易关联库存消息；MessageID不能当成OITL.LogEntry。"
+  }
+}

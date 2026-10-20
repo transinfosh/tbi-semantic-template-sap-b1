@@ -1,0 +1,12 @@
+{
+  "condition": "rdr1.BaseEntry = qut1.DocEntry AND rdr1.BaseLine = qut1.LineNum AND rdr1.BaseType = 23",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "rdr1",
+    "qut1"
+  ],
+  "name": "sap_rdr1_qut1",
+  "properties": {
+    "description": "销售订单行的直接来源为销售报价行；必须同时匹配来源类型、内部单据键和内部行号。反向可有多个后续行，汇总前处理拆分与重复计数。"
+  }
+}

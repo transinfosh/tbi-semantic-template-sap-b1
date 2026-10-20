@@ -1,0 +1,79 @@
+{
+  "columns": [
+    {
+      "displayName": "币种代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Currency",
+      "notNull": true,
+      "properties": {
+        "description": "与RateDate共同匹配；仅按币种连接将一笔交易扩展到多个日期。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORTT.html"
+      },
+      "type": "VARCHAR(3)"
+    },
+    {
+      "displayName": "汇率记录来源",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DataSource",
+      "notNull": false,
+      "properties": {
+        "description": "数据导入或接口来源，不能证明该汇率被某笔单据采用。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORTT.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "每日汇率",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Rate",
+      "notNull": false,
+      "properties": {
+        "description": "对公司本币的汇率资料；换算方向结合OADM.DirectRate和读取方式验证。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORTT.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "汇率日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "RateDate",
+      "notNull": true,
+      "properties": {
+        "description": "与Currency组成唯一键；报告汇率日不一定等于单据过账日。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORTT.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "录入用户标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UserSign",
+      "notNull": false,
+      "properties": {
+        "description": "用户内部标识，非汇率生效日期。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORTT.html"
+      },
+      "type": "SMALLINT"
+    }
+  ],
+  "displayName": "每日币种汇率",
+  "name": "ortt",
+  "primaryKey": [
+    "RateDate",
+    "Currency"
+  ],
+  "properties": {
+    "description": "每行一个日期与币种，复合主键(RateDate,Currency)。日汇率不自动替代单据历史记账汇率；字段可用性须在目标公司库核验。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORTT.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "ORTT"
+  },
+  "uniqueKeys": []
+}

@@ -1,0 +1,256 @@
+{
+  "columns": [
+    {
+      "displayName": "来源参考编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BASE_REF",
+      "notNull": false,
+      "properties": {
+        "description": "参考编号，不声明其全局唯一。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
+      },
+      "type": "VARCHAR(11)"
+    },
+    {
+      "displayName": "交易估价方法",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CostMethod",
+      "notNull": false,
+      "properties": {
+        "description": "A移动平均、S标准、F先进先出、B批序列、N无；历史交易方法可能不同于当前物料配置。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "创建日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CreateDate",
+      "notNull": false,
+      "properties": {
+        "description": "系统创建日期；追溯估价时需与过账日期分别解释。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "来源单据内部标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CreatedBy",
+      "notNull": false,
+      "properties": {
+        "description": "不是创建用户；与TransType、DocLineNum共同定位来源单据行。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "流水价格币种",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Currency",
+      "notNull": false,
+      "properties": {
+        "description": "原始价格的币种上下文。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
+      },
+      "type": "VARCHAR(3)"
+    },
+    {
+      "displayName": "过账日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocDate",
+      "notNull": false,
+      "properties": {
+        "description": "库存交易过账日期。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "来源单据行号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocLineNum",
+      "notNull": false,
+      "properties": {
+        "description": "关联来源单据LineNum；不要改用SubLineNum或来源单据的BaseLine。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "入库数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "InQty",
+      "notNull": false,
+      "properties": {
+        "description": "本交易入库方向数量；关联IVL1前应固定交易粒度。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "物料编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ItemCode",
+      "notNull": false,
+      "properties": {
+        "description": "用于物料维度，不足以证明交易属于特定工单。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
+      },
+      "type": "VARCHAR(50)"
+    },
+    {
+      "displayName": "仓库编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LocCode",
+      "notNull": false,
+      "properties": {
+        "description": "估价交易所在仓库代码；调拨存在仓库方向。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "位置类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LocType",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Location Type。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "库存日志消息标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "MessageID",
+      "notNull": false,
+      "properties": {
+        "description": "关联OILM.MessageID，不能当OITL.LogEntry。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "未结数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OpenQty",
+      "notNull": false,
+      "properties": {
+        "description": "当前未结数量字段，不等同交易发生数量或任意历史余额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "出库数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OutQty",
+      "notNull": false,
+      "properties": {
+        "description": "本交易出库方向数量；净变化候选为入减出，需按交易范围验证。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "流水价格字段",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Price",
+      "notNull": false,
+      "properties": {
+        "description": "原始价格字段，不能无条件等同IVL1层成本或按Price乘数量还原全部会计金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "流水汇率字段",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Rate",
+      "notNull": false,
+      "properties": {
+        "description": "与价格币种配套，不凭名称猜测换算方向。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "交易子行号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SubLineNum",
+      "notNull": false,
+      "properties": {
+        "description": "流水子行信息，不是来源单据行号。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "库存价值汇总字段",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SumStock",
+      "notNull": false,
+      "properties": {
+        "description": "SDK定义为库存价值汇总；与IVL1.TransValue及SAP库存审计报告对账后才能命名为业务过账金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "库存估价交易序号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TransSeq",
+      "notNull": false,
+      "properties": {
+        "description": "唯一主键；不能用单据号、物料或单据行组合替代。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "来源交易类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TransType",
+      "notNull": false,
+      "properties": {
+        "description": "59收货、60发货、67调拨、162重估等；跨来源关联必须限定类型。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
+      },
+      "type": "INTEGER"
+    }
+  ],
+  "displayName": "库存估价交易流水",
+  "name": "oivl",
+  "primaryKey": "TransSeq",
+  "properties": {
+    "description": "每个TransSeq一条估价交易；同一类型、单据、行号组合可以有多条流水。用于历史库存估价追踪，不能把连接到估价层后的交易数量重复汇总。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "OIVL"
+  },
+  "uniqueKeys": []
+}

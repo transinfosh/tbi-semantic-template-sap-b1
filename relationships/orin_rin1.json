@@ -1,0 +1,13 @@
+{
+  "condition": "orin.DocEntry = rin1.DocEntry",
+  "displayName": "销售贷项凭证主表 → 销售贷项凭证明细",
+  "joinType": "ONE_TO_MANY",
+  "models": [
+    "orin",
+    "rin1"
+  ],
+  "name": "orin_rin1",
+  "properties": {
+    "description": "一张销售贷项凭证对应多条明细；用于明细冲减分析。"
+  }
+}

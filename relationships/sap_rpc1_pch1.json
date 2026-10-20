@@ -1,0 +1,12 @@
+{
+  "condition": "rpc1.BaseEntry = pch1.DocEntry AND rpc1.BaseLine = pch1.LineNum AND rpc1.BaseType = 18",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "rpc1",
+    "pch1"
+  ],
+  "name": "sap_rpc1_pch1",
+  "properties": {
+    "description": "应付贷项凭证行的直接来源为应付发票行；必须同时匹配来源类型、内部单据键和内部行号。反向可有多个后续行，汇总前处理拆分与重复计数。"
+  }
+}

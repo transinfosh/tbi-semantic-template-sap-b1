@@ -1,0 +1,13 @@
+{
+  "condition": "orpc.DocEntry = rpc1.DocEntry",
+  "displayName": "采购贷项凭证主表 → 采购贷项凭证明细",
+  "joinType": "ONE_TO_MANY",
+  "models": [
+    "orpc",
+    "rpc1"
+  ],
+  "name": "orpc_rpc1",
+  "properties": {
+    "description": "一张采购贷项凭证对应多条明细；用于明细冲减分析。"
+  }
+}

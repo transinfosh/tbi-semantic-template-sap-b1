@@ -1,0 +1,11 @@
+{
+  "condition": "rdr1.ItemCode = oitm.ItemCode",
+  "displayName": "rdr1_oitm",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "rdr1",
+    "oitm"
+  ],
+  "name": "rdr1_oitm",
+  "properties": {}
+}

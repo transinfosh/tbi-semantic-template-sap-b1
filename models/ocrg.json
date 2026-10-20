@@ -1,0 +1,92 @@
+{
+  "columns": [
+    {
+      "displayName": "生效折扣组",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DiscRel",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Effective Discount Groups。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRG.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "分组编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "GroupCode",
+      "notNull": true,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Group No.。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRG.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "分组名称",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "GroupName",
+      "notNull": true,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Group Name。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRG.html"
+      },
+      "type": "VARCHAR(100)"
+    },
+    {
+      "displayName": "分组类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "GroupType",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Group Type。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRG.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "是否锁定",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Locked",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Locked。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRG.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "价格清单",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PriceList",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Price List。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRG.html"
+      },
+      "type": "SMALLINT"
+    }
+  ],
+  "displayName": "业务伙伴分组",
+  "name": "ocrg",
+  "primaryKey": "GroupCode",
+  "properties": {
+    "description": "业务伙伴分组主数据；用于区分客户组和供应商组。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRG.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "OCRG"
+  },
+  "uniqueKeys": [
+    [
+      "GroupName"
+    ]
+  ]
+}

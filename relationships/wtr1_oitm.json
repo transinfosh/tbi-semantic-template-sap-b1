@@ -1,0 +1,11 @@
+{
+  "condition": "wtr1.ItemCode = oitm.ItemCode",
+  "displayName": "wtr1_oitm",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "wtr1",
+    "oitm"
+  ],
+  "name": "wtr1_oitm",
+  "properties": {}
+}

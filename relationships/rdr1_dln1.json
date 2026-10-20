@@ -1,0 +1,11 @@
+{
+  "condition": "rdr1.DocEntry = dln1.BaseEntry AND rdr1.LineNum = dln1.BaseLine AND dln1.BaseType = 17",
+  "displayName": "rdr1_dln1",
+  "joinType": "ONE_TO_MANY",
+  "models": [
+    "rdr1",
+    "dln1"
+  ],
+  "name": "rdr1_dln1",
+  "properties": {}
+}

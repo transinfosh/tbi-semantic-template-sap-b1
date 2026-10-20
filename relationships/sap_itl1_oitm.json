@@ -1,0 +1,12 @@
+{
+  "condition": "itl1.ItemCode = oitm.ItemCode",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "itl1",
+    "oitm"
+  ],
+  "name": "sap_itl1_oitm",
+  "properties": {
+    "description": "官方物料维度关联；不能以相同物料代替单据或生产订单归属。"
+  }
+}

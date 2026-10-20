@@ -1,0 +1,345 @@
+{
+  "columns": [
+    {
+      "displayName": "主数据内部标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "AbsEntry",
+      "notNull": true,
+      "properties": {
+        "description": "本表主键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "主数据余额字段",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Balance",
+      "notNull": false,
+      "properties": {
+        "description": "不能未经核验当作历史估价余额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "主数据成本字段",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CostTotal",
+      "notNull": false,
+      "properties": {
+        "description": "受估价配置影响；不代表某张发料单成本。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "创建日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CreateDate",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Creation Date。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "批次号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DistNumber",
+      "notNull": false,
+      "properties": {
+        "description": "业务显示编号；官方索引不保证单独或与物料组合唯一。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
+      },
+      "type": "VARCHAR(36)"
+    },
+    {
+      "displayName": "到期日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ExpDate",
+      "notNull": false,
+      "properties": {
+        "description": "主数据有效期截止日期。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "保修截止日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "GrntExp",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Warranty End Date。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "保修开始日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "GrntStart",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Warranty Start Date。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "接收日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "InDate",
+      "notNull": false,
+      "properties": {
+        "description": "主数据接收日期。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "实例",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Instance",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Instance。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "物料编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ItemCode",
+      "notNull": true,
+      "properties": {
+        "description": "与SysNumber组成系统唯一键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
+      },
+      "type": "VARCHAR(50)"
+    },
+    {
+      "displayName": "物料名称",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "itemName",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Item Description。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
+      },
+      "type": "VARCHAR(200)"
+    },
+    {
+      "displayName": "库存位置",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Location",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Location。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
+      },
+      "type": "VARCHAR(100)"
+    },
+    {
+      "displayName": "批次属性2",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LotNumber",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Batch Attribute 2。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
+      },
+      "type": "VARCHAR(36)"
+    },
+    {
+      "displayName": "制造日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "MnfDate",
+      "notNull": false,
+      "properties": {
+        "description": "批次或序列主数据的制造日期，不是库存过账日期。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "批次属性1",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "MnfSerial",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Batch Attribute 1。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
+      },
+      "type": "VARCHAR(36)"
+    },
+    {
+      "displayName": "备注",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Notes",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Details。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
+      },
+      "type": "VARCHAR"
+    },
+    {
+      "displayName": "价格差异",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PriceDiff",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Price Difference。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "主数据数量字段",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Quantity",
+      "notNull": false,
+      "properties": {
+        "description": "不具备仓库或历史时点粒度，不能替代仓库批序列库存数量。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "出库数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "QuantOut",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Output Quantity。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "状态编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Status",
+      "notNull": false,
+      "properties": {
+        "description": "批次与序列号枚举语义不同，按所属表解释。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "合计精度",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SumDec",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Totals Accuracy for SnB。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "系统编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SysNumber",
+      "notNull": true,
+      "properties": {
+        "description": "必须在物料与管理类型上下文使用。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "跟踪单号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TrackingNt",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：CCD Tracking Note。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "跟踪单行号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TrackiNtLn",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：CCD Tracking Note Line。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "已转移",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Transfered",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Transferred。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "更新日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UpdateDate",
+      "notNull": false,
+      "properties": {
+        "description": "主数据最近更新日期。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
+      },
+      "type": "TIMESTAMP"
+    }
+  ],
+  "displayName": "批次主数据",
+  "name": "obtn",
+  "primaryKey": "AbsEntry",
+  "properties": {
+    "description": "每个AbsEntry一条主数据；ItemCode与SysNumber另有唯一键，显示编号不是单独唯一。无仓库粒度，不作为仓库库存余额或历史库存。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "OBTN"
+  },
+  "uniqueKeys": [
+    [
+      "ItemCode",
+      "SysNumber"
+    ]
+  ]
+}

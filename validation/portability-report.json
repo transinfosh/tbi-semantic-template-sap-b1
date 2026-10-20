@@ -1,0 +1,61 @@
+{
+  "created_at": "2026-10-20",
+  "default_schema": "dbo",
+  "generic_description_corrections": [
+    "ITM1",
+    "ORTT",
+    "OOCR",
+    "OCR1",
+    "NNM1",
+    "OBIN",
+    "OBTQ",
+    "OMRC",
+    "OEXD"
+  ],
+  "normalized_fields": [
+    {
+      "from": "LEADTIME",
+      "reason": "官方参考字段拼写",
+      "table": "OITM",
+      "to": "LeadTime"
+    }
+  ],
+  "physical_catalog_removed": true,
+  "production_published": false,
+  "removed_calculated_columns": 0,
+  "removed_cubes": 5,
+  "removed_relationships": [
+    {
+      "condition": "dpi1.BaseEntry = dln1.DocEntry AND dpi1.BaseLine = dln1.LineNum AND dpi1.BaseType = 15",
+      "name": "dpi1_dln1",
+      "reason": "通用领域包标记为待业务复核，运行实例保留不等于可作为模板默认。"
+    },
+    {
+      "condition": "orct.CardCode = ocrd.CardCode",
+      "name": "orct_ocrd",
+      "reason": "使用含收付款类别及业务伙伴类型过滤的替代关系，避免科目类记录误用业务伙伴连接。"
+    },
+    {
+      "condition": "orct.DocEntry = rct2.DocNum",
+      "name": "orct_rct2",
+      "reason": "通用领域包标记为待业务复核，运行实例保留不等于可作为模板默认。"
+    },
+    {
+      "condition": "ovpm.CardCode = ocrd.CardCode",
+      "name": "ovpm_ocrd",
+      "reason": "使用含收付款类别及业务伙伴类型过滤的替代关系，避免科目类记录误用业务伙伴连接。"
+    },
+    {
+      "condition": "ovpm.DocEntry = vpm2.DocNum",
+      "name": "ovpm_vpm2",
+      "reason": "通用领域包标记为待业务复核，运行实例保留不等于可作为模板默认。"
+    }
+  ],
+  "removed_udf_columns": 0,
+  "removed_views": 5,
+  "replaced_instance_description": true,
+  "source_column_count": 2427,
+  "source_model_count": 96,
+  "source_relationship_count": 238,
+  "target_schema_validation_required": true
+}

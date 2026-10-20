@@ -1,0 +1,352 @@
+{
+  "columns": [
+    {
+      "displayName": "分支标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BPLId",
+      "notNull": false,
+      "properties": {
+        "description": "收付款分支。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "取消日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CancelDate",
+      "notNull": false,
+      "properties": {
+        "description": "取消日期，独立于原过账日；DI Cancel说明采用原单日期，不能假定取消恒为执行当日。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "取消状态",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Canceled",
+      "notNull": false,
+      "properties": {
+        "description": "N正常、Y已取消、C取消单据；不能统一过滤后声称是总账净发生额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "业务伙伴代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CardCode",
+      "notNull": false,
+      "properties": {
+        "description": "C/S类可关联OCRD；A类不强制解释为业务伙伴。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "业务伙伴名称快照",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CardName",
+      "notNull": false,
+      "properties": {
+        "description": "收付款记录的名称。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
+      },
+      "type": "VARCHAR(200)"
+    },
+    {
+      "displayName": "现金本币金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CashSum",
+      "notNull": false,
+      "properties": {
+        "description": "现金支付方式金额；不是收付款全部金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "支票收款金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CheckSum",
+      "notNull": false,
+      "properties": {
+        "description": "收款单中的支票收款金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "信用卡收款金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CreditSum",
+      "notNull": false,
+      "properties": {
+        "description": "收款单中的信用卡收款金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "单据币种",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocCurr",
+      "notNull": false,
+      "properties": {
+        "description": "收付款单据币种。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
+      },
+      "type": "VARCHAR(3)"
+    },
+    {
+      "displayName": "过账日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocDate",
+      "notNull": false,
+      "properties": {
+        "description": "收付款过账日。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "到期日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocDueDate",
+      "notNull": false,
+      "properties": {
+        "description": "收付款到期日。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "收付款内部编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocEntry",
+      "notNull": true,
+      "properties": {
+        "description": "本表内部主键；FP2508 DI Payments.GetByKey参数明确为DocEntry，区别显示DocNum。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "收付款显示单号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocNum",
+      "notNull": true,
+      "properties": {
+        "description": "展示及检索用，不是子表连接键的同名保证。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "单据汇率",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocRate",
+      "notNull": false,
+      "properties": {
+        "description": "相对本币的单据汇率；DI说明外币付款必须提供，分析使用原记账汇率。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "本币单据总额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocTotal",
+      "notNull": false,
+      "properties": {
+        "description": "收付款头本币金额，连接多条应用行后不可重复求和。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "外币单据总额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocTotalFC",
+      "notNull": false,
+      "properties": {
+        "description": "外币金额，须按DocCurr分组。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "系统币单据总额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocTotalSy",
+      "notNull": false,
+      "properties": {
+        "description": "系统币金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "收付款对象类别",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocType",
+      "notNull": false,
+      "properties": {
+        "description": "DB值C客户、S供应商、A科目；DI枚举对应0/2/1，不能将枚举数字直接作DB过滤。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "未指定单据本币金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "NoDocSum",
+      "notNull": false,
+      "properties": {
+        "description": "未应用到指定单据的金额；后续可手工核销。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "对象类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ObjType",
+      "notNull": false,
+      "properties": {
+        "description": "字符串；收款24，付款46。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "未清本币余额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OpenBal",
+      "notNull": false,
+      "properties": {
+        "description": "当前未清余额，与付款原始金额及发票应用额分开。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "未清外币余额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OpenBalFc",
+      "notNull": false,
+      "properties": {
+        "description": "当前外币未清余额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "未清系统币余额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OpenBalSc",
+      "notNull": false,
+      "properties": {
+        "description": "当前系统币未清余额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "非指定单据付款标记",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PayNoDoc",
+      "notNull": false,
+      "properties": {
+        "description": "挂账相关标记，存在无发票应用行的付款场景。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "Project",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PrjCode",
+      "notNull": false,
+      "properties": {
+        "description": "收款单字段；官方含义：Project。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "单据日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TaxDate",
+      "notNull": false,
+      "properties": {
+        "description": "单据日期，与过账日期分开。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "生成分录内部编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TransId",
+      "notNull": false,
+      "properties": {
+        "description": "连接OJDT.TransId；不等于本单DocEntry。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "转账本币金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TrsfrSum",
+      "notNull": false,
+      "properties": {
+        "description": "银行转账方式金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
+      },
+      "type": "DECIMAL(19,6)"
+    }
+  ],
+  "displayName": "收款单",
+  "name": "orct",
+  "primaryKey": "DocEntry",
+  "properties": {
+    "description": "每行一张收付款单，主键DocEntry。支持客户、供应商、科目类别；可一款多票、部分支付或挂账。头金额与应用行、核销事件分别计量。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "ORCT"
+  },
+  "uniqueKeys": []
+}

@@ -1,0 +1,11 @@
+{
+  "condition": "ocrd.SlpCode = oslp.SlpCode",
+  "displayName": "ocrd_oslp",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "ocrd",
+    "oslp"
+  ],
+  "name": "ocrd_oslp",
+  "properties": {}
+}

@@ -1,0 +1,11 @@
+{
+  "condition": "oexd.OcrCode = oocr.OcrCode",
+  "displayName": "附加费用 → 维度",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "oexd",
+    "oocr"
+  ],
+  "name": "oexd_oocr",
+  "properties": {}
+}

@@ -1,0 +1,140 @@
+{
+  "columns": [
+    {
+      "displayName": "历史记录创建日期字段",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "createDate",
+      "notNull": false,
+      "properties": {
+        "description": "官方标记为 Creation Date - History；仅保留字段含义，不用作生产业务发生日期。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSB.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "记录来源类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DataSource",
+      "notNull": false,
+      "properties": {
+        "description": "源系统记录渠道标志，例如 DI API 或 Service Layer；不是业务来源单据类型。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSB.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "资源组锁定状态",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Locked",
+      "notNull": false,
+      "properties": {
+        "description": "N 可修改、Y 锁定；不是生产订单关闭状态。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSB.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "历史日志实例",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "logInstanc",
+      "notNull": false,
+      "properties": {
+        "description": "官方标记为 Log Instance - History；不是资源数量、次数或成本。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSB.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "资源组内部编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ResGrpCod",
+      "notNull": true,
+      "properties": {
+        "description": "资源组主键；资源通过 ORSC.ResGrpCod 关联。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSB.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "资源组名称",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ResGrpNam",
+      "notNull": true,
+      "properties": {
+        "description": "当前资源分类名称；不等同物料组名称。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSB.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "资源组类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ResType",
+      "notNull": false,
+      "properties": {
+        "description": "M 机器、L 人工、O 其他；资源类型默认值可由所选组提供，具体资源仍读 ORSC.ResType。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSB.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "资源组计量单位",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ResUoM",
+      "notNull": false,
+      "properties": {
+        "description": "资源组的容量计量单位配置；实际资源单位仍读 ORSC.UnitOfMsr，不推断历史单位换算。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSB.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "历史记录更新日期字段",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "updateDate",
+      "notNull": false,
+      "properties": {
+        "description": "官方标记为 Date of Update - History；不是资源耗用日期。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSB.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "用户签名标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UserSign",
+      "notNull": false,
+      "properties": {
+        "description": "SAP 用户内部标识；不可作为资源负责人或人工工时直接解释。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSB.html"
+      },
+      "type": "SMALLINT"
+    }
+  ],
+  "displayName": "资源组",
+  "name": "orsb",
+  "primaryKey": "ResGrpCod",
+  "properties": {
+    "description": "每个资源组编码一行；提供资源分类、单位等配置。组默认配置不是资源耗用流水或工单实际成本。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSB.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "ORSB"
+  },
+  "uniqueKeys": [
+    [
+      "ResGrpNam"
+    ]
+  ]
+}

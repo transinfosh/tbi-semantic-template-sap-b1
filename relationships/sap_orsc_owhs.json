@@ -1,0 +1,12 @@
+{
+  "condition": "orsc.DfltWH = owhs.WhsCode",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "orsc",
+    "owhs"
+  ],
+  "name": "sap_orsc_owhs",
+  "properties": {
+    "description": "资源默认仓库配置；不替代实际工单行仓库。"
+  }
+}

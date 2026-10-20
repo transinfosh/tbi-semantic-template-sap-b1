@@ -1,0 +1,472 @@
+{
+  "columns": [
+    {
+      "displayName": "开票地址",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Address",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Bill To。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "VARCHAR(254)"
+    },
+    {
+      "displayName": "取消日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CancelDate",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Cancelation Date。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "取消标志",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CANCELED",
+      "notNull": false,
+      "properties": {
+        "description": "按本表官方枚举解释取消状态；库存流水净额不能简单套用销售额过滤。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "业务伙伴编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CardCode",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Customer/Vendor Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "业务伙伴名称",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CardName",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Customer/Vendor Name。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "VARCHAR(200)"
+    },
+    {
+      "displayName": "备注",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Comments",
+      "notNull": false,
+      "properties": {
+        "description": "业务备注，不能作为稳定关联键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "VARCHAR(254)"
+    },
+    {
+      "displayName": "创建日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CreateDate",
+      "notNull": false,
+      "properties": {
+        "description": "系统创建日期，不等同过账日期。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "单据折扣率",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DiscPrcnt",
+      "notNull": false,
+      "properties": {
+        "description": "整张单据的折扣百分比，与明细行折扣分开。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "折扣总额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DiscSum",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Total Discount。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "单据币种",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocCur",
+      "notNull": false,
+      "properties": {
+        "description": "单据金额的币种上下文。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "VARCHAR(3)"
+    },
+    {
+      "displayName": "过账日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocDate",
+      "notNull": false,
+      "properties": {
+        "description": "单据的过账日期，不等于创建日期。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "到期日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocDueDate",
+      "notNull": false,
+      "properties": {
+        "description": "到期日期；不是过账日期 DocDate。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "单据内部标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocEntry",
+      "notNull": true,
+      "properties": {
+        "description": "数据库主键；关系使用本字段，不用显示单号DocNum替代。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "单据编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocNum",
+      "notNull": true,
+      "properties": {
+        "description": "业务显示编号；可受编号系列和期间影响，不声明单独全局唯一。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "单据汇率",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocRate",
+      "notNull": false,
+      "properties": {
+        "description": "单据币种汇率；不据此臆造库存估价换算公式。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "单据状态",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocStatus",
+      "notNull": false,
+      "properties": {
+        "description": "单据开闭状态，不等同取消状态。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "单据总额（本币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocTotal",
+      "notNull": false,
+      "properties": {
+        "description": "单据头本币总额；关联多行明细后不能重复求和。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "单据总额（外币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocTotalFC",
+      "notNull": false,
+      "properties": {
+        "description": "单据头外币总额；按 DocCur 分组，且防止明细连接重复累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "单据总额（系统币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocTotalSy",
+      "notNull": false,
+      "properties": {
+        "description": "单据头系统币总额；不能混合本币或外币金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "单据类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocType",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Document Type。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "毛利润",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "GrosProfit",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Gross Profit。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "付款条件代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "GroupNum",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Payment Terms Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "日记账备注",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "JrnlMemo",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Journal Remarks。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "VARCHAR(254)"
+    },
+    {
+      "displayName": "业务伙伴参考号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "NumAtCard",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：BP Reference No.。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "VARCHAR(200)"
+    },
+    {
+      "displayName": "对象类型编码",
+      "isCalculated": false,
+      "isHidden": true,
+      "name": "ObjType",
+      "notNull": false,
+      "properties": {
+        "description": "本单据对象类型为1250000001。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "累计已收付金额（外币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PaidFC",
+      "notNull": false,
+      "properties": {
+        "description": "单据当前累计收付外币金额；按币种使用，不是外币未付金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "累计已收付金额（系统币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PaidSys",
+      "notNull": false,
+      "properties": {
+        "description": "单据当前累计收付系统币金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "累计已收付金额（本币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PaidToDate",
+      "notNull": false,
+      "properties": {
+        "description": "单据当前累计收付本币金额；不能当作指定历史期间的收付款发生额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "需求日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ReqDate",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Required Date。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "编号系列",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Series",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Series。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "业务员编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SlpCode",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Sales Employee。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "凭证日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TaxDate",
+      "notNull": false,
+      "properties": {
+        "description": "单据日期，与过账日期分别保存。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "运费总额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TotalExpns",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Total Freight Charges。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "会计分录内部标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TransId",
+      "notNull": false,
+      "properties": {
+        "description": "关联会计分录的标识；永久盘存配置决定会计处理。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "运输方式代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TrnspCode",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Shipping Type。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "更新日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UpdateDate",
+      "notNull": false,
+      "properties": {
+        "description": "记录更新日期；不是业务过账日期。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "税率",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "VatPercent",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Tax Rate。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "本币税额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "VatSum",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Total Tax。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+      },
+      "type": "DECIMAL(19,6)"
+    }
+  ],
+  "displayName": "库存调拨申请头",
+  "name": "owtq",
+  "primaryKey": "DocEntry",
+  "properties": {
+    "description": "每个DocEntry一行；申请不等于已完成实际调拨，实际执行应追踪WTR1来源关系。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTQ.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "OWTQ"
+  },
+  "uniqueKeys": []
+}

@@ -1,0 +1,12 @@
+{
+  "condition": "ivl1.TransSeq = oivl.TransSeq",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "ivl1",
+    "oivl"
+  ],
+  "name": "sap_ivl1_oivl",
+  "properties": {
+    "description": "估价层归属库存交易；交易到层是一对多，必须防止交易数量重复累计。"
+  }
+}

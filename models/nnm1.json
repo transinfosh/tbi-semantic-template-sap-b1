@@ -1,0 +1,335 @@
+{
+  "columns": [
+    {
+      "displayName": "AT单据类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "AtDocType",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：AT Document Type。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
+      },
+      "type": "VARCHAR(10)"
+    },
+    {
+      "displayName": "前缀",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BeginStr",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Prefix String。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "所属分支",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BPLId",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Assigned Branch。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "默认电子系列",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DefESeries",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Default Electronic Series。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "单据子类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocSubType",
+      "notNull": true,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Document Sub-Type。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
+      },
+      "type": "VARCHAR(2)"
+    },
+    {
+      "displayName": "后缀",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "EndStr",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Suffix String。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "流水号前缀",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "FolioPref",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Folio Prefix String。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
+      },
+      "type": "VARCHAR(4)"
+    },
+    {
+      "displayName": "系列组",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "GroupCode",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Group。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "期间指示符",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Indicator",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Period Indicator。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
+      },
+      "type": "VARCHAR(10)"
+    },
+    {
+      "displayName": "起始编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "InitialNum",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Initial Number。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "是否数字系列",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "IsDigSerie",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Is Digital Series。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "电子授权代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "IsElAuth",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Elec. Authorization Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "是否冲销系列",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "IsForCncl",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Is Series for Cancelation。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "是否手动系列",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "IsManual",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Is Manual Series。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "最大编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LastNum",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Last Number Allowed。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "是否锁定",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Locked",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Locked。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "下一流水号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "NextFolio",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Next Folio Number。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "下一编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "NextNumber",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Next Number for Use。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "编号位数",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "NumSize",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Numeric Size。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "单据类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ObjectCode",
+      "notNull": true,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Document。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "备注",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Remark",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Remarks。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
+      },
+      "type": "VARCHAR(50)"
+    },
+    {
+      "displayName": "编号系列",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Series",
+      "notNull": true,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Series。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "系列名称",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SeriesName",
+      "notNull": true,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Series Name。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "系列类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SeriesType",
+      "notNull": true,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Series Type。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "模板",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Template",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Template。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "是否年终结转",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "YearTransf",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Year-End Closing。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
+      },
+      "type": "CHAR(1)"
+    }
+  ],
+  "displayName": "单据编号系列",
+  "name": "nnm1",
+  "primaryKey": "Series",
+  "properties": {
+    "description": "SAP Business One 单据编号系列；Series是内部系列键，ObjectCode标识适用单据对象类型。编号系列不能代替单据内部键。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "NNM1"
+  },
+  "uniqueKeys": [
+    [
+      "ObjectCode",
+      "DocSubType",
+      "SeriesName",
+      "SeriesType"
+    ]
+  ]
+}

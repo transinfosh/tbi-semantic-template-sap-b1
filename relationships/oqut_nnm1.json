@@ -1,0 +1,11 @@
+{
+  "condition": "oqut.Series = nnm1.Series AND oqut.ObjType = nnm1.ObjectCode",
+  "displayName": "oqut → 单据编号系列",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "oqut",
+    "nnm1"
+  ],
+  "name": "oqut_nnm1",
+  "properties": {}
+}

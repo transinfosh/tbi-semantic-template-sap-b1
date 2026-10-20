@@ -1,0 +1,76 @@
+{
+  "columns": [
+    {
+      "displayName": "部门编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "dept",
+      "notNull": false,
+      "properties": {
+        "description": "员工所属部门编码。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OHEM.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "员工内部编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "empID",
+      "notNull": false,
+      "properties": {
+        "description": "员工内部主键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OHEM.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "名",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "firstName",
+      "notNull": false,
+      "properties": {
+        "description": "员工名字。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OHEM.html"
+      },
+      "type": "VARCHAR(50)"
+    },
+    {
+      "displayName": "姓",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "lastName",
+      "notNull": false,
+      "properties": {
+        "description": "员工姓氏。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OHEM.html"
+      },
+      "type": "VARCHAR(50)"
+    },
+    {
+      "displayName": "销售员编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "salesPrson",
+      "notNull": false,
+      "properties": {
+        "description": "员工关联销售员编码。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OHEM.html"
+      },
+      "type": "INTEGER"
+    }
+  ],
+  "displayName": "员工主数据",
+  "name": "ohem",
+  "primaryKey": "empID",
+  "properties": {
+    "description": "员工姓名、工号、部门、销售员及组织归属。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OHEM.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "OHEM"
+  },
+  "uniqueKeys": []
+}

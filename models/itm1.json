@@ -1,0 +1,55 @@
+{
+  "columns": [
+    {
+      "displayName": "物料编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ItemCode",
+      "notNull": false,
+      "properties": {
+        "description": "关联物料主数据。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITM1.html"
+      },
+      "type": "VARCHAR(50)"
+    },
+    {
+      "displayName": "价目表单价",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Price",
+      "notNull": false,
+      "properties": {
+        "description": "该价目表下的物料单价。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITM1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "价目表编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PriceList",
+      "notNull": false,
+      "properties": {
+        "description": "价目表编号；1 为库存明细原 SQL 使用的价目表。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITM1.html"
+      },
+      "type": "INTEGER"
+    }
+  ],
+  "displayName": "物料价目表价格",
+  "name": "itm1",
+  "primaryKey": [
+    "ItemCode",
+    "PriceList"
+  ],
+  "properties": {
+    "description": "每个物料与价目表组合一行；价目表价格是当前主数据配置，不是历史库存估价或工单发料成本。价目表编号由业务明确指定，不默认选取某一编号。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITM1.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "ITM1"
+  },
+  "uniqueKeys": []
+}

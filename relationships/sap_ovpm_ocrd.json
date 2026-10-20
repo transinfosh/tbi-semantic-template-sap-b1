@@ -1,0 +1,12 @@
+{
+  "condition": "ovpm.CardCode = ocrd.CardCode AND ovpm.DocType = 'C' AND ocrd.CardType = 'C'",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "ovpm",
+    "ocrd"
+  ],
+  "name": "sap_ovpm_ocrd",
+  "properties": {
+    "description": "仅客户或供应商类别的业务伙伴关系；科目与本地化类别不能套用。"
+  }
+}

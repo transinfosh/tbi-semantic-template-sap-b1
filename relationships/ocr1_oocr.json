@@ -1,0 +1,11 @@
+{
+  "condition": "ocr1.OcrCode = oocr.OcrCode",
+  "displayName": "维度值 → 维度",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "ocr1",
+    "oocr"
+  ],
+  "name": "ocr1_oocr",
+  "properties": {}
+}

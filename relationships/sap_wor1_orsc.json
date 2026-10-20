@@ -1,0 +1,12 @@
+{
+  "condition": "wor1.ItemCode = orsc.ResCode AND wor1.ItemType = 290",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "wor1",
+    "orsc"
+  ],
+  "name": "sap_wor1_orsc",
+  "properties": {
+    "description": "仅生产订单资源组件，使用资源内部键；数据库类型 290，不使用 DI API 枚举的 1。数量按资源容量单位解释。"
+  }
+}

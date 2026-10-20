@@ -1,0 +1,11 @@
+{
+  "condition": "oitt.Code = itt1.Father",
+  "displayName": "oitt_itt1",
+  "joinType": "ONE_TO_MANY",
+  "models": [
+    "oitt",
+    "itt1"
+  ],
+  "name": "oitt_itt1",
+  "properties": {}
+}

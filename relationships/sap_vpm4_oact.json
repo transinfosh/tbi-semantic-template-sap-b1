@@ -1,0 +1,12 @@
+{
+  "condition": "vpm4.AcctCode = oact.AcctCode",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "vpm4",
+    "oact"
+  ],
+  "name": "sap_vpm4_oact",
+  "properties": {
+    "description": "科目收付款行对应总账科目。"
+  }
+}

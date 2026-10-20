@@ -1,0 +1,11 @@
+{
+  "condition": "oinv.SlpCode = oslp.SlpCode",
+  "displayName": "oinv_oslp",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "oinv",
+    "oslp"
+  ],
+  "name": "oinv_oslp",
+  "properties": {}
+}

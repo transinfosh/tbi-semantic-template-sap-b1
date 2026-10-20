@@ -1,0 +1,412 @@
+{
+  "columns": [
+    {
+      "displayName": "地址",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Address",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Bill-to Street。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "VARCHAR(100)"
+    },
+    {
+      "displayName": "当前本币余额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Balance",
+      "notNull": false,
+      "properties": {
+        "description": "当前业务伙伴余额快照。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "当前外币余额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BalanceFC",
+      "notNull": false,
+      "properties": {
+        "description": "当前业务伙伴外币余额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "当前系统币余额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BalanceSys",
+      "notNull": false,
+      "properties": {
+        "description": "当前业务伙伴系统币余额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "街区",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Block",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Bill-to Block。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "VARCHAR(100)"
+    },
+    {
+      "displayName": "业务伙伴代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CardCode",
+      "notNull": false,
+      "properties": {
+        "description": "主键，客户与供应商共用该主数据表。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "业务伙伴外文名称",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CardFName",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Foreign Name。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "VARCHAR(200)"
+    },
+    {
+      "displayName": "业务伙伴名称",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CardName",
+      "notNull": false,
+      "properties": {
+        "description": "当前名称，历史名称以单据快照为准。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "VARCHAR(200)"
+    },
+    {
+      "displayName": "业务伙伴类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CardType",
+      "notNull": false,
+      "properties": {
+        "description": "C客户、S供应商、L潜在客户。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "手机号码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Cellular",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Mobile Phone。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "VARCHAR(50)"
+    },
+    {
+      "displayName": "城市",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "City",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Bill-to City。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "VARCHAR(100)"
+    },
+    {
+      "displayName": "联系人",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CntctPrsn",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Contact Person。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "VARCHAR(90)"
+    },
+    {
+      "displayName": "国家代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Country",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Bill-to Country/Region。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "VARCHAR(3)"
+    },
+    {
+      "displayName": "区县",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "County",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Bill-to County。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "VARCHAR(100)"
+    },
+    {
+      "displayName": "创建日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CreateDate",
+      "notNull": false,
+      "properties": {
+        "description": "主数据创建日。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "信用额度",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CreditLine",
+      "notNull": false,
+      "properties": {
+        "description": "配置额度，不能当未收金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "业务伙伴币种",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Currency",
+      "notNull": false,
+      "properties": {
+        "description": "BP设置币种；多币种设置不等于所有交易只有一个外币。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "VARCHAR(3)"
+    },
+    {
+      "displayName": "默认应收应付控制科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DebPayAcct",
+      "notNull": false,
+      "properties": {
+        "description": "连接OACT；不是每笔历史分录实际控制科目。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "债务限额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DebtLine",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Payable Limit。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "默认账户",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DflAccount",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Default Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "VARCHAR(50)"
+    },
+    {
+      "displayName": "应收票据余额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DNotesBal",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Open Deliveries/GRPO Balance。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "催款级别",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DunnLevel",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Dunning Level。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "电子邮箱",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "E_Mail",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：E-Mail。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "VARCHAR(100)"
+    },
+    {
+      "displayName": "传真",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Fax",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Fax Number。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "VARCHAR(50)"
+    },
+    {
+      "displayName": "业务伙伴组标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "GroupCode",
+      "notNull": false,
+      "properties": {
+        "description": "客户或供应商分组标识。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "付款条件代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "GroupNum",
+      "notNull": false,
+      "properties": {
+        "description": "默认付款条件，具体到期日取业务单据或分录。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "价格清单编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ListNum",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Price List No.。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "邮寄地址邮编",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "MailZipCod",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Ship-to Zip Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "电话 1",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Phone1",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Telephone 1。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "VARCHAR(50)"
+    },
+    {
+      "displayName": "电话 2",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Phone2",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Telephone 2。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "VARCHAR(50)"
+    },
+    {
+      "displayName": "销售人员代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SlpCode",
+      "notNull": false,
+      "properties": {
+        "description": "主数据分配人员。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "更新日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UpdateDate",
+      "notNull": false,
+      "properties": {
+        "description": "主数据更新日。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "邮政编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ZipCode",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Bill-to Zip Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "VARCHAR(20)"
+    }
+  ],
+  "displayName": "业务伙伴主数据",
+  "name": "ocrd",
+  "primaryKey": "CardCode",
+  "properties": {
+    "description": "每行一个业务伙伴，主键CardCode。包含客户、供应商和潜在客户；当前余额与默认控制科目不能取代历史分录。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "OCRD"
+  },
+  "uniqueKeys": []
+}

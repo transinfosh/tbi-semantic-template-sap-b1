@@ -1,0 +1,13 @@
+{
+  "condition": "odln.DocEntry = dln1.DocEntry",
+  "displayName": "销售交货主表 → 销售交货明细",
+  "joinType": "ONE_TO_MANY",
+  "models": [
+    "odln",
+    "dln1"
+  ],
+  "name": "odln_dln1",
+  "properties": {
+    "description": "一张销售交货单对应多条明细；按物料或仓库分析时使用。"
+  }
+}

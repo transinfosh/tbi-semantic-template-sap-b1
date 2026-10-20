@@ -1,0 +1,12 @@
+{
+  "condition": "ocrd.DebPayAcct = oact.AcctCode",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "ocrd",
+    "oact"
+  ],
+  "name": "sap_ocrd_oact",
+  "properties": {
+    "description": "BP默认应收应付控制科目；不代表每笔历史分录所用科目。"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "condition": "itl1.LogEntry = oitl.LogEntry",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "itl1",
+    "oitl"
+  ],
+  "name": "sap_itl1_oitl",
+  "properties": {
+    "description": "批序列分配行归属日志；上级ManagedBy判别批次与序列类型，StockEff判别库存影响。"
+  }
+}

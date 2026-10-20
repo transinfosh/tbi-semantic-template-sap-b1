@@ -1,0 +1,163 @@
+{
+  "columns": [
+    {
+      "displayName": "组件行内部序号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ChildNum",
+      "notNull": true,
+      "properties": {
+        "description": "与Father组成主键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITT1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "组件编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Code",
+      "notNull": false,
+      "properties": {
+        "description": "须结合Type识别物料/资源。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITT1.html"
+      },
+      "type": "VARCHAR(50)"
+    },
+    {
+      "displayName": "备注",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Comment",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Comment。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITT1.html"
+      },
+      "type": "VARCHAR(254)"
+    },
+    {
+      "displayName": "组件价格币种",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Currency",
+      "notNull": false,
+      "properties": {
+        "description": "BOM价格币种。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITT1.html"
+      },
+      "type": "VARCHAR(3)"
+    },
+    {
+      "displayName": "BOM父项编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Father",
+      "notNull": false,
+      "properties": {
+        "description": "关联OITT.Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITT1.html"
+      },
+      "type": "VARCHAR(50)"
+    },
+    {
+      "displayName": "组件发料方式",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "IssueMthd",
+      "notNull": false,
+      "properties": {
+        "description": "BOM定义的发料方式；订单可有自己的执行数据。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITT1.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "BOM组件价格",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Price",
+      "notNull": false,
+      "properties": {
+        "description": "BOM价格配置，不是历史发料成本。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITT1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "项目编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Project",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Project Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITT1.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "组件用量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Quantity",
+      "notNull": false,
+      "properties": {
+        "description": "相对于父项BOM基数的用量，不是已发料。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITT1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "组件类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Type",
+      "notNull": false,
+      "properties": {
+        "description": "4物料、290资源、-18文本。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITT1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "库存单位名称",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Uom",
+      "notNull": false,
+      "properties": {
+        "description": "组件库存单位名称，不是OUOM内部标识。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITT1.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "组件默认仓库",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Warehouse",
+      "notNull": false,
+      "properties": {
+        "description": "关联OWHS.WhsCode。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITT1.html"
+      },
+      "type": "VARCHAR(8)"
+    }
+  ],
+  "displayName": "物料清单组件行",
+  "name": "itt1",
+  "primaryKey": [
+    "Father",
+    "ChildNum"
+  ],
+  "properties": {
+    "description": "每个Father与ChildNum组合一行；Code可重复且可表示资源，不能作为行唯一键或无条件关联物料。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITT1.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "ITT1"
+  },
+  "uniqueKeys": []
+}

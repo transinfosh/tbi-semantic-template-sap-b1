@@ -1,0 +1,283 @@
+{
+  "columns": [
+    {
+      "displayName": "金额差异过账日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "AmtDifPst",
+      "notNull": false,
+      "properties": {
+        "description": "金额差异过账日。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "外币应用金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "AppliedFC",
+      "notNull": false,
+      "properties": {
+        "description": "外币应用金额；FP2508 DI说明非外币发票该属性为0，不能将0视为未付款。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "系统币应用金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "AppliedSys",
+      "notNull": false,
+      "properties": {
+        "description": "系统币应用金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "本币现金折扣金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DcntSum",
+      "notNull": false,
+      "properties": {
+        "description": "应用行折扣，与实际支付金额分开。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "外币现金折扣金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DcntSumFC",
+      "notNull": false,
+      "properties": {
+        "description": "外币折扣。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "系统币现金折扣金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DcntSumSy",
+      "notNull": false,
+      "properties": {
+        "description": "系统币折扣。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "被支付对象内部标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocEntry",
+      "notNull": false,
+      "properties": {
+        "description": "按InvType分流；不能无条件连接销售或采购发票。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "被支付交易行标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocLine",
+      "notNull": false,
+      "properties": {
+        "description": "行键；与分期号InstId、应用行序号InvoiceId分开。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "所属收付款内部标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocNum",
+      "notNull": true,
+      "properties": {
+        "description": "候选连接收付款头DocEntry；SDK标签为Document Number，需现场反例核验后启用。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "目标单据汇率",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocRate",
+      "notNull": false,
+      "properties": {
+        "description": "保存的单据汇率。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "被支付对象分录编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocTransId",
+      "notNull": false,
+      "properties": {
+        "description": "连接被支付对象的OJDT.TransId，不是付款自身分录编号。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "被支付分期编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "InstId",
+      "notNull": false,
+      "properties": {
+        "description": "目标发票分期标识，不等于商品明细LineNum。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "应用行序号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "InvoiceId",
+      "notNull": true,
+      "properties": {
+        "description": "与DocNum组成主键；不是被支付发票内部编号。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "被支付对象类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "InvType",
+      "notNull": false,
+      "properties": {
+        "description": "字符串对象类型；13/14/18/19/203/204等分别指不同单据。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "连接日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LinkDate",
+      "notNull": false,
+      "properties": {
+        "description": "数据库连接日期。DI同名属性为波兰专用且映射写DpmPosted；不直接同名映射或当通用核销日。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "所属收付款对象类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ObjType",
+      "notNull": false,
+      "properties": {
+        "description": "本行所属收付款类型；不同于目标InvType。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "1099报告相关已付金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PaidSum",
+      "notNull": false,
+      "properties": {
+        "description": "FP2508 DI明确为美国1099报告专用已付金额；不能替代通用SumApplied。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "本币舍入差异",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Rounddiff",
+      "notNull": false,
+      "properties": {
+        "description": "应用行舍入差额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "本币应用金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SumApplied",
+      "notNull": false,
+      "properties": {
+        "description": "本行应用到目标单据的金额，不等于收付款头总额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "本币预扣税应用金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "WtAppld",
+      "notNull": false,
+      "properties": {
+        "description": "预扣税应用额，不能遗漏后强行对齐现金与核销金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "外币预扣税应用金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "WtAppldFC",
+      "notNull": false,
+      "properties": {
+        "description": "外币预扣税应用额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "系统币预扣税应用金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "WtAppldSC",
+      "notNull": false,
+      "properties": {
+        "description": "系统币预扣税应用额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
+      },
+      "type": "DECIMAL(19,6)"
+    }
+  ],
+  "displayName": "付款单应用明细",
+  "name": "vpm2",
+  "primaryKey": [
+    "DocNum",
+    "InvoiceId"
+  ],
+  "properties": {
+    "description": "每行一次收付款对目标单据或交易的应用，复合键(DocNum,InvoiceId)。这是支付应用明细，不是完整内部核销历史。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "VPM2"
+  },
+  "uniqueKeys": []
+}

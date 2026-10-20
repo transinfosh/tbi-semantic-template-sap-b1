@@ -1,0 +1,12 @@
+{
+  "condition": "oitt.Code = oitm.ItemCode",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "oitt",
+    "oitm"
+  ],
+  "name": "sap_oitt_oitm",
+  "properties": {
+    "description": "BOM父项引用物料；当前BOM不能代替历史生产订单结构。"
+  }
+}

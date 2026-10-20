@@ -1,0 +1,13 @@
+{
+  "condition": "pch1.WhsCode = owhs.WhsCode",
+  "displayName": "采购发票明细 → 仓库",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "pch1",
+    "owhs"
+  ],
+  "name": "pch1_owhs",
+  "properties": {
+    "description": "通过仓库编码关联仓库；按仓库分析采购明细时使用。"
+  }
+}

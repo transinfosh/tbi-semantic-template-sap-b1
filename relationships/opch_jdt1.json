@@ -1,0 +1,11 @@
+{
+  "condition": "opch.TransId = jdt1.TransId",
+  "displayName": "opch_jdt1",
+  "joinType": "ONE_TO_MANY",
+  "models": [
+    "opch",
+    "jdt1"
+  ],
+  "name": "opch_jdt1",
+  "properties": {}
+}

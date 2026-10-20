@@ -1,0 +1,11 @@
+{
+  "condition": "pdn1.WhsCode = owhs.WhsCode",
+  "displayName": "pdn1_owhs",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "pdn1",
+    "owhs"
+  ],
+  "name": "pdn1_owhs",
+  "properties": {}
+}

@@ -1,0 +1,13 @@
+{
+  "condition": "itt1.Code = oitm.ItemCode AND itt1.Type = 4",
+  "displayName": "itt1_oitm",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "itt1",
+    "oitm"
+  ],
+  "name": "itt1_oitm",
+  "properties": {
+    "description": "仅物料组件；资源和文本不能连接物料主数据。"
+  }
+}

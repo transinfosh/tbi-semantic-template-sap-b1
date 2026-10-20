@@ -1,0 +1,11 @@
+{
+  "condition": "oitm.ItmsGrpCod = oitb.ItmsGrpCod",
+  "displayName": "物料主数据 → 物料组",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "oitm",
+    "oitb"
+  ],
+  "name": "oitm_oitb",
+  "properties": {}
+}

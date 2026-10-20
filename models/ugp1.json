@@ -1,0 +1,108 @@
+{
+  "columns": [
+    {
+      "displayName": "替代单位数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "AltQty",
+      "notNull": false,
+      "properties": {
+        "description": "换算定义一侧数量；须与BaseQty及单位组基准单位一起解释。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/UGP1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "基准单位数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BaseQty",
+      "notNull": false,
+      "properties": {
+        "description": "换算定义另一侧数量；含重量或UDF因子时不能仅用静态比值。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/UGP1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "单位组行号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LineNum",
+      "notNull": true,
+      "properties": {
+        "description": "与UgpEntry组成主键，不应遗漏。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/UGP1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "自定义字段因子",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UdfFactor",
+      "notNull": false,
+      "properties": {
+        "description": "依赖自定义字段的换算因子。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/UGP1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "单位组内部标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UgpEntry",
+      "notNull": true,
+      "properties": {
+        "description": "关联OUGP。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/UGP1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "单位内部标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UomEntry",
+      "notNull": true,
+      "properties": {
+        "description": "关联OUOM。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/UGP1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "重量因子",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "WghtFactor",
+      "notNull": false,
+      "properties": {
+        "description": "重量因子引用；存在时应核对动态换算规则。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/UGP1.html"
+      },
+      "type": "SMALLINT"
+    }
+  ],
+  "displayName": "计量单位组换算行",
+  "name": "ugp1",
+  "primaryKey": [
+    "UgpEntry",
+    "LineNum"
+  ],
+  "properties": {
+    "description": "每个单位组行号一行；主键是UgpEntry与LineNum，另有UgpEntry与UomEntry唯一键。复杂重量/UDF换算不应简化为固定比例。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/UGP1.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "UGP1"
+  },
+  "uniqueKeys": [
+    [
+      "UgpEntry",
+      "UomEntry"
+    ]
+  ]
+}

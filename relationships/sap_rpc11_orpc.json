@@ -1,0 +1,12 @@
+{
+  "condition": "rpc11.DocEntry = orpc.DocEntry",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "rpc11",
+    "orpc"
+  ],
+  "name": "sap_rpc11_orpc",
+  "properties": {
+    "description": "抵扣记录归属的发票或贷项表头。表头金额在多条抵扣记录下重复，不能直接求和。"
+  }
+}

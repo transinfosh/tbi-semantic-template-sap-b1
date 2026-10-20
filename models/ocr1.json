@@ -1,0 +1,128 @@
+{
+  "columns": [
+    {
+      "displayName": "直接分摊",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Direct",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Direct。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCR1.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "日志实例",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "logInstanc",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Log Instance。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCR1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "维度代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OcrCode",
+      "notNull": true,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Factor Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCR1.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "维度总额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OcrTotal",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Total Factor。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCR1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "利润中心金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PrcAmount",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Total in Center。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCR1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "利润中心代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PrcCode",
+      "notNull": true,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Center Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCR1.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "更新日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "updateDate",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Date of Update。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCR1.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "生效起始日",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ValidFrom",
+      "notNull": true,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Effective From。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCR1.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "生效截止日",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ValidTo",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Effective To。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCR1.html"
+      },
+      "type": "TIMESTAMP"
+    }
+  ],
+  "displayName": "分配规则明细",
+  "name": "ocr1",
+  "primaryKey": [
+    "OcrCode",
+    "PrcCode",
+    "ValidFrom"
+  ],
+  "properties": {
+    "description": "分配规则中的成本中心及生效日期粒度，复合键(OcrCode,PrcCode,ValidFrom)。规则可涉及多个成本中心或有效期间，连接后不得重复累计来源分录金额。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCR1.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "OCR1"
+  },
+  "uniqueKeys": []
+}

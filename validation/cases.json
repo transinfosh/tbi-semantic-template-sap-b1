@@ -1,0 +1,78 @@
+{
+  "cases": [
+    {
+      "given": "已提交的模型和关系源文件",
+      "id": "TPL-01",
+      "status": "passed",
+      "then": "生成文件与仓库mdl.json字节一致，且不访问网络或数据库",
+      "verification": "test_committed_artifact_is_reproducible",
+      "when": "离线构建模板"
+    },
+    {
+      "given": "含客户UDF、计算列、物理公司库或行级权限的修改",
+      "id": "TPL-02",
+      "status": "passed",
+      "then": "拒绝混入实例定义",
+      "verification": "test_customer_column_cannot_enter_template; test_customer_calculation_cannot_enter_template; test_customer_catalog_cannot_enter_template; test_instance_policy_cannot_enter_template",
+      "when": "构建模板"
+    },
+    {
+      "given": "复合主键被缩短，或关系引用删除字段、第三个模型",
+      "id": "TPL-03",
+      "status": "passed",
+      "then": "拒绝无效引用及错误主键",
+      "verification": "test_compound_primary_key_cannot_be_shortened; test_missing_relationship_column_fails; test_relationship_cannot_reference_third_model",
+      "when": "构建模板"
+    },
+    {
+      "given": "订单和交货使用相同的内部编号",
+      "id": "TPL-04",
+      "status": "passed",
+      "then": "只有BaseType=17的行匹配，不误纳入交货来源行",
+      "verification": "test_source_type_excludes_same_number_from_other_document_type",
+      "when": "发票明细按直接来源关系连订单"
+    },
+    {
+      "given": "一张订单包含多条行",
+      "id": "TPL-05",
+      "status": "passed",
+      "then": "同时匹配DocEntry和LineNum，避免匹配到同单其他行",
+      "verification": "test_document_line_join_does_not_fan_out_to_other_source_lines",
+      "when": "交货行连接其来源订单行"
+    },
+    {
+      "given": "收付款可以属于客户、供应商或科目类别",
+      "id": "TPL-06",
+      "status": "passed",
+      "then": "保留明确的收付款类别及业务伙伴类型条件",
+      "verification": "test_payment_business_partner_branches_keep_both_discriminators",
+      "when": "使用业务伙伴关系"
+    },
+    {
+      "given": "某些关系仅在单一公司库取样支持或仍待审",
+      "id": "TPL-07",
+      "status": "passed",
+      "then": "不将这些边自动提升为默认关系",
+      "verification": "test_reviewed_instance_edges_are_not_promoted_to_generic_defaults",
+      "when": "发布通用模板"
+    },
+    {
+      "given": "目标公司库拥有不同的表、字段或类型版本",
+      "id": "TPL-08",
+      "status": "requires_target_workspace_validation",
+      "then": "核验结构并在工作区适配；模板不声称所有来源兼容",
+      "verification": "tBI Git import preview and target schema verification",
+      "when": "导入到工作区"
+    },
+    {
+      "given": "存在非零估价金额、工单业务和历史核销事件",
+      "id": "TPL-09",
+      "status": "pending",
+      "then": "与SAP标准报表按同一筛选范围及选项对账",
+      "verification": "Business acceptance against target company database and SAP reports",
+      "when": "按目标日期和币种计算金额"
+    }
+  ],
+  "status": "structural_checks_passed_business_acceptance_pending",
+  "verified_at": "2026-10-20"
+}

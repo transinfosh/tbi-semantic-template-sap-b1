@@ -1,0 +1,309 @@
+{
+  "columns": [
+    {
+      "displayName": "调整交易标记",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "AdjTran",
+      "notNull": false,
+      "properties": {
+        "description": "Y/N；保留期末调整分析边界。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "自动反转标记",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "AutoStorno",
+      "notNull": false,
+      "properties": {
+        "description": "Y/N自动反转设置；DI说明在StornoDate创建反向交易，不等于已经完成冲销。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "来源单据显示号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BaseRef",
+      "notNull": false,
+      "properties": {
+        "description": "展示追溯用；不能代替来源内部键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
+      },
+      "type": "VARCHAR(11)"
+    },
+    {
+      "displayName": "创建日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CreateDate",
+      "notNull": false,
+      "properties": {
+        "description": "系统记录创建日，不是业务过账日。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "来源对象内部标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CreatedBy",
+      "notNull": false,
+      "properties": {
+        "description": "必须结合TransType解释；不得跨对象类型直接关联DocEntry。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "到期日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DueDate",
+      "notNull": false,
+      "properties": {
+        "description": "表头到期日期；账龄还须考虑分录行或分期日期。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "分录外币总额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "FcTotal",
+      "notNull": false,
+      "properties": {
+        "description": "表头外币总额；须保留币种。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "过账期间标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "FinncPriod",
+      "notNull": false,
+      "properties": {
+        "description": "过账期间内部键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "凭证参考标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Indicator",
+      "notNull": false,
+      "properties": {
+        "description": "会计凭证的参考标识或指示器。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
+      },
+      "type": "VARCHAR(2)"
+    },
+    {
+      "displayName": "分录本币总额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LocTotal",
+      "notNull": false,
+      "properties": {
+        "description": "表头本币总额；不得与分录行借贷发生额混加。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "分录摘要",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Memo",
+      "notNull": false,
+      "properties": {
+        "description": "文字说明，不能作为稳定关联键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
+      },
+      "type": "VARCHAR(254)"
+    },
+    {
+      "displayName": "分录显示编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Number",
+      "notNull": true,
+      "properties": {
+        "description": "展示编号；主键仍为TransId。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "项目编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Project",
+      "notNull": false,
+      "properties": {
+        "description": "会计凭证归属的项目编码。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "过账日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "RefDate",
+      "notNull": false,
+      "properties": {
+        "description": "分录过账日期；与创建日期、单据日期分开。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "编号系列",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Series",
+      "notNull": true,
+      "properties": {
+        "description": "显示编号所属系列。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "冲销日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "StornoDate",
+      "notNull": false,
+      "properties": {
+        "description": "DI指定创建反向交易的日期；不能仅由该日期判断冲销已经执行。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "反转关联分录编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "StornoToTr",
+      "notNull": false,
+      "properties": {
+        "description": "冲销关联值；方向与有效值须按现场样本核验。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "分录系统币总额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SysTotal",
+      "notNull": false,
+      "properties": {
+        "description": "表头系统币总额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "单据日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TaxDate",
+      "notNull": false,
+      "properties": {
+        "description": "单据日期；不是过账日期的别名。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "交易代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TransCode",
+      "notNull": false,
+      "properties": {
+        "description": "用户定义分类代码；不同于来源对象类型TransType。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
+      },
+      "type": "VARCHAR(4)"
+    },
+    {
+      "displayName": "交易币种",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TransCurr",
+      "notNull": false,
+      "properties": {
+        "description": "交易币种标识，不能假定等于公司本币。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
+      },
+      "type": "VARCHAR(3)"
+    },
+    {
+      "displayName": "分录内部编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TransId",
+      "notNull": false,
+      "properties": {
+        "description": "分录主键；不是营销或收付款单据DocEntry。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "来源对象类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TransType",
+      "notNull": false,
+      "properties": {
+        "description": "字符串对象类型；13销售发票、18采购发票、24收款、46付款、30手工分录等。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "更新日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UpdateDate",
+      "notNull": false,
+      "properties": {
+        "description": "系统记录更新日。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
+      },
+      "type": "TIMESTAMP"
+    }
+  ],
+  "displayName": "日记账分录表头",
+  "name": "ojdt",
+  "primaryKey": "TransId",
+  "properties": {
+    "description": "每行一个已过账分录，主键TransId；来源单据键与显示单号分开。交易发生额在JDT1，不能连接分录行后重复汇总头金额。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "OJDT"
+  },
+  "uniqueKeys": [
+    [
+      "Series",
+      "Number"
+    ]
+  ]
+}

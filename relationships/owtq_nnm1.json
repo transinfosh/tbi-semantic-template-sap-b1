@@ -1,0 +1,11 @@
+{
+  "condition": "owtq.Series = nnm1.Series AND owtq.ObjType = nnm1.ObjectCode",
+  "displayName": "owtq → 单据编号系列",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "owtq",
+    "nnm1"
+  ],
+  "name": "owtq_nnm1",
+  "properties": {}
+}

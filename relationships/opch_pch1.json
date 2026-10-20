@@ -1,0 +1,13 @@
+{
+  "condition": "opch.DocEntry = pch1.DocEntry",
+  "displayName": "采购发票主表 → 采购发票明细",
+  "joinType": "ONE_TO_MANY",
+  "models": [
+    "opch",
+    "pch1"
+  ],
+  "name": "opch_pch1",
+  "properties": {
+    "description": "一张采购发票对应多条明细；按物料或仓库分析时使用。"
+  }
+}

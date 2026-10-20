@@ -1,0 +1,151 @@
+{
+  "columns": [
+    {
+      "displayName": "当前仓库成本字段",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "AvgPrice",
+      "notNull": false,
+      "properties": {
+        "description": "须结合公司是否按仓库管理成本及估价方法解释。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITW.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "盘点数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Counted",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Counted Quantity。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITW.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "当前仓库承诺数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "IsCommited",
+      "notNull": false,
+      "properties": {
+        "description": "当前承诺量，不是已出库量。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITW.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "物料编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ItemCode",
+      "notNull": false,
+      "properties": {
+        "description": "与WhsCode共同确定记录。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITW.html"
+      },
+      "type": "VARCHAR(50)"
+    },
+    {
+      "displayName": "仓库物料锁定状态",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Locked",
+      "notNull": false,
+      "properties": {
+        "description": "物料在本仓库的锁定配置。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITW.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "最高库存配置",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "MaxStock",
+      "notNull": false,
+      "properties": {
+        "description": "库存阈值配置。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITW.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "最低库存配置",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "MinStock",
+      "notNull": false,
+      "properties": {
+        "description": "库存阈值配置，不是实际库存。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITW.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "当前仓库在手数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OnHand",
+      "notNull": false,
+      "properties": {
+        "description": "当前仓库库存余额；不是累计入库量。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITW.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "当前仓库订购数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OnOrder",
+      "notNull": false,
+      "properties": {
+        "description": "当前订购量，不是已入库量。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITW.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "当前仓库库存价值",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "StockValue",
+      "notNull": false,
+      "properties": {
+        "description": "当前库存价值；不能直接作为历史时点或历史出库成本。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITW.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "仓库编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "WhsCode",
+      "notNull": false,
+      "properties": {
+        "description": "与ItemCode共同确定记录。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITW.html"
+      },
+      "type": "VARCHAR(8)"
+    }
+  ],
+  "displayName": "物料仓库当前库存",
+  "name": "oitw",
+  "primaryKey": [
+    "ItemCode",
+    "WhsCode"
+  ],
+  "properties": {
+    "description": "每个物料与仓库组合一行；当前库存快照，不能用于回答某过去日期的余额或期间发料。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITW.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "OITW"
+  },
+  "uniqueKeys": []
+}

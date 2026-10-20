@@ -1,0 +1,12 @@
+{
+  "condition": "inv9.DocEntry = oinv.DocEntry",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "inv9",
+    "oinv"
+  ],
+  "name": "sap_inv9_oinv",
+  "properties": {
+    "description": "抵扣记录归属的发票或贷项表头。表头金额在多条抵扣记录下重复，不能直接求和。"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "condition": "rpc11.BaseAbs = odpo.DocEntry AND rpc11.BaseType = 204",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "rpc11",
+    "odpo"
+  ],
+  "name": "sap_rpc11_odpo",
+  "properties": {
+    "description": "实际抵扣所关联的预付款表头；不是普通来源行关系。贷项桥表 ObjType 未列举约束值时，须先核验现场编码。"
+  }
+}

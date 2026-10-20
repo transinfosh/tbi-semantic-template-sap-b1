@@ -1,0 +1,12 @@
+{
+  "condition": "odpi.CardCode = ocrd.CardCode",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "odpi",
+    "ocrd"
+  ],
+  "name": "sap_odpi_ocrd",
+  "properties": {
+    "description": "按内部键关联；多行连接后避免重复累计来源单据头金额。"
+  }
+}

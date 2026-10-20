@@ -1,0 +1,12 @@
+{
+  "condition": "por1.BaseEntry = pqt1.DocEntry AND por1.BaseLine = pqt1.LineNum AND por1.BaseType = 540000006",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "por1",
+    "pqt1"
+  ],
+  "name": "sap_por1_pqt1",
+  "properties": {
+    "description": "采购订单行的直接来源为采购报价行；必须同时匹配来源类型、内部单据键和内部行号。反向可有多个后续行，汇总前处理拆分与重复计数。"
+  }
+}

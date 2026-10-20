@@ -1,0 +1,22 @@
+{
+  "business_amount_acceptance": "pending",
+  "counts": {
+    "columns": 2427,
+    "cubes": 0,
+    "models": 96,
+    "relationships": 233,
+    "views": 0
+  },
+  "deterministic_build": {
+    "command": "python3 build.py --check",
+    "passed": true
+  },
+  "production_published": false,
+  "python_unittest": {
+    "command": "python3 -m unittest discover -s tests -v",
+    "failed": 0,
+    "passed": 15
+  },
+  "target_database_queried": false,
+  "verified_at": "2026-10-20"
+}

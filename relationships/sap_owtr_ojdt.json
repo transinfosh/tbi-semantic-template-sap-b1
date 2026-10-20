@@ -1,0 +1,12 @@
+{
+  "condition": "owtr.TransId = ojdt.TransId",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "owtr",
+    "ojdt"
+  ],
+  "name": "sap_owtr_ojdt",
+  "properties": {
+    "description": "按内部键关联；多行连接后避免重复累计来源单据头金额。"
+  }
+}

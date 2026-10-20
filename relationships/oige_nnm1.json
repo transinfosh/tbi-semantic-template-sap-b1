@@ -1,0 +1,11 @@
+{
+  "condition": "oige.Series = nnm1.Series AND oige.ObjType = nnm1.ObjectCode",
+  "displayName": "oige → 单据编号系列",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "oige",
+    "nnm1"
+  ],
+  "name": "oige_nnm1",
+  "properties": {}
+}

@@ -1,0 +1,11 @@
+{
+  "condition": "dpi1.BaseEntry = rdr1.DocEntry AND dpi1.BaseLine = rdr1.LineNum AND dpi1.BaseType = 17",
+  "displayName": "dpi1_rdr1",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "dpi1",
+    "rdr1"
+  ],
+  "name": "dpi1_rdr1",
+  "properties": {}
+}

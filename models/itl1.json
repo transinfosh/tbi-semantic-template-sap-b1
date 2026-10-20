@@ -1,0 +1,116 @@
+{
+  "columns": [
+    {
+      "displayName": "分配数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "AllocQty",
+      "notNull": false,
+      "properties": {
+        "description": "批序列分配量，不直接等同实际出库。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITL1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "物料编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ItemCode",
+      "notNull": true,
+      "properties": {
+        "description": "与LogEntry及SysNumber组成主键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITL1.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "交易日志内部标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LogEntry",
+      "notNull": true,
+      "properties": {
+        "description": "关联OITL.LogEntry。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITL1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "主数据内部标识字段",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "MdAbsEntry",
+      "notNull": false,
+      "properties": {
+        "description": "SDK未在此字段注明唯一目标表；须判别批次/序列并验证，不自动连接OBTN或OSRN。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITL1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "已拣数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PickedQty",
+      "notNull": false,
+      "properties": {
+        "description": "拣选数量，不能当成已过账出库。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITL1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "交易分配数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Quantity",
+      "notNull": false,
+      "properties": {
+        "description": "该批序列分配行数量，业务方向与影响需结合日志。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITL1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "释放数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ReleaseQty",
+      "notNull": false,
+      "properties": {
+        "description": "释放数量字段，区别于交易数量。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITL1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "系统批序列编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SysNumber",
+      "notNull": true,
+      "properties": {
+        "description": "在物料与管理类型范围解释，不单独全局唯一。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITL1.html"
+      },
+      "type": "INTEGER"
+    }
+  ],
+  "displayName": "批序列交易分配行",
+  "name": "itl1",
+  "primaryKey": [
+    "LogEntry",
+    "ItemCode",
+    "SysNumber"
+  ],
+  "properties": {
+    "description": "每个LogEntry、ItemCode、SysNumber组合一行；批次/序列主数据需通过上级OITL.ManagedBy区分，不能仅凭SysNumber关联。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITL1.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "ITL1"
+  },
+  "uniqueKeys": []
+}

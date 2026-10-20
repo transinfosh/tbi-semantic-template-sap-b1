@@ -1,0 +1,11 @@
+{
+  "condition": "oitw.WhsCode = owhs.WhsCode",
+  "displayName": "oitw_owhs",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "oitw",
+    "owhs"
+  ],
+  "name": "oitw_owhs",
+  "properties": {}
+}

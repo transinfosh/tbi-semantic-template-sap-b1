@@ -1,0 +1,12 @@
+{
+  "condition": "itr1.Account = oact.AcctCode",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "itr1",
+    "oact"
+  ],
+  "name": "sap_itr1_oact",
+  "properties": {
+    "description": "核销参与行对应实际记账科目。"
+  }
+}

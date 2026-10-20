@@ -1,0 +1,13 @@
+{
+  "condition": "jdt1.ShortName = ocrd.CardCode",
+  "displayName": "jdt1_ocrd",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "jdt1",
+    "ocrd"
+  ],
+  "name": "jdt1_ocrd",
+  "properties": {
+    "description": "仅在分录行ShortName表示业务伙伴编码时使用；ShortName也可表示科目编码，完整分录分析不得用本关系筛掉非业务伙伴分录。当前业务伙伴余额不能替代历史分录余额。"
+  }
+}

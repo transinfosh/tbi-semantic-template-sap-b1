@@ -1,0 +1,220 @@
+{
+  "columns": [
+    {
+      "displayName": "分支标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BPLId",
+      "notNull": false,
+      "properties": {
+        "description": "核销所属分支。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITR.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "关联取消核销编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CancelAbs",
+      "notNull": false,
+      "properties": {
+        "description": "关联被取消或取消核销；方向和取消时点须结合样本确认。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITR.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "已取消核销标记",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Canceled",
+      "notNull": false,
+      "properties": {
+        "description": "Y/N；历史时点须同时还原取消事件，不能仅过滤当前N。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITR.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "核销记录创建日",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CreateDate",
+      "notNull": false,
+      "properties": {
+        "description": "技术创建日，不能替代ReconDate。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITR.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "核销记录创建时间",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CreateTime",
+      "notNull": false,
+      "properties": {
+        "description": "技术创建时间。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITR.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "核销发起对象内部标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "InitObjAbs",
+      "notNull": false,
+      "properties": {
+        "description": "须结合InitObjTyp分流；不应直接当付款DocEntry。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITR.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "核销发起对象类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "InitObjTyp",
+      "notNull": false,
+      "properties": {
+        "description": "字符串类型，与参与行SrcObjTyp含义不同。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITR.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "核销对象类别",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "IsCard",
+      "notNull": false,
+      "properties": {
+        "description": "C业务伙伴，A总账科目。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITR.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "多业务伙伴核销标记",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "IsMultiBP",
+      "notNull": false,
+      "properties": {
+        "description": "Y时不能假定整次核销只属于一个CardCode。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITR.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "系统核销标记",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "IsSystem",
+      "notNull": false,
+      "properties": {
+        "description": "区分系统及手工来源；与ReconType分别保留。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITR.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "以前核销编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OldMatNum",
+      "notNull": false,
+      "properties": {
+        "description": "历史关联信息，不作当前唯一键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITR.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "核销币种",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ReconCurr",
+      "notNull": false,
+      "properties": {
+        "description": "核销采用的币种，不等于所有行外币。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITR.html"
+      },
+      "type": "VARCHAR(3)"
+    },
+    {
+      "displayName": "核销日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ReconDate",
+      "notNull": false,
+      "properties": {
+        "description": "业务核销日；与创建日、单据过账日分别处理。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITR.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "核销生成分录编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ReconJEId",
+      "notNull": false,
+      "properties": {
+        "description": "核销产生的分录；不是所有参与分录的汇总代码。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITR.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "内部核销编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ReconNum",
+      "notNull": true,
+      "properties": {
+        "description": "核销事件主键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITR.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "核销类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ReconType",
+      "notNull": false,
+      "properties": {
+        "description": "字符串0手工、1自动、2半自动、3支付、4贷项、5反转、7取消等。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITR.html"
+      },
+      "type": "VARCHAR(2)"
+    },
+    {
+      "displayName": "核销表头总额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Total",
+      "notNull": false,
+      "properties": {
+        "description": "头级总额，不能连接借贷两侧明细后重复汇总。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITR.html"
+      },
+      "type": "DECIMAL(19,6)"
+    }
+  ],
+  "displayName": "内部核销表头",
+  "name": "oitr",
+  "primaryKey": "ReconNum",
+  "properties": {
+    "description": "每行一次内部核销，主键ReconNum。可以核销BP或总账科目，也可能涉及多个BP；取消核销与冲销财务分录是两种事件。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITR.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "OITR"
+  },
+  "uniqueKeys": []
+}

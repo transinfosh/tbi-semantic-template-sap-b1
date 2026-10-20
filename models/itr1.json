@@ -1,0 +1,259 @@
+{
+  "columns": [
+    {
+      "displayName": "记账科目代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Account",
+      "notNull": false,
+      "properties": {
+        "description": "连接OACT.AcctCode。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITR1.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "现金折扣金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CashDisSum",
+      "notNull": false,
+      "properties": {
+        "description": "核销涉及的折扣金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITR1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "本币运费金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ExpSum",
+      "notNull": false,
+      "properties": {
+        "description": "核销运费金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITR1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "外币代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "FrgnCurr",
+      "notNull": false,
+      "properties": {
+        "description": "外币金额币种。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITR1.html"
+      },
+      "type": "VARCHAR(3)"
+    },
+    {
+      "displayName": "借贷方向",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "IsCredit",
+      "notNull": false,
+      "properties": {
+        "description": "C贷方、D借方；不等于收入费用分类。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITR1.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "核销行序号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LineSeq",
+      "notNull": true,
+      "properties": {
+        "description": "与ReconNum组成主键，不是分录行号。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITR1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "折扣前净额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "netBefDisc",
+      "notNull": false,
+      "properties": {
+        "description": "折扣前金额，不与核销额混用。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITR1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "内部核销编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ReconNum",
+      "notNull": true,
+      "properties": {
+        "description": "连接OITR.ReconNum。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITR1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "本币核销金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ReconSum",
+      "notNull": false,
+      "properties": {
+        "description": "参与行核销金额，须结合借贷方向，不能借贷两侧相加当回款额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITR1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "外币核销金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ReconSumFC",
+      "notNull": false,
+      "properties": {
+        "description": "外币核销金额，配合FrgnCurr。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITR1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "系统币核销金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ReconSumSC",
+      "notNull": false,
+      "properties": {
+        "description": "系统币核销金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITR1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "业务伙伴或科目代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ShortName",
+      "notNull": false,
+      "properties": {
+        "description": "结合OITR.IsCard分流，不能全量直连OCRD。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITR1.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "参与来源对象内部标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SrcObjAbs",
+      "notNull": false,
+      "properties": {
+        "description": "须按SrcObjTyp分流，优先使用分录复合键追溯。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITR1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "参与来源对象类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SrcObjTyp",
+      "notNull": false,
+      "properties": {
+        "description": "字符串来源类型；不是核销发起对象类型。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITR1.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "核销币种金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SumMthCurr",
+      "notNull": false,
+      "properties": {
+        "description": "按OITR.ReconCurr解释，不能直接当本币金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITR1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "参与分录内部编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TransId",
+      "notNull": false,
+      "properties": {
+        "description": "与TransRowId共同定位参与分录行。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITR1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "参与分录行号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TransRowId",
+      "notNull": false,
+      "properties": {
+        "description": "连接JDT1.Line_ID，须同时匹配TransId。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITR1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "本币预扣税金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "WTSum",
+      "notNull": false,
+      "properties": {
+        "description": "核销预扣税金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITR1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "外币预扣税金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "WTSumFC",
+      "notNull": false,
+      "properties": {
+        "description": "核销外币预扣税金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITR1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "系统币预扣税金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "WTSumSC",
+      "notNull": false,
+      "properties": {
+        "description": "核销系统币预扣税金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITR1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    }
+  ],
+  "displayName": "内部核销参与行",
+  "name": "itr1",
+  "primaryKey": [
+    "ReconNum",
+    "LineSeq"
+  ],
+  "properties": {
+    "description": "每行一个核销事件中参与的分录行，复合键(ReconNum,LineSeq)。同一分录行可参与多次部分核销；不能只按TransId关联，否则跨行放大。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITR1.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "ITR1"
+  },
+  "uniqueKeys": []
+}

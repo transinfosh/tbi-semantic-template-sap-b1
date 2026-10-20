@@ -1,0 +1,12 @@
+{
+  "condition": "pch11.DocEntry = opch.DocEntry",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "pch11",
+    "opch"
+  ],
+  "name": "sap_pch11_opch",
+  "properties": {
+    "description": "抵扣记录归属的发票或贷项表头。表头金额在多条抵扣记录下重复，不能直接求和。"
+  }
+}

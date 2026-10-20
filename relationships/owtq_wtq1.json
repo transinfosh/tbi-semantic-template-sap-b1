@@ -1,0 +1,11 @@
+{
+  "condition": "owtq.DocEntry = wtq1.DocEntry",
+  "displayName": "owtq_wtq1",
+  "joinType": "ONE_TO_MANY",
+  "models": [
+    "owtq",
+    "wtq1"
+  ],
+  "name": "owtq_wtq1",
+  "properties": {}
+}

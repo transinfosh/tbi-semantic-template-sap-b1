@@ -1,0 +1,11 @@
+{
+  "condition": "orpc.CardCode = ocrd.CardCode",
+  "displayName": "orpc_ocrd",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "orpc",
+    "ocrd"
+  ],
+  "name": "orpc_ocrd",
+  "properties": {}
+}

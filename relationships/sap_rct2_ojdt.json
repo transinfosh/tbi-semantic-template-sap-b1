@@ -1,0 +1,12 @@
+{
+  "condition": "rct2.DocTransId = ojdt.TransId",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "rct2",
+    "ojdt"
+  ],
+  "name": "sap_rct2_ojdt",
+  "properties": {
+    "description": "被支付对象的分录；不是所属收付款TransId。无有效分录编号时允许无匹配。"
+  }
+}

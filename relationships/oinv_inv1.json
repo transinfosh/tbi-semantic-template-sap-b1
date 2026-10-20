@@ -1,0 +1,13 @@
+{
+  "condition": "oinv.DocEntry = inv1.DocEntry",
+  "displayName": "销售发票主表 → 销售发票明细",
+  "joinType": "ONE_TO_MANY",
+  "models": [
+    "oinv",
+    "inv1"
+  ],
+  "name": "oinv_inv1",
+  "properties": {
+    "description": "一张销售发票对应多条明细；按物料或仓库分析时使用。"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "condition": "opor.Series = nnm1.Series AND opor.ObjType = nnm1.ObjectCode",
+  "displayName": "opor → 单据编号系列",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "opor",
+    "nnm1"
+  ],
+  "name": "opor_nnm1",
+  "properties": {}
+}

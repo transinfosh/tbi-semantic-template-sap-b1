@@ -1,0 +1,12 @@
+{
+  "condition": "ovpm.TransId = ojdt.TransId",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "ovpm",
+    "ojdt"
+  ],
+  "name": "sap_ovpm_ojdt",
+  "properties": {
+    "description": "本收付款生成的分录；未生成或无有效编号时允许无匹配。"
+  }
+}

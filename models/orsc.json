@@ -1,0 +1,188 @@
+{
+  "columns": [
+    {
+      "displayName": "删除标志",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Deleted",
+      "notNull": false,
+      "properties": {
+        "description": "Y 是、N 否；保留源系统状态，不自动据此删除历史交易关联。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSC.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "资源默认仓库",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DfltWH",
+      "notNull": false,
+      "properties": {
+        "description": "资源默认仓库配置；不代表所有工单实际使用的仓库。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSC.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "资源停用标志",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "frozenFor",
+      "notNull": false,
+      "properties": {
+        "description": "Y 是、N 否；与停用期间、启用配置配套，不直接替代工单状态。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSC.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "资源耗用方式",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "IssueMthd",
+      "notNull": false,
+      "properties": {
+        "description": "B 倒冲、M 手工；当前默认耗用方式，具体工单仍以单据行配置与执行记录为准。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSC.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "是否采购资源",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PrchseRes",
+      "notNull": false,
+      "properties": {
+        "description": "Y 是、N 否；资源主数据的采购标志，不是采购发生额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSC.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "是否生产资源",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ProdRes",
+      "notNull": false,
+      "properties": {
+        "description": "Y 是、N 否；资源生产用途配置，不证明指定工单已经耗用。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSC.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "资源内部编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ResCode",
+      "notNull": true,
+      "properties": {
+        "description": "资源主数据唯一内部键；关联资源组件使用本列，不用显示编号 VisResCode 替代。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSC.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "资源组编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ResGrpCod",
+      "notNull": false,
+      "properties": {
+        "description": "所属资源组，关联 ORSB.ResGrpCod；不是物料组编码。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSC.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "资源名称",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ResName",
+      "notNull": false,
+      "properties": {
+        "description": "当前资源主数据描述；历史生产单据描述可能不同。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSC.html"
+      },
+      "type": "VARCHAR(100)"
+    },
+    {
+      "displayName": "资源类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ResType",
+      "notNull": false,
+      "properties": {
+        "description": "M 机器、L 人工、O 其他；不同于生产组件类型 290。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSC.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "是否销售资源",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SellRes",
+      "notNull": false,
+      "properties": {
+        "description": "Y 是、N 否；资源主数据的销售标志，不是销售发生额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSC.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "资源容量单位",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UnitOfMsr",
+      "notNull": false,
+      "properties": {
+        "description": "资源容量的表示单位，例如机器循环、小时或分钟；不可作为物料库存单位混合求和。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSC.html"
+      },
+      "type": "VARCHAR(100)"
+    },
+    {
+      "displayName": "资源启用标志",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "validFor",
+      "notNull": false,
+      "properties": {
+        "description": "Y 是、N 否；判断某日可用性还需核对有效期间及停用配置，不能直接推断历史可用状态。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSC.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "资源显示编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "VisResCode",
+      "notNull": true,
+      "properties": {
+        "description": "界面资源编号；DI API VisCode，可由编号规则产生，与内部键 ResCode 区分。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSC.html"
+      },
+      "type": "VARCHAR(20)"
+    }
+  ],
+  "displayName": "生产资源",
+  "name": "orsc",
+  "primaryKey": "ResCode",
+  "properties": {
+    "description": "每个资源内部编码一行的当前主数据；包括机器、人工及其他资源。资源容量单位和耗用与物料库存数量分开，当前资源成本不得替代历史工单实际成本。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSC.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "ORSC"
+  },
+  "uniqueKeys": [
+    [
+      "VisResCode"
+    ]
+  ]
+}

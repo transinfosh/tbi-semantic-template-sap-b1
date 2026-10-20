@@ -1,0 +1,12 @@
+{
+  "condition": "oitm.UgpEntry = ougp.UgpEntry",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "oitm",
+    "ougp"
+  ],
+  "name": "sap_oitm_ougp",
+  "properties": {
+    "description": "官方表参考明确目标表及键；可选或手工单位特殊值可能无匹配，查询不应强制要求所有行均有目标。"
+  }
+}

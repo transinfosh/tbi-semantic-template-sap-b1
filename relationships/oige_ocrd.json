@@ -1,0 +1,11 @@
+{
+  "condition": "oige.CardCode = ocrd.CardCode",
+  "displayName": "oige_ocrd",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "oige",
+    "ocrd"
+  ],
+  "name": "oige_ocrd",
+  "properties": {}
+}

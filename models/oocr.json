@@ -1,0 +1,136 @@
+{
+  "columns": [
+    {
+      "displayName": "内部标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "AbsEntry",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Numerator。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OOCR.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "启用",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Active",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Active。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OOCR.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "所属维度",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DimCode",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：In Which Dimension。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OOCR.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "直接分配",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Direct",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Direct。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OOCR.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "锁定",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Locked",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Locked。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OOCR.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "日志实例",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "logInstanc",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Log Instance。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OOCR.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "维度代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OcrCode",
+      "notNull": true,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Factor Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OOCR.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "维度名称",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OcrName",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Factor Description。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OOCR.html"
+      },
+      "type": "VARCHAR(30)"
+    },
+    {
+      "displayName": "维度总额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OcrTotal",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Total Factor。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OOCR.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "修改日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "updateDate",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Date of Update。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OOCR.html"
+      },
+      "type": "TIMESTAMP"
+    }
+  ],
+  "displayName": "分配规则",
+  "name": "oocr",
+  "primaryKey": "OcrCode",
+  "properties": {
+    "description": "每个分配规则编码一行；规则与成本中心不同，分配明细在OCR1，具体成本中心在OPRC。不得将分配规则直接当作成本中心。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OOCR.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "OOCR"
+  },
+  "uniqueKeys": []
+}

@@ -1,0 +1,232 @@
+{
+  "columns": [
+    {
+      "displayName": "应用单据内部标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ApplyEntry",
+      "notNull": false,
+      "properties": {
+        "description": "应用关系内部键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITL.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "应用单据行号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ApplyLine",
+      "notNull": false,
+      "properties": {
+        "description": "应用关系行号。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITL.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "应用单据类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ApplyType",
+      "notNull": false,
+      "properties": {
+        "description": "与ApplyEntry/ApplyLine配套，不能默认等同日志所属单据。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITL.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "来源单据内部标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BaseEntry",
+      "notNull": false,
+      "properties": {
+        "description": "来源单据内部键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITL.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "来源单据行号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BaseLine",
+      "notNull": false,
+      "properties": {
+        "description": "来源行号。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITL.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "来源单据类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BaseType",
+      "notNull": false,
+      "properties": {
+        "description": "与BaseEntry/BaseLine配套，表示来源链。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITL.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "过账日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocDate",
+      "notNull": false,
+      "properties": {
+        "description": "交易过账日期。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITL.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "单据内部标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocEntry",
+      "notNull": false,
+      "properties": {
+        "description": "与DocType及DocLine配套识别日志所属单据行。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITL.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "单据行号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocLine",
+      "notNull": false,
+      "properties": {
+        "description": "本表字段叫DocLine，不是DocLineNum。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITL.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "单据数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocQty",
+      "notNull": false,
+      "properties": {
+        "description": "单据数量字段，与库存影响量分别处理。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITL.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "单据类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocType",
+      "notNull": false,
+      "properties": {
+        "description": "本日志单据类型，不能与BaseType或ApplyType混用。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITL.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "物料编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ItemCode",
+      "notNull": false,
+      "properties": {
+        "description": "关联OITM。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITL.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "仓库位置代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LocCode",
+      "notNull": false,
+      "properties": {
+        "description": "配合LocType解释位置范围。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITL.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "交易日志内部标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LogEntry",
+      "notNull": true,
+      "properties": {
+        "description": "日志主键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITL.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "管理对象类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ManagedBy",
+      "notNull": false,
+      "properties": {
+        "description": "10000044批次、10000045序列、4普通物料；下游主数据连接需要此判别。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITL.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "库存影响类别",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "StockEff",
+      "notNull": false,
+      "properties": {
+        "description": "0无累计、1在手、2承诺、3订购；不能把承诺与在手混算。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITL.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "库存影响数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "StockQty",
+      "notNull": false,
+      "properties": {
+        "description": "库存影响数量，须结合StockEff。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITL.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "交易子行号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SubLineNum",
+      "notNull": false,
+      "properties": {
+        "description": "子行信息，不代替DocLine。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITL.html"
+      },
+      "type": "INTEGER"
+    }
+  ],
+  "displayName": "物料批序列交易日志",
+  "name": "oitl",
+  "primaryKey": "LogEntry",
+  "properties": {
+    "description": "每个LogEntry一条交易日志；包含实际库存、承诺与订购等不同影响，不能把所有日志都视为实物出入库。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITL.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "OITL"
+  },
+  "uniqueKeys": []
+}

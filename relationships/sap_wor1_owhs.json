@@ -1,0 +1,12 @@
+{
+  "condition": "wor1.wareHouse = owhs.WhsCode",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "wor1",
+    "owhs"
+  ],
+  "name": "sap_wor1_owhs",
+  "properties": {
+    "description": "生产组件行仓库；字段大小写依据源系统保留。"
+  }
+}

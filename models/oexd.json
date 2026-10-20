@@ -1,0 +1,404 @@
+{
+  "columns": [
+    {
+      "displayName": "计提方法",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BaseMethod",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Drawing Method。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "分摊方法",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DistrbMthd",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Distribution Method。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "费用固定金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ExpFixSum",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Fixed Amount - Expenses。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "费用科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ExpnsAcct",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Expense Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "费用代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ExpnsCode",
+      "notNull": true,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Internal Number。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "免税费用科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ExpnsExAct",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Expense Exempted Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "费用名称",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ExpnsName",
+      "notNull": true,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Name。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "费用类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ExpnsType",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Freight Type。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "运费清算科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ExpOfstAct",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Freight Clearing Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "含1099申报",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "In1099",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Include in 1099。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "欧盟统计相关",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Intrastat",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Intrastat Relevant。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "含最近采购价",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LstPchPrce",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Last Purchase Price。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "维度1",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OcrCode",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Distr. Rule。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "维度2",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OcrCode2",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Distr. Rule2。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "维度3",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OcrCode3",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Distr. Rule3。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "维度4",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OcrCode4",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Distr. Rule4。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "维度5",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OcrCode5",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Distr. Rule5。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "维度汇总",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OcrCodeX",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Distr. Rule。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
+      },
+      "type": "VARCHAR(100)"
+    },
+    {
+      "displayName": "采购分析报表",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PchRpt",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Purchase Analysis Report。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "项目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Project",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Project。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "收入科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "RevAcct",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Revenue Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "免税收入科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "RevExmAcct",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Revenues Exempted Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "收入固定金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "RevFixSum",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Fixed Amount - Revenues。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "收入退回科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "RevRetAct",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Revenue Returns Account。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "销售分析报表",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SalseRpt",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Sales Analysis Report。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "计入库存",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Stock",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Stock。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "税金分摊方法",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TaxDisMthd",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Tax Distribution Method。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "应税",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TaxLiable",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Tax Liable。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "更新日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UpdateDate",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Date of Update。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "销项税组",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "VatGroupI",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Output Tax Group。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "进项税组",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "VatGroupO",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Input Tax Group。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "代扣税应税",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "WTLiable",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：WTax Liable。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
+      },
+      "type": "CHAR(1)"
+    }
+  ],
+  "displayName": "附加费用定义",
+  "name": "oexd",
+  "primaryKey": "ExpnsCode",
+  "properties": {
+    "description": "单据附加费用配置，包含税组、会计科目和分配规则等默认属性；定义本身不是单据实际费用发生额。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "OEXD"
+  },
+  "uniqueKeys": [
+    [
+      "ExpnsName"
+    ]
+  ]
+}

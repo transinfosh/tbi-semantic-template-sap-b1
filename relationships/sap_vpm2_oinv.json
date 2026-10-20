@@ -1,0 +1,12 @@
+{
+  "condition": "vpm2.DocEntry = oinv.DocEntry AND vpm2.InvType = '13'",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "vpm2",
+    "oinv"
+  ],
+  "name": "sap_vpm2_oinv",
+  "properties": {
+    "description": "支付应用目标单据，多对一；只在指定InvType内有效。发票头金额不能按应用行重复累加。"
+  }
+}

@@ -1,0 +1,692 @@
+{
+  "columns": [
+    {
+      "displayName": "内部编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "AbsEntry",
+      "notNull": true,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Internal Number。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "备选排序码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "AltSortCod",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Alternative Sort Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "VARCHAR(50)"
+    },
+    {
+      "displayName": "属性10内部编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Attr10Abs",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Attribute-10 Internal Number。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "属性10值",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Attr10Val",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Attribute-10 Value。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "属性1内部编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Attr1Abs",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Attribute-1 Internal Number。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "属性1值",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Attr1Val",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Attribute-1 Value。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "属性2内部编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Attr2Abs",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Attribute-2 Internal Number。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "属性2值",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Attr2Val",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Attribute-2 Value。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "属性3内部编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Attr3Abs",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Attribute-3 Internal Number。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "属性3值",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Attr3Val",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Attribute-3 Value。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "属性4内部编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Attr4Abs",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Attribute-4 Internal Number。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "属性4值",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Attr4Val",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Attribute-4 Value。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "属性5内部编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Attr5Abs",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Attribute-5 Internal Number。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "属性5值",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Attr5Val",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Attribute-5 Value。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "属性6内部编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Attr6Abs",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Attribute-6 Internal Number。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "属性6值",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Attr6Val",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Attribute-6 Value。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "属性7内部编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Attr7Abs",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Attribute-7 Internal Number。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "属性7值",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Attr7Val",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Attribute-7 Value。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "属性8内部编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Attr8Abs",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Attribute-8 Internal Number。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "属性8值",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Attr8Val",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Attribute-8 Value。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "属性9内部编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Attr9Abs",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Attribute-9 Internal Number。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "属性9值",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Attr9Val",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Attribute-9 Value。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "条形码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BarCode",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Bar Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "VARCHAR(100)"
+    },
+    {
+      "displayName": "库位编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BinCode",
+      "notNull": true,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Bin Location Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "VARCHAR(228)"
+    },
+    {
+      "displayName": "创建日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CreateDate",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Create Date。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "已删除",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Deleted",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Deleted。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "库位描述",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Descr",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Description。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "VARCHAR(50)"
+    },
+    {
+      "displayName": "停用",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Disabled",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Inactive。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "实例",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Instance",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Instance。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "物料限制类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ItmRtrictT",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Item Restriction Type。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "最高库存量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "MaxLevel",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Maximum Qty。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "最大重量1",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "MaxWeight1",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Maximum Weight 1。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "最大重量2",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "MaxWeight2",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Maximum Weight 2。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "最低库存量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "MinLevel",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Minimum Qty。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "排除出库自动分配",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "NoAutoAllc",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Excl. fr. Auto Alloc. on Issue。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "收货库位",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ReceiveBin",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Receiving Bin Location。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "限制更新日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "RtrictDate",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Last Updated On。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "限制原因",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "RtrictResn",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Reason for Restriction。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "VARCHAR(254)"
+    },
+    {
+      "displayName": "限制交易类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "RtrictType",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Restricted Transactions Type。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "层级1内部编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SL1Abs",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Sublevel-1 Internal Number。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "层级1编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SL1Code",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Sublevel-1 Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "VARCHAR(50)"
+    },
+    {
+      "displayName": "层级2内部编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SL2Abs",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Sublevel-2 Internal Number。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "层级2编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SL2Code",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Sublevel-2 Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "VARCHAR(50)"
+    },
+    {
+      "displayName": "层级3内部编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SL3Abs",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Sublevel-3 Internal Number。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "层级3编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SL3Code",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Sublevel-3 Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "VARCHAR(50)"
+    },
+    {
+      "displayName": "层级4内部编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SL4Abs",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Sublevel-4 Internal Number。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "层级4编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SL4Code",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Sublevel-4 Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "VARCHAR(50)"
+    },
+    {
+      "displayName": "批次限制",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SngBatch",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Batch Restriction。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "指定物料编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SpcItmCode",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Specific Item Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "VARCHAR(50)"
+    },
+    {
+      "displayName": "指定物料组编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SpcItmGrpC",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Specific Item Group Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "系统库位",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SysBin",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：System Bin。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "已结转",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Transfered",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Year Transfer [Y/N]。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "更新日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UpdateDate",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Date of Update。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "最大重量1单位",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Wght1Unit",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Unit of Maximum Weight 1。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "最大重量2单位",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Wght2Unit",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Unit of Maximum Weight 2。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "仓库编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "WhsCode",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Warehouse Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+      },
+      "type": "VARCHAR(8)"
+    }
+  ],
+  "displayName": "仓库库位",
+  "name": "obin",
+  "primaryKey": "AbsEntry",
+  "properties": {
+    "description": "仓库内库位主数据，关联OWHS仓库；库位配置不是物料库存数量或历史库存。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "OBIN"
+  },
+  "uniqueKeys": [
+    [
+      "BinCode"
+    ]
+  ]
+}

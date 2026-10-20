@@ -1,0 +1,154 @@
+{
+  "columns": [
+    {
+      "displayName": "内部标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "AbsEntry",
+      "notNull": true,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：abs entry。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTQ.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "CCD数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CCDQuant",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：CCD Quantity。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTQ.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "已承诺数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CommitQty",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Committed Quantity。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTQ.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "盘点数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CountQty",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Counted Quantity。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTQ.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "物料编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ItemCode",
+      "notNull": true,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Item Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTQ.html"
+      },
+      "type": "VARCHAR(50)"
+    },
+    {
+      "displayName": "批次主记录标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "MdAbsEntry",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：MD Abs Entry。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTQ.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "批次数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Quantity",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Quantity。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTQ.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "批次内部编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SysNumber",
+      "notNull": true,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：System Number。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTQ.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "CCD追踪单号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TrackingNt",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：CCD Tracking Note。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTQ.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "CCD追踪行号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TrackiNtLn",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：CCD Tracking Note Line。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTQ.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "仓库编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "WhsCode",
+      "notNull": true,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Warehouse Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTQ.html"
+      },
+      "type": "VARCHAR(8)"
+    }
+  ],
+  "displayName": "批次仓库当前数量",
+  "name": "obtq",
+  "primaryKey": "AbsEntry",
+  "properties": {
+    "description": "批次在仓库中的当前数量；按物料、系统批次编号和仓库解释，不是历史时点库存或库存移动流水。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTQ.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "OBTQ"
+  },
+  "uniqueKeys": [
+    [
+      "ItemCode",
+      "SysNumber",
+      "WhsCode"
+    ]
+  ]
+}

@@ -1,0 +1,256 @@
+{
+  "columns": [
+    {
+      "displayName": "客户编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CardCode",
+      "notNull": false,
+      "properties": {
+        "description": "生产订单关联的客户编码。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "关闭日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CloseDate",
+      "notNull": false,
+      "properties": {
+        "description": "生产订单关闭日期。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "已完成数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CmpltQty",
+      "notNull": false,
+      "properties": {
+        "description": "DI API定义为已从生产收货的完成产品累计量，按IGN1.Quantity及TranType=0汇总；不是本期全部收货行数量。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "创建日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CreateDate",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Creation Date。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "生产订单内部标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocEntry",
+      "notNull": false,
+      "properties": {
+        "description": "生产订单主键；IGE1/IGN1.BaseEntry在BaseType=202时引用此键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "生产订单编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DocNum",
+      "notNull": false,
+      "properties": {
+        "description": "用户常输入的业务编号，需先解析到DocEntry。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "到期日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DueDate",
+      "notNull": false,
+      "properties": {
+        "description": "生产计划到期日期。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "产品编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ItemCode",
+      "notNull": false,
+      "properties": {
+        "description": "生产订单产品编码；特殊和拆卸订单需结合Type解释。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+      },
+      "type": "VARCHAR(50)"
+    },
+    {
+      "displayName": "来源内部标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OriginAbs",
+      "notNull": false,
+      "properties": {
+        "description": "生产订单来源内部标识，不直接当所有来源类型的销售订单键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "来源显示编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OriginNum",
+      "notNull": false,
+      "properties": {
+        "description": "来源显示单号，不作单独关系键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "订单来源类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OriginType",
+      "notNull": false,
+      "properties": {
+        "description": "M手工、R物料需求计划、S销售订单、U升级、P生产订单；来源标识须带类型。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "计划产量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PlannedQty",
+      "notNull": false,
+      "properties": {
+        "description": "订单头计划数量。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "订单日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PostDate",
+      "notNull": false,
+      "properties": {
+        "description": "官方定义为订单日期，不能作为所有发料交易的过账日期。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "项目编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Project",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Project Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "拒收数量",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "RjctQty",
+      "notNull": false,
+      "properties": {
+        "description": "DI API定义为已从生产收货的拒收产品累计量，按IGN1.Quantity及TranType=1汇总；与完成量分开。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "编号系列",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Series",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Series。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "生产订单状态",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Status",
+      "notNull": false,
+      "properties": {
+        "description": "P计划、R已下达、L已关闭、C已取消。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "生产订单类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Type",
+      "notNull": false,
+      "properties": {
+        "description": "S标准、P特殊、D拆卸；不同类型领料/收货业务方向不同。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "生产订单计量单位",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UomEntry",
+      "notNull": false,
+      "properties": {
+        "description": "订单数量计量单位标识。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "更新日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UpdateDate",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Update Date。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+      },
+      "type": "TIMESTAMP"
+    }
+  ],
+  "displayName": "生产订单",
+  "name": "owor",
+  "primaryKey": "DocEntry",
+  "properties": {
+    "description": "每个DocEntry一张生产订单；DocNum为业务显示编号。订单计划、完成量及当前状态不能替代发料/收货交易明细。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "OWOR"
+  },
+  "uniqueKeys": []
+}

@@ -1,0 +1,13 @@
+{
+  "condition": "opdn.DocEntry = pdn1.DocEntry",
+  "displayName": "采购收货主表 → 采购收货明细",
+  "joinType": "ONE_TO_MANY",
+  "models": [
+    "opdn",
+    "pdn1"
+  ],
+  "name": "opdn_pdn1",
+  "properties": {
+    "description": "一张采购收货单对应多条明细；按物料或仓库分析时使用。"
+  }
+}

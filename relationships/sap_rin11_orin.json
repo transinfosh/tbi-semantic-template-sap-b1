@@ -1,0 +1,12 @@
+{
+  "condition": "rin11.DocEntry = orin.DocEntry",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "rin11",
+    "orin"
+  ],
+  "name": "sap_rin11_orin",
+  "properties": {
+    "description": "抵扣记录归属的发票或贷项表头。表头金额在多条抵扣记录下重复，不能直接求和。"
+  }
+}

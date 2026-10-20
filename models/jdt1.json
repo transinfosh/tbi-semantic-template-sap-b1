@@ -1,0 +1,427 @@
+{
+  "columns": [
+    {
+      "displayName": "记账科目代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Account",
+      "notNull": false,
+      "properties": {
+        "description": "总账科目或BP控制科目；连接OACT.AcctCode。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "未清贷方本币余额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BalDueCred",
+      "notNull": false,
+      "properties": {
+        "description": "当前待核销本币贷方余额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "未清借方本币余额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BalDueDeb",
+      "notNull": false,
+      "properties": {
+        "description": "当前待核销本币借方余额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "未清贷方外币余额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BalFcCred",
+      "notNull": false,
+      "properties": {
+        "description": "当前待核销外币贷方余额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "未清借方外币余额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BalFcDeb",
+      "notNull": false,
+      "properties": {
+        "description": "当前待核销外币借方余额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "未清贷方系统币余额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BalScCred",
+      "notNull": false,
+      "properties": {
+        "description": "当前待核销系统币贷方余额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "未清借方系统币余额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BalScDeb",
+      "notNull": false,
+      "properties": {
+        "description": "当前待核销系统币借方余额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "来源单据编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BaseRef",
+      "notNull": false,
+      "properties": {
+        "description": "生成该分录的来源业务单据编号。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+      },
+      "type": "VARCHAR(11)"
+    },
+    {
+      "displayName": "分支标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BPLId",
+      "notNull": false,
+      "properties": {
+        "description": "记账分支；不能代替租户或公司数据库边界。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "对方科目编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ContraAct",
+      "notNull": false,
+      "properties": {
+        "description": "分录的对方会计科目编码。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "来源对象内部标识",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CreatedBy",
+      "notNull": false,
+      "properties": {
+        "description": "解释依赖TransType；不自动等价于所有表的DocEntry。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "贷方本币金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Credit",
+      "notNull": false,
+      "properties": {
+        "description": "本币贷方发生额；统一借方为正净额为Debit-Credit。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "借贷方向",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DebCred",
+      "notNull": false,
+      "properties": {
+        "description": "分录的借方或贷方方向标识。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "借方本币金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Debit",
+      "notNull": false,
+      "properties": {
+        "description": "本币借方发生额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "行到期日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DueDate",
+      "notNull": false,
+      "properties": {
+        "description": "分录行到期日，适用于按到期日计算账龄。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "贷方外币金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "FCCredit",
+      "notNull": false,
+      "properties": {
+        "description": "外币贷方发生额，禁止跨外币直接加总。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "外币代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "FCCurrency",
+      "notNull": false,
+      "properties": {
+        "description": "分录行外币币种。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+      },
+      "type": "VARCHAR(3)"
+    },
+    {
+      "displayName": "借方外币金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "FCDebit",
+      "notNull": false,
+      "properties": {
+        "description": "外币借方发生额，配合FCCurrency。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "分录行号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Line_ID",
+      "notNull": false,
+      "properties": {
+        "description": "须与TransId组成行键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "行摘要",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LineMemo",
+      "notNull": false,
+      "properties": {
+        "description": "分录行文字说明。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+      },
+      "type": "VARCHAR(254)"
+    },
+    {
+      "displayName": "第二利润中心编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OcrCode2",
+      "notNull": false,
+      "properties": {
+        "description": "分录归属的第二利润中心编码。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "第三利润中心编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OcrCode3",
+      "notNull": false,
+      "properties": {
+        "description": "分录归属的第三利润中心编码。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "第四利润中心编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OcrCode4",
+      "notNull": false,
+      "properties": {
+        "description": "分录归属的第四利润中心编码。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "第五利润中心编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OcrCode5",
+      "notNull": false,
+      "properties": {
+        "description": "分录归属的第五利润中心编码。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "利润中心编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ProfitCode",
+      "notNull": false,
+      "properties": {
+        "description": "分录归属的第一利润中心编码。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "项目编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Project",
+      "notNull": false,
+      "properties": {
+        "description": "分录归属的项目编码。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "行过账日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "RefDate",
+      "notNull": false,
+      "properties": {
+        "description": "分录行过账日期；历史余额筛选须明确日期口径。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "业务伙伴或科目代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ShortName",
+      "notNull": false,
+      "properties": {
+        "description": "BP行指业务伙伴，科目行指科目；不能无条件连接OCRD。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "来源行号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SourceLine",
+      "notNull": false,
+      "properties": {
+        "description": "来源业务行标识；未核实具体对象映射前不自动建关系。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+      },
+      "type": "SMALLINT"
+    },
+    {
+      "displayName": "贷方系统币金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SYSCred",
+      "notNull": false,
+      "properties": {
+        "description": "系统币贷方发生额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "借方系统币金额",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SYSDeb",
+      "notNull": false,
+      "properties": {
+        "description": "系统币借方发生额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "行单据日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TaxDate",
+      "notNull": false,
+      "properties": {
+        "description": "分录行单据日期。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "分录内部编号",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TransId",
+      "notNull": false,
+      "properties": {
+        "description": "连接OJDT.TransId。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "来源对象类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TransType",
+      "notNull": false,
+      "properties": {
+        "description": "字符串来源类型，不能与TransCode混用。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+      },
+      "type": "VARCHAR(20)"
+    }
+  ],
+  "displayName": "日记账分录行",
+  "name": "jdt1",
+  "primaryKey": [
+    "TransId",
+    "Line_ID"
+  ],
+  "properties": {
+    "description": "每行一条分录行，复合键(TransId,Line_ID)。Account是总账或控制科目，ShortName兼有BP/科目两义；余额字段是当前余额，不能直接当历史时点账龄。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "JDT1"
+  },
+  "uniqueKeys": []
+}

@@ -1,0 +1,11 @@
+{
+  "condition": "inv1.DocEntry = rin1.BaseEntry AND inv1.LineNum = rin1.BaseLine AND rin1.BaseType = 13",
+  "displayName": "inv1_rin1",
+  "joinType": "ONE_TO_MANY",
+  "models": [
+    "inv1",
+    "rin1"
+  ],
+  "name": "inv1_rin1",
+  "properties": {}
+}

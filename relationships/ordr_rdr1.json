@@ -1,0 +1,13 @@
+{
+  "condition": "ordr.DocEntry = rdr1.DocEntry",
+  "displayName": "销售订单主表 → 销售订单明细",
+  "joinType": "ONE_TO_MANY",
+  "models": [
+    "ordr",
+    "rdr1"
+  ],
+  "name": "ordr_rdr1",
+  "properties": {
+    "description": "一张销售订单对应多条明细；按物料或仓库分析时使用。"
+  }
+}

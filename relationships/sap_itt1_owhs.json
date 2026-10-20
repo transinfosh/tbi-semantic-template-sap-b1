@@ -1,0 +1,12 @@
+{
+  "condition": "itt1.Warehouse = owhs.WhsCode",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "itt1",
+    "owhs"
+  ],
+  "name": "sap_itt1_owhs",
+  "properties": {
+    "description": "组件默认仓库；不代表历史实际发料仓库。"
+  }
+}

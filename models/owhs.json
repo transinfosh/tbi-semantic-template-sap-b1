@@ -1,0 +1,184 @@
+{
+  "columns": [
+    {
+      "displayName": "是否启用库位",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BinActivat",
+      "notNull": false,
+      "properties": {
+        "description": "启用库位时，仓库级数量不等于单库位数量。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWHS.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "街区",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Block",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Block。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWHS.html"
+      },
+      "type": "VARCHAR(100)"
+    },
+    {
+      "displayName": "楼宇/楼层/房间",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Building",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Building/Floor/Room。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWHS.html"
+      },
+      "type": "VARCHAR"
+    },
+    {
+      "displayName": "城市",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "City",
+      "notNull": false,
+      "properties": {
+        "description": "仓库地址城市。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWHS.html"
+      },
+      "type": "VARCHAR(100)"
+    },
+    {
+      "displayName": "国家地区编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Country",
+      "notNull": false,
+      "properties": {
+        "description": "仓库地址国家地区。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWHS.html"
+      },
+      "type": "VARCHAR(3)"
+    },
+    {
+      "displayName": "县区",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "County",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：County。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWHS.html"
+      },
+      "type": "VARCHAR(100)"
+    },
+    {
+      "displayName": "是否直运仓库",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DropShip",
+      "notNull": false,
+      "properties": {
+        "description": "直运仓库与普通存货仓库口径不同。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWHS.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "是否停用",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Inactive",
+      "notNull": false,
+      "properties": {
+        "description": "仓库停用标志。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWHS.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "是否锁定",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Locked",
+      "notNull": false,
+      "properties": {
+        "description": "仓库锁定标志。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWHS.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "省州",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "State",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：State。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWHS.html"
+      },
+      "type": "VARCHAR(3)"
+    },
+    {
+      "displayName": "街道",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Street",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Street。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWHS.html"
+      },
+      "type": "VARCHAR(100)"
+    },
+    {
+      "displayName": "仓库编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "WhsCode",
+      "notNull": false,
+      "properties": {
+        "description": "仓库唯一键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWHS.html"
+      },
+      "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "仓库名称",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "WhsName",
+      "notNull": false,
+      "properties": {
+        "description": "业务显示名称。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWHS.html"
+      },
+      "type": "VARCHAR(100)"
+    },
+    {
+      "displayName": "邮政编码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ZipCode",
+      "notNull": false,
+      "properties": {
+        "description": "SAP Business One 官方字段定义：Zip Code。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWHS.html"
+      },
+      "type": "VARCHAR(20)"
+    }
+  ],
+  "displayName": "仓库主数据",
+  "name": "owhs",
+  "primaryKey": "WhsCode",
+  "properties": {
+    "description": "每个仓库编码一行；描述仓库属性与库存管理配置，不存储物料仓库历史余额。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWHS.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "OWHS"
+  },
+  "uniqueKeys": []
+}
