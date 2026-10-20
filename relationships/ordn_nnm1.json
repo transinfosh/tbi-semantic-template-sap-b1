@@ -1,0 +1,14 @@
+{
+  "condition": "ordn.Series = nnm1.Series AND ordn.ObjType = nnm1.ObjectCode",
+  "displayName": "销售退货 → 单据编号系列",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "ordn",
+    "nnm1"
+  ],
+  "name": "ordn_nnm1",
+  "properties": {
+    "description": "按系列内部键及单据对象类型关联号码系列；显示单号 DocNum 不能单独作为跨表或跨系列唯一键。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORDN.html"
+  }
+}

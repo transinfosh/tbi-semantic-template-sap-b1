@@ -1,0 +1,14 @@
+{
+  "condition": "rdr1.AcctCode = oact.AcctCode",
+  "displayName": "RDR1 → 行会计科目",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "rdr1",
+    "oact"
+  ],
+  "name": "rdr1_oact",
+  "properties": {
+    "description": "按行科目编码关联科目主数据；用于解释物料或服务行所选科目，不证明本行已经过账。服务行可以没有物料编码；科目缺失或未匹配时保留原行。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
+  }
+}

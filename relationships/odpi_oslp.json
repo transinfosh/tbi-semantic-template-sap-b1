@@ -1,0 +1,14 @@
+{
+  "condition": "odpi.SlpCode = oslp.SlpCode",
+  "displayName": "应收预付款 → 销售员",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "odpi",
+    "oslp"
+  ],
+  "name": "odpi_oslp",
+  "properties": {
+    "description": "按销售员内部编码关联；未分配或无法匹配时保留原单据，不能据当前销售员信息改写历史单据。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ODPI.html"
+  }
+}

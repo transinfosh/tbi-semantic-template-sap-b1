@@ -31,7 +31,7 @@
       "name": "CANCELED",
       "notNull": false,
       "properties": {
-        "description": "Y=被取消单据；N=未取消；C=取消凭证。与开闭状态独立；业务统计排除取消还是保留冲销须显式规定。",
+        "description": "官方字典列 N=未取消、Y=被取消单据、C=取消凭证；标准销售报价取消流程不生成新取消凭证，不能据字典中的 C 推断常规报价会生成冲销单。与 DocStatus 开闭状态独立，异常或历史 C 值须结合版本和来源核实。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
       },
       "type": "CHAR(1)"
@@ -97,13 +97,37 @@
       "type": "DECIMAL(19,6)"
     },
     {
-      "displayName": "折扣总额",
+      "displayName": "整单折扣金额（本币）",
       "isCalculated": false,
       "isHidden": false,
       "name": "DiscSum",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Total Discount。",
+        "description": "单据头折扣金额，与行 DiscPrcnt 的折扣百分比和行折后价格分别使用，不重复扣减行折扣。 币种取同一公司库 OADM.MainCurncy，不按 DocCur 或行 Currency 给本列赋币种。 头金额在连接明细后不得重复累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "整单折扣金额（外币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DiscSumFC",
+      "notNull": false,
+      "properties": {
+        "description": "单据头折扣金额，与行 DiscPrcnt 的折扣百分比和行折后价格分别使用，不重复扣减行折扣。 正常外币单据按本表 DocCur解释币种，此映射是字段族与单据币种规则的组合解释；不能改用行价格 Currency，跨单据须按币种分组。本币单据的 FC 列可能不适用，不能因零值或空值认定该项业务金额为零。 头金额在连接明细后不得重复累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "整单折扣金额（系统币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "DiscSumSy",
+      "notNull": false,
+      "properties": {
+        "description": "单据头折扣金额，与行 DiscPrcnt 的折扣百分比和行折后价格分别使用，不重复扣减行折扣。 币种取同一公司库 OADM.SysCurrncy，使用已保存金额，不按当前汇率重算。 头金额在连接明细后不得重复累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
       },
       "type": "DECIMAL(19,6)"
@@ -133,13 +157,13 @@
       "type": "TIMESTAMP"
     },
     {
-      "displayName": "有效期截止",
+      "displayName": "报价有效期截止",
       "isCalculated": false,
       "isHidden": false,
       "name": "DocDueDate",
       "notNull": false,
       "properties": {
-        "description": "FP2508 DI API：销售报价为有效期截止、销售订单为交付日、发票为到期/价值日；其他对象按各自界面用途核验，不能统一解释为付款到期。",
+        "description": "销售报价的有效期截止日期，不是付款到期日或实际交货日。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
       },
       "type": "TIMESTAMP"
@@ -199,7 +223,7 @@
       "name": "DocTotal",
       "notNull": false,
       "properties": {
-        "description": "单据头本币总额，币种取同一公司库 OADM.MainCurncy；即使 DocCur 为外币也不改变本列口径。不是净收入或库存成本，不与不含税行金额直接等同；连接明细后不得重复求和。",
+        "description": "单据头本币总额，币种取同一公司库 OADM.MainCurncy；即使 DocCur 为外币也不改变本列口径。 单据总额须结合适用的税、整单折扣、费用和舍入解释，不等于不含税收入、库存成本或行金额简单合计。 连接明细后不得重复累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
       },
       "type": "DECIMAL(19,6)"
@@ -211,7 +235,7 @@
       "name": "DocTotalFC",
       "notNull": false,
       "properties": {
-        "description": "单据头外币总额；外币单据以本表 DocCur 为币种，跨单据按 DocCur 分组。本币单据须使用 DocTotal，不能因本列为零或空就认定没有业务金额；连接明细后不得重复累计。",
+        "description": "单据头外币总额，正常外币单据按本表 DocCur 解释币种并分组；本币单据使用 DocTotal，不能因本列为零或空就认定没有业务金额。 单据总额须结合适用的税、整单折扣、费用和舍入解释，不等于不含税收入、库存成本或行金额简单合计。 连接明细后不得重复累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
       },
       "type": "DECIMAL(19,6)"
@@ -223,19 +247,19 @@
       "name": "DocTotalSy",
       "notNull": false,
       "properties": {
-        "description": "单据头系统币总额，币种取同一公司库 OADM.SysCurrncy；不是 DocCur 或行 Currency。使用已保存的系统币金额，不按当前汇率重算；连接明细后不得重复累计。",
+        "description": "单据头系统币总额，币种取同一公司库 OADM.SysCurrncy，不是 DocCur 或行 Currency；使用已保存金额，不按当前汇率重算。 单据总额须结合适用的税、整单折扣、费用和舍入解释，不等于不含税收入、库存成本或行金额简单合计。 连接明细后不得重复累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
       },
       "type": "DECIMAL(19,6)"
     },
     {
-      "displayName": "单据类型",
+      "displayName": "物料/服务类型",
       "isCalculated": false,
       "isHidden": false,
       "name": "DocType",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Document Type。",
+        "description": "I=物料单据，S=服务单据；与 ObjType 的单据对象类型代码不同。服务行可以没有 ItemCode，应结合行 Dscription 和 AcctCode 解释，不能因缺少物料编码排除服务金额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
       },
       "type": "CHAR(1)"
@@ -349,13 +373,49 @@
       "type": "TIMESTAMP"
     },
     {
+      "displayName": "单据舍入差额（本币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "RoundDif",
+      "notNull": false,
+      "properties": {
+        "description": "单据原金额与舍入后金额的差异；保留已记录的正负值，不按当前显示小数位重新计算。 币种取同一公司库 OADM.MainCurncy，不按 DocCur 或行 Currency 给本列赋币种。 头金额在连接明细后不得重复累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "单据舍入差额（外币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "RoundDifFC",
+      "notNull": false,
+      "properties": {
+        "description": "单据原金额与舍入后金额的差异；保留已记录的正负值，不按当前显示小数位重新计算。 正常外币单据按本表 DocCur解释币种，此映射是字段族与单据币种规则的组合解释；不能改用行价格 Currency，跨单据须按币种分组。本币单据的 FC 列可能不适用，不能因零值或空值认定该项业务金额为零。 头金额在连接明细后不得重复累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "单据舍入差额（系统币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "RoundDifSy",
+      "notNull": false,
+      "properties": {
+        "description": "单据原金额与舍入后金额的差异；保留已记录的正负值，不按当前显示小数位重新计算。 币种取同一公司库 OADM.SysCurrncy，使用已保存金额，不按当前汇率重算。 头金额在连接明细后不得重复累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
       "displayName": "编号系列",
       "isCalculated": false,
       "isHidden": false,
       "name": "Series",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Series。",
+        "description": "单据编号系列，关联 NNM1.Series；与 DocNum 一起解释显示号码，不能代替 DocEntry 作为单据内部键。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
       },
       "type": "INTEGER"
@@ -385,13 +445,37 @@
       "type": "TIMESTAMP"
     },
     {
-      "displayName": "运费总额",
+      "displayName": "单据附加费用（外币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TotalExpFC",
+      "notNull": false,
+      "properties": {
+        "description": "单据附加费用或运费总额，属于本单据费用，不代表企业全部经营费用；与税额、折扣及商品行金额分别使用。 正常外币单据按本表 DocCur解释币种，此映射是字段族与单据币种规则的组合解释；不能改用行价格 Currency，跨单据须按币种分组。本币单据的 FC 列可能不适用，不能因零值或空值认定该项业务金额为零。 头金额在连接明细后不得重复累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "单据附加费用（本币）",
       "isCalculated": false,
       "isHidden": false,
       "name": "TotalExpns",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Total Freight Charges。",
+        "description": "单据附加费用或运费总额，属于本单据费用，不代表企业全部经营费用；与税额、折扣及商品行金额分别使用。 币种取同一公司库 OADM.MainCurncy，不按 DocCur 或行 Currency 给本列赋币种。 头金额在连接明细后不得重复累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "单据附加费用（系统币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TotalExpSC",
+      "notNull": false,
+      "properties": {
+        "description": "单据附加费用或运费总额，属于本单据费用，不代表企业全部经营费用；与税额、折扣及商品行金额分别使用。 币种取同一公司库 OADM.SysCurrncy，使用已保存金额，不按当前汇率重算。 头金额在连接明细后不得重复累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
       },
       "type": "DECIMAL(19,6)"
@@ -445,13 +529,37 @@
       "type": "DECIMAL(19,6)"
     },
     {
-      "displayName": "本币税额",
+      "displayName": "单据税额（本币）",
       "isCalculated": false,
       "isHidden": false,
       "name": "VatSum",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Total Tax。",
+        "description": "单据头税额，按适用税制记录；头税额可能包含费用税，不预设等于普通销售行税额之和。 币种取同一公司库 OADM.MainCurncy，不按 DocCur 或行 Currency 给本列赋币种。 头金额在连接明细后不得重复累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "单据税额（外币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "VatSumFC",
+      "notNull": false,
+      "properties": {
+        "description": "单据头税额，按适用税制记录；头税额可能包含费用税，不预设等于普通销售行税额之和。 正常外币单据按本表 DocCur解释币种，此映射是字段族与单据币种规则的组合解释；不能改用行价格 Currency，跨单据须按币种分组。本币单据的 FC 列可能不适用，不能因零值或空值认定该项业务金额为零。 头金额在连接明细后不得重复累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "单据税额（系统币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "VatSumSy",
+      "notNull": false,
+      "properties": {
+        "description": "单据头税额，按适用税制记录；头税额可能包含费用税，不预设等于普通销售行税额之和。 币种取同一公司库 OADM.SysCurrncy，使用已保存金额，不按当前汇率重算。 头金额在连接明细后不得重复累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
       },
       "type": "DECIMAL(19,6)"

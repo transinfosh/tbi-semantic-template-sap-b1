@@ -73,7 +73,13 @@
       "VatPrcnt",
       "VisOrder",
       "WhsCode",
-      "unitMsr"
+      "unitMsr",
+      "GTotalFC",
+      "GTotalSC",
+      "PriceAfVAT",
+      "VatSum",
+      "VatSumFrgn",
+      "VatSumSy"
     ],
     "primary_key": [
       "DocEntry",
@@ -111,7 +117,16 @@
       "UomEntry",
       "UseBaseUn",
       "WhsCode",
-      "unitMsr"
+      "unitMsr",
+      "AcctCode",
+      "Dscription",
+      "GTotalFC",
+      "GTotalSC",
+      "PriceAfVAT",
+      "PriceBefDi",
+      "VatSum",
+      "VatSumFrgn",
+      "VatSumSy"
     ],
     "primary_key": [
       "DocEntry",
@@ -301,7 +316,12 @@
       "VatSum",
       "VisOrder",
       "WhsCode",
-      "unitMsr"
+      "unitMsr",
+      "GTotalFC",
+      "GTotalSC",
+      "PriceAfVAT",
+      "VatSumFrgn",
+      "VatSumSy"
     ],
     "primary_key": [
       "DocEntry",
@@ -951,7 +971,16 @@
       "TrnspCode",
       "UpdateDate",
       "VatPercent",
-      "VatSum"
+      "VatSum",
+      "DiscSumFC",
+      "DiscSumSy",
+      "RoundDif",
+      "RoundDifFC",
+      "RoundDifSy",
+      "TotalExpFC",
+      "TotalExpSC",
+      "VatSumFC",
+      "VatSumSy"
     ],
     "primary_key": [
       "DocEntry"
@@ -992,7 +1021,21 @@
       "SlpCode",
       "TaxDate",
       "TransId",
-      "UpdateDate"
+      "UpdateDate",
+      "DiscSum",
+      "DiscSumFC",
+      "DiscSumSy",
+      "DocType",
+      "RoundDif",
+      "RoundDifFC",
+      "RoundDifSy",
+      "Series",
+      "TotalExpFC",
+      "TotalExpns",
+      "TotalExpSC",
+      "VatSum",
+      "VatSumFC",
+      "VatSumSy"
     ],
     "primary_key": [
       "DocEntry"
@@ -1261,7 +1304,16 @@
       "UpdateDate",
       "VatPercent",
       "VatSum",
-      "isIns"
+      "isIns",
+      "DiscSumFC",
+      "DiscSumSy",
+      "RoundDif",
+      "RoundDifFC",
+      "RoundDifSy",
+      "TotalExpFC",
+      "TotalExpSC",
+      "VatSumFC",
+      "VatSumSy"
     ],
     "primary_key": [
       "DocEntry"
@@ -1899,7 +1951,16 @@
       "TrnspCode",
       "UpdateDate",
       "VatPercent",
-      "VatSum"
+      "VatSum",
+      "DiscSumFC",
+      "DiscSumSy",
+      "RoundDif",
+      "RoundDifFC",
+      "RoundDifSy",
+      "TotalExpFC",
+      "TotalExpSC",
+      "VatSumFC",
+      "VatSumSy"
     ],
     "primary_key": [
       "DocEntry"
@@ -1969,7 +2030,21 @@
       "SlpCode",
       "TaxDate",
       "TransId",
-      "UpdateDate"
+      "UpdateDate",
+      "DiscSum",
+      "DiscSumFC",
+      "DiscSumSy",
+      "DocType",
+      "RoundDif",
+      "RoundDifFC",
+      "RoundDifSy",
+      "Series",
+      "TotalExpFC",
+      "TotalExpns",
+      "TotalExpSC",
+      "VatSum",
+      "VatSumFC",
+      "VatSumSy"
     ],
     "primary_key": [
       "DocEntry"
@@ -2017,7 +2092,16 @@
       "TrnspCode",
       "UpdateDate",
       "VatPercent",
-      "VatSum"
+      "VatSum",
+      "DiscSumFC",
+      "DiscSumSy",
+      "RoundDif",
+      "RoundDifFC",
+      "RoundDifSy",
+      "TotalExpFC",
+      "TotalExpSC",
+      "VatSumFC",
+      "VatSumSy"
     ],
     "primary_key": [
       "DocEntry"
@@ -2064,7 +2148,16 @@
       "TrnspCode",
       "UpdateDate",
       "VatPercent",
-      "VatSum"
+      "VatSum",
+      "DiscSumFC",
+      "DiscSumSy",
+      "RoundDif",
+      "RoundDifFC",
+      "RoundDifSy",
+      "TotalExpFC",
+      "TotalExpSC",
+      "VatSumFC",
+      "VatSumSy"
     ],
     "primary_key": [
       "DocEntry"
@@ -2827,7 +2920,14 @@
       "VatPrcnt",
       "VisOrder",
       "WhsCode",
-      "unitMsr"
+      "unitMsr",
+      "GTotal",
+      "GTotalFC",
+      "GTotalSC",
+      "PriceAfVAT",
+      "VatSum",
+      "VatSumFrgn",
+      "VatSumSy"
     ],
     "primary_key": [
       "DocEntry",
@@ -2923,7 +3023,16 @@
       "UomEntry",
       "UseBaseUn",
       "WhsCode",
-      "unitMsr"
+      "unitMsr",
+      "AcctCode",
+      "Dscription",
+      "GTotalFC",
+      "GTotalSC",
+      "PriceAfVAT",
+      "PriceBefDi",
+      "VatSum",
+      "VatSumFrgn",
+      "VatSumSy"
     ],
     "primary_key": [
       "DocEntry",
@@ -2973,7 +3082,13 @@
       "VatPrcnt",
       "VisOrder",
       "WhsCode",
-      "unitMsr"
+      "unitMsr",
+      "GTotalFC",
+      "GTotalSC",
+      "LinManClsd",
+      "VatSum",
+      "VatSumFrgn",
+      "VatSumSy"
     ],
     "primary_key": [
       "DocEntry",
@@ -3022,7 +3137,13 @@
       "VatPrcnt",
       "VisOrder",
       "WhsCode",
-      "unitMsr"
+      "unitMsr",
+      "GTotalFC",
+      "GTotalSC",
+      "PriceAfVAT",
+      "VatSum",
+      "VatSumFrgn",
+      "VatSumSy"
     ],
     "primary_key": [
       "DocEntry",

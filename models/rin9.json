@@ -19,7 +19,7 @@
       "name": "BaseAbs",
       "notNull": false,
       "properties": {
-        "description": "指向 ODPI.DocEntry；不是显示单号。",
+        "description": "基础预付款内部键；官方相关表提示为 ODPI，但本模板尚未放行 RIN9 到 ODPI 的关系，仍须核实 ObjType 等类型约束，不能仅凭 BaseAbs 连接；不是显示单号。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN9.html"
       },
       "type": "INTEGER"
@@ -212,7 +212,7 @@
     "LineNum"
   ],
   "properties": {
-    "description": "应收贷项与预付款抵扣记录粒度，主键 (DocEntry, LineNum)。用 BaseAbs 关联预付款表头；来源于同一订单不能替代该实际抵扣关系。 本币金额的币种取同一公司库 OADM.MainCurncy，系统币金额取 OADM.SysCurrncy。外币抵扣金额须结合所属单据、来源预付款单据及其币种核实；本模板尚未确认所有跨币抵扣情形的币种归属，不按字段后缀或相邻单据自动推定。抵扣是结算应用，不作为额外销售收入重复加入发票金额。",
+    "description": "应收贷项与预付款抵扣记录粒度，主键 (DocEntry, LineNum)。BaseAbs 提供基础预付款键线索，RIN9 到 ODPI 的类型约束仍待审，未加入默认关系；来源于同一订单不能替代实际抵扣记录。 本币金额的币种取同一公司库 OADM.MainCurncy，系统币金额取 OADM.SysCurrncy。外币抵扣金额须结合所属单据、来源预付款单据及其币种核实；本模板尚未确认所有跨币抵扣情形的币种归属，不按字段后缀或相邻单据自动推定。抵扣是结算应用，不作为额外销售收入重复加入发票金额。",
     "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN9.html"
   },
   "tableReference": {

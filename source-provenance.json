@@ -59,6 +59,420 @@
       ],
       "scope": "inventory_issue_price_currency_and_historical_unit",
       "version": "0.3.0"
+    },
+    {
+      "additional_columns": {
+        "DLN1": [
+          "GTotalFC",
+          "GTotalSC",
+          "PriceAfVAT",
+          "VatSum",
+          "VatSumFrgn",
+          "VatSumSy"
+        ],
+        "DPI1": [
+          "AcctCode",
+          "Dscription",
+          "GTotalFC",
+          "GTotalSC",
+          "PriceAfVAT",
+          "PriceBefDi",
+          "VatSum",
+          "VatSumFrgn",
+          "VatSumSy"
+        ],
+        "INV1": [
+          "GTotalFC",
+          "GTotalSC",
+          "PriceAfVAT",
+          "VatSumFrgn",
+          "VatSumSy"
+        ],
+        "ODLN": [
+          "DiscSumFC",
+          "DiscSumSy",
+          "RoundDif",
+          "RoundDifFC",
+          "RoundDifSy",
+          "TotalExpFC",
+          "TotalExpSC",
+          "VatSumFC",
+          "VatSumSy"
+        ],
+        "ODPI": [
+          "DiscSum",
+          "DiscSumFC",
+          "DiscSumSy",
+          "DocType",
+          "RoundDif",
+          "RoundDifFC",
+          "RoundDifSy",
+          "Series",
+          "TotalExpFC",
+          "TotalExpns",
+          "TotalExpSC",
+          "VatSum",
+          "VatSumFC",
+          "VatSumSy"
+        ],
+        "OINV": [
+          "DiscSumFC",
+          "DiscSumSy",
+          "RoundDif",
+          "RoundDifFC",
+          "RoundDifSy",
+          "TotalExpFC",
+          "TotalExpSC",
+          "VatSumFC",
+          "VatSumSy"
+        ],
+        "OQUT": [
+          "DiscSumFC",
+          "DiscSumSy",
+          "RoundDif",
+          "RoundDifFC",
+          "RoundDifSy",
+          "TotalExpFC",
+          "TotalExpSC",
+          "VatSumFC",
+          "VatSumSy"
+        ],
+        "ORDN": [
+          "DiscSum",
+          "DiscSumFC",
+          "DiscSumSy",
+          "DocType",
+          "RoundDif",
+          "RoundDifFC",
+          "RoundDifSy",
+          "Series",
+          "TotalExpFC",
+          "TotalExpns",
+          "TotalExpSC",
+          "VatSum",
+          "VatSumFC",
+          "VatSumSy"
+        ],
+        "ORDR": [
+          "DiscSumFC",
+          "DiscSumSy",
+          "RoundDif",
+          "RoundDifFC",
+          "RoundDifSy",
+          "TotalExpFC",
+          "TotalExpSC",
+          "VatSumFC",
+          "VatSumSy"
+        ],
+        "ORIN": [
+          "DiscSumFC",
+          "DiscSumSy",
+          "RoundDif",
+          "RoundDifFC",
+          "RoundDifSy",
+          "TotalExpFC",
+          "TotalExpSC",
+          "VatSumFC",
+          "VatSumSy"
+        ],
+        "QUT1": [
+          "GTotal",
+          "GTotalFC",
+          "GTotalSC",
+          "PriceAfVAT",
+          "VatSum",
+          "VatSumFrgn",
+          "VatSumSy"
+        ],
+        "RDN1": [
+          "AcctCode",
+          "Dscription",
+          "GTotalFC",
+          "GTotalSC",
+          "PriceAfVAT",
+          "PriceBefDi",
+          "VatSum",
+          "VatSumFrgn",
+          "VatSumSy"
+        ],
+        "RDR1": [
+          "GTotalFC",
+          "GTotalSC",
+          "LinManClsd",
+          "VatSum",
+          "VatSumFrgn",
+          "VatSumSy"
+        ],
+        "RIN1": [
+          "GTotalFC",
+          "GTotalSC",
+          "PriceAfVAT",
+          "VatSum",
+          "VatSumFrgn",
+          "VatSumSy"
+        ]
+      },
+      "basis": "逐表读取 SAP Business One 10.0 官方数据库参考，补充原生金额、服务和状态字段；价格与单位、普通 FC 金额到 DocCur 的映射区分直接定义和组合解释。",
+      "business_data": "不包含实例数据、企业标识、业务单据行或实际金额。",
+      "date": "2026-10-20",
+      "deferred_clarification": {
+        "RIN9.BaseAbs": "官方相关表线索不替代ObjType等类型约束核实；RIN9到ODPI仍待审。"
+      },
+      "description_corrections": {
+        "DLN1": [
+          "AcctCode",
+          "Dscription",
+          "GTotal",
+          "NoInvtryMv",
+          "Price",
+          "PriceBefDi"
+        ],
+        "DPI1": [
+          "GTotal",
+          "NoInvtryMv",
+          "Price"
+        ],
+        "INV1": [
+          "AcctCode",
+          "Dscription",
+          "GTotal",
+          "NoInvtryMv",
+          "Price",
+          "PriceBefDi",
+          "VatSum"
+        ],
+        "ODLN": [
+          "DiscSum",
+          "DocDueDate",
+          "DocTotal",
+          "DocTotalFC",
+          "DocTotalSy",
+          "DocType",
+          "Series",
+          "TotalExpns",
+          "VatSum"
+        ],
+        "ODPI": [
+          "DocDueDate",
+          "DocTotal",
+          "DocTotalFC",
+          "DocTotalSy"
+        ],
+        "OINV": [
+          "DiscSum",
+          "DocDueDate",
+          "DocTotal",
+          "DocTotalFC",
+          "DocTotalSy",
+          "DocType",
+          "isIns",
+          "Series",
+          "TotalExpns",
+          "VatSum"
+        ],
+        "OQUT": [
+          "CANCELED",
+          "DiscSum",
+          "DocDueDate",
+          "DocTotal",
+          "DocTotalFC",
+          "DocTotalSy",
+          "DocType",
+          "Series",
+          "TotalExpns",
+          "VatSum"
+        ],
+        "ORDN": [
+          "DocDueDate",
+          "DocTotal",
+          "DocTotalFC",
+          "DocTotalSy"
+        ],
+        "ORDR": [
+          "DiscSum",
+          "DocDueDate",
+          "DocManClsd",
+          "DocTotal",
+          "DocTotalFC",
+          "DocTotalSy",
+          "DocType",
+          "Series",
+          "TotalExpns",
+          "VatSum"
+        ],
+        "ORIN": [
+          "DiscSum",
+          "DocDueDate",
+          "DocTotal",
+          "DocTotalFC",
+          "DocTotalSy",
+          "DocType",
+          "Series",
+          "TotalExpns",
+          "VatSum"
+        ],
+        "QUT1": [
+          "AcctCode",
+          "Dscription",
+          "NoInvtryMv",
+          "Price",
+          "PriceBefDi"
+        ],
+        "RDN1": [
+          "GTotal",
+          "NoInvtryMv",
+          "Price"
+        ],
+        "RDR1": [
+          "AcctCode",
+          "Dscription",
+          "GTotal",
+          "NoInvtryMv",
+          "Price",
+          "PriceAfVAT",
+          "PriceBefDi"
+        ],
+        "RIN1": [
+          "AcctCode",
+          "Dscription",
+          "GTotal",
+          "NoInvtryMv",
+          "Price",
+          "PriceBefDi"
+        ]
+      },
+      "official_sources": [
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_Lines~Price.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_Lines~PriceAfterVAT.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_Lines~Currency.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_Lines~UnitsOfMeasurment.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_Lines~UseBaseUnits.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_Lines~TaxTotal.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~VatSum.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DocDueDate.html",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~ReserveInvoice.html",
+        "https://help.sap.com/doc/2c7bbaa597e34fcb84971d5af6411248/10.0/en-US/How_to_Work_with_Gross_Prices.pdf",
+        "https://learning.sap.com/courses/managing-logistics-in-sap-business-one/exploring-the-pricing-concepts",
+        "https://help.sap.com/docs/SAP_BUSINESS_ONE/55b49079e1f24a68b77828e703f99fb2/ca080f4f7ad8498b9a39eae01f95764c.html",
+        "https://help.sap.com/doc/ceedc4fe720a4fc19a8e1fa75bdf02f7/10.0_SP_2505/en-US/ab9cf61542fb4359ae1ee7a972f920d5.pdf#page=140"
+      ],
+      "official_table_snapshots": [
+        {
+          "content_sha256": "41942f0a5dc08d4b36e7ae6afdf775bc0739ec682fed6a62be0017aa65038b4e",
+          "hash_scope": "retrieved HTML text saved as UTF-8",
+          "table": "DLN1",
+          "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/DLN1.html"
+        },
+        {
+          "content_sha256": "4277a518a255c6f602f1de170b946e1a05f9ab48c8daa8c91674821bf549e978",
+          "hash_scope": "retrieved HTML text saved as UTF-8",
+          "table": "DPI1",
+          "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/DPI1.html"
+        },
+        {
+          "content_sha256": "1eab4e133873be8278dc5d563a95ac156835eaebe175cf104ddd6fbbdcda081c",
+          "hash_scope": "retrieved HTML text saved as UTF-8",
+          "table": "INV1",
+          "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV1.html"
+        },
+        {
+          "content_sha256": "be83caa6abdf6f47aee3bd8f3122687fefdce78514a82cc635dbddbd63f3cc6b",
+          "hash_scope": "retrieved HTML text saved as UTF-8",
+          "table": "ODLN",
+          "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ODLN.html"
+        },
+        {
+          "content_sha256": "d62da901d7d6cbb5123880afd07e5a073078bcefcfe306012764e3c48c27f827",
+          "hash_scope": "retrieved HTML text saved as UTF-8",
+          "table": "ODPI",
+          "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ODPI.html"
+        },
+        {
+          "content_sha256": "e206a1a37b50ceaa6501de537bc9aa9718e5646442250d897443cc9e779b86f7",
+          "hash_scope": "retrieved HTML text saved as UTF-8",
+          "table": "OINV",
+          "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OINV.html"
+        },
+        {
+          "content_sha256": "8da6f3bc75f1199e2bfb376d53c1a71d7fa64bd082f25e76d89a1e47f3452cb2",
+          "hash_scope": "retrieved HTML text saved as UTF-8",
+          "table": "OQUT",
+          "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
+        },
+        {
+          "content_sha256": "51bbe29c37fbf776620cfa23a9e82f46a3998750bf1d25e8fa12fb4487c7a62a",
+          "hash_scope": "retrieved HTML text saved as UTF-8",
+          "table": "ORDN",
+          "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORDN.html"
+        },
+        {
+          "content_sha256": "6d33497c5908dfd3f725542c609a27c28242cae6c51cebce713a1b69e27f326b",
+          "hash_scope": "retrieved HTML text saved as UTF-8",
+          "table": "ORDR",
+          "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORDR.html"
+        },
+        {
+          "content_sha256": "46a6090570e8131b9dc2dc77c09169d4725869db0756207515b026d02cf5fc84",
+          "hash_scope": "retrieved HTML text saved as UTF-8",
+          "table": "ORIN",
+          "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
+        },
+        {
+          "content_sha256": "c867e7a707ac3279e6e73d15ff9297b790917cb3e4c9b5fb2fee0d92f826889e",
+          "hash_scope": "retrieved HTML text saved as UTF-8",
+          "table": "QUT1",
+          "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/QUT1.html"
+        },
+        {
+          "content_sha256": "7c21e8b6e5c31dd7ea42be2548463c907f51014a66c80c2dff67dc95fa3c0c7d",
+          "hash_scope": "retrieved HTML text saved as UTF-8",
+          "table": "RDN1",
+          "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDN1.html"
+        },
+        {
+          "content_sha256": "ac07972fa3b7aa328f6ed2a9950ee983ab74ef8ef098220c031f90bedc655104",
+          "hash_scope": "retrieved HTML text saved as UTF-8",
+          "table": "RDR1",
+          "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
+        },
+        {
+          "content_sha256": "7f47f5c058172695ae0d1c4c41e52af17bfc828943f770f2b44e5aed46ab4b9e",
+          "hash_scope": "retrieved HTML text saved as UTF-8",
+          "table": "RIN1",
+          "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN1.html"
+        }
+      ],
+      "relationship_basis": "逐表官方相关表定义；编号系列保留Series与ObjType/ObjectCode双条件，行科目仅解释选用科目。已有营销来源关系未改动，待审路径未放行。",
+      "relationship_names": [
+        "dln1_oact",
+        "dpi1_oact",
+        "inv1_oact",
+        "odpi_nnm1",
+        "odpi_oslp",
+        "ordn_nnm1",
+        "ordn_oslp",
+        "qut1_oact",
+        "rdn1_oact",
+        "rdr1_oact",
+        "rin1_oact"
+      ],
+      "remaining_acceptance": [
+        "target_database_version_and_localization",
+        "price_currency_different_from_document_currency",
+        "transaction_uom_and_inventory_uom",
+        "header_discount_freight_tax_and_rounding_reconciliation",
+        "down_payment_fc_currency_source",
+        "cancellations_manual_close_and_service_documents",
+        "real_agent_question_and_query_acceptance"
+      ],
+      "research": [
+        "validation/sales-amounts-research.md",
+        "validation/sales-lifecycle-research.md",
+        "validation/sales-currency-research.md"
+      ],
+      "scope": "sales_price_tax_freight_rounding_service_and_lifecycle",
+      "synthetic_regression": "tests/test_sales.py",
+      "version": "0.4.0"
     }
   ],
   "domain_rule_sources": [
