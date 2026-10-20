@@ -18,5 +18,15 @@
     "passed": 15
   },
   "target_database_queried": false,
+  "tbi_mdl_validation": {
+    "checks": [
+      "validate_layout_version_fields",
+      "validate_semantic_objects"
+    ],
+    "passed": true,
+    "site_class": "disposable_test_site",
+    "transaction": "read_only_rollback",
+    "workspace_imported": false
+  },
   "verified_at": "2026-10-20"
 }
