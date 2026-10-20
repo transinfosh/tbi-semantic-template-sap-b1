@@ -13,13 +13,13 @@
       "type": "DECIMAL(19,6)"
     },
     {
-      "displayName": "估价层计算价格",
+      "displayName": "估价层计算单价",
       "isCalculated": false,
       "isHidden": false,
       "name": "CalcPrice",
       "notNull": false,
       "properties": {
-        "description": "按估价层保存的计算价格；不能简单平均后称交易单价。",
+        "description": "每个估价层保存的计算单价；一笔发料可能跨多个估价层，不能简单平均，也不能无条件当作单据行StockPrice。与过账金额按库存数量折算的单价分别展示，金额及单价舍入可能造成差异。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IVL1.html"
       },
       "type": "DECIMAL(19,6)"
@@ -85,13 +85,13 @@
       "type": "INTEGER"
     },
     {
-      "displayName": "估价层交易价值",
+      "displayName": "估价层库存变动金额",
       "isCalculated": false,
       "isHidden": false,
       "name": "TransValue",
       "notNull": false,
       "properties": {
-        "description": "估价层交易价值；符号、币种和重估覆盖须与官方库存审计报告对账。",
+        "description": "估价层交易价值，保留正负与NULL。先按TransSeq聚合完整层，再回连OIVL；不得随层数重复累计OIVL数量。若层缺失或部分层金额NULL，应标记不完整，不能用SUM跳过NULL后冒充完整金额。币种、零数量重估和特殊生产流程仍需目标报表核对。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IVL1.html"
       },
       "type": "DECIMAL(19,6)"

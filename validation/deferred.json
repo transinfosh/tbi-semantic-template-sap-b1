@@ -30,7 +30,7 @@
     "特定公司库的样本支持不能自动解除通用模板的待审状态。",
     "同表来源需要角色别名，未在模板中生成自关联。",
     "支付应用所属单据键需要DocEntry与DocNum不同的有判别力样本。",
-    "库存估价来源连接、生产组件归属、成本金额与历史核销余额仍需目标库和SAP报表验收。"
+    "IGE1→WOR1与OIVL→IGE1已按官方字段、键和类型语义结合目标生产样本放行标准来源追溯；不由此推导退料、拆卸或多层业务金额全部已验收。其他估价来源、成本金额与历史核销余额仍需目标库和SAP报表验收。"
   ],
   "relationships": [
     {
@@ -214,58 +214,6 @@
         "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OVPM.html"
       ],
       "to_table": "OVPM"
-    },
-    {
-      "description": "生产来源组件行候选；不能用当前发料LineNum连接生产组件。须实库核验拆卸、倒冲及特殊来源行。",
-      "field_mappings": [
-        [
-          "BaseEntry",
-          "DocEntry"
-        ],
-        [
-          "BaseLine",
-          "LineNum"
-        ]
-      ],
-      "filters": [
-        {
-          "column": "BaseType",
-          "side": "from",
-          "value": 202
-        }
-      ],
-      "from_table": "IGE1",
-      "sources": [
-        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGE1.html",
-        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
-      ],
-      "to_table": "WOR1"
-    },
-    {
-      "description": "依据官方交易类型与单据键/行号语义的候选连接；需实库验证覆盖及SAP审计报告对账。同一单据行可有多条OIVL，绝不声明一对一。",
-      "field_mappings": [
-        [
-          "CreatedBy",
-          "DocEntry"
-        ],
-        [
-          "DocLineNum",
-          "LineNum"
-        ]
-      ],
-      "filters": [
-        {
-          "column": "TransType",
-          "side": "from",
-          "value": 60
-        }
-      ],
-      "from_table": "OIVL",
-      "sources": [
-        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html",
-        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGE1.html"
-      ],
-      "to_table": "IGE1"
     },
     {
       "description": "依据官方交易类型与单据键/行号语义的候选连接；需实库验证覆盖及SAP审计报告对账。同一单据行可有多条OIVL，绝不声明一对一。",

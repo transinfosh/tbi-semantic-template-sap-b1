@@ -10,12 +10,13 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from contextlib import closing
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from build import build, encode, read_json, validate  # noqa: E402
+from build import build, encode, read_json, validate
 
 
 class TemplateTest(unittest.TestCase):
@@ -151,8 +152,7 @@ class TemplateTest(unittest.TestCase):
         self.assertTrue(excluded)
         self.assertFalse(relationships & {item["name"] for item in excluded})
         for relation in self.mdl["relationships"]:
-            self.assertNotIn(set(relation["models"]), [{"oivl", "ige1"}, {"oivl", "ign1"}, {"oivl", "wtr1"}])
-            self.assertNotIn(set(relation["models"]), [{"ige1", "wor1"}])
+            self.assertNotIn(set(relation["models"]), [{"oivl", "ign1"}, {"oivl", "wtr1"}])
 
     def test_payment_business_partner_branches_keep_both_discriminators(self) -> None:
         relationships = self.mdl["relationships"]
@@ -165,7 +165,7 @@ class TemplateTest(unittest.TestCase):
 
     def test_source_type_excludes_same_number_from_other_document_type(self) -> None:
         relation = next(item for item in self.mdl["relationships"] if item["name"] == "sap_inv1_rdr1")
-        with sqlite3.connect(":memory:") as connection:
+        with closing(sqlite3.connect(":memory:")) as connection:
             connection.executescript(
                 "CREATE TABLE inv1 (DocEntry INT, BaseEntry INT, BaseLine INT, BaseType INT);"
                 "CREATE TABLE rdr1 (DocEntry INT, LineNum INT);"
@@ -177,7 +177,7 @@ class TemplateTest(unittest.TestCase):
 
     def test_document_line_join_does_not_fan_out_to_other_source_lines(self) -> None:
         relation = next(item for item in self.mdl["relationships"] if item["name"] == "rdr1_dln1")
-        with sqlite3.connect(":memory:") as connection:
+        with closing(sqlite3.connect(":memory:")) as connection:
             connection.executescript(
                 "CREATE TABLE dln1 (DocEntry INT, BaseEntry INT, BaseLine INT, BaseType INT);"
                 "CREATE TABLE rdr1 (DocEntry INT, LineNum INT);"

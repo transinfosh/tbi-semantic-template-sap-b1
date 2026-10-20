@@ -1,6 +1,46 @@
 {
   "baseline_artifact_sha256": "b6eaea2ba2fa0160c53dadf5703bfe32a4604ab3b4a63e328d71369109d42921",
   "created_at": "2026-10-20",
+  "definition_revisions": [
+    {
+      "additional_columns": {
+        "IGE1": [
+          "StockSum"
+        ],
+        "IGN1": [
+          "StockSum"
+        ],
+        "OIVL": [
+          "InvntAct",
+          "WipAct",
+          "WipVal"
+        ]
+      },
+      "basis": "官方字段、类型与目标唯一键定义，结合目标标准工单手工/倒冲来源和库存科目金额核对；不是将所有实例候选统一放行。",
+      "date": "2026-10-20",
+      "official_tables": [
+        "IGE1",
+        "IGN1",
+        "OIVL",
+        "IVL1",
+        "WOR1"
+      ],
+      "private_evidence": "保留在使用方私有验收记录，公共仓库不含业务行、公司名称、物料编码或实际金额。",
+      "relationship_names": [
+        "sap_ige1_wor1",
+        "sap_oivl_ige1"
+      ],
+      "remaining_acceptance": [
+        "special_production_roles",
+        "production_returns_and_cancellations",
+        "real_multilayer_valuation",
+        "other_company_configurations"
+      ],
+      "scope": "production_issue_source_and_value_roles",
+      "synthetic_regression": "tests/test_production_issue.py",
+      "version": "0.3.0"
+    }
+  ],
   "domain_rule_sources": [
     {
       "file": "finance.json",

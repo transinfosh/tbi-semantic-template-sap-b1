@@ -1,6 +1,17 @@
 {
   "created_at": "2026-10-20",
   "default_schema": "dbo",
+  "definition_updates": {
+    "added_standard_columns": 5,
+    "added_standard_relationships": [
+      "sap_ige1_wor1",
+      "sap_oivl_ige1"
+    ],
+    "customer_classification_embedded": false,
+    "customer_rows_copied": false,
+    "source_definition_counts_are_original_baseline": true,
+    "version": "0.3.0"
+  },
   "generic_description_corrections": [
     "ITM1",
     "ORTT",

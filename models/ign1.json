@@ -73,13 +73,13 @@
       "type": "DECIMAL(19,6)"
     },
     {
-      "displayName": "过账日期",
+      "displayName": "行过账日期（可空）",
       "isCalculated": false,
       "isHidden": false,
       "name": "DocDate",
       "notNull": false,
       "properties": {
-        "description": "业务过账日期；与凭证日期、到期日期及创建日期分别使用。",
+        "description": "行日期字段可为NULL；IGN1实际发生日期应通过DocEntry取对应单据头OIGN.DocDate，不能因行日期为空判定没有交易。过账日期与CreateDate系统创建日期分别解释。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGN1.html"
       },
       "type": "TIMESTAMP"
@@ -313,25 +313,37 @@
       "type": "DECIMAL(19,6)"
     },
     {
-      "displayName": "单据行库存价格字段",
+      "displayName": "单据行库存单价",
       "isCalculated": false,
       "isHidden": false,
       "name": "StockPrice",
       "notNull": false,
       "properties": {
-        "description": "库存价格字段；与OIVL.Price、IVL1.CalcPrice分别保留，需对账后建立指标。",
+        "description": "官方Inventory Price；单据行已存库存单价。与IVL1.CalcPrice估价层计算单价、OIVL.Price原始价格、过账金额除库存数量得到的折算单价分别展示；金额和价格的舍入精度可使它们不同。多行汇总不得简单AVG单价；核对相同币种和数量单位后才可按总成本/总数量折算。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGN1.html"
       },
       "type": "DECIMAL(19,6)"
     },
     {
-      "displayName": "单据行成本价值字段",
+      "displayName": "单据行库存合计",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "StockSum",
+      "notNull": false,
+      "properties": {
+        "description": "官方定义为Stock Sum；用于核对单据行库存金额，区别于StockValue总销货成本值和LineTotal不含税金额。生产发料须与关联估价交易的带符号SumStock核对，不能未经目标业务验证设为通用过账公式或缺估价时的自动回退值。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGN1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "总销货成本值",
       "isCalculated": false,
       "isHidden": false,
       "name": "StockValue",
       "notNull": false,
       "properties": {
-        "description": "SDK列为总成本价值字段；不能未经验证替代库存估价层交易额。",
+        "description": "官方定义为Total COGS Value（总销货成本值），不是SumStock库存价值变动或StockSum单据行库存合计。生产发料中该字段可以为0而实际库存过账非零；不能由其为0或NULL推断零成本，也不能以LineTotal自动补值。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGN1.html"
       },
       "type": "DECIMAL(19,6)"

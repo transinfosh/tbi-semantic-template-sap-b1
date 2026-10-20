@@ -31,7 +31,7 @@
       "name": "BaseLine",
       "notNull": false,
       "properties": {
-        "description": "匹配来源行LineNum，不能拿当前LineNum替代。",
+        "description": "BaseType=202时与BaseEntry共同连接WOR1.DocEntry、LineNum；发料自身LineNum不是工单组件行号。来源行为空、负值或无匹配时保留异常或特殊来源，不用物料编码猜测。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGE1.html"
       },
       "type": "INTEGER"
@@ -73,13 +73,13 @@
       "type": "DECIMAL(19,6)"
     },
     {
-      "displayName": "过账日期",
+      "displayName": "行过账日期（可空）",
       "isCalculated": false,
       "isHidden": false,
       "name": "DocDate",
       "notNull": false,
       "properties": {
-        "description": "业务过账日期；与凭证日期、到期日期及创建日期分别使用。",
+        "description": "行日期字段可为NULL；IGE1实际发生日期应通过DocEntry取对应单据头OIGE.DocDate，不能因行日期为空判定没有交易。过账日期与CreateDate系统创建日期分别解释。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGE1.html"
       },
       "type": "TIMESTAMP"
@@ -151,7 +151,7 @@
       "name": "InvQty",
       "notNull": false,
       "properties": {
-        "description": "官方定义为库存单位数量；库存数量比较优先使用该口径并验证实际单位。",
+        "description": "库存计量单位数量；与估价交易OutQty-InQty比较前按发料行聚合全部交易。单据Quantity可能使用其他单位；跨物料、单位不得直接合并，零数量不能用于除法。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGE1.html"
       },
       "type": "DECIMAL(19,6)"
@@ -211,7 +211,7 @@
       "name": "LineTotal",
       "notNull": false,
       "properties": {
-        "description": "DI API明确为本行不含税总额；币种须结合单据字段解释，不直接等同库存过账金额。",
+        "description": "DI API定义为本行不含税金额；与StockSum、StockValue和估价过账金额各有职责。某些发料行数值相等不构成通用恒等式，不能用Quantity乘价格或LineTotal代替已存过账金额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGE1.html"
       },
       "type": "DECIMAL(19,6)"
@@ -313,25 +313,37 @@
       "type": "DECIMAL(19,6)"
     },
     {
-      "displayName": "单据行库存价格字段",
+      "displayName": "单据行库存单价",
       "isCalculated": false,
       "isHidden": false,
       "name": "StockPrice",
       "notNull": false,
       "properties": {
-        "description": "库存价格字段；与OIVL.Price、IVL1.CalcPrice分别保留，需对账后建立指标。",
+        "description": "官方Inventory Price；单据行已存库存单价。与IVL1.CalcPrice估价层计算单价、OIVL.Price原始价格、过账金额除库存数量得到的折算单价分别展示；金额和价格的舍入精度可使它们不同。多行汇总不得简单AVG单价；核对相同币种和数量单位后才可按总成本/总数量折算。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGE1.html"
       },
       "type": "DECIMAL(19,6)"
     },
     {
-      "displayName": "单据行成本价值字段",
+      "displayName": "单据行库存合计",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "StockSum",
+      "notNull": false,
+      "properties": {
+        "description": "官方定义为Stock Sum；用于核对单据行库存金额，区别于StockValue总销货成本值和LineTotal不含税金额。生产发料须与关联估价交易的带符号SumStock核对，不能未经目标业务验证设为通用过账公式或缺估价时的自动回退值。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGE1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "总销货成本值",
       "isCalculated": false,
       "isHidden": false,
       "name": "StockValue",
       "notNull": false,
       "properties": {
-        "description": "SDK列为总成本价值字段；不能未经验证替代库存估价层交易额。",
+        "description": "官方定义为Total COGS Value（总销货成本值），不是SumStock库存价值变动或StockSum单据行库存合计。生产发料中该字段可以为0而实际库存过账非零；不能由其为0或NULL推断零成本，也不能以LineTotal自动补值。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGE1.html"
       },
       "type": "DECIMAL(19,6)"
@@ -488,7 +500,7 @@
     "LineNum"
   ],
   "properties": {
-    "description": "每个DocEntry与LineNum组合一行；BaseType=202时归属生产订单；普通发货不属于生产领料。",
+    "description": "每个DocEntry与LineNum组合一行；先用BaseType=202、BaseEntry限定目标工单，再按BaseLine追溯WOR1组件。实际发料日期取OIGE.DocDate，可直接求MIN/MAX或按月分组；不能以工单PostDate作为发料起点、逐月猜测边界，或仅按物料编码扫描全库历史。非库存费用等发料行可能没有OIVL，保留行与缺估价状态，不将其计成已确认零成本。物料业务分类来自经确认的工作区规则，不能假定所有组件或同名称物料均属于某类。",
     "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGE1.html"
   },
   "tableReference": {

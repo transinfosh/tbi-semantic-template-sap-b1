@@ -151,7 +151,7 @@
       "name": "PostDate",
       "notNull": false,
       "properties": {
-        "description": "官方定义为订单日期，不能作为所有发料交易的过账日期。",
+        "description": "生产订单自身的过账日期，不是实际发料日期，也不构成发料查询起止边界。先将DocNum解析为DocEntry，再按IGE1.BaseType=202和BaseEntry限定工单，从OIGE.DocDate求实际日期范围；不逐月试探。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
       },
       "type": "TIMESTAMP"

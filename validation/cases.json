@@ -49,11 +49,11 @@
       "when": "使用业务伙伴关系"
     },
     {
-      "given": "某些关系仅在单一公司库取样支持或仍待审",
+      "given": "未审查的候选与已审查的标准发料来源路径并存",
       "id": "TPL-07",
       "status": "passed",
-      "then": "不将这些边自动提升为默认关系",
-      "verification": "test_reviewed_instance_edges_are_not_promoted_to_generic_defaults",
+      "then": "只放行IGE1→WOR1及OIVL→IGE1两条标准键路径，其他实例专属或待审关系继续排除",
+      "verification": "test_reviewed_instance_edges_are_not_promoted_to_generic_defaults; test_approved_source_paths_are_removed_from_deferred_but_other_paths_stay_deferred",
       "when": "发布通用模板"
     },
     {
@@ -79,8 +79,48 @@
       "then": "拒绝路径穿越、源文件符号链接和旧产物入口；只有显式output写出MDL",
       "verification": "test_manifest_directory_cannot_escape_the_repository; test_symlink_source_is_rejected; test_manifest_does_not_accept_the_old_generated_file_entry; test_explicit_export_matches_the_assembled_sources",
       "when": "读取源目录和JSON文件"
+    },
+    {
+      "given": "不同工单及不同组件行使用相同物料，发料LineNum不同于BaseLine",
+      "id": "TPL-11",
+      "status": "passed_synthetic_regression",
+      "then": "仅按来源类型和BaseEntry/BaseLine定位目标组件，不串工单或行",
+      "verification": "test_component_source_uses_base_line_and_work_order_not_item_code",
+      "when": "追溯工单组件"
+    },
+    {
+      "given": "同单据行有多个估价交易和估价层，另有同号不同类型交易",
+      "id": "TPL-12",
+      "status": "passed_synthetic_regression",
+      "then": "保留TransType=60；层按TransSeq聚合后回连，库存数量不随层数放大",
+      "verification": "test_valuation_source_keeps_transaction_type_and_all_transactions_per_line; test_query_keeps_work_order_scope_and_aggregates_layers_before_transaction_quantities",
+      "when": "查询发料数量和金额"
+    },
+    {
+      "given": "StockValue为零，库存价值非零，并存在相反方向的交易",
+      "id": "TPL-13",
+      "status": "passed_synthetic_regression",
+      "then": "COGS与StockSum及SumStock职责分开，发料成本明确取负，冲回保留负成本",
+      "verification": "test_official_stock_sum_and_cogs_roles_are_exposed_separately; test_zero_cogs_is_not_a_zero_issue_cost_and_abs_does_not_hide_a_reversal",
+      "when": "解释库存金额与正向发料成本"
+    },
+    {
+      "given": "非库存费用无估价、库存行缺估价、交易或部分层金额NULL",
+      "id": "TPL-14",
+      "status": "passed_synthetic_regression",
+      "then": "保留行和未估价/不完整状态；不补零、不回退LineTotal、不以不完整SUM冒充总额",
+      "verification": "test_non_inventory_and_incomplete_amounts_remain_visible_without_zero_fallback; test_partial_null_layers_cannot_be_reported_as_a_complete_layer_amount; test_inventory_line_without_valuation_is_missing_not_a_confirmed_zero",
+      "when": "返回完整发料范围"
+    },
+    {
+      "given": "单据单位不同于库存单位、已存单价与过账折算价不同或库存数量为零",
+      "id": "TPL-15",
+      "status": "passed_synthetic_regression",
+      "then": "单据数量、库存数量、已存单价与折算价分开；零数量单价NULL，层价不简单平均",
+      "verification": "test_stored_price_and_effective_price_are_separate_and_zero_quantity_has_no_unit_cost; test_query_keeps_work_order_scope_and_aggregates_layers_before_transaction_quantities",
+      "when": "展示数量与单价"
     }
   ],
-  "status": "structural_checks_passed_business_acceptance_pending",
+  "status": "structural_and_synthetic_regressions_passed_broad_business_acceptance_pending",
   "verified_at": "2026-10-20"
 }

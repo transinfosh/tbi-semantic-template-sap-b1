@@ -1,11 +1,11 @@
 {
-  "assembled_mdl_sha256": "2f60f47c199fd24fb2a33f03e0bcea8e783b6856d332f925d6315bfa358e2a2d",
-  "business_amount_acceptance": "pending",
+  "assembled_mdl_sha256": "793aaa70aa0e120bd6307fbad702b195a433c5ef1c3f2c20abc837c450eee869",
+  "business_amount_acceptance": "limited_target_production_review_broad_acceptance_pending",
   "counts": {
-    "columns": 2427,
+    "columns": 2432,
     "cubes": 0,
     "models": 96,
-    "relationships": 233,
+    "relationships": 235,
     "views": 0
   },
   "deterministic_build": {
@@ -17,25 +17,27 @@
     "entry": "template.json",
     "status": "pending_tbi_integration"
   },
+  "production_issue_query": {
+    "file": "validation/production-issue-query.sql",
+    "real_multilayer_returns_special_orders": "pending",
+    "scope": "reference_query_not_imported_view",
+    "synthetic_status": "passed"
+  },
   "production_published": false,
   "python_unittest": {
     "command": "python3 -m unittest discover -s tests -v",
     "failed": 0,
-    "passed": 20,
+    "passed": 30,
     "status": "passed"
   },
-  "semantic_content_unchanged_from": "v0.1.0",
+  "semantic_changes_from": "v0.2.0",
+  "target_database_note": "本包构建与回归不访问数据库；关联修正参考使用方另行保留的有限目标核对，不附带客户查询结果。",
   "target_database_queried": false,
   "tbi_mdl_validation": {
-    "checks": [
-      "validate_layout_version_fields",
-      "validate_semantic_objects"
-    ],
-    "passed": true,
-    "site_class": "disposable_test_site",
-    "transaction": "read_only_rollback",
+    "previous_revision": "0.2.0",
+    "status": "pending_for_current_revision",
     "workspace_imported": false
   },
   "verified_at": "2026-10-20",
-  "version": "0.2.0"
+  "version": "0.3.0"
 }

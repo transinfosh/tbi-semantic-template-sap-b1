@@ -103,7 +103,7 @@
       "name": "LineNum",
       "notNull": false,
       "properties": {
-        "description": "与DocEntry组成主键；IGE1来源行应使用BaseLine关联而不是发料LineNum。",
+        "description": "与DocEntry组成组件行主键；生产发料使用IGE1.BaseEntry=DocEntry及IGE1.BaseLine=LineNum，并限定BaseType=202。IGE1.LineNum是当前发料单行号；同物料可在多工单、多组件行重复，不能按ItemCode替代复合键。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
       },
       "type": "INTEGER"

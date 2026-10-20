@@ -127,7 +127,7 @@
       "name": "DocDate",
       "notNull": false,
       "properties": {
-        "description": "单据的过账日期，不等于创建日期。",
+        "description": "发货或生产发料单的实际过账日期；发料明细日期优先由IGE1.DocEntry连接本头表读取。IGE1.DocDate可能为空，OWOR.PostDate属于工单事件，均不能替代本字段。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIGE.html"
       },
       "type": "TIMESTAMP"

@@ -186,6 +186,7 @@
       "Quantity",
       "Rate",
       "StockPrice",
+      "StockSum",
       "StockValue",
       "TargetType",
       "TaxCode",
@@ -236,6 +237,7 @@
       "Quantity",
       "Rate",
       "StockPrice",
+      "StockSum",
       "StockValue",
       "TargetType",
       "TaxCode",
@@ -1513,6 +1515,7 @@
       "DocDate",
       "DocLineNum",
       "InQty",
+      "InvntAct",
       "ItemCode",
       "LocCode",
       "LocType",
@@ -1524,7 +1527,9 @@
       "SubLineNum",
       "SumStock",
       "TransSeq",
-      "TransType"
+      "TransType",
+      "WipAct",
+      "WipVal"
     ],
     "primary_key": [
       "TransSeq"

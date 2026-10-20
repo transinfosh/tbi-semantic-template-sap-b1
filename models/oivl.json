@@ -49,13 +49,13 @@
       "type": "INTEGER"
     },
     {
-      "displayName": "流水价格币种",
+      "displayName": "原始价格币种",
       "isCalculated": false,
       "isHidden": false,
       "name": "Currency",
       "notNull": false,
       "properties": {
-        "description": "原始价格的币种上下文。",
+        "description": "官方定义为Price Currency，仅解释原始价格；不是SumStock库存过账金额的币种标签。库存本币金额用公司OADM.MainCurncy解释，系统币和外币另行核对，不按本字段对库存金额分币种或换汇。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
       },
       "type": "VARCHAR(3)"
@@ -95,6 +95,18 @@
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
       },
       "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "库存科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "InvntAct",
+      "notNull": false,
+      "properties": {
+        "description": "库存估价交易的库存科目，官方关联OACT。对账时先按完整来源单据及本库存科目聚合估价金额，再与该单据TransId对应的JDT1.Account借贷净额比较；不能把单一工单子集对整张多工单凭证。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
+      },
+      "type": "VARCHAR(15)"
     },
     {
       "displayName": "物料编码",
@@ -169,13 +181,13 @@
       "type": "DECIMAL(19,6)"
     },
     {
-      "displayName": "流水价格字段",
+      "displayName": "库存交易原始价格",
       "isCalculated": false,
       "isHidden": false,
       "name": "Price",
       "notNull": false,
       "properties": {
-        "description": "原始价格字段，不能无条件等同IVL1层成本或按Price乘数量还原全部会计金额。",
+        "description": "官方Price，币种上下文为Currency。与单据行StockPrice、层CalcPrice和按库存数量折算的过账单价分开；本字段乘数量不能保证还原全部已存会计金额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
       },
       "type": "DECIMAL(19,6)"
@@ -205,13 +217,13 @@
       "type": "INTEGER"
     },
     {
-      "displayName": "库存价值汇总字段",
+      "displayName": "库存价值变动金额",
       "isCalculated": false,
       "isHidden": false,
       "name": "SumStock",
       "notNull": false,
       "properties": {
-        "description": "SDK定义为库存价值汇总；与IVL1.TransValue及SAP库存审计报告对账后才能命名为业务过账金额。",
+        "description": "官方Sum Stock Value。保留库存变动符号：库存增加为正、减少为负；常规生产发料正向成本可明确取负值，不使用ABS抹去冲回。按本币OADM.MainCurncy解释并与目标库估价层及库存科目过账核对；不可与IGE1.StockValue总销货成本值混同。NULL保持未知，缺估价行不自动补零或回退单据金额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
       },
       "type": "DECIMAL(19,6)"
@@ -239,13 +251,37 @@
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
       },
       "type": "INTEGER"
+    },
+    {
+      "displayName": "在制品库存科目",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "WipAct",
+      "notNull": false,
+      "properties": {
+        "description": "官方WIP Inventory Account；与库存科目InvntAct及在制品差异科目区分，不凭名称将所有分录都当作材料发料金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
+      },
+      "type": "VARCHAR(15)"
+    },
+    {
+      "displayName": "在制品库存价值",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "WipVal",
+      "notNull": false,
+      "properties": {
+        "description": "官方WIP Inventory Value；与SumStock库存价值变动分别保留，用于目标生产业务的在制品过账核对，不自动定义为本期发料成本或最终工单成本。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
+      },
+      "type": "DECIMAL(19,6)"
     }
   ],
   "displayName": "库存估价交易流水",
   "name": "oivl",
   "primaryKey": "TransSeq",
   "properties": {
-    "description": "每个TransSeq一条估价交易；同一类型、单据、行号组合可以有多条流水。用于历史库存估价追踪，不能把连接到估价层后的交易数量重复汇总。",
+    "description": "每个TransSeq一条估价交易；TransType=60时用CreatedBy、DocLineNum追溯IGE1.DocEntry、LineNum，同一来源行可有多条交易。先按TransSeq聚合IVL1层，再按来源行聚合，避免复制交易数量和金额。无估价、NULL估价金额和已确认零值分别保留；生产发料库存价值减少通常为负，正向发料成本明确取负值，不用ABS吞掉冲回方向。",
     "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
   },
   "tableReference": {

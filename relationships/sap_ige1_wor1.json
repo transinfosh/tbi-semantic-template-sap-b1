@@ -1,0 +1,13 @@
+{
+  "condition": "ige1.BaseEntry = wor1.DocEntry AND ige1.BaseLine = wor1.LineNum AND ige1.BaseType = 202",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "ige1",
+    "wor1"
+  ],
+  "name": "sap_ige1_wor1",
+  "properties": {
+    "description": "生产发料来源组件：BaseType=202，BaseEntry连接工单内部键，BaseLine连接组件LineNum；发料自身LineNum和物料编码均不能替代来源行键。来源行缺失或特殊值时保留未匹配，不猜测组件。此关系描述来源归属，不定义退料净额、拆卸角色或最终工单成本。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGE1.html"
+  }
+}

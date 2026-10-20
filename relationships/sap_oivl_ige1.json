@@ -1,0 +1,13 @@
+{
+  "condition": "oivl.CreatedBy = ige1.DocEntry AND oivl.DocLineNum = ige1.LineNum AND oivl.TransType = 60",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "oivl",
+    "ige1"
+  ],
+  "name": "sap_oivl_ige1",
+  "properties": {
+    "description": "库存发货估价交易追溯发料单行：TransType=60，CreatedBy连接DocEntry，DocLineNum连接当前单据LineNum。不得改用工单来源BaseLine或估价SubLineNum；同一发料行可对应多条OIVL。此关系不保证每条发料行都有估价交易，非库存费用等行缺估价不代表零成本；先按交易和来源行各自粒度聚合，再连接数量与金额。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
+  }
+}
