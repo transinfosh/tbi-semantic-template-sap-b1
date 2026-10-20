@@ -13,7 +13,7 @@
 
 初版模板不含 Views、Cubes 或客户专用指标，避免将某个项目的价格表选择、金额口径和业务筛选当作通用默认。对已有工作区导入前，应检查覆盖范围并保留客户修改；具体冲突处理以 tBI 的导入预览为准。
 
-远程仓库为 [transinfosh/semantic-template-sap-b1](https://github.com/transinfosh/semantic-template-sap-b1)，使用私有可见性。tBI 组织模板目录默认按 `semantic-template-` 前缀发现此仓库；也可手动填写 `https://github.com/transinfosh/semantic-template-sap-b1.git`。访问凭据由 tBI 服务端配置，不属于模板内容。
+远程仓库为 [transinfosh/tbi-semantic-template-sap-b1](https://github.com/transinfosh/tbi-semantic-template-sap-b1)，使用私有可见性。tBI 组织模板目录默认按 `tbi-semantic-template-` 前缀发现此仓库；也可手动填写 `https://github.com/transinfosh/tbi-semantic-template-sap-b1.git`。访问凭据由 tBI 服务端配置，不属于模板内容。
 
 ## 目录和构建
 
