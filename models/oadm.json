@@ -115,7 +115,7 @@
       "name": "SysCurrncy",
       "notNull": false,
       "properties": {
-        "description": "并行记账币种；解释各事实的SC金额，不能与本币混同。",
+        "description": "并行记账币种；解释各事实的SC金额，不能与本币混同。 销售 DocTotalSy/PaidSys/TotalSumSy 使用此币种；它可能与 MainCurncy 相同，也可能不同。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OADM.html"
       },
       "type": "VARCHAR(3)"
@@ -149,7 +149,7 @@
   "name": "oadm",
   "primaryKey": "Code",
   "properties": {
-    "description": "主键Code；公司数据库配置，不是交易事实。通过配置读取解释币种、汇率方向和成本维度，禁止与事实无条件连接。",
+    "description": "主键Code；公司数据库配置，不是交易事实。通过配置读取解释币种、汇率方向和成本维度，禁止与事实无条件连接。 销售金额中的本币 LC 由 MainCurncy 解释，系统币 SC 由 SysCurrncy 解释；两者可能相同也可能不同。外币 FC 的币种须按具体单据字段定义读取，不能用公司本币或系统币替代。跨公司库汇总仍须保留公司与币种范围。",
     "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OADM.html"
   },
   "tableReference": {

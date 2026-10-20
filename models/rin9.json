@@ -1,13 +1,13 @@
 {
   "columns": [
     {
-      "displayName": "已应用净额（本位币）",
+      "displayName": "已应用净额（本币）",
       "isCalculated": false,
       "isHidden": false,
       "name": "ApplDrawn",
       "notNull": false,
       "properties": {
-        "description": "已应用的本位币净额；不是原始预付款全额。",
+        "description": "已应用的本位币净额；不是原始预付款全额。 币种取同一公司库 OADM.MainCurncy。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN9.html"
       },
       "type": "DECIMAL(19,6)"
@@ -49,13 +49,13 @@
       "type": "INTEGER"
     },
     {
-      "displayName": "抵扣净额（本位币）",
+      "displayName": "抵扣净额（本币）",
       "isCalculated": false,
       "isHidden": false,
       "name": "DrawnSum",
       "notNull": false,
       "properties": {
-        "description": "本位币不含税抵扣金额；DI API AmountToDraw 对应此列，不能超过未结金额；与已应用净额区别。",
+        "description": "本位币不含税抵扣金额；DI API AmountToDraw 对应此列，不能超过未结金额；与已应用净额区别。 币种取同一公司库 OADM.MainCurncy。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN9.html"
       },
       "type": "DECIMAL(19,6)"
@@ -67,7 +67,7 @@
       "name": "DrawnSumFc",
       "notNull": false,
       "properties": {
-        "description": "桥表保存的外币净额。",
+        "description": "桥表保存的外币净额。 币种须结合所属单据与来源预付款单据核实；跨币抵扣的币种归属仍待确认，未确认前不与其他币种金额直接合计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN9.html"
       },
       "type": "DECIMAL(19,6)"
@@ -79,19 +79,19 @@
       "name": "DrawnSumSc",
       "notNull": false,
       "properties": {
-        "description": "桥表保存的系统币净额。",
+        "description": "桥表保存的系统币净额。 币种取同一公司库 OADM.SysCurrncy。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN9.html"
       },
       "type": "DECIMAL(19,6)"
     },
     {
-      "displayName": "含税金额（本位币）",
+      "displayName": "含税金额（本币）",
       "isCalculated": false,
       "isHidden": false,
       "name": "Gross",
       "notNull": false,
       "properties": {
-        "description": "当前抵扣记录的含税金额；须区分原始、已应用与净额。",
+        "description": "当前抵扣记录的含税金额；须区分原始、已应用与净额。 币种取同一公司库 OADM.MainCurncy。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN9.html"
       },
       "type": "DECIMAL(19,6)"
@@ -103,7 +103,7 @@
       "name": "GrossFc",
       "notNull": false,
       "properties": {
-        "description": "当前抵扣记录的外币含税金额。",
+        "description": "当前抵扣记录的外币含税金额。 币种须结合所属单据与来源预付款单据核实；跨币抵扣的币种归属仍待确认，未确认前不与其他币种金额直接合计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN9.html"
       },
       "type": "DECIMAL(19,6)"
@@ -115,7 +115,7 @@
       "name": "GrossSc",
       "notNull": false,
       "properties": {
-        "description": "当前抵扣记录的系统币含税金额。",
+        "description": "当前抵扣记录的系统币含税金额。 币种取同一公司库 OADM.SysCurrncy。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN9.html"
       },
       "type": "DECIMAL(19,6)"
@@ -193,13 +193,13 @@
       "type": "VARCHAR(1)"
     },
     {
-      "displayName": "税额（本位币）",
+      "displayName": "税额（本币）",
       "isCalculated": false,
       "isHidden": false,
       "name": "Vat",
       "notNull": false,
       "properties": {
-        "description": "当前抵扣记录的税额。",
+        "description": "当前抵扣记录的税额。 币种取同一公司库 OADM.MainCurncy。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN9.html"
       },
       "type": "DECIMAL(19,6)"
@@ -212,7 +212,7 @@
     "LineNum"
   ],
   "properties": {
-    "description": "应收贷项与预付款抵扣记录粒度，主键 (DocEntry, LineNum)。用 BaseAbs 关联预付款表头；来源于同一订单不能替代该实际抵扣关系。",
+    "description": "应收贷项与预付款抵扣记录粒度，主键 (DocEntry, LineNum)。用 BaseAbs 关联预付款表头；来源于同一订单不能替代该实际抵扣关系。 本币金额的币种取同一公司库 OADM.MainCurncy，系统币金额取 OADM.SysCurrncy。外币抵扣金额须结合所属单据、来源预付款单据及其币种核实；本模板尚未确认所有跨币抵扣情形的币种归属，不按字段后缀或相邻单据自动推定。抵扣是结算应用，不作为额外销售收入重复加入发票金额。",
     "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN9.html"
   },
   "tableReference": {

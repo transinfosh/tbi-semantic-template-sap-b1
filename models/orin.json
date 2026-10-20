@@ -115,7 +115,7 @@
       "name": "DocCur",
       "notNull": false,
       "properties": {
-        "description": "单据币种；行价格币种和本位币、系统币金额列仍需分别识别。",
+        "description": "单据币种，可能是本币或外币；外币单据的 DocTotalFC/PaidFC 按此币种解释。本币金额的币种取 OADM.MainCurncy，系统币金额取 OADM.SysCurrncy；行 Currency 表示价格币种，不能代替本字段或给所有金额赋币种。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
       "type": "VARCHAR(3)"
@@ -193,13 +193,13 @@
       "type": "CHAR(1)"
     },
     {
-      "displayName": "单据合计",
+      "displayName": "单据总额（本币）",
       "isCalculated": false,
       "isHidden": false,
       "name": "DocTotal",
       "notNull": false,
       "properties": {
-        "description": "单据级合计；不是净收入或库存成本，连接多行后不得重复求和，须配合币种和税费口径。",
+        "description": "单据头本币总额，币种取同一公司库 OADM.MainCurncy；即使 DocCur 为外币也不改变本列口径。不是净收入或库存成本，不与不含税行金额直接等同；连接明细后不得重复求和。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
       "type": "DECIMAL(19,6)"
@@ -211,7 +211,7 @@
       "name": "DocTotalFC",
       "notNull": false,
       "properties": {
-        "description": "单据头外币总额；按 DocCur 分组，且防止明细连接重复累计。",
+        "description": "单据头外币总额；外币单据以本表 DocCur 为币种，跨单据按 DocCur 分组。本币单据须使用 DocTotal，不能因本列为零或空就认定没有业务金额；连接明细后不得重复累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
       "type": "DECIMAL(19,6)"
@@ -223,7 +223,7 @@
       "name": "DocTotalSy",
       "notNull": false,
       "properties": {
-        "description": "单据头系统币总额；不能混合本币或外币金额。",
+        "description": "单据头系统币总额，币种取同一公司库 OADM.SysCurrncy；不是 DocCur 或行 Currency。使用已保存的系统币金额，不按当前汇率重算；连接明细后不得重复累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
       "type": "DECIMAL(19,6)"
@@ -307,7 +307,7 @@
       "name": "PaidFC",
       "notNull": false,
       "properties": {
-        "description": "单据当前累计收付外币金额；按币种使用，不是外币未付金额。",
+        "description": "单据当前累计已收付外币金额；外币单据以本表 DocCur 为币种，跨单据按 DocCur 分组。不是外币未付金额或指定历史期间的收付款发生额；本币单据使用 PaidToDate。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
       "type": "DECIMAL(19,6)"
@@ -319,7 +319,7 @@
       "name": "PaidSys",
       "notNull": false,
       "properties": {
-        "description": "单据当前累计收付系统币金额。",
+        "description": "单据当前累计已收付系统币金额，币种取 OADM.SysCurrncy；不是未付金额或指定历史期间的收付款发生额。与单据总额比较时须使用同一币种口径。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
       "type": "DECIMAL(19,6)"
@@ -331,7 +331,7 @@
       "name": "PaidToDate",
       "notNull": false,
       "properties": {
-        "description": "单据当前累计收付本币金额；不能当作指定历史期间的收付款发生额。",
+        "description": "单据当前累计已收付本币金额，币种取 OADM.MainCurncy；不能当作指定历史期间的收付款发生额，也不是未付金额。与单据总额比较时须使用同一币种口径。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
       "type": "DECIMAL(19,6)"
@@ -461,7 +461,7 @@
   "name": "orin",
   "primaryKey": "DocEntry",
   "properties": {
-    "description": "单据表头粒度，主键 DocEntry。应收冲减单据；可基于退货、发票、预付款或退货请求，数量及库存效果应结合来源和标志。",
+    "description": "单据表头粒度，主键 DocEntry。应收冲减单据；可基于退货、发票、预付款或退货请求，数量及库存效果应结合来源和标志。 金额分别保存本币、外币、系统币口径：DocTotal/PaidToDate 的币种取同一公司库 OADM.MainCurncy，DocTotalSy/PaidSys 取 OADM.SysCurrncy；外币单据的 DocTotalFC/PaidFC 按本表 DocCur 解释并按币种汇总。DocCur 也可等于本币，不是所有金额列的统一币种。单据总额、当前累计已收付额和行金额分开使用；头金额不能在连接多行后重复累计。",
     "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
   },
   "tableReference": {

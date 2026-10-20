@@ -1,25 +1,25 @@
 {
   "columns": [
     {
-      "displayName": "已应用含税额（本位币）",
+      "displayName": "已应用含税额（本币）",
       "isCalculated": false,
       "isHidden": false,
       "name": "ApplGross",
       "notNull": false,
       "properties": {
-        "description": "抵扣明细已应用含税金额。",
+        "description": "抵扣明细已应用含税金额。 币种取同一公司库 OADM.MainCurncy。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
       "type": "DECIMAL(19,6)"
     },
     {
-      "displayName": "已应用税额（本位币）",
+      "displayName": "已应用税额（本币）",
       "isCalculated": false,
       "isHidden": false,
       "name": "ApplVat",
       "notNull": false,
       "properties": {
-        "description": "抵扣明细的已应用税额，区别于基础税额。",
+        "description": "抵扣明细的已应用税额，区别于基础税额。 币种取同一公司库 OADM.MainCurncy。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
       "type": "DECIMAL(19,6)"
@@ -37,13 +37,13 @@
       "type": "INTEGER"
     },
     {
-      "displayName": "基础含税额（本位币）",
+      "displayName": "基础含税额（本币）",
       "isCalculated": false,
       "isHidden": false,
       "name": "BaseGross",
       "notNull": false,
       "properties": {
-        "description": "抵扣明细基础含税金额。",
+        "description": "抵扣明细基础含税金额。 币种取同一公司库 OADM.MainCurncy。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
       "type": "DECIMAL(19,6)"
@@ -61,13 +61,13 @@
       "type": "INTEGER"
     },
     {
-      "displayName": "基础税额（本位币）",
+      "displayName": "基础税额（本币）",
       "isCalculated": false,
       "isHidden": false,
       "name": "BaseVat",
       "notNull": false,
       "properties": {
-        "description": "抵扣明细的基础税额。",
+        "description": "抵扣明细的基础税额。 币种取同一公司库 OADM.MainCurncy。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
       "type": "DECIMAL(19,6)"
@@ -85,13 +85,13 @@
       "type": "INTEGER"
     },
     {
-      "displayName": "含税金额（本位币）",
+      "displayName": "含税金额（本币）",
       "isCalculated": false,
       "isHidden": false,
       "name": "Gross",
       "notNull": false,
       "properties": {
-        "description": "当前抵扣记录的含税金额；须区分原始、已应用与净额。",
+        "description": "当前抵扣记录的含税金额；须区分原始、已应用与净额。 币种取同一公司库 OADM.MainCurncy。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
       "type": "DECIMAL(19,6)"
@@ -103,7 +103,7 @@
       "name": "GrossFc",
       "notNull": false,
       "properties": {
-        "description": "当前抵扣记录的外币含税金额。",
+        "description": "当前抵扣记录的外币含税金额。 币种须结合所属单据与来源预付款单据核实；跨币抵扣的币种归属仍待确认，未确认前不与其他币种金额直接合计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
       "type": "DECIMAL(19,6)"
@@ -115,7 +115,7 @@
       "name": "GrossSc",
       "notNull": false,
       "properties": {
-        "description": "当前抵扣记录的系统币含税金额。",
+        "description": "当前抵扣记录的系统币含税金额。 币种取同一公司库 OADM.SysCurrncy。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
       "type": "DECIMAL(19,6)"
@@ -189,7 +189,7 @@
     "LineSeq"
   ],
   "properties": {
-    "description": "应收贷项预付款抵扣的税额/舍入明细，主键 (DocEntry, LineNum, LineSeq)。与物料行不同粒度；不能与同单据全部物料行直接连接后求和。",
+    "description": "应收贷项预付款抵扣的税额/舍入明细，主键 (DocEntry, LineNum, LineSeq)。与物料行不同粒度；不能与同单据全部物料行直接连接后求和。 本币金额的币种取同一公司库 OADM.MainCurncy，系统币金额取 OADM.SysCurrncy。外币抵扣金额须结合所属单据、来源预付款单据及其币种核实；本模板尚未确认所有跨币抵扣情形的币种归属，不按字段后缀或相邻单据自动推定。抵扣是结算应用，不作为额外销售收入重复加入发票金额。",
     "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
   },
   "tableReference": {

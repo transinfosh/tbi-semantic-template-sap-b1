@@ -55,7 +55,7 @@
       "name": "Currency",
       "notNull": false,
       "properties": {
-        "description": "该行价格的币种；金额列的本币、外币、系统币口径需分别识别。",
+        "description": "本行价格的币种，用于解释 Price 等价格字段；不能据此解释 LineTotal 或 TotalSumSy，它们分别使用 OADM.MainCurncy 和 OADM.SysCurrncy。外币单据行金额 TotalFrgn 按所属 ODLN.DocCur 解释，行价格币种与单据币种须分别读取。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/DLN1.html"
       },
       "type": "VARCHAR(3)"
@@ -193,13 +193,13 @@
       "type": "CHAR(1)"
     },
     {
-      "displayName": "不含税行金额",
+      "displayName": "不含税行金额（本币）",
       "isCalculated": false,
       "isHidden": false,
       "name": "LineTotal",
       "notNull": false,
       "properties": {
-        "description": "FP2508 DI API 明确为不含税行金额；与外币及系统币列区分，不等同库存估价过账金额。",
+        "description": "不含税本币行金额，币种取同一公司库 OADM.MainCurncy；不随行 Currency 或表头 DocCur 改变币种口径。不等同库存估价过账金额，也不能忽略税费、折扣和舍入差异直接等同单据头总额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/DLN1.html"
       },
       "type": "DECIMAL(19,6)"
@@ -271,7 +271,7 @@
       "name": "Price",
       "notNull": false,
       "properties": {
-        "description": "FP2508 DI API 定义为税前单价；本表数据库参考仅标为价格，折扣口径仍须结合相关字段。保留行币种、单位，不能当作库存估值单价。",
+        "description": "FP2508 DI API 定义为税前单价；本表数据库参考仅标为价格，折扣口径仍须结合相关字段。保留行币种、单位，不能当作库存估值单价。 价格币种取本行 Currency；按价格对应的计量单位使用，不能将单价直接相加作为金额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/DLN1.html"
       },
       "type": "DECIMAL(19,6)"
@@ -283,7 +283,7 @@
       "name": "PriceBefDi",
       "notNull": false,
       "properties": {
-        "description": "应用行折扣前的单价。",
+        "description": "应用行折扣前的单价。 价格币种取本行 Currency；与折后价和行金额分开使用。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/DLN1.html"
       },
       "type": "DECIMAL(19,6)"
@@ -355,7 +355,7 @@
       "name": "TotalFrgn",
       "notNull": false,
       "properties": {
-        "description": "行金额的外币口径；汇总时按币种分组或采用已确认的统一币种口径。",
+        "description": "行金额的外币口径；外币单据按所属 ODLN.DocCur 解释，本行 DocEntry 关联 ODLN.DocEntry，跨单据按 DocCur 分组。行 Currency 只表示价格币种，不据此给本列赋币种；本币单据使用 LineTotal，不以本列零或空判断业务金额为零。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/DLN1.html"
       },
       "type": "DECIMAL(19,6)"
@@ -367,7 +367,7 @@
       "name": "TotalSumSy",
       "notNull": false,
       "properties": {
-        "description": "行金额的系统币口径；不是价格字段，也不一定等于按当前汇率换算的金额。",
+        "description": "行金额的系统币口径，币种取同一公司库 OADM.SysCurrncy；不是单价，不以行 Currency 或表头 DocCur 作为币种，也不按当前汇率重算已保存金额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/DLN1.html"
       },
       "type": "DECIMAL(19,6)"
@@ -476,7 +476,7 @@
     "LineNum"
   ],
   "properties": {
-    "description": "单据行粒度，主键 (DocEntry, LineNum)。销售交付单据；开票和退货为后续或关联流程，不能把交货金额直接命名为收入。",
+    "description": "单据行粒度，主键 (DocEntry, LineNum)。销售交付单据；开票和退货为后续或关联流程，不能把交货金额直接命名为收入。 金额口径：LineTotal 为不含税本币行金额，币种取同一公司库 OADM.MainCurncy；TotalSumSy 为系统币行金额，币种取 OADM.SysCurrncy；外币单据的 TotalFrgn 按所属 ODLN.DocCur 解释，以本行 DocEntry 关联 ODLN.DocEntry。本行 Currency 是价格币种，不是所有行金额的统一币种。跨币种外币金额分别汇总；头总额与不含税行金额不能直接等同。",
     "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/DLN1.html"
   },
   "tableReference": {
