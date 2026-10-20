@@ -39,6 +39,26 @@
       "scope": "production_issue_source_and_value_roles",
       "synthetic_regression": "tests/test_production_issue.py",
       "version": "0.3.0"
+    },
+    {
+      "applicability": "永续库存正常库存物料发料；价格按库存单位解释限于历史UseBaseUn=Y、NumPerMsr=1且unitMsr明确。单位缩写无确认映射时原样显示。",
+      "basis": "官方永续库存成本本币规则、DI公司本币定义与发料窗口库存单位规则的组合解释；SDK没有逐字段明示完整价格映射，CalcPrice字段级依据较弱。",
+      "date": "2026-10-20",
+      "official_sources": [
+        "https://help.sap.com/doc/b23e727e45434829a926e6ab06d4b69e/10.0/en-US/How_to_Set_Up_and_Manage_a_Perpetual_Inventory_System.pdf",
+        "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/SAPbobsCOM~AdminInfo~LocalCurrency.html",
+        "https://help.sap.com/docs/SAP_BUSINESS_ONE/68a2e87fb29941b5bf959a184d9c6727/4522e93573c80108e10000000a114a6b.html?locale=en-US"
+      ],
+      "private_evidence": "真实业务样本、问答回放与上线状态由使用方私有记录维护；本仓库不包含实例数据。",
+      "remaining_acceptance": [
+        "non_inventory_uom_price_denominator_and_conversion",
+        "special_production_roles",
+        "returns_cancellations_and_negative_inventory_adjustments",
+        "real_multilayer_valuation",
+        "other_company_configurations"
+      ],
+      "scope": "inventory_issue_price_currency_and_historical_unit",
+      "version": "0.3.0"
     }
   ],
   "domain_rule_sources": [

@@ -115,7 +115,7 @@
       "name": "DocCur",
       "notNull": false,
       "properties": {
-        "description": "单据金额的币种上下文。",
+        "description": "单据币种，不是所有金额和价格字段的通用币种。库存成本StockSum、StockPrice及估价交易SumStock按各自定义的本币来源OADM.MainCurncy解释，不能由本字段替代；单据币种与本币可以不同。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIGE.html"
       },
       "type": "VARCHAR(3)"

@@ -115,7 +115,7 @@
       "name": "InvntryUom",
       "notNull": false,
       "properties": {
-        "description": "数量统计应统一到库存单位，不能与采购或销售单位直接相加。",
+        "description": "物料当前库存单位名称；库存数量不能与采购或销售数量直接相加。解释历史交易时优先采用该行明确库存单位标志及保存的单位名称；当前名称不能无条件替代历史手工标签或换算关系。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
       },
       "type": "VARCHAR(100)"

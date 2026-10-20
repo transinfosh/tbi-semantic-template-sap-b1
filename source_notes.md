@@ -57,7 +57,14 @@
 
 ### 可执行查询示例
 
-2026-10-20 的职责复查同时收紧价格字段的说明边界：[DI API Currency](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_Lines~Currency.html) 仅明确单据行的价格币种，本地 FP2508 的 `REFDI/SAPbobsCOM~Document_Lines~Currency.html` 与在线说明一致；[IVL1 数据库参考](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IVL1.html) 及本地 `REFDB/Inventory_and_Production/IVL1.htm` 仅将 CalcPrice 标为计算价格。当前已核实的材料不足以为 `StockPrice`、`CalcPrice` 建立各自币种和分母单位的直接来源，因此模型明确标为待核实，不能从相邻价格币种、单据单位或两种数量数值相等推定。该缺口属于字段语义，不由通用 Agent 提示补出业务事实；也不据此宣称 SAP 没有可用来源。
+2026-10-20 继续核实价格与单位后，采用以下有条件的解释，并保留证据等级：
+
+- **官方直接规则**：[永续库存初始化](https://help.sap.com/docs/SAP_BUSINESS_ONE/87e1767ca7584b8f8d60775347637b07/0336ba3eb7d346c0958a10d4b5b554b6.html?locale=en-US)明确物料成本以本币计算；[DI LocalCurrency](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/SAPbobsCOM~AdminInfo~LocalCurrency.html)将本币映射为 OADM.MainCurncy，并说明正常账套在产生规定业务记录后不能修改本币。
+- **历史单位来源**：[官方发料窗口](https://help.sap.com/docs/SAP_BUSINESS_ONE/68a2e87fb29941b5bf959a184d9c6727/4522e93573c80108e10000000a114a6b.html?locale=en-US)说明使用库存单位时行数量就是出库库存数量，换算数为 1。结合 [IGE1 字段](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ige1.html)与 [DI MeasureUnit](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/SAPbobsCOM~Document_Lines~MeasureUnit.html)，UseBaseUn=Y、NumPerMsr=1 且 unitMsr 非空的历史行，可使用该行保存的单位名称；不需要用当前物料名称替代。UseBaseUn=N、单位缺失或矛盾时仍须核实历史映射。unitMsr2 是使用基础单位时的采购/销售单位，不能代作库存单位。
+- **价格字段的组合解释**：在 OADM.ContInvnt=Y 的正常库存物料发料中，根据官方成本规则采用本币；仅对 UseBaseUn=Y、NumPerMsr=1 且历史 unitMsr 明确的行，将 IGE1.StockPrice 解释为本币/该库存单位。对应发料估价层 IVL1.CalcPrice 可作同范围解释，但其字段级依据较弱。UseBaseUn=N 时价格分母及换算规则仍待核，不能认为只缺单位名称。SDK 分别只称库存价格和计算价格，本模板不宣称 SDK 直接逐字给出了这条完整映射，也不宣称库存审计报告某列恒等于 CalcPrice。实际币种与单位必须查询相应配置和正确关联的历史行。
+- **仍不覆盖的范围**：资源和非库存物料、多层综合价格、重估、零数量、负库存调整、特殊冲销及非标准账套迁移，不能直接套用上述字段解释。单据头 DocCur 不通用于所有金额；单据行 Currency 与 OIVL.Currency 仍各自解释原始交易价格，不为库存成本提供币种。StockPrice、CalcPrice 和金额/数量的折算单价保持独立，数值相近不建立定义等价。
+
+上述依据属于业务语义；通用 Agent 无须添加 SAP 字段判断。模板没有写入实例币种、单位、金额或工单答案。
 
 `validation/production-issue-query.sql` 演示限定工单、按 `TransSeq` 聚合层后按来源行聚合交易，再返回每条发料行。它是验证资料，不会被模板自动导入为 View。参数 `@production_order_entry` 必须绑定已解析的内部键；不要把外部显示单号直接填入。
 

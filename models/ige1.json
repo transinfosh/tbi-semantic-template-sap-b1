@@ -151,7 +151,7 @@
       "name": "InvQty",
       "notNull": false,
       "properties": {
-        "description": "库存计量单位数量；与估价交易OutQty-InQty比较前按发料行聚合全部交易。单据Quantity可能使用其他单位；跨物料、单位不得直接合并，零数量不能用于除法。",
+        "description": "库存计量单位数量；与估价交易OutQty-InQty比较前按发料行聚合全部交易。单位名称在UseBaseUn=Y且NumPerMsr=1时取历史非空unitMsr；其他情况须核实历史库存单位映射。不能仅凭Quantity=InvQty或当前主数据推定单位；跨物料、单位不得直接合并，零数量不能用于除法。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGE1.html"
       },
       "type": "DECIMAL(19,6)"
@@ -319,7 +319,7 @@
       "name": "StockPrice",
       "notNull": false,
       "properties": {
-        "description": "官方Inventory Price；单据行已存库存单价。与IVL1.CalcPrice估价层计算单价、OIVL.Price原始价格、过账金额除库存数量得到的折算单价分别展示，金额和价格舍入可使它们不同。计算综合折算单位成本时，确认相同币种和库存数量单位后按总成本/总数量计算；明确请求记录单价的算术平均时可用AVG，不能标为综合单位成本。本模板尚未确认本字段币种及分母单位的直接来源；不从Currency、unitMsr或Quantity=InvQty推定，未核实时说明口径缺口。",
+        "description": "官方Inventory Price，按DocEntry+LineNum保存的历史库存单价；明细应保留行粒度，跨行AVG仅代表记录单价算术平均，不能称原始行单价或综合单位成本。在OADM.ContInvnt=Y的正常库存物料发料中，币种按永续库存成本规则取OADM.MainCurncy；OIGE.DocCur和IGE1.Currency均不能替代该来源。仅在UseBaseUn=Y、NumPerMsr=1且历史unitMsr明确时，按本币/该库存单位解释；这是组合依据而非SDK逐字段明文。UseBaseUn=N或资料不足时，价格分母与换算规则仍待核。与CalcPrice及金额/数量折算价分别命名；资源、非库存物料、重估、负库存调整和特殊冲销另核。综合折算单位成本用同口径总成本/总库存数量。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGE1.html"
       },
       "type": "DECIMAL(19,6)"
@@ -331,7 +331,7 @@
       "name": "StockSum",
       "notNull": false,
       "properties": {
-        "description": "官方定义为Stock Sum；用于核对单据行库存金额，区别于StockValue总销货成本值和LineTotal不含税金额。生产发料须与关联估价交易的带符号SumStock核对，不能未经目标业务验证设为通用过账公式或缺估价时的自动回退值。",
+        "description": "官方Stock Sum，单据行库存金额，区别于StockValue总销货成本值和LineTotal不含税金额。正常永续库存物料发料按本币OADM.MainCurncy解释，不能借OIGE.DocCur或IGE1.Currency标注。须与正确关联的估价交易带符号SumStock核对；未验证的业务不能自动套用正负号公式，缺估价时也不自动回退为本字段。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGE1.html"
       },
       "type": "DECIMAL(19,6)"
@@ -403,7 +403,7 @@
       "name": "unitMsr",
       "notNull": false,
       "properties": {
-        "description": "本行计量单位显示名称；用于解释 Quantity。",
+        "description": "本行保存的计量单位名称，用于Quantity。UseBaseUn=Y且NumPerMsr=1时，也可作为该行库存数量InvQty的历史单位名称；单位非空才可标注。单位名称或缩写没有统一的物理含义，未取得单位定义或工作区确认映射时须原样显示，不能自行翻译、展开或换算。当前OITM名称不能覆盖历史；UseBaseUn=N时不能直接当库存单位。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGE1.html"
       },
       "type": "VARCHAR(100)"
@@ -439,7 +439,7 @@
       "name": "UseBaseUn",
       "notNull": false,
       "properties": {
-        "description": "DI API表示是否采用系统定义的基本单位；箱、件等单位差异必须与NumPerMsr及行单位一起解释。",
+        "description": "库存单位标志Y/N。官方发料窗口说明：Y时行Quantity按库存单位发出，Items per Unit为1；N时实际库存数量按行Quantity和NumPerMsr换算。结合本行历史unitMsr及NumPerMsr解释单位，不能只因Quantity=InvQty就推定。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGE1.html"
       },
       "type": "CHAR(1)"
@@ -500,7 +500,7 @@
     "LineNum"
   ],
   "properties": {
-    "description": "每个DocEntry与LineNum组合一行；先用BaseType=202、BaseEntry限定目标工单，再按BaseLine追溯WOR1组件。实际发料日期取OIGE.DocDate，可直接求MIN/MAX或按月分组；不能以工单PostDate作为发料起点、逐月猜测边界，或仅按物料编码扫描全库历史。非库存费用等发料行可能没有OIVL，保留行与缺估价状态，不将其计成已确认零成本。物料业务分类来自经确认的工作区规则，不能假定所有组件或同名称物料均属于某类。",
+    "description": "库存发货单明细，唯一粒度为DocEntry+LineNum；同一单据同一物料可出现多行，DocNum+ItemCode分组不能代表原始行，AVG(StockPrice)也不能称原始行单价。生产来源为BaseType=202、BaseEntry指向OWOR，BaseLine指向WOR1组件；业务分类按用户或工作区确认。实际日期取OIGE.DocDate，不以工单日期截断发料历史。仓库日记账的带符号过账金额来自OIVL.SumStock，经TransType=60、CreatedBy=DocEntry、DocLineNum=LineNum关联并按发料行聚合；本表StockSum用于单据行库存金额核对，不能把本表命名为估价日记账。正常永续库存成本的前提与币种由OADM.ContInvnt、MainCurncy确定，库存单位按历史UseBaseUn、NumPerMsr、unitMsr解释。非库存费用可能无OIVL，缺估价不是已确认零成本。",
     "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGE1.html"
   },
   "tableReference": {

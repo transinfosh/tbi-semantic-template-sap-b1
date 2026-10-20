@@ -79,7 +79,7 @@
       "name": "MainCurncy",
       "notNull": false,
       "properties": {
-        "description": "本地账簿币种；解释各事实的LC金额。",
+        "description": "公司本地账簿币种代码，解释已确认的LC金额。官方永续库存规则以本币计算物料成本，需结合ContInvnt及具体库存业务定义使用，不据此给所有交易价格赋币种。正常账套产生规定业务记录后不能修改本币；非标准迁移或账套合并须另核历史。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OADM.html"
       },
       "type": "VARCHAR(3)"

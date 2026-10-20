@@ -19,7 +19,7 @@
       "name": "CalcPrice",
       "notNull": false,
       "properties": {
-        "description": "每个估价层保存的计算单价；一笔发料可能跨多个估价层，不能将层价算术平均称为整笔交易的综合单位成本，也不能无条件当作单据行StockPrice。明确请求估价层价格的算术平均时可用AVG并标明层粒度。与过账金额按库存数量折算的单价分别展示，金额及单价舍入可能造成差异。本模板尚未确认本字段币种及分母单位的直接来源；不借用OIVL.Price的Currency或单据unitMsr，未核实时说明口径缺口。",
+        "description": "每个估价层保存的计算价格，SDK未单独明示币种和分母单位。正常永续库存物料发料的成本币种按官方规则取OADM.MainCurncy；对应历史发料行UseBaseUn=Y、NumPerMsr=1且unitMsr明确时，可按本币/该库存单位解释（字段级依据较弱的组合解释）。须沿OIVL到实际IGE1行的关系核实，不能借OIVL.Currency或OIGE.DocCur。UseBaseUn=N时价格分母与换算规则待核；其他交易尤其重估、零数量、负库存调整不能套用。发料可跨多层，AVG仅表示层价算术平均，不能称综合单位成本。不与StockPrice、OIVL.Price或金额/数量折算价混名。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IVL1.html"
       },
       "type": "DECIMAL(19,6)"
