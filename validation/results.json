@@ -14,8 +14,18 @@
     "passed": true
   },
   "manifest_import_validation": {
+    "connection_health_check": "stubbed",
+    "created_deployments": 0,
     "entry": "template.json",
-    "status": "pending_tbi_integration"
+    "fixture_database_changes": "rolled_back",
+    "organization_catalog": "passed",
+    "ref": "main",
+    "repeat_import_changes": 0,
+    "repeat_import_conflicts": 0,
+    "scope": "real_tbi_git_importer_on_disposable_site",
+    "source": "local_git_repository",
+    "source_commit": "60abff067371c7e854aed5fcf7ec3d74cbc1044f",
+    "status": "passed"
   },
   "production_issue_query": {
     "file": "validation/production-issue-query.sql",
@@ -34,9 +44,17 @@
   "target_database_note": "本包构建与回归不访问数据库；关联修正参考使用方另行保留的有限目标核对，不附带客户查询结果。",
   "target_database_queried": false,
   "tbi_mdl_validation": {
-    "previous_revision": "0.2.0",
-    "status": "pending_for_current_revision",
-    "workspace_imported": false
+    "checks": [
+      "manifest_assembly",
+      "import_validation",
+      "workspace_mdl_rebuild",
+      "source_database_mapping"
+    ],
+    "production_workspace_imported": false,
+    "source_business_query": false,
+    "status": "passed_for_current_semantic_revision",
+    "workspace_imported": true,
+    "workspace_scope": "disposable_fixture_rolled_back"
   },
   "verified_at": "2026-10-20",
   "version": "0.3.0"
