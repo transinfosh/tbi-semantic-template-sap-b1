@@ -55,7 +55,7 @@
       "name": "Currency",
       "notNull": false,
       "properties": {
-        "description": "价格字段的币种上下文。",
+        "description": "DI API定义为单据行使用的价格币种。此定义不能单独证明StockPrice、StockSum或其他库存估价字段使用同一币种；应分别核实各字段口径。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGE1.html"
       },
       "type": "VARCHAR(3)"
@@ -319,7 +319,7 @@
       "name": "StockPrice",
       "notNull": false,
       "properties": {
-        "description": "官方Inventory Price；单据行已存库存单价。与IVL1.CalcPrice估价层计算单价、OIVL.Price原始价格、过账金额除库存数量得到的折算单价分别展示；金额和价格的舍入精度可使它们不同。多行汇总不得简单AVG单价；核对相同币种和数量单位后才可按总成本/总数量折算。",
+        "description": "官方Inventory Price；单据行已存库存单价。与IVL1.CalcPrice估价层计算单价、OIVL.Price原始价格、过账金额除库存数量得到的折算单价分别展示，金额和价格舍入可使它们不同。计算综合折算单位成本时，确认相同币种和库存数量单位后按总成本/总数量计算；明确请求记录单价的算术平均时可用AVG，不能标为综合单位成本。本模板尚未确认本字段币种及分母单位的直接来源；不从Currency、unitMsr或Quantity=InvQty推定，未核实时说明口径缺口。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGE1.html"
       },
       "type": "DECIMAL(19,6)"

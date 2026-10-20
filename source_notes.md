@@ -48,7 +48,7 @@
 - `IGE1.StockValue` 与 `IGN1.StockValue` 的官方定义是 **Total COGS Value（总销货成本值）**；不是通用的库存过账金额。生产发料可出现该字段为零而真实库存过账非零，因此更正旧的泛化中文名称。
 - 新增 `IGE1.StockSum`、`IGN1.StockSum`，官方名称为 **Stock Sum**。它们用于单据行库存金额核对，不因某些样本和 `LineTotal` 相等就定义恒等式；缺估价时不能自动回退到任一单据金额。
 - `OIVL.SumStock` 保留库存价值增减方向，常规发料为负；明确展示正向发料成本时取负值，不能用 `ABS` 吞掉冲回。`OIVL.Currency` 是 **Price Currency**，不是该库存金额的币种标签；库存本币口径以 `OADM.MainCurncy` 解释并与库存科目核对。
-- `IGE1.StockPrice` 是现成的单据行库存单价，`IVL1.CalcPrice` 是估价层计算单价。过账折算单价为明确口径的发料成本除以库存单位数量，可能因金额与价格舍入而不同于已存单价。多行、同币种且同数量单位时可用总成本除总数量，不能简单平均行价；零数量或未知金额不生成单价。
+- `IGE1.StockPrice` 是现成的单据行库存单价，`IVL1.CalcPrice` 是估价层计算单价。过账折算单价为明确口径的发料成本除以库存单位数量，可能因金额与价格舍入而不同于已存单价。计算多行综合折算单位成本时，在同币种且同库存数量单位范围内用总成本除总数量；零数量或未知金额不生成该折算值。记录单价的算术平均是另一个统计量，明确请求时可以 AVG，并标明记录粒度，不能称为综合单位成本。
 - 新增 `OIVL.InvntAct/WipAct/WipVal` 便于区分库存及在制品核对。财务对账应使用完整来源单据、库存科目和对应分录，不能将单一工单子集与整张多工单凭证比较。
 
 数量和日期同样需要保留角色：`InvQty` 是库存单位数量，不能与使用其他单位的 `Quantity` 混算；跨单位数量分组展示。实际发料过账日期取 `OIGE.DocDate`，`IGE1.DocDate` 可以为空。先限定工单，再求实际日期范围或一次按月分组，不能将工单 `OWOR.PostDate` 当作发料起点，也不能仅按物料编码扫描无关历史。
@@ -56,6 +56,8 @@
 本次标准来源、字段及金额职责的有限复核记录由使用方在私有环境保留。公共仓库只包含规则和完全自造的回归数据，不含原始客户金额、物料分类编码或查询结果。生产退料、拆卸、拒收、取消、关闭差异及多层真实金额仍需相应目标样本和 SAP 报表验收。不得把全部生产收货直接从发料中扣除，或把材料发料成本称为工单最终总成本。
 
 ### 可执行查询示例
+
+2026-10-20 的职责复查同时收紧价格字段的说明边界：[DI API Currency](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_Lines~Currency.html) 仅明确单据行的价格币种，本地 FP2508 的 `REFDI/SAPbobsCOM~Document_Lines~Currency.html` 与在线说明一致；[IVL1 数据库参考](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IVL1.html) 及本地 `REFDB/Inventory_and_Production/IVL1.htm` 仅将 CalcPrice 标为计算价格。当前已核实的材料不足以为 `StockPrice`、`CalcPrice` 建立各自币种和分母单位的直接来源，因此模型明确标为待核实，不能从相邻价格币种、单据单位或两种数量数值相等推定。该缺口属于字段语义，不由通用 Agent 提示补出业务事实；也不据此宣称 SAP 没有可用来源。
 
 `validation/production-issue-query.sql` 演示限定工单、按 `TransSeq` 聚合层后按来源行聚合交易，再返回每条发料行。它是验证资料，不会被模板自动导入为 View。参数 `@production_order_entry` 必须绑定已解析的内部键；不要把外部显示单号直接填入。
 
