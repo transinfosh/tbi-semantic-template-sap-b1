@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import unicodedata
 from pathlib import Path, PurePosixPath
 
 ROOT = Path(__file__).resolve().parent
@@ -20,6 +21,64 @@ PROPERTY_KEYS = {"description", "sap_b1_source", "semanticUnitKind", "semanticUn
 
 def read_json(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def validate_groups(root: Path, metadata: dict, mdl: dict) -> None:
+    """Validate optional classification data without adding it to the exported MDL."""
+    if "groups" not in metadata:
+        return
+    relative = metadata["groups"]
+    if (
+        not isinstance(relative, str)
+        or not relative
+        or PurePosixPath(relative).is_absolute()
+        or "\\" in relative
+        or any(part in ("", ".", "..") for part in relative.split("/"))
+        or PurePosixPath(relative).suffix != ".json"
+    ):
+        raise ValueError("Invalid group file path")
+    path = root / relative
+    if path.is_symlink() or not path.is_file() or not path.resolve().is_relative_to(root.resolve()):
+        raise ValueError("Group file must be a regular JSON file inside the repository")
+    value = read_json(path)
+    if (
+        not isinstance(value, dict)
+        or set(value) != {"formatVersion", "groups"}
+        or type(value.get("formatVersion")) is not int
+        or value["formatVersion"] != 1
+        or not isinstance(value.get("groups"), list)
+        or len(value["groups"]) > 2000
+    ):
+        raise ValueError("Groups require formatVersion 1 and a groups array")
+    kinds = ("models", "views", "cubes")
+    known = {kind: {item["name"] for item in mdl.get(kind, [])} for kind in kinds}
+    used = {kind: set() for kind in kinds}
+    names, titles = set(), set()
+    for group in value["groups"]:
+        if not isinstance(group, dict) or set(group) - {"name", "title", *kinds}:
+            raise ValueError("Unsupported group fields")
+        name, title = group.get("name"), group.get("title")
+        if not isinstance(name, str) or not re.fullmatch(r"[A-Za-z][A-Za-z0-9_-]{0,63}", name):
+            raise ValueError("Invalid portable group code")
+        if not isinstance(title, str) or any(
+            unicodedata.category(char) in {"Cc", "Cf", "Cs", "Zl", "Zp"} for char in title
+        ):
+            raise ValueError("Invalid group title")
+        title = unicodedata.normalize("NFC", title).strip()
+        if not title or len(title) > 140 or name.casefold() in names or title in titles:
+            raise ValueError("Empty or duplicate group code/title")
+        names.add(name.casefold())
+        titles.add(title)
+        for kind in kinds:
+            members = group.get(kind, [])
+            if (
+                not isinstance(members, list)
+                or any(not isinstance(member, str) or member not in known[kind] for member in members)
+                or len(members) != len(set(members))
+                or used[kind].intersection(members)
+            ):
+                raise ValueError("Unknown or duplicate group membership")
+            used[kind].update(members)
 
 
 def encode(value: dict) -> str:
@@ -163,6 +222,7 @@ def build(root: Path = ROOT) -> dict:
         if not result[key]:
             raise ValueError(f"Empty template source directory: {relative}")
     validate(result, read_json(root / "validation" / "reference-contract.json"))
+    validate_groups(root, metadata, result)
     return result
 
 

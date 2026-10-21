@@ -29,7 +29,12 @@ class TemplateTest(unittest.TestCase):
         temporary = tempfile.TemporaryDirectory()
         self.addCleanup(temporary.cleanup)
         target = Path(temporary.name)
-        paths = [ROOT / "template.json", ROOT / "build.py", ROOT / "validation" / "reference-contract.json"]
+        paths = [
+            ROOT / "template.json",
+            ROOT / "groups.json",
+            ROOT / "build.py",
+            ROOT / "validation" / "reference-contract.json",
+        ]
         for directory in ("models", "relationships"):
             paths.extend((ROOT / directory).glob("*.json"))
         for source in sorted(paths, reverse=True):

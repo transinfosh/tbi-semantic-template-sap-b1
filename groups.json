@@ -1,0 +1,143 @@
+{
+  "formatVersion": 1,
+  "groups": [
+    {
+      "name": "master_data",
+      "title": "主数据",
+      "models": [
+        "crd1",
+        "itm1",
+        "oact",
+        "obin",
+        "obtn",
+        "ocr1",
+        "ocrd",
+        "ocrg",
+        "oexd",
+        "ohem",
+        "oitb",
+        "oitm",
+        "omrc",
+        "oocr",
+        "oprc",
+        "oprj",
+        "orsb",
+        "orsc",
+        "oslp",
+        "osrn",
+        "oudp",
+        "ougp",
+        "ouom",
+        "ovtg",
+        "owhs",
+        "ugp1"
+      ]
+    },
+    {
+      "name": "sales",
+      "title": "销售",
+      "models": [
+        "dln1",
+        "dpi1",
+        "inv1",
+        "inv11",
+        "inv9",
+        "odln",
+        "odpi",
+        "oinv",
+        "oqut",
+        "ordn",
+        "ordr",
+        "orin",
+        "qut1",
+        "rdn1",
+        "rdr1",
+        "rin1",
+        "rin11",
+        "rin9"
+      ]
+    },
+    {
+      "name": "purchasing",
+      "title": "采购",
+      "models": [
+        "dpo1",
+        "odpo",
+        "opch",
+        "opdn",
+        "opor",
+        "opqt",
+        "oprq",
+        "orpc",
+        "orpd",
+        "pch1",
+        "pch11",
+        "pch9",
+        "pdn1",
+        "por1",
+        "pqt1",
+        "prq1",
+        "rpc1",
+        "rpc11",
+        "rpc9",
+        "rpd1"
+      ]
+    },
+    {
+      "name": "inventory",
+      "title": "库存",
+      "models": [
+        "ige1",
+        "ign1",
+        "itl1",
+        "ivl1",
+        "obtq",
+        "oige",
+        "oign",
+        "oilm",
+        "oitl",
+        "oitw",
+        "oivl",
+        "owtq",
+        "owtr",
+        "wtq1",
+        "wtr1"
+      ]
+    },
+    {
+      "name": "production",
+      "title": "生产",
+      "models": [
+        "itt1",
+        "oitt",
+        "owor",
+        "wor1"
+      ]
+    },
+    {
+      "name": "finance",
+      "title": "财务",
+      "models": [
+        "itr1",
+        "jdt1",
+        "oitr",
+        "ojdt",
+        "orct",
+        "ovpm",
+        "rct2",
+        "rct4",
+        "vpm2",
+        "vpm4"
+      ]
+    },
+    {
+      "name": "other",
+      "title": "其他",
+      "models": [
+        "nnm1",
+        "oadm",
+        "ortt"
+      ]
+    }
+  ]
+}
