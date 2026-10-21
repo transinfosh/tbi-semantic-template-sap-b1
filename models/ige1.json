@@ -319,7 +319,7 @@
       "name": "StockPrice",
       "notNull": false,
       "properties": {
-        "description": "官方Inventory Price，按DocEntry+LineNum保存的历史库存单价；明细应保留行粒度，跨行AVG仅代表记录单价算术平均，不能称原始行单价或综合单位成本。在OADM.ContInvnt=Y的正常库存物料发料中，币种按永续库存成本规则取OADM.MainCurncy；OIGE.DocCur和IGE1.Currency均不能替代该来源。仅在UseBaseUn=Y、NumPerMsr=1且历史unitMsr明确时，按本币/该库存单位解释；这是组合依据而非SDK逐字段明文。UseBaseUn=N或资料不足时，价格分母与换算规则仍待核。与CalcPrice及金额/数量折算价分别命名；资源、非库存物料、重估、负库存调整和特殊冲销另核。综合折算单位成本用同口径总成本/总库存数量。",
+        "description": "官方 Inventory Price，按 DocEntry+LineNum 保存的历史库存单价。在正常库存物料发料中，币种、分母的适用条件必须分别取得本次记录的字段值：①按 ItemCode 读取 OITM.InvntItem，须为 Y（库存物料）；②读取 OADM.ContInvnt，须为 Y，并读取 OADM.MainCurncy；③读取本行 UseBaseUn、NumPerMsr 和历史 unitMsr，须为 Y、1 及非空。前两项成立时，币种取公司本币 OADM.MainCurncy；三项均成立时，分母取该历史库存单位，可按本币/该库存单位解释；这是组合依据而非 SDK 逐字段明文。ItemType=4 仅表示物料，关联估价存在、其他条件成立或数值相等均不能替代 OITM.InvntItem。条件未核实或非库存物料时，保留原始值并说明尚未确认的口径；UseBaseUn=N 时，价格分母与换算规则仍待核。OIGE.DocCur 和 IGE1.Currency 不能替代库存成本币种来源。明细保留行粒度；跨行 AVG 只是记录单价算术平均，不称原始行价或综合成本。与 CalcPrice、金额/数量折算价分别命名；资源、重估、负库存调整和特殊冲销另核。综合折算单位成本须用同口径总成本/总库存数量。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGE1.html"
       },
       "type": "DECIMAL(19,6)"

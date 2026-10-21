@@ -31,7 +31,7 @@
       "name": "CANCELED",
       "notNull": false,
       "properties": {
-        "description": "按本表官方枚举解释取消状态；库存流水净额不能简单套用销售额过滤。",
+        "description": "按本表官方枚举解释取消状态。该状态与库存交易是否存在、是否发生反向过账或净额为零不是同一事实。查询仓库日记账或库存交易明细时，未指定状态不能默认增加 CANCELED=N；仅在用户或已明确适用的业务口径要求未取消单据时限定。查询库存流水或抵销净额时应保留原交易和冲销记录，分别按实际日期、数量、方向及金额处理，不能简单套用销售额的取消过滤。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIGE.html"
       },
       "type": "CHAR(1)"
