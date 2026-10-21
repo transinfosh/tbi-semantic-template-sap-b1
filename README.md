@@ -24,7 +24,7 @@
 | `models/<name>.json` | 每个标准表的字段、主键、说明及group归属 |
 | `relationships/<name>.json` | 每条关系的条件和基数 |
 | `build.py` | 只依赖 Python 标准库的结构校验与可选本地 MDL 导出 |
-| `source-provenance.json`、`source_notes.md` | 官方依据、哈希和解释边界 |
+| `source_notes.md` | 官方依据、哈希和解释边界 |
 | `validation/`、`tests/` | 来源约束、待审项、验证场景及测试 |
 
 使用 Python 3.10 或更新版本，在仓库目录执行：
