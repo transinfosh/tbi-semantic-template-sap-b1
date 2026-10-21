@@ -7,6 +7,6 @@
   ],
   "name": "sap_jdt1_oprj",
   "properties": {
-    "description": "项目代码到项目主数据，多对零或一；不加当前Active或日期过滤，保留历史项目。头项目与行项目分别解释。"
+    "description": "本分录行Project按PrjCode关联项目，多对零或一；不以OJDT头项目或名称替代键。名称取当前主数据，不默认过滤Active、Locked或有效期；缺失项目与未匹配保持区别，需要保留行时采用适用的保留连接。"
   }
 }

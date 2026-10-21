@@ -115,7 +115,7 @@
       "name": "SysCurrncy",
       "notNull": false,
       "properties": {
-        "description": "并行记账币种；解释各事实的SC金额，不能与本币混同。 销售 DocTotalSy/PaidSys/TotalSumSy 使用此币种；它可能与 MainCurncy 相同，也可能不同。",
+        "description": "同一公司并行记账的系统币代码，解释已确认的SC金额，包括JDT1.SYSDeb/SYSCred及BalSc类余额、OJDT.SysTotal和销售系统币金额；可能与MainCurncy相同或不同，不代替行外币。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OADM.html"
       },
       "type": "VARCHAR(3)"

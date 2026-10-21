@@ -7,5 +7,7 @@
     "jdt1"
   ],
   "name": "ojdt_jdt1",
-  "properties": {}
+  "properties": {
+    "description": "凭证头TransId到分录行TransId的一对多；JDT1完整行键为TransId+Line_ID。头项目、日期和金额在多行连接后重复出现，不能直接累计重复头总额，也不用头字段回填行字段。"
+  }
 }

@@ -29,9 +29,9 @@
       "isCalculated": false,
       "isHidden": false,
       "name": "AcctCode",
-      "notNull": false,
+      "notNull": true,
       "properties": {
-        "description": "主键，供分录Account等字段关联。",
+        "description": "科目内部主键，供JDT1.Account及业务单据AcctCode等关联；与分段显示码FormatCode分开，不能用名称替代键。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(15)"
@@ -43,7 +43,7 @@
       "name": "AcctName",
       "notNull": false,
       "properties": {
-        "description": "展示名称，不能作为连接键。",
+        "description": "当前科目主数据名称，按AcctCode关联后用于展示；不是连接键，不保证等于历史过账当时的名称。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(200)"
@@ -67,7 +67,7 @@
       "name": "ActCurr",
       "notNull": false,
       "properties": {
-        "description": "科目指定币种。",
+        "description": "当前科目币种配置；##表示多币种配置，不是真实货币代码。它不能无条件覆盖历史JDT1.FCCurrency或给行外币发生额赋单位。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(3)"
@@ -91,7 +91,7 @@
       "name": "ActType",
       "notNull": false,
       "properties": {
-        "description": "I收入、E费用、N其他；不是完整报表科目分类。",
+        "description": "I收入、E费用、N其他的科目分类；不是完整资产负债表或损益表映射，也不由RealAcct替代。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -535,7 +535,7 @@
       "name": "FormatCode",
       "notNull": false,
       "properties": {
-        "description": "分段科目展示号码；DI示例先按FormatCode查内部AcctCode后GetByKey，分录关联仍用内部代码。",
+        "description": "分段格式化展示代码；查询显示码后仍须解析AcctCode做关联，不把FormatCode当JDT1.Account或未经证实的唯一键。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(210)"
@@ -871,7 +871,7 @@
       "name": "Postable",
       "notNull": false,
       "properties": {
-        "description": "Y可过账科目；N标题科目。",
+        "description": "Y为可过账科目，N为标题科目；不是ValidFor启用或FrozenFor停用状态的替代。历史分录不因科目当前状态被默认删除。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -907,7 +907,7 @@
       "name": "Project",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Project Code。",
+        "description": "科目当前主数据的项目配置；不是JDT1的历史行项目，不能据此回填或覆盖分录行项目。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(20)"
@@ -961,13 +961,13 @@
       "type": "CHAR(1)"
     },
     {
-      "displayName": "是否实际科目",
+      "displayName": "指数化科目标记",
       "isCalculated": false,
       "isHidden": false,
       "name": "RealAcct",
       "notNull": false,
       "properties": {
-        "description": "是否为实际科目；实际科目通常用于资产、负债和权益。",
+        "description": "官方Indexed Account的Y/N指数化标记；不能据此判定资产、负债、权益或损益科目类别。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -1325,7 +1325,7 @@
   "name": "oact",
   "primaryKey": "AcctCode",
   "properties": {
-    "description": "每行一个科目，主键AcctCode；包括收入费用等科目及标题科目。当前余额不是任意历史时点财务报表。",
+    "description": "每行一个科目，主键AcctCode。包含可过账科目和标题科目，名称、分段显示码和内部代码各有职责；当前名称、币种配置及余额不代替历史分录事实，RealAcct不用于报表科目分类。",
     "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
   },
   "tableReference": {

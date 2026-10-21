@@ -7,7 +7,7 @@
       "name": "Active",
       "notNull": false,
       "properties": {
-        "description": "Y/N；不应因此丢弃历史交易。",
+        "description": "Y/N当前启用标记；不在历史分录项目关系中默认过滤Active=Y，也不据当前停用删除历史事实。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRJ.html"
       },
       "type": "VARCHAR(1)"
@@ -31,7 +31,7 @@
       "name": "Locked",
       "notNull": false,
       "properties": {
-        "description": "Y/N；与启用及有效期分别保留。",
+        "description": "Y/N当前锁定标记，与启用和有效期分开；不作为历史项目关系的隐含过滤。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRJ.html"
       },
       "type": "VARCHAR(1)"
@@ -55,7 +55,7 @@
       "name": "PrjCode",
       "notNull": true,
       "properties": {
-        "description": "主键，供单据或分录Project字段连接。",
+        "description": "项目代码主键，供OJDT.Project或JDT1.Project分别按所属粒度关联；不按项目名称、前缀或相似编号建立实体等价关系。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRJ.html"
       },
       "type": "VARCHAR(20)"
@@ -67,7 +67,7 @@
       "name": "PrjName",
       "notNull": false,
       "properties": {
-        "description": "当前项目名称，不能代替代码关联。",
+        "description": "当前项目主数据名称，用于展示；名称不作为唯一键，同名不同代码仍为不同项目，不保证为历史过账当时名称。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRJ.html"
       },
       "type": "VARCHAR(100)"
@@ -115,7 +115,7 @@
       "name": "ValidFrom",
       "notNull": false,
       "properties": {
-        "description": "项目代码有效期起始。",
+        "description": "项目当前有效期起始配置；不是分录过账起始日，不默认用于裁剪历史分录。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRJ.html"
       },
       "type": "TIMESTAMP"
@@ -127,7 +127,7 @@
       "name": "ValidTo",
       "notNull": false,
       "properties": {
-        "description": "项目代码有效期结束。",
+        "description": "项目当前有效期结束配置；不是历史交易自动失效日期，不默认用于裁剪历史分录。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRJ.html"
       },
       "type": "TIMESTAMP"
@@ -137,7 +137,7 @@
   "name": "oprj",
   "primaryKey": "PrjCode",
   "properties": {
-    "description": "每行一个财务分析项目代码，主键PrjCode；不是项目管理阶段或工单。分录表头项目与行项目可以不同，按问题选择对应粒度。",
+    "description": "每行一个财务分析项目代码，主键PrjCode；不是项目管理阶段或工单。当前名称不唯一且不代表历史名称，头行项目分别保存；历史事实不因项目当前停用、锁定或有效期被默认删除。",
     "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRJ.html"
   },
   "tableReference": {

@@ -473,6 +473,147 @@
       "scope": "sales_price_tax_freight_rounding_service_and_lifecycle",
       "synthetic_regression": "tests/test_sales.py",
       "version": "0.4.0"
+    },
+    {
+      "additional_columns": {
+        "JDT1": [
+          "Ref1",
+          "Ref2",
+          "Ref3Line"
+        ],
+        "OJDT": [
+          "Ref1",
+          "Ref2",
+          "Ref3"
+        ]
+      },
+      "basis": "官方数据库参考、DI属性和应用帮助交叉核对，区分直接定义、组合解释及官方资料冲突；目标源标准键与列另行验证。",
+      "compatibility": "Six optional standard reference columns and four non-null key declarations; existing types, keys, relationship conditions, interfaces and historical deployments retained. Target schema verification required.",
+      "date": "2026-10-21",
+      "description_corrections": {
+        "JDT1": [
+          "Account",
+          "BalDueCred",
+          "BalDueDeb",
+          "BalFcCred",
+          "BalFcDeb",
+          "BalScCred",
+          "BalScDeb",
+          "ContraAct",
+          "Credit",
+          "DebCred",
+          "Debit",
+          "DueDate",
+          "FCCredit",
+          "FCCurrency",
+          "FCDebit",
+          "Line_ID",
+          "OcrCode2",
+          "OcrCode3",
+          "OcrCode4",
+          "OcrCode5",
+          "ProfitCode",
+          "Project",
+          "RefDate",
+          "ShortName",
+          "SourceLine",
+          "SYSCred",
+          "SYSDeb",
+          "TaxDate",
+          "TransId",
+          "TransType"
+        ],
+        "OACT": [
+          "AcctCode",
+          "AcctName",
+          "ActCurr",
+          "ActType",
+          "FormatCode",
+          "Postable",
+          "Project",
+          "RealAcct"
+        ],
+        "OADM": [
+          "SysCurrncy"
+        ],
+        "OJDT": [
+          "DueDate",
+          "FcTotal",
+          "LocTotal",
+          "Number",
+          "Project",
+          "RefDate",
+          "SysTotal",
+          "TaxDate",
+          "TransCurr",
+          "TransId",
+          "TransType"
+        ],
+        "OPRJ": [
+          "Active",
+          "Locked",
+          "PrjCode",
+          "PrjName",
+          "ValidFrom",
+          "ValidTo"
+        ]
+      },
+      "not_null_corrections": [
+        "OJDT.TransId",
+        "JDT1.TransId",
+        "JDT1.Line_ID",
+        "OACT.AcctCode"
+      ],
+      "official_table_snapshots": {
+        "JDT1": {
+          "bytes": 94380,
+          "retrieved_at": "2026-10-21T04:22:22.092003+00:00",
+          "sha256": "2f41c2ccef8e4e129288110d7f21f1b933c47971b0b32ce4f681656766ebd57a",
+          "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
+        },
+        "OACT": {
+          "bytes": 84954,
+          "retrieved_at": "2026-10-21T04:22:22.809824+00:00",
+          "sha256": "69fdebd2253265074d85925de1b947aa0e074e6b3c157216c245e55f654768f3",
+          "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
+        },
+        "OADM": {
+          "bytes": 426464,
+          "retrieved_at": "2026-10-21T04:22:25.323567+00:00",
+          "sha256": "13a3b813511399bbcaff0897ed7c88c0cddf28db43807739275500a808019754",
+          "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OADM.html"
+        },
+        "OJDT": {
+          "bytes": 97265,
+          "retrieved_at": "2026-10-21T04:22:21.218379+00:00",
+          "sha256": "1a3351510800d4a5ca96c80d97ae9a0d7344a2a8cfb6feba58710742c38ad65d",
+          "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
+        },
+        "OPRJ": {
+          "bytes": 14865,
+          "retrieved_at": "2026-10-21T04:22:24.473748+00:00",
+          "sha256": "b0289bb3222ceb877ce1c0bbe1365e9933ec994abdaee6647564be58abda5023",
+          "url": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRJ.html"
+        }
+      },
+      "relationship_conditions_and_names_unchanged": true,
+      "relationship_descriptions": [
+        "ojdt_jdt1",
+        "jdt1_oact",
+        "sap_jdt1_oprj",
+        "sap_ojdt_oprj"
+      ],
+      "remaining_acceptance": [
+        "historical_balance_and_aging",
+        "all_reversal_links_and_localizations",
+        "empty_foreign_currency_storage_rules",
+        "multi_currency_header_totals",
+        "real_natural_language_answer_quality",
+        "large_result_delivery_completeness"
+      ],
+      "research": "validation/finance-journal-research.md",
+      "scope": "finance_journal_account_project_first_pass",
+      "version": "0.5.0"
     }
   ],
   "domain_rule_sources": [

@@ -7,5 +7,7 @@
     "oact"
   ],
   "name": "jdt1_oact",
-  "properties": {}
+  "properties": {
+    "description": "本行Account按内部AcctCode匹配总账或控制科目，多对零或一，取得当前AcctName及FormatCode；不以ShortName或显示码代替此条件。名称是当前主数据，保留事实时不隐含加科目当前启用或可过账过滤。"
+  }
 }
