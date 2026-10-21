@@ -25,7 +25,9 @@
   ],
   "sources": {
     "models": "models",
-    "relationships": "relationships"
+    "relationships": "relationships",
+    "views": "views",
+    "cubes": "cubes"
   },
   "status": "preview",
   "title": "SAP Business One 标准语义模板（SQL Server）",

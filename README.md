@@ -11,7 +11,7 @@
 3. 预览模型变更和校验结果后导入。导入仅更新该工作区的模型，发布仍由工作区单独执行。
 4. 记录导入所解析的提交 SHA。分支后续更新不会自动改变已导入模型，切换分支后需要重新预览和导入。
 
-初版模板不含 Views、Cubes 或客户专用指标，避免将某个项目的价格表选择、金额口径和业务筛选当作通用默认。对已有工作区导入前，应检查覆盖范围并保留客户修改；具体冲突处理以 tBI 的导入预览为准。
+当前模板尚无 Views、Cubes 或客户专用指标定义，避免将某个项目的价格表选择、金额口径和业务筛选当作通用默认。`views/` 和 `cubes/` 已作为预留目录在清单中声明，使用 `.gitkeep` 保留空目录；占位文件不参与导入。对已有工作区导入前，应检查覆盖范围并保留客户修改；具体冲突处理以 tBI 的导入预览为准。
 
 仓库地址为 [transinfosh/tbi-semantic-template-sap-b1](https://github.com/transinfosh/tbi-semantic-template-sap-b1)。该模板用于公开读取，公开仓库无需配置访问凭据。tBI 组织模板目录默认按 `tbi-semantic-template-` 前缀发现此仓库；也可手动填写 `https://github.com/transinfosh/tbi-semantic-template-sap-b1.git`。
 
@@ -23,6 +23,8 @@
 | `groups.json` | 七个业务分组的编码与显示名称 |
 | `models/<name>.json` | 每个标准表的字段、主键、说明及group归属 |
 | `relationships/<name>.json` | 每条关系的条件和基数 |
+| `views/` | 视图定义的预留目录，目前仅含 `.gitkeep` |
+| `cubes/` | 分析模型定义的预留目录，目前仅含 `.gitkeep` |
 | `build.py` | 只依赖 Python 标准库的结构校验与可选本地 MDL 导出 |
 | `source_notes.md` | 官方依据、哈希和解释边界 |
 | `validation/`、`tests/` | 来源约束、待审项、验证场景及测试 |
@@ -37,7 +39,7 @@ python3 -m unittest discover -s tests -v
 python3 build.py --output /tmp/sap-b1.mdl.json
 ```
 
-修改 `groups.json`、`models/`、`relationships/` 或 `template.json` 后执行校验，只提交清单和分文件源。`build.py` 默认及 `--check` 都只校验，不落盘；只有显式 `--output` 才导出完整 MDL。本地根目录的 `mdl.json` 和 `exports/` 已加入忽略规则，导出文件不是版本维护来源。
+修改 `groups.json`、`models/`、`relationships/`、`views/`、`cubes/` 或 `template.json` 后执行校验，只提交清单和分文件源。当前模板校验仍要求 Views 和 Cubes 为空；新增通用定义时应同步审查其业务范围和校验规则。`build.py` 默认及 `--check` 都只校验，不落盘；只有显式 `--output` 才导出完整 MDL。本地根目录的 `mdl.json` 和 `exports/` 已加入忽略规则，导出文件不是版本维护来源。
 
 tBI 固定一个 Git 提交后读取清单及其声明的 JSON 文件，并在服务端组装、校验完整 MDL。tBI 不执行本仓库的 `build.py` 或其他脚本。本地校验和导出也不访问网络或数据库，不执行 tBI 导入。
 

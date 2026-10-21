@@ -194,8 +194,15 @@ def build(root: Path = ROOT) -> dict:
     if metadata.get("formatVersion") != 1 or "entry" in metadata:
         raise ValueError("Unsupported template manifest")
     sources = metadata.get("sources")
-    if not isinstance(sources, dict) or set(sources) != {"models", "relationships"}:
-        raise ValueError("Template sources must declare model and relationship directories")
+    kinds = ("models", "relationships", "views", "cubes")
+    if (
+        not isinstance(sources, dict)
+        or set(sources) - set(kinds)
+        or not {"models", "relationships"}.issubset(sources)
+    ):
+        raise ValueError(
+            "Template sources must declare model and relationship directories, with optional views and cubes"
+        )
     for field in ("catalog", "description", "defaultSchema"):
         if not isinstance(metadata.get(field), str) or not metadata[field].strip():
             raise ValueError(f"Template {field} must be a nonempty string")
@@ -210,7 +217,9 @@ def build(root: Path = ROOT) -> dict:
         "views": [],
         "cubes": [],
     }
-    for key in ("models", "relationships"):
+    for key in kinds:
+        if key not in sources:
+            continue
         relative = sources[key]
         if (
             not isinstance(relative, str)
@@ -234,7 +243,7 @@ def build(root: Path = ROOT) -> dict:
             if path.stem != value["name"]:
                 raise ValueError(f"Source filename must match object name: {path.name}")
             result[key].append(value)
-        if not result[key]:
+        if key in ("models", "relationships") and not result[key]:
             raise ValueError(f"Empty template source directory: {relative}")
     validate_groups(root, metadata, result)
     for kind in ("models", "views", "cubes"):

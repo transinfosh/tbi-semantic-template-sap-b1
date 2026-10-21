@@ -35,8 +35,12 @@ class TemplateTest(unittest.TestCase):
             ROOT / "build.py",
             ROOT / "validation" / "reference-contract.json",
         ]
-        for directory in ("models", "relationships"):
+        for directory in ("models", "relationships", "views", "cubes"):
+            (target / directory).mkdir(parents=True, exist_ok=True)
             paths.extend((ROOT / directory).glob("*.json"))
+            placeholder = ROOT / directory / ".gitkeep"
+            if placeholder.exists():
+                paths.append(placeholder)
         for source in sorted(paths, reverse=True):
             destination = target / source.relative_to(ROOT)
             destination.parent.mkdir(parents=True, exist_ok=True)
@@ -60,6 +64,35 @@ class TemplateTest(unittest.TestCase):
                     [sys.executable, str(source / "build.py"), *arguments], check=True, capture_output=True
                 )
                 self.assertEqual({path.relative_to(source) for path in source.rglob("*")}, before)
+
+    def test_reserved_directories_survive_git_and_do_not_change_the_assembled_mdl(self) -> None:
+        source = self.source_copy()
+        subprocess.run(["git", "init", "--quiet", str(source)], check=True, capture_output=True)
+        subprocess.run(["git", "-C", str(source), "add", "."], check=True, capture_output=True)
+        tracked = subprocess.run(
+            ["git", "-C", str(source), "ls-files"], check=True, capture_output=True, text=True
+        ).stdout.splitlines()
+        for kind in ("views", "cubes"):
+            self.assertIn(f"{kind}/.gitkeep", tracked)
+        expected = encode(build(source))
+        manifest = read_json(source / "template.json")
+        for kind in ("views", "cubes"):
+            manifest["sources"].pop(kind)
+            shutil.rmtree(source / kind)
+        (source / "template.json").write_text(encode(manifest), encoding="utf-8")
+        self.assertEqual(encode(build(source)), expected)
+
+    def test_reserved_directories_cannot_silently_import_unreviewed_definitions(self) -> None:
+        source = self.source_copy()
+        for kind in ("views", "cubes"):
+            with self.subTest(kind=kind):
+                path = source / kind / "unreviewed.json"
+                path.write_text(encode({"name": "unreviewed"}), encoding="utf-8")
+                try:
+                    with self.assertRaisesRegex(ValueError, "Views and Cubes must stay in the workspace"):
+                        build(source)
+                finally:
+                    path.unlink()
 
     def test_explicit_export_matches_the_assembled_sources(self) -> None:
         source = self.source_copy()
