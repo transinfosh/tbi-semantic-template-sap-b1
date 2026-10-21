@@ -194,6 +194,7 @@
     }
   ],
   "displayName": "科目收款明细",
+  "group": "finance",
   "name": "rct4",
   "primaryKey": [
     "DocNum",

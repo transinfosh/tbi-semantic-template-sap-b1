@@ -206,6 +206,7 @@
     }
   ],
   "displayName": "应付发票预付款抵扣",
+  "group": "purchasing",
   "name": "pch9",
   "primaryKey": [
     "DocEntry",

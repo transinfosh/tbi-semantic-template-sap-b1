@@ -482,6 +482,7 @@
     }
   ],
   "displayName": "库存调拨行",
+  "group": "inventory",
   "name": "wtr1",
   "primaryKey": [
     "DocEntry",

@@ -674,6 +674,7 @@
     }
   ],
   "displayName": "仓库库位",
+  "group": "master_data",
   "name": "obin",
   "primaryKey": "AbsEntry",
   "properties": {

@@ -386,6 +386,7 @@
     }
   ],
   "displayName": "附加费用定义",
+  "group": "master_data",
   "name": "oexd",
   "primaryKey": "ExpnsCode",
   "properties": {

@@ -146,6 +146,7 @@
     }
   ],
   "displayName": "成本中心主数据",
+  "group": "master_data",
   "name": "oprc",
   "primaryKey": "PrcCode",
   "properties": {

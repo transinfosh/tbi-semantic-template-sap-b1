@@ -529,6 +529,7 @@
     }
   ],
   "displayName": "物料主数据",
+  "group": "master_data",
   "name": "oitm",
   "primaryKey": "ItemCode",
   "properties": {

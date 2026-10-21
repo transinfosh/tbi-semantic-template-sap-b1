@@ -338,6 +338,7 @@
     }
   ],
   "displayName": "付款单",
+  "group": "finance",
   "name": "ovpm",
   "primaryKey": "DocEntry",
   "properties": {

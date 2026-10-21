@@ -554,6 +554,7 @@
     }
   ],
   "displayName": "销售订单明细",
+  "group": "sales",
   "name": "rdr1",
   "primaryKey": [
     "DocEntry",

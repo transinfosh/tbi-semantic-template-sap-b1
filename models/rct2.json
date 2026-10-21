@@ -266,6 +266,7 @@
     }
   ],
   "displayName": "收款单应用明细",
+  "group": "finance",
   "name": "rct2",
   "primaryKey": [
     "DocNum",

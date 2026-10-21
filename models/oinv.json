@@ -582,6 +582,7 @@
     }
   ],
   "displayName": "应收发票",
+  "group": "sales",
   "name": "oinv",
   "primaryKey": "DocEntry",
   "properties": {

@@ -242,6 +242,7 @@
     }
   ],
   "displayName": "生产订单",
+  "group": "production",
   "name": "owor",
   "primaryKey": "DocEntry",
   "properties": {

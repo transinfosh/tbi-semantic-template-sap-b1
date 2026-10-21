@@ -554,6 +554,7 @@
     }
   ],
   "displayName": "应收预付款",
+  "group": "sales",
   "name": "odpi",
   "primaryKey": "DocEntry",
   "properties": {

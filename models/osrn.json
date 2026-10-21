@@ -146,6 +146,7 @@
     }
   ],
   "displayName": "序列号主数据",
+  "group": "master_data",
   "name": "osrn",
   "primaryKey": "AbsEntry",
   "properties": {

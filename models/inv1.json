@@ -542,6 +542,7 @@
     }
   ],
   "displayName": "应收发票明细",
+  "group": "sales",
   "name": "inv1",
   "primaryKey": [
     "DocEntry",

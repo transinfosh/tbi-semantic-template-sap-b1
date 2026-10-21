@@ -218,6 +218,7 @@
     }
   ],
   "displayName": "物料批序列交易日志",
+  "group": "inventory",
   "name": "oitl",
   "primaryKey": "LogEntry",
   "properties": {

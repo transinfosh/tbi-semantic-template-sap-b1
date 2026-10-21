@@ -506,6 +506,7 @@
     }
   ],
   "displayName": "收货单行",
+  "group": "inventory",
   "name": "ign1",
   "primaryKey": [
     "DocEntry",

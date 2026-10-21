@@ -542,6 +542,7 @@
     }
   ],
   "displayName": "销售交货明细",
+  "group": "sales",
   "name": "dln1",
   "primaryKey": [
     "DocEntry",

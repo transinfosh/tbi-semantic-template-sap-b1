@@ -182,6 +182,7 @@
     }
   ],
   "displayName": "应付贷项预付款抵扣明细",
+  "group": "purchasing",
   "name": "rpc11",
   "primaryKey": [
     "DocEntry",

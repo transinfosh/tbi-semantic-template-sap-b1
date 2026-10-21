@@ -194,6 +194,7 @@
     }
   ],
   "displayName": "科目付款明细",
+  "group": "finance",
   "name": "vpm4",
   "primaryKey": [
     "DocNum",

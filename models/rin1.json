@@ -542,6 +542,7 @@
     }
   ],
   "displayName": "应收贷项凭证明细",
+  "group": "sales",
   "name": "rin1",
   "primaryKey": [
     "DocEntry",

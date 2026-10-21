@@ -38,6 +38,7 @@
     }
   ],
   "displayName": "物料价目表价格",
+  "group": "master_data",
   "name": "itm1",
   "primaryKey": [
     "ItemCode",

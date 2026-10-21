@@ -98,6 +98,7 @@
     }
   ],
   "displayName": "计量单位",
+  "group": "master_data",
   "name": "ouom",
   "primaryKey": "UomEntry",
   "properties": {

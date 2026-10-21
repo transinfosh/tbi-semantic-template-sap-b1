@@ -170,6 +170,7 @@
     }
   ],
   "displayName": "生产资源",
+  "group": "master_data",
   "name": "orsc",
   "primaryKey": "ResCode",
   "properties": {

@@ -26,6 +26,7 @@
     }
   ],
   "displayName": "制造商",
+  "group": "master_data",
   "name": "omrc",
   "primaryKey": "FirmCode",
   "properties": {

@@ -326,6 +326,7 @@
     }
   ],
   "displayName": "采购退货明细",
+  "group": "purchasing",
   "name": "rpd1",
   "primaryKey": [
     "DocEntry",

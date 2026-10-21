@@ -2,7 +2,7 @@
 
 本仓库维护可复用的 **SAP Business One 10.0 / SQL Server 语义模板**。tBI 从 Git 中读取 `template.json`，按其中的 `sources` 声明读取模型和关系文件，在服务端组装 MDL；导入后由工作区独立维护实际模型。Git 不保存工作区实例、数据库连接或客户业务数据，也不提交重复的完整 MDL 产物。
 
-当前使用 `main` 分支维护和导入，清单版本为 `0.6.0`，本次修订不创建 Git 标签。覆盖销售、采购、库存、生产和财务的 **96 个表模型、2,559 个字段、246 条关系**。它采用 MDL `layoutVersion: 4`，不代表覆盖 SAP 全部表，也不表示所有公司库已完成业务金额验收。
+当前使用 `main` 分支维护和导入，清单版本为 `0.6.1`，本次修订不创建 Git 标签。覆盖销售、采购、库存、生产和财务的 **96 个表模型、2,559 个字段、246 条关系**。它采用 MDL `layoutVersion: 4`，不代表覆盖 SAP 全部表，也不表示所有公司库已完成业务金额验收。
 
 ## 在 tBI 中使用
 
@@ -20,8 +20,8 @@
 | 路径 | 用途 |
 | --- | --- |
 | `template.json` | 导入入口：模板标识、版本、MDL 元数据、源目录和兼容要求 |
-| `groups.json` | 七个业务分组及模型归属；管理分类独立于MDL |
-| `models/<name>.json` | 每个标准表的字段、主键及说明 |
+| `groups.json` | 七个业务分组的编码与显示名称 |
+| `models/<name>.json` | 每个标准表的字段、主键、说明及group归属 |
 | `relationships/<name>.json` | 每条关系的条件和基数 |
 | `build.py` | 只依赖 Python 标准库的结构校验与可选本地 MDL 导出 |
 | `source-provenance.json`、`source_notes.md` | 官方依据、哈希和解释边界 |
@@ -37,7 +37,7 @@ python3 -m unittest discover -s tests -v
 python3 build.py --output /tmp/sap-b1.mdl.json
 ```
 
-修改 `models/`、`relationships/` 或 `template.json` 后执行校验，只提交清单和分文件源。`build.py` 默认及 `--check` 都只校验，不落盘；只有显式 `--output` 才导出完整 MDL。本地根目录的 `mdl.json` 和 `exports/` 已加入忽略规则，导出文件不是版本维护来源。
+修改 `groups.json`、`models/`、`relationships/` 或 `template.json` 后执行校验，只提交清单和分文件源。`build.py` 默认及 `--check` 都只校验，不落盘；只有显式 `--output` 才导出完整 MDL。本地根目录的 `mdl.json` 和 `exports/` 已加入忽略规则，导出文件不是版本维护来源。
 
 tBI 固定一个 Git 提交后读取清单及其声明的 JSON 文件，并在服务端组装、校验完整 MDL。tBI 不执行本仓库的 `build.py` 或其他脚本。本地校验和导出也不访问网络或数据库，不执行 tBI 导入。
 
@@ -64,17 +64,25 @@ SDK 和 SAP 官方文档的权利归各自权利人所有。本仓库没有附�
 
 ## 分组定义
 
-清单版本 `0.6.0` 使用独立 `groups.json`，由 `template.json` 的 `"groups": "groups.json"` 引用。文件的 `formatVersion: 1` 与清单格式分别维护，每组包括稳定编码 `name`、显示名称 `title`，以及 `models`（可选 `views`、`cubes`）对象技术名数组。例如：
+清单版本 `0.6.1` 使用独立 `groups.json`，由 `template.json` 的 `"groups": "groups.json"` 引用。文件的 `formatVersion: 1` 与清单格式分别维护，每组只包括稳定编码 `name` 和显示名称 `title`。例如：
 
 ```json
 {
   "formatVersion": 1,
   "groups": [
-    {"name": "master_data", "title": "主数据", "models": ["oitm", "ocrd"]},
-    {"name": "sales", "title": "销售", "models": ["ordr", "rdr1"]}
+    {"name": "master_data", "title": "主数据"},
+    {"name": "sales", "title": "销售"}
   ]
 }
 ```
+
+归属由模型自身维护，例如 `models/oitm.json` 中的顶层字段：
+
+```json
+{"name": "oitm", "group": "master_data"}
+```
+
+以上只展示归属片段，模型的其他字段保持完整。视图和分析模型也可使用自己的group字段；分组文件不维护成员列表。导入器校验编码引用后将分类分离，不把这些group字段带入导出的查询MDL。0.6.0旧成员数组仍提供读取兼容；新模板不同时维护两种归属，矛盾声明会被拒绝。旧程序需更新导入器后使用本结构。
 
 本模板96表各归一组：主数据26、销售18、采购20、库存15、生产4、财务10、其他3。基础档案及其配套明细集中到主数据，BOM与工单归生产；凭证、收付款及核销归财务；公司配置、编号系列、每日汇率归其他。分组用于浏览，不限制跨组关系，不进入查询MDL或改变金额定义。本版96模型2559字段246关系的MDL内容与0.5.0相同。
 

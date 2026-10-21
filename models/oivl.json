@@ -278,6 +278,7 @@
     }
   ],
   "displayName": "库存估价交易流水",
+  "group": "inventory",
   "name": "oivl",
   "primaryKey": "TransSeq",
   "properties": {

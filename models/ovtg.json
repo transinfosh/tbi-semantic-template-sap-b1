@@ -26,6 +26,7 @@
     }
   ],
   "displayName": "税组",
+  "group": "master_data",
   "name": "ovtg",
   "primaryKey": "Code",
   "properties": {

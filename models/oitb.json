@@ -950,6 +950,7 @@
     }
   ],
   "displayName": "物料组",
+  "group": "master_data",
   "name": "oitb",
   "primaryKey": "ItmsGrpCod",
   "properties": {

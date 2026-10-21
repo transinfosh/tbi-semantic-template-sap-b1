@@ -566,6 +566,7 @@
     }
   ],
   "displayName": "销售报价",
+  "group": "sales",
   "name": "oqut",
   "primaryKey": "DocEntry",
   "properties": {

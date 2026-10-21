@@ -542,6 +542,7 @@
     }
   ],
   "displayName": "销售报价明细",
+  "group": "sales",
   "name": "qut1",
   "primaryKey": [
     "DocEntry",

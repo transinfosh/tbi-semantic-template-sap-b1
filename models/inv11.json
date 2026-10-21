@@ -182,6 +182,7 @@
     }
   ],
   "displayName": "应收发票预付款抵扣明细",
+  "group": "sales",
   "name": "inv11",
   "primaryKey": [
     "DocEntry",

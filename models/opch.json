@@ -494,6 +494,7 @@
     }
   ],
   "displayName": "应付发票",
+  "group": "purchasing",
   "name": "opch",
   "primaryKey": "DocEntry",
   "properties": {

@@ -482,6 +482,7 @@
     }
   ],
   "displayName": "库存调拨申请行",
+  "group": "inventory",
   "name": "wtq1",
   "primaryKey": [
     "DocEntry",

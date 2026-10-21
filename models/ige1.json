@@ -494,6 +494,7 @@
     }
   ],
   "displayName": "发货/发料单行",
+  "group": "inventory",
   "name": "ige1",
   "primaryKey": [
     "DocEntry",

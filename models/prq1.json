@@ -326,6 +326,7 @@
     }
   ],
   "displayName": "采购申请明细",
+  "group": "purchasing",
   "name": "prq1",
   "primaryKey": [
     "DocEntry",

@@ -458,6 +458,7 @@
     }
   ],
   "displayName": "采购订单明细",
+  "group": "purchasing",
   "name": "por1",
   "primaryKey": [
     "DocEntry",

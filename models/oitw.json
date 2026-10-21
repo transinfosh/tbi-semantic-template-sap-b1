@@ -134,6 +134,7 @@
     }
   ],
   "displayName": "物料仓库当前库存",
+  "group": "inventory",
   "name": "oitw",
   "primaryKey": [
     "ItemCode",

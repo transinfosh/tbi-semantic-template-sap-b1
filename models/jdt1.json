@@ -446,6 +446,7 @@
     }
   ],
   "displayName": "日记账分录行",
+  "group": "finance",
   "name": "jdt1",
   "primaryKey": [
     "TransId",

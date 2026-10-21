@@ -146,6 +146,7 @@
     }
   ],
   "displayName": "物料清单组件行",
+  "group": "production",
   "name": "itt1",
   "primaryKey": [
     "Father",

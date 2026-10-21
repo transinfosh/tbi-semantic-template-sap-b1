@@ -146,6 +146,7 @@
     }
   ],
   "displayName": "销售员",
+  "group": "master_data",
   "name": "oslp",
   "primaryKey": "SlpCode",
   "properties": {

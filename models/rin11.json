@@ -182,6 +182,7 @@
     }
   ],
   "displayName": "应收贷项预付款抵扣明细",
+  "group": "sales",
   "name": "rin11",
   "primaryKey": [
     "DocEntry",

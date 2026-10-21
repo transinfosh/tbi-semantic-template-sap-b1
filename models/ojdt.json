@@ -326,6 +326,7 @@
     }
   ],
   "displayName": "日记账分录表头",
+  "group": "finance",
   "name": "ojdt",
   "primaryKey": "TransId",
   "properties": {

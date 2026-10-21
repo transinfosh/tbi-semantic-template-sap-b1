@@ -566,6 +566,7 @@
     }
   ],
   "displayName": "应收贷项凭证",
+  "group": "sales",
   "name": "orin",
   "primaryKey": "DocEntry",
   "properties": {

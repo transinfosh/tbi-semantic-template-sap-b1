@@ -26,6 +26,7 @@
     }
   ],
   "displayName": "部门",
+  "group": "master_data",
   "name": "oudp",
   "primaryKey": "Code",
   "properties": {

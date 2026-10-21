@@ -566,6 +566,7 @@
     }
   ],
   "displayName": "销售交货",
+  "group": "sales",
   "name": "odln",
   "primaryKey": "DocEntry",
   "properties": {

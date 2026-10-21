@@ -302,6 +302,7 @@
     }
   ],
   "displayName": "采购申请",
+  "group": "purchasing",
   "name": "oprq",
   "primaryKey": "DocEntry",
   "properties": {

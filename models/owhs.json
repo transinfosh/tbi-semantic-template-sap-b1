@@ -170,6 +170,7 @@
     }
   ],
   "displayName": "仓库主数据",
+  "group": "master_data",
   "name": "owhs",
   "primaryKey": "WhsCode",
   "properties": {

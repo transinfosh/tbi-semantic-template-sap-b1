@@ -122,6 +122,7 @@
     }
   ],
   "displayName": "分配规则",
+  "group": "master_data",
   "name": "oocr",
   "primaryKey": "OcrCode",
   "properties": {

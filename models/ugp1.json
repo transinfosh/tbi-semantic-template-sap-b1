@@ -86,6 +86,7 @@
     }
   ],
   "displayName": "计量单位组换算行",
+  "group": "master_data",
   "name": "ugp1",
   "primaryKey": [
     "UgpEntry",

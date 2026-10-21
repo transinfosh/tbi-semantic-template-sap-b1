@@ -314,6 +314,7 @@
     }
   ],
   "displayName": "单据编号系列",
+  "group": "other",
   "name": "nnm1",
   "primaryKey": "Series",
   "properties": {

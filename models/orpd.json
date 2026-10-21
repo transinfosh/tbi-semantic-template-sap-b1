@@ -266,6 +266,7 @@
     }
   ],
   "displayName": "采购退货",
+  "group": "purchasing",
   "name": "orpd",
   "primaryKey": "DocEntry",
   "properties": {

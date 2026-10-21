@@ -62,6 +62,7 @@
     }
   ],
   "displayName": "每日币种汇率",
+  "group": "other",
   "name": "ortt",
   "primaryKey": [
     "RateDate",

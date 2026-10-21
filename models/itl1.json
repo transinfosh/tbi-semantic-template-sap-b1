@@ -98,6 +98,7 @@
     }
   ],
   "displayName": "批序列交易分配行",
+  "group": "inventory",
   "name": "itl1",
   "primaryKey": [
     "LogEntry",

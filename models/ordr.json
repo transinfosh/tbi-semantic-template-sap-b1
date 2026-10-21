@@ -578,6 +578,7 @@
     }
   ],
   "displayName": "销售订单",
+  "group": "sales",
   "name": "ordr",
   "primaryKey": "DocEntry",
   "properties": {

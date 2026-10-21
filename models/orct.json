@@ -338,6 +338,7 @@
     }
   ],
   "displayName": "收款单",
+  "group": "finance",
   "name": "orct",
   "primaryKey": "DocEntry",
   "properties": {

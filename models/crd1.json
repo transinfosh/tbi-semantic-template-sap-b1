@@ -278,6 +278,7 @@
     }
   ],
   "displayName": "业务伙伴地址",
+  "group": "master_data",
   "name": "crd1",
   "primaryKey": [
     "CardCode",

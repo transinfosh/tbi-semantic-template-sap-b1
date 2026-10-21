@@ -122,6 +122,7 @@
     }
   ],
   "displayName": "资源组",
+  "group": "master_data",
   "name": "orsb",
   "primaryKey": "ResGrpCod",
   "properties": {

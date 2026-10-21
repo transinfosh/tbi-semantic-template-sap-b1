@@ -458,6 +458,7 @@
     }
   ],
   "displayName": "采购收货明细",
+  "group": "purchasing",
   "name": "pdn1",
   "primaryKey": [
     "DocEntry",

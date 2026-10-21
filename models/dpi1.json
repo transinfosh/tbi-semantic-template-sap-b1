@@ -446,6 +446,7 @@
     }
   ],
   "displayName": "应收预付款明细",
+  "group": "sales",
   "name": "dpi1",
   "primaryKey": [
     "DocEntry",

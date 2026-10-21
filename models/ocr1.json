@@ -110,6 +110,7 @@
     }
   ],
   "displayName": "分配规则明细",
+  "group": "master_data",
   "name": "ocr1",
   "primaryKey": [
     "OcrCode",

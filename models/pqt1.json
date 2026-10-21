@@ -326,6 +326,7 @@
     }
   ],
   "displayName": "采购报价明细",
+  "group": "purchasing",
   "name": "pqt1",
   "primaryKey": [
     "DocEntry",

@@ -326,6 +326,7 @@
     }
   ],
   "displayName": "应付预付款明细",
+  "group": "purchasing",
   "name": "dpo1",
   "primaryKey": [
     "DocEntry",

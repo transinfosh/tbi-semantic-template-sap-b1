@@ -134,6 +134,7 @@
     }
   ],
   "displayName": "项目代码主数据",
+  "group": "master_data",
   "name": "oprj",
   "primaryKey": "PrjCode",
   "properties": {

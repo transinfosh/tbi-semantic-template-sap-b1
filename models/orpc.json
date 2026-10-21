@@ -458,6 +458,7 @@
     }
   ],
   "displayName": "应付贷项凭证",
+  "group": "purchasing",
   "name": "orpc",
   "primaryKey": "DocEntry",
   "properties": {

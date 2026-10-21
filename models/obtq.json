@@ -134,6 +134,7 @@
     }
   ],
   "displayName": "批次仓库当前数量",
+  "group": "inventory",
   "name": "obtq",
   "primaryKey": "AbsEntry",
   "properties": {

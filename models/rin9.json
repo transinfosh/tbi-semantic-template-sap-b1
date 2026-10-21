@@ -206,6 +206,7 @@
     }
   ],
   "displayName": "应收贷项预付款抵扣",
+  "group": "sales",
   "name": "rin9",
   "primaryKey": [
     "DocEntry",

@@ -62,6 +62,7 @@
     }
   ],
   "displayName": "员工主数据",
+  "group": "master_data",
   "name": "ohem",
   "primaryKey": "empID",
   "properties": {

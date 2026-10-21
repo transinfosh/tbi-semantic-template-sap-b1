@@ -146,6 +146,7 @@
     }
   ],
   "displayName": "公司级系统配置",
+  "group": "other",
   "name": "oadm",
   "primaryKey": "Code",
   "properties": {

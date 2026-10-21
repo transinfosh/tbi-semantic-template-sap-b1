@@ -74,6 +74,7 @@
     }
   ],
   "displayName": "业务伙伴分组",
+  "group": "master_data",
   "name": "ocrg",
   "primaryKey": "GroupCode",
   "properties": {

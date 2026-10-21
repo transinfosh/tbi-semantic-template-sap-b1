@@ -170,6 +170,7 @@
     }
   ],
   "displayName": "生产订单组件行",
+  "group": "production",
   "name": "wor1",
   "primaryKey": [
     "DocEntry",

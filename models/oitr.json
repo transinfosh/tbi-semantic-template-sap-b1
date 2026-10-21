@@ -206,6 +206,7 @@
     }
   ],
   "displayName": "内部核销表头",
+  "group": "finance",
   "name": "oitr",
   "primaryKey": "ReconNum",
   "properties": {

@@ -398,6 +398,7 @@
     }
   ],
   "displayName": "业务伙伴主数据",
+  "group": "master_data",
   "name": "ocrd",
   "primaryKey": "CardCode",
   "properties": {

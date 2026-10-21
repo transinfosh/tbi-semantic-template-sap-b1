@@ -206,6 +206,7 @@
     }
   ],
   "displayName": "应收发票预付款抵扣",
+  "group": "sales",
   "name": "inv9",
   "primaryKey": [
     "DocEntry",

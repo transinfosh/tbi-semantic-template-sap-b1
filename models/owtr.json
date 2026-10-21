@@ -458,6 +458,7 @@
     }
   ],
   "displayName": "库存调拨单头",
+  "group": "inventory",
   "name": "owtr",
   "primaryKey": "DocEntry",
   "properties": {

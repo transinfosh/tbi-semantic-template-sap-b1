@@ -242,6 +242,7 @@
     }
   ],
   "displayName": "内部核销参与行",
+  "group": "finance",
   "name": "itr1",
   "primaryKey": [
     "ReconNum",

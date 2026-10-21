@@ -266,6 +266,7 @@
     }
   ],
   "displayName": "付款单应用明细",
+  "group": "finance",
   "name": "vpm2",
   "primaryKey": [
     "DocNum",

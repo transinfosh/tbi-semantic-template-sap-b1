@@ -458,6 +458,7 @@
     }
   ],
   "displayName": "采购收货",
+  "group": "purchasing",
   "name": "opdn",
   "primaryKey": "DocEntry",
   "properties": {

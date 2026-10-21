@@ -242,6 +242,7 @@
     }
   ],
   "displayName": "库存交易消息日志",
+  "group": "inventory",
   "name": "oilm",
   "primaryKey": "MessageID",
   "properties": {

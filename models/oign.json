@@ -458,6 +458,7 @@
     }
   ],
   "displayName": "收货单头",
+  "group": "inventory",
   "name": "oign",
   "primaryKey": "DocEntry",
   "properties": {

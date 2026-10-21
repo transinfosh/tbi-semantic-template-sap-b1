@@ -26,6 +26,8 @@ def read_json(path: Path) -> dict:
 def validate_groups(root: Path, metadata: dict, mdl: dict) -> None:
     """Validate optional classification data without adding it to the exported MDL."""
     if "groups" not in metadata:
+        if any(item.get("group") not in (None, "") for item in mdl.get("models", [])):
+            raise ValueError("Object group references require a group file")
         return
     relative = metadata["groups"]
     if (
@@ -52,7 +54,7 @@ def validate_groups(root: Path, metadata: dict, mdl: dict) -> None:
         raise ValueError("Groups require formatVersion 1 and a groups array")
     kinds = ("models", "views", "cubes")
     known = {kind: {item["name"] for item in mdl.get(kind, [])} for kind in kinds}
-    used = {kind: set() for kind in kinds}
+    used = {kind: {} for kind in kinds}
     names, titles = set(), set()
     for group in value["groups"]:
         if not isinstance(group, dict) or set(group) - {"name", "title", *kinds}:
@@ -75,10 +77,23 @@ def validate_groups(root: Path, metadata: dict, mdl: dict) -> None:
                 not isinstance(members, list)
                 or any(not isinstance(member, str) or member not in known[kind] for member in members)
                 or len(members) != len(set(members))
-                or used[kind].intersection(members)
+                or set(used[kind]).intersection(members)
             ):
                 raise ValueError("Unknown or duplicate group membership")
-            used[kind].update(members)
+            used[kind].update({member: name for member in members})
+    for kind in kinds:
+        for item in mdl.get(kind, []):
+            if "group" not in item:
+                continue
+            code = item["group"]
+            if code is None or code == "":
+                if item["name"] in used[kind]:
+                    raise ValueError("Conflicting group declarations")
+                continue
+            if not isinstance(code, str) or code not in {group["name"] for group in value["groups"]}:
+                raise ValueError("Unknown object group reference")
+            if item["name"] in used[kind] and used[kind][item["name"]] != code:
+                raise ValueError("Conflicting group declarations")
 
 
 def encode(value: dict) -> str:
@@ -221,8 +236,11 @@ def build(root: Path = ROOT) -> dict:
             result[key].append(value)
         if not result[key]:
             raise ValueError(f"Empty template source directory: {relative}")
-    validate(result, read_json(root / "validation" / "reference-contract.json"))
     validate_groups(root, metadata, result)
+    for kind in ("models", "views", "cubes"):
+        for item in result[kind]:
+            item.pop("group", None)
+    validate(result, read_json(root / "validation" / "reference-contract.json"))
     return result
 
 

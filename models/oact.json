@@ -1322,6 +1322,7 @@
     }
   ],
   "displayName": "总账科目主数据",
+  "group": "master_data",
   "name": "oact",
   "primaryKey": "AcctCode",
   "properties": {

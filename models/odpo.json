@@ -362,6 +362,7 @@
     }
   ],
   "displayName": "应付预付款",
+  "group": "purchasing",
   "name": "odpo",
   "primaryKey": "DocEntry",
   "properties": {

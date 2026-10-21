@@ -278,6 +278,7 @@
     }
   ],
   "displayName": "采购报价",
+  "group": "purchasing",
   "name": "opqt",
   "primaryKey": "DocEntry",
   "properties": {
