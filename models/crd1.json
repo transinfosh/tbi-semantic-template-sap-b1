@@ -7,7 +7,7 @@
       "name": "Address",
       "notNull": true,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Address Name。",
+        "description": "Address Name。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
       },
       "type": "VARCHAR(50)"
@@ -19,7 +19,7 @@
       "name": "Address2",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Address Name 2。",
+        "description": "Address Name 2。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
       },
       "type": "VARCHAR(50)"
@@ -31,7 +31,7 @@
       "name": "Address3",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Address Name 3。",
+        "description": "Address Name 3。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
       },
       "type": "VARCHAR(50)"
@@ -43,7 +43,7 @@
       "name": "AddrType",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Address Type。",
+        "description": "Address Type。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
       },
       "type": "VARCHAR(100)"
@@ -55,7 +55,7 @@
       "name": "AdresType",
       "notNull": true,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Address Type。",
+        "description": "Address Type。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
       },
       "type": "CHAR(1)"
@@ -67,7 +67,7 @@
       "name": "AltCrdName",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Alternative BP Name。",
+        "description": "Alternative BP Name。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
       },
       "type": "VARCHAR(200)"
@@ -79,7 +79,7 @@
       "name": "AltTaxId",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Alternative Tax ID。",
+        "description": "Alternative Tax ID。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
       },
       "type": "VARCHAR(32)"
@@ -91,7 +91,7 @@
       "name": "Block",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Block。",
+        "description": "Block。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
       },
       "type": "VARCHAR(100)"
@@ -103,7 +103,7 @@
       "name": "Building",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Building/Floor/Room。",
+        "description": "Building/Floor/Room。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
       },
       "type": "VARCHAR"
@@ -115,7 +115,7 @@
       "name": "CardCode",
       "notNull": true,
       "properties": {
-        "description": "SAP Business One 官方字段定义：BP Code。",
+        "description": "BP Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
       },
       "type": "VARCHAR(15)"
@@ -127,7 +127,7 @@
       "name": "City",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：City。",
+        "description": "City。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
       },
       "type": "VARCHAR(100)"
@@ -139,7 +139,7 @@
       "name": "Country",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Country/Region。",
+        "description": "Country/Region。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
       },
       "type": "VARCHAR(3)"
@@ -151,7 +151,7 @@
       "name": "County",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：County。",
+        "description": "County。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
       },
       "type": "VARCHAR(100)"
@@ -163,7 +163,7 @@
       "name": "GlblLocNum",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Global Location Number。",
+        "description": "Global Location Number。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
       },
       "type": "VARCHAR(50)"
@@ -175,7 +175,7 @@
       "name": "LicTradNum",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Federal Tax ID。",
+        "description": "Federal Tax ID。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
       },
       "type": "VARCHAR(32)"
@@ -187,7 +187,7 @@
       "name": "LineNum",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Row Number。",
+        "description": "Row Number。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
       },
       "type": "INTEGER"
@@ -199,7 +199,7 @@
       "name": "Ntnlty",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Nationality。",
+        "description": "Nationality。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
       },
       "type": "VARCHAR(100)"
@@ -211,7 +211,7 @@
       "name": "State",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：State。",
+        "description": "State。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
       },
       "type": "VARCHAR(3)"
@@ -223,7 +223,7 @@
       "name": "Street",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Street。",
+        "description": "Street。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
       },
       "type": "VARCHAR(100)"
@@ -235,7 +235,7 @@
       "name": "StreetNo",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Street No.。",
+        "description": "Street No.。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
       },
       "type": "VARCHAR(100)"
@@ -247,7 +247,7 @@
       "name": "TaxCode",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Tax Code。",
+        "description": "Tax Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
       },
       "type": "VARCHAR(8)"
@@ -259,7 +259,7 @@
       "name": "TaxOffice",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Tax Office。",
+        "description": "Tax Office。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
       },
       "type": "VARCHAR(50)"
@@ -271,7 +271,7 @@
       "name": "ZipCode",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Zip Code。",
+        "description": "Zip Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/CRD1.html"
       },
       "type": "VARCHAR(20)"

@@ -7,7 +7,7 @@
       "name": "BaseMethod",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Drawing Method。",
+        "description": "Drawing Method。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "CHAR(1)"
@@ -19,7 +19,7 @@
       "name": "DistrbMthd",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Distribution Method。",
+        "description": "Distribution Method。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "CHAR(1)"
@@ -31,7 +31,7 @@
       "name": "ExpFixSum",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Fixed Amount - Expenses。",
+        "description": "Fixed Amount - Expenses。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "DECIMAL(19,6)"
@@ -43,7 +43,7 @@
       "name": "ExpnsAcct",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Expense Account。",
+        "description": "Expense Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "VARCHAR(15)"
@@ -55,7 +55,7 @@
       "name": "ExpnsCode",
       "notNull": true,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Internal Number。",
+        "description": "Internal Number。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "INTEGER"
@@ -67,7 +67,7 @@
       "name": "ExpnsExAct",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Expense Exempted Account。",
+        "description": "Expense Exempted Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "VARCHAR(15)"
@@ -79,7 +79,7 @@
       "name": "ExpnsName",
       "notNull": true,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Name。",
+        "description": "Name。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "VARCHAR(20)"
@@ -91,7 +91,7 @@
       "name": "ExpnsType",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Freight Type。",
+        "description": "Freight Type。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "CHAR(1)"
@@ -103,7 +103,7 @@
       "name": "ExpOfstAct",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Freight Clearing Account。",
+        "description": "Freight Clearing Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "VARCHAR(15)"
@@ -115,7 +115,7 @@
       "name": "In1099",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Include in 1099。",
+        "description": "Include in 1099。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "CHAR(1)"
@@ -127,7 +127,7 @@
       "name": "Intrastat",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Intrastat Relevant。",
+        "description": "Intrastat Relevant。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "CHAR(1)"
@@ -139,7 +139,7 @@
       "name": "LstPchPrce",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Last Purchase Price。",
+        "description": "Last Purchase Price。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "CHAR(1)"
@@ -151,7 +151,7 @@
       "name": "OcrCode",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Distr. Rule。",
+        "description": "Distr. Rule。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "VARCHAR(8)"
@@ -163,7 +163,7 @@
       "name": "OcrCode2",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Distr. Rule2。",
+        "description": "Distr. Rule2。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "VARCHAR(8)"
@@ -175,7 +175,7 @@
       "name": "OcrCode3",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Distr. Rule3。",
+        "description": "Distr. Rule3。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "VARCHAR(8)"
@@ -187,7 +187,7 @@
       "name": "OcrCode4",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Distr. Rule4。",
+        "description": "Distr. Rule4。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "VARCHAR(8)"
@@ -199,7 +199,7 @@
       "name": "OcrCode5",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Distr. Rule5。",
+        "description": "Distr. Rule5。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "VARCHAR(8)"
@@ -211,7 +211,7 @@
       "name": "OcrCodeX",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Distr. Rule。",
+        "description": "Distr. Rule。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "VARCHAR(100)"
@@ -223,7 +223,7 @@
       "name": "PchRpt",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Purchase Analysis Report。",
+        "description": "Purchase Analysis Report。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "CHAR(1)"
@@ -235,7 +235,7 @@
       "name": "Project",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Project。",
+        "description": "Project。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "VARCHAR(20)"
@@ -247,7 +247,7 @@
       "name": "RevAcct",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Revenue Account。",
+        "description": "Revenue Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "VARCHAR(15)"
@@ -259,7 +259,7 @@
       "name": "RevExmAcct",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Revenues Exempted Account。",
+        "description": "Revenues Exempted Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "VARCHAR(15)"
@@ -271,7 +271,7 @@
       "name": "RevFixSum",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Fixed Amount - Revenues。",
+        "description": "Fixed Amount - Revenues。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "DECIMAL(19,6)"
@@ -283,7 +283,7 @@
       "name": "RevRetAct",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Revenue Returns Account。",
+        "description": "Revenue Returns Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "VARCHAR(15)"
@@ -295,7 +295,7 @@
       "name": "SalseRpt",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Sales Analysis Report。",
+        "description": "Sales Analysis Report。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "CHAR(1)"
@@ -307,7 +307,7 @@
       "name": "Stock",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Stock。",
+        "description": "Stock。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "CHAR(1)"
@@ -319,7 +319,7 @@
       "name": "TaxDisMthd",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Tax Distribution Method。",
+        "description": "Tax Distribution Method。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "CHAR(1)"
@@ -331,7 +331,7 @@
       "name": "TaxLiable",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Tax Liable。",
+        "description": "Tax Liable。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "CHAR(1)"
@@ -343,7 +343,7 @@
       "name": "UpdateDate",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Date of Update。",
+        "description": "Date of Update。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "TIMESTAMP"
@@ -355,7 +355,7 @@
       "name": "VatGroupI",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Output Tax Group。",
+        "description": "Output Tax Group。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "VARCHAR(8)"
@@ -367,7 +367,7 @@
       "name": "VatGroupO",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Input Tax Group。",
+        "description": "Input Tax Group。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "VARCHAR(8)"
@@ -379,7 +379,7 @@
       "name": "WTLiable",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：WTax Liable。",
+        "description": "WTax Liable。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "CHAR(1)"

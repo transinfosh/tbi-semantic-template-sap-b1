@@ -19,7 +19,7 @@
       "name": "Block",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Block。",
+        "description": "Block。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWHS.html"
       },
       "type": "VARCHAR(100)"
@@ -31,7 +31,7 @@
       "name": "Building",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Building/Floor/Room。",
+        "description": "Building/Floor/Room。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWHS.html"
       },
       "type": "VARCHAR"
@@ -67,7 +67,7 @@
       "name": "County",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：County。",
+        "description": "County。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWHS.html"
       },
       "type": "VARCHAR(100)"
@@ -115,7 +115,7 @@
       "name": "State",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：State。",
+        "description": "State。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWHS.html"
       },
       "type": "VARCHAR(3)"
@@ -127,7 +127,7 @@
       "name": "Street",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Street。",
+        "description": "Street。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWHS.html"
       },
       "type": "VARCHAR(100)"
@@ -163,7 +163,7 @@
       "name": "ZipCode",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Zip Code。",
+        "description": "Zip Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWHS.html"
       },
       "type": "VARCHAR(20)"

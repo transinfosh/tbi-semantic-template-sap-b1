@@ -43,7 +43,7 @@
       "name": "CreateDate",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Creation Date。",
+        "description": "Creation Date。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
       },
       "type": "TIMESTAMP"
@@ -79,7 +79,7 @@
       "name": "GrntExp",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Warranty End Date。",
+        "description": "Warranty End Date。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
       },
       "type": "TIMESTAMP"
@@ -91,7 +91,7 @@
       "name": "GrntStart",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Warranty Start Date。",
+        "description": "Warranty Start Date。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
       },
       "type": "TIMESTAMP"
@@ -115,7 +115,7 @@
       "name": "Instance",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Instance。",
+        "description": "Instance。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
       },
       "type": "SMALLINT"
@@ -139,7 +139,7 @@
       "name": "itemName",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Item Description。",
+        "description": "Item Description。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
       },
       "type": "VARCHAR(200)"
@@ -151,7 +151,7 @@
       "name": "Location",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Location。",
+        "description": "Location。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
       },
       "type": "VARCHAR(100)"
@@ -163,7 +163,7 @@
       "name": "LotNumber",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Batch Attribute 2。",
+        "description": "Batch Attribute 2。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
       },
       "type": "VARCHAR(36)"
@@ -187,7 +187,7 @@
       "name": "MnfSerial",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Batch Attribute 1。",
+        "description": "Batch Attribute 1。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
       },
       "type": "VARCHAR(36)"
@@ -199,7 +199,7 @@
       "name": "Notes",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Details。",
+        "description": "Details。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
       },
       "type": "VARCHAR"
@@ -211,7 +211,7 @@
       "name": "PriceDiff",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Price Difference。",
+        "description": "Price Difference。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
       },
       "type": "DECIMAL(19,6)"
@@ -235,7 +235,7 @@
       "name": "QuantOut",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Output Quantity。",
+        "description": "Output Quantity。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
       },
       "type": "DECIMAL(19,6)"
@@ -259,7 +259,7 @@
       "name": "SumDec",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Totals Accuracy for SnB。",
+        "description": "Totals Accuracy for SnB。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
       },
       "type": "SMALLINT"
@@ -283,7 +283,7 @@
       "name": "TrackingNt",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：CCD Tracking Note。",
+        "description": "CCD Tracking Note。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
       },
       "type": "INTEGER"
@@ -295,7 +295,7 @@
       "name": "TrackiNtLn",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：CCD Tracking Note Line。",
+        "description": "CCD Tracking Note Line。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
       },
       "type": "INTEGER"
@@ -307,7 +307,7 @@
       "name": "Transfered",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Transferred。",
+        "description": "Transferred。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
       },
       "type": "CHAR(1)"

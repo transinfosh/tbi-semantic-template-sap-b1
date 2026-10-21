@@ -7,7 +7,7 @@
       "name": "Alert",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Alert。",
+        "description": "Alert。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "CHAR(1)"
@@ -19,7 +19,7 @@
       "name": "APCMAct",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Purchase Credit Account。",
+        "description": "Purchase Credit Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -31,7 +31,7 @@
       "name": "APCMEUAct",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Purchase Credit Account - EU。",
+        "description": "Purchase Credit Account - EU。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -43,7 +43,7 @@
       "name": "APCMFrnAct",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Purchase Credit Account - Foreign。",
+        "description": "Purchase Credit Account - Foreign。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -55,7 +55,7 @@
       "name": "ARCMAct",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Sales Credit Account。",
+        "description": "Sales Credit Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -67,7 +67,7 @@
       "name": "ARCMEUAct",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Sales Credit Account - EU。",
+        "description": "Sales Credit Account - EU。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -79,7 +79,7 @@
       "name": "ARCMExpAct",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Tax Exempt Credit Account。",
+        "description": "Tax Exempt Credit Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -91,7 +91,7 @@
       "name": "ARCMFrnAct",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Sales Credit Account - Foreign。",
+        "description": "Sales Credit Account - Foreign。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -103,7 +103,7 @@
       "name": "BalanceAcc",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Goods Clearing Account。",
+        "description": "Goods Clearing Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -127,7 +127,7 @@
       "name": "CompoWH",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Component Warehouse。",
+        "description": "Component Warehouse。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "CHAR(1)"
@@ -139,7 +139,7 @@
       "name": "CostRvlAct",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：COGS Revaluation Account。",
+        "description": "COGS Revaluation Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -151,7 +151,7 @@
       "name": "createDate",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Creation Date - History。",
+        "description": "Creation Date - History。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "TIMESTAMP"
@@ -163,7 +163,7 @@
       "name": "CstOffsAct",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：COGS Revaluation Offset Acct。",
+        "description": "COGS Revaluation Offset Acct。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -175,7 +175,7 @@
       "name": "CycleCode",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Cycle Code。",
+        "description": "Cycle Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "SMALLINT"
@@ -187,7 +187,7 @@
       "name": "DecreasAc",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Inventory Offset - Decrease Account。",
+        "description": "Inventory Offset - Decrease Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -199,7 +199,7 @@
       "name": "DecresGlAc",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：G/L Decrease Account。",
+        "description": "G/L Decrease Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -211,7 +211,7 @@
       "name": "EUExpensAc",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Expense Account - EU。",
+        "description": "Expense Account - EU。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -223,7 +223,7 @@
       "name": "EURevenuAc",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Revenue Account - EU。",
+        "description": "Revenue Account - EU。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -235,7 +235,7 @@
       "name": "ExchangeAc",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Exchange Rate Differences Account。",
+        "description": "Exchange Rate Differences Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -247,7 +247,7 @@
       "name": "ExmptIncom",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Exempt Revenue Account。",
+        "description": "Exempt Revenue Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -259,7 +259,7 @@
       "name": "ExpClrAct",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Expense Clearing Account。",
+        "description": "Expense Clearing Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -271,7 +271,7 @@
       "name": "ExpensesAc",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Expense Account。",
+        "description": "Expense Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -283,7 +283,7 @@
       "name": "ExpOfstAct",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Expense Offset Account。",
+        "description": "Expense Offset Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -295,7 +295,7 @@
       "name": "FreeChrgPU",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Free of Charge Purchase Account。",
+        "description": "Free of Charge Purchase Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -307,7 +307,7 @@
       "name": "FreeChrgSA",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Free of Charge Sales Account。",
+        "description": "Free of Charge Sales Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -319,7 +319,7 @@
       "name": "FrExpensAc",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Expense Account - Foreign。",
+        "description": "Expense Account - Foreign。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -331,7 +331,7 @@
       "name": "FrRevenuAc",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Revenue Account - Foreign。",
+        "description": "Revenue Account - Foreign。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -343,7 +343,7 @@
       "name": "IncreasAc",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Inventory Offset - Increase Account。",
+        "description": "Inventory Offset - Increase Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -355,7 +355,7 @@
       "name": "IncresGlAc",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：G/L Increase Account。",
+        "description": "G/L Increase Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -367,7 +367,7 @@
       "name": "InvntSys",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Inventory System。",
+        "description": "Inventory System。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "CHAR(1)"
@@ -379,7 +379,7 @@
       "name": "ISvcCode",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Incoming Service Code。",
+        "description": "Incoming Service Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "INTEGER"
@@ -391,7 +391,7 @@
       "name": "ItemClass",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Service or Material。",
+        "description": "Service or Material。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "CHAR(1)"
@@ -439,7 +439,7 @@
       "name": "LeadTime",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Lead Time。",
+        "description": "Lead Time。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "INTEGER"
@@ -463,7 +463,7 @@
       "name": "logInstanc",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Log Instance - History。",
+        "description": "Log Instance - History。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "INTEGER"
@@ -475,7 +475,7 @@
       "name": "MatGrp",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Material Group。",
+        "description": "Material Group。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "INTEGER"
@@ -487,7 +487,7 @@
       "name": "MatType",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Material Type。",
+        "description": "Material Type。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(3)"
@@ -499,7 +499,7 @@
       "name": "MinOrdrQty",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Minimum Order Quantity。",
+        "description": "Minimum Order Quantity。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "DECIMAL(19,6)"
@@ -511,7 +511,7 @@
       "name": "NCMCode",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：NCM Code。",
+        "description": "NCM Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "INTEGER"
@@ -523,7 +523,7 @@
       "name": "NegStckAct",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Negative Inventory Adjustment Acct。",
+        "description": "Negative Inventory Adjustment Acct。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -535,7 +535,7 @@
       "name": "Object",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Object Type - History。",
+        "description": "Object Type - History。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(20)"
@@ -547,7 +547,7 @@
       "name": "OrdrIntrvl",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Order Interval。",
+        "description": "Order Interval。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "SMALLINT"
@@ -559,7 +559,7 @@
       "name": "OrdrMulti",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Order Multiple。",
+        "description": "Order Multiple。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "DECIMAL(19,6)"
@@ -571,7 +571,7 @@
       "name": "OSvcCode",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Outgoing Service Code。",
+        "description": "Outgoing Service Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "INTEGER"
@@ -583,7 +583,7 @@
       "name": "PAReturnAc",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Purchase Return Account。",
+        "description": "Purchase Return Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -595,7 +595,7 @@
       "name": "PlaningSys",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Planning Method。",
+        "description": "Planning Method。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "CHAR(1)"
@@ -607,7 +607,7 @@
       "name": "PrcrmntMtd",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Procurement Method。",
+        "description": "Procurement Method。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "CHAR(1)"
@@ -619,7 +619,7 @@
       "name": "PriceDifAc",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Price Difference Account。",
+        "description": "Price Difference Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -631,7 +631,7 @@
       "name": "ProductSrc",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Product Source。",
+        "description": "Product Source。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(2)"
@@ -643,7 +643,7 @@
       "name": "PurBalAct",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Purchase Balance Account。",
+        "description": "Purchase Balance Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -655,7 +655,7 @@
       "name": "PurchaseAc",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Purchase Account。",
+        "description": "Purchase Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -667,7 +667,7 @@
       "name": "PurchOfsAc",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Purchase Offset Account。",
+        "description": "Purchase Offset Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -679,7 +679,7 @@
       "name": "ReturnAc",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Sales Returns Account。",
+        "description": "Sales Returns Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -691,7 +691,7 @@
       "name": "RevenuesAc",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Revenue Account。",
+        "description": "Revenue Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -703,7 +703,7 @@
       "name": "RevRetAct",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Revenue Returns Account。",
+        "description": "Revenue Returns Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -715,7 +715,7 @@
       "name": "RuleCode",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Checking Rule Code。",
+        "description": "Checking Rule Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(2)"
@@ -739,7 +739,7 @@
       "name": "ServiceGrp",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Service Group。",
+        "description": "Service Group。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "INTEGER"
@@ -751,7 +751,7 @@
       "name": "ShpdGdsAct",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Shipped Goods Account。",
+        "description": "Shipped Goods Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -763,7 +763,7 @@
       "name": "StkInTnAct",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Stock In Transit Account。",
+        "description": "Stock In Transit Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -775,7 +775,7 @@
       "name": "StkOffsAct",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Inventory Revaluation Offset Account。",
+        "description": "Inventory Revaluation Offset Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -787,7 +787,7 @@
       "name": "StockOffst",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Inventory Offset P&L Account。",
+        "description": "Inventory Offset P&L Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -799,7 +799,7 @@
       "name": "StokRvlAct",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Inventory Revaluation Account。",
+        "description": "Inventory Revaluation Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -811,7 +811,7 @@
       "name": "ToleranDay",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Tolerance Days。",
+        "description": "Tolerance Days。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "INTEGER"
@@ -823,7 +823,7 @@
       "name": "TransferAc",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Allocation Account。",
+        "description": "Allocation Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -847,7 +847,7 @@
       "name": "updateDate",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Date of Update - History。",
+        "description": "Date of Update - History。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "TIMESTAMP"
@@ -859,7 +859,7 @@
       "name": "userSign2",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Updating User - History。",
+        "description": "Updating User - History。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "SMALLINT"
@@ -871,7 +871,7 @@
       "name": "VarianceAc",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Variance Account。",
+        "description": "Variance Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -883,7 +883,7 @@
       "name": "VatRevAct",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：VAT in Revenue Account。",
+        "description": "VAT in Revenue Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -895,7 +895,7 @@
       "name": "WhICenAct",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Incoming CENVAT Account (WH)。",
+        "description": "Incoming CENVAT Account (WH)。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -907,7 +907,7 @@
       "name": "WhOCenAct",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Outgoing CENVAT Account (WH)。",
+        "description": "Outgoing CENVAT Account (WH)。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -931,7 +931,7 @@
       "name": "WipOffset",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：WIP Offset P&L Account。",
+        "description": "WIP Offset P&L Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -943,7 +943,7 @@
       "name": "WipVarAcct",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：WIP Inventory Variance Account。",
+        "description": "WIP Inventory Variance Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"

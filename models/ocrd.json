@@ -7,7 +7,7 @@
       "name": "Address",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Bill-to Street。",
+        "description": "Bill-to Street。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
       },
       "type": "VARCHAR(100)"
@@ -55,7 +55,7 @@
       "name": "Block",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Bill-to Block。",
+        "description": "Bill-to Block。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
       },
       "type": "VARCHAR(100)"
@@ -79,7 +79,7 @@
       "name": "CardFName",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Foreign Name。",
+        "description": "Foreign Name。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
       },
       "type": "VARCHAR(200)"
@@ -115,7 +115,7 @@
       "name": "Cellular",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Mobile Phone。",
+        "description": "Mobile Phone。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
       },
       "type": "VARCHAR(50)"
@@ -127,7 +127,7 @@
       "name": "City",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Bill-to City。",
+        "description": "Bill-to City。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
       },
       "type": "VARCHAR(100)"
@@ -139,7 +139,7 @@
       "name": "CntctPrsn",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Contact Person。",
+        "description": "Contact Person。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
       },
       "type": "VARCHAR(90)"
@@ -151,7 +151,7 @@
       "name": "Country",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Bill-to Country/Region。",
+        "description": "Bill-to Country/Region。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
       },
       "type": "VARCHAR(3)"
@@ -163,7 +163,7 @@
       "name": "County",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Bill-to County。",
+        "description": "Bill-to County。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
       },
       "type": "VARCHAR(100)"
@@ -223,7 +223,7 @@
       "name": "DebtLine",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Payable Limit。",
+        "description": "Payable Limit。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
       },
       "type": "DECIMAL(19,6)"
@@ -235,7 +235,7 @@
       "name": "DflAccount",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Default Account。",
+        "description": "Default Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
       },
       "type": "VARCHAR(50)"
@@ -247,7 +247,7 @@
       "name": "DNotesBal",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Open Deliveries/GRPO Balance。",
+        "description": "Open Deliveries/GRPO Balance。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
       },
       "type": "DECIMAL(19,6)"
@@ -259,7 +259,7 @@
       "name": "DunnLevel",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Dunning Level。",
+        "description": "Dunning Level。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
       },
       "type": "INTEGER"
@@ -271,7 +271,7 @@
       "name": "E_Mail",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：E-Mail。",
+        "description": "E-Mail。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
       },
       "type": "VARCHAR(100)"
@@ -283,7 +283,7 @@
       "name": "Fax",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Fax Number。",
+        "description": "Fax Number。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
       },
       "type": "VARCHAR(50)"
@@ -319,7 +319,7 @@
       "name": "ListNum",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Price List No.。",
+        "description": "Price List No.。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
       },
       "type": "SMALLINT"
@@ -331,7 +331,7 @@
       "name": "MailZipCod",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Ship-to Zip Code。",
+        "description": "Ship-to Zip Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
       },
       "type": "VARCHAR(20)"
@@ -343,7 +343,7 @@
       "name": "Phone1",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Telephone 1。",
+        "description": "Telephone 1。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
       },
       "type": "VARCHAR(50)"
@@ -355,7 +355,7 @@
       "name": "Phone2",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Telephone 2。",
+        "description": "Telephone 2。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
       },
       "type": "VARCHAR(50)"
@@ -391,7 +391,7 @@
       "name": "ZipCode",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Bill-to Zip Code。",
+        "description": "Bill-to Zip Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
       },
       "type": "VARCHAR(20)"

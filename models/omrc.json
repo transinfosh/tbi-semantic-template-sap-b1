@@ -7,7 +7,7 @@
       "name": "FirmCode",
       "notNull": true,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Code。",
+        "description": "Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OMRC.html"
       },
       "type": "SMALLINT"
@@ -19,7 +19,7 @@
       "name": "FirmName",
       "notNull": true,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Manufacturer Name。",
+        "description": "Manufacturer Name。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OMRC.html"
       },
       "type": "VARCHAR(30)"

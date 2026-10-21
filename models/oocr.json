@@ -7,7 +7,7 @@
       "name": "AbsEntry",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Numerator。",
+        "description": "Numerator。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OOCR.html"
       },
       "type": "INTEGER"
@@ -19,7 +19,7 @@
       "name": "Active",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Active。",
+        "description": "Active。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OOCR.html"
       },
       "type": "CHAR(1)"
@@ -31,7 +31,7 @@
       "name": "DimCode",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：In Which Dimension。",
+        "description": "In Which Dimension。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OOCR.html"
       },
       "type": "SMALLINT"
@@ -43,7 +43,7 @@
       "name": "Direct",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Direct。",
+        "description": "Direct。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OOCR.html"
       },
       "type": "CHAR(1)"
@@ -55,7 +55,7 @@
       "name": "Locked",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Locked。",
+        "description": "Locked。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OOCR.html"
       },
       "type": "CHAR(1)"
@@ -67,7 +67,7 @@
       "name": "logInstanc",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Log Instance。",
+        "description": "Log Instance。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OOCR.html"
       },
       "type": "INTEGER"
@@ -79,7 +79,7 @@
       "name": "OcrCode",
       "notNull": true,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Factor Code。",
+        "description": "Factor Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OOCR.html"
       },
       "type": "VARCHAR(8)"
@@ -91,7 +91,7 @@
       "name": "OcrName",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Factor Description。",
+        "description": "Factor Description。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OOCR.html"
       },
       "type": "VARCHAR(30)"
@@ -103,7 +103,7 @@
       "name": "OcrTotal",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Total Factor。",
+        "description": "Total Factor。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OOCR.html"
       },
       "type": "DECIMAL(19,6)"
@@ -115,7 +115,7 @@
       "name": "updateDate",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Date of Update。",
+        "description": "Date of Update。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OOCR.html"
       },
       "type": "TIMESTAMP"

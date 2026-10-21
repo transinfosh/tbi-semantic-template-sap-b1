@@ -43,7 +43,7 @@
       "name": "CreateDate",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Production Date。",
+        "description": "Production Date。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
       },
       "type": "TIMESTAMP"
@@ -79,7 +79,7 @@
       "name": "FirmCode",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Manufacturer。",
+        "description": "Manufacturer。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
       },
       "type": "SMALLINT"
@@ -91,7 +91,7 @@
       "name": "FrgnName",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Foreign Name。",
+        "description": "Foreign Name。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
       },
       "type": "VARCHAR(200)"
@@ -139,7 +139,7 @@
       "name": "ItemClass",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Service or Material。",
+        "description": "Service or Material。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
       },
       "type": "CHAR(1)"
@@ -175,7 +175,7 @@
       "name": "ItemType",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Item Type。",
+        "description": "Item Type。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
       },
       "type": "CHAR(1)"
@@ -211,7 +211,7 @@
       "name": "LastPurDat",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Last Purchase Date。",
+        "description": "Last Purchase Date。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
       },
       "type": "TIMESTAMP"
@@ -246,7 +246,7 @@
       "name": "LstEvlPric",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Last Evaluated Price。",
+        "description": "Last Evaluated Price。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
       },
       "type": "DECIMAL(19,6)"
@@ -294,7 +294,7 @@
       "name": "MngMethod",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Management Method。",
+        "description": "Management Method。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
       },
       "type": "CHAR(1)"
@@ -306,7 +306,7 @@
       "name": "NumInBuy",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Items per Purchasing Unit。",
+        "description": "Items per Purchasing Unit。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
       },
       "type": "DECIMAL(19,6)"
@@ -318,7 +318,7 @@
       "name": "NumInSale",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：No. of Items per Sales Unit。",
+        "description": "No. of Items per Sales Unit。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
       },
       "type": "DECIMAL(19,6)"
@@ -354,7 +354,7 @@
       "name": "PrchseItem",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Purchasing Item。",
+        "description": "Purchasing Item。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
       },
       "type": "CHAR(1)"
@@ -366,7 +366,7 @@
       "name": "SalFactor1",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Sales Factor 1。",
+        "description": "Sales Factor 1。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
       },
       "type": "DECIMAL(19,6)"
@@ -378,7 +378,7 @@
       "name": "SalFactor2",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Sales Factor 2。",
+        "description": "Sales Factor 2。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
       },
       "type": "DECIMAL(19,6)"
@@ -402,7 +402,7 @@
       "name": "SellItem",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Sales Item。",
+        "description": "Sales Item。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
       },
       "type": "CHAR(1)"
@@ -414,7 +414,7 @@
       "name": "SuppCatNum",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Mfr Catalog No.。",
+        "description": "Mfr Catalog No.。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
       },
       "type": "VARCHAR(50)"
@@ -426,7 +426,7 @@
       "name": "SWW",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Additional Identifier。",
+        "description": "Additional Identifier。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
       },
       "type": "VARCHAR(16)"
@@ -450,7 +450,7 @@
       "name": "UpdateDate",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Date of Update。",
+        "description": "Date of Update。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
       },
       "type": "TIMESTAMP"
@@ -462,7 +462,7 @@
       "name": "UserText",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Item Remarks。",
+        "description": "Item Remarks。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
       },
       "type": "VARCHAR"
@@ -474,7 +474,7 @@
       "name": "validFor",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Active。",
+        "description": "Active。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
       },
       "type": "CHAR(1)"
@@ -486,7 +486,7 @@
       "name": "validFrom",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Active From。",
+        "description": "Active From。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
       },
       "type": "TIMESTAMP"
@@ -498,7 +498,7 @@
       "name": "validTo",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Active To。",
+        "description": "Active To。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
       },
       "type": "TIMESTAMP"
@@ -510,7 +510,7 @@
       "name": "VatGourpSa",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Sales Tax Definition。",
+        "description": "Sales Tax Definition。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
       },
       "type": "VARCHAR(8)"

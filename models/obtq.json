@@ -7,7 +7,7 @@
       "name": "AbsEntry",
       "notNull": true,
       "properties": {
-        "description": "SAP Business One 官方字段定义：abs entry。",
+        "description": "abs entry。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTQ.html"
       },
       "type": "INTEGER"
@@ -19,7 +19,7 @@
       "name": "CCDQuant",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：CCD Quantity。",
+        "description": "CCD Quantity。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTQ.html"
       },
       "type": "DECIMAL(19,6)"
@@ -31,7 +31,7 @@
       "name": "CommitQty",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Committed Quantity。",
+        "description": "Committed Quantity。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTQ.html"
       },
       "type": "DECIMAL(19,6)"
@@ -43,7 +43,7 @@
       "name": "CountQty",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Counted Quantity。",
+        "description": "Counted Quantity。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTQ.html"
       },
       "type": "DECIMAL(19,6)"
@@ -55,7 +55,7 @@
       "name": "ItemCode",
       "notNull": true,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Item Code。",
+        "description": "Item Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTQ.html"
       },
       "type": "VARCHAR(50)"
@@ -67,7 +67,7 @@
       "name": "MdAbsEntry",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：MD Abs Entry。",
+        "description": "MD Abs Entry。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTQ.html"
       },
       "type": "INTEGER"
@@ -79,7 +79,7 @@
       "name": "Quantity",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Quantity。",
+        "description": "Quantity。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTQ.html"
       },
       "type": "DECIMAL(19,6)"
@@ -91,7 +91,7 @@
       "name": "SysNumber",
       "notNull": true,
       "properties": {
-        "description": "SAP Business One 官方字段定义：System Number。",
+        "description": "System Number。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTQ.html"
       },
       "type": "INTEGER"
@@ -103,7 +103,7 @@
       "name": "TrackingNt",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：CCD Tracking Note。",
+        "description": "CCD Tracking Note。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTQ.html"
       },
       "type": "INTEGER"
@@ -115,7 +115,7 @@
       "name": "TrackiNtLn",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：CCD Tracking Note Line。",
+        "description": "CCD Tracking Note Line。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTQ.html"
       },
       "type": "INTEGER"
@@ -127,7 +127,7 @@
       "name": "WhsCode",
       "notNull": true,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Warehouse Code。",
+        "description": "Warehouse Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTQ.html"
       },
       "type": "VARCHAR(8)"

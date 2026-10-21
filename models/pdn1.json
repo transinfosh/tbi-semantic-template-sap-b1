@@ -7,7 +7,7 @@
       "name": "AcctCode",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Account Code。",
+        "description": "Account Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
       },
       "type": "VARCHAR(15)"
@@ -115,7 +115,7 @@
       "name": "FreeTxt",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Free Text。",
+        "description": "Free Text。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
       },
       "type": "VARCHAR(100)"
@@ -127,7 +127,7 @@
       "name": "GrossBuyPr",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Gross Profit Base Price。",
+        "description": "Gross Profit Base Price。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
       },
       "type": "DECIMAL(19,6)"
@@ -271,7 +271,7 @@
       "name": "PriceBefDi",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Unit Price。",
+        "description": "Unit Price。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
       },
       "type": "DECIMAL(19,6)"
@@ -295,7 +295,7 @@
       "name": "Rate",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Currency Rate。",
+        "description": "Currency Rate。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
       },
       "type": "DECIMAL(19,6)"
@@ -319,7 +319,7 @@
       "name": "TargetType",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Target Document Type。",
+        "description": "Target Document Type。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
       },
       "type": "INTEGER"
@@ -331,7 +331,7 @@
       "name": "TaxCode",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Tax Code。",
+        "description": "Tax Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
       },
       "type": "VARCHAR(8)"
@@ -415,7 +415,7 @@
       "name": "VatGroup",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Tax Definition。",
+        "description": "Tax Definition。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
       },
       "type": "VARCHAR(8)"
@@ -427,7 +427,7 @@
       "name": "VatPrcnt",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Tax Rate per Row。",
+        "description": "Tax Rate per Row。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
       },
       "type": "DECIMAL(19,6)"
@@ -439,7 +439,7 @@
       "name": "VisOrder",
       "notNull": false,
       "properties": {
-        "description": "SAP Business One 官方字段定义：Visual Order。",
+        "description": "Visual Order。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PDN1.html"
       },
       "type": "INTEGER"
