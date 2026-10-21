@@ -7,7 +7,6 @@
       "name": "AccntntCod",
       "notNull": false,
       "properties": {
-        "description": "External Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(15)"
@@ -19,7 +18,6 @@
       "name": "AccrualTyp",
       "notNull": false,
       "properties": {
-        "description": "Accrual Type。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -55,7 +53,6 @@
       "name": "AcctStrLe",
       "notNull": false,
       "properties": {
-        "description": "Account Structure Level。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(2)"
@@ -79,7 +76,6 @@
       "name": "ActId",
       "notNull": true,
       "properties": {
-        "description": "Account Identifier。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(210)"
@@ -103,7 +99,6 @@
       "name": "Advance",
       "notNull": false,
       "properties": {
-        "description": "Advance Payments。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -115,7 +110,6 @@
       "name": "BalDirect",
       "notNull": false,
       "properties": {
-        "description": "Direction of Balance。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(4)"
@@ -127,7 +121,6 @@
       "name": "BlncTrnsfr",
       "notNull": false,
       "properties": {
-        "description": "Balances Transferred [Y/N]。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -139,7 +132,6 @@
       "name": "BlocManPos",
       "notNull": false,
       "properties": {
-        "description": "Block Manual Posting。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -151,7 +143,6 @@
       "name": "BNKCounter",
       "notNull": false,
       "properties": {
-        "description": "BNK Counter。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "INTEGER"
@@ -175,7 +166,6 @@
       "name": "BPLName",
       "notNull": false,
       "properties": {
-        "description": "Branch Name。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(200)"
@@ -187,7 +177,6 @@
       "name": "Budget",
       "notNull": false,
       "properties": {
-        "description": "Budget。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -199,7 +188,6 @@
       "name": "CashBox",
       "notNull": false,
       "properties": {
-        "description": "Capital Account [Y/N]。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -211,7 +199,6 @@
       "name": "Category",
       "notNull": false,
       "properties": {
-        "description": "Category。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "INTEGER"
@@ -223,7 +210,6 @@
       "name": "CfwRlvnt",
       "notNull": false,
       "properties": {
-        "description": "Cash Flow Relevant [Y/N]。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -235,7 +221,6 @@
       "name": "ClosingAcc",
       "notNull": false,
       "properties": {
-        "description": "G/L Account Closing。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(15)"
@@ -247,7 +232,6 @@
       "name": "Counter",
       "notNull": false,
       "properties": {
-        "description": "Counter。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "INTEGER"
@@ -283,7 +267,6 @@
       "name": "DatevAcct",
       "notNull": false,
       "properties": {
-        "description": "DATEV Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(8)"
@@ -295,7 +278,6 @@
       "name": "DatevAutoA",
       "notNull": false,
       "properties": {
-        "description": "DATEV Automatic Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -307,7 +289,6 @@
       "name": "DatevFirst",
       "notNull": false,
       "properties": {
-        "description": "First Data Entry。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -319,7 +300,6 @@
       "name": "Details",
       "notNull": false,
       "properties": {
-        "description": "Details。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(254)"
@@ -331,7 +311,6 @@
       "name": "DfltTax",
       "notNull": false,
       "properties": {
-        "description": "Default Tax Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(8)"
@@ -343,7 +322,6 @@
       "name": "DfltVat",
       "notNull": false,
       "properties": {
-        "description": "Default VAT Group。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(8)"
@@ -355,7 +333,6 @@
       "name": "Dim1Relvnt",
       "notNull": false,
       "properties": {
-        "description": "Dimension 1 Relevant。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -367,7 +344,6 @@
       "name": "Dim2Relvnt",
       "notNull": false,
       "properties": {
-        "description": "Dimension 2 Relevant。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -379,7 +355,6 @@
       "name": "Dim3Relvnt",
       "notNull": false,
       "properties": {
-        "description": "Dimension 3 Relevant。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -391,7 +366,6 @@
       "name": "Dim4Relvnt",
       "notNull": false,
       "properties": {
-        "description": "Dimension 4 Relevant。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -403,7 +377,6 @@
       "name": "Dim5Relvnt",
       "notNull": false,
       "properties": {
-        "description": "Dimension 5 Relevant。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -427,7 +400,6 @@
       "name": "ExchRate",
       "notNull": false,
       "properties": {
-        "description": "Exchange Rate Differences。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -439,7 +411,6 @@
       "name": "ExmIncome",
       "notNull": false,
       "properties": {
-        "description": "Tax Definition。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -451,7 +422,6 @@
       "name": "ExportCode",
       "notNull": false,
       "properties": {
-        "description": "Data Export Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(10)"
@@ -463,7 +433,6 @@
       "name": "ExtraSum",
       "notNull": false,
       "properties": {
-        "description": "Additional Amount。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "DECIMAL(19,6)"
@@ -475,7 +444,6 @@
       "name": "ExtrMatch",
       "notNull": false,
       "properties": {
-        "description": "External Reconciliation No.。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "INTEGER"
@@ -511,7 +479,6 @@
       "name": "Finanse",
       "notNull": false,
       "properties": {
-        "description": "Cash Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -523,7 +490,6 @@
       "name": "Fixed",
       "notNull": false,
       "properties": {
-        "description": "Main Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -547,7 +513,6 @@
       "name": "Free_2",
       "notNull": false,
       "properties": {
-        "description": "Free 2。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -559,7 +524,6 @@
       "name": "FrgnName",
       "notNull": false,
       "properties": {
-        "description": "Foreign Name。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(200)"
@@ -583,7 +547,6 @@
       "name": "FrozenComm",
       "notNull": false,
       "properties": {
-        "description": "Inactive Remarks。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(30)"
@@ -607,7 +570,6 @@
       "name": "FrozenFrom",
       "notNull": false,
       "properties": {
-        "description": "Inactive From。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "TIMESTAMP"
@@ -619,7 +581,6 @@
       "name": "FrozenTo",
       "notNull": false,
       "properties": {
-        "description": "Inactive To。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "TIMESTAMP"
@@ -643,7 +604,6 @@
       "name": "Groups",
       "notNull": false,
       "properties": {
-        "description": "Main Group。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(8)"
@@ -655,7 +615,6 @@
       "name": "GrpLine",
       "notNull": false,
       "properties": {
-        "description": "Serial No. in Group。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "INTEGER"
@@ -667,7 +626,6 @@
       "name": "IntrMatch",
       "notNull": false,
       "properties": {
-        "description": "Internal Reconciliation No.。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "INTEGER"
@@ -679,7 +637,6 @@
       "name": "LastRevBal",
       "notNull": false,
       "properties": {
-        "description": "Last Revaluation Balance。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "DECIMAL(19,6)"
@@ -691,7 +648,6 @@
       "name": "LastRevDat",
       "notNull": false,
       "properties": {
-        "description": "Last Revaluation Date。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "TIMESTAMP"
@@ -727,7 +683,6 @@
       "name": "LocMth",
       "notNull": false,
       "properties": {
-        "description": "LC Reconciliation。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -739,7 +694,6 @@
       "name": "MeaUnit",
       "notNull": false,
       "properties": {
-        "description": "Measurement Unit。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(10)"
@@ -751,7 +705,6 @@
       "name": "MTHCounter",
       "notNull": false,
       "properties": {
-        "description": "MTH Counter。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "INTEGER"
@@ -763,7 +716,6 @@
       "name": "MultiLink",
       "notNull": false,
       "properties": {
-        "description": "Allow Multiple Linking。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -775,7 +727,6 @@
       "name": "OverCode",
       "notNull": false,
       "properties": {
-        "description": "Loading Factor Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(8)"
@@ -787,7 +738,6 @@
       "name": "OverCode2",
       "notNull": false,
       "properties": {
-        "description": "Loading Factor Code 2。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(8)"
@@ -799,7 +749,6 @@
       "name": "OverCode3",
       "notNull": false,
       "properties": {
-        "description": "Loading Factor Code 3。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(8)"
@@ -811,7 +760,6 @@
       "name": "OverCode4",
       "notNull": false,
       "properties": {
-        "description": "Loading Factor Code 4。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(8)"
@@ -823,7 +771,6 @@
       "name": "OverCode5",
       "notNull": false,
       "properties": {
-        "description": "Loading Factor Code 5。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(8)"
@@ -835,7 +782,6 @@
       "name": "OverType",
       "notNull": false,
       "properties": {
-        "description": "Loading Type。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -847,7 +793,6 @@
       "name": "PCN874Rpt",
       "notNull": false,
       "properties": {
-        "description": "PCN 874 Report Relevant。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -859,7 +804,6 @@
       "name": "PlngLevel",
       "notNull": false,
       "properties": {
-        "description": "B1i Info for Integration。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(2)"
@@ -883,7 +827,6 @@
       "name": "PrevYear",
       "notNull": false,
       "properties": {
-        "description": "There are accounts from the previous year。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -895,7 +838,6 @@
       "name": "PrjRelvnt",
       "notNull": false,
       "properties": {
-        "description": "Project Relevant。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -919,7 +861,6 @@
       "name": "Protected",
       "notNull": false,
       "properties": {
-        "description": "Confidential Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -931,7 +872,6 @@
       "name": "PurpCode",
       "notNull": false,
       "properties": {
-        "description": "Account Purpose Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(2)"
@@ -943,7 +883,6 @@
       "name": "RateDifAct",
       "notNull": false,
       "properties": {
-        "description": "Rate Differences Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(15)"
@@ -955,7 +894,6 @@
       "name": "RateTrans",
       "notNull": false,
       "properties": {
-        "description": "For Conversion Differences。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -979,7 +917,6 @@
       "name": "RefCode",
       "notNull": false,
       "properties": {
-        "description": "Referential Account Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(30)"
@@ -991,7 +928,6 @@
       "name": "RevalAcct",
       "notNull": false,
       "properties": {
-        "description": "Revaluation Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(15)"
@@ -1003,7 +939,6 @@
       "name": "RevalMatch",
       "notNull": false,
       "properties": {
-        "description": "Revaluation Coordinated。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -1015,7 +950,6 @@
       "name": "SCAdjust",
       "notNull": false,
       "properties": {
-        "description": "SC Adjustment。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -1027,7 +961,6 @@
       "name": "Segment_0",
       "notNull": false,
       "properties": {
-        "description": "Segment 0。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(20)"
@@ -1039,7 +972,6 @@
       "name": "Segment_1",
       "notNull": false,
       "properties": {
-        "description": "Segment 1。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(20)"
@@ -1051,7 +983,6 @@
       "name": "Segment_2",
       "notNull": false,
       "properties": {
-        "description": "Segment 2。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(20)"
@@ -1063,7 +994,6 @@
       "name": "Segment_3",
       "notNull": false,
       "properties": {
-        "description": "Segment 3。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(20)"
@@ -1075,7 +1005,6 @@
       "name": "Segment_4",
       "notNull": false,
       "properties": {
-        "description": "Segment 4。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(20)"
@@ -1087,7 +1016,6 @@
       "name": "Segment_5",
       "notNull": false,
       "properties": {
-        "description": "Segment 5。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(20)"
@@ -1099,7 +1027,6 @@
       "name": "Segment_6",
       "notNull": false,
       "properties": {
-        "description": "Segment 6。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(20)"
@@ -1111,7 +1038,6 @@
       "name": "Segment_7",
       "notNull": false,
       "properties": {
-        "description": "Segment 7。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(20)"
@@ -1123,7 +1049,6 @@
       "name": "Segment_8",
       "notNull": false,
       "properties": {
-        "description": "Segment 8。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(20)"
@@ -1135,7 +1060,6 @@
       "name": "Segment_9",
       "notNull": false,
       "properties": {
-        "description": "Segment 9。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(20)"
@@ -1147,7 +1071,6 @@
       "name": "SnapShotId",
       "notNull": false,
       "properties": {
-        "description": "Snapshot ID。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "INTEGER"
@@ -1159,7 +1082,6 @@
       "name": "SubLedgerN",
       "notNull": false,
       "properties": {
-        "description": "Subledger No.。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(60)"
@@ -1171,7 +1093,6 @@
       "name": "SysMatch",
       "notNull": false,
       "properties": {
-        "description": "System Reconciliation No.。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "INTEGER"
@@ -1195,7 +1116,6 @@
       "name": "TaxIncome",
       "notNull": false,
       "properties": {
-        "description": "Tax Definition。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -1207,7 +1127,6 @@
       "name": "TaxPostAcc",
       "notNull": false,
       "properties": {
-        "description": "Default Tax Posting Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -1219,7 +1138,6 @@
       "name": "TransCode",
       "notNull": false,
       "properties": {
-        "description": "Transaction Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(4)"
@@ -1231,7 +1149,6 @@
       "name": "Transfered",
       "notNull": false,
       "properties": {
-        "description": "Year Transfer [Y/N]。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -1255,7 +1172,6 @@
       "name": "ValidComm",
       "notNull": false,
       "properties": {
-        "description": "Active Remarks。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(30)"
@@ -1279,7 +1195,6 @@
       "name": "ValidFrom",
       "notNull": false,
       "properties": {
-        "description": "Active From。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "TIMESTAMP"
@@ -1291,7 +1206,6 @@
       "name": "ValidTo",
       "notNull": false,
       "properties": {
-        "description": "Active To。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "TIMESTAMP"
@@ -1303,7 +1217,6 @@
       "name": "VatChange",
       "notNull": false,
       "properties": {
-        "description": "Allow Change VAT Group。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "CHAR(1)"
@@ -1315,7 +1228,6 @@
       "name": "VATRegNum",
       "notNull": false,
       "properties": {
-        "description": "VAT Reg. Number。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
       "type": "VARCHAR(32)"

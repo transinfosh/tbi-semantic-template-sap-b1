@@ -115,20 +115,19 @@
       "name": "FreeTxt",
       "notNull": false,
       "properties": {
-        "description": "Free Text。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/QUT1.html"
       },
       "type": "VARCHAR(100)"
     },
     {
-      "displayName": "毛利基价",
+      "displayName": "毛利计算基价",
       "isCalculated": false,
       "isHidden": false,
       "name": "GrossBuyPr",
       "notNull": false,
       "properties": {
-        "description": "Gross Profit Base Price。",
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/QUT1.html"
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/QUT1.html",
+        "description": "用于计算本行毛利的基价，可按毛利设置取自价目表、最近采购价、物料成本等。不是固定的实际采购成本，也不能直接当作库存出库成本；币种及计价单位需结合适用单据和设置核实。"
       },
       "type": "DECIMAL(19,6)"
     },
@@ -343,8 +342,8 @@
       "name": "Rate",
       "notNull": false,
       "properties": {
-        "description": "Currency Rate。",
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/QUT1.html"
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/QUT1.html",
+        "description": "本行保存的汇率，与表头单据汇率 DocRate 分开使用；适用币种和换算方向需核实，不默认取当前每日汇率或统一采用乘除公式。"
       },
       "type": "DECIMAL(19,6)"
     },
@@ -367,8 +366,8 @@
       "name": "TargetType",
       "notNull": false,
       "properties": {
-        "description": "Target Document Type。",
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/QUT1.html"
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/QUT1.html",
+        "description": "后续目标单据的类型代码，与基础来源类型 BaseType 分开使用。不能只凭本字段判断全部交货或开票情况；后续数量和金额应沿实际单据来源关系核对。"
       },
       "type": "INTEGER"
     },
@@ -379,7 +378,6 @@
       "name": "TaxCode",
       "notNull": false,
       "properties": {
-        "description": "Tax Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/QUT1.html"
       },
       "type": "VARCHAR(8)"
@@ -463,7 +461,6 @@
       "name": "VatGroup",
       "notNull": false,
       "properties": {
-        "description": "Tax Definition。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/QUT1.html"
       },
       "type": "VARCHAR(8)"
@@ -475,7 +472,6 @@
       "name": "VatPrcnt",
       "notNull": false,
       "properties": {
-        "description": "Tax Rate per Row。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/QUT1.html"
       },
       "type": "DECIMAL(19,6)"
@@ -523,7 +519,6 @@
       "name": "VisOrder",
       "notNull": false,
       "properties": {
-        "description": "Visual Order。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/QUT1.html"
       },
       "type": "INTEGER"

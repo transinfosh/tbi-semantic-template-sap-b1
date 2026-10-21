@@ -1,6 +1,6 @@
 # 来源与模板边界
 
-字段描述直接说明字段含义，不重复添加“SAP Business One 官方字段定义”等来源前缀。官方链接、版本和内容哈希统一维护在本文。
+字段标题已能清楚表达含义时，描述可以留空，不重复英文标签或“SAP Business One 官方字段定义”等来源前缀。描述用于补充业务角色、计算依据及容易误用的边界。官方链接、版本和内容哈希统一维护在本文。
 
 ## 证据顺序
 
@@ -432,3 +432,9 @@
 | `RPD1` | `official_online_reference` | — | [官方资料](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RPD1.html) | `8d34411cc977f0336655c7516c0632230defdfd059e4cd69b5946e2e9e858c9c` |
 | `UGP1` | `sdk_refdb` | `REFDB/Inventory_and_Production/UGP1.htm` | [官方资料](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/UGP1.html) | `af40c7338500001f5731dfd8c4b229211d8c2d607dddb08794ed0f0fe39f1e9a` |
 | `VPM4` | `sdk_refdb` | `REFDB/Banking/VPM4.htm` | [官方资料](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM4.html) | `5d25c2a9ca65bb1596bb5ce158192296a23c540071fc0713e655dee9885d4bbd` |
+
+## 0.6.2 字段描述整理
+
+2026-10-21 清理 628 处仅复述字段名称的说明，保留已有实质业务描述；销售模块对其中五处补充业务边界。销售报价、订单、交货、应收发票和贷项的 `GrossBuyPr` 统一称为“毛利计算基价”，并说明它不固定等于采购成本或出库成本。这是说明与显示标题修正，没有新增计算公式或改变技术字段。
+
+依据为 SAP DI API 的 [GrossBuyPrice](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_Lines~GrossBuyPrice.html) 对字段职责的定义，以及[毛利计算设置](https://help.sap.com/docs/SAP_BUSINESS_ONE/68a2e87fb29941b5bf959a184d9c6727/262c087802c345aaa4bdc8295750d6df.html)列出的基价来源。币种、计价单位、实际销售毛利及会计利润没有因本轮文字修正而视为完成业务验收。

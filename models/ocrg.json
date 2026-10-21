@@ -7,7 +7,6 @@
       "name": "DiscRel",
       "notNull": false,
       "properties": {
-        "description": "Effective Discount Groups。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRG.html"
       },
       "type": "CHAR(1)"
@@ -19,7 +18,6 @@
       "name": "GroupCode",
       "notNull": true,
       "properties": {
-        "description": "Group No.。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRG.html"
       },
       "type": "SMALLINT"
@@ -31,7 +29,6 @@
       "name": "GroupName",
       "notNull": true,
       "properties": {
-        "description": "Group Name。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRG.html"
       },
       "type": "VARCHAR(100)"
@@ -43,7 +40,6 @@
       "name": "GroupType",
       "notNull": false,
       "properties": {
-        "description": "Group Type。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRG.html"
       },
       "type": "CHAR(1)"
@@ -55,7 +51,6 @@
       "name": "Locked",
       "notNull": false,
       "properties": {
-        "description": "Locked。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRG.html"
       },
       "type": "CHAR(1)"
@@ -67,7 +62,6 @@
       "name": "PriceList",
       "notNull": false,
       "properties": {
-        "description": "Price List。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRG.html"
       },
       "type": "SMALLINT"

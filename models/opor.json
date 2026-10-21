@@ -7,7 +7,6 @@
       "name": "Address",
       "notNull": false,
       "properties": {
-        "description": "Bill To。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPOR.html"
       },
       "type": "VARCHAR(254)"
@@ -19,7 +18,6 @@
       "name": "CancelDate",
       "notNull": false,
       "properties": {
-        "description": "Cancelation Date。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPOR.html"
       },
       "type": "TIMESTAMP"
@@ -235,7 +233,6 @@
       "name": "DocType",
       "notNull": false,
       "properties": {
-        "description": "Document Type。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPOR.html"
       },
       "type": "CHAR(1)"
@@ -247,7 +244,6 @@
       "name": "GrosProfit",
       "notNull": false,
       "properties": {
-        "description": "Gross Profit。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPOR.html"
       },
       "type": "DECIMAL(19,6)"
@@ -259,7 +255,6 @@
       "name": "GroupNum",
       "notNull": false,
       "properties": {
-        "description": "Payment Terms Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPOR.html"
       },
       "type": "SMALLINT"
@@ -271,7 +266,6 @@
       "name": "JrnlMemo",
       "notNull": false,
       "properties": {
-        "description": "Journal Remarks。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPOR.html"
       },
       "type": "VARCHAR(254)"
@@ -283,7 +277,6 @@
       "name": "NumAtCard",
       "notNull": false,
       "properties": {
-        "description": "Customer/Vendor Ref. No.。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPOR.html"
       },
       "type": "VARCHAR(200)"
@@ -343,7 +336,6 @@
       "name": "ReqDate",
       "notNull": false,
       "properties": {
-        "description": "Required Date。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPOR.html"
       },
       "type": "TIMESTAMP"
@@ -355,7 +347,6 @@
       "name": "Series",
       "notNull": false,
       "properties": {
-        "description": "Series。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPOR.html"
       },
       "type": "INTEGER"
@@ -367,7 +358,6 @@
       "name": "SlpCode",
       "notNull": false,
       "properties": {
-        "description": "Sales Employee。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPOR.html"
       },
       "type": "INTEGER"
@@ -391,7 +381,6 @@
       "name": "TotalExpns",
       "notNull": false,
       "properties": {
-        "description": "Total Expenses。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPOR.html"
       },
       "type": "DECIMAL(19,6)"
@@ -415,7 +404,6 @@
       "name": "TrnspCode",
       "notNull": false,
       "properties": {
-        "description": "Shipping Type。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPOR.html"
       },
       "type": "SMALLINT"
@@ -439,7 +427,6 @@
       "name": "VatPercent",
       "notNull": false,
       "properties": {
-        "description": "Tax Rate。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPOR.html"
       },
       "type": "DECIMAL(19,6)"

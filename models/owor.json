@@ -43,7 +43,6 @@
       "name": "CreateDate",
       "notNull": false,
       "properties": {
-        "description": "Creation Date。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
       },
       "type": "TIMESTAMP"
@@ -163,7 +162,6 @@
       "name": "Project",
       "notNull": false,
       "properties": {
-        "description": "Project Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
       },
       "type": "VARCHAR(20)"
@@ -187,7 +185,6 @@
       "name": "Series",
       "notNull": false,
       "properties": {
-        "description": "Series。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
       },
       "type": "INTEGER"
@@ -235,7 +232,6 @@
       "name": "UpdateDate",
       "notNull": false,
       "properties": {
-        "description": "Update Date。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
       },
       "type": "TIMESTAMP"

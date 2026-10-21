@@ -7,7 +7,6 @@
       "name": "Direct",
       "notNull": false,
       "properties": {
-        "description": "Direct。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCR1.html"
       },
       "type": "CHAR(1)"
@@ -19,7 +18,6 @@
       "name": "logInstanc",
       "notNull": false,
       "properties": {
-        "description": "Log Instance。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCR1.html"
       },
       "type": "INTEGER"
@@ -31,7 +29,6 @@
       "name": "OcrCode",
       "notNull": true,
       "properties": {
-        "description": "Factor Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCR1.html"
       },
       "type": "VARCHAR(8)"
@@ -43,7 +40,6 @@
       "name": "OcrTotal",
       "notNull": false,
       "properties": {
-        "description": "Total Factor。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCR1.html"
       },
       "type": "DECIMAL(19,6)"
@@ -55,7 +51,6 @@
       "name": "PrcAmount",
       "notNull": false,
       "properties": {
-        "description": "Total in Center。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCR1.html"
       },
       "type": "DECIMAL(19,6)"
@@ -67,7 +62,6 @@
       "name": "PrcCode",
       "notNull": true,
       "properties": {
-        "description": "Center Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCR1.html"
       },
       "type": "VARCHAR(8)"
@@ -79,7 +73,6 @@
       "name": "updateDate",
       "notNull": false,
       "properties": {
-        "description": "Date of Update。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCR1.html"
       },
       "type": "TIMESTAMP"
@@ -91,7 +84,6 @@
       "name": "ValidFrom",
       "notNull": true,
       "properties": {
-        "description": "Effective From。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCR1.html"
       },
       "type": "TIMESTAMP"
@@ -103,7 +95,6 @@
       "name": "ValidTo",
       "notNull": false,
       "properties": {
-        "description": "Effective To。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCR1.html"
       },
       "type": "TIMESTAMP"

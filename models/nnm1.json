@@ -7,7 +7,6 @@
       "name": "AtDocType",
       "notNull": false,
       "properties": {
-        "description": "AT Document Type。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
       },
       "type": "VARCHAR(10)"
@@ -19,7 +18,6 @@
       "name": "BeginStr",
       "notNull": false,
       "properties": {
-        "description": "Prefix String。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
       },
       "type": "VARCHAR(20)"
@@ -31,7 +29,6 @@
       "name": "BPLId",
       "notNull": false,
       "properties": {
-        "description": "Assigned Branch。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
       },
       "type": "INTEGER"
@@ -43,7 +40,6 @@
       "name": "DefESeries",
       "notNull": false,
       "properties": {
-        "description": "Default Electronic Series。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
       },
       "type": "SMALLINT"
@@ -55,7 +51,6 @@
       "name": "DocSubType",
       "notNull": true,
       "properties": {
-        "description": "Document Sub-Type。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
       },
       "type": "VARCHAR(2)"
@@ -67,7 +62,6 @@
       "name": "EndStr",
       "notNull": false,
       "properties": {
-        "description": "Suffix String。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
       },
       "type": "VARCHAR(20)"
@@ -79,7 +73,6 @@
       "name": "FolioPref",
       "notNull": false,
       "properties": {
-        "description": "Folio Prefix String。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
       },
       "type": "VARCHAR(4)"
@@ -91,7 +84,6 @@
       "name": "GroupCode",
       "notNull": false,
       "properties": {
-        "description": "Group。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
       },
       "type": "SMALLINT"
@@ -103,7 +95,6 @@
       "name": "Indicator",
       "notNull": false,
       "properties": {
-        "description": "Period Indicator。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
       },
       "type": "VARCHAR(10)"
@@ -115,7 +106,6 @@
       "name": "InitialNum",
       "notNull": false,
       "properties": {
-        "description": "Initial Number。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
       },
       "type": "INTEGER"
@@ -127,7 +117,6 @@
       "name": "IsDigSerie",
       "notNull": false,
       "properties": {
-        "description": "Is Digital Series。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
       },
       "type": "CHAR(1)"
@@ -139,7 +128,6 @@
       "name": "IsElAuth",
       "notNull": false,
       "properties": {
-        "description": "Elec. Authorization Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
       },
       "type": "CHAR(1)"
@@ -151,7 +139,6 @@
       "name": "IsForCncl",
       "notNull": false,
       "properties": {
-        "description": "Is Series for Cancelation。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
       },
       "type": "CHAR(1)"
@@ -163,7 +150,6 @@
       "name": "IsManual",
       "notNull": false,
       "properties": {
-        "description": "Is Manual Series。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
       },
       "type": "CHAR(1)"
@@ -175,7 +161,6 @@
       "name": "LastNum",
       "notNull": false,
       "properties": {
-        "description": "Last Number Allowed。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
       },
       "type": "INTEGER"
@@ -187,7 +172,6 @@
       "name": "Locked",
       "notNull": false,
       "properties": {
-        "description": "Locked。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
       },
       "type": "CHAR(1)"
@@ -199,7 +183,6 @@
       "name": "NextFolio",
       "notNull": false,
       "properties": {
-        "description": "Next Folio Number。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
       },
       "type": "INTEGER"
@@ -211,7 +194,6 @@
       "name": "NextNumber",
       "notNull": false,
       "properties": {
-        "description": "Next Number for Use。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
       },
       "type": "INTEGER"
@@ -223,7 +205,6 @@
       "name": "NumSize",
       "notNull": false,
       "properties": {
-        "description": "Numeric Size。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
       },
       "type": "INTEGER"
@@ -235,7 +216,6 @@
       "name": "ObjectCode",
       "notNull": true,
       "properties": {
-        "description": "Document。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
       },
       "type": "VARCHAR(20)"
@@ -247,7 +227,6 @@
       "name": "Remark",
       "notNull": false,
       "properties": {
-        "description": "Remarks。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
       },
       "type": "VARCHAR(50)"
@@ -259,7 +238,6 @@
       "name": "Series",
       "notNull": true,
       "properties": {
-        "description": "Series。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
       },
       "type": "INTEGER"
@@ -271,7 +249,6 @@
       "name": "SeriesName",
       "notNull": true,
       "properties": {
-        "description": "Series Name。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
       },
       "type": "VARCHAR(8)"
@@ -283,7 +260,6 @@
       "name": "SeriesType",
       "notNull": true,
       "properties": {
-        "description": "Series Type。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
       },
       "type": "CHAR(1)"
@@ -295,7 +271,6 @@
       "name": "Template",
       "notNull": false,
       "properties": {
-        "description": "Template。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
       },
       "type": "VARCHAR(20)"
@@ -307,7 +282,6 @@
       "name": "YearTransf",
       "notNull": false,
       "properties": {
-        "description": "Year-End Closing。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/NNM1.html"
       },
       "type": "CHAR(1)"

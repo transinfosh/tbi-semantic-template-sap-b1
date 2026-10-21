@@ -7,7 +7,6 @@
       "name": "AcctCode",
       "notNull": false,
       "properties": {
-        "description": "Account Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PCH1.html"
       },
       "type": "VARCHAR(15)"
@@ -115,7 +114,6 @@
       "name": "FreeTxt",
       "notNull": false,
       "properties": {
-        "description": "Free Text。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PCH1.html"
       },
       "type": "VARCHAR(100)"
@@ -127,7 +125,6 @@
       "name": "GrossBuyPr",
       "notNull": false,
       "properties": {
-        "description": "Gross Profit Base Price。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PCH1.html"
       },
       "type": "DECIMAL(19,6)"
@@ -271,7 +268,6 @@
       "name": "PriceBefDi",
       "notNull": false,
       "properties": {
-        "description": "Unit Price。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PCH1.html"
       },
       "type": "DECIMAL(19,6)"
@@ -295,7 +291,6 @@
       "name": "Rate",
       "notNull": false,
       "properties": {
-        "description": "Currency Rate。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PCH1.html"
       },
       "type": "DECIMAL(19,6)"
@@ -319,7 +314,6 @@
       "name": "TargetType",
       "notNull": false,
       "properties": {
-        "description": "Target Document Type。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PCH1.html"
       },
       "type": "INTEGER"
@@ -331,7 +325,6 @@
       "name": "TaxCode",
       "notNull": false,
       "properties": {
-        "description": "Tax Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PCH1.html"
       },
       "type": "VARCHAR(8)"
@@ -415,7 +408,6 @@
       "name": "VatGroup",
       "notNull": false,
       "properties": {
-        "description": "Tax Definition。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PCH1.html"
       },
       "type": "VARCHAR(8)"
@@ -427,7 +419,6 @@
       "name": "VatPrcnt",
       "notNull": false,
       "properties": {
-        "description": "Tax Rate per Row。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PCH1.html"
       },
       "type": "DECIMAL(19,6)"
@@ -439,7 +430,6 @@
       "name": "VisOrder",
       "notNull": false,
       "properties": {
-        "description": "Visual Order。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PCH1.html"
       },
       "type": "INTEGER"

@@ -7,7 +7,6 @@
       "name": "AbsEntry",
       "notNull": true,
       "properties": {
-        "description": "Internal Number。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "INTEGER"
@@ -19,7 +18,6 @@
       "name": "AltSortCod",
       "notNull": false,
       "properties": {
-        "description": "Alternative Sort Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "VARCHAR(50)"
@@ -31,7 +29,6 @@
       "name": "Attr10Abs",
       "notNull": false,
       "properties": {
-        "description": "Attribute-10 Internal Number。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "INTEGER"
@@ -43,7 +40,6 @@
       "name": "Attr10Val",
       "notNull": false,
       "properties": {
-        "description": "Attribute-10 Value。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "VARCHAR(20)"
@@ -55,7 +51,6 @@
       "name": "Attr1Abs",
       "notNull": false,
       "properties": {
-        "description": "Attribute-1 Internal Number。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "INTEGER"
@@ -67,7 +62,6 @@
       "name": "Attr1Val",
       "notNull": false,
       "properties": {
-        "description": "Attribute-1 Value。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "VARCHAR(20)"
@@ -79,7 +73,6 @@
       "name": "Attr2Abs",
       "notNull": false,
       "properties": {
-        "description": "Attribute-2 Internal Number。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "INTEGER"
@@ -91,7 +84,6 @@
       "name": "Attr2Val",
       "notNull": false,
       "properties": {
-        "description": "Attribute-2 Value。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "VARCHAR(20)"
@@ -103,7 +95,6 @@
       "name": "Attr3Abs",
       "notNull": false,
       "properties": {
-        "description": "Attribute-3 Internal Number。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "INTEGER"
@@ -115,7 +106,6 @@
       "name": "Attr3Val",
       "notNull": false,
       "properties": {
-        "description": "Attribute-3 Value。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "VARCHAR(20)"
@@ -127,7 +117,6 @@
       "name": "Attr4Abs",
       "notNull": false,
       "properties": {
-        "description": "Attribute-4 Internal Number。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "INTEGER"
@@ -139,7 +128,6 @@
       "name": "Attr4Val",
       "notNull": false,
       "properties": {
-        "description": "Attribute-4 Value。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "VARCHAR(20)"
@@ -151,7 +139,6 @@
       "name": "Attr5Abs",
       "notNull": false,
       "properties": {
-        "description": "Attribute-5 Internal Number。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "INTEGER"
@@ -163,7 +150,6 @@
       "name": "Attr5Val",
       "notNull": false,
       "properties": {
-        "description": "Attribute-5 Value。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "VARCHAR(20)"
@@ -175,7 +161,6 @@
       "name": "Attr6Abs",
       "notNull": false,
       "properties": {
-        "description": "Attribute-6 Internal Number。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "INTEGER"
@@ -187,7 +172,6 @@
       "name": "Attr6Val",
       "notNull": false,
       "properties": {
-        "description": "Attribute-6 Value。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "VARCHAR(20)"
@@ -199,7 +183,6 @@
       "name": "Attr7Abs",
       "notNull": false,
       "properties": {
-        "description": "Attribute-7 Internal Number。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "INTEGER"
@@ -211,7 +194,6 @@
       "name": "Attr7Val",
       "notNull": false,
       "properties": {
-        "description": "Attribute-7 Value。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "VARCHAR(20)"
@@ -223,7 +205,6 @@
       "name": "Attr8Abs",
       "notNull": false,
       "properties": {
-        "description": "Attribute-8 Internal Number。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "INTEGER"
@@ -235,7 +216,6 @@
       "name": "Attr8Val",
       "notNull": false,
       "properties": {
-        "description": "Attribute-8 Value。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "VARCHAR(20)"
@@ -247,7 +227,6 @@
       "name": "Attr9Abs",
       "notNull": false,
       "properties": {
-        "description": "Attribute-9 Internal Number。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "INTEGER"
@@ -259,7 +238,6 @@
       "name": "Attr9Val",
       "notNull": false,
       "properties": {
-        "description": "Attribute-9 Value。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "VARCHAR(20)"
@@ -271,7 +249,6 @@
       "name": "BarCode",
       "notNull": false,
       "properties": {
-        "description": "Bar Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "VARCHAR(100)"
@@ -283,7 +260,6 @@
       "name": "BinCode",
       "notNull": true,
       "properties": {
-        "description": "Bin Location Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "VARCHAR(228)"
@@ -295,7 +271,6 @@
       "name": "CreateDate",
       "notNull": false,
       "properties": {
-        "description": "Create Date。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "TIMESTAMP"
@@ -307,7 +282,6 @@
       "name": "Deleted",
       "notNull": false,
       "properties": {
-        "description": "Deleted。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "CHAR(1)"
@@ -319,7 +293,6 @@
       "name": "Descr",
       "notNull": false,
       "properties": {
-        "description": "Description。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "VARCHAR(50)"
@@ -331,7 +304,6 @@
       "name": "Disabled",
       "notNull": false,
       "properties": {
-        "description": "Inactive。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "CHAR(1)"
@@ -343,7 +315,6 @@
       "name": "Instance",
       "notNull": false,
       "properties": {
-        "description": "Instance。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "SMALLINT"
@@ -355,7 +326,6 @@
       "name": "ItmRtrictT",
       "notNull": false,
       "properties": {
-        "description": "Item Restriction Type。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "SMALLINT"
@@ -367,7 +337,6 @@
       "name": "MaxLevel",
       "notNull": false,
       "properties": {
-        "description": "Maximum Qty。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "DECIMAL(19,6)"
@@ -379,7 +348,6 @@
       "name": "MaxWeight1",
       "notNull": false,
       "properties": {
-        "description": "Maximum Weight 1。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "DECIMAL(19,6)"
@@ -391,7 +359,6 @@
       "name": "MaxWeight2",
       "notNull": false,
       "properties": {
-        "description": "Maximum Weight 2。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "DECIMAL(19,6)"
@@ -403,7 +370,6 @@
       "name": "MinLevel",
       "notNull": false,
       "properties": {
-        "description": "Minimum Qty。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "DECIMAL(19,6)"
@@ -415,7 +381,6 @@
       "name": "NoAutoAllc",
       "notNull": false,
       "properties": {
-        "description": "Excl. fr. Auto Alloc. on Issue。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "CHAR(1)"
@@ -427,7 +392,6 @@
       "name": "ReceiveBin",
       "notNull": false,
       "properties": {
-        "description": "Receiving Bin Location。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "CHAR(1)"
@@ -439,7 +403,6 @@
       "name": "RtrictDate",
       "notNull": false,
       "properties": {
-        "description": "Last Updated On。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "TIMESTAMP"
@@ -451,7 +414,6 @@
       "name": "RtrictResn",
       "notNull": false,
       "properties": {
-        "description": "Reason for Restriction。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "VARCHAR(254)"
@@ -463,7 +425,6 @@
       "name": "RtrictType",
       "notNull": false,
       "properties": {
-        "description": "Restricted Transactions Type。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "SMALLINT"
@@ -475,7 +436,6 @@
       "name": "SL1Abs",
       "notNull": false,
       "properties": {
-        "description": "Sublevel-1 Internal Number。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "INTEGER"
@@ -487,7 +447,6 @@
       "name": "SL1Code",
       "notNull": false,
       "properties": {
-        "description": "Sublevel-1 Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "VARCHAR(50)"
@@ -499,7 +458,6 @@
       "name": "SL2Abs",
       "notNull": false,
       "properties": {
-        "description": "Sublevel-2 Internal Number。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "INTEGER"
@@ -511,7 +469,6 @@
       "name": "SL2Code",
       "notNull": false,
       "properties": {
-        "description": "Sublevel-2 Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "VARCHAR(50)"
@@ -523,7 +480,6 @@
       "name": "SL3Abs",
       "notNull": false,
       "properties": {
-        "description": "Sublevel-3 Internal Number。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "INTEGER"
@@ -535,7 +491,6 @@
       "name": "SL3Code",
       "notNull": false,
       "properties": {
-        "description": "Sublevel-3 Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "VARCHAR(50)"
@@ -547,7 +502,6 @@
       "name": "SL4Abs",
       "notNull": false,
       "properties": {
-        "description": "Sublevel-4 Internal Number。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "INTEGER"
@@ -559,7 +513,6 @@
       "name": "SL4Code",
       "notNull": false,
       "properties": {
-        "description": "Sublevel-4 Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "VARCHAR(50)"
@@ -571,7 +524,6 @@
       "name": "SngBatch",
       "notNull": false,
       "properties": {
-        "description": "Batch Restriction。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "CHAR(1)"
@@ -583,7 +535,6 @@
       "name": "SpcItmCode",
       "notNull": false,
       "properties": {
-        "description": "Specific Item Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "VARCHAR(50)"
@@ -595,7 +546,6 @@
       "name": "SpcItmGrpC",
       "notNull": false,
       "properties": {
-        "description": "Specific Item Group Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "SMALLINT"
@@ -607,7 +557,6 @@
       "name": "SysBin",
       "notNull": false,
       "properties": {
-        "description": "System Bin。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "CHAR(1)"
@@ -619,7 +568,6 @@
       "name": "Transfered",
       "notNull": false,
       "properties": {
-        "description": "Year Transfer [Y/N]。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "CHAR(1)"
@@ -631,7 +579,6 @@
       "name": "UpdateDate",
       "notNull": false,
       "properties": {
-        "description": "Date of Update。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "TIMESTAMP"
@@ -643,7 +590,6 @@
       "name": "Wght1Unit",
       "notNull": false,
       "properties": {
-        "description": "Unit of Maximum Weight 1。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "SMALLINT"
@@ -655,7 +601,6 @@
       "name": "Wght2Unit",
       "notNull": false,
       "properties": {
-        "description": "Unit of Maximum Weight 2。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "SMALLINT"
@@ -667,7 +612,6 @@
       "name": "WhsCode",
       "notNull": false,
       "properties": {
-        "description": "Warehouse Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
       "type": "VARCHAR(8)"

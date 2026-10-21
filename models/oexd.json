@@ -7,7 +7,6 @@
       "name": "BaseMethod",
       "notNull": false,
       "properties": {
-        "description": "Drawing Method。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "CHAR(1)"
@@ -19,7 +18,6 @@
       "name": "DistrbMthd",
       "notNull": false,
       "properties": {
-        "description": "Distribution Method。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "CHAR(1)"
@@ -31,7 +29,6 @@
       "name": "ExpFixSum",
       "notNull": false,
       "properties": {
-        "description": "Fixed Amount - Expenses。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "DECIMAL(19,6)"
@@ -43,7 +40,6 @@
       "name": "ExpnsAcct",
       "notNull": false,
       "properties": {
-        "description": "Expense Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "VARCHAR(15)"
@@ -55,7 +51,6 @@
       "name": "ExpnsCode",
       "notNull": true,
       "properties": {
-        "description": "Internal Number。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "INTEGER"
@@ -67,7 +62,6 @@
       "name": "ExpnsExAct",
       "notNull": false,
       "properties": {
-        "description": "Expense Exempted Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "VARCHAR(15)"
@@ -79,7 +73,6 @@
       "name": "ExpnsName",
       "notNull": true,
       "properties": {
-        "description": "Name。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "VARCHAR(20)"
@@ -91,7 +84,6 @@
       "name": "ExpnsType",
       "notNull": false,
       "properties": {
-        "description": "Freight Type。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "CHAR(1)"
@@ -103,7 +95,6 @@
       "name": "ExpOfstAct",
       "notNull": false,
       "properties": {
-        "description": "Freight Clearing Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "VARCHAR(15)"
@@ -115,7 +106,6 @@
       "name": "In1099",
       "notNull": false,
       "properties": {
-        "description": "Include in 1099。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "CHAR(1)"
@@ -127,7 +117,6 @@
       "name": "Intrastat",
       "notNull": false,
       "properties": {
-        "description": "Intrastat Relevant。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "CHAR(1)"
@@ -139,7 +128,6 @@
       "name": "LstPchPrce",
       "notNull": false,
       "properties": {
-        "description": "Last Purchase Price。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "CHAR(1)"
@@ -151,7 +139,6 @@
       "name": "OcrCode",
       "notNull": false,
       "properties": {
-        "description": "Distr. Rule。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "VARCHAR(8)"
@@ -163,7 +150,6 @@
       "name": "OcrCode2",
       "notNull": false,
       "properties": {
-        "description": "Distr. Rule2。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "VARCHAR(8)"
@@ -175,7 +161,6 @@
       "name": "OcrCode3",
       "notNull": false,
       "properties": {
-        "description": "Distr. Rule3。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "VARCHAR(8)"
@@ -187,7 +172,6 @@
       "name": "OcrCode4",
       "notNull": false,
       "properties": {
-        "description": "Distr. Rule4。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "VARCHAR(8)"
@@ -199,7 +183,6 @@
       "name": "OcrCode5",
       "notNull": false,
       "properties": {
-        "description": "Distr. Rule5。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "VARCHAR(8)"
@@ -211,7 +194,6 @@
       "name": "OcrCodeX",
       "notNull": false,
       "properties": {
-        "description": "Distr. Rule。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "VARCHAR(100)"
@@ -223,7 +205,6 @@
       "name": "PchRpt",
       "notNull": false,
       "properties": {
-        "description": "Purchase Analysis Report。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "CHAR(1)"
@@ -235,7 +216,6 @@
       "name": "Project",
       "notNull": false,
       "properties": {
-        "description": "Project。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "VARCHAR(20)"
@@ -247,7 +227,6 @@
       "name": "RevAcct",
       "notNull": false,
       "properties": {
-        "description": "Revenue Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "VARCHAR(15)"
@@ -259,7 +238,6 @@
       "name": "RevExmAcct",
       "notNull": false,
       "properties": {
-        "description": "Revenues Exempted Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "VARCHAR(15)"
@@ -271,7 +249,6 @@
       "name": "RevFixSum",
       "notNull": false,
       "properties": {
-        "description": "Fixed Amount - Revenues。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "DECIMAL(19,6)"
@@ -283,7 +260,6 @@
       "name": "RevRetAct",
       "notNull": false,
       "properties": {
-        "description": "Revenue Returns Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "VARCHAR(15)"
@@ -295,7 +271,6 @@
       "name": "SalseRpt",
       "notNull": false,
       "properties": {
-        "description": "Sales Analysis Report。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "CHAR(1)"
@@ -307,7 +282,6 @@
       "name": "Stock",
       "notNull": false,
       "properties": {
-        "description": "Stock。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "CHAR(1)"
@@ -319,7 +293,6 @@
       "name": "TaxDisMthd",
       "notNull": false,
       "properties": {
-        "description": "Tax Distribution Method。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "CHAR(1)"
@@ -331,7 +304,6 @@
       "name": "TaxLiable",
       "notNull": false,
       "properties": {
-        "description": "Tax Liable。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "CHAR(1)"
@@ -343,7 +315,6 @@
       "name": "UpdateDate",
       "notNull": false,
       "properties": {
-        "description": "Date of Update。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "TIMESTAMP"
@@ -355,7 +326,6 @@
       "name": "VatGroupI",
       "notNull": false,
       "properties": {
-        "description": "Output Tax Group。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "VARCHAR(8)"
@@ -367,7 +337,6 @@
       "name": "VatGroupO",
       "notNull": false,
       "properties": {
-        "description": "Input Tax Group。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "VARCHAR(8)"
@@ -379,7 +348,6 @@
       "name": "WTLiable",
       "notNull": false,
       "properties": {
-        "description": "WTax Liable。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OEXD.html"
       },
       "type": "CHAR(1)"

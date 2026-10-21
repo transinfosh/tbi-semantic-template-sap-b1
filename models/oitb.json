@@ -7,7 +7,6 @@
       "name": "Alert",
       "notNull": false,
       "properties": {
-        "description": "Alert。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "CHAR(1)"
@@ -19,7 +18,6 @@
       "name": "APCMAct",
       "notNull": false,
       "properties": {
-        "description": "Purchase Credit Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -31,7 +29,6 @@
       "name": "APCMEUAct",
       "notNull": false,
       "properties": {
-        "description": "Purchase Credit Account - EU。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -43,7 +40,6 @@
       "name": "APCMFrnAct",
       "notNull": false,
       "properties": {
-        "description": "Purchase Credit Account - Foreign。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -55,7 +51,6 @@
       "name": "ARCMAct",
       "notNull": false,
       "properties": {
-        "description": "Sales Credit Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -67,7 +62,6 @@
       "name": "ARCMEUAct",
       "notNull": false,
       "properties": {
-        "description": "Sales Credit Account - EU。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -79,7 +73,6 @@
       "name": "ARCMExpAct",
       "notNull": false,
       "properties": {
-        "description": "Tax Exempt Credit Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -91,7 +84,6 @@
       "name": "ARCMFrnAct",
       "notNull": false,
       "properties": {
-        "description": "Sales Credit Account - Foreign。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -103,7 +95,6 @@
       "name": "BalanceAcc",
       "notNull": false,
       "properties": {
-        "description": "Goods Clearing Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -127,7 +118,6 @@
       "name": "CompoWH",
       "notNull": false,
       "properties": {
-        "description": "Component Warehouse。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "CHAR(1)"
@@ -139,7 +129,6 @@
       "name": "CostRvlAct",
       "notNull": false,
       "properties": {
-        "description": "COGS Revaluation Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -151,7 +140,6 @@
       "name": "createDate",
       "notNull": false,
       "properties": {
-        "description": "Creation Date - History。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "TIMESTAMP"
@@ -163,7 +151,6 @@
       "name": "CstOffsAct",
       "notNull": false,
       "properties": {
-        "description": "COGS Revaluation Offset Acct。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -175,7 +162,6 @@
       "name": "CycleCode",
       "notNull": false,
       "properties": {
-        "description": "Cycle Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "SMALLINT"
@@ -187,7 +173,6 @@
       "name": "DecreasAc",
       "notNull": false,
       "properties": {
-        "description": "Inventory Offset - Decrease Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -199,7 +184,6 @@
       "name": "DecresGlAc",
       "notNull": false,
       "properties": {
-        "description": "G/L Decrease Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -211,7 +195,6 @@
       "name": "EUExpensAc",
       "notNull": false,
       "properties": {
-        "description": "Expense Account - EU。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -223,7 +206,6 @@
       "name": "EURevenuAc",
       "notNull": false,
       "properties": {
-        "description": "Revenue Account - EU。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -235,7 +217,6 @@
       "name": "ExchangeAc",
       "notNull": false,
       "properties": {
-        "description": "Exchange Rate Differences Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -247,7 +228,6 @@
       "name": "ExmptIncom",
       "notNull": false,
       "properties": {
-        "description": "Exempt Revenue Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -259,7 +239,6 @@
       "name": "ExpClrAct",
       "notNull": false,
       "properties": {
-        "description": "Expense Clearing Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -271,7 +250,6 @@
       "name": "ExpensesAc",
       "notNull": false,
       "properties": {
-        "description": "Expense Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -283,7 +261,6 @@
       "name": "ExpOfstAct",
       "notNull": false,
       "properties": {
-        "description": "Expense Offset Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -295,7 +272,6 @@
       "name": "FreeChrgPU",
       "notNull": false,
       "properties": {
-        "description": "Free of Charge Purchase Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -307,7 +283,6 @@
       "name": "FreeChrgSA",
       "notNull": false,
       "properties": {
-        "description": "Free of Charge Sales Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -319,7 +294,6 @@
       "name": "FrExpensAc",
       "notNull": false,
       "properties": {
-        "description": "Expense Account - Foreign。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -331,7 +305,6 @@
       "name": "FrRevenuAc",
       "notNull": false,
       "properties": {
-        "description": "Revenue Account - Foreign。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -343,7 +316,6 @@
       "name": "IncreasAc",
       "notNull": false,
       "properties": {
-        "description": "Inventory Offset - Increase Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -355,7 +327,6 @@
       "name": "IncresGlAc",
       "notNull": false,
       "properties": {
-        "description": "G/L Increase Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -367,7 +338,6 @@
       "name": "InvntSys",
       "notNull": false,
       "properties": {
-        "description": "Inventory System。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "CHAR(1)"
@@ -379,7 +349,6 @@
       "name": "ISvcCode",
       "notNull": false,
       "properties": {
-        "description": "Incoming Service Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "INTEGER"
@@ -391,7 +360,6 @@
       "name": "ItemClass",
       "notNull": false,
       "properties": {
-        "description": "Service or Material。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "CHAR(1)"
@@ -439,7 +407,6 @@
       "name": "LeadTime",
       "notNull": false,
       "properties": {
-        "description": "Lead Time。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "INTEGER"
@@ -463,7 +430,6 @@
       "name": "logInstanc",
       "notNull": false,
       "properties": {
-        "description": "Log Instance - History。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "INTEGER"
@@ -475,7 +441,6 @@
       "name": "MatGrp",
       "notNull": false,
       "properties": {
-        "description": "Material Group。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "INTEGER"
@@ -487,7 +452,6 @@
       "name": "MatType",
       "notNull": false,
       "properties": {
-        "description": "Material Type。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(3)"
@@ -499,7 +463,6 @@
       "name": "MinOrdrQty",
       "notNull": false,
       "properties": {
-        "description": "Minimum Order Quantity。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "DECIMAL(19,6)"
@@ -511,7 +474,6 @@
       "name": "NCMCode",
       "notNull": false,
       "properties": {
-        "description": "NCM Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "INTEGER"
@@ -523,7 +485,6 @@
       "name": "NegStckAct",
       "notNull": false,
       "properties": {
-        "description": "Negative Inventory Adjustment Acct。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -535,7 +496,6 @@
       "name": "Object",
       "notNull": false,
       "properties": {
-        "description": "Object Type - History。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(20)"
@@ -547,7 +507,6 @@
       "name": "OrdrIntrvl",
       "notNull": false,
       "properties": {
-        "description": "Order Interval。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "SMALLINT"
@@ -559,7 +518,6 @@
       "name": "OrdrMulti",
       "notNull": false,
       "properties": {
-        "description": "Order Multiple。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "DECIMAL(19,6)"
@@ -571,7 +529,6 @@
       "name": "OSvcCode",
       "notNull": false,
       "properties": {
-        "description": "Outgoing Service Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "INTEGER"
@@ -583,7 +540,6 @@
       "name": "PAReturnAc",
       "notNull": false,
       "properties": {
-        "description": "Purchase Return Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -595,7 +551,6 @@
       "name": "PlaningSys",
       "notNull": false,
       "properties": {
-        "description": "Planning Method。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "CHAR(1)"
@@ -607,7 +562,6 @@
       "name": "PrcrmntMtd",
       "notNull": false,
       "properties": {
-        "description": "Procurement Method。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "CHAR(1)"
@@ -619,7 +573,6 @@
       "name": "PriceDifAc",
       "notNull": false,
       "properties": {
-        "description": "Price Difference Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -631,7 +584,6 @@
       "name": "ProductSrc",
       "notNull": false,
       "properties": {
-        "description": "Product Source。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(2)"
@@ -643,7 +595,6 @@
       "name": "PurBalAct",
       "notNull": false,
       "properties": {
-        "description": "Purchase Balance Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -655,7 +606,6 @@
       "name": "PurchaseAc",
       "notNull": false,
       "properties": {
-        "description": "Purchase Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -667,7 +617,6 @@
       "name": "PurchOfsAc",
       "notNull": false,
       "properties": {
-        "description": "Purchase Offset Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -679,7 +628,6 @@
       "name": "ReturnAc",
       "notNull": false,
       "properties": {
-        "description": "Sales Returns Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -691,7 +639,6 @@
       "name": "RevenuesAc",
       "notNull": false,
       "properties": {
-        "description": "Revenue Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -703,7 +650,6 @@
       "name": "RevRetAct",
       "notNull": false,
       "properties": {
-        "description": "Revenue Returns Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -715,7 +661,6 @@
       "name": "RuleCode",
       "notNull": false,
       "properties": {
-        "description": "Checking Rule Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(2)"
@@ -739,7 +684,6 @@
       "name": "ServiceGrp",
       "notNull": false,
       "properties": {
-        "description": "Service Group。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "INTEGER"
@@ -751,7 +695,6 @@
       "name": "ShpdGdsAct",
       "notNull": false,
       "properties": {
-        "description": "Shipped Goods Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -763,7 +706,6 @@
       "name": "StkInTnAct",
       "notNull": false,
       "properties": {
-        "description": "Stock In Transit Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -775,7 +717,6 @@
       "name": "StkOffsAct",
       "notNull": false,
       "properties": {
-        "description": "Inventory Revaluation Offset Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -787,7 +728,6 @@
       "name": "StockOffst",
       "notNull": false,
       "properties": {
-        "description": "Inventory Offset P&L Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -799,7 +739,6 @@
       "name": "StokRvlAct",
       "notNull": false,
       "properties": {
-        "description": "Inventory Revaluation Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -811,7 +750,6 @@
       "name": "ToleranDay",
       "notNull": false,
       "properties": {
-        "description": "Tolerance Days。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "INTEGER"
@@ -823,7 +761,6 @@
       "name": "TransferAc",
       "notNull": false,
       "properties": {
-        "description": "Allocation Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -847,7 +784,6 @@
       "name": "updateDate",
       "notNull": false,
       "properties": {
-        "description": "Date of Update - History。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "TIMESTAMP"
@@ -859,7 +795,6 @@
       "name": "userSign2",
       "notNull": false,
       "properties": {
-        "description": "Updating User - History。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "SMALLINT"
@@ -871,7 +806,6 @@
       "name": "VarianceAc",
       "notNull": false,
       "properties": {
-        "description": "Variance Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -883,7 +817,6 @@
       "name": "VatRevAct",
       "notNull": false,
       "properties": {
-        "description": "VAT in Revenue Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -895,7 +828,6 @@
       "name": "WhICenAct",
       "notNull": false,
       "properties": {
-        "description": "Incoming CENVAT Account (WH)。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -907,7 +839,6 @@
       "name": "WhOCenAct",
       "notNull": false,
       "properties": {
-        "description": "Outgoing CENVAT Account (WH)。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -931,7 +862,6 @@
       "name": "WipOffset",
       "notNull": false,
       "properties": {
-        "description": "WIP Offset P&L Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"
@@ -943,7 +873,6 @@
       "name": "WipVarAcct",
       "notNull": false,
       "properties": {
-        "description": "WIP Inventory Variance Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
       "type": "VARCHAR(15)"

@@ -7,7 +7,6 @@
       "name": "Address",
       "notNull": false,
       "properties": {
-        "description": "Bill To。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIGN.html"
       },
       "type": "VARCHAR(254)"
@@ -19,7 +18,6 @@
       "name": "CancelDate",
       "notNull": false,
       "properties": {
-        "description": "Cancelation Date。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIGN.html"
       },
       "type": "TIMESTAMP"
@@ -43,7 +41,6 @@
       "name": "CardCode",
       "notNull": false,
       "properties": {
-        "description": "Revenue Account。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIGN.html"
       },
       "type": "VARCHAR(15)"
@@ -55,7 +52,6 @@
       "name": "CardName",
       "notNull": false,
       "properties": {
-        "description": "Customer/Vendor Name。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIGN.html"
       },
       "type": "VARCHAR(200)"
@@ -103,7 +99,6 @@
       "name": "DiscSum",
       "notNull": false,
       "properties": {
-        "description": "Total Discount。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIGN.html"
       },
       "type": "DECIMAL(19,6)"
@@ -235,7 +230,6 @@
       "name": "DocType",
       "notNull": false,
       "properties": {
-        "description": "Document Type。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIGN.html"
       },
       "type": "CHAR(1)"
@@ -247,7 +241,6 @@
       "name": "GrosProfit",
       "notNull": false,
       "properties": {
-        "description": "Gross Profit。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIGN.html"
       },
       "type": "DECIMAL(19,6)"
@@ -259,7 +252,6 @@
       "name": "GroupNum",
       "notNull": false,
       "properties": {
-        "description": "Price List。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIGN.html"
       },
       "type": "SMALLINT"
@@ -271,7 +263,6 @@
       "name": "JrnlMemo",
       "notNull": false,
       "properties": {
-        "description": "Journal Remarks。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIGN.html"
       },
       "type": "VARCHAR(254)"
@@ -283,7 +274,6 @@
       "name": "NumAtCard",
       "notNull": false,
       "properties": {
-        "description": "Customer/Vendor Ref. No.。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIGN.html"
       },
       "type": "VARCHAR(200)"
@@ -343,7 +333,6 @@
       "name": "ReqDate",
       "notNull": false,
       "properties": {
-        "description": "Required Date。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIGN.html"
       },
       "type": "TIMESTAMP"
@@ -355,7 +344,6 @@
       "name": "Series",
       "notNull": false,
       "properties": {
-        "description": "Series。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIGN.html"
       },
       "type": "INTEGER"
@@ -367,7 +355,6 @@
       "name": "SlpCode",
       "notNull": false,
       "properties": {
-        "description": "Sales Employee。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIGN.html"
       },
       "type": "INTEGER"
@@ -391,7 +378,6 @@
       "name": "TotalExpns",
       "notNull": false,
       "properties": {
-        "description": "Total Expenses。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIGN.html"
       },
       "type": "DECIMAL(19,6)"
@@ -415,7 +401,6 @@
       "name": "TrnspCode",
       "notNull": false,
       "properties": {
-        "description": "Delivery Method。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIGN.html"
       },
       "type": "SMALLINT"
@@ -439,7 +424,6 @@
       "name": "VatPercent",
       "notNull": false,
       "properties": {
-        "description": "Tax Rate。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIGN.html"
       },
       "type": "DECIMAL(19,6)"
@@ -451,7 +435,6 @@
       "name": "VatSum",
       "notNull": false,
       "properties": {
-        "description": "Total Tax。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIGN.html"
       },
       "type": "DECIMAL(19,6)"
