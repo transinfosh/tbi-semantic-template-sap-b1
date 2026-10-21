@@ -36,5 +36,5 @@
     "deferred": "validation/deferred.json",
     "structural": "validation/reference-contract.json"
   },
-  "version": "0.6.2"
+  "version": "0.6.3"
 }

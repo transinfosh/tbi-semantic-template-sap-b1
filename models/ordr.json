@@ -31,7 +31,7 @@
       "name": "CANCELED",
       "notNull": false,
       "properties": {
-        "description": "Y=被取消单据；N=未取消。与开闭状态独立；业务统计排除取消还是保留冲销须显式规定。",
+        "description": "取消标识，仅 N=未取消、Y=被取消的订单。销售订单取消只处理原订单，不另建反向取消单据。结合 DocStatus：N/O=未取消且未结，N/C=未取消但已结；Y 表示已取消。不能用 DocStatus=O 代替未取消条件，也不能由 DocStatus=C 单独判断订单被取消。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORDR.html"
       },
       "type": "CHAR(1)"
@@ -223,7 +223,7 @@
       "name": "DocStatus",
       "notNull": false,
       "properties": {
-        "description": "O 为未结，C 为已结；已结不等同取消，也不能单凭此字段判断收付款或物流完成。",
+        "description": "订单开闭状态，仅 O=未结、C=已结。结合 CANCELED：N/O=未取消未结订单，N/C=未取消已结订单；CANCELED=Y 为已取消订单。已结不证明全部交货、开票或付款；手工关闭另看 DocManClsd，行级状态及关闭原因另看 RDR1.LineStatus/LinManClsd。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORDR.html"
       },
       "type": "CHAR(1)"

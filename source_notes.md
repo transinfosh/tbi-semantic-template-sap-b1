@@ -438,3 +438,9 @@
 2026-10-21 清理 628 处仅复述字段名称的说明，保留已有实质业务描述；销售模块对其中五处补充业务边界。销售报价、订单、交货、应收发票和贷项的 `GrossBuyPr` 统一称为“毛利计算基价”，并说明它不固定等于采购成本或出库成本。这是说明与显示标题修正，没有新增计算公式或改变技术字段。
 
 依据为 SAP DI API 的 [GrossBuyPrice](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_Lines~GrossBuyPrice.html) 对字段职责的定义，以及[毛利计算设置](https://help.sap.com/docs/SAP_BUSINESS_ONE/68a2e87fb29941b5bf959a184d9c6727/262c087802c345aaa4bdc8295750d6df.html)列出的基价来源。币种、计价单位、实际销售毛利及会计利润没有因本轮文字修正而视为完成业务验收。
+
+## 0.6.3 取消与开闭状态说明
+
+2026-10-21 逐表重新核对七张销售表头的官方字段参考，确认 `DocStatus` 均为 `O/C`；`CANCELED` 在 `ORDR/ODPI` 为 `N/Y`，在 `OQUT/ODLN/ORDN/OINV/ORIN` 为 `N/Y/C`。两字段有效值、官方取消操作及组合推导分别记录在[流程研究第8节](validation/sales-lifecycle-research.md#8-2026-10-21-补充取消角色与-docstatus-的组合)。
+
+反向取消会另建取消单，原单与取消单均关闭的依据来自[取消销售和采购单据](https://help.sap.com/docs/SAP_BUSINESS_ONE/55b49079e1f24a68b77828e703f99fb2/ca080f4f7ad8498b9a39eae01f95764c.html)；`DocStatus` 开闭语义及数据库字段映射来自[DocumentStatus](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DocumentStatus.html)。`Y/C`、`C/C` 为字段定义加已完成反向取消流程的组合推导，不宣称官方直接给出全部交叉状态表，也不扩展为报价、订单及预付款请求所有取消记录的强制数据约束。本轮只更新14处字段描述，不改变源数据或运行规则。

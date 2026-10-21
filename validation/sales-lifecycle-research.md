@@ -139,3 +139,58 @@
 | 预付款职责 | `ODPI/DPI1`、头行关系说明、四张抵扣表 | 说明请求/发票/收款/抵扣不同；避免将全部 ODPI 称为预收款发票；抵扣明细包含净额、税额及舍入角色 | 同订单但未抵扣、多笔部分抵扣、`INV9` 与 `INV11` 不同粒度；真实金额另验 |
 
 字段或说明实施后，应同步销售功能三件套、相关来源记录及必要的结构回归。新增列属于向后兼容的模板能力扩展，但可能改变字段选择结果、显示内容和 MDL 摘要；既有部署不会自动更新。本报告未访问工作区或业务数据库，未执行导入、发布、迁移或真实业务验收，也未修改模型、关系、测试及通用 Agent。
+
+## 8. 2026-10-21 补充：取消角色与 `DocStatus` 的组合
+
+本节重新在线核对 SAP Business One 10.0 官方资料，补足第 1.1 节的组合解释。它记录字段定义和流程推导，不代表已对目标公司执行取消或验证全部数据组合。
+
+### 8.1 七张销售表头的有效值
+
+以下直接来自各表的数据库参考，不能根据少量业务样本推断全集。
+
+| 表头 | `CANCELED` 有效值 | `DocStatus` 有效值 | 官方字段参考 |
+| --- | --- | --- | --- |
+| `OQUT` 销售报价 | `N/Y/C` | `O/C` | [OQUT](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html) |
+| `ORDR` 销售订单 | `N/Y` | `O/C` | [ORDR](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORDR.html) |
+| `ODLN` 销售交货 | `N/Y/C` | `O/C` | [ODLN](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/odln.html) |
+| `ORDN` 销售退货 | `N/Y/C` | `O/C` | [ORDN](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORDN.html) |
+| `OINV` 应收发票 | `N/Y/C` | `O/C` | [OINV](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OINV.html) |
+| `ORIN` 应收贷项凭证 | `N/Y/C` | `O/C` | [ORIN](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html) |
+| `ODPI` 应收预付款 | `N/Y` | `O/C` | [ODPI](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/odpi.html) |
+
+**已证实：** 两列都是 `VarChar(1)`；`CANCELED` 默认 `N`，`DocStatus` 默认 `O`。其中 `N` 为未取消、`Y` 为被取消的单据、`C` 为取消凭证；`O` 为未结、`C` 为已结。取消凭证本身是系统为反向取消另建的单据，不应把 `CANCELED=Y` 与 `CANCELED=C` 都简写成同一种“已取消”。上述逐表参考直接给出这些枚举；[CancelStatusEnum](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Enumerations~CancelStatusEnum_EN.html) 也明确区分 cancelled、not cancelled、cancellation document 三种角色。
+
+**已证实：** DI API 的 `DocumentStatus` 属性明确映射数据库字段 `DocStatus`，只表示开闭。界面标题区名为 `Status` 的显示还可能包括 Open – Printed、Draft、Not Confirmed 等；这是界面综合状态，不能据此给 `DocStatus` 补入 `Y/N/D` 等编码。参见 [DocumentStatus](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DocumentStatus.html)、[销售报价界面一般区域](https://help.sap.com/docs/PRODUCT_ID/68a2e87fb29941b5bf959a184d9c6727/44fd93cf93202463e10000000a1553f7.html)。
+
+### 8.2 取消过程如何同时影响两列
+
+**已证实：** 官方把取消分为两类：报价、订单、应收预付款请求取消时不生成新单；交货、退货、应收发票（含预留发票）、应收贷项取消时生成取消凭证。后一类的原单与取消凭证都不可逆关闭，并反转相关会计、税务和库存影响。应收预付款发票不能使用该取消操作。[取消销售和采购单据](https://help.sap.com/docs/SAP_BUSINESS_ONE/55b49079e1f24a68b77828e703f99fb2/ca080f4f7ad8498b9a39eae01f95764c.html)
+
+**已证实：** 创建取消凭证时会出现新的 `<Document Type> - Cancellation` 单据窗口，再执行添加。DI API 示例也先从原单创建独立 `cancelDoc`，执行 `cancelDoc.Add()` 时原单状态才改为取消；因此只打开取消窗口还不等于已经成功取消。[创建取消凭证的操作步骤](https://help.sap.com/docs/SAP_BUSINESS_ONE/68a2e87fb29941b5bf959a184d9c6727/4d881a18c4524b6d9090d2e2f1831582.html)、[CreateCancellationDocument 示例](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~CreateCancellationDocument.html)
+
+### 8.3 组合解释及证据边界
+
+本轮未找到官方直接列出的 `CANCELED × DocStatus` 六组合真值表。下表是字段定义与官方流程的组合说明，不是新增数据库约束。
+
+| `CANCELED` | `DocStatus` | 含义及判断边界 | 依据类型 |
+| --- | --- | --- | --- |
+| `N` | `O` | 未取消、未结的普通单据。未结具体表示什么，随报价、订单、发票等业务对象解释。 | 逐表字段枚举组合 |
+| `N` | `C` | 未取消、已结的普通单据；不能因为已结就认定它被取消，也不能一概认定已交齐或已收齐。 | 逐表字段枚举组合；关闭行为参见第 2 节 |
+| `Y` | `C` | 被取消的原单且已结；在生成取消凭证的流程中，与下一行构成原单和反向单两种角色。 | 逐表枚举加官方“双单关闭”流程推导 |
+| `C` | `C` | 新生成的取消凭证且已结，用于反向冲回原单影响。 | 逐表枚举加官方“双单关闭”流程推导 |
+| `Y` | `O` | 字面为已取消却仍未结；不符合上述生成取消凭证流程的完成状态，不能套作普通未结单。 | 流程一致性检查建议，非官方列出的非法组合 |
+| `C` | `O` | 字面为未结的取消凭证；不符合上述流程添加完成后的状态。 | 流程一致性检查建议，非官方列出的非法组合 |
+
+组合表前两行只解释字段，不证明具体单据可被继续复制、交付或支付；这些能力还可能受确认、权限、行状态及其他业务规则影响。例如，报价可因手工关闭或复制到后续单据而关闭，且是否允许复制已关闭报价受设置控制。[报价界面关闭说明](https://help.sap.com/docs/PRODUCT_ID/68a2e87fb29941b5bf959a184d9c6727/44fd93cf93202463e10000000a1553f7.html)、[允许复制已关闭报价设置](https://help.sap.com/docs/SAP_BUSINESS_ONE/68a2e87fb29941b5bf959a184d9c6727/45071a63f61941dee10000000a1553f6.html)
+
+**范围限制：** 第三、四行的“双单关闭”证据针对会生成取消凭证的单据。不能仅由该段话声称所有报价、订单、预付款请求的历史 `Y` 记录均已验证为 `DocStatus=C`。它们的逐表取消后持久值如需作为强制数据质量规则，应再用目标版本的完整流程样本验证。`OQUT` 虽列出 `C`，常规报价流程仍不生成新取消凭证；`ORDR/ODPI` 则未列 `C`。不能让组合表覆盖这些逐表差异。
+
+### 8.4 报表筛选的含义
+
+以下是查询口径建议，不能替代指定 SAP 报表的业务规则：
+
+- 查询未取消的普通单据，用 `CANCELED='N'`；其中既有 `DocStatus='O'` 也有 `'C'`。是否只保留未结，要再显式判断 `DocStatus`。这是上述两列枚举的逻辑推导。
+- `CANCELED<>'Y'` 在支持 `C` 的表中会留下反向取消凭证；`DocStatus='C'` 会混合普通已结单、被取消原单和取消凭证。不能把任一个条件单独命名为“有效销售”。这是组合表的查询推导。
+- 如果业务要求保留历史过账和后续反向冲回，应保留原单、取消凭证各自的过账日期，并按已确认的金额方向计算，不能一律排除 `Y/C`。官方 Intrastat 规则就按原单与取消单是否同一申报期、是否涉及货物流转分别处理，说明“所有报表一律只取 N”不是通用规则。[取消单据的申报采集规则](https://help.sap.com/docs/sap_business_one/68a2e87fb29941b5bf959a184d9c6727/9a55f17c9418473a88f99662ee0ffbf5-5059.html)
+
+本节记录来源核对和组合推导，模型实施与验证状态以[测试映射](销售语义-测试映射.md)为准。本研究未在 SAP 业务数据库执行取消或业务状态转换，也不新增数据库枚举或交叉状态约束。字段有效值已完成七表官方定义核对；完整组合的实际存储和报表对账仍是不同层次的验证。

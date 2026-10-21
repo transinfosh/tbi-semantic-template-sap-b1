@@ -31,7 +31,7 @@
       "name": "CANCELED",
       "notNull": false,
       "properties": {
-        "description": "Y=被取消单据；N=未取消；C=取消凭证。与开闭状态独立；业务统计排除取消还是保留冲销须显式规定。",
+        "description": "取消角色，取值 N=未取消的普通单据；Y=被取消的原单据；C=系统为反向冲回原单另行生成的取消单据。反向取消完成后，原单为 Y、新取消单为 C，二者 DocStatus 均为 C（已结）。N 不等于未结，须再结合 DocStatus 区分 N/O 与 N/C。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
       "type": "CHAR(1)"
@@ -211,7 +211,7 @@
       "name": "DocStatus",
       "notNull": false,
       "properties": {
-        "description": "O 为未结，C 为已结；已结不等同取消，也不能单凭此字段判断收付款或物流完成。",
+        "description": "单据开闭状态，仅 O=未结、C=已结。结合 CANCELED 判断：N/O=未取消且未结，N/C=未取消但已结；完成反向取消后，原单为 Y/C，新取消单为 C/C。DocStatus 的 C 表示关闭，与 CANCELED 的 C 表示取消单据不同；已结本身不能证明已交齐或已收齐。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
       "type": "CHAR(1)"

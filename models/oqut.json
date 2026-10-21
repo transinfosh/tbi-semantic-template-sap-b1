@@ -29,7 +29,7 @@
       "name": "CANCELED",
       "notNull": false,
       "properties": {
-        "description": "官方字典列 N=未取消、Y=被取消单据、C=取消凭证；标准销售报价取消流程不生成新取消凭证，不能据字典中的 C 推断常规报价会生成冲销单。与 DocStatus 开闭状态独立，异常或历史 C 值须结合版本和来源核实。",
+        "description": "取消角色：N=未取消报价；Y=被取消的原报价；C=取消单据标记。标准报价取消只取消原报价，不另建反向取消报价单。结合 DocStatus：N/O=未取消且未结，N/C=未取消但已结；Y 表示已取消，不因开闭状态而改判。不能把 DocStatus=C（关闭）当作 CANCELED=C（取消单据）。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
       },
       "type": "CHAR(1)"
@@ -207,7 +207,7 @@
       "name": "DocStatus",
       "notNull": false,
       "properties": {
-        "description": "O 为未结，C 为已结；已结不等同取消，也不能单凭此字段判断收付款或物流完成。",
+        "description": "报价开闭状态，仅 O=未结、C=已结。结合 CANCELED：N/O=未取消未结报价，N/C=未取消已结报价；CANCELED=Y 表示报价已取消，不能仅用 DocStatus 判断取消。已结报价不等于成交或收入；是否允许复制已结报价还受单据设置控制。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
       },
       "type": "CHAR(1)"
