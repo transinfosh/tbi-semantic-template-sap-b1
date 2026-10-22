@@ -2,7 +2,7 @@
 
 此扩展把常用多表关联保存为 tBI 查询视图。源定义为 [pack.json](pack.json) 与 `sql/` 中的 Semantic SQL；[load_pack.py](load_pack.py) 只读取文件，不连接、修改或发布任何工作区。四个新增表模型与十四条直接关系也保存在同一清单。
 
-它是工作区的增量扩展，**不属于当前 template.json 的默认导入范围**，公共模板版本仍为 0.8.0。不得将这个不含基础模型的清单作为独立完整 MDL 导入；实施时保留目标原有模型、关系、资产和权限，经原生保存及依赖检查追加对象。当前实施和验证状态统一见 [SAP 测试映射](../../../../docs/应用/tbi/SAP业务语义/SAP业务语义-测试映射.md#常用查询视图2026-10-22)。
+它是工作区的增量扩展，**不属于当前 template.json 的默认导入范围**，公共模板版本为 0.8.1。不得将这个不含基础模型的清单作为独立完整 MDL 导入；实施时保留目标原有模型、关系、资产和权限，经原生保存及依赖检查追加对象。当前实施和验证状态统一见 [SAP 测试映射](../../../../docs/应用/tbi/SAP业务语义/SAP业务语义-测试映射.md#常用查询视图2026-10-22)。
 
 | 视图 | 每行含义及用途 |
 | --- | --- |
@@ -39,6 +39,22 @@ SQL 不写死具体单号、客户、物料或日期。输出列由 tBI 原生�
 
 财务凭证分录的 `posting_date/document_date/due_date` 为 OJDT 凭证头日期，`line_posting_date/line_document_date/line_due_date` 为 JDT1 分录行日期。头日期与行日期分别提供查询口径，不互相回填；三个行日期追加在原输出末尾，已有技术字段、顺序及金额含义保持兼容。适用场景与验证状态见 SAP41。
 
+## 英文语言包
+
+[locales/en.json](locales/en.json) 覆盖4个新增模型的名称、23个字段标题及已有字段说明、14条关系名称和说明，以及16个View名称、325个字段标题和全部View业务说明。沿用显示元数据覆盖格式：`displayName / description / columns`；加载器将View的显示名与列显示名映射到本扩展的 `title / columnTitles`。
+
+`pack.json` 声明默认语言 `zh-CN` 和英文包路径。默认调用保持中文，英文及英文地区代码显式选择英文，未支持的语言回退到中文；各次调用独立读取，不修改源文件或前一次结果。
+
+```python
+pack = load_pack()          # Chinese source display text
+english = load_pack("en")
+english_us = load_pack("en-US")  # Falls back to the English pack
+```
+
+翻译只覆盖显示名和说明，不改变SQL、技术字段名、列顺序、类型、主键、关系条件、分组代码或业务存储值。保留日期角色、数量粒度、LC/FC/SC、当前/历史单位、取消/冲销及范围限制；不将“已付”“应用金额”“现金”混为同一指标。语言包不能注入SQL或类型，且资源路径限制在扩展目录内。
+
+[源文字指纹](locales/source-text.json)与覆盖检查用于发现后续中文文字变更及漏译，变更说明时应同步审阅英文。此包仍是独立工作区扩展，不自动进入默认模板导入，也不依据Frappe界面语言实时改写已经保存的P1中文名称；后续导入/保存时选择相应语言，不自动发布。
+
 ## 验证
 
 在仓库根运行：
@@ -48,3 +64,5 @@ python3 -m unittest discover -s tests -p test_workspace_views.py -v
 ```
 
 测试执行实际 SQL，覆盖拆分链路、预留路径、对象/行号碰撞、异号付款父键、批序列主键碰撞、承诺日志排除、批次分库位、普通物料及缺失主数据保留、当前总分量隔离、共享生产单据和负向分录。SQLite 测试证明这些自造场景，不能代替 SQL Server 引擎编译、目标库对账或真实自然语言问答验收。
+
+英文包验证：`python3 -m unittest discover -s tests -p test_workspace_view_locales.py -v`，覆盖完整翻译、地区回退、SQL与结构保持、技术标识保留及源说明指纹。本轮模板全套93项通过；另以英文包运行全部15项View SQL场景通过。加载器与新测试的Ruff检查通过，16份SQL文件摘要与实施前一致；没有修改P1或执行发布。

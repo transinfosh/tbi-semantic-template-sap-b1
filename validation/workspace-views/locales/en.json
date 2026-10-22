@@ -1,0 +1,1231 @@
+{
+  "formatVersion": 1,
+  "models": {
+    "obtl": {
+      "displayName": "Bin Transaction Details",
+      "description": "One row per AbsEntry. Historical bin transactions preserve original quantities and message actions; they are not current inventory. MessageID and ITLEntry are distinct log keys.",
+      "columns": {
+        "AbsEntry": {
+          "displayName": "Internal ID"
+        },
+        "MessageID": {
+          "displayName": "Inventory Message ID"
+        },
+        "BinAbs": {
+          "displayName": "Bin Location Internal ID"
+        },
+        "SnBMDAbs": {
+          "displayName": "Batch Or Serial Master Record ID",
+          "description": "Original stored value; it may be -1 for ordinary items or when no allocation exists."
+        },
+        "Quantity": {
+          "displayName": "Raw Bin Allocation Quantity"
+        },
+        "ITLEntry": {
+          "displayName": "Inventory Batch/Serial Log ID",
+          "description": "Original stored value; it may be -1 for ordinary items or when no allocation exists."
+        }
+      }
+    },
+    "oibq": {
+      "displayName": "Item Bin Current Inventory",
+      "description": "One row per AbsEntry. These are current balances, not inventory at a historical cutoff. OIBQ contains item-bin totals; OBBQ/OSBQ contain batch/serial components. Do not add the two levels together.",
+      "columns": {
+        "AbsEntry": {
+          "displayName": "Internal ID"
+        },
+        "ItemCode": {
+          "displayName": "Item Code"
+        },
+        "BinAbs": {
+          "displayName": "Bin Location Internal ID"
+        },
+        "OnHandQty": {
+          "displayName": "Current On-Hand Quantity"
+        },
+        "WhsCode": {
+          "displayName": "Warehouse Code"
+        }
+      }
+    },
+    "obbq": {
+      "displayName": "Batch Bin Current Inventory",
+      "description": "One row per AbsEntry. These are current balances, not inventory at a historical cutoff. OIBQ contains item-bin totals; OBBQ/OSBQ contain batch/serial components. Do not add the two levels together.",
+      "columns": {
+        "AbsEntry": {
+          "displayName": "Internal ID"
+        },
+        "ItemCode": {
+          "displayName": "Item Code"
+        },
+        "SnBMDAbs": {
+          "displayName": "Batch Or Serial Master Record ID"
+        },
+        "BinAbs": {
+          "displayName": "Bin Location Internal ID"
+        },
+        "OnHandQty": {
+          "displayName": "Current On-Hand Quantity"
+        },
+        "WhsCode": {
+          "displayName": "Warehouse Code"
+        }
+      }
+    },
+    "osbq": {
+      "displayName": "Serial Number Bin Current Inventory",
+      "description": "One row per AbsEntry. These are current balances, not inventory at a historical cutoff. OIBQ contains item-bin totals; OBBQ/OSBQ contain batch/serial components. Do not add the two levels together.",
+      "columns": {
+        "AbsEntry": {
+          "displayName": "Internal ID"
+        },
+        "ItemCode": {
+          "displayName": "Item Code"
+        },
+        "SnBMDAbs": {
+          "displayName": "Batch Or Serial Master Record ID"
+        },
+        "BinAbs": {
+          "displayName": "Bin Location Internal ID"
+        },
+        "OnHandQty": {
+          "displayName": "Current On-Hand Quantity"
+        },
+        "WhsCode": {
+          "displayName": "Warehouse Code"
+        }
+      }
+    }
+  },
+  "relationships": {
+    "common_obtl_oilm": {
+      "displayName": "Bin Transaction To Inventory Message",
+      "description": "Join by internal keys; retain source facts when the related record is unmatched."
+    },
+    "common_obtl_obin": {
+      "displayName": "Bin Transaction To Bin Location",
+      "description": "Join by internal keys; retain source facts when the related record is unmatched."
+    },
+    "common_obtl_oitl": {
+      "displayName": "Bin Transaction To Batch/Serial Log",
+      "description": "Join by internal keys; retain source facts when the related record is unmatched."
+    },
+    "common_oibq_obin": {
+      "displayName": "Current Balance To Bin Location",
+      "description": "Join by internal keys; retain source facts when the related record is unmatched."
+    },
+    "common_oibq_owhs": {
+      "displayName": "Current Balance To Warehouse",
+      "description": "Join by internal keys; retain source facts when the related record is unmatched."
+    },
+    "common_oibq_oitm": {
+      "displayName": "Current Balance To Item",
+      "description": "Join by internal keys; retain source facts when the related record is unmatched."
+    },
+    "common_obbq_obin": {
+      "displayName": "Current Balance To Bin Location",
+      "description": "Join by internal keys; retain source facts when the related record is unmatched."
+    },
+    "common_obbq_owhs": {
+      "displayName": "Current Balance To Warehouse",
+      "description": "Join by internal keys; retain source facts when the related record is unmatched."
+    },
+    "common_obbq_oitm": {
+      "displayName": "Current Balance To Item",
+      "description": "Join by internal keys; retain source facts when the related record is unmatched."
+    },
+    "common_osbq_obin": {
+      "displayName": "Current Balance To Bin Location",
+      "description": "Join by internal keys; retain source facts when the related record is unmatched."
+    },
+    "common_osbq_owhs": {
+      "displayName": "Current Balance To Warehouse",
+      "description": "Join by internal keys; retain source facts when the related record is unmatched."
+    },
+    "common_osbq_oitm": {
+      "displayName": "Current Balance To Item",
+      "description": "Join by internal keys; retain source facts when the related record is unmatched."
+    },
+    "common_obbq_obtn": {
+      "displayName": "Current Balance To Batch Master",
+      "description": "Join by internal keys; retain source facts when the related record is unmatched."
+    },
+    "common_osbq_osrn": {
+      "displayName": "Current Balance To Serial Number Master",
+      "description": "Join by internal keys; retain source facts when the related record is unmatched."
+    }
+  },
+  "views": {
+    "sales_order_to_cash_trace": {
+      "displayName": "Sales Order To Receipt Trace",
+      "description": "Trace a sales order to receipt: each row is a path from an original order line through subsequent logistics lines, invoice lines and receipt application lines. Only identities, dates and statuses are provided, with no summable quantities or amounts. Keep separate paths for logistics before invoicing, direct order invoicing, and reserve invoices before logistics; absent successors remain null. One order may be fulfilled in parts, one invoice may combine orders, and one invoice may have multiple receipts. Path counts are not document counts. Locate the source by order_entry/order_line, without guessing from item codes or displayed document numbers. Canceled records remain; select each stage's status for the question. A receipt here means an explicit invoice application in RCT2, not all internal reconciliations, down-payment offsets or cash settlement. Read amounts from the separate invoice receipt application details. Standalone documents without an order source are outside this View.",
+      "columns": {
+        "path_kind": {
+          "displayName": "Source Path"
+        },
+        "order_entry": {
+          "displayName": "Order Internal ID"
+        },
+        "order_no": {
+          "displayName": "Order Number"
+        },
+        "order_line": {
+          "displayName": "Original Order Line"
+        },
+        "order_date": {
+          "displayName": "Order Posting Date"
+        },
+        "order_due_date": {
+          "displayName": "Order Delivery Date"
+        },
+        "order_cancellation": {
+          "displayName": "Order Cancellation Status"
+        },
+        "order_status": {
+          "displayName": "Order Status"
+        },
+        "partner_code": {
+          "displayName": "Customer Code"
+        },
+        "partner_name": {
+          "displayName": "Customer Name"
+        },
+        "item_code": {
+          "displayName": "Order Line Item Code"
+        },
+        "item_description": {
+          "displayName": "Historical Order Line Description"
+        },
+        "order_line_status": {
+          "displayName": "Order Line Status"
+        },
+        "order_line_manual_close": {
+          "displayName": "Order Line Manually Closed Flag"
+        },
+        "logistics_entry": {
+          "displayName": "Delivery Internal ID"
+        },
+        "logistics_no": {
+          "displayName": "Delivery Number"
+        },
+        "logistics_line": {
+          "displayName": "Original Delivery Line"
+        },
+        "logistics_date": {
+          "displayName": "Delivery Posting Date"
+        },
+        "logistics_cancellation": {
+          "displayName": "Delivery Cancellation Status"
+        },
+        "invoice_entry": {
+          "displayName": "Invoice Internal ID"
+        },
+        "invoice_no": {
+          "displayName": "Invoice Number"
+        },
+        "invoice_line": {
+          "displayName": "Original Invoice Line"
+        },
+        "invoice_date": {
+          "displayName": "Invoice Posting Date"
+        },
+        "invoice_cancellation": {
+          "displayName": "Invoice Cancellation Status"
+        },
+        "reserve_invoice_flag": {
+          "displayName": "Reserve Invoice Flag"
+        },
+        "payment_entry": {
+          "displayName": "Parent Receipt Internal ID"
+        },
+        "payment_no": {
+          "displayName": "Receipt Number"
+        },
+        "payment_application_line": {
+          "displayName": "Receipt Application Line"
+        },
+        "installment_id": {
+          "displayName": "Installment Internal ID"
+        },
+        "payment_date": {
+          "displayName": "Receipt Posting Date"
+        },
+        "payment_cancellation": {
+          "displayName": "Receipt Cancellation Status"
+        }
+      }
+    },
+    "sales_invoice_receipt_applications": {
+      "displayName": "A/R Invoice Receipt Applications",
+      "description": "Invoice receipt application details: one row is RCT2.DocNum+InvoiceId, with InvType=13 restricting the invoice class. DocNum is the parent ORCT.DocEntry internal key, not its displayed number; identify the invoice by DocEntry. SumApplied/AppliedFC/AppliedSys are stored at application-line grain. Do not repeat invoice or receipt header totals or expand by invoice item lines. Interpret FC in the target invoice currency, never the payment header currency; obtain LC/SC codes separately from OADM.MainCurncy/SysCurrncy in the same company. Do not sum FC across currencies. Discounts, withholding tax and differences are separate components; the applied amount is not the cash actually received or paid. Preserve cancellation status. Other document types, later internal reconciliation of on-account payments and down-payment offsets are outside this View; no application row does not imply the invoice is unsettled. The raw DocLine does not define an allocation to item lines.",
+      "columns": {
+        "payment_entry": {
+          "displayName": "Parent Receipt Internal ID"
+        },
+        "application_line": {
+          "displayName": "Receipt Application Line"
+        },
+        "target_object_type": {
+          "displayName": "Applied Document Type"
+        },
+        "invoice_entry": {
+          "displayName": "Invoice Internal ID"
+        },
+        "installment_id": {
+          "displayName": "Installment Internal ID"
+        },
+        "target_document_line": {
+          "displayName": "Document Line Stored On Application"
+        },
+        "payment_no": {
+          "displayName": "Receipt Number"
+        },
+        "payment_date": {
+          "displayName": "Receipt Posting Date"
+        },
+        "payment_cancellation": {
+          "displayName": "Receipt Cancellation Status"
+        },
+        "payment_currency": {
+          "displayName": "Receipt Document Currency"
+        },
+        "invoice_no": {
+          "displayName": "Invoice Number"
+        },
+        "invoice_date": {
+          "displayName": "Invoice Posting Date"
+        },
+        "invoice_due_date": {
+          "displayName": "Invoice Due Date"
+        },
+        "invoice_cancellation": {
+          "displayName": "Invoice Cancellation Status"
+        },
+        "partner_code": {
+          "displayName": "Customer Code"
+        },
+        "partner_name": {
+          "displayName": "Customer Name"
+        },
+        "invoice_currency": {
+          "displayName": "Invoice Document Currency"
+        },
+        "applied_amount_lc": {
+          "displayName": "Invoice Applied Amount (LC)"
+        },
+        "applied_amount_fc": {
+          "displayName": "Invoice Applied Amount (FC)"
+        },
+        "applied_amount_sc": {
+          "displayName": "Invoice Applied Amount (SC)"
+        },
+        "cash_discount_lc": {
+          "displayName": "Cash Discount (LC)"
+        },
+        "cash_discount_fc": {
+          "displayName": "Cash Discount (FC)"
+        },
+        "cash_discount_sc": {
+          "displayName": "Cash Discount (SC)"
+        },
+        "withholding_applied_lc": {
+          "displayName": "Applied Withholding Tax (LC)"
+        },
+        "application_date": {
+          "displayName": "Application Link Date"
+        }
+      }
+    },
+    "sales_invoice_current_balance": {
+      "displayName": "A/R Invoice Current Header Balance",
+      "description": "One row per invoice DocEntry, showing the current header total, paid amount and their difference without expanding item or payment lines. PaidToDate and related fields are booked paid amounts, not specifically cash. The difference does not replace complete historical aging that accounts for credit memos, down-payment offsets, internal reconciliations and localization-specific cases. There is no historical cutoff dimension; do not assign current values to past dates. Canceled, reversal and reserve invoices are not excluded automatically; select status and role for the question. Obtain LC/SC currency codes separately from the same-company OADM; group FC by DocCur. Preserve NULL instead of replacing unknown values with zero.",
+      "columns": {
+        "invoice_entry": {
+          "displayName": "Invoice Internal ID"
+        },
+        "invoice_no": {
+          "displayName": "Invoice Number"
+        },
+        "partner_code": {
+          "displayName": "Customer Code"
+        },
+        "partner_name": {
+          "displayName": "Customer Name"
+        },
+        "posting_date": {
+          "displayName": "Posting Date"
+        },
+        "due_date": {
+          "displayName": "Due Date"
+        },
+        "cancellation_status": {
+          "displayName": "Cancellation Status"
+        },
+        "document_status": {
+          "displayName": "Document Status"
+        },
+        "reserve_invoice_flag": {
+          "displayName": "Reserve Invoice Flag"
+        },
+        "document_currency": {
+          "displayName": "Document Currency"
+        },
+        "document_total_lc": {
+          "displayName": "Document Total Including Tax (LC)"
+        },
+        "settled_amount_lc": {
+          "displayName": "Header Paid Amount (LC)"
+        },
+        "current_open_amount_lc": {
+          "displayName": "Current Header Open Difference (LC)"
+        },
+        "document_total_fc": {
+          "displayName": "Document Total Including Tax (FC)"
+        },
+        "settled_amount_fc": {
+          "displayName": "Header Paid Amount (FC)"
+        },
+        "current_open_amount_fc": {
+          "displayName": "Current Header Open Difference (FC)"
+        },
+        "document_total_sc": {
+          "displayName": "Document Total Including Tax (SC)"
+        },
+        "settled_amount_sc": {
+          "displayName": "Header Paid Amount (SC)"
+        },
+        "current_open_amount_sc": {
+          "displayName": "Current Header Open Difference (SC)"
+        }
+      }
+    },
+    "purchase_order_to_payment_trace": {
+      "displayName": "Purchase Order To Payment Trace",
+      "description": "Trace a purchase order to payment: each row is a path from an original order line through subsequent logistics lines, invoice lines and payment application lines. Only identities, dates and statuses are provided, with no summable quantities or amounts. Keep separate paths for logistics before invoicing, direct order invoicing, and reserve invoices before logistics; absent successors remain null. One order may be fulfilled in parts, one invoice may combine orders, and one invoice may have multiple payments. Path counts are not document counts. Locate the source by order_entry/order_line, without guessing from item codes or displayed document numbers. Canceled records remain; select each stage's status for the question. A payment here means an explicit invoice application in VPM2, not all internal reconciliations, down-payment offsets or cash settlement. Read amounts from the separate invoice payment application details. Standalone documents without an order source are outside this View.",
+      "columns": {
+        "path_kind": {
+          "displayName": "Source Path"
+        },
+        "order_entry": {
+          "displayName": "Order Internal ID"
+        },
+        "order_no": {
+          "displayName": "Order Number"
+        },
+        "order_line": {
+          "displayName": "Original Order Line"
+        },
+        "order_date": {
+          "displayName": "Order Posting Date"
+        },
+        "order_due_date": {
+          "displayName": "Order Delivery Date"
+        },
+        "order_cancellation": {
+          "displayName": "Order Cancellation Status"
+        },
+        "order_status": {
+          "displayName": "Order Status"
+        },
+        "partner_code": {
+          "displayName": "Vendor Code"
+        },
+        "partner_name": {
+          "displayName": "Vendor Name"
+        },
+        "item_code": {
+          "displayName": "Order Line Item Code"
+        },
+        "item_description": {
+          "displayName": "Historical Order Line Description"
+        },
+        "order_line_status": {
+          "displayName": "Order Line Status"
+        },
+        "order_line_manual_close": {
+          "displayName": "Order Line Manually Closed Flag"
+        },
+        "logistics_entry": {
+          "displayName": "Goods Receipt PO Internal ID"
+        },
+        "logistics_no": {
+          "displayName": "Goods Receipt PO Number"
+        },
+        "logistics_line": {
+          "displayName": "Original Goods Receipt PO Line"
+        },
+        "logistics_date": {
+          "displayName": "Goods Receipt PO Posting Date"
+        },
+        "logistics_cancellation": {
+          "displayName": "Goods Receipt PO Cancellation Status"
+        },
+        "invoice_entry": {
+          "displayName": "Invoice Internal ID"
+        },
+        "invoice_no": {
+          "displayName": "Invoice Number"
+        },
+        "invoice_line": {
+          "displayName": "Original Invoice Line"
+        },
+        "invoice_date": {
+          "displayName": "Invoice Posting Date"
+        },
+        "invoice_cancellation": {
+          "displayName": "Invoice Cancellation Status"
+        },
+        "reserve_invoice_flag": {
+          "displayName": "Reserve Invoice Flag"
+        },
+        "payment_entry": {
+          "displayName": "Parent Payment Internal ID"
+        },
+        "payment_no": {
+          "displayName": "Payment Number"
+        },
+        "payment_application_line": {
+          "displayName": "Payment Application Line"
+        },
+        "installment_id": {
+          "displayName": "Installment Internal ID"
+        },
+        "payment_date": {
+          "displayName": "Payment Posting Date"
+        },
+        "payment_cancellation": {
+          "displayName": "Payment Cancellation Status"
+        }
+      }
+    },
+    "purchase_invoice_payment_applications": {
+      "displayName": "A/P Invoice Payment Applications",
+      "description": "Invoice payment application details: one row is VPM2.DocNum+InvoiceId, with InvType=18 restricting the invoice class. DocNum is the parent OVPM.DocEntry internal key, not its displayed number; identify the invoice by DocEntry. SumApplied/AppliedFC/AppliedSys are stored at application-line grain. Do not repeat invoice or payment header totals or expand by invoice item lines. Interpret FC in the target invoice currency, never the payment header currency; obtain LC/SC codes separately from OADM.MainCurncy/SysCurrncy in the same company. Do not sum FC across currencies. Discounts, withholding tax and differences are separate components; the applied amount is not the cash actually received or paid. Preserve cancellation status. Other document types, later internal reconciliation of on-account payments and down-payment offsets are outside this View; no application row does not imply the invoice is unsettled. The raw DocLine does not define an allocation to item lines.",
+      "columns": {
+        "payment_entry": {
+          "displayName": "Parent Payment Internal ID"
+        },
+        "application_line": {
+          "displayName": "Payment Application Line"
+        },
+        "target_object_type": {
+          "displayName": "Applied Document Type"
+        },
+        "invoice_entry": {
+          "displayName": "Invoice Internal ID"
+        },
+        "installment_id": {
+          "displayName": "Installment Internal ID"
+        },
+        "target_document_line": {
+          "displayName": "Document Line Stored On Application"
+        },
+        "payment_no": {
+          "displayName": "Payment Number"
+        },
+        "payment_date": {
+          "displayName": "Payment Posting Date"
+        },
+        "payment_cancellation": {
+          "displayName": "Payment Cancellation Status"
+        },
+        "payment_currency": {
+          "displayName": "Payment Document Currency"
+        },
+        "invoice_no": {
+          "displayName": "Invoice Number"
+        },
+        "invoice_date": {
+          "displayName": "Invoice Posting Date"
+        },
+        "invoice_due_date": {
+          "displayName": "Invoice Due Date"
+        },
+        "invoice_cancellation": {
+          "displayName": "Invoice Cancellation Status"
+        },
+        "partner_code": {
+          "displayName": "Vendor Code"
+        },
+        "partner_name": {
+          "displayName": "Vendor Name"
+        },
+        "invoice_currency": {
+          "displayName": "Invoice Document Currency"
+        },
+        "applied_amount_lc": {
+          "displayName": "Invoice Applied Amount (LC)"
+        },
+        "applied_amount_fc": {
+          "displayName": "Invoice Applied Amount (FC)"
+        },
+        "applied_amount_sc": {
+          "displayName": "Invoice Applied Amount (SC)"
+        },
+        "cash_discount_lc": {
+          "displayName": "Cash Discount (LC)"
+        },
+        "cash_discount_fc": {
+          "displayName": "Cash Discount (FC)"
+        },
+        "cash_discount_sc": {
+          "displayName": "Cash Discount (SC)"
+        },
+        "withholding_applied_lc": {
+          "displayName": "Applied Withholding Tax (LC)"
+        },
+        "application_date": {
+          "displayName": "Application Link Date"
+        }
+      }
+    },
+    "purchase_invoice_current_balance": {
+      "displayName": "A/P Invoice Current Header Balance",
+      "description": "One row per invoice DocEntry, showing the current header total, paid amount and their difference without expanding item or payment lines. PaidToDate and related fields are booked paid amounts, not specifically cash. The difference does not replace complete historical aging that accounts for credit memos, down-payment offsets, internal reconciliations and localization-specific cases. There is no historical cutoff dimension; do not assign current values to past dates. Canceled, reversal and reserve invoices are not excluded automatically; select status and role for the question. Obtain LC/SC currency codes separately from the same-company OADM; group FC by DocCur. Preserve NULL instead of replacing unknown values with zero.",
+      "columns": {
+        "invoice_entry": {
+          "displayName": "Invoice Internal ID"
+        },
+        "invoice_no": {
+          "displayName": "Invoice Number"
+        },
+        "partner_code": {
+          "displayName": "Vendor Code"
+        },
+        "partner_name": {
+          "displayName": "Vendor Name"
+        },
+        "posting_date": {
+          "displayName": "Posting Date"
+        },
+        "due_date": {
+          "displayName": "Due Date"
+        },
+        "cancellation_status": {
+          "displayName": "Cancellation Status"
+        },
+        "document_status": {
+          "displayName": "Document Status"
+        },
+        "reserve_invoice_flag": {
+          "displayName": "Reserve Invoice Flag"
+        },
+        "document_currency": {
+          "displayName": "Document Currency"
+        },
+        "document_total_lc": {
+          "displayName": "Document Total Including Tax (LC)"
+        },
+        "settled_amount_lc": {
+          "displayName": "Header Paid Amount (LC)"
+        },
+        "current_open_amount_lc": {
+          "displayName": "Current Header Open Difference (LC)"
+        },
+        "document_total_fc": {
+          "displayName": "Document Total Including Tax (FC)"
+        },
+        "settled_amount_fc": {
+          "displayName": "Header Paid Amount (FC)"
+        },
+        "current_open_amount_fc": {
+          "displayName": "Current Header Open Difference (FC)"
+        },
+        "document_total_sc": {
+          "displayName": "Document Total Including Tax (SC)"
+        },
+        "settled_amount_sc": {
+          "displayName": "Header Paid Amount (SC)"
+        },
+        "current_open_amount_sc": {
+          "displayName": "Current Header Open Difference (SC)"
+        }
+      }
+    },
+    "production_issue_detail": {
+      "displayName": "Issue For Production Details",
+      "description": "Production issue details: one row is IGE1.DocEntry+LineNum. Production shares OIGE/IGE1 with ordinary inventory documents; BaseType=202 selects a production source. Use header DocDate as the actual date, without truncating by production-order dates. Preserve the source row if the order does not match; the original BaseLine identifies the source component, not the current LineNum. Keep item type 4/resource type 290, historical units, cancellation status and stored amounts. StockSum is the document line inventory amount, not a signed OIVL warehouse journal amount. Verify the company-local-currency and inventory-unit conditions of StockPrice against the current semantics. Do not sum quantities across items or units. Do not apply ABS or change signs automatically for returned components or reversals.",
+      "columns": {
+        "production_order_entry": {
+          "displayName": "Production Order Internal ID"
+        },
+        "production_order_no": {
+          "displayName": "Production Order Number"
+        },
+        "production_order_type": {
+          "displayName": "Production Order Type"
+        },
+        "production_order_status": {
+          "displayName": "Production Order Status"
+        },
+        "order_product_code": {
+          "displayName": "Production Order Product Code"
+        },
+        "document_entry": {
+          "displayName": "Production Issue Internal ID"
+        },
+        "document_no": {
+          "displayName": "Production Issue Number"
+        },
+        "document_line": {
+          "displayName": "Original Document Line"
+        },
+        "posting_date": {
+          "displayName": "Actual Document Posting Date"
+        },
+        "cancellation_status": {
+          "displayName": "Document Cancellation Status"
+        },
+        "source_component_line": {
+          "displayName": "Source Component Line"
+        },
+        "item_type": {
+          "displayName": "Line Type"
+        },
+        "item_code": {
+          "displayName": "Line Item Or Resource Code"
+        },
+        "item_description": {
+          "displayName": "Historical Line Description"
+        },
+        "warehouse_code": {
+          "displayName": "Warehouse Code"
+        },
+        "document_quantity": {
+          "displayName": "Quantity In Document Units"
+        },
+        "inventory_quantity": {
+          "displayName": "Quantity In Inventory Units"
+        },
+        "historical_document_unit": {
+          "displayName": "Historical Document Unit"
+        },
+        "historical_uom_code": {
+          "displayName": "Historical UoM Code"
+        },
+        "use_base_unit": {
+          "displayName": "Use Inventory Unit Flag"
+        },
+        "items_per_unit": {
+          "displayName": "Inventory Units Per Document Unit"
+        },
+        "document_stock_sum_lc": {
+          "displayName": "Document Line Inventory Amount (LC)"
+        },
+        "stored_inventory_price": {
+          "displayName": "Stored Inventory Price"
+        },
+        "line_project_code": {
+          "displayName": "Document Line Project Code"
+        },
+        "component_code": {
+          "displayName": "Source Component Code"
+        },
+        "issue_method": {
+          "displayName": "Component Issue Method"
+        }
+      }
+    },
+    "production_receipt_detail": {
+      "displayName": "Receipt From Production Details",
+      "description": "Production receipt details: one row is IGN1.DocEntry+LineNum. Production shares OIGN/IGN1 with ordinary inventory documents; BaseType=202 selects a production source. Use header DocDate as the actual date, without truncating by production-order dates. Preserve the source row if the order does not match; the original BaseLine identifies the source component, not the current LineNum. Keep item type 4/resource type 290, historical units, cancellation status and stored amounts. StockSum is the document line inventory amount, not a signed OIVL warehouse journal amount. Verify the company-local-currency and inventory-unit conditions of StockPrice against the current semantics. Do not sum quantities across items or units. Production receipts may represent returned components, disassembly components or rejected quantities, so they cannot all be totaled as finished-product output. Database TranType codes C/R are not the SDK enumeration values 0/1.",
+      "columns": {
+        "production_order_entry": {
+          "displayName": "Production Order Internal ID"
+        },
+        "production_order_no": {
+          "displayName": "Production Order Number"
+        },
+        "production_order_type": {
+          "displayName": "Production Order Type"
+        },
+        "production_order_status": {
+          "displayName": "Production Order Status"
+        },
+        "order_product_code": {
+          "displayName": "Production Order Product Code"
+        },
+        "document_entry": {
+          "displayName": "Production Receipt Internal ID"
+        },
+        "document_no": {
+          "displayName": "Production Receipt Number"
+        },
+        "document_line": {
+          "displayName": "Original Document Line"
+        },
+        "posting_date": {
+          "displayName": "Actual Document Posting Date"
+        },
+        "cancellation_status": {
+          "displayName": "Document Cancellation Status"
+        },
+        "source_component_line": {
+          "displayName": "Source Component Line"
+        },
+        "item_type": {
+          "displayName": "Line Type"
+        },
+        "item_code": {
+          "displayName": "Line Item Or Resource Code"
+        },
+        "item_description": {
+          "displayName": "Historical Line Description"
+        },
+        "warehouse_code": {
+          "displayName": "Warehouse Code"
+        },
+        "document_quantity": {
+          "displayName": "Quantity In Document Units"
+        },
+        "inventory_quantity": {
+          "displayName": "Quantity In Inventory Units"
+        },
+        "historical_document_unit": {
+          "displayName": "Historical Document Unit"
+        },
+        "historical_uom_code": {
+          "displayName": "Historical UoM Code"
+        },
+        "use_base_unit": {
+          "displayName": "Use Inventory Unit Flag"
+        },
+        "items_per_unit": {
+          "displayName": "Inventory Units Per Document Unit"
+        },
+        "document_stock_sum_lc": {
+          "displayName": "Document Line Inventory Amount (LC)"
+        },
+        "stored_inventory_price": {
+          "displayName": "Stored Inventory Price"
+        },
+        "line_project_code": {
+          "displayName": "Document Line Project Code"
+        },
+        "receipt_transaction_type": {
+          "displayName": "Receipt Completion Or Rejection Type"
+        }
+      }
+    },
+    "inventory_batch_serial_movements": {
+      "displayName": "Inventory Batch/Serial Movements",
+      "description": "Batch/serial inventory movement details: one row is ITL1.LogEntry+ItemCode+SysNumber. Include only OITL.StockEff=1 on-hand effects, excluding committed/ordered allocation logs for the same document. ManagedBy distinguishes batches 10000044 from serial numbers 10000045; join the corresponding master through its unique item-plus-system-number key. Keep the raw signed inventory-unit Quantity without ABS or another negative multiplier; it is not document-unit quantity. Doc/Apply are distinct roles and both remain visible; do not combine them with OR and double count. A document line may have multiple logs and batches; keep both transfer sides. Interpret LocCode with LocType. Preserve facts and null display numbers when batch/serial master data is unmatched. Ordinary unmanaged items are outside this View.",
+      "columns": {
+        "log_entry": {
+          "displayName": "Inventory Batch/Serial Log ID"
+        },
+        "item_code": {
+          "displayName": "Item Code"
+        },
+        "system_number": {
+          "displayName": "System Batch Or Serial Number"
+        },
+        "master_entry": {
+          "displayName": "Allocation Master Record ID"
+        },
+        "management_type": {
+          "displayName": "Batch Or Serial Management Type"
+        },
+        "batch_serial_number": {
+          "displayName": "Batch Or Serial Number"
+        },
+        "document_type": {
+          "displayName": "Log Document Type"
+        },
+        "document_entry": {
+          "displayName": "Log Document Internal ID"
+        },
+        "document_line": {
+          "displayName": "Original Log Document Line"
+        },
+        "apply_document_type": {
+          "displayName": "Applied Document Type"
+        },
+        "apply_document_entry": {
+          "displayName": "Applied Document Internal ID"
+        },
+        "apply_document_line": {
+          "displayName": "Applied Document Line"
+        },
+        "posting_date": {
+          "displayName": "Log Document Date"
+        },
+        "warehouse_code": {
+          "displayName": "Log Location Code"
+        },
+        "location_type": {
+          "displayName": "Log Location Type"
+        },
+        "stock_effect": {
+          "displayName": "Stock Effect Type"
+        },
+        "signed_inventory_quantity": {
+          "displayName": "Raw Signed Batch/Serial Inventory Movement Quantity"
+        }
+      }
+    },
+    "sales_delivery_batch_serial_detail": {
+      "displayName": "Sales Delivery Batch/Serial Details",
+      "description": "Sales delivery batch trace: one row is a delivery line plus the ITL1 log/item/system-number identity. Bind the original delivery line by OITL.DocType=15 and DocEntry/DocLine/ItemCode; include only StockEff=1 to avoid duplicating commitment logs for the same delivery. Provide signed inventory movement quantity, normally negative for an ordinary issue. Preserve cancellation records and both Doc/Apply roles. Cover only delivery stock effects in the log-document role; do not fabricate actual delivered batches from Apply-only records or ordinary items without a log. Special reserve-invoice, cancellation and return flows require verification against the target company's inventory actions and SAP.",
+      "columns": {
+        "delivery_entry": {
+          "displayName": "Delivery Internal ID"
+        },
+        "delivery_no": {
+          "displayName": "Delivery Number"
+        },
+        "delivery_line": {
+          "displayName": "Original Delivery Line"
+        },
+        "delivery_date": {
+          "displayName": "Delivery Posting Date"
+        },
+        "delivery_cancellation": {
+          "displayName": "Delivery Cancellation Status"
+        },
+        "customer_code": {
+          "displayName": "Customer Code"
+        },
+        "customer_name": {
+          "displayName": "Customer Name"
+        },
+        "item_description": {
+          "displayName": "Historical Delivery Line Description"
+        },
+        "log_entry": {
+          "displayName": "Inventory Batch/Serial Log ID"
+        },
+        "item_code": {
+          "displayName": "Item Code"
+        },
+        "system_number": {
+          "displayName": "System Batch Or Serial Number"
+        },
+        "master_entry": {
+          "displayName": "Allocation Master Record ID"
+        },
+        "management_type": {
+          "displayName": "Batch Or Serial Management Type"
+        },
+        "batch_serial_number": {
+          "displayName": "Batch Or Serial Number"
+        },
+        "document_type": {
+          "displayName": "Log Document Type"
+        },
+        "document_entry": {
+          "displayName": "Log Document Internal ID"
+        },
+        "document_line": {
+          "displayName": "Original Log Document Line"
+        },
+        "apply_document_type": {
+          "displayName": "Applied Document Type"
+        },
+        "apply_document_entry": {
+          "displayName": "Applied Document Internal ID"
+        },
+        "apply_document_line": {
+          "displayName": "Applied Document Line"
+        },
+        "posting_date": {
+          "displayName": "Log Document Date"
+        },
+        "warehouse_code": {
+          "displayName": "Log Location Code"
+        },
+        "location_type": {
+          "displayName": "Log Location Type"
+        },
+        "stock_effect": {
+          "displayName": "Stock Effect Type"
+        },
+        "signed_inventory_quantity": {
+          "displayName": "Raw Signed Batch/Serial Inventory Movement Quantity"
+        }
+      }
+    },
+    "inventory_bin_movements": {
+      "displayName": "Inventory Bin Movements",
+      "description": "Historical bin transactions: one row is OBTL.AbsEntry. The bin and batch/serial come from the same original allocation row; do not expand them independently by document line and multiply them. MessageID joins OILM, BinAbs joins OBIN, and SnBMDAbs joins the batch or serial master together with OILM.SnBType and ItemCode. Preserve ordinary items, -1 values and facts with unmatched master data. raw_bin_quantity is the original OBTL.Quantity, without a standardized sign: actions 1/19 are inbound, 2/20 outbound, and the rest other. Do not apply ABS, change signs again or treat this as a verified net movement quantity. Keep AccumType, action and direction separately, including both transfer sides. Do not copy message-level quantities or amounts onto every bin and sum them. Verify direction and quantity signs against the target company's inventory transactions.",
+      "columns": {
+        "bin_transaction_entry": {
+          "displayName": "Bin Transaction Internal ID"
+        },
+        "message_entry": {
+          "displayName": "Inventory Message ID"
+        },
+        "batch_serial_log_entry": {
+          "displayName": "Batch/Serial Log ID"
+        },
+        "document_type": {
+          "displayName": "Inventory Transaction Document Type"
+        },
+        "document_entry": {
+          "displayName": "Document Internal ID"
+        },
+        "document_line": {
+          "displayName": "Original Document Line"
+        },
+        "document_subline": {
+          "displayName": "Document Subline"
+        },
+        "posting_date": {
+          "displayName": "Inventory Message Posting Date"
+        },
+        "item_code": {
+          "displayName": "Item Code"
+        },
+        "action_type": {
+          "displayName": "Inventory Action Type"
+        },
+        "accumulator_type": {
+          "displayName": "Inventory Accumulator Type"
+        },
+        "management_type": {
+          "displayName": "Batch Or Serial Management Type"
+        },
+        "master_entry": {
+          "displayName": "Batch Or Serial Master Record ID"
+        },
+        "batch_serial_number": {
+          "displayName": "Batch Or Serial Number"
+        },
+        "bin_entry": {
+          "displayName": "Bin Location Internal ID"
+        },
+        "bin_code": {
+          "displayName": "Bin Location Code"
+        },
+        "warehouse_code": {
+          "displayName": "Bin Location Warehouse"
+        },
+        "message_location_code": {
+          "displayName": "Inventory Message Location Code"
+        },
+        "message_location_type": {
+          "displayName": "Inventory Message Location Type"
+        },
+        "raw_bin_quantity": {
+          "displayName": "Raw Bin Transaction Quantity"
+        },
+        "movement_direction": {
+          "displayName": "Movement Direction"
+        }
+      }
+    },
+    "inventory_bin_current_balance": {
+      "displayName": "Item Bin Current Inventory",
+      "description": "Current total item inventory by bin: one row is OIBQ.AbsEntry, with item-plus-bin unique. Include the item-level totals for batch/serial-managed items; do not add their batch/serial bin components again. Zero and negative balances remain. Warehouses without bin management are outside this table. There is no historical date dimension, so it cannot answer stock at a past point in time. The unit is the item's current inventory unit and must not replace historical transaction units.",
+      "columns": {
+        "balance_entry": {
+          "displayName": "Balance Record Internal ID"
+        },
+        "item_code": {
+          "displayName": "Item Code"
+        },
+        "item_name": {
+          "displayName": "Current Item Name"
+        },
+        "warehouse_code": {
+          "displayName": "Warehouse Code"
+        },
+        "bin_entry": {
+          "displayName": "Bin Location Internal ID"
+        },
+        "bin_code": {
+          "displayName": "Bin Location Code"
+        },
+        "on_hand_quantity": {
+          "displayName": "Current Bin On-Hand Quantity"
+        },
+        "current_inventory_unit": {
+          "displayName": "Current Item Inventory Unit"
+        }
+      }
+    },
+    "inventory_batch_serial_bin_current_balance": {
+      "displayName": "Batch/Serial Bin Current Inventory",
+      "description": "Read batch and serial balances separately by management type and combine them with UNION ALL. The row key is management_type+balance_entry; the two sets of AbsEntry may overlap. Current batch/serial-by-bin components must not be added to OIBQ item totals. There is no historical cutoff dimension and this is not a movement ledger. Preserve zero and negative values and facts with unmatched master data. Displayed batch numbers are not guaranteed unique; filter with item and management type. Interpret quantity by item and current inventory unit, read from current OITM.InvntryUom. This does not identify a historical unit, and current active/inactive settings do not remove balances.",
+      "columns": {
+        "balance_entry": {
+          "displayName": "Balance Record Internal ID"
+        },
+        "management_type": {
+          "displayName": "Batch Or Serial Management Type"
+        },
+        "item_code": {
+          "displayName": "Item Code"
+        },
+        "master_entry": {
+          "displayName": "Batch Or Serial Master Record ID"
+        },
+        "batch_serial_number": {
+          "displayName": "Batch Or Serial Number"
+        },
+        "warehouse_code": {
+          "displayName": "Warehouse Code"
+        },
+        "bin_entry": {
+          "displayName": "Bin Location Internal ID"
+        },
+        "bin_code": {
+          "displayName": "Bin Location Code"
+        },
+        "on_hand_quantity": {
+          "displayName": "Current On-Hand Quantity"
+        },
+        "current_inventory_unit": {
+          "displayName": "Current Item Inventory Unit"
+        }
+      }
+    },
+    "inventory_batch_serial_warehouse_current_balance": {
+      "displayName": "Batch/Serial Warehouse Current Inventory",
+      "description": "Read batch and serial balances separately by management type and combine them with UNION ALL. The row key is management_type+balance_entry; the two sets of AbsEntry may overlap. Current batch/serial-by-warehouse balances include warehouses without bins; warehouse and bin balances are different levels and must not be added together. There is no historical cutoff dimension and this is not a movement ledger. Preserve zero and negative values and facts with unmatched master data. Displayed batch numbers are not guaranteed unique; filter with item and management type. Interpret quantity by item and current inventory unit, read from current OITM.InvntryUom. This does not identify a historical unit, and current active/inactive settings do not remove balances.",
+      "columns": {
+        "balance_entry": {
+          "displayName": "Balance Record Internal ID"
+        },
+        "management_type": {
+          "displayName": "Batch Or Serial Management Type"
+        },
+        "item_code": {
+          "displayName": "Item Code"
+        },
+        "master_entry": {
+          "displayName": "Batch Or Serial Master Record ID"
+        },
+        "batch_serial_number": {
+          "displayName": "Batch Or Serial Number"
+        },
+        "warehouse_code": {
+          "displayName": "Warehouse Code"
+        },
+        "on_hand_quantity": {
+          "displayName": "Current On-Hand Quantity"
+        },
+        "committed_quantity": {
+          "displayName": "Current Committed Quantity"
+        },
+        "current_inventory_unit": {
+          "displayName": "Current Item Inventory Unit"
+        }
+      }
+    },
+    "inventory_warehouse_current_balance": {
+      "displayName": "Item Warehouse Current Inventory",
+      "description": "One row is OITW.ItemCode+WhsCode, with current warehouse totals and projected availability OnHand-IsCommited+OnOrder. This is not immediately pickable stock, batch/serial detail, bin detail or historical inventory. Do not add the batch/serial components at this level again; aggregate quantities by item and inventory unit. Preserve zero and negative values. Master-data names and units are current settings.",
+      "columns": {
+        "item_code": {
+          "displayName": "Item Code"
+        },
+        "item_name": {
+          "displayName": "Current Item Name"
+        },
+        "warehouse_code": {
+          "displayName": "Warehouse Code"
+        },
+        "warehouse_name": {
+          "displayName": "Current Warehouse Name"
+        },
+        "current_inventory_unit": {
+          "displayName": "Current Inventory Unit"
+        },
+        "on_hand_quantity": {
+          "displayName": "Current On-Hand Quantity"
+        },
+        "committed_quantity": {
+          "displayName": "Current Committed Quantity"
+        },
+        "on_order_quantity": {
+          "displayName": "Current On-Order Quantity"
+        },
+        "projected_available_quantity": {
+          "displayName": "Current Projected Available Quantity"
+        },
+        "warehouse_item_locked": {
+          "displayName": "Item Warehouse Locked Flag"
+        }
+      }
+    },
+    "finance_journal_line_detail": {
+      "displayName": "Journal Entry Line Details",
+      "description": "One row is JDT1.TransId+Line_ID; journal headers and account names do not increase the line count. posting_date/document_date/due_date read OJDT header dates; line_posting_date/line_document_date/line_due_date read JDT1 line dates. Use the corresponding fields for header-date or line-date analysis, without filling one from the other. Debit, credit and debit-minus-credit retain stored signs; do not apply ABS or infer profit/loss direction from account names. Project comes from the line; query the source separately for the header project. Obtain LC/SC codes from the same-company OADM, group FC by FCCurrency and do not total different foreign currencies directly. Reconciliation participant rows are not expanded and reversal records are not excluded. This is not a historical aging or cash-flow report.",
+      "columns": {
+        "journal_entry": {
+          "displayName": "Journal Entry Internal ID"
+        },
+        "journal_line": {
+          "displayName": "Original Journal Entry Line"
+        },
+        "journal_no": {
+          "displayName": "Journal Entry Number"
+        },
+        "posting_date": {
+          "displayName": "Journal Header Posting Date"
+        },
+        "document_date": {
+          "displayName": "Journal Header Document Date"
+        },
+        "due_date": {
+          "displayName": "Journal Header Due Date"
+        },
+        "account_code": {
+          "displayName": "Account Internal Code"
+        },
+        "account_display_code": {
+          "displayName": "Account Display Code"
+        },
+        "account_name": {
+          "displayName": "Current Account Name"
+        },
+        "partner_or_account_code": {
+          "displayName": "Business Partner Or Account Short Code"
+        },
+        "line_memo": {
+          "displayName": "Journal Line Memo"
+        },
+        "line_project_code": {
+          "displayName": "Line Project Code"
+        },
+        "debit_lc": {
+          "displayName": "Debit Amount (LC)"
+        },
+        "credit_lc": {
+          "displayName": "Credit Amount (LC)"
+        },
+        "net_debit_lc": {
+          "displayName": "Net Debit Less Credit (LC)"
+        },
+        "debit_fc": {
+          "displayName": "Debit Amount (FC)"
+        },
+        "credit_fc": {
+          "displayName": "Credit Amount (FC)"
+        },
+        "foreign_currency": {
+          "displayName": "Line Foreign Currency Code"
+        },
+        "debit_sc": {
+          "displayName": "Debit Amount (SC)"
+        },
+        "credit_sc": {
+          "displayName": "Credit Amount (SC)"
+        },
+        "transaction_type": {
+          "displayName": "Source Transaction Type"
+        },
+        "line_posting_date": {
+          "displayName": "Journal Line Posting Date"
+        },
+        "line_document_date": {
+          "displayName": "Journal Line Document Date"
+        },
+        "line_due_date": {
+          "displayName": "Journal Line Due Date"
+        }
+      }
+    }
+  }
+}
