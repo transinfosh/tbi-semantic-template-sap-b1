@@ -58,7 +58,7 @@
         "description": "区别于PriceCurr等价格币种。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OILM.html"
       },
-      "type": "VARCHAR(3)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "单据动作类型",
@@ -118,7 +118,7 @@
         "description": "库存影响数量字段，不默认与单据数量同义。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OILM.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "物料编码",
@@ -130,7 +130,7 @@
         "description": "关联OITM。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OILM.html"
       },
-      "type": "VARCHAR(50)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "位置仓库代码",
@@ -142,7 +142,7 @@
         "description": "需结合LocType与交易上下文确认仓库范围。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OILM.html"
       },
-      "type": "VARCHAR(8)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "库存消息标识",
@@ -166,7 +166,7 @@
         "description": "日志内单据数量，与EffectQty分别解释。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OILM.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "批次序列类型",
@@ -202,7 +202,7 @@
         "description": "日志外币库存价值字段。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OILM.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "库存本币总额",
@@ -214,7 +214,7 @@
         "description": "日志本币库存价值字段；不能未经对账将所有日志求和当过账金额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OILM.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "库存系统币总额",
@@ -226,7 +226,7 @@
         "description": "日志系统币库存价值字段。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OILM.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "交易类型",

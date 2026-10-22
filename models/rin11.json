@@ -10,7 +10,7 @@
         "description": "抵扣明细已应用含税金额。 币种取同一公司库 OADM.MainCurncy。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "已应用税额（本币）",
@@ -22,7 +22,7 @@
         "description": "抵扣明细的已应用税额，区别于基础税额。 币种取同一公司库 OADM.MainCurncy。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "预付款内部键",
@@ -46,7 +46,7 @@
         "description": "抵扣明细基础含税金额。 币种取同一公司库 OADM.MainCurncy。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "预付款对象类型",
@@ -70,7 +70,7 @@
         "description": "抵扣明细的基础税额。 币种取同一公司库 OADM.MainCurncy。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "所属单据内部键",
@@ -94,7 +94,7 @@
         "description": "当前抵扣记录的含税金额；须区分原始、已应用与净额。 币种取同一公司库 OADM.MainCurncy。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "含税金额（外币）",
@@ -106,7 +106,7 @@
         "description": "当前抵扣记录的外币含税金额。 币种须结合所属单据与来源预付款单据核实；跨币抵扣的币种归属仍待确认，未确认前不与其他币种金额直接合计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "含税金额（系统币）",
@@ -118,7 +118,7 @@
         "description": "当前抵扣记录的系统币含税金额。 币种取同一公司库 OADM.SysCurrncy。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "含税行标志",
@@ -130,7 +130,7 @@
         "description": "Y=含税行，N=净额行；计算时须保留此口径。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
-      "type": "VARCHAR(1)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "抵扣记录行号",
@@ -166,7 +166,7 @@
         "description": "D=单据行，R=币种舍入，H=预付款单据舍入；汇总需保留舍入类型。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
-      "type": "VARCHAR(1)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "当前单据类型",
@@ -178,7 +178,7 @@
         "description": "本明细所属当前发票或贷项的对象类型。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "已应用含税额（外币）",
@@ -190,7 +190,7 @@
         "description": "本抵扣记录保存的已应用含税额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。具体外币代码须结合所属单据、来源预付款及跨币抵扣核实；本轮未确认统一币种来源，不按相邻列或物料行 Currency 推定，不跨币种合计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "已应用含税额（系统币）",
@@ -202,7 +202,7 @@
         "description": "本抵扣记录保存的已应用含税额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。币种取同一公司库 OADM.SysCurrncy。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "已应用税额（外币）",
@@ -214,7 +214,7 @@
         "description": "本抵扣记录保存的已应用税额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。具体外币代码须结合所属单据、来源预付款及跨币抵扣核实；本轮未确认统一币种来源，不按相邻列或物料行 Currency 推定，不跨币种合计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "已应用税额（系统币）",
@@ -226,7 +226,7 @@
         "description": "本抵扣记录保存的已应用税额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。币种取同一公司库 OADM.SysCurrncy。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "基础含税额（外币）",
@@ -238,7 +238,7 @@
         "description": "本抵扣记录保存的基础含税额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。具体外币代码须结合所属单据、来源预付款及跨币抵扣核实；本轮未确认统一币种来源，不按相邻列或物料行 Currency 推定，不跨币种合计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "基础含税额（系统币）",
@@ -250,7 +250,7 @@
         "description": "本抵扣记录保存的基础含税额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。币种取同一公司库 OADM.SysCurrncy。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "基础税额（外币）",
@@ -262,7 +262,7 @@
         "description": "本抵扣记录保存的基础税额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。具体外币代码须结合所属单据、来源预付款及跨币抵扣核实；本轮未确认统一币种来源，不按相邻列或物料行 Currency 推定，不跨币种合计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "基础税额（系统币）",
@@ -274,7 +274,7 @@
         "description": "本抵扣记录保存的基础税额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。币种取同一公司库 OADM.SysCurrncy。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "抵扣明细净额（本币）",
@@ -286,7 +286,7 @@
         "description": "本抵扣记录保存的抵扣明细净额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。币种取同一公司库 OADM.MainCurncy。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "抵扣明细净额（外币）",
@@ -298,7 +298,7 @@
         "description": "本抵扣记录保存的抵扣明细净额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。具体外币代码须结合所属单据、来源预付款及跨币抵扣核实；本轮未确认统一币种来源，不按相邻列或物料行 Currency 推定，不跨币种合计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "抵扣明细净额（系统币）",
@@ -310,7 +310,7 @@
         "description": "本抵扣记录保存的抵扣明细净额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。币种取同一公司库 OADM.SysCurrncy。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "抵扣明细税额（本币）",
@@ -322,7 +322,7 @@
         "description": "本抵扣记录保存的抵扣明细税额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。币种取同一公司库 OADM.MainCurncy。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "抵扣明细税额（外币）",
@@ -334,7 +334,7 @@
         "description": "本抵扣记录保存的抵扣明细税额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。具体外币代码须结合所属单据、来源预付款及跨币抵扣核实；本轮未确认统一币种来源，不按相邻列或物料行 Currency 推定，不跨币种合计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "抵扣明细税额（系统币）",
@@ -346,7 +346,7 @@
         "description": "本抵扣记录保存的抵扣明细税额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。币种取同一公司库 OADM.SysCurrncy。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "已应用净额（本币）",
@@ -358,7 +358,7 @@
         "description": "本抵扣记录保存的已应用净额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。币种取同一公司库 OADM.MainCurncy。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "已应用净额（外币）",
@@ -370,7 +370,7 @@
         "description": "本抵扣记录保存的已应用净额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。具体外币代码须结合所属单据、来源预付款及跨币抵扣核实；本轮未确认统一币种来源，不按相邻列或物料行 Currency 推定，不跨币种合计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "已应用净额（系统币）",
@@ -382,7 +382,7 @@
         "description": "本抵扣记录保存的已应用净额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。币种取同一公司库 OADM.SysCurrncy。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "基础净额（本币）",
@@ -394,7 +394,7 @@
         "description": "本抵扣记录保存的基础净额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。币种取同一公司库 OADM.MainCurncy。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "基础净额（外币）",
@@ -406,7 +406,7 @@
         "description": "本抵扣记录保存的基础净额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。具体外币代码须结合所属单据、来源预付款及跨币抵扣核实；本轮未确认统一币种来源，不按相邻列或物料行 Currency 推定，不跨币种合计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "基础净额（系统币）",
@@ -418,7 +418,7 @@
         "description": "本抵扣记录保存的基础净额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。币种取同一公司库 OADM.SysCurrncy。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     }
   ],
   "displayName": "应收贷项预付款抵扣明细",

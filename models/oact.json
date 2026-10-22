@@ -9,7 +9,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "应计类型",
@@ -20,7 +20,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "科目内部代码",
@@ -32,7 +32,7 @@
         "description": "科目内部主键，供JDT1.Account及业务单据AcctCode等关联；与分段显示码FormatCode分开，不能用名称替代键。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "科目名称",
@@ -44,7 +44,7 @@
         "description": "当前科目主数据名称，按AcctCode关联后用于展示；不是连接键，不保证等于历史过账当时的名称。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(200)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "科目结构级别",
@@ -55,7 +55,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(2)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "科目币种",
@@ -67,7 +67,7 @@
         "description": "当前科目币种配置；##表示多币种配置，不是真实货币代码。它不能无条件覆盖历史JDT1.FCCurrency或给行外币发生额赋单位。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(3)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "科目标识符",
@@ -78,7 +78,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(210)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "科目类型",
@@ -90,7 +90,7 @@
         "description": "I收入、E费用、N其他的科目分类；不是完整资产负债表或损益表映射，也不由RealAcct替代。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "预付款",
@@ -101,7 +101,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "余额方向",
@@ -112,7 +112,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(4)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "余额已结转",
@@ -123,7 +123,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "禁止手工过账",
@@ -134,7 +134,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "银行对账计数器",
@@ -168,7 +168,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(200)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "预算",
@@ -179,7 +179,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "资本科目",
@@ -190,7 +190,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "类别",
@@ -212,7 +212,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "期末结转科目",
@@ -223,7 +223,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "计数器",
@@ -258,7 +258,7 @@
         "description": "当前余额快照，不能直接给出历史期末余额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "DATEV科目",
@@ -269,7 +269,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(8)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "DATEV自动科目",
@@ -280,7 +280,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "首次数据录入",
@@ -291,7 +291,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "备注",
@@ -302,7 +302,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(254)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "默认税务代码",
@@ -313,7 +313,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(8)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "默认增值税组",
@@ -324,7 +324,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(8)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "维度1相关",
@@ -335,7 +335,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "维度2相关",
@@ -346,7 +346,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "维度3相关",
@@ -357,7 +357,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "维度4相关",
@@ -368,7 +368,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "维度5相关",
@@ -379,7 +379,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "期初余额字段",
@@ -391,7 +391,7 @@
         "description": "官方描述Opening Balance；不得推定为任意选定期间期初。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "汇率差额",
@@ -402,7 +402,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "免税收入",
@@ -413,7 +413,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "数据导出代码",
@@ -424,7 +424,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(10)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "附加金额",
@@ -435,7 +435,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "外部对账编号",
@@ -458,7 +458,7 @@
         "description": "指向上级AcctCode；顶级可能无父节点。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "当前科目币余额",
@@ -470,7 +470,7 @@
         "description": "科目币种余额快照。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "现金科目",
@@ -481,7 +481,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "主科目",
@@ -492,7 +492,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "格式化科目代码",
@@ -504,7 +504,7 @@
         "description": "分段格式化展示代码；查询显示码后仍须解析AcctCode做关联，不把FormatCode当JDT1.Account或未经证实的唯一键。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(210)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "自由标记2",
@@ -515,7 +515,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "外文名称",
@@ -526,7 +526,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(200)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "是否冻结",
@@ -538,7 +538,7 @@
         "description": "是否冻结该会计科目。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "冻结备注",
@@ -549,7 +549,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(30)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "科目停用标记",
@@ -561,7 +561,7 @@
         "description": "停用状态与可过账属性分别解释。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "冻结起始日",
@@ -606,7 +606,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(8)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "组内序号",
@@ -639,7 +639,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "上次重估日期",
@@ -674,7 +674,7 @@
         "description": "Y/N；BP行仍须按业务伙伴语义识别。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "本币对账",
@@ -685,7 +685,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "计量单位",
@@ -696,7 +696,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(10)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "本币对账计数器",
@@ -718,7 +718,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "分摊系数代码",
@@ -729,7 +729,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(8)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "分摊系数代码2",
@@ -740,7 +740,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(8)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "分摊系数代码3",
@@ -751,7 +751,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(8)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "分摊系数代码4",
@@ -762,7 +762,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(8)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "分摊系数代码5",
@@ -773,7 +773,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(8)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "分摊类型",
@@ -784,7 +784,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "PCN874报表相关",
@@ -795,7 +795,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "B1i集成信息",
@@ -806,7 +806,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(2)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "可过账科目标记",
@@ -818,7 +818,7 @@
         "description": "Y为可过账科目，N为标题科目；不是ValidFor启用或FrozenFor停用状态的替代。历史分录不因科目当前状态被默认删除。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "存在上年科目",
@@ -829,7 +829,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "项目相关",
@@ -840,7 +840,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "项目代码",
@@ -852,7 +852,7 @@
         "description": "科目当前主数据的项目配置；不是JDT1的历史行项目，不能据此回填或覆盖分录行项目。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "保密科目",
@@ -863,7 +863,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "科目用途代码",
@@ -874,7 +874,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(2)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "汇率差额科目",
@@ -885,7 +885,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "折算差额科目",
@@ -896,7 +896,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "指数化科目标记",
@@ -908,7 +908,7 @@
         "description": "官方Indexed Account的Y/N指数化标记；不能据此判定资产、负债、权益或损益科目类别。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "参考科目代码",
@@ -919,7 +919,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(30)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "重估科目",
@@ -930,7 +930,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "重估协调",
@@ -941,7 +941,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "SC调整",
@@ -952,7 +952,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "段0",
@@ -963,7 +963,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "段1",
@@ -974,7 +974,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "段2",
@@ -985,7 +985,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "段3",
@@ -996,7 +996,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "段4",
@@ -1007,7 +1007,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "段5",
@@ -1018,7 +1018,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "段6",
@@ -1029,7 +1029,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "段7",
@@ -1040,7 +1040,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "段8",
@@ -1051,7 +1051,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "段9",
@@ -1062,7 +1062,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "快照ID",
@@ -1084,7 +1084,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(60)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "系统对账编号",
@@ -1107,7 +1107,7 @@
         "description": "当前系统币余额快照。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "应税收入",
@@ -1118,7 +1118,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "默认税金过账科目",
@@ -1129,7 +1129,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "交易代码",
@@ -1140,7 +1140,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(4)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "年度结转",
@@ -1151,7 +1151,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "更新日期",
@@ -1174,7 +1174,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(30)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "科目启用标记",
@@ -1186,7 +1186,7 @@
         "description": "启用状态，仍需有效期等配置。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "生效起始日",
@@ -1219,7 +1219,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "增值税注册号",
@@ -1230,7 +1230,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OACT.html"
       },
-      "type": "VARCHAR(32)"
+      "type": "VARCHAR"
     }
   ],
   "displayName": "总账科目主数据",

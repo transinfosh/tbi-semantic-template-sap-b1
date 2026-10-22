@@ -20,7 +20,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OOCR.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "所属维度",
@@ -42,7 +42,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OOCR.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "锁定",
@@ -53,7 +53,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OOCR.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "日志实例",
@@ -75,7 +75,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OOCR.html"
       },
-      "type": "VARCHAR(8)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "维度名称",
@@ -86,7 +86,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OOCR.html"
       },
-      "type": "VARCHAR(30)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "维度总额",
@@ -97,7 +97,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OOCR.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "修改日期",

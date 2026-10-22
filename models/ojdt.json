@@ -10,7 +10,7 @@
         "description": "Y/N；保留期末调整分析边界。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "自动反转标记",
@@ -22,7 +22,7 @@
         "description": "Y/N自动反转设置；DI说明在StornoDate创建反向交易，不等于已经完成冲销。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "来源单据显示号",
@@ -34,7 +34,7 @@
         "description": "展示追溯用；不能代替来源内部键。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
       },
-      "type": "VARCHAR(11)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "创建日期",
@@ -82,7 +82,7 @@
         "description": "分录表头外币总额；具体币种与多币分录适用性须结合该分录核实，不无条件给每条JDT1行赋同一外币；保持头粒度。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "过账期间标识",
@@ -106,7 +106,7 @@
         "description": "会计凭证的参考标识或指示器。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
       },
-      "type": "VARCHAR(2)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "分录本币总额",
@@ -118,7 +118,7 @@
         "description": "分录表头本币总额，币种来自同公司OADM.MainCurncy；保持头粒度，不在连接JDT1后重复求和，也不与行借贷发生额混加。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "分录摘要",
@@ -130,7 +130,7 @@
         "description": "文字说明，不能作为稳定关联键。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
       },
-      "type": "VARCHAR(254)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "分录显示编号",
@@ -154,7 +154,7 @@
         "description": "分录表头项目代码，连接OPRJ.PrjCode；与JDT1.Project分别保存。修改头项目不自动修改行项目，不能用头项目回填行项目。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "第一参考文本",
@@ -166,7 +166,7 @@
         "description": "分录头第一参考文本；值受参考字段映射配置影响，不固定解释为发票号、订单号或分期号，不作稳定关联键。数据库定义200字符，旧DI属性长度文案不作为本模型截断规则。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
       },
-      "type": "VARCHAR(200)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "第二参考文本",
@@ -178,7 +178,7 @@
         "description": "分录头第二参考文本；值受参考字段映射配置影响，不固定解释为发票号、订单号或分期号，不作稳定关联键。数据库定义200字符，旧DI属性长度文案不作为本模型截断规则。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
       },
-      "type": "VARCHAR(200)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "第三参考文本",
@@ -190,7 +190,7 @@
         "description": "分录头第三参考文本；值受参考字段映射配置影响，不固定解释为发票号、订单号或分期号，不作稳定关联键。数据库定义200字符，旧DI属性长度文案不作为本模型截断规则。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
       },
-      "type": "VARCHAR(200)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "过账日期",
@@ -250,7 +250,7 @@
         "description": "分录表头系统币总额，币种来自同公司OADM.SysCurrncy；保持头粒度，不在头行连接后重复累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "单据日期",
@@ -274,7 +274,7 @@
         "description": "用户定义分类代码；不同于来源对象类型TransType。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
       },
-      "type": "VARCHAR(4)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "交易币种",
@@ -286,7 +286,7 @@
         "description": "分录头交易币种标识；不能无条件替代JDT1.FCCurrency的行外币，也不能从它推定整张分录只有一种外币。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
       },
-      "type": "VARCHAR(3)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "分录内部编号",
@@ -310,7 +310,7 @@
         "description": "字符串来源对象类型，例如13应收发票、18应付发票、24收款、46付款、30日记账分录。30不证明由用户手工录入，API也可创建；结合CreatedBy追溯来源。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OJDT.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "更新日期",

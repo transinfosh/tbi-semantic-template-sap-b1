@@ -10,7 +10,7 @@
         "description": "Y/N当前启用标记；不在历史分录项目关系中默认过滤Active=Y，也不据当前停用删除历史事实。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRJ.html"
       },
-      "type": "VARCHAR(1)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "记录来源",
@@ -22,7 +22,7 @@
         "description": "项目主数据创建或更新渠道。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRJ.html"
       },
-      "type": "VARCHAR(1)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "锁定标记",
@@ -34,7 +34,7 @@
         "description": "Y/N当前锁定标记，与启用和有效期分开；不作为历史项目关系的隐含过滤。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRJ.html"
       },
-      "type": "VARCHAR(1)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "日志实例号",
@@ -58,7 +58,7 @@
         "description": "项目代码主键，供OJDT.Project或JDT1.Project分别按所属粒度关联；不按项目名称、前缀或相似编号建立实体等价关系。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRJ.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "项目名称",
@@ -70,7 +70,7 @@
         "description": "当前项目主数据名称，用于展示；名称不作为唯一键，同名不同代码仍为不同项目，不保证为历史过账当时名称。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRJ.html"
       },
-      "type": "VARCHAR(100)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "更新日期",

@@ -10,7 +10,7 @@
         "description": "启用库位时，仓库级数量不等于单库位数量。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWHS.html"
       },
-      "type": "VARCHAR(1)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "街区",
@@ -21,7 +21,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWHS.html"
       },
-      "type": "VARCHAR(100)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "楼宇/楼层/房间",
@@ -44,7 +44,7 @@
         "description": "仓库地址城市。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWHS.html"
       },
-      "type": "VARCHAR(100)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "国家地区编码",
@@ -56,7 +56,7 @@
         "description": "仓库地址国家地区。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWHS.html"
       },
-      "type": "VARCHAR(3)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "县区",
@@ -67,7 +67,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWHS.html"
       },
-      "type": "VARCHAR(100)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "是否直运仓库",
@@ -79,7 +79,7 @@
         "description": "直运仓库与普通存货仓库口径不同。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWHS.html"
       },
-      "type": "VARCHAR(1)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "是否停用",
@@ -91,7 +91,7 @@
         "description": "仓库停用标志。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWHS.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "是否锁定",
@@ -103,7 +103,7 @@
         "description": "仓库锁定标志。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWHS.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "省州",
@@ -114,7 +114,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWHS.html"
       },
-      "type": "VARCHAR(3)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "街道",
@@ -125,7 +125,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWHS.html"
       },
-      "type": "VARCHAR(100)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "仓库编码",
@@ -137,7 +137,7 @@
         "description": "仓库唯一键。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWHS.html"
       },
-      "type": "VARCHAR(8)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "仓库名称",
@@ -149,7 +149,7 @@
         "description": "业务显示名称。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWHS.html"
       },
-      "type": "VARCHAR(100)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "邮政编码",
@@ -160,7 +160,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWHS.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     }
   ],
   "displayName": "仓库主数据",

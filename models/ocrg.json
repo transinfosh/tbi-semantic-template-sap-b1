@@ -9,7 +9,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRG.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "分组编号",
@@ -31,7 +31,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRG.html"
       },
-      "type": "VARCHAR(100)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "分组类型",
@@ -42,7 +42,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRG.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "是否锁定",
@@ -53,7 +53,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRG.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "价格清单",

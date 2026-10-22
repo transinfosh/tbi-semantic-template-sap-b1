@@ -10,7 +10,7 @@
         "description": "Y/N；历史分录不得仅因当前停用而被丢弃。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRC.html"
       },
-      "type": "VARCHAR(1)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "余额字段",
@@ -22,7 +22,7 @@
         "description": "官方仅说明Balance；币种、期间和累计口径未明确，不直接作为利润指标。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRC.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "成本中心类型代码",
@@ -34,7 +34,7 @@
         "description": "成本中心类型标识。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRC.html"
       },
-      "type": "VARCHAR(8)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "所属成本维度",
@@ -58,7 +58,7 @@
         "description": "分组信息，不是成本中心主键。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRC.html"
       },
-      "type": "VARCHAR(4)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "锁定标记",
@@ -70,7 +70,7 @@
         "description": "Y/N；与启用及有效期分别解释。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRC.html"
       },
-      "type": "VARCHAR(1)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "成本中心代码",
@@ -82,7 +82,7 @@
         "description": "全表主键；不得伪造(PrcCode,DimCode)为官方复合主键。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRC.html"
       },
-      "type": "VARCHAR(8)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "成本中心名称",
@@ -94,7 +94,7 @@
         "description": "当前显示名称。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRC.html"
       },
-      "type": "VARCHAR(30)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "更新日期",

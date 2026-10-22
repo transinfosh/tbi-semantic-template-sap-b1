@@ -20,7 +20,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
-      "type": "VARCHAR(50)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "属性10内部编号",
@@ -42,7 +42,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "属性1内部编号",
@@ -64,7 +64,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "属性2内部编号",
@@ -86,7 +86,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "属性3内部编号",
@@ -108,7 +108,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "属性4内部编号",
@@ -130,7 +130,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "属性5内部编号",
@@ -152,7 +152,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "属性6内部编号",
@@ -174,7 +174,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "属性7内部编号",
@@ -196,7 +196,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "属性8内部编号",
@@ -218,7 +218,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "属性9内部编号",
@@ -240,7 +240,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "条形码",
@@ -251,7 +251,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
-      "type": "VARCHAR(100)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "库位编码",
@@ -262,7 +262,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
-      "type": "VARCHAR(228)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "创建日期",
@@ -284,7 +284,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "库位描述",
@@ -295,7 +295,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
-      "type": "VARCHAR(50)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "停用",
@@ -306,7 +306,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "实例",
@@ -339,7 +339,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "最大重量1",
@@ -350,7 +350,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "最大重量2",
@@ -361,7 +361,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "最低库存量",
@@ -372,7 +372,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "排除出库自动分配",
@@ -383,7 +383,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "收货库位",
@@ -394,7 +394,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "限制更新日期",
@@ -416,7 +416,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
-      "type": "VARCHAR(254)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "限制交易类型",
@@ -449,7 +449,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
-      "type": "VARCHAR(50)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "层级2内部编号",
@@ -471,7 +471,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
-      "type": "VARCHAR(50)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "层级3内部编号",
@@ -493,7 +493,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
-      "type": "VARCHAR(50)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "层级4内部编号",
@@ -515,7 +515,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
-      "type": "VARCHAR(50)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "批次限制",
@@ -526,7 +526,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "指定物料编码",
@@ -537,7 +537,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
-      "type": "VARCHAR(50)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "指定物料组编码",
@@ -559,7 +559,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "已结转",
@@ -570,7 +570,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "更新日期",
@@ -614,7 +614,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBIN.html"
       },
-      "type": "VARCHAR(8)"
+      "type": "VARCHAR"
     }
   ],
   "displayName": "仓库库位",

@@ -17,6 +17,14 @@ MODEL_KEYS = {"name", "displayName", "columns", "primaryKey", "uniqueKeys", "pro
 COLUMN_KEYS = {"name", "displayName", "type", "notNull", "isHidden", "isCalculated", "properties"}
 RELATIONSHIP_KEYS = {"name", "displayName", "models", "joinType", "condition", "properties"}
 PROPERTY_KEYS = {"description", "sap_b1_source", "semanticUnitKind", "semanticUnitScope"}
+SEMANTIC_TYPES = frozenset(
+    [
+        "VARCHAR", "NVARCHAR", "CHAR", "NCHAR", "TEXT", "BOOLEAN", "SMALLINT", "TINYINT", "INTEGER",
+        "BIGINT", "DECIMAL", "NUMERIC", "REAL", "FLOAT", "DOUBLE", "DATE", "TIME", "DATETIME",
+        "TIMESTAMP", "TIMESTAMPTZ", "BINARY", "VARBINARY", "JSON", "JSONB", "UUID", "UNKNOWN",
+    ]
+)
+SOURCE_TYPE = re.compile(r"([A-Z][A-Z0-9_]*)(?:\((?:\d+(?:,\d+)?|MAX)\))?\Z")
 
 
 def read_json(path: Path) -> dict:
@@ -162,6 +170,15 @@ def validate(mdl: dict, reference: dict) -> None:
                 raise ValueError(f"Customer or calculated field in {name}.{field}")
             if set(column) - COLUMN_KEYS or field not in documented["columns"]:
                 raise ValueError(f"Unsupported or undocumented column in {name}.{field}")
+            if not isinstance(column.get("type"), str) or column["type"] not in SEMANTIC_TYPES:
+                raise ValueError(f"Expected a canonical base semantic type in {name}.{field}")
+            source_types = documented.get("source_types")
+            source_type = source_types.get(field) if isinstance(source_types, dict) else None
+            match = SOURCE_TYPE.fullmatch(source_type) if isinstance(source_type, str) else None
+            if not match:
+                raise ValueError(f"Missing or invalid source type record in {name}.{field}")
+            if match[1] != column["type"]:
+                raise ValueError(f"Semantic type differs from source type record in {name}.{field}")
             _properties(column.get("properties", {}), f"{name}.{field}")
         primary = model["primaryKey"]
         primary = [primary] if isinstance(primary, str) else primary

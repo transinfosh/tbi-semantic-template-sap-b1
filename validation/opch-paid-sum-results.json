@@ -1,0 +1,54 @@
+{
+  "version": "0.8.2",
+  "verified_at": "2026-10-22",
+  "baseline": {
+    "local_head": "2957aef295670a89ad45a7ae51cc744c49ac09cd",
+    "fetched_origin_main": "2957aef295670a89ad45a7ae51cc744c49ac09cd",
+    "clean_before_changes": true,
+    "scope": "local_candidate_not_committed_or_pushed"
+  },
+  "assembled_mdl_sha256": "6d2654e1305c9b67cd69f359ca45ac30b537ef3a168cd0ef265987a67afef636",
+  "counts": {
+    "models": 101,
+    "columns": 3107,
+    "relationships": 372,
+    "views": 0,
+    "cubes": 0
+  },
+  "build": {
+    "command": "python3 build.py --check",
+    "passed": true
+  },
+  "python_unittest": {
+    "command": "python3 -m unittest discover -s tests -q",
+    "passed": 98,
+    "failed": 0,
+    "paid_sum_focused_tests": 5
+  },
+  "ruff": {
+    "command": "ruff check tests/test_purchasing_paid_sum.py --config 'lint.ignore=[\"E402\"]' --config 'line-length=110'",
+    "passed": true
+  },
+  "compatibility_review": {
+    "comparison": "git HEAD to local candidate",
+    "existing_model_fields_except_three_descriptions_unchanged": true,
+    "existing_keys_relationships_and_other_models_unchanged": true,
+    "lead_time_unchanged": true
+  },
+  "audit_sql": {
+    "file": "validation/opch-paid-sum-audit.sql",
+    "engine": "SQLite in-memory fixture with dbo schema and read-only authorizer",
+    "synthetic_rows": 9,
+    "status": "passed",
+    "sql_server_execution": "not_performed",
+    "sap_update_behavior_simulated": false
+  },
+  "target_database_queried": false,
+  "workspace_import_performed": false,
+  "production_workspace_modified": false,
+  "production_published": false,
+  "paid_sum_unsuffixed_currency": "assumed_local_currency_pending_verification",
+  "sap_update_and_settlement_boundaries": "pending_event_level_verification",
+  "business_amount_acceptance": "pending_sap_payables_and_gl_reconciliation",
+  "general_open_payables_formula": "not_defined"
+}

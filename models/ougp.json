@@ -34,7 +34,7 @@
         "description": "单位组锁定标志。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OUGP.html"
       },
-      "type": "VARCHAR(1)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "日志版本号",
@@ -58,7 +58,7 @@
         "description": "单位组业务编码。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OUGP.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "单位组内部标识",
@@ -82,7 +82,7 @@
         "description": "单位组显示名称。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OUGP.html"
       },
-      "type": "VARCHAR(100)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "更新日期",

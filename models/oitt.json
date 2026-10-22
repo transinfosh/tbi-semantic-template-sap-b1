@@ -10,7 +10,7 @@
         "description": "BOM主键，关联OITM.ItemCode。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITT.html"
       },
-      "type": "VARCHAR(50)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "创建日期",
@@ -46,7 +46,7 @@
         "description": "BOM项目配置。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITT.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "BOM父项基准数量",
@@ -58,7 +58,7 @@
         "description": "官方字段拼写为Qauntity，勿改成Quantity；组件用量需结合此基数解释。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITT.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "成品仓库编码",
@@ -70,7 +70,7 @@
         "description": "BOM成品默认仓库。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITT.html"
       },
-      "type": "VARCHAR(8)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "BOM类型",
@@ -82,7 +82,7 @@
         "description": "A装配、S销售、P生产、T模板。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "更新日期",
@@ -105,7 +105,7 @@
         "description": "BOM自身保存的产品描述；当前BOM描述，不代替历史工单产品名称。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OITT.html"
       },
-      "type": "VARCHAR(200)",
+      "type": "VARCHAR",
       "displayName": "BOM产品名称"
     },
     {
@@ -117,7 +117,7 @@
         "description": "所属对象保存的第1维分配规则；规则不同于成本中心，不据当前规则分配明细追算历史实际成本。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OITT.html"
       },
-      "type": "VARCHAR(8)",
+      "type": "VARCHAR",
       "displayName": "第1维分配规则编码"
     },
     {
@@ -129,7 +129,7 @@
         "description": "所属对象保存的第2维分配规则；规则不同于成本中心，不据当前规则分配明细追算历史实际成本。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OITT.html"
       },
-      "type": "VARCHAR(8)",
+      "type": "VARCHAR",
       "displayName": "第2维分配规则编码"
     },
     {
@@ -141,7 +141,7 @@
         "description": "所属对象保存的第3维分配规则；规则不同于成本中心，不据当前规则分配明细追算历史实际成本。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OITT.html"
       },
-      "type": "VARCHAR(8)",
+      "type": "VARCHAR",
       "displayName": "第3维分配规则编码"
     },
     {
@@ -153,7 +153,7 @@
         "description": "所属对象保存的第4维分配规则；规则不同于成本中心，不据当前规则分配明细追算历史实际成本。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OITT.html"
       },
-      "type": "VARCHAR(8)",
+      "type": "VARCHAR",
       "displayName": "第4维分配规则编码"
     },
     {
@@ -165,7 +165,7 @@
         "description": "所属对象保存的第5维分配规则；规则不同于成本中心，不据当前规则分配明细追算历史实际成本。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OITT.html"
       },
-      "type": "VARCHAR(8)",
+      "type": "VARCHAR",
       "displayName": "第5维分配规则编码"
     }
   ],

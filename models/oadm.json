@@ -10,7 +10,7 @@
         "description": "官方与真实源主键；不得假定跨公司全局唯一。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OADM.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "公司名称",
@@ -22,7 +22,7 @@
         "description": "当前公司配置名称。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OADM.html"
       },
-      "type": "VARCHAR(100)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "永续盘存管理标记",
@@ -34,7 +34,7 @@
         "description": "Y/N；不能假定所有公司库存业务均采用相同财务过账机制。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OADM.html"
       },
-      "type": "VARCHAR(1)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "国家地区代码",
@@ -46,7 +46,7 @@
         "description": "公司国家或地区，涉及本地化语义。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OADM.html"
       },
-      "type": "VARCHAR(3)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "汇率方向配置",
@@ -58,7 +58,7 @@
         "description": "Y直接汇率、N间接汇率；换算须结合此设置及客户样例，不盲目统一乘Rate。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OADM.html"
       },
-      "type": "VARCHAR(1)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "永续盘存方法配置",
@@ -70,7 +70,7 @@
         "description": "A移动平均、S标准、F先进先出；不覆盖物料级实际估价方法与历史设置。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OADM.html"
       },
-      "type": "VARCHAR(1)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "公司本币",
@@ -82,7 +82,7 @@
         "description": "公司本币代码，是已确认 LC 金额的统一币种来源，无论单据 CurSource 选用哪种来源、DocCur 是否为外币均读取本字段。公司本地账簿币种代码，解释已确认的LC金额。官方永续库存规则以本币计算物料成本，需结合ContInvnt及具体库存业务定义使用，不据此给所有交易价格赋币种。正常账套产生规定业务记录后不能修改本币；非标准迁移或账套合并须另核历史。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OADM.html"
       },
-      "type": "VARCHAR(3)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "汇率显示精度",
@@ -118,7 +118,7 @@
         "description": "公司系统币代码，是已确认 SC 金额的统一币种来源，不随单据 CurSource 或 DocCur 切换。同一公司并行记账的系统币代码，解释已确认的SC金额，包括JDT1.SYSDeb/SYSCred及BalSc类余额、OJDT.SysTotal和销售系统币金额；可能与MainCurncy相同或不同，不代替行外币。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OADM.html"
       },
-      "type": "VARCHAR(3)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "配置更新日期",
@@ -142,7 +142,7 @@
         "description": "Y/N；影响分配规则维度1至5的解释。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OADM.html"
       },
-      "type": "VARCHAR(1)"
+      "type": "VARCHAR"
     }
   ],
   "displayName": "公司级系统配置",

@@ -1,0 +1,65 @@
+{
+  "version": "0.8.3",
+  "verified_at": "2026-10-22",
+  "baseline": "Previous local 0.8.2 candidate including the uncommitted PaidSum changes; Git HEAD 2957aef295670a89ad45a7ae51cc744c49ac09cd.",
+  "basis": "Preserved pre-normalization template type annotations, not freshly verified physical database DDL. Missing original parameters remain unspecified.",
+  "counts": {
+    "models": 101,
+    "columns": 3107,
+    "relationships": 372,
+    "views": 0,
+    "cubes": 0
+  },
+  "public_parameterized_annotations_normalized": 2287,
+  "extension_parameterized_annotations_normalized": 10,
+  "public_source_type_records": 3107,
+  "extension_source_type_records": 23,
+  "tbi_current_type_catalog_matches": true,
+  "tbi_current_normalization_equivalence": true,
+  "all_original_source_type_annotations_preserved": true,
+  "model_and_extension_content_except_type_annotations_unchanged": true,
+  "sql_files_unchanged": 18,
+  "sql_sha256": {
+    "validation/opch-paid-sum-audit.sql": "adb4dbf911a54c4e3e6fa7953b4018f128ab91c5c4e8c19efb0aab0fe0d32992",
+    "validation/production-issue-query.sql": "2b0d5088dc3c9fe542de933d2272ea82a0dc6da9f73ec936d100bc09863fdee6",
+    "validation/workspace-views/sql/finance_journal_line_detail.sql": "1a6020d4cf028fb4e92e8305d84b3fa78be2fa3c975147b9f72f581515f56638",
+    "validation/workspace-views/sql/inventory_batch_serial_bin_current_balance.sql": "46f9a92bad856792e741d1cbf12e7db5b1f56b438e985908cf2c2020f03d5497",
+    "validation/workspace-views/sql/inventory_batch_serial_movements.sql": "290314b67b798552bea877ce5ea38b4734f62e4d0a8ac8a421bd870a08982cbe",
+    "validation/workspace-views/sql/inventory_batch_serial_warehouse_current_balance.sql": "ade7f6580712e72facc04d92eeaaba6f0567f40912c6165656db62a9e9f115ae",
+    "validation/workspace-views/sql/inventory_bin_current_balance.sql": "d2ec4648d5ace856e4cd7683527412abf72f75f29a964eddc9d3a13369a82267",
+    "validation/workspace-views/sql/inventory_bin_movements.sql": "e021ad45aec2c1d4921c3f853a7986abe983240dc35d470964e02fd08b8d64f7",
+    "validation/workspace-views/sql/inventory_warehouse_current_balance.sql": "4a14fd4f662519ecc60cfe6cb7178fa3033193812097df4e39d5d18b65fbbbed",
+    "validation/workspace-views/sql/production_issue_detail.sql": "364e44e1896c7c0604f573d82e98a63a859fd7f6c8f2722b2facc368476fe57a",
+    "validation/workspace-views/sql/production_receipt_detail.sql": "0d4cf1aa72e31e9660391db10ede5d7dbde412705ba2f0c44f83c897ad3ee03b",
+    "validation/workspace-views/sql/purchase_invoice_current_balance.sql": "b6a7fc9a71c6dc4e972e0ce1b264797ab34d3077e0f2ecc1ee6e77873cb755ae",
+    "validation/workspace-views/sql/purchase_invoice_payment_applications.sql": "abc3157489608c2935e91d73f0092750638e0df2b7e6f323b6cbaed794238fb0",
+    "validation/workspace-views/sql/purchase_order_to_payment_trace.sql": "cc6565b8f1d3ee7a09841f8fffe721d8c739169da003614f8cc0bbf02967ea83",
+    "validation/workspace-views/sql/sales_delivery_batch_serial_detail.sql": "1987a2a43f66389bfc54e520a1c0cd57e57598ee47c2528b9d03f92da44f6f5f",
+    "validation/workspace-views/sql/sales_invoice_current_balance.sql": "f46111e17f97022d554d269cbe26b286bca7fa50407817f7cdfba9d51eccd052",
+    "validation/workspace-views/sql/sales_invoice_receipt_applications.sql": "96b2254d933d9bde497c0ffe1850371d3054f07f8e3969e8c2292da88e359b80",
+    "validation/workspace-views/sql/sales_order_to_cash_trace.sql": "57481bd0842d9c16d969425b440ecaa0d1e3470e23bff734f57adb9d0762921b"
+  },
+  "assembled_mdl_sha256": "f9820720d522caadeee9a2fb54a9a6d3cce41008a977759519b74bb2cbb0fb32",
+  "target_database_queried": false,
+  "workspace_import_performed": false,
+  "production_published": false,
+  "real_source_precision_and_business_amount_acceptance": "not_performed",
+  "build": {
+    "command": "python3 build.py --check",
+    "passed": true
+  },
+  "python_unittest": {
+    "command": "python3 -m unittest discover -s tests -q",
+    "passed": 104,
+    "failed": 0,
+    "new_type_tests": 6
+  },
+  "ruff": {
+    "command": "ruff check build.py tests/test_finance.py tests/test_purchasing_paid_sum.py tests/test_template_types.py --config lint.ignore=[E402] --config line-length=110",
+    "passed": true
+  },
+  "diff_check": {
+    "command": "git diff --check",
+    "passed": true
+  }
+}

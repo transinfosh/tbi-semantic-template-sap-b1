@@ -22,7 +22,7 @@
         "description": "不能未经核验当作历史估价余额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "主数据成本字段",
@@ -34,7 +34,7 @@
         "description": "受估价配置影响；不代表某张发料单成本。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "创建日期",
@@ -57,7 +57,7 @@
         "description": "业务显示编号；官方索引不保证单独或与物料组合唯一。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
       },
-      "type": "VARCHAR(36)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "到期日期",
@@ -126,7 +126,7 @@
         "description": "与SysNumber组成系统唯一键。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
       },
-      "type": "VARCHAR(50)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "物料名称",
@@ -137,7 +137,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
       },
-      "type": "VARCHAR(200)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "库存位置",
@@ -148,7 +148,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
       },
-      "type": "VARCHAR(100)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "批次属性2",
@@ -159,7 +159,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
       },
-      "type": "VARCHAR(36)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "制造日期",
@@ -182,7 +182,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
       },
-      "type": "VARCHAR(36)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "备注",
@@ -204,7 +204,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "主数据数量字段",
@@ -216,7 +216,7 @@
         "description": "不具备仓库或历史时点粒度，不能替代仓库批序列库存数量。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "出库数量",
@@ -227,7 +227,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "状态编码",
@@ -239,7 +239,7 @@
         "description": "批次状态：0=已释放，1=不可访问，2=锁定；与序列号状态枚举不同，不代替仓库在手数量。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "合计精度",
@@ -295,7 +295,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTN.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "更新日期",

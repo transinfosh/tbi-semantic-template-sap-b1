@@ -40,7 +40,7 @@
         "description": "与SysNumber及WhsCode组成系统唯一键。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSRQ.html"
       },
-      "type": "VARCHAR(50)",
+      "type": "VARCHAR",
       "displayName": "物料编码"
     },
     {
@@ -64,7 +64,7 @@
         "description": "当前数量所属仓库。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSRQ.html"
       },
-      "type": "VARCHAR(8)",
+      "type": "VARCHAR",
       "displayName": "仓库编码"
     },
     {
@@ -76,7 +76,7 @@
         "description": "当前仓库数量，不按日期直接累加为期间收发。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSRQ.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "当前序列号在手数量"
     },
     {
@@ -88,7 +88,7 @@
         "description": "与实际在手数量分开。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSRQ.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "当前承诺数量"
     },
     {
@@ -100,7 +100,7 @@
         "description": "数量字段不等于完整盘点单据历史。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSRQ.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "盘点数量"
     },
     {

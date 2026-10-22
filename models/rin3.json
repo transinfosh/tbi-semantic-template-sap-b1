@@ -42,7 +42,7 @@
     {
       "name": "ObjType",
       "displayName": "单据对象类型",
-      "type": "VARCHAR(20)",
+      "type": "VARCHAR",
       "notNull": false,
       "isHidden": false,
       "isCalculated": false,
@@ -53,7 +53,7 @@
     {
       "name": "LineTotal",
       "displayName": "费用金额（本币）",
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "notNull": false,
       "isHidden": false,
       "isCalculated": false,
@@ -65,7 +65,7 @@
     {
       "name": "TotalFrgn",
       "displayName": "费用金额（外币）",
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "notNull": false,
       "isHidden": false,
       "isCalculated": false,
@@ -77,7 +77,7 @@
     {
       "name": "TotalSumSy",
       "displayName": "费用金额（系统币）",
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "notNull": false,
       "isHidden": false,
       "isCalculated": false,
@@ -89,7 +89,7 @@
     {
       "name": "VatSum",
       "displayName": "费用税额（本币）",
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "notNull": false,
       "isHidden": false,
       "isCalculated": false,
@@ -101,7 +101,7 @@
     {
       "name": "VatSumFrgn",
       "displayName": "费用税额（外币）",
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "notNull": false,
       "isHidden": false,
       "isCalculated": false,
@@ -113,7 +113,7 @@
     {
       "name": "VatSumSy",
       "displayName": "费用税额（系统币）",
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "notNull": false,
       "isHidden": false,
       "isCalculated": false,
@@ -125,7 +125,7 @@
     {
       "name": "DistrbMthd",
       "displayName": "费用分摊方法",
-      "type": "VARCHAR(1)",
+      "type": "VARCHAR",
       "notNull": false,
       "isHidden": false,
       "isCalculated": false,
@@ -137,7 +137,7 @@
     {
       "name": "TaxDistMtd",
       "displayName": "费用税额分摊方法",
-      "type": "VARCHAR(1)",
+      "type": "VARCHAR",
       "notNull": false,
       "isHidden": false,
       "isCalculated": false,
@@ -149,7 +149,7 @@
     {
       "name": "TaxStatus",
       "displayName": "费用是否应税",
-      "type": "VARCHAR(1)",
+      "type": "VARCHAR",
       "notNull": false,
       "isHidden": false,
       "isCalculated": false,
@@ -161,7 +161,7 @@
     {
       "name": "TaxType",
       "displayName": "费用税类型",
-      "type": "VARCHAR(1)",
+      "type": "VARCHAR",
       "notNull": false,
       "isHidden": false,
       "isCalculated": false,
@@ -173,7 +173,7 @@
     {
       "name": "VatGroup",
       "displayName": "费用税组",
-      "type": "VARCHAR(8)",
+      "type": "VARCHAR",
       "notNull": false,
       "isHidden": false,
       "isCalculated": false,
@@ -185,7 +185,7 @@
     {
       "name": "VatPrcnt",
       "displayName": "费用税率（%）",
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "notNull": false,
       "isHidden": false,
       "isCalculated": false,
@@ -197,7 +197,7 @@
     {
       "name": "Comments",
       "displayName": "费用备注",
-      "type": "VARCHAR(100)",
+      "type": "VARCHAR",
       "notNull": false,
       "isHidden": false,
       "isCalculated": false,
@@ -208,7 +208,7 @@
     {
       "name": "Project",
       "displayName": "费用项目编码",
-      "type": "VARCHAR(20)",
+      "type": "VARCHAR",
       "notNull": false,
       "isHidden": false,
       "isCalculated": false,

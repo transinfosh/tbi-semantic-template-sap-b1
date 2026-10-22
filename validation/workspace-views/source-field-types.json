@@ -1,0 +1,49 @@
+{
+  "formatVersion": 1,
+  "basis": "Previous template type annotations; parameters absent in that source remain unspecified. Not newly verified target database DDL.",
+  "tables": {
+    "OBTL": {
+      "source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OBTL.html",
+      "source_types": {
+        "AbsEntry": "INTEGER",
+        "MessageID": "INTEGER",
+        "BinAbs": "INTEGER",
+        "SnBMDAbs": "INTEGER",
+        "Quantity": "DECIMAL(19,6)",
+        "ITLEntry": "INTEGER"
+      }
+    },
+    "OIBQ": {
+      "source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OIBQ.html",
+      "source_types": {
+        "AbsEntry": "INTEGER",
+        "ItemCode": "VARCHAR(50)",
+        "BinAbs": "INTEGER",
+        "OnHandQty": "DECIMAL(19,6)",
+        "WhsCode": "VARCHAR(8)"
+      }
+    },
+    "OBBQ": {
+      "source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OBBQ.html",
+      "source_types": {
+        "AbsEntry": "INTEGER",
+        "ItemCode": "VARCHAR(50)",
+        "SnBMDAbs": "INTEGER",
+        "BinAbs": "INTEGER",
+        "OnHandQty": "DECIMAL(19,6)",
+        "WhsCode": "VARCHAR(8)"
+      }
+    },
+    "OSBQ": {
+      "source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OSBQ.html",
+      "source_types": {
+        "AbsEntry": "INTEGER",
+        "ItemCode": "VARCHAR(50)",
+        "SnBMDAbs": "INTEGER",
+        "BinAbs": "INTEGER",
+        "OnHandQty": "DECIMAL(19,6)",
+        "WhsCode": "VARCHAR(8)"
+      }
+    }
+  }
+}

@@ -9,7 +9,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "采购贷项科目",
@@ -20,7 +20,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "欧盟采购贷项科目",
@@ -31,7 +31,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "国外采购贷项科目",
@@ -42,7 +42,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "销售贷项科目",
@@ -53,7 +53,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "欧盟销售贷项科目",
@@ -64,7 +64,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "免税贷项科目",
@@ -75,7 +75,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "国外销售贷项科目",
@@ -86,7 +86,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "货物清算科目",
@@ -97,7 +97,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "默认库存科目",
@@ -109,7 +109,7 @@
         "description": "默认库存会计科目编码，不是库存金额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "组件仓库",
@@ -120,7 +120,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "销售成本重估科目",
@@ -131,7 +131,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "创建日期",
@@ -153,7 +153,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "周期代码",
@@ -175,7 +175,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "总账减少科目",
@@ -186,7 +186,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "欧盟费用科目",
@@ -197,7 +197,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "欧盟收入科目",
@@ -208,7 +208,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "汇兑差异科目",
@@ -219,7 +219,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "免税收入科目",
@@ -230,7 +230,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "费用清算科目",
@@ -241,7 +241,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "费用科目",
@@ -252,7 +252,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "费用抵减科目",
@@ -263,7 +263,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "免费采购科目",
@@ -274,7 +274,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "免费销售科目",
@@ -285,7 +285,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "国外费用科目",
@@ -296,7 +296,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "国外收入科目",
@@ -307,7 +307,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "库存增加科目",
@@ -318,7 +318,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "总账增加科目",
@@ -329,7 +329,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "库存系统",
@@ -340,7 +340,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "接收服务编码",
@@ -362,7 +362,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "物料组编码",
@@ -386,7 +386,7 @@
         "description": "业务分类名称；钢材等业务口径需由企业确认。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(100)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "默认库存单位",
@@ -421,7 +421,7 @@
         "description": "主数据锁定标志。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "日志实例",
@@ -454,7 +454,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(3)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "最小订购数量",
@@ -465,7 +465,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "NCM编码",
@@ -487,7 +487,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "对象类型",
@@ -498,7 +498,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "订购间隔",
@@ -520,7 +520,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "发出服务编码",
@@ -542,7 +542,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "计划方法",
@@ -553,7 +553,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "采购方法",
@@ -564,7 +564,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "价格差异科目",
@@ -575,7 +575,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "产品来源",
@@ -586,7 +586,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(2)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "采购余额科目",
@@ -597,7 +597,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "采购科目",
@@ -608,7 +608,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "采购抵减科目",
@@ -619,7 +619,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "销售退回科目",
@@ -630,7 +630,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "收入科目",
@@ -641,7 +641,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "收入退回科目",
@@ -652,7 +652,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "检查规则编码",
@@ -663,7 +663,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(2)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "默认销售成本科目",
@@ -675,7 +675,7 @@
         "description": "默认销售成本会计科目。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "服务组",
@@ -697,7 +697,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "在途库存科目",
@@ -708,7 +708,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "库存重估抵减科目",
@@ -719,7 +719,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "库存损益抵减科目",
@@ -730,7 +730,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "库存重估科目",
@@ -741,7 +741,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "容差天数",
@@ -763,7 +763,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "默认单位组",
@@ -808,7 +808,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "收入增值税科目",
@@ -819,7 +819,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "入库CENVAT科目",
@@ -830,7 +830,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "出库CENVAT科目",
@@ -841,7 +841,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "默认在制品科目",
@@ -853,7 +853,7 @@
         "description": "默认在制品库存会计科目。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "在制品损益抵减科目",
@@ -864,7 +864,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "在制品库存差异科目",
@@ -875,7 +875,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITB.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     }
   ],
   "displayName": "物料组",

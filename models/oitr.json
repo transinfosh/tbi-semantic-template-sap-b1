@@ -34,7 +34,7 @@
         "description": "Y/N；历史时点须同时还原取消事件，不能仅过滤当前N。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITR.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "核销记录创建日",
@@ -82,7 +82,7 @@
         "description": "字符串类型，与参与行SrcObjTyp含义不同。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITR.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "核销对象类别",
@@ -94,7 +94,7 @@
         "description": "C业务伙伴，A总账科目。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITR.html"
       },
-      "type": "VARCHAR(1)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "多业务伙伴核销标记",
@@ -106,7 +106,7 @@
         "description": "Y时不能假定整次核销只属于一个CardCode。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITR.html"
       },
-      "type": "VARCHAR(1)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "系统核销标记",
@@ -118,7 +118,7 @@
         "description": "区分系统及手工来源；与ReconType分别保留。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITR.html"
       },
-      "type": "VARCHAR(1)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "以前核销编号",
@@ -142,7 +142,7 @@
         "description": "核销采用的币种，不等于所有行外币。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITR.html"
       },
-      "type": "VARCHAR(3)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "核销日期",
@@ -190,7 +190,7 @@
         "description": "字符串0手工、1自动、2半自动、3支付、4贷项、5反转、7取消等。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITR.html"
       },
-      "type": "VARCHAR(2)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "核销表头总额",
@@ -202,7 +202,7 @@
         "description": "头级总额，不能连接借贷两侧明细后重复汇总。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITR.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     }
   ],
   "displayName": "内部核销表头",

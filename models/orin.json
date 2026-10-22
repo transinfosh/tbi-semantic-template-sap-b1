@@ -10,7 +10,7 @@
         "description": "单据上的客户地址。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
-      "type": "VARCHAR(254)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "取消状态",
@@ -22,7 +22,7 @@
         "description": "取消角色，取值 N=未取消的普通单据；Y=被取消的原单据；C=系统为反向冲回原单另行生成的取消单据。反向取消完成后，原单为 Y、新取消单为 C，二者 DocStatus 均为 C（已结）。N 不等于未结，须再结合 DocStatus 区分 N/O 与 N/C。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "客户编码",
@@ -34,7 +34,7 @@
         "description": "客户编码，关联客户主数据。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "客户名称",
@@ -46,7 +46,7 @@
         "description": "客户名称，用于客户维度分析。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
-      "type": "VARCHAR(200)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "单据备注",
@@ -58,7 +58,7 @@
         "description": "业务备注文本；不能代替结构化的基单来源关系。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
-      "type": "VARCHAR(254)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "创建日期",
@@ -82,7 +82,7 @@
         "description": "整张单据的折扣百分比，与明细行折扣分开。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "整单折扣金额（本币）",
@@ -94,7 +94,7 @@
         "description": "单据头折扣金额，与行 DiscPrcnt 的折扣百分比和行折后价格分别使用，不重复扣减行折扣。 币种取同一公司库 OADM.MainCurncy，不按 DocCur 或行 Currency 给本列赋币种。 头金额在连接明细后不得重复累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "整单折扣金额（外币）",
@@ -106,7 +106,7 @@
         "description": "单据头折扣金额，与行 DiscPrcnt 的折扣百分比和行折后价格分别使用，不重复扣减行折扣。 正常外币单据按本表 DocCur解释币种，此映射是字段族与单据币种规则的组合解释；不能改用行价格 Currency，跨单据须按币种分组。本币单据的 FC 列可能不适用，不能因零值或空值认定该项业务金额为零。 头金额在连接明细后不得重复累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "整单折扣金额（系统币）",
@@ -118,7 +118,7 @@
         "description": "单据头折扣金额，与行 DiscPrcnt 的折扣百分比和行折后价格分别使用，不重复扣减行折扣。 币种取同一公司库 OADM.SysCurrncy，使用已保存金额，不按当前汇率重算。 头金额在连接明细后不得重复累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "币种来源",
@@ -130,7 +130,7 @@
         "description": "单据币种来源：L=本币，S=系统币，C=业务伙伴币种。C 不等于外币标识，实际单据币种读取 DocCur 并与公司本币比较。本币和系统币代码分别读取同一公司库 OADM.MainCurncy 和 OADM.SysCurrncy。本字段不改变各金额列已定义的 LC/FC/SC 口径，也不代替行价格 Currency。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
-      "type": "VARCHAR(1)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "单据币种",
@@ -142,7 +142,7 @@
         "description": "单据实际币种代码，可等于公司本币。CurSource 记录币种来源选择，其中 C=业务伙伴币种，不直接表示外币；外币适用性结合本字段与公司本币判断。正常外币单据的 DocTotalFC/PaidFC 按此币种解释；DocTotal/PaidToDate 的本币代码统一取同一公司库 OADM.MainCurncy，DocTotalSy/PaidSys 的系统币代码统一取 OADM.SysCurrncy。行 Currency 只解释行价格币种，不给所有金额列赋币种。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
-      "type": "VARCHAR(3)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "过账日期",
@@ -202,7 +202,7 @@
         "description": "单据记录的汇率；换算方向及本币/外币口径应与公司配置一致。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "单据开闭状态",
@@ -214,7 +214,7 @@
         "description": "单据开闭状态，仅 O=未结、C=已结。结合 CANCELED 判断：N/O=未取消且未结，N/C=未取消但已结；完成反向取消后，原单为 Y/C，新取消单为 C/C。DocStatus 的 C 表示关闭，与 CANCELED 的 C 表示取消单据不同；已结本身不能证明已交齐或已收齐。 API 属性 DocumentStatus 的 bost_Open/bost_Close（序号 0/1）对应开闭含义；SQL 筛选本列仍用 O/C，不用 API 名称或序号，也不扩展共享枚举的其他值。未定义值保持待核实。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "单据总额（本币）",
@@ -226,7 +226,7 @@
         "description": "单据头本币总额，币种取同一公司库 OADM.MainCurncy；即使 DocCur 为外币也不改变本列口径。 单据总额须结合适用的税、整单折扣、费用和舍入解释，不等于不含税收入、库存成本或行金额简单合计。存在预付款抵扣时还应核对抵扣对总额的影响，不能默认本列为抵扣前价值。 连接明细后不得重复累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "单据总额（外币）",
@@ -238,7 +238,7 @@
         "description": "单据头外币总额，正常外币单据按本表 DocCur 解释币种并分组；本币单据使用 DocTotal，不能因本列为零或空就认定没有业务金额。 单据总额须结合适用的税、整单折扣、费用和舍入解释，不等于不含税收入、库存成本或行金额简单合计。存在预付款抵扣时还应核对抵扣对总额的影响，不能默认本列为抵扣前价值。 连接明细后不得重复累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "单据总额（系统币）",
@@ -250,7 +250,7 @@
         "description": "单据头系统币总额，币种取同一公司库 OADM.SysCurrncy，不是 DocCur 或行 Currency；使用已保存金额，不按当前汇率重算。 单据总额须结合适用的税、整单折扣、费用和舍入解释，不等于不含税收入、库存成本或行金额简单合计。存在预付款抵扣时还应核对抵扣对总额的影响，不能默认本列为抵扣前价值。 连接明细后不得重复累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "物料/服务类型",
@@ -262,7 +262,7 @@
         "description": "I=物料单据，S=服务单据；与 ObjType 的单据对象类型代码不同。服务行可以没有 ItemCode，应结合行 Dscription 和 AcctCode 解释，不能因缺少物料编码排除服务金额。 API 枚举 dDocument_Items/dDocument_Service（序号 0/1）仅供对照；SQL 筛选本列使用 I/S，不使用枚举名或序号。未定义值保持待核实。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "毛利",
@@ -274,7 +274,7 @@
         "description": "单据毛利金额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "付款条件编码",
@@ -298,7 +298,7 @@
         "description": "单据过账生成的会计凭证摘要。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
-      "type": "VARCHAR(254)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "客户参考号",
@@ -310,7 +310,7 @@
         "description": "客户单号或外部参考编号。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
-      "type": "VARCHAR(200)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "单据对象类型",
@@ -322,7 +322,7 @@
         "description": "本单据对象类型代码；与来源行 BaseType 区分，实际数据库类型须核验。 本表对象为 CreditNotes，对象类型代码为 14；不是 DocType 的 I/S，也不表示来源对象。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "累计已收付金额（外币）",
@@ -334,7 +334,7 @@
         "description": "单据当前累计已收付外币金额；外币单据以本表 DocCur 为币种，跨单据按 DocCur 分组。不是外币未付金额或指定历史期间的收付款发生额；本币单据使用 PaidToDate。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "累计已收付金额（系统币）",
@@ -346,7 +346,7 @@
         "description": "单据当前累计已收付系统币金额，币种取 OADM.SysCurrncy；不是未付金额或指定历史期间的收付款发生额。与单据总额比较时须使用同一币种口径。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "累计已收付金额（本币）",
@@ -358,7 +358,7 @@
         "description": "单据当前累计已收付本币金额，币种取 OADM.MainCurncy；不能当作指定历史期间的收付款发生额，也不是未付金额。与单据总额比较时须使用同一币种口径。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "客户期望收货日期",
@@ -382,7 +382,7 @@
         "description": "单据原金额与舍入后金额的差异；保留已记录的正负值，不按当前显示小数位重新计算。 币种取同一公司库 OADM.MainCurncy，不按 DocCur 或行 Currency 给本列赋币种。 头金额在连接明细后不得重复累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "单据舍入差额（外币）",
@@ -394,7 +394,7 @@
         "description": "单据原金额与舍入后金额的差异；保留已记录的正负值，不按当前显示小数位重新计算。 正常外币单据按本表 DocCur解释币种，此映射是字段族与单据币种规则的组合解释；不能改用行价格 Currency，跨单据须按币种分组。本币单据的 FC 列可能不适用，不能因零值或空值认定该项业务金额为零。 头金额在连接明细后不得重复累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "单据舍入差额（系统币）",
@@ -406,7 +406,7 @@
         "description": "单据原金额与舍入后金额的差异；保留已记录的正负值，不按当前显示小数位重新计算。 币种取同一公司库 OADM.SysCurrncy，使用已保存金额，不按当前汇率重算。 头金额在连接明细后不得重复累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "编号系列",
@@ -454,7 +454,7 @@
         "description": "单据附加费用或运费总额，属于本单据费用，不代表企业全部经营费用；与税额、折扣及商品行金额分别使用。 正常外币单据按本表 DocCur解释币种，此映射是字段族与单据币种规则的组合解释；不能改用行价格 Currency，跨单据须按币种分组。本币单据的 FC 列可能不适用，不能因零值或空值认定该项业务金额为零。 头金额在连接明细后不得重复累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "单据附加费用（本币）",
@@ -466,7 +466,7 @@
         "description": "单据附加费用或运费总额，属于本单据费用，不代表企业全部经营费用；与税额、折扣及商品行金额分别使用。 币种取同一公司库 OADM.MainCurncy，不按 DocCur 或行 Currency 给本列赋币种。 头金额在连接明细后不得重复累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "单据附加费用（系统币）",
@@ -478,7 +478,7 @@
         "description": "单据附加费用或运费总额，属于本单据费用，不代表企业全部经营费用；与税额、折扣及商品行金额分别使用。 币种取同一公司库 OADM.SysCurrncy，使用已保存金额，不按当前汇率重算。 头金额在连接明细后不得重复累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "日记账分录内部标识",
@@ -526,7 +526,7 @@
         "description": "单据税率。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "单据税额（本币）",
@@ -538,7 +538,7 @@
         "description": "单据头税额，按适用税制记录；头税额可能包含费用税，不预设等于普通销售行税额之和。 币种取同一公司库 OADM.MainCurncy，不按 DocCur 或行 Currency 给本列赋币种。 头金额在连接明细后不得重复累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "单据税额（外币）",
@@ -550,7 +550,7 @@
         "description": "单据头税额，按适用税制记录；头税额可能包含费用税，不预设等于普通销售行税额之和。 正常外币单据按本表 DocCur解释币种，此映射是字段族与单据币种规则的组合解释；不能改用行价格 Currency，跨单据须按币种分组。本币单据的 FC 列可能不适用，不能因零值或空值认定该项业务金额为零。 头金额在连接明细后不得重复累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "单据税额（系统币）",
@@ -562,7 +562,7 @@
         "description": "单据头税额，按适用税制记录；头税额可能包含费用税，不预设等于普通销售行税额之和。 币种取同一公司库 OADM.SysCurrncy，使用已保存金额，不按当前汇率重算。 头金额在连接明细后不得重复累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "单据项目代码",
@@ -574,7 +574,7 @@
         "description": "本单据头保存的 Project 项目代码，按 OPRJ.PrjCode 关联；与明细行 Project 分别解释，不能把头项目覆盖到所有行，也不按当前项目启用状态过滤历史单据。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     }
   ],
   "displayName": "应收贷项凭证",

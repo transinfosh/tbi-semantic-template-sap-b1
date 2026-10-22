@@ -9,7 +9,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPOR.html"
       },
-      "type": "VARCHAR(254)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "供应商发货截止日期",
@@ -33,7 +33,7 @@
         "description": "Y=被取消单据；N=未取消。与开闭状态独立；业务统计排除取消还是保留冲销须显式规定。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPOR.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "供应商编码",
@@ -45,7 +45,7 @@
         "description": "供应商编码，关联供应商主数据。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPOR.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "供应商名称",
@@ -57,7 +57,7 @@
         "description": "供应商名称，用于供应商维度分析。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPOR.html"
       },
-      "type": "VARCHAR(200)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "单据备注",
@@ -69,7 +69,7 @@
         "description": "业务备注文本；不能代替结构化的基单来源关系。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPOR.html"
       },
-      "type": "VARCHAR(254)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "创建日期",
@@ -93,7 +93,7 @@
         "description": "整张单据的折扣百分比，与明细行折扣分开。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPOR.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "折扣金额",
@@ -105,7 +105,7 @@
         "description": "折扣金额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPOR.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "单据币种",
@@ -117,7 +117,7 @@
         "description": "单据币种；行价格币种和本位币、系统币金额列仍需分别识别。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPOR.html"
       },
-      "type": "VARCHAR(3)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "过账日期",
@@ -177,7 +177,7 @@
         "description": "单据记录的汇率；换算方向及本币/外币口径应与公司配置一致。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPOR.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "单据开闭状态",
@@ -189,7 +189,7 @@
         "description": "O 为未结，C 为已结；已结不等同取消，也不能单凭此字段判断收付款或物流完成。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPOR.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "单据合计（本币）",
@@ -201,7 +201,7 @@
         "description": "本单保存本币合计；不是已付款或库存成本，连接商品、费用或抵扣记录后不重复累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPOR.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "单据总额（外币）",
@@ -213,7 +213,7 @@
         "description": "单据头外币总额；按 DocCur 分组，且防止明细连接重复累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPOR.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "单据总额（系统币）",
@@ -225,7 +225,7 @@
         "description": "单据头系统币总额；不能混合本币或外币金额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPOR.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "单据类型",
@@ -237,7 +237,7 @@
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPOR.html",
         "description": "I=物料，S=服务；服务单据行可以没有物料主数据匹配，必须保留。"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "付款条件代码",
@@ -259,7 +259,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPOR.html"
       },
-      "type": "VARCHAR(200)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "单据对象类型",
@@ -271,7 +271,7 @@
         "description": "本单据对象类型代码；与来源行 BaseType 区分，实际数据库类型须核验。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPOR.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "采购订单需求日期",
@@ -329,7 +329,7 @@
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPOR.html",
         "description": "整单保存附加费用总额，按对应币种使用；不只包括运输费，不再叠加到已包含费用的DocTotal。"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "运输方式代码",
@@ -363,7 +363,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPOR.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "本币税额",
@@ -375,7 +375,7 @@
         "description": "税额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPOR.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "name": "CurSource",
@@ -386,7 +386,7 @@
         "description": "L=公司本币，S=系统币，C=业务伙伴币种；C不等于外币。实际单据币种结合DocCur，金额列币种职责不因此改变。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OPOR.html"
       },
-      "type": "CHAR(1)",
+      "type": "CHAR",
       "displayName": "币种来源"
     },
     {
@@ -398,7 +398,7 @@
         "description": "本记录保存的项目代码，关联OPRJ；头项目与行项目分别使用，不相互覆盖。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OPOR.html"
       },
-      "type": "VARCHAR(20)",
+      "type": "VARCHAR",
       "displayName": "项目代码"
     },
     {
@@ -422,7 +422,7 @@
         "description": "本记录保存的税额（外币），按对应币种读取；不能从当前税率重算或与不同粒度重复累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OPOR.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "税额（外币）"
     },
     {
@@ -434,7 +434,7 @@
         "description": "本记录保存的税额（系统币），按对应币种读取；不能从当前税率重算或与不同粒度重复累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OPOR.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "税额（系统币）"
     },
     {
@@ -446,7 +446,7 @@
         "description": "整单保存折扣金额，按对应币种使用；不是行折扣，不能重复扣减。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OPOR.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "整单折扣额（外币）"
     },
     {
@@ -458,7 +458,7 @@
         "description": "整单保存折扣金额，按对应币种使用；不是行折扣，不能重复扣减。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OPOR.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "整单折扣额（系统币）"
     },
     {
@@ -470,7 +470,7 @@
         "description": "整单保存附加费用总额，按对应币种使用；不只包括运输费，不再叠加到已包含费用的DocTotal。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OPOR.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "附加费用总额（外币）"
     },
     {
@@ -482,7 +482,7 @@
         "description": "整单保存附加费用总额，按对应币种使用；不只包括运输费，不再叠加到已包含费用的DocTotal。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OPOR.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "附加费用总额（系统币）"
     },
     {
@@ -494,7 +494,7 @@
         "description": "整单保存舍入差额，按对应币种使用；不以显示精度重算。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OPOR.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "舍入差额（本币）"
     },
     {
@@ -506,7 +506,7 @@
         "description": "整单保存舍入差额，按对应币种使用；不以显示精度重算。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OPOR.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "舍入差额（外币）"
     },
     {
@@ -518,7 +518,7 @@
         "description": "整单保存舍入差额，按对应币种使用；不以显示精度重算。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OPOR.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "舍入差额（系统币）"
     },
     {
@@ -530,7 +530,7 @@
         "description": "Y=已确认，N=未确认；区别于关闭、付款和实际收货。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OPOR.html"
       },
-      "type": "CHAR(1)",
+      "type": "CHAR",
       "displayName": "确认状态"
     },
     {
@@ -542,7 +542,7 @@
         "description": "单据是否手工关闭；保留Y/N/U未知值，不表示已付款或已结清。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OPOR.html"
       },
-      "type": "CHAR(1)",
+      "type": "CHAR",
       "displayName": "手工关闭标志"
     }
   ],

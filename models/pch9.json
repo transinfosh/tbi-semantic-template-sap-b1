@@ -10,7 +10,7 @@
         "description": "已应用的本位币净额；不是原始预付款全额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PCH9.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "预付款内部键",
@@ -58,7 +58,7 @@
         "description": "本位币不含税抵扣金额；DI API AmountToDraw 对应此列，不能超过未结金额；与已应用净额区别。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PCH9.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "抵扣净额（外币）",
@@ -70,7 +70,7 @@
         "description": "桥表保存的外币净额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PCH9.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "抵扣净额（系统币）",
@@ -82,7 +82,7 @@
         "description": "桥表保存的系统币净额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PCH9.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "含税金额（本位币）",
@@ -94,7 +94,7 @@
         "description": "当前抵扣记录的含税金额；须区分原始、已应用与净额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PCH9.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "含税金额（外币）",
@@ -106,7 +106,7 @@
         "description": "当前抵扣记录的外币含税金额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PCH9.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "含税金额（系统币）",
@@ -118,7 +118,7 @@
         "description": "当前抵扣记录的系统币含税金额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PCH9.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "含税行标志",
@@ -130,7 +130,7 @@
         "description": "Y=含税行，N=净额行；计算时须保留此口径。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PCH9.html"
       },
-      "type": "VARCHAR(1)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "抵扣记录行号",
@@ -154,7 +154,7 @@
         "description": "当前发票或贷项对象类型；与本桥表表示基础类型的 ObjType 分开使用。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PCH9.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "基础对象类型",
@@ -166,7 +166,7 @@
         "description": "本桥表为基础对象类型；与普通营销行的 ObjType 含义不同。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PCH9.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "基础预付款已过账",
@@ -178,7 +178,7 @@
         "description": "基础单据是否已过账；不是当前发票的付款状态。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PCH9.html"
       },
-      "type": "VARCHAR(1)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "目标或基础记录",
@@ -190,7 +190,7 @@
         "description": "B=基础，T=目标；发票和贷项表的默认值不完全相同，不统一硬编码。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PCH9.html"
       },
-      "type": "VARCHAR(1)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "税额（本位币）",
@@ -202,7 +202,7 @@
         "description": "当前抵扣记录的税额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PCH9.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "name": "ApplDrawnF",
@@ -213,7 +213,7 @@
         "description": "抵扣记录的已应用净额（外币）；基础、已应用、净额、税额和含税职责分开；外币来源仍待具体核实，不与普通物料行展开累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/PCH9.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "已应用净额（外币）"
     },
     {
@@ -225,7 +225,7 @@
         "description": "抵扣记录的已应用净额（系统币）；基础、已应用、净额、税额和含税职责分开；外币来源仍待具体核实，不与普通物料行展开累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/PCH9.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "已应用净额（系统币）"
     },
     {
@@ -237,7 +237,7 @@
         "description": "本记录保存的税额（外币），按对应币种读取；不能从当前税率重算或与不同粒度重复累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/PCH9.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "税额（外币）"
     },
     {
@@ -249,7 +249,7 @@
         "description": "本记录保存的税额（系统币），按对应币种读取；不能从当前税率重算或与不同粒度重复累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/PCH9.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "税额（系统币）"
     }
   ],

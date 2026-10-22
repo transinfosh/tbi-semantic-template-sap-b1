@@ -10,7 +10,7 @@
         "description": "换算定义一侧数量；须与BaseQty及单位组基准单位一起解释。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/UGP1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "基准单位数量",
@@ -22,7 +22,7 @@
         "description": "换算定义另一侧数量；含重量或UDF因子时不能仅用静态比值。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/UGP1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "单位组行号",

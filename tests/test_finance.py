@@ -10,7 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from build import build
+from build import build, read_json
 
 
 class FinanceTest(unittest.TestCase):
@@ -202,6 +202,7 @@ class FinanceTest(unittest.TestCase):
         self,
     ) -> None:
         value = "R" * 200
+        reference = read_json(ROOT / "validation/reference-contract.json")
         for model, fields in [
             ("ojdt", ["Ref1", "Ref2", "Ref3"]),
             ("jdt1", ["Ref1", "Ref2", "Ref3Line"]),
@@ -210,7 +211,8 @@ class FinanceTest(unittest.TestCase):
                 column = next(
                     c for c in self.models[model]["columns"] if c["name"] == field
                 )
-                self.assertEqual(column["type"], "VARCHAR(200)")
+                self.assertEqual(column["type"], "VARCHAR")
+                self.assertEqual(reference[model.upper()]["source_types"][field], "VARCHAR(200)")
                 self.assertFalse(column["notNull"])
                 self.assertNotIn(field, self.models[model]["primaryKey"])
                 self.db.execute(f"UPDATE {model} SET {field}=?", (value,))

@@ -22,7 +22,7 @@
         "description": "目标单据应用行保存的外币金额；应按InvType解析目标对象及币种，不能无条件用付款头DocCurr。外币金额为零不证明本币未支付。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "系统币应用金额",
@@ -34,7 +34,7 @@
         "description": "系统币应用金额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "本币现金折扣金额",
@@ -46,7 +46,7 @@
         "description": "应用行折扣，与实际支付金额分开。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "外币现金折扣金额",
@@ -58,7 +58,7 @@
         "description": "外币折扣。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "系统币现金折扣金额",
@@ -70,7 +70,7 @@
         "description": "系统币折扣。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "被支付对象内部标识",
@@ -118,7 +118,7 @@
         "description": "保存的单据汇率。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "被支付对象分录编号",
@@ -166,7 +166,7 @@
         "description": "字符串对象类型；13/14/18/19/203/204等分别指不同单据。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "连接日期",
@@ -190,7 +190,7 @@
         "description": "本行所属收付款类型；不同于目标InvType。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "本币舍入差异",
@@ -202,7 +202,7 @@
         "description": "应用行舍入差额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "本币应用金额",
@@ -214,7 +214,7 @@
         "description": "本行应用到目标单据的金额，不等于收付款头总额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "本币预扣税应用金额",
@@ -226,7 +226,7 @@
         "description": "预扣税应用额，不能遗漏后强行对齐现金与核销金额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "外币预扣税应用金额",
@@ -238,7 +238,7 @@
         "description": "外币预扣税应用额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "系统币预扣税应用金额",
@@ -250,7 +250,7 @@
         "description": "系统币预扣税应用额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "name": "RounddifFc",
@@ -261,7 +261,7 @@
         "description": "应用行保存的外币舍入差额；与目标对象及其币种角色一起解释，不用付款头币种无条件回填。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "舍入差异（外币）"
     },
     {
@@ -273,7 +273,7 @@
         "description": "应用行保存的系统币舍入差额，币种来自同公司OADM.SysCurrncy；不据此发明结算恒等式。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "舍入差异（系统币）"
     },
     {
@@ -285,7 +285,7 @@
         "description": "应用到目标单据的附加费用金额（官方Freight），币种来自同公司OADM.MainCurncy；不是承运商实际成本，不与SumApplied无条件再次相加。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "已应用附加费用（本币）"
     },
     {
@@ -297,7 +297,7 @@
         "description": "应用行保存的外币附加费用金额；按目标对象与已保存外币角色解释，不无条件赋付款头DocCurr。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "已应用附加费用（外币）"
     },
     {
@@ -309,7 +309,7 @@
         "description": "应用行保存的系统币附加费用金额，币种来自同公司OADM.SysCurrncy；与费用税额及现金支付额分开。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "已应用附加费用（系统币）"
     }
   ],

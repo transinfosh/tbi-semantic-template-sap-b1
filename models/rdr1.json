@@ -10,7 +10,7 @@
         "description": "单据行科目编码，关联 OACT.AcctCode；服务行可通过科目与描述解释业务。存在科目编码不证明单据已经生成会计过账或该金额已确认为收入。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "直接来源单据内部键",
@@ -58,7 +58,7 @@
         "description": "本行价格的币种，用于解释 Price 等价格字段；不能据此解释 LineTotal 或 TotalSumSy，它们分别使用 OADM.MainCurncy 和 OADM.SysCurrncy。外币单据行金额 TotalFrgn 按所属 ORDR.DocCur 解释，行价格币种与单据币种须分别读取。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "VARCHAR(3)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "行折扣率",
@@ -70,7 +70,7 @@
         "description": "当前单据行的折扣百分比，与整单折扣分开。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "过账日期",
@@ -106,7 +106,7 @@
         "description": "单据行保存的物料或服务描述，反映该单据的历史内容，不能被当前物料主数据名称替代；所属 ORDR.DocType=S 的服务行可没有 ItemCode。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "VARCHAR(200)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "自由文本",
@@ -118,7 +118,7 @@
         "description": "单据行自由文本或备注。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "VARCHAR(100)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "毛利计算基价",
@@ -130,7 +130,7 @@
         "description": "用于计算本行毛利的基价，可按毛利设置取自价目表、最近采购价、物料成本等。不是固定的实际采购成本，也不能直接当作库存出库成本；币种及计价单位需结合适用单据和设置核实。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "行含税总额（本币）",
@@ -154,7 +154,7 @@
         "description": "单据行考虑行折扣后的含税总额，与不含税 LineTotal 系列分别使用；不据此推定已分摊全部头折扣、费用或预付款，也不直接等同单据头总额。 正常外币单据按所属 ORDR.DocCur解释币种，此映射是字段族与单据币种规则的组合解释；不能改用行价格 Currency，跨单据须按币种分组。本币单据的 FC 列可能不适用，不能因零值或空值认定该项业务金额为零。 按 DocEntry、LineNum 的行粒度汇总，避免关系展开重复计量。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "行含税总额（系统币）",
@@ -166,7 +166,7 @@
         "description": "单据行考虑行折扣后的含税总额，与不含税 LineTotal 系列分别使用；不据此推定已分摊全部头折扣、费用或预付款，也不直接等同单据头总额。 币种取同一公司库 OADM.SysCurrncy，使用已保存金额，不按当前汇率重算。 按 DocEntry、LineNum 的行粒度汇总，避免关系展开重复计量。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "库存单位数量",
@@ -178,7 +178,7 @@
         "description": "以库存计量单位表示的数量；不同于 Quantity，是否形成库存移动仍由单据和标志决定。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "物料编码",
@@ -190,7 +190,7 @@
         "description": "物料标识；相同物料不能证明属于同一订单、工单或来源行。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "VARCHAR(50)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "单据内部行号",
@@ -214,7 +214,7 @@
         "description": "O=未清；C=关闭。关闭与取消含义不同；按业务问题显式处理，不能混合有效与取消单据。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "不含税行金额（本币）",
@@ -226,7 +226,7 @@
         "description": "不含税本币行金额，币种取同一公司库 OADM.MainCurncy；不随行 Currency 或表头 DocCur 改变币种口径。不等同库存估价过账金额，也不能忽略税费、折扣和舍入差异直接等同单据头总额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "行手工关闭标识",
@@ -238,7 +238,7 @@
         "description": "销售订单行是否手工关闭：Y=是，N=否，U=未知；空值也不能当作否。与 LineStatus 的开闭状态分别使用，手工关闭不证明该行已全部交货或开票。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "单据单位换算值",
@@ -250,7 +250,7 @@
         "description": "本单据行保存的计量单位换算值；历史分析不得直接用当前物料主数据换算覆盖。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "当前行单据类型",
@@ -262,7 +262,7 @@
         "description": "所属当前单据的对象类型，不能代替 BaseType 解释来源。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "未结库存单位数量",
@@ -274,7 +274,7 @@
         "description": "以库存单位表示的未结数量；用于与库存口径比较，仍属当前状态。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "未结单据单位数量",
@@ -286,7 +286,7 @@
         "description": "当前剩余未结数量；不是任意历史时点余额，也不能普遍等同未发货或未开票数量。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "税前单价",
@@ -298,7 +298,7 @@
         "description": "单据行税前单价；本表数据库参考明确为行折后价格。 价格币种取本行 Currency，按本行交易计价单位解释；结合 UomEntry/UomCode/unitMsr、UseBaseUn 和 NumPerMsr 核对，不默认按库存单位计价。 不直接相加作为业务金额，也不能当作库存估值单价。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "行折后含税单价",
@@ -310,7 +310,7 @@
         "description": "应用本行折扣后的含税单价，不是折前含税价。 价格币种取本行 Currency，按本行交易计价单位解释；结合 UomEntry/UomCode/unitMsr、UseBaseUn 和 NumPerMsr 核对，不默认按库存单位计价。 与税前价、折前价及行金额分别使用，不以当前税率和折扣重算覆盖历史值。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "行折前税前单价",
@@ -322,7 +322,7 @@
         "description": "应用本行折扣前的税前单价；本表列定义与 SAP 单位价格规则共同确定该口径。 价格币种取本行 Currency，按本行交易计价单位解释；结合 UomEntry/UomCode/unitMsr、UseBaseUn 和 NumPerMsr 核对，不默认按库存单位计价。 与折后价格及已保存行金额分别使用。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "单据单位数量",
@@ -334,7 +334,7 @@
         "description": "单据销售或采购单位数量；跨单据和物料合计前须统一单位，不直接等同库存单位数量。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "汇率",
@@ -346,7 +346,7 @@
         "description": "单据行币种转换为公司本币的汇率。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "行交付日期",
@@ -382,7 +382,7 @@
         "description": "税务代码。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "VARCHAR(8)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "行合计（外币）",
@@ -394,7 +394,7 @@
         "description": "行金额的外币口径；外币单据按所属 ORDR.DocCur 解释，本行 DocEntry 关联 ORDR.DocEntry，跨单据按 DocCur 分组。行 Currency 只表示价格币种，不据此给本列赋币种；本币单据使用 LineTotal，不以本列零或空判断业务金额为零。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "行合计（系统币）",
@@ -406,7 +406,7 @@
         "description": "行金额的系统币口径，币种取同一公司库 OADM.SysCurrncy；不是单价，不以行 Currency 或表头 DocCur 作为币种，也不按当前汇率重算已保存金额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "计量单位名称",
@@ -418,7 +418,7 @@
         "description": "本行计量单位显示名称；用于解释 Quantity。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "VARCHAR(100)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "计量单位代码",
@@ -430,7 +430,7 @@
         "description": "本行计量单位代码；未核验一致性前不能把不同单位数量直接相加。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "计量单位内部键",
@@ -454,7 +454,7 @@
         "description": "本行库存计量单位标志；结合 Quantity、InvQty 与单位代码解释。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "税组",
@@ -466,7 +466,7 @@
         "description": "税务组代码。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "VARCHAR(8)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "税率",
@@ -478,7 +478,7 @@
         "description": "单据行税率。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "行税额（本币）",
@@ -490,7 +490,7 @@
         "description": "单据行总税额，包含标准税及适用的 equalization tax，可存在手工调整；不同于 LineVat 系列净税额，不以价格乘税率覆盖已保存值。 币种取同一公司库 OADM.MainCurncy，不按 DocCur 或行 Currency 给本列赋币种。 按 DocEntry、LineNum 的行粒度汇总，避免关系展开重复计量。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "行税额（外币）",
@@ -502,7 +502,7 @@
         "description": "单据行总税额，包含标准税及适用的 equalization tax，可存在手工调整；不同于 LineVat 系列净税额，不以价格乘税率覆盖已保存值。 正常外币单据按所属 ORDR.DocCur解释币种，此映射是字段族与单据币种规则的组合解释；不能改用行价格 Currency，跨单据须按币种分组。本币单据的 FC 列可能不适用，不能因零值或空值认定该项业务金额为零。 按 DocEntry、LineNum 的行粒度汇总，避免关系展开重复计量。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "行税额（系统币）",
@@ -514,7 +514,7 @@
         "description": "单据行总税额，包含标准税及适用的 equalization tax，可存在手工调整；不同于 LineVat 系列净税额，不以价格乘税率覆盖已保存值。 币种取同一公司库 OADM.SysCurrncy，使用已保存金额，不按当前汇率重算。 按 DocEntry、LineNum 的行粒度汇总，避免关系展开重复计量。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "显示顺序",
@@ -538,7 +538,7 @@
         "description": "业务行对应仓库；仓库、库位和物料为不同粒度。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "VARCHAR(8)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "行项目代码",
@@ -550,7 +550,7 @@
         "description": "本行保存的 Project 项目代码，按 OPRJ.PrjCode 关联；不默认使用表头项目，不按当前项目启用或有效期删除历史行。空项目与有编码但主数据未匹配分开。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "行销售员代码",
@@ -574,7 +574,7 @@
         "description": "单据行 BOM 角色：N=非BOM，A=组装，S=销售BOM，I=销售BOM组件，P=生产BOM，T=模板。用于区分销售父项和组件等行角色；不能只凭该标志重建父子行键，也不统一删除全部组件或把父项与组件数量无差别相加。价格和数量按实际行角色与设置解释，未知值单列核实。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "VARCHAR(1)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "服务行未清金额（本币）",
@@ -586,7 +586,7 @@
         "description": "仅适用于所属 ORDR.DocType=S 的服务单据行，表示该行当前业务未清金额；与 LineStatus 分开解释，不用 OpenQty 代替金额。不是现金收款、整单应收欠款或任意历史时点账龄，不用数量乘当前价格重算覆盖保存值。币种取同一公司库 OADM.MainCurncy。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "服务行未清金额（外币）",
@@ -598,7 +598,7 @@
         "description": "仅适用于所属 ORDR.DocType=S 的服务单据行，表示该行当前业务未清金额；与 LineStatus 分开解释，不用 OpenQty 代替金额。不是现金收款、整单应收欠款或任意历史时点账龄，不用数量乘当前价格重算覆盖保存值。外币适用性及币种结合所属单据核实，不能以行价格 Currency 替代；跨币种分别汇总。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "服务行未清金额（系统币）",
@@ -610,7 +610,7 @@
         "description": "仅适用于所属 ORDR.DocType=S 的服务单据行，表示该行当前业务未清金额；与 LineStatus 分开解释，不用 OpenQty 代替金额。不是现金收款、整单应收欠款或任意历史时点账龄，不用数量乘当前价格重算覆盖保存值。币种取同一公司库 OADM.SysCurrncy。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     }
   ],
   "displayName": "销售订单明细",

@@ -10,7 +10,7 @@
         "description": "附加组件数量，从BOM复制后可在订单手工调整；DI API另有手工发料与副产品限制，不能默认所有组件适用。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "组件基准数量",
@@ -22,7 +22,7 @@
         "description": "DI API定义为每生产一个父项所需的组件数量；是计划用量基数，不是已发料数量。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "组件完成金额字段",
@@ -34,7 +34,7 @@
         "description": "官方组件完成金额字段；不直接等同本期库存领料过账金额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "生产订单内部标识",
@@ -58,7 +58,7 @@
         "description": "官方定义为已经为生产订单发出的组件累计数量；期间明细需交易单据。DI API该页另带计划乘积措辞存在歧义，不据其重算或覆盖实际已发数量。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "发料方式",
@@ -70,7 +70,7 @@
         "description": "M手工、B倒冲；倒冲交易不能假定都是用户手工创建。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "组件编码",
@@ -82,7 +82,7 @@
         "description": "结合ItemType区分物料和资源。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
       },
-      "type": "VARCHAR(50)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "组件类型",
@@ -118,7 +118,7 @@
         "description": "DI API组件计划量公式为父项计划量乘组件BaseQty再加AdditQty；订单行是执行计划，不能当实际领料。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "组件单位编码",
@@ -130,7 +130,7 @@
         "description": "组件行单位代码。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "组件计量单位标识",
@@ -166,7 +166,7 @@
         "description": "字段大小写按源表保留，关联OWHS。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
       },
-      "type": "VARCHAR(8)"
+      "type": "VARCHAR"
     },
     {
       "name": "ItemName",
@@ -177,7 +177,7 @@
         "description": "工单保存的组件描述；不以当前物料、资源或BOM描述覆盖。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
       },
-      "type": "VARCHAR(200)",
+      "type": "VARCHAR",
       "displayName": "组件名称快照"
     },
     {
@@ -189,7 +189,7 @@
         "description": "工单组件行项目；不假定恒等于表头项目。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
       },
-      "type": "VARCHAR(20)",
+      "type": "VARCHAR",
       "displayName": "组件项目编码"
     },
     {
@@ -201,7 +201,7 @@
         "description": "工单组件在制品科目配置；执行时的实际科目仍由交易单据和分录核对。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
       },
-      "type": "VARCHAR(15)",
+      "type": "VARCHAR",
       "displayName": "组件在制品科目编码"
     },
     {
@@ -225,7 +225,7 @@
         "description": "所属对象保存的第1维分配规则；规则不同于成本中心，不据当前规则分配明细追算历史实际成本。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
       },
-      "type": "VARCHAR(8)",
+      "type": "VARCHAR",
       "displayName": "第1维分配规则编码"
     },
     {
@@ -237,7 +237,7 @@
         "description": "所属对象保存的第2维分配规则；规则不同于成本中心，不据当前规则分配明细追算历史实际成本。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
       },
-      "type": "VARCHAR(8)",
+      "type": "VARCHAR",
       "displayName": "第2维分配规则编码"
     },
     {
@@ -249,7 +249,7 @@
         "description": "所属对象保存的第3维分配规则；规则不同于成本中心，不据当前规则分配明细追算历史实际成本。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
       },
-      "type": "VARCHAR(8)",
+      "type": "VARCHAR",
       "displayName": "第3维分配规则编码"
     },
     {
@@ -261,7 +261,7 @@
         "description": "所属对象保存的第4维分配规则；规则不同于成本中心，不据当前规则分配明细追算历史实际成本。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
       },
-      "type": "VARCHAR(8)",
+      "type": "VARCHAR",
       "displayName": "第4维分配规则编码"
     },
     {
@@ -273,7 +273,7 @@
         "description": "所属对象保存的第5维分配规则；规则不同于成本中心，不据当前规则分配明细追算历史实际成本。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
       },
-      "type": "VARCHAR(8)",
+      "type": "VARCHAR",
       "displayName": "第5维分配规则编码"
     }
   ],

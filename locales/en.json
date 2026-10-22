@@ -5208,15 +5208,15 @@
         },
         "PaidFC": {
           "displayName": "Cumulative Amount Received And Paid (Foreign Currency)",
-          "description": "The current accumulated payment amount of the document is foreign currency; it is used as currency, not the unpaid amount of foreign currency."
+          "description": "Current cumulative amount received or paid in foreign currency; use by currency, not as a foreign-currency unpaid balance. Stored separately from PaidSumFc; do not assume equivalence or equality, or automatically use as the deduction in a general open-payables formula."
         },
         "PaidSys": {
           "displayName": "Cumulative Amount Received And Paid (System Currency)",
-          "description": "The current accumulated payment amount of the document is system currency."
+          "description": "Current cumulative amount received or paid in system currency. Stored separately from PaidSumSc; do not assume equivalence or equality, or automatically use as the deduction in a general open-payables formula."
         },
         "PaidToDate": {
           "displayName": "Cumulative Amount Received And Paid (Local Currency)",
-          "description": "The current accumulated payment and receipt amount of the document is local currency; it cannot be regarded as the receipt and payment of posted movement in the specified historical period."
+          "description": "Current cumulative amount received or paid in local currency; not a payment movement for a specified historical period. Stored separately from PaidSum; do not assume equivalence or equality, or automatically use as the deduction in a general open-payables formula."
         },
         "Series": {
           "displayName": "Document Series"
@@ -5302,6 +5302,18 @@
         "InvntSttus": {
           "displayName": "Warehouse status",
           "description": "O=warehouse open, C=warehouse closed. Distinguishes reserve invoice logistics from financial status; not a payment status."
+        },
+        "PaidSum": {
+          "displayName": "Total Paid Sum",
+          "description": "Current saved total paid sum at invoice-header grain. The unsuffixed currency is assumed to be company local currency (OADM.MainCurncy) from the three-currency naming convention, pending verification. Independent of PaidToDate, not an alias or substitute; update rules for payments, reconciliations, credit memos and reversals remain unconfirmed. Do not use directly for a general open-payables formula, period payments or historical balances."
+        },
+        "PaidSumFc": {
+          "displayName": "Total Paid Sum (FC)",
+          "description": "Current saved total paid sum in foreign currency at invoice-header grain. Verify currency applicability with DocCur; zero or null on a local-currency invoice does not prove non-payment. Independent of PaidFC, not an alias or substitute; update rules for payments, reconciliations, credit memos and reversals remain unconfirmed. Do not use directly for a general open-payables formula, period payments or historical balances, or recompute at current exchange rates."
+        },
+        "PaidSumSc": {
+          "displayName": "Total Paid Sum (SC)",
+          "description": "Current saved total paid sum in system currency at invoice-header grain; currency is identified by OADM.SysCurrncy. Independent of PaidSys, not an alias or substitute; update rules for payments, reconciliations, credit memos and reversals remain unconfirmed. Do not use directly for a general open-payables formula, period payments or historical balances, mix with other currencies, or recompute at current exchange rates."
         }
       }
     },

@@ -10,7 +10,7 @@
         "description": "层余额字段，不是单据行金额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IVL1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "估价层计算单价",
@@ -22,7 +22,7 @@
         "description": "每个估价层保存的计算价格，SDK未单独明示币种和分母单位。正常永续库存物料发料的成本币种按官方规则取OADM.MainCurncy；对应历史发料行UseBaseUn=Y、NumPerMsr=1且unitMsr明确时，可按本币/该库存单位解释（字段级依据较弱的组合解释）。须沿OIVL到实际IGE1行的关系核实，不能借OIVL.Currency或OIGE.DocCur。UseBaseUn=N时价格分母与换算规则待核；其他交易尤其重估、零数量、负库存调整不能套用。发料可跨多层，AVG仅表示层价算术平均，不能称综合单位成本。不与StockPrice、OIVL.Price或金额/数量折算价混名。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IVL1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "估价层标识",
@@ -46,7 +46,7 @@
         "description": "层级入库数量。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IVL1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "估价层出库数量",
@@ -58,7 +58,7 @@
         "description": "层级出库数量，官方字段为LayerOutQ。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IVL1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "估价层重估金额",
@@ -70,7 +70,7 @@
         "description": "重估价值字段；零数量价值调整不能除数量计算单价。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IVL1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "库存估价交易序号",
@@ -94,7 +94,7 @@
         "description": "估价层交易价值，保留正负与NULL。先按TransSeq聚合完整层，再回连OIVL；不得随层数重复累计OIVL数量。若层缺失或部分层金额NULL，应标记不完整，不能用SUM跳过NULL后冒充完整金额。币种、零数量重估和特殊生产流程仍需目标报表核对。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IVL1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     }
   ],
   "displayName": "库存估价交易层",

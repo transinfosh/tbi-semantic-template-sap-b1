@@ -2316,5 +2316,28 @@
       "new_model": false
     }
   },
-  "notes": "Explicit curated changes; see module review reports for sources and limits. Instance-only objects are curated separately without promotion to the public template."
+  "notes": "Explicit curated changes; see module review reports for sources and limits. Instance-only objects are curated separately without promotion to the public template. 0.8.0 动作是历史快照；OPCH.PaidSum 的移除已被 revisions 中 0.8.2 的恢复动作取代，当前覆盖以模型源码和后续修订共同判断。",
+  "revisions": [
+    {
+      "version": "0.8.2",
+      "date": "2026-10-22",
+      "reason": "恢复标准已付合计字段，保留两族差异及未确认结算边界；详见 opch-paid-sum-research.md。",
+      "models": {
+        "opch": {
+          "restored": [
+            "PaidSum"
+          ],
+          "added": [
+            "PaidSumFc",
+            "PaidSumSc"
+          ],
+          "metadata_changed": [
+            "PaidFC",
+            "PaidSys",
+            "PaidToDate"
+          ]
+        }
+      }
+    }
+  ]
 }

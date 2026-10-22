@@ -493,3 +493,15 @@
 补齐价格解释与启停用原始字段，直接依据 [ITM1](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITM1.html)、[OITM](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html)、[OCRD](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html)。新13列经目标连接只读元数据核对存在：两个币种为nvarchar(3)，计价单位为int，标志／价格类型为char(1)，期间为datetime；模板沿用VARCHAR(3)、INTEGER、CHAR(1)、TIMESTAMP表达。
 
 计价单位关系由ITM1.UomEntry关联既有OUOM完整键；成本中心名称关系由 [OCR1.PrcCode](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCR1.html) 关联 [OPRC.PrcCode](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRC.html)。两者只解释原保存键，不新增价格换算或财务分摊公式。当前批序列余额的单位取现有OITM.InvntryUom；历史交易单位保持原定义。审查撤回项不实施，原deferred边不自动放行。
+
+## 0.8.2 OPCH 已付合计字段族（2026-10-22）
+
+本轮在线核对 [OPCH 官方字典](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPCH.html)，恢复 PaidSum 并加入 PaidSumFc/PaidSumSc，均为 Num 19,6。FC/SC 的币种标注可直接确认，无后缀列的本币角色只是命名惯例推断，尚待直接定义及样本核验。官方页面未提供逐事件更新契约，不能据此声明两族相等或推广未清应付公式。
+
+证据、同名 DI 属性的对象区别、兼容影响、交接观察及逐事件验收计划见[字段族复核](validation/opch-paid-sum-research.md)。当前三币原始值与 PaidToDate 族分别保留，新增只读调查 SQL 和离线结构/合成测试；不执行线上导入或发布。现有 OITM.LeadTime 的天数定义再次核对后保持。旧验证结果文件是各自版本快照，不能用作本轮真实 SAP 应付验收。
+
+## 0.8.3 类型标注与来源参数分离（2026-10-22）
+
+公共模型及可选扩展的字段 type 对齐当前 tBI 基础类型目录，不带长度/精度。原有逐列标注保留在 `validation/reference-contract.json` 各表 `source_types`，扩展单独位于 `validation/workspace-views/source-field-types.json`；这些资料保留修订前模板的可移植类型写法，不等于本轮重查的源数据库 DDL。原来没有参数的 13 个 DECIMAL、10 个 VARCHAR、4 个 CHAR 公共字段仍不补猜长度/精度。官方表链接保持，未知源类型细节仍须目标公司库核验。
+
+SQL、显式 CAST 参数、模型键和业务说明不变；PaidSum 族的来源 19,6 与结算待验证限制继续保留。类型资料只用于本地结构校验，不进入 MDL。完整范围、兼容影响与验证记录见[模板类型规格](validation/模板类型-规格契约.md)及[测试映射](validation/模板类型-测试映射.md)。此前版本的结果文件保持历史快照，本轮不执行线上导入/发布。

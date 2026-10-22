@@ -10,7 +10,7 @@
         "description": "参考编号，不声明其全局唯一。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
       },
-      "type": "VARCHAR(11)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "交易估价方法",
@@ -22,7 +22,7 @@
         "description": "A移动平均、S标准、F先进先出、B批序列、N无；历史交易方法可能不同于当前物料配置。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
       },
-      "type": "VARCHAR(1)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "创建日期",
@@ -58,7 +58,7 @@
         "description": "官方定义为Price Currency，仅解释原始价格；不是SumStock库存过账金额的币种标签。库存本币金额用公司OADM.MainCurncy解释，系统币和外币另行核对，不按本字段对库存金额分币种或换汇。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
       },
-      "type": "VARCHAR(3)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "过账日期",
@@ -94,7 +94,7 @@
         "description": "本交易入库方向数量；关联IVL1前应固定交易粒度。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "库存科目",
@@ -106,7 +106,7 @@
         "description": "库存估价交易的库存科目，官方关联OACT。对账时先按完整来源单据及本库存科目聚合估价金额，再与该单据TransId对应的JDT1.Account借贷净额比较；不能把单一工单子集对整张多工单凭证。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "物料编码",
@@ -118,7 +118,7 @@
         "description": "用于物料维度，不足以证明交易属于特定工单。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
       },
-      "type": "VARCHAR(50)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "仓库编码",
@@ -130,7 +130,7 @@
         "description": "估价交易所在仓库代码；调拨存在仓库方向。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
       },
-      "type": "VARCHAR(8)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "位置类型",
@@ -165,7 +165,7 @@
         "description": "当前未结数量字段，不等同交易发生数量或任意历史余额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "出库数量",
@@ -177,7 +177,7 @@
         "description": "本交易出库方向数量；净变化候选为入减出，需按交易范围验证。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "库存交易原始价格",
@@ -189,7 +189,7 @@
         "description": "官方Price，币种上下文为Currency。与单据行StockPrice、层CalcPrice和按库存数量折算的过账单价分开；本字段乘数量不能保证还原全部已存会计金额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "流水汇率字段",
@@ -201,7 +201,7 @@
         "description": "与价格币种配套，不凭名称猜测换算方向。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "交易子行号",
@@ -225,7 +225,7 @@
         "description": "官方Sum Stock Value。保留库存变动符号：库存增加为正、减少为负；常规生产发料正向成本可明确取负值，不使用ABS抹去冲回。按本币OADM.MainCurncy解释并与目标库估价层及库存科目过账核对；不可与IGE1.StockValue总销货成本值混同。NULL保持未知，缺估价行不自动补零或回退单据金额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "库存估价交易序号",
@@ -261,7 +261,7 @@
         "description": "官方WIP Inventory Account；与库存科目InvntAct及在制品差异科目区分，不凭名称将所有分录都当作材料发料金额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "在制品库存价值",
@@ -273,7 +273,7 @@
         "description": "官方WIP Inventory Value；与SumStock库存价值变动分别保留，用于目标生产业务的在制品过账核对，不自动定义为本期发料成本或最终工单成本。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "name": "PostStatus",
@@ -284,7 +284,7 @@
         "description": "N无、P部分、C完成；保留状态，不能未经报表口径确认就默认只取C。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
       },
-      "type": "CHAR(1)",
+      "type": "CHAR",
       "displayName": "估价过账状态"
     }
   ],

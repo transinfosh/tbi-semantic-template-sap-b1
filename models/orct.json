@@ -34,7 +34,7 @@
         "description": "N正常、Y已取消、C取消单据；不能统一过滤后声称是总账净发生额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "业务伙伴代码",
@@ -46,7 +46,7 @@
         "description": "C/S类可关联OCRD；A类不强制解释为业务伙伴。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "业务伙伴名称快照",
@@ -58,7 +58,7 @@
         "description": "收付款记录的名称。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
       },
-      "type": "VARCHAR(200)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "现金金额（本币）",
@@ -70,7 +70,7 @@
         "description": "现金方式金额（本币），属于付款表头粒度；币种来自同公司OADM.MainCurncy，不是可与全部应用行混加的独立增量。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "支票金额（本币）",
@@ -82,7 +82,7 @@
         "description": "支票方式金额（本币），属于付款表头粒度；币种来自同公司OADM.MainCurncy，不是可与全部应用行混加的独立增量。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "信用卡金额（本币）",
@@ -94,7 +94,7 @@
         "description": "信用卡方式金额（本币），属于付款表头粒度；币种来自同公司OADM.MainCurncy，不是可与全部应用行混加的独立增量。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "单据币种",
@@ -106,7 +106,7 @@
         "description": "收付款单据币种。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
       },
-      "type": "VARCHAR(3)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "过账日期",
@@ -166,7 +166,7 @@
         "description": "相对本币的单据汇率；DI说明外币付款必须提供，分析使用原记账汇率。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "本币单据总额",
@@ -178,7 +178,7 @@
         "description": "收付款头本币金额，连接多条应用行后不可重复求和。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "外币单据总额",
@@ -190,7 +190,7 @@
         "description": "外币金额，须按DocCurr分组。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "系统币单据总额",
@@ -202,7 +202,7 @@
         "description": "系统币金额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "收付款对象类别",
@@ -214,7 +214,7 @@
         "description": "常用数据库值C客户、S供应商、A科目；官方还列有P/T/D等地区或税务类别，三类不是穷尽枚举。保持原值，不将未知类别强归业务伙伴；DI数字枚举不是数据库筛选值。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
       },
-      "type": "VARCHAR(1)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "未指定单据金额（本币）",
@@ -226,7 +226,7 @@
         "description": "未应用到指定单据的挂账金额（本币），属于收付款表头粒度，独立于现金、转账等支付方式；币种取同公司OADM.MainCurncy，不与发票应用金额重复相加。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "对象类型",
@@ -238,7 +238,7 @@
         "description": "字符串；收款24，付款46。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "未清本币余额",
@@ -250,7 +250,7 @@
         "description": "当前未清余额，与付款原始金额及发票应用额分开。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "未清外币余额",
@@ -262,7 +262,7 @@
         "description": "当前外币未清余额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "未清系统币余额",
@@ -274,7 +274,7 @@
         "description": "当前系统币未清余额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "非指定单据付款标记",
@@ -286,7 +286,7 @@
         "description": "挂账相关标记，存在无发票应用行的付款场景。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
       },
-      "type": "VARCHAR(1)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "收付款项目编码",
@@ -298,7 +298,7 @@
         "description": "收付款头项目代码，关联OPRJ.PrjCode；不覆盖目标发票、付款科目行或分录行的项目。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "单据日期",
@@ -334,7 +334,7 @@
         "description": "银行转账方式金额（本币），属于付款表头粒度；币种来自同公司OADM.MainCurncy，不是可与全部应用行混加的独立增量。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "name": "CashSumFC",
@@ -345,7 +345,7 @@
         "description": "现金金额（外币），属于收付款表头粒度。按同一付款头DocCurr解释，不与目标发票的应用行外币无条件统一；不跨币种累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/ORCT.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "现金金额（外币）"
     },
     {
@@ -357,7 +357,7 @@
         "description": "现金金额（系统币），属于收付款表头粒度。币种取同公司OADM.SysCurrncy；不与本币或外币金额混加。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/ORCT.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "现金金额（系统币）"
     },
     {
@@ -369,7 +369,7 @@
         "description": "支票金额（外币），属于收付款表头粒度。按同一付款头DocCurr解释，不与目标发票的应用行外币无条件统一；不跨币种累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/ORCT.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "支票金额（外币）"
     },
     {
@@ -381,7 +381,7 @@
         "description": "支票金额（系统币），属于收付款表头粒度。币种取同公司OADM.SysCurrncy；不与本币或外币金额混加。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/ORCT.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "支票金额（系统币）"
     },
     {
@@ -393,7 +393,7 @@
         "description": "信用卡金额（外币），属于收付款表头粒度。按同一付款头DocCurr解释，不与目标发票的应用行外币无条件统一；不跨币种累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/ORCT.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "信用卡金额（外币）"
     },
     {
@@ -405,7 +405,7 @@
         "description": "信用卡金额（系统币），属于收付款表头粒度。币种取同公司OADM.SysCurrncy；不与本币或外币金额混加。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/ORCT.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "信用卡金额（系统币）"
     },
     {
@@ -417,7 +417,7 @@
         "description": "银行转账金额（外币），属于收付款表头粒度。按同一付款头DocCurr解释，不与目标发票的应用行外币无条件统一；不跨币种累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/ORCT.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "银行转账金额（外币）"
     },
     {
@@ -429,7 +429,7 @@
         "description": "银行转账金额（系统币），属于收付款表头粒度。币种取同公司OADM.SysCurrncy；不与本币或外币金额混加。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/ORCT.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "银行转账金额（系统币）"
     },
     {
@@ -441,7 +441,7 @@
         "description": "未指定单据金额（外币），属于收付款表头粒度。按同一付款头DocCurr解释，不与目标发票的应用行外币无条件统一；不跨币种累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/ORCT.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "未指定单据金额（外币）"
     },
     {
@@ -453,7 +453,7 @@
         "description": "未指定单据金额（系统币），属于收付款表头粒度。币种取同公司OADM.SysCurrncy；不与本币或外币金额混加。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/ORCT.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "未指定单据金额（系统币）"
     },
     {
@@ -477,7 +477,7 @@
         "description": "银行转账方式的参考信息或用途；不是保证唯一的银行流水号，不作连接键。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/ORCT.html"
       },
-      "type": "VARCHAR(27)",
+      "type": "VARCHAR",
       "displayName": "银行转账参考信息"
     },
     {
@@ -489,7 +489,7 @@
         "description": "现金支付方式使用的总账科目代码，关联OACT.AcctCode；不等同科目收付款行的目标AcctCode。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/ORCT.html"
       },
-      "type": "VARCHAR(15)",
+      "type": "VARCHAR",
       "displayName": "现金科目编码"
     },
     {
@@ -501,7 +501,7 @@
         "description": "支票支付方式使用的总账科目代码，关联OACT.AcctCode；不等同支票明细或清算事件。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/ORCT.html"
       },
-      "type": "VARCHAR(15)",
+      "type": "VARCHAR",
       "displayName": "支票科目编码"
     },
     {
@@ -513,7 +513,7 @@
         "description": "银行转账支付方式使用的总账科目代码，关联OACT.AcctCode；不是银行主数据编号或账号。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/ORCT.html"
       },
-      "type": "VARCHAR(15)",
+      "type": "VARCHAR",
       "displayName": "银行转账科目编码"
     }
   ],

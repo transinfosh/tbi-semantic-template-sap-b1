@@ -46,7 +46,7 @@
         "description": "该行价格的币种；金额列的本币、外币、系统币口径需分别识别。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RPD1.html"
       },
-      "type": "VARCHAR(3)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "行折扣率",
@@ -58,7 +58,7 @@
         "description": "当前单据行的折扣百分比，与整单折扣分开。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RPD1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "过账日期",
@@ -94,7 +94,7 @@
         "description": "以库存计量单位表示的数量；不同于 Quantity，是否形成库存移动仍由单据和标志决定。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RPD1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "物料编码",
@@ -106,7 +106,7 @@
         "description": "物料编码，官方最大长度50；服务行可为空，不能用于猜测采购来源。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RPD1.html"
       },
-      "type": "VARCHAR(50)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "单据内部行号",
@@ -130,7 +130,7 @@
         "description": "O=未清；C=关闭。关闭与取消含义不同；按业务问题显式处理，不能混合有效与取消单据。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RPD1.html"
       },
-      "type": "VARCHAR(1)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "不含税行金额",
@@ -142,7 +142,7 @@
         "description": "FP2508 DI API 明确为不含税行金额；与外币及系统币列区分，不等同库存估价过账金额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RPD1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "不调整库存数量",
@@ -154,7 +154,7 @@
         "description": "不影响库存数量的标志；FP2508 DI API 说明特定应付贷项仍可调整库存价值，不能理解为完全不影响库存会计。适用范围按单据及来源核验。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RPD1.html"
       },
-      "type": "VARCHAR(1)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "单据单位换算值",
@@ -166,7 +166,7 @@
         "description": "本单据行保存的计量单位换算值；历史分析不得直接用当前物料主数据换算覆盖。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RPD1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "当前行单据类型",
@@ -178,7 +178,7 @@
         "description": "所属当前单据的对象类型，不能代替 BaseType 解释来源。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RPD1.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "未结库存单位数量",
@@ -190,7 +190,7 @@
         "description": "以库存单位表示的未结数量；用于与库存口径比较，仍属当前状态。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RPD1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "未结单据单位数量",
@@ -202,7 +202,7 @@
         "description": "当前剩余未结数量；不是任意历史时点余额，也不能普遍等同未发货或未开票数量。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RPD1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "单据行单价",
@@ -214,7 +214,7 @@
         "description": "FP2508 DI API 定义为税前单价；本表数据库参考仅标为价格，折扣口径仍须结合相关字段。保留行币种、单位，不能当作库存估值单价。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RPD1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "单据单位数量",
@@ -226,7 +226,7 @@
         "description": "单据销售或采购单位数量；跨单据和物料合计前须统一单位，不直接等同库存单位数量。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RPD1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "行交付日期",
@@ -250,7 +250,7 @@
         "description": "行金额的外币口径；汇总时按币种分组或采用已确认的统一币种口径。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RPD1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "行合计（系统币）",
@@ -262,7 +262,7 @@
         "description": "行金额的系统币口径；不是价格字段，也不一定等于按当前汇率换算的金额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RPD1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "计量单位名称",
@@ -274,7 +274,7 @@
         "description": "本行计量单位显示名称；用于解释 Quantity。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RPD1.html"
       },
-      "type": "VARCHAR(100)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "计量单位代码",
@@ -286,7 +286,7 @@
         "description": "本行计量单位代码；未核验一致性前不能把不同单位数量直接相加。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RPD1.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "计量单位内部键",
@@ -310,7 +310,7 @@
         "description": "本行库存计量单位标志；结合 Quantity、InvQty 与单位代码解释。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RPD1.html"
       },
-      "type": "VARCHAR(1)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "仓库编码",
@@ -322,7 +322,7 @@
         "description": "业务行对应仓库；仓库、库位和物料为不同粒度。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RPD1.html"
       },
-      "type": "VARCHAR(8)"
+      "type": "VARCHAR"
     },
     {
       "name": "Dscription",
@@ -333,7 +333,7 @@
         "description": "本行保存的物料或服务描述；服务行无需物料编码，不以当前物料名称覆盖历史描述。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPD1.html"
       },
-      "type": "VARCHAR(200)",
+      "type": "VARCHAR",
       "displayName": "物料/服务描述"
     },
     {
@@ -345,7 +345,7 @@
         "description": "本行选用科目代码，关联OACT；实际会计借贷及成本仍追溯OJDT/JDT1或库存估价。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPD1.html"
       },
-      "type": "VARCHAR(15)",
+      "type": "VARCHAR",
       "displayName": "科目代码"
     },
     {
@@ -357,7 +357,7 @@
         "description": "折前税前单价，结合本行Currency、单位和保存的换算值；不是库存估价单价。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPD1.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "折前税前单价"
     },
     {
@@ -369,7 +369,7 @@
         "description": "折后含税单价，结合本行Currency与计价单位，不当作本币库存成本。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPD1.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "折后含税单价"
     },
     {
@@ -381,7 +381,7 @@
         "description": "本记录税组，关联OVTG.Code；与TaxCode对应的其他税配置分开，不用当前税组重算历史税额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPD1.html"
       },
-      "type": "VARCHAR(8)",
+      "type": "VARCHAR",
       "displayName": "税组代码"
     },
     {
@@ -393,7 +393,7 @@
         "description": "本记录保存税率；税额读取保存值，不据税率重算复杂税费。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPD1.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "税率"
     },
     {
@@ -405,7 +405,7 @@
         "description": "本记录保存的税额（本币），按对应币种读取；不能从当前税率重算或与不同粒度重复累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPD1.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "税额（本币）"
     },
     {
@@ -417,7 +417,7 @@
         "description": "本记录保存的税额（外币），按对应币种读取；不能从当前税率重算或与不同粒度重复累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPD1.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "税额（外币）"
     },
     {
@@ -429,7 +429,7 @@
         "description": "本记录保存的税额（系统币），按对应币种读取；不能从当前税率重算或与不同粒度重复累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPD1.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "税额（系统币）"
     },
     {
@@ -441,7 +441,7 @@
         "description": "本行保存含税金额，按对应币种汇总；不等于整张单据合计，也不再叠加到头总额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPD1.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "含税行金额（本币）"
     },
     {
@@ -453,7 +453,7 @@
         "description": "本行保存含税金额，按对应币种汇总；不等于整张单据合计，也不再叠加到头总额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPD1.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "含税行金额（外币）"
     },
     {
@@ -465,7 +465,7 @@
         "description": "本行保存含税金额，按对应币种汇总；不等于整张单据合计，也不再叠加到头总额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPD1.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "含税行金额（系统币）"
     },
     {
@@ -477,7 +477,7 @@
         "description": "服务单据本行当前未清金额，按对应币种使用；不是付款余额、历史账龄或库存数量。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPD1.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "未清金额（本币）"
     },
     {
@@ -489,7 +489,7 @@
         "description": "服务单据本行当前未清金额，按对应币种使用；不是付款余额、历史账龄或库存数量。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPD1.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "未清金额（外币）"
     },
     {
@@ -501,7 +501,7 @@
         "description": "服务单据本行当前未清金额，按对应币种使用；不是付款余额、历史账龄或库存数量。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPD1.html"
       },
-      "type": "DECIMAL(19,6)",
+      "type": "DECIMAL",
       "displayName": "未清金额（系统币）"
     },
     {
@@ -513,7 +513,7 @@
         "description": "本记录保存的项目代码，关联OPRJ；头项目与行项目分别使用，不相互覆盖。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPD1.html"
       },
-      "type": "VARCHAR(20)",
+      "type": "VARCHAR",
       "displayName": "项目代码"
     },
     {
@@ -537,7 +537,7 @@
         "description": "N非BOM，A组装，S销售BOM，I销售BOM组件，P生产，T模板；按本行保存值分析，不自动推导父子键或删除组件。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPD1.html"
       },
-      "type": "CHAR(1)",
+      "type": "CHAR",
       "displayName": "BOM 类型"
     },
     {
@@ -549,7 +549,7 @@
         "description": "本行成本分配规则代码，关联OOCR.OcrCode；不是单个成本中心，规则分配细节由财务解释。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPD1.html"
       },
-      "type": "VARCHAR(8)",
+      "type": "VARCHAR",
       "displayName": "分配规则1"
     },
     {
@@ -561,7 +561,7 @@
         "description": "本行成本分配规则代码，关联OOCR.OcrCode；不是单个成本中心，规则分配细节由财务解释。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPD1.html"
       },
-      "type": "VARCHAR(8)",
+      "type": "VARCHAR",
       "displayName": "分配规则2"
     },
     {
@@ -573,7 +573,7 @@
         "description": "本行成本分配规则代码，关联OOCR.OcrCode；不是单个成本中心，规则分配细节由财务解释。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPD1.html"
       },
-      "type": "VARCHAR(8)",
+      "type": "VARCHAR",
       "displayName": "分配规则3"
     },
     {
@@ -585,7 +585,7 @@
         "description": "本行成本分配规则代码，关联OOCR.OcrCode；不是单个成本中心，规则分配细节由财务解释。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPD1.html"
       },
-      "type": "VARCHAR(8)",
+      "type": "VARCHAR",
       "displayName": "分配规则4"
     },
     {
@@ -597,7 +597,7 @@
         "description": "本行成本分配规则代码，关联OOCR.OcrCode；不是单个成本中心，规则分配细节由财务解释。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPD1.html"
       },
-      "type": "VARCHAR(8)",
+      "type": "VARCHAR",
       "displayName": "分配规则5"
     }
   ],

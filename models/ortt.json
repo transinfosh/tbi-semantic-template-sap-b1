@@ -10,7 +10,7 @@
         "description": "与RateDate共同匹配；仅按币种连接将一笔交易扩展到多个日期。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORTT.html"
       },
-      "type": "VARCHAR(3)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "汇率记录来源",
@@ -22,7 +22,7 @@
         "description": "数据导入或接口来源，不能证明该汇率被某笔单据采用。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORTT.html"
       },
-      "type": "VARCHAR(1)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "每日汇率",
@@ -34,7 +34,7 @@
         "description": "对公司本币的汇率资料；换算方向结合OADM.DirectRate和读取方式验证。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORTT.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "汇率日期",

@@ -10,7 +10,7 @@
         "description": "生产订单关联的客户编码。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "关闭日期",
@@ -34,7 +34,7 @@
         "description": "已从生产收货的完成产品累计量。数据库IGN1.TranType使用字符C表示完成；DI API的botrntComplete数值0不是SQL筛选值。期间数量、退料、副产品和取消须另按业务角色核验。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "创建日期",
@@ -93,7 +93,7 @@
         "description": "生产订单产品编码；特殊和拆卸订单需结合Type解释。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
       },
-      "type": "VARCHAR(50)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "来源内部标识",
@@ -129,7 +129,7 @@
         "description": "M手工、R物料需求计划、S销售订单、U升级、P生产订单；来源标识须带类型。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
       },
-      "type": "VARCHAR(1)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "计划产量",
@@ -141,7 +141,7 @@
         "description": "订单头计划数量。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "订单日期",
@@ -164,7 +164,7 @@
       "properties": {
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "拒收数量",
@@ -176,7 +176,7 @@
         "description": "已从生产收货的拒收产品累计量。数据库IGN1.TranType使用字符R表示拒收；DI API的botrntReject数值1不是SQL筛选值。拒收产品仍可能有库存和成本，不自动等同报废出库。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "编号系列",
@@ -199,7 +199,7 @@
         "description": "P计划、R已下达、L已关闭、C已取消。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "生产订单类型",
@@ -211,7 +211,7 @@
         "description": "S标准、P特殊、D拆卸；不同类型领料/收货业务方向不同。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "生产订单计量单位",
@@ -245,7 +245,7 @@
         "description": "生产订单产品仓库；区别于组件行wareHouse与实际收发货行WhsCode。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
       },
-      "type": "VARCHAR(8)",
+      "type": "VARCHAR",
       "displayName": "产品仓库编码"
     },
     {
@@ -257,7 +257,7 @@
         "description": "生产订单保存的库存单位名称；不因当前物料或单位主数据修改而覆盖。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
       },
-      "type": "VARCHAR(100)",
+      "type": "VARCHAR",
       "displayName": "产品单位名称快照"
     },
     {
@@ -269,7 +269,7 @@
         "description": "生产订单保存的产品描述；不以当前BOM或物料名称替代。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
       },
-      "type": "VARCHAR(200)",
+      "type": "VARCHAR",
       "displayName": "产品名称快照"
     },
     {
@@ -305,7 +305,7 @@
         "description": "生产订单业务备注，不作为稳定编码或关系键。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
       },
-      "type": "VARCHAR(254)",
+      "type": "VARCHAR",
       "displayName": "生产订单备注"
     },
     {
@@ -329,7 +329,7 @@
         "description": "官方列举17销售订单、202生产订单；与OriginAbs及OriginType共同判别，不按来源显示单号建立关系。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
       },
-      "type": "VARCHAR(20)",
+      "type": "VARCHAR",
       "displayName": "关联来源对象类型"
     },
     {
@@ -341,7 +341,7 @@
         "description": "所属对象保存的第1维分配规则；规则不同于成本中心，不据当前规则分配明细追算历史实际成本。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
       },
-      "type": "VARCHAR(8)",
+      "type": "VARCHAR",
       "displayName": "第1维分配规则编码"
     },
     {
@@ -353,7 +353,7 @@
         "description": "所属对象保存的第2维分配规则；规则不同于成本中心，不据当前规则分配明细追算历史实际成本。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
       },
-      "type": "VARCHAR(8)",
+      "type": "VARCHAR",
       "displayName": "第2维分配规则编码"
     },
     {
@@ -365,7 +365,7 @@
         "description": "所属对象保存的第3维分配规则；规则不同于成本中心，不据当前规则分配明细追算历史实际成本。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
       },
-      "type": "VARCHAR(8)",
+      "type": "VARCHAR",
       "displayName": "第3维分配规则编码"
     },
     {
@@ -377,7 +377,7 @@
         "description": "所属对象保存的第4维分配规则；规则不同于成本中心，不据当前规则分配明细追算历史实际成本。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
       },
-      "type": "VARCHAR(8)",
+      "type": "VARCHAR",
       "displayName": "第4维分配规则编码"
     },
     {
@@ -389,7 +389,7 @@
         "description": "所属对象保存的第5维分配规则；规则不同于成本中心，不据当前规则分配明细追算历史实际成本。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
       },
-      "type": "VARCHAR(8)",
+      "type": "VARCHAR",
       "displayName": "第5维分配规则编码"
     }
   ],

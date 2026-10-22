@@ -10,7 +10,7 @@
         "description": "本行记账的总账或BP控制科目内部代码，沿jdt1_oact连接OACT.AcctCode取得当前科目名称；不是FormatCode，也不以ShortName代替。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "未清贷方本币余额",
@@ -22,7 +22,7 @@
         "description": "当前待核销本币贷方余额，币种来自同公司OADM.MainCurncy；不是贷方发生额，历史余额需核对截止日有效的过账与核销/反转。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "未清借方本币余额",
@@ -34,7 +34,7 @@
         "description": "当前待核销本币借方余额，币种来自同公司OADM.MainCurncy；不是借方发生额，也不能加历史日期过滤就当作历史截止日余额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "未清贷方外币余额",
@@ -46,7 +46,7 @@
         "description": "当前待核销外币贷方余额，配合同一行FCCurrency；缺失币种标签不能擅自补本币，不代替历史时点余额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "未清借方外币余额",
@@ -58,7 +58,7 @@
         "description": "当前待核销外币借方余额，配合同一行FCCurrency；不跨外币累计，不代替历史时点余额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "未清贷方系统币余额",
@@ -70,7 +70,7 @@
         "description": "当前待核销系统币贷方余额，币种来自同公司OADM.SysCurrncy；不是发生额或已重建的历史余额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "未清借方系统币余额",
@@ -82,7 +82,7 @@
         "description": "当前待核销系统币借方余额，币种来自同公司OADM.SysCurrncy；不是发生额或已重建的历史余额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "来源单据编号",
@@ -94,7 +94,7 @@
         "description": "生成该分录的来源业务单据编号。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
       },
-      "type": "VARCHAR(11)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "分支标识",
@@ -118,7 +118,7 @@
         "description": "保存的对方账户标识；不保证完整多借多贷配对，不默认是纯OACT外键。业务伙伴代码的具体存储及地区差异须核实，不能展开其他所有分录行并复制金额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "来源对象内部标识",
@@ -142,7 +142,7 @@
         "description": "本币贷方发生额，币种来自同公司OADM.MainCurncy；保留已存正负号，不ABS、不按DebCred或冲销标记二次翻号。借正贷负净额为Debit-Credit。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "借贷方向",
@@ -154,7 +154,7 @@
         "description": "D借方、C贷方方向标记；Debit/Credit等字段已经区分借贷侧并保存符号，不据此再次翻转金额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
       },
-      "type": "CHAR(1)"
+      "type": "CHAR"
     },
     {
       "displayName": "借方本币金额",
@@ -166,7 +166,7 @@
         "description": "本币借方发生额，币种来自同公司OADM.MainCurncy；保留已存正负号，冲销可在原侧记录负数。借正贷负净额为Debit-Credit，不自动等同收入或利润。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "行到期日期",
@@ -190,7 +190,7 @@
         "description": "本行外币贷方发生额，币种由同一行FCCurrency解释；不同外币不直接相加，保留符号，不从当前科目币种配置补历史币种。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "外币代码",
@@ -202,7 +202,7 @@
         "description": "本行外币币种代码，配合FCDebit/FCCredit及BalFc类字段。NULL或空值不自动解释成本币、系统币或全部币种，不用OACT.ActCurr的##配置值补成真实币种。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
       },
-      "type": "VARCHAR(3)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "借方外币金额",
@@ -214,7 +214,7 @@
         "description": "本行外币借方发生额，币种由同一行FCCurrency解释；按外币分别汇总并保留符号。缺失币种或FC为零不等于本行没有本币发生额。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "分录行号",
@@ -238,7 +238,7 @@
         "description": "分录行文字说明。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
       },
-      "type": "VARCHAR(254)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "维度2分摊规则代码",
@@ -250,7 +250,7 @@
         "description": "维度2的分摊规则代码，用于向一个或多个利润中心分配成本或收入；不是单个利润中心代码，不直接等同OPRC.PrcCode。完整分摊须另核规则明细、权重、维度与有效期。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
       },
-      "type": "VARCHAR(8)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "维度3分摊规则代码",
@@ -262,7 +262,7 @@
         "description": "维度3的分摊规则代码，用于向一个或多个利润中心分配成本或收入；不是单个利润中心代码，不直接等同OPRC.PrcCode。完整分摊须另核规则明细、权重、维度与有效期。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
       },
-      "type": "VARCHAR(8)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "维度4分摊规则代码",
@@ -274,7 +274,7 @@
         "description": "维度4的分摊规则代码，用于向一个或多个利润中心分配成本或收入；不是单个利润中心代码，不直接等同OPRC.PrcCode。完整分摊须另核规则明细、权重、维度与有效期。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
       },
-      "type": "VARCHAR(8)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "维度5分摊规则代码",
@@ -286,7 +286,7 @@
         "description": "维度5的分摊规则代码，用于向一个或多个利润中心分配成本或收入；不是单个利润中心代码，不直接等同OPRC.PrcCode。完整分摊须另核规则明细、权重、维度与有效期。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
       },
-      "type": "VARCHAR(8)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "维度1分摊规则代码",
@@ -298,7 +298,7 @@
         "description": "维度1的分摊规则代码，用于向一个或多个利润中心分配成本或收入；不是单个利润中心代码，不直接等同OPRC.PrcCode。完整分摊须另核规则明细、权重、维度与有效期。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
       },
-      "type": "VARCHAR(8)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "项目编码",
@@ -310,7 +310,7 @@
         "description": "本分录行项目代码，连接OPRJ.PrjCode；与OJDT.Project独立，头项目修改不自动改行项目。按行项目分析不回填头项目，不用当前项目名称代替键。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "第一参考文本",
@@ -322,7 +322,7 @@
         "description": "分录行第一参考文本；值受参考字段映射配置影响，不固定解释为发票号、订单号或分期号，不作稳定关联键。数据库定义200字符，旧DI属性长度文案不作为本模型截断规则。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
       },
-      "type": "VARCHAR(200)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "第二参考文本",
@@ -334,7 +334,7 @@
         "description": "分录行第二参考文本；值受参考字段映射配置影响，不固定解释为发票号、订单号或分期号，不作稳定关联键。数据库定义200字符，旧DI属性长度文案不作为本模型截断规则。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
       },
-      "type": "VARCHAR(200)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "行附加参考文本",
@@ -346,7 +346,7 @@
         "description": "分录行附加参考文本；值受参考字段映射配置影响，不固定解释为发票号、订单号或分期号，不作稳定关联键。数据库定义200字符，旧DI属性长度文案不作为本模型截断规则。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
       },
-      "type": "VARCHAR(200)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "行过账日期",
@@ -370,7 +370,7 @@
         "description": "业务伙伴或科目代码，不是名称；BP行与普通科目行含义不同，不无条件连接OCRD或OACT，也不按与Account是否相等发明统一判别器。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
       },
-      "type": "VARCHAR(15)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "来源行号",
@@ -394,7 +394,7 @@
         "description": "系统币贷方发生额，币种来自同公司OADM.SysCurrncy；与本币和外币分别计量，保留已存符号。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "借方系统币金额",
@@ -406,7 +406,7 @@
         "description": "系统币借方发生额，币种来自同公司OADM.SysCurrncy；与本币和外币分别计量，保留已存符号。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
       },
-      "type": "DECIMAL(19,6)"
+      "type": "DECIMAL"
     },
     {
       "displayName": "行单据日期",
@@ -442,7 +442,7 @@
         "description": "本行来源对象类型，结合CreatedBy解释；30表示日记账分录类别，不保证由界面手工录入。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/JDT1.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     }
   ],
   "displayName": "日记账分录行",

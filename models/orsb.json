@@ -22,7 +22,7 @@
         "description": "源系统记录渠道标志，例如 DI API 或 Service Layer；不是业务来源单据类型。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSB.html"
       },
-      "type": "VARCHAR(1)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "资源组锁定状态",
@@ -34,7 +34,7 @@
         "description": "N 可修改、Y 锁定；不是生产订单关闭状态。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSB.html"
       },
-      "type": "VARCHAR(1)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "历史日志实例",
@@ -70,7 +70,7 @@
         "description": "当前资源分类名称；不等同物料组名称。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSB.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "资源组类型",
@@ -82,7 +82,7 @@
         "description": "M 机器、L 人工、O 其他；资源类型默认值可由所选组提供，具体资源仍读 ORSC.ResType。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSB.html"
       },
-      "type": "VARCHAR(1)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "资源组计量单位",
@@ -94,7 +94,7 @@
         "description": "资源组的容量计量单位配置；实际资源单位仍读 ORSC.UnitOfMsr，不推断历史单位换算。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSB.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR"
     },
     {
       "displayName": "历史记录更新日期字段",

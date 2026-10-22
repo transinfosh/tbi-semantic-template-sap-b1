@@ -68,7 +68,7 @@
         {
           "name": "Quantity",
           "displayName": "库位分配原始数量",
-          "type": "DECIMAL(19,6)",
+          "type": "DECIMAL",
           "notNull": false,
           "isCalculated": false,
           "isHidden": false,
@@ -126,7 +126,7 @@
         {
           "name": "ItemCode",
           "displayName": "物料编码",
-          "type": "VARCHAR(50)",
+          "type": "VARCHAR",
           "notNull": true,
           "isCalculated": false,
           "isHidden": false,
@@ -150,7 +150,7 @@
         {
           "name": "OnHandQty",
           "displayName": "当前在手数量",
-          "type": "DECIMAL(19,6)",
+          "type": "DECIMAL",
           "notNull": false,
           "isCalculated": false,
           "isHidden": false,
@@ -162,7 +162,7 @@
         {
           "name": "WhsCode",
           "displayName": "仓库编码",
-          "type": "VARCHAR(8)",
+          "type": "VARCHAR",
           "notNull": false,
           "isCalculated": false,
           "isHidden": false,
@@ -208,7 +208,7 @@
         {
           "name": "ItemCode",
           "displayName": "物料编码",
-          "type": "VARCHAR(50)",
+          "type": "VARCHAR",
           "notNull": false,
           "isCalculated": false,
           "isHidden": false,
@@ -244,7 +244,7 @@
         {
           "name": "OnHandQty",
           "displayName": "当前在手数量",
-          "type": "DECIMAL(19,6)",
+          "type": "DECIMAL",
           "notNull": false,
           "isCalculated": false,
           "isHidden": false,
@@ -256,7 +256,7 @@
         {
           "name": "WhsCode",
           "displayName": "仓库编码",
-          "type": "VARCHAR(8)",
+          "type": "VARCHAR",
           "notNull": false,
           "isCalculated": false,
           "isHidden": false,
@@ -302,7 +302,7 @@
         {
           "name": "ItemCode",
           "displayName": "物料编码",
-          "type": "VARCHAR(50)",
+          "type": "VARCHAR",
           "notNull": false,
           "isCalculated": false,
           "isHidden": false,
@@ -338,7 +338,7 @@
         {
           "name": "OnHandQty",
           "displayName": "当前在手数量",
-          "type": "DECIMAL(19,6)",
+          "type": "DECIMAL",
           "notNull": false,
           "isCalculated": false,
           "isHidden": false,
@@ -350,7 +350,7 @@
         {
           "name": "WhsCode",
           "displayName": "仓库编码",
-          "type": "VARCHAR(8)",
+          "type": "VARCHAR",
           "notNull": false,
           "isCalculated": false,
           "isHidden": false,
