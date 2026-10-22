@@ -82,7 +82,7 @@
         "description": "与SysNumber组成系统唯一键。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSRN.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR(50)"
     },
     {
       "displayName": "制造日期",
@@ -115,7 +115,7 @@
       "name": "Status",
       "notNull": false,
       "properties": {
-        "description": "批次与序列号枚举语义不同，按所属表解释。",
+        "description": "序列号状态：0=可用，1=不可用，2=已分配；不能仅凭该状态判断当前在哪个仓库。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSRN.html"
       },
       "type": "VARCHAR(1)"

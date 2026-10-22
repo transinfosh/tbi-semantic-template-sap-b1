@@ -130,7 +130,7 @@
         "description": "关联OITM。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OILM.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR(50)"
     },
     {
       "displayName": "位置仓库代码",
@@ -239,6 +239,42 @@
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OILM.html"
       },
       "type": "INTEGER"
+    },
+    {
+      "name": "AccumType",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "0空、1在手、2承诺、3订购、4寄售、5盘点；各类别不能混合求和。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OILM.html"
+      },
+      "type": "INTEGER",
+      "displayName": "库存累计类别"
+    },
+    {
+      "name": "ActionType",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "按官方枚举区分入、出、设置、重估、负库存调整和库位转移；与DocAction为不同字段。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OILM.html"
+      },
+      "type": "INTEGER",
+      "displayName": "库存交易动作"
+    },
+    {
+      "name": "LocType",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "与LocCode共同解释位置范围。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OILM.html"
+      },
+      "type": "INTEGER",
+      "displayName": "位置类型"
     }
   ],
   "displayName": "库存交易消息日志",

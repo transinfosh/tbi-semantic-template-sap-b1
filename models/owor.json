@@ -31,7 +31,7 @@
       "name": "CmpltQty",
       "notNull": false,
       "properties": {
-        "description": "DI API定义为已从生产收货的完成产品累计量，按IGN1.Quantity及TranType=0汇总；不是本期全部收货行数量。",
+        "description": "已从生产收货的完成产品累计量。数据库IGN1.TranType使用字符C表示完成；DI API的botrntComplete数值0不是SQL筛选值。期间数量、退料、副产品和取消须另按业务角色核验。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
       },
       "type": "DECIMAL(19,6)"
@@ -52,7 +52,7 @@
       "isCalculated": false,
       "isHidden": false,
       "name": "DocEntry",
-      "notNull": false,
+      "notNull": true,
       "properties": {
         "description": "生产订单主键；IGE1/IGN1.BaseEntry在BaseType=202时引用此键。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
@@ -173,7 +173,7 @@
       "name": "RjctQty",
       "notNull": false,
       "properties": {
-        "description": "DI API定义为已从生产收货的拒收产品累计量，按IGN1.Quantity及TranType=1汇总；与完成量分开。",
+        "description": "已从生产收货的拒收产品累计量。数据库IGN1.TranType使用字符R表示拒收；DI API的botrntReject数值1不是SQL筛选值。拒收产品仍可能有库存和成本，不自动等同报废出库。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
       },
       "type": "DECIMAL(19,6)"
@@ -235,6 +235,162 @@
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
       },
       "type": "TIMESTAMP"
+    },
+    {
+      "name": "Warehouse",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "生产订单产品仓库；区别于组件行wareHouse与实际收发货行WhsCode。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+      },
+      "type": "VARCHAR(8)",
+      "displayName": "产品仓库编码"
+    },
+    {
+      "name": "Uom",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "生产订单保存的库存单位名称；不因当前物料或单位主数据修改而覆盖。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+      },
+      "type": "VARCHAR(100)",
+      "displayName": "产品单位名称快照"
+    },
+    {
+      "name": "ProdName",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "生产订单保存的产品描述；不以当前BOM或物料名称替代。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+      },
+      "type": "VARCHAR(200)",
+      "displayName": "产品名称快照"
+    },
+    {
+      "name": "StartDate",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "工单计划开始日期；不代表首笔实际发料或实际生产开工。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+      },
+      "type": "TIMESTAMP",
+      "displayName": "计划开始日期"
+    },
+    {
+      "name": "RlsDate",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "工单下达日期；区别于订单日期、创建日期及实际收发料日期。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+      },
+      "type": "TIMESTAMP",
+      "displayName": "下达日期"
+    },
+    {
+      "name": "Comments",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "生产订单业务备注，不作为稳定编码或关系键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+      },
+      "type": "VARCHAR(254)",
+      "displayName": "生产订单备注"
+    },
+    {
+      "name": "TransId",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "源表保存的会计分录关联标识；不代表工单全部收发料和关闭相关分录集合。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+      },
+      "type": "INTEGER",
+      "displayName": "生产订单会计分录内部标识"
+    },
+    {
+      "name": "LinkToObj",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "官方列举17销售订单、202生产订单；与OriginAbs及OriginType共同判别，不按来源显示单号建立关系。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+      },
+      "type": "VARCHAR(20)",
+      "displayName": "关联来源对象类型"
+    },
+    {
+      "name": "OcrCode",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "所属对象保存的第1维分配规则；规则不同于成本中心，不据当前规则分配明细追算历史实际成本。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+      },
+      "type": "VARCHAR(8)",
+      "displayName": "第1维分配规则编码"
+    },
+    {
+      "name": "OcrCode2",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "所属对象保存的第2维分配规则；规则不同于成本中心，不据当前规则分配明细追算历史实际成本。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+      },
+      "type": "VARCHAR(8)",
+      "displayName": "第2维分配规则编码"
+    },
+    {
+      "name": "OcrCode3",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "所属对象保存的第3维分配规则；规则不同于成本中心，不据当前规则分配明细追算历史实际成本。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+      },
+      "type": "VARCHAR(8)",
+      "displayName": "第3维分配规则编码"
+    },
+    {
+      "name": "OcrCode4",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "所属对象保存的第4维分配规则；规则不同于成本中心，不据当前规则分配明细追算历史实际成本。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+      },
+      "type": "VARCHAR(8)",
+      "displayName": "第4维分配规则编码"
+    },
+    {
+      "name": "OcrCode5",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "所属对象保存的第5维分配规则；规则不同于成本中心，不据当前规则分配明细追算历史实际成本。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+      },
+      "type": "VARCHAR(8)",
+      "displayName": "第5维分配规则编码"
     }
   ],
   "displayName": "生产订单",

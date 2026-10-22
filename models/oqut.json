@@ -12,17 +12,6 @@
       "type": "VARCHAR(254)"
     },
     {
-      "displayName": "取消日期",
-      "isCalculated": false,
-      "isHidden": false,
-      "name": "CancelDate",
-      "notNull": false,
-      "properties": {
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
-      },
-      "type": "TIMESTAMP"
-    },
-    {
       "displayName": "取消状态",
       "isCalculated": false,
       "isHidden": false,
@@ -35,24 +24,26 @@
       "type": "CHAR(1)"
     },
     {
-      "displayName": "客户编码",
+      "displayName": "客户/潜在客户编码",
       "isCalculated": false,
       "isHidden": false,
       "name": "CardCode",
       "notNull": false,
       "properties": {
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html",
+        "description": "本报价接收方的业务伙伴编码，可为客户或潜在客户；按 OCRD.CardCode 关联，不无条件限定当前 OCRD.CardType 为 C。"
       },
       "type": "VARCHAR(15)"
     },
     {
-      "displayName": "客户名称",
+      "displayName": "报价接收方名称",
       "isCalculated": false,
       "isHidden": false,
       "name": "CardName",
       "notNull": false,
       "properties": {
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html",
+        "description": "本报价保存的客户或潜在客户名称；保留历史单据名称，不用当前业务伙伴名称覆盖。"
       },
       "type": "VARCHAR(200)"
     },
@@ -129,13 +120,25 @@
       "type": "DECIMAL(19,6)"
     },
     {
+      "displayName": "币种来源",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CurSource",
+      "notNull": false,
+      "properties": {
+        "description": "单据币种来源：L=本币，S=系统币，C=业务伙伴币种。C 不等于外币标识，实际单据币种读取 DocCur 并与公司本币比较。本币和系统币代码分别读取同一公司库 OADM.MainCurncy 和 OADM.SysCurrncy。本字段不改变各金额列已定义的 LC/FC/SC 口径，也不代替行价格 Currency。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
       "displayName": "单据币种",
       "isCalculated": false,
       "isHidden": false,
       "name": "DocCur",
       "notNull": false,
       "properties": {
-        "description": "单据币种，可能是本币或外币；外币单据的 DocTotalFC/PaidFC 按此币种解释。本币金额的币种取 OADM.MainCurncy，系统币金额取 OADM.SysCurrncy；行 Currency 表示价格币种，不能代替本字段或给所有金额赋币种。",
+        "description": "单据实际币种代码，可等于公司本币。CurSource 记录币种来源选择，其中 C=业务伙伴币种，不直接表示外币；外币适用性结合本字段与公司本币判断。正常外币单据的 DocTotalFC 按此币种解释；DocTotal 的本币代码统一取同一公司库 OADM.MainCurncy，DocTotalSy 的系统币代码统一取 OADM.SysCurrncy。行 Currency 只解释行价格币种，不给所有金额列赋币种。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
       },
       "type": "VARCHAR(3)"
@@ -207,7 +210,7 @@
       "name": "DocStatus",
       "notNull": false,
       "properties": {
-        "description": "报价开闭状态，仅 O=未结、C=已结。结合 CANCELED：N/O=未取消未结报价，N/C=未取消已结报价；CANCELED=Y 表示报价已取消，不能仅用 DocStatus 判断取消。已结报价不等于成交或收入；是否允许复制已结报价还受单据设置控制。",
+        "description": "报价开闭状态，仅 O=未结、C=已结。结合 CANCELED：N/O=未取消未结报价，N/C=未取消已结报价；CANCELED=Y 表示报价已取消，不能仅用 DocStatus 判断取消。已结报价不等于成交或收入；是否允许复制已结报价还受单据设置控制。 API 属性 DocumentStatus 的 bost_Open/bost_Close（序号 0/1）对应开闭含义；SQL 筛选本列仍用 O/C，不用 API 名称或序号，也不扩展共享枚举的其他值。未定义值保持待核实。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
       },
       "type": "CHAR(1)"
@@ -255,7 +258,7 @@
       "name": "DocType",
       "notNull": false,
       "properties": {
-        "description": "I=物料单据，S=服务单据；与 ObjType 的单据对象类型代码不同。服务行可以没有 ItemCode，应结合行 Dscription 和 AcctCode 解释，不能因缺少物料编码排除服务金额。",
+        "description": "I=物料单据，S=服务单据；与 ObjType 的单据对象类型代码不同。服务行可以没有 ItemCode，应结合行 Dscription 和 AcctCode 解释，不能因缺少物料编码排除服务金额。 API 枚举 dDocument_Items/dDocument_Service（序号 0/1）仅供对照；SQL 筛选本列使用 I/S，不使用枚举名或序号。未定义值保持待核实。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
       },
       "type": "CHAR(1)"
@@ -284,17 +287,6 @@
       "type": "SMALLINT"
     },
     {
-      "displayName": "日记账备注",
-      "isCalculated": false,
-      "isHidden": false,
-      "name": "JrnlMemo",
-      "notNull": false,
-      "properties": {
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
-      },
-      "type": "VARCHAR(254)"
-    },
-    {
       "displayName": "客户参考号",
       "isCalculated": false,
       "isHidden": false,
@@ -312,55 +304,20 @@
       "name": "ObjType",
       "notNull": false,
       "properties": {
-        "description": "本单据对象类型代码；与来源行 BaseType 区分，实际数据库类型须核验。",
+        "description": "本单据对象类型代码；与来源行 BaseType 区分，实际数据库类型须核验。 本表对象为 Quotations，对象类型代码为 23；不是 DocType 的 I/S，也不表示来源对象。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
       },
       "type": "VARCHAR(20)"
     },
     {
-      "displayName": "累计已收付金额（外币）",
-      "isCalculated": false,
-      "isHidden": false,
-      "name": "PaidFC",
-      "notNull": false,
-      "properties": {
-        "description": "单据当前累计已收付外币金额；外币单据以本表 DocCur 为币种，跨单据按 DocCur 分组。不是外币未付金额或指定历史期间的收付款发生额；本币单据使用 PaidToDate。",
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
-      },
-      "type": "DECIMAL(19,6)"
-    },
-    {
-      "displayName": "累计已收付金额（系统币）",
-      "isCalculated": false,
-      "isHidden": false,
-      "name": "PaidSys",
-      "notNull": false,
-      "properties": {
-        "description": "单据当前累计已收付系统币金额，币种取 OADM.SysCurrncy；不是未付金额或指定历史期间的收付款发生额。与单据总额比较时须使用同一币种口径。",
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
-      },
-      "type": "DECIMAL(19,6)"
-    },
-    {
-      "displayName": "累计已收付金额（本币）",
-      "isCalculated": false,
-      "isHidden": false,
-      "name": "PaidToDate",
-      "notNull": false,
-      "properties": {
-        "description": "单据当前累计已收付本币金额，币种取 OADM.MainCurncy；不能当作指定历史期间的收付款发生额，也不是未付金额。与单据总额比较时须使用同一币种口径。",
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
-      },
-      "type": "DECIMAL(19,6)"
-    },
-    {
-      "displayName": "需求日期",
+      "displayName": "客户期望收货日期",
       "isCalculated": false,
       "isHidden": false,
       "name": "ReqDate",
       "notNull": false,
       "properties": {
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html",
+        "description": "客户期望收到货物的日期，不是取消日、过账日或实际签收日；与 DocDueDate 及行 ShipDate 各自保存的计划日期分别使用。"
       },
       "type": "TIMESTAMP"
     },
@@ -473,18 +430,6 @@
       "type": "DECIMAL(19,6)"
     },
     {
-      "displayName": "日记账分录内部标识",
-      "isCalculated": false,
-      "isHidden": false,
-      "name": "TransId",
-      "notNull": false,
-      "properties": {
-        "description": "关联 OJDT.TransId；单据内部键 DocEntry 与分录键不等价。",
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
-      },
-      "type": "INTEGER"
-    },
-    {
       "displayName": "运输方式代码",
       "isCalculated": false,
       "isHidden": false,
@@ -553,6 +498,30 @@
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
       },
       "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "单据项目代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Project",
+      "notNull": false,
+      "properties": {
+        "description": "本单据头保存的 Project 项目代码，按 OPRJ.PrjCode 关联；与明细行 Project 分别解释，不能把头项目覆盖到所有行，也不按当前项目启用状态过滤历史单据。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "单据确认标志",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Confirmed",
+      "notNull": false,
+      "properties": {
+        "description": "报价确认标志：Y=已确认，N=未确认；用于判断可继续复制的条件之一，不等于客户接受、成交或已收款；还须结合取消、开闭、有效期与单据设置。未知值不按已确认处理。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
+      },
+      "type": "VARCHAR(1)"
     }
   ],
   "displayName": "销售报价",
@@ -560,7 +529,7 @@
   "name": "oqut",
   "primaryKey": "DocEntry",
   "properties": {
-    "description": "单据表头粒度，主键 DocEntry。报价方案；不直接代表实际交货、收入或库存过账。 金额分别保存本币、外币、系统币口径：DocTotal/PaidToDate 的币种取同一公司库 OADM.MainCurncy，DocTotalSy/PaidSys 取 OADM.SysCurrncy；外币单据的 DocTotalFC/PaidFC 按本表 DocCur 解释并按币种汇总。DocCur 也可等于本币，不是所有金额列的统一币种。单据总额、当前累计已收付额和行金额分开使用；头金额不能在连接多行后重复累计。",
+    "description": "单据表头粒度，主键 DocEntry。对应 Service Layer 销售对象 Quotations（ObjType=23），物理表为 OQUT。报价方案；不直接代表实际交货、收入或库存过账。 金额分别保存本币、外币、系统币口径：DocTotal 的币种取同一公司库 OADM.MainCurncy，DocTotalSy 取 OADM.SysCurrncy；外币单据的 DocTotalFC 按本表 DocCur 解释并按币种汇总。DocCur 也可等于本币，不是所有金额列的统一币种。单据总额和行金额分开使用；头金额不能在连接多行后重复累计。 CurSource 表示币种来源选择，取值见字段说明；不据此切换各金额列的 LC/FC/SC 定义。本币和系统币代码始终由同一公司库 OADM 读取。 本对象不承载已确认的收款或应收余额指标；下游预付款、应收单据和实际收付款需按各自业务事实追溯。 报价税额还受公司“报价含税”设置影响；零税额不能单独证明客户或物料免税，当前设置也不能直接重建历史报价税额。普通行与备选行的汇总范围见 QUT1.LineType。",
     "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html"
   },
   "tableReference": {

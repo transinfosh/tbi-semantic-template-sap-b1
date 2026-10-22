@@ -40,7 +40,7 @@
       "isCalculated": false,
       "isHidden": false,
       "name": "ItemCode",
-      "notNull": false,
+      "notNull": true,
       "properties": {
         "description": "与WhsCode共同确定记录。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITW.html"
@@ -124,7 +124,7 @@
       "isCalculated": false,
       "isHidden": false,
       "name": "WhsCode",
-      "notNull": false,
+      "notNull": true,
       "properties": {
         "description": "与ItemCode共同确定记录。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITW.html"

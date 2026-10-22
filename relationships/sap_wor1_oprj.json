@@ -1,0 +1,14 @@
+{
+  "name": "sap_wor1_oprj",
+  "models": [
+    "wor1",
+    "oprj"
+  ],
+  "joinType": "MANY_TO_ONE",
+  "condition": "wor1.Project = oprj.PrjCode",
+  "displayName": "生产订单组件行关联项目代码主数据",
+  "properties": {
+    "description": "所属对象项目维度；保留表头与组件项目差异。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
+  }
+}

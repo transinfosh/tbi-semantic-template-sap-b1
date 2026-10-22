@@ -1,0 +1,14 @@
+{
+  "name": "sap_inv3_ovtg",
+  "displayName": "应收发票附加费用税组",
+  "models": [
+    "inv3",
+    "ovtg"
+  ],
+  "joinType": "MANY_TO_ONE",
+  "condition": "inv3.VatGroup = ovtg.Code",
+  "properties": {
+    "description": "按保存的税组编码解释费用税组；不能以当前配置重算历史费用税额。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV3.html"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "sap_dpo1_oact",
+  "models": [
+    "dpo1",
+    "oact"
+  ],
+  "joinType": "MANY_TO_ONE",
+  "condition": "dpo1.AcctCode = oact.AcctCode",
+  "displayName": "应付预付款明细关联总账科目主数据",
+  "properties": {
+    "description": "按本记录保存键关联对应维度或所属单据；连接条件为 dpo1.AcctCode = oact.AcctCode。保留未匹配事实，不用当前主数据默认值覆盖保存值，头金额不按明细重复累计。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/DPO1.html"
+  }
+}

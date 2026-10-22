@@ -1,0 +1,14 @@
+{
+  "name": "sap_owor_ojdt",
+  "models": [
+    "owor",
+    "ojdt"
+  ],
+  "joinType": "MANY_TO_ONE",
+  "condition": "owor.TransId = ojdt.TransId",
+  "displayName": "生产订单关联日记账分录表头",
+  "properties": {
+    "description": "仅源表明确保存的分录引用，空键保持未匹配，不解释为工单全部成本分录。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+  }
+}

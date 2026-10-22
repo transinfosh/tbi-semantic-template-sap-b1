@@ -1,0 +1,1273 @@
+{
+  "date": "2026-10-22",
+  "scope": "sales",
+  "criteria": [
+    "保留身份关系键、历史上下文及单位币种配套",
+    "按业务适用性而非共享列存在性选择",
+    "补影响汇总范围与对象角色的字段",
+    "删除前核对消费者；历史发布冻结",
+    "未确认FC来源与本地化仍待验证"
+  ],
+  "models": {
+    "dln1": {
+      "official_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/DLN1.html",
+      "source_sha256": "c610108628410800a87e734fd423974472e93cbe7ca5d7e06be4226b0bfca42b",
+      "official_fields": 343,
+      "before_count": 45,
+      "after_count": 51,
+      "add": [
+        "Project",
+        "SlpCode",
+        "TreeType",
+        "OpenSum",
+        "OpenSumFC",
+        "OpenSumSys"
+      ],
+      "remove": {},
+      "revise": [],
+      "keep_by_role": {
+        "业务上下文与核对": [
+          "FreeTxt",
+          "VisOrder"
+        ],
+        "业务维度与历史描述": [
+          "AcctCode",
+          "Dscription",
+          "ItemCode",
+          "WhsCode"
+        ],
+        "数量与历史单位": [
+          "InvQty",
+          "NumPerMsr",
+          "OpenInvQty",
+          "OpenQty",
+          "Quantity",
+          "unitMsr",
+          "UomCode",
+          "UomEntry",
+          "UseBaseUn"
+        ],
+        "日期与时点": [
+          "DocDate",
+          "ShipDate"
+        ],
+        "状态与适用边界": [
+          "LineStatus",
+          "NoInvtryMv"
+        ],
+        "身份与追溯": [
+          "BaseEntry",
+          "BaseLine",
+          "BaseType",
+          "DocEntry",
+          "LineNum",
+          "ObjType",
+          "TargetType"
+        ],
+        "金额价格币种税折扣": [
+          "Currency",
+          "DiscPrcnt",
+          "GrossBuyPr",
+          "GTotal",
+          "GTotalFC",
+          "GTotalSC",
+          "LineTotal",
+          "Price",
+          "PriceAfVAT",
+          "PriceBefDi",
+          "Rate",
+          "TaxCode",
+          "TotalFrgn",
+          "TotalSumSy",
+          "VatGroup",
+          "VatPrcnt",
+          "VatSum",
+          "VatSumFrgn",
+          "VatSumSy"
+        ]
+      }
+    },
+    "rdr1": {
+      "official_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDR1.html",
+      "source_sha256": "307b7e142363d42fb8f391cd0be999d3749da225c9f96ee02f49f63cd1219796",
+      "official_fields": 343,
+      "before_count": 46,
+      "after_count": 51,
+      "add": [
+        "Project",
+        "SlpCode",
+        "TreeType",
+        "OpenSum",
+        "OpenSumFC",
+        "OpenSumSys"
+      ],
+      "remove": {
+        "NoInvtryMv": "本对象不直接产生库存数量移动，共享标志不提升为库存事实判断能力"
+      },
+      "revise": [],
+      "keep_by_role": {
+        "业务上下文与核对": [
+          "FreeTxt",
+          "VisOrder"
+        ],
+        "业务维度与历史描述": [
+          "AcctCode",
+          "Dscription",
+          "ItemCode",
+          "WhsCode"
+        ],
+        "数量与历史单位": [
+          "InvQty",
+          "NumPerMsr",
+          "OpenInvQty",
+          "OpenQty",
+          "Quantity",
+          "unitMsr",
+          "UomCode",
+          "UomEntry",
+          "UseBaseUn"
+        ],
+        "日期与时点": [
+          "DocDate",
+          "ShipDate"
+        ],
+        "状态与适用边界": [
+          "LineStatus",
+          "LinManClsd"
+        ],
+        "身份与追溯": [
+          "BaseEntry",
+          "BaseLine",
+          "BaseType",
+          "DocEntry",
+          "LineNum",
+          "ObjType",
+          "TargetType"
+        ],
+        "金额价格币种税折扣": [
+          "Currency",
+          "DiscPrcnt",
+          "GrossBuyPr",
+          "GTotal",
+          "GTotalFC",
+          "GTotalSC",
+          "LineTotal",
+          "Price",
+          "PriceAfVAT",
+          "PriceBefDi",
+          "Rate",
+          "TaxCode",
+          "TotalFrgn",
+          "TotalSumSy",
+          "VatGroup",
+          "VatPrcnt",
+          "VatSum",
+          "VatSumFrgn",
+          "VatSumSy"
+        ]
+      }
+    },
+    "rin1": {
+      "official_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN1.html",
+      "source_sha256": "26e2c856d0c84d4c88092740344d0a9dc171b2c9bbea891f92cbfc67599d7f1c",
+      "official_fields": 343,
+      "before_count": 45,
+      "after_count": 51,
+      "add": [
+        "Project",
+        "SlpCode",
+        "TreeType",
+        "OpenSum",
+        "OpenSumFC",
+        "OpenSumSys"
+      ],
+      "remove": {},
+      "revise": [],
+      "keep_by_role": {
+        "业务上下文与核对": [
+          "FreeTxt",
+          "VisOrder"
+        ],
+        "业务维度与历史描述": [
+          "AcctCode",
+          "Dscription",
+          "ItemCode",
+          "WhsCode"
+        ],
+        "数量与历史单位": [
+          "InvQty",
+          "NumPerMsr",
+          "OpenInvQty",
+          "OpenQty",
+          "Quantity",
+          "unitMsr",
+          "UomCode",
+          "UomEntry",
+          "UseBaseUn"
+        ],
+        "日期与时点": [
+          "DocDate",
+          "ShipDate"
+        ],
+        "状态与适用边界": [
+          "LineStatus",
+          "NoInvtryMv"
+        ],
+        "身份与追溯": [
+          "BaseEntry",
+          "BaseLine",
+          "BaseType",
+          "DocEntry",
+          "LineNum",
+          "ObjType",
+          "TargetType"
+        ],
+        "金额价格币种税折扣": [
+          "Currency",
+          "DiscPrcnt",
+          "GrossBuyPr",
+          "GTotal",
+          "GTotalFC",
+          "GTotalSC",
+          "LineTotal",
+          "Price",
+          "PriceAfVAT",
+          "PriceBefDi",
+          "Rate",
+          "TaxCode",
+          "TotalFrgn",
+          "TotalSumSy",
+          "VatGroup",
+          "VatPrcnt",
+          "VatSum",
+          "VatSumFrgn",
+          "VatSumSy"
+        ]
+      }
+    },
+    "orin": {
+      "official_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html",
+      "source_sha256": "c8f7fb3f0a23e11483ad3810ad1b4a6b4d8480eaac70f92914e386bcbe738f7d",
+      "official_fields": 482,
+      "before_count": 48,
+      "after_count": 48,
+      "add": [
+        "Project"
+      ],
+      "remove": {
+        "CancelDate": "未确认本对象上适用性，且不是实际取消发生时间；订单专用截止日不跨对象泛化"
+      },
+      "revise": [
+        "ReqDate"
+      ],
+      "keep_by_role": {
+        "业务上下文与核对": [
+          "Address",
+          "Comments",
+          "DocNum",
+          "JrnlMemo",
+          "NumAtCard",
+          "TransId"
+        ],
+        "业务维度与历史描述": [
+          "CardCode",
+          "CardName",
+          "GroupNum",
+          "Series",
+          "SlpCode",
+          "TrnspCode"
+        ],
+        "日期与时点": [
+          "CreateDate",
+          "DocDate",
+          "DocDueDate",
+          "PaidToDate",
+          "ReqDate",
+          "TaxDate",
+          "UpdateDate"
+        ],
+        "状态与适用边界": [
+          "CANCELED",
+          "DocStatus",
+          "DocType"
+        ],
+        "身份与追溯": [
+          "DocEntry",
+          "ObjType"
+        ],
+        "金额价格币种税折扣": [
+          "DiscPrcnt",
+          "DiscSum",
+          "DiscSumFC",
+          "DiscSumSy",
+          "CurSource",
+          "DocCur",
+          "DocRate",
+          "DocTotal",
+          "DocTotalFC",
+          "DocTotalSy",
+          "GrosProfit",
+          "PaidFC",
+          "PaidSys",
+          "RoundDif",
+          "RoundDifFC",
+          "RoundDifSy",
+          "TotalExpFC",
+          "TotalExpns",
+          "TotalExpSC",
+          "VatPercent",
+          "VatSum",
+          "VatSumFC",
+          "VatSumSy"
+        ]
+      }
+    },
+    "rdn1": {
+      "official_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDN1.html",
+      "source_sha256": "2f8e2042252bad30096ee5ee04f74eb7aae7251ac606d45dbd20da2162d95b57",
+      "official_fields": 343,
+      "before_count": 37,
+      "after_count": 43,
+      "add": [
+        "Project",
+        "SlpCode",
+        "TreeType",
+        "OpenSum",
+        "OpenSumFC",
+        "OpenSumSys"
+      ],
+      "remove": {},
+      "revise": [],
+      "keep_by_role": {
+        "业务维度与历史描述": [
+          "AcctCode",
+          "Dscription",
+          "ItemCode",
+          "WhsCode"
+        ],
+        "数量与历史单位": [
+          "InvQty",
+          "NumPerMsr",
+          "OpenInvQty",
+          "OpenQty",
+          "Quantity",
+          "unitMsr",
+          "UomCode",
+          "UomEntry",
+          "UseBaseUn"
+        ],
+        "日期与时点": [
+          "DocDate",
+          "ShipDate"
+        ],
+        "状态与适用边界": [
+          "LineStatus",
+          "NoInvtryMv"
+        ],
+        "身份与追溯": [
+          "BaseEntry",
+          "BaseLine",
+          "BaseType",
+          "DocEntry",
+          "LineNum",
+          "ObjType"
+        ],
+        "金额价格币种税折扣": [
+          "Currency",
+          "DiscPrcnt",
+          "GTotal",
+          "GTotalFC",
+          "GTotalSC",
+          "LineTotal",
+          "Price",
+          "PriceAfVAT",
+          "PriceBefDi",
+          "TotalFrgn",
+          "TotalSumSy",
+          "VatSum",
+          "VatSumFrgn",
+          "VatSumSy"
+        ]
+      }
+    },
+    "inv1": {
+      "official_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV1.html",
+      "source_sha256": "887d66b3b018c82c90fc8b1540e3077fb588fcebd51d5d288602f172e5b7ed15",
+      "official_fields": 343,
+      "before_count": 45,
+      "after_count": 51,
+      "add": [
+        "Project",
+        "SlpCode",
+        "TreeType",
+        "OpenSum",
+        "OpenSumFC",
+        "OpenSumSys"
+      ],
+      "remove": {},
+      "revise": [],
+      "keep_by_role": {
+        "业务上下文与核对": [
+          "FreeTxt",
+          "VisOrder"
+        ],
+        "业务维度与历史描述": [
+          "AcctCode",
+          "Dscription",
+          "ItemCode",
+          "WhsCode"
+        ],
+        "数量与历史单位": [
+          "InvQty",
+          "NumPerMsr",
+          "OpenInvQty",
+          "OpenQty",
+          "Quantity",
+          "unitMsr",
+          "UomCode",
+          "UomEntry",
+          "UseBaseUn"
+        ],
+        "日期与时点": [
+          "DocDate",
+          "ShipDate"
+        ],
+        "状态与适用边界": [
+          "LineStatus",
+          "NoInvtryMv"
+        ],
+        "身份与追溯": [
+          "BaseEntry",
+          "BaseLine",
+          "BaseType",
+          "DocEntry",
+          "LineNum",
+          "ObjType",
+          "TargetType"
+        ],
+        "金额价格币种税折扣": [
+          "Currency",
+          "DiscPrcnt",
+          "GrossBuyPr",
+          "GTotal",
+          "GTotalFC",
+          "GTotalSC",
+          "LineTotal",
+          "Price",
+          "PriceAfVAT",
+          "PriceBefDi",
+          "Rate",
+          "TaxCode",
+          "TotalFrgn",
+          "TotalSumSy",
+          "VatGroup",
+          "VatPrcnt",
+          "VatSum",
+          "VatSumFrgn",
+          "VatSumSy"
+        ]
+      }
+    },
+    "oinv": {
+      "official_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OINV.html",
+      "source_sha256": "3503fb9e7e859f4a2291da9f0ab384194f3776e7b1c1d0944ecbbf6d625cc95e",
+      "official_fields": 482,
+      "before_count": 49,
+      "after_count": 50,
+      "add": [
+        "Project",
+        "InvntSttus"
+      ],
+      "remove": {
+        "CancelDate": "未确认本对象上适用性，且不是实际取消发生时间；订单专用截止日不跨对象泛化"
+      },
+      "revise": [
+        "ReqDate"
+      ],
+      "keep_by_role": {
+        "业务上下文与核对": [
+          "Address",
+          "Comments",
+          "DocNum",
+          "JrnlMemo",
+          "NumAtCard",
+          "TransId"
+        ],
+        "业务维度与历史描述": [
+          "CardCode",
+          "CardName",
+          "GroupNum",
+          "Series",
+          "SlpCode",
+          "TrnspCode"
+        ],
+        "日期与时点": [
+          "CreateDate",
+          "DocDate",
+          "DocDueDate",
+          "PaidToDate",
+          "ReqDate",
+          "TaxDate",
+          "UpdateDate"
+        ],
+        "状态与适用边界": [
+          "CANCELED",
+          "DocStatus",
+          "DocType",
+          "isIns"
+        ],
+        "身份与追溯": [
+          "DocEntry",
+          "ObjType"
+        ],
+        "金额价格币种税折扣": [
+          "DiscPrcnt",
+          "DiscSum",
+          "DiscSumFC",
+          "DiscSumSy",
+          "CurSource",
+          "DocCur",
+          "DocRate",
+          "DocTotal",
+          "DocTotalFC",
+          "DocTotalSy",
+          "GrosProfit",
+          "PaidFC",
+          "PaidSys",
+          "RoundDif",
+          "RoundDifFC",
+          "RoundDifSy",
+          "TotalExpFC",
+          "TotalExpns",
+          "TotalExpSC",
+          "VatPercent",
+          "VatSum",
+          "VatSumFC",
+          "VatSumSy"
+        ]
+      }
+    },
+    "inv11": {
+      "official_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html",
+      "source_sha256": "6fde8e54fa07fc5018e207135904e62f4ba00e44fe5ac64c14887804630a301a",
+      "official_fields": 70,
+      "before_count": 15,
+      "after_count": 35,
+      "add": [
+        "ApplGrossF",
+        "ApplGrossS",
+        "ApplVatFc",
+        "ApplVatSc",
+        "BaseGrossF",
+        "BaseGrossS",
+        "BaseVatFc",
+        "BaseVatSc",
+        "LineTotal",
+        "TotalFrgn",
+        "TotalSumSy",
+        "VatSum",
+        "VatSumFrgn",
+        "VatSumSys",
+        "ApplNet",
+        "ApplNetFc",
+        "ApplNetSc",
+        "BaseNet",
+        "BaseNetFc",
+        "BaseNetSc"
+      ],
+      "remove": {},
+      "revise": [],
+      "keep_by_role": {
+        "状态与适用边界": [
+          "IsGross",
+          "LineType"
+        ],
+        "身份与追溯": [
+          "BaseAbs",
+          "BaseType",
+          "DocEntry",
+          "LineNum",
+          "LineSeq",
+          "ObjType"
+        ],
+        "金额价格币种税折扣": [
+          "ApplGross",
+          "ApplVat",
+          "BaseGross",
+          "BaseVat",
+          "Gross",
+          "GrossFc",
+          "GrossSc"
+        ]
+      }
+    },
+    "inv9": {
+      "official_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV9.html",
+      "source_sha256": "aac1b2a2b610fbe16e1d33b043877dea834bfc1ef58ceed67fc5efd3be368302",
+      "official_fields": 27,
+      "before_count": 17,
+      "after_count": 21,
+      "add": [
+        "ApplDrawnF",
+        "ApplDrawnS",
+        "VatFc",
+        "VatSc"
+      ],
+      "remove": {},
+      "revise": [],
+      "keep_by_role": {
+        "状态与适用边界": [
+          "IsGross",
+          "Posted"
+        ],
+        "身份与追溯": [
+          "BaseAbs",
+          "BaseLine",
+          "DocEntry",
+          "LineNum",
+          "ObjCode",
+          "ObjType",
+          "TargetBase"
+        ],
+        "金额价格币种税折扣": [
+          "ApplDrawn",
+          "DrawnSum",
+          "DrawnSumFc",
+          "DrawnSumSc",
+          "Gross",
+          "GrossFc",
+          "GrossSc",
+          "Vat"
+        ]
+      }
+    },
+    "rin9": {
+      "official_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN9.html",
+      "source_sha256": "dd24d9821232684f0dc8ae25fe8389631bde2a5c58f45e3a0c7c7206c9ef21ab",
+      "official_fields": 27,
+      "before_count": 17,
+      "after_count": 21,
+      "add": [
+        "ApplDrawnF",
+        "ApplDrawnS",
+        "VatFc",
+        "VatSc"
+      ],
+      "remove": {},
+      "revise": [],
+      "keep_by_role": {
+        "状态与适用边界": [
+          "IsGross",
+          "Posted"
+        ],
+        "身份与追溯": [
+          "BaseAbs",
+          "BaseLine",
+          "DocEntry",
+          "LineNum",
+          "ObjCode",
+          "ObjType",
+          "TargetBase"
+        ],
+        "金额价格币种税折扣": [
+          "ApplDrawn",
+          "DrawnSum",
+          "DrawnSumFc",
+          "DrawnSumSc",
+          "Gross",
+          "GrossFc",
+          "GrossSc",
+          "Vat"
+        ]
+      }
+    },
+    "odln": {
+      "official_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ODLN.html",
+      "source_sha256": "b1cf8bac0514f5b33dea91ab2d1b13de473ea2c1d2bd7094adfcc76d9bf60f87",
+      "official_fields": 482,
+      "before_count": 48,
+      "after_count": 45,
+      "add": [
+        "Project"
+      ],
+      "remove": {
+        "PaidToDate": "共享列缺乏本对象已确认的结算口径；下游预付款、发票和支付另行追溯，不声称物理列恒零",
+        "PaidFC": "共享列缺乏本对象已确认的结算口径；下游预付款、发票和支付另行追溯，不声称物理列恒零",
+        "PaidSys": "共享列缺乏本对象已确认的结算口径；下游预付款、发票和支付另行追溯，不声称物理列恒零",
+        "CancelDate": "未确认本对象上适用性，且不是实际取消发生时间；订单专用截止日不跨对象泛化"
+      },
+      "revise": [
+        "DocCur",
+        "ReqDate"
+      ],
+      "keep_by_role": {
+        "业务上下文与核对": [
+          "Address",
+          "Comments",
+          "DocNum",
+          "JrnlMemo",
+          "NumAtCard",
+          "TransId"
+        ],
+        "业务维度与历史描述": [
+          "CardCode",
+          "CardName",
+          "GroupNum",
+          "Series",
+          "SlpCode",
+          "TrnspCode"
+        ],
+        "日期与时点": [
+          "CreateDate",
+          "DocDate",
+          "DocDueDate",
+          "ReqDate",
+          "TaxDate",
+          "UpdateDate"
+        ],
+        "状态与适用边界": [
+          "CANCELED",
+          "DocStatus",
+          "DocType"
+        ],
+        "身份与追溯": [
+          "DocEntry",
+          "ObjType"
+        ],
+        "金额价格币种税折扣": [
+          "DiscPrcnt",
+          "DiscSum",
+          "DiscSumFC",
+          "DiscSumSy",
+          "CurSource",
+          "DocCur",
+          "DocRate",
+          "DocTotal",
+          "DocTotalFC",
+          "DocTotalSy",
+          "GrosProfit",
+          "RoundDif",
+          "RoundDifFC",
+          "RoundDifSy",
+          "TotalExpFC",
+          "TotalExpns",
+          "TotalExpSC",
+          "VatPercent",
+          "VatSum",
+          "VatSumFC",
+          "VatSumSy"
+        ]
+      }
+    },
+    "ordr": {
+      "official_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORDR.html",
+      "source_sha256": "174671ec86a7d08e2d9bbaf862052983a93640691c504d5744af35441e000700",
+      "official_fields": 482,
+      "before_count": 49,
+      "after_count": 46,
+      "add": [
+        "Project",
+        "Confirmed"
+      ],
+      "remove": {
+        "PaidToDate": "共享列缺乏本对象已确认的结算口径；下游预付款、发票和支付另行追溯，不声称物理列恒零",
+        "PaidFC": "共享列缺乏本对象已确认的结算口径；下游预付款、发票和支付另行追溯，不声称物理列恒零",
+        "PaidSys": "共享列缺乏本对象已确认的结算口径；下游预付款、发票和支付另行追溯，不声称物理列恒零",
+        "TransId": "本对象不作为自身会计分录事实；下游过账使用下游单据的分录键",
+        "JrnlMemo": "低优先级共享日记账备注不纳入精选分析层；可编辑文本不证明本单会计过账"
+      },
+      "revise": [
+        "CancelDate",
+        "DocCur",
+        "ReqDate"
+      ],
+      "keep_by_role": {
+        "业务上下文与核对": [
+          "Address",
+          "Comments",
+          "DocNum",
+          "NumAtCard"
+        ],
+        "业务维度与历史描述": [
+          "CardCode",
+          "CardName",
+          "GroupNum",
+          "Series",
+          "SlpCode",
+          "TrnspCode"
+        ],
+        "日期与时点": [
+          "CancelDate",
+          "CreateDate",
+          "DocDate",
+          "DocDueDate",
+          "ReqDate",
+          "TaxDate",
+          "UpdateDate"
+        ],
+        "状态与适用边界": [
+          "CANCELED",
+          "DocManClsd",
+          "DocStatus",
+          "DocType"
+        ],
+        "身份与追溯": [
+          "DocEntry",
+          "ObjType"
+        ],
+        "金额价格币种税折扣": [
+          "DiscPrcnt",
+          "DiscSum",
+          "DiscSumFC",
+          "DiscSumSy",
+          "CurSource",
+          "DocCur",
+          "DocRate",
+          "DocTotal",
+          "DocTotalFC",
+          "DocTotalSy",
+          "GrosProfit",
+          "RoundDif",
+          "RoundDifFC",
+          "RoundDifSy",
+          "TotalExpFC",
+          "TotalExpns",
+          "TotalExpSC",
+          "VatPercent",
+          "VatSum",
+          "VatSumFC",
+          "VatSumSy"
+        ]
+      }
+    },
+    "oqut": {
+      "official_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html",
+      "source_sha256": "47649b416483bb77026e227da666e808d0ccf59ce53d85349be2778e7646fa94",
+      "official_fields": 482,
+      "before_count": 48,
+      "after_count": 44,
+      "add": [
+        "Project",
+        "Confirmed"
+      ],
+      "remove": {
+        "PaidToDate": "共享列缺乏本对象已确认的结算口径；下游预付款、发票和支付另行追溯，不声称物理列恒零",
+        "PaidFC": "共享列缺乏本对象已确认的结算口径；下游预付款、发票和支付另行追溯，不声称物理列恒零",
+        "PaidSys": "共享列缺乏本对象已确认的结算口径；下游预付款、发票和支付另行追溯，不声称物理列恒零",
+        "TransId": "本对象不作为自身会计分录事实；下游过账使用下游单据的分录键",
+        "JrnlMemo": "低优先级共享日记账备注不纳入精选分析层；可编辑文本不证明本单会计过账",
+        "CancelDate": "未确认本对象上适用性，且不是实际取消发生时间；订单专用截止日不跨对象泛化"
+      },
+      "revise": [
+        "CardCode",
+        "CardName",
+        "DocCur",
+        "ReqDate"
+      ],
+      "keep_by_role": {
+        "业务上下文与核对": [
+          "Address",
+          "Comments",
+          "DocNum",
+          "NumAtCard"
+        ],
+        "业务维度与历史描述": [
+          "CardCode",
+          "CardName",
+          "GroupNum",
+          "Series",
+          "SlpCode",
+          "TrnspCode"
+        ],
+        "日期与时点": [
+          "CreateDate",
+          "DocDate",
+          "DocDueDate",
+          "ReqDate",
+          "TaxDate",
+          "UpdateDate"
+        ],
+        "状态与适用边界": [
+          "CANCELED",
+          "DocStatus",
+          "DocType"
+        ],
+        "身份与追溯": [
+          "DocEntry",
+          "ObjType"
+        ],
+        "金额价格币种税折扣": [
+          "DiscPrcnt",
+          "DiscSum",
+          "DiscSumFC",
+          "DiscSumSy",
+          "CurSource",
+          "DocCur",
+          "DocRate",
+          "DocTotal",
+          "DocTotalFC",
+          "DocTotalSy",
+          "GrosProfit",
+          "RoundDif",
+          "RoundDifFC",
+          "RoundDifSy",
+          "TotalExpFC",
+          "TotalExpns",
+          "TotalExpSC",
+          "VatPercent",
+          "VatSum",
+          "VatSumFC",
+          "VatSumSy"
+        ]
+      }
+    },
+    "dpi1": {
+      "official_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/DPI1.html",
+      "source_sha256": "b41d1870ecfe231132fec7e1d03904e8c410f3782b29b2c4cd5644ace8ab0dde",
+      "official_fields": 343,
+      "before_count": 37,
+      "after_count": 42,
+      "add": [
+        "Project",
+        "SlpCode",
+        "TreeType",
+        "OpenSum",
+        "OpenSumFC",
+        "OpenSumSys"
+      ],
+      "remove": {
+        "NoInvtryMv": "本对象不直接产生库存数量移动，共享标志不提升为库存事实判断能力"
+      },
+      "revise": [],
+      "keep_by_role": {
+        "业务维度与历史描述": [
+          "AcctCode",
+          "Dscription",
+          "ItemCode",
+          "WhsCode"
+        ],
+        "数量与历史单位": [
+          "InvQty",
+          "NumPerMsr",
+          "OpenInvQty",
+          "OpenQty",
+          "Quantity",
+          "unitMsr",
+          "UomCode",
+          "UomEntry",
+          "UseBaseUn"
+        ],
+        "日期与时点": [
+          "DocDate",
+          "ShipDate"
+        ],
+        "状态与适用边界": [
+          "LineStatus"
+        ],
+        "身份与追溯": [
+          "BaseEntry",
+          "BaseLine",
+          "BaseType",
+          "DocEntry",
+          "LineNum",
+          "ObjType"
+        ],
+        "金额价格币种税折扣": [
+          "Currency",
+          "DiscPrcnt",
+          "GTotal",
+          "GTotalFC",
+          "GTotalSC",
+          "LineTotal",
+          "Price",
+          "PriceAfVAT",
+          "PriceBefDi",
+          "TotalFrgn",
+          "TotalSumSy",
+          "VatSum",
+          "VatSumFrgn",
+          "VatSumSy"
+        ]
+      }
+    },
+    "rin11": {
+      "official_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN11.html",
+      "source_sha256": "0ddfa36aabe7c5430621b4d39ebd4648cc4dfdd542c68f9ed95147e0f764c542",
+      "official_fields": 70,
+      "before_count": 15,
+      "after_count": 35,
+      "add": [
+        "ApplGrossF",
+        "ApplGrossS",
+        "ApplVatFc",
+        "ApplVatSc",
+        "BaseGrossF",
+        "BaseGrossS",
+        "BaseVatFc",
+        "BaseVatSc",
+        "LineTotal",
+        "TotalFrgn",
+        "TotalSumSy",
+        "VatSum",
+        "VatSumFrgn",
+        "VatSumSys",
+        "ApplNet",
+        "ApplNetFc",
+        "ApplNetSc",
+        "BaseNet",
+        "BaseNetFc",
+        "BaseNetSc"
+      ],
+      "remove": {},
+      "revise": [],
+      "keep_by_role": {
+        "状态与适用边界": [
+          "IsGross",
+          "LineType"
+        ],
+        "身份与追溯": [
+          "BaseAbs",
+          "BaseType",
+          "DocEntry",
+          "LineNum",
+          "LineSeq",
+          "ObjType"
+        ],
+        "金额价格币种税折扣": [
+          "ApplGross",
+          "ApplVat",
+          "BaseGross",
+          "BaseVat",
+          "Gross",
+          "GrossFc",
+          "GrossSc"
+        ]
+      }
+    },
+    "ordn": {
+      "official_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORDN.html",
+      "source_sha256": "c8b41b134bc596a898c56064a78774dcf778d442a50dc402e60ca953f3a147f1",
+      "official_fields": 482,
+      "before_count": 39,
+      "after_count": 37,
+      "add": [
+        "Project"
+      ],
+      "remove": {
+        "PaidToDate": "共享列缺乏本对象已确认的结算口径；下游预付款、发票和支付另行追溯，不声称物理列恒零",
+        "PaidFC": "共享列缺乏本对象已确认的结算口径；下游预付款、发票和支付另行追溯，不声称物理列恒零",
+        "PaidSys": "共享列缺乏本对象已确认的结算口径；下游预付款、发票和支付另行追溯，不声称物理列恒零"
+      },
+      "revise": [
+        "DocCur"
+      ],
+      "keep_by_role": {
+        "业务上下文与核对": [
+          "Comments",
+          "DocNum",
+          "TransId"
+        ],
+        "业务维度与历史描述": [
+          "CardCode",
+          "CardName",
+          "Series",
+          "SlpCode"
+        ],
+        "日期与时点": [
+          "CreateDate",
+          "DocDate",
+          "DocDueDate",
+          "TaxDate",
+          "UpdateDate"
+        ],
+        "状态与适用边界": [
+          "CANCELED",
+          "DocStatus",
+          "DocType"
+        ],
+        "身份与追溯": [
+          "DocEntry",
+          "ObjType"
+        ],
+        "金额价格币种税折扣": [
+          "DiscPrcnt",
+          "DiscSum",
+          "DiscSumFC",
+          "DiscSumSy",
+          "CurSource",
+          "DocCur",
+          "DocRate",
+          "DocTotal",
+          "DocTotalFC",
+          "DocTotalSy",
+          "RoundDif",
+          "RoundDifFC",
+          "RoundDifSy",
+          "TotalExpFC",
+          "TotalExpns",
+          "TotalExpSC",
+          "VatSum",
+          "VatSumFC",
+          "VatSumSy"
+        ]
+      }
+    },
+    "qut1": {
+      "official_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/QUT1.html",
+      "source_sha256": "f6a129cda7e0859d0889dd95e121b3d04309fd2c5df4e49c0507e2cfd26c3836",
+      "official_fields": 343,
+      "before_count": 45,
+      "after_count": 51,
+      "add": [
+        "Project",
+        "SlpCode",
+        "TreeType",
+        "OpenSum",
+        "OpenSumFC",
+        "OpenSumSys",
+        "LineType"
+      ],
+      "remove": {
+        "NoInvtryMv": "本对象不直接产生库存数量移动，共享标志不提升为库存事实判断能力"
+      },
+      "revise": [
+        "LineTotal",
+        "TotalFrgn",
+        "TotalSumSy"
+      ],
+      "keep_by_role": {
+        "业务上下文与核对": [
+          "FreeTxt",
+          "VisOrder"
+        ],
+        "业务维度与历史描述": [
+          "AcctCode",
+          "Dscription",
+          "ItemCode",
+          "WhsCode"
+        ],
+        "数量与历史单位": [
+          "InvQty",
+          "NumPerMsr",
+          "OpenInvQty",
+          "OpenQty",
+          "Quantity",
+          "unitMsr",
+          "UomCode",
+          "UomEntry",
+          "UseBaseUn"
+        ],
+        "日期与时点": [
+          "DocDate",
+          "ShipDate"
+        ],
+        "状态与适用边界": [
+          "LineStatus"
+        ],
+        "身份与追溯": [
+          "BaseEntry",
+          "BaseLine",
+          "BaseType",
+          "DocEntry",
+          "LineNum",
+          "ObjType",
+          "TargetType"
+        ],
+        "金额价格币种税折扣": [
+          "Currency",
+          "DiscPrcnt",
+          "GrossBuyPr",
+          "GTotal",
+          "GTotalFC",
+          "GTotalSC",
+          "LineTotal",
+          "Price",
+          "PriceAfVAT",
+          "PriceBefDi",
+          "Rate",
+          "TaxCode",
+          "TotalFrgn",
+          "TotalSumSy",
+          "VatGroup",
+          "VatPrcnt",
+          "VatSum",
+          "VatSumFrgn",
+          "VatSumSy"
+        ]
+      }
+    },
+    "odpi": {
+      "official_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/odpi.html",
+      "source_sha256": "4aab4639ada4a34d986f9cb46d9e1c9f8b01648eb7702852e0ddaa0552f4d5b3",
+      "official_fields": 482,
+      "before_count": 47,
+      "after_count": 48,
+      "add": [
+        "Project"
+      ],
+      "remove": {},
+      "revise": [],
+      "keep_by_role": {
+        "业务上下文与核对": [
+          "Comments",
+          "DocNum",
+          "TransId"
+        ],
+        "业务维度与历史描述": [
+          "CardCode",
+          "CardName",
+          "Series",
+          "SlpCode"
+        ],
+        "日期与时点": [
+          "CreateDate",
+          "DocDate",
+          "DocDueDate",
+          "PaidToDate",
+          "TaxDate",
+          "UpdateDate"
+        ],
+        "状态与适用边界": [
+          "CANCELED",
+          "DocStatus",
+          "DocType",
+          "Posted"
+        ],
+        "身份与追溯": [
+          "DocEntry",
+          "ObjType"
+        ],
+        "金额价格币种税折扣": [
+          "DiscPrcnt",
+          "DiscSum",
+          "DiscSumFC",
+          "DiscSumSy",
+          "CurSource",
+          "DocCur",
+          "DocRate",
+          "DocTotal",
+          "DocTotalFC",
+          "DocTotalSy",
+          "DpmAmnt",
+          "DpmAmntFC",
+          "DpmAmntSC",
+          "DpmAppl",
+          "DpmApplFc",
+          "DpmApplSc",
+          "DpmPrcnt",
+          "PaidFC",
+          "PaidSys",
+          "RoundDif",
+          "RoundDifFC",
+          "RoundDifSy",
+          "TotalExpFC",
+          "TotalExpns",
+          "TotalExpSC",
+          "VatSum",
+          "VatSumFC",
+          "VatSumSy"
+        ]
+      }
+    }
+  }
+}

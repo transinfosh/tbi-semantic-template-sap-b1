@@ -19,7 +19,7 @@
       "name": "AppliedFC",
       "notNull": false,
       "properties": {
-        "description": "外币应用金额；FP2508 DI说明非外币发票该属性为0，不能将0视为未付款。",
+        "description": "目标单据应用行保存的外币金额；应按InvType解析目标对象及币种，不能无条件用付款头DocCurr。外币金额为零不证明本币未支付。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
       },
       "type": "DECIMAL(19,6)"
@@ -193,18 +193,6 @@
       "type": "VARCHAR(20)"
     },
     {
-      "displayName": "1099报告相关已付金额",
-      "isCalculated": false,
-      "isHidden": false,
-      "name": "PaidSum",
-      "notNull": false,
-      "properties": {
-        "description": "FP2508 DI明确为美国1099报告专用已付金额；不能替代通用SumApplied。",
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
-      },
-      "type": "DECIMAL(19,6)"
-    },
-    {
       "displayName": "本币舍入差异",
       "isCalculated": false,
       "isHidden": false,
@@ -263,6 +251,66 @@
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
       },
       "type": "DECIMAL(19,6)"
+    },
+    {
+      "name": "RounddifFc",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "应用行保存的外币舍入差额；与目标对象及其币种角色一起解释，不用付款头币种无条件回填。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "舍入差异（外币）"
+    },
+    {
+      "name": "RounddifSc",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "应用行保存的系统币舍入差额，币种来自同公司OADM.SysCurrncy；不据此发明结算恒等式。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "舍入差异（系统币）"
+    },
+    {
+      "name": "ExpAppld",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "应用到目标单据的附加费用金额（官方Freight），币种来自同公司OADM.MainCurncy；不是承运商实际成本，不与SumApplied无条件再次相加。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "已应用附加费用（本币）"
+    },
+    {
+      "name": "ExpAppldFC",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "应用行保存的外币附加费用金额；按目标对象与已保存外币角色解释，不无条件赋付款头DocCurr。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "已应用附加费用（外币）"
+    },
+    {
+      "name": "ExpAppldSC",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "应用行保存的系统币附加费用金额，币种来自同公司OADM.SysCurrncy；与费用税额及现金支付额分开。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM2.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "已应用附加费用（系统币）"
     }
   ],
   "displayName": "付款单应用明细",

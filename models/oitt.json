@@ -5,7 +5,7 @@
       "isCalculated": false,
       "isHidden": false,
       "name": "Code",
-      "notNull": false,
+      "notNull": true,
       "properties": {
         "description": "BOM主键，关联OITM.ItemCode。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITT.html"
@@ -95,6 +95,78 @@
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITT.html"
       },
       "type": "TIMESTAMP"
+    },
+    {
+      "name": "Name",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "BOM自身保存的产品描述；当前BOM描述，不代替历史工单产品名称。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OITT.html"
+      },
+      "type": "VARCHAR(200)",
+      "displayName": "BOM产品名称"
+    },
+    {
+      "name": "OcrCode",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "所属对象保存的第1维分配规则；规则不同于成本中心，不据当前规则分配明细追算历史实际成本。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OITT.html"
+      },
+      "type": "VARCHAR(8)",
+      "displayName": "第1维分配规则编码"
+    },
+    {
+      "name": "OcrCode2",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "所属对象保存的第2维分配规则；规则不同于成本中心，不据当前规则分配明细追算历史实际成本。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OITT.html"
+      },
+      "type": "VARCHAR(8)",
+      "displayName": "第2维分配规则编码"
+    },
+    {
+      "name": "OcrCode3",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "所属对象保存的第3维分配规则；规则不同于成本中心，不据当前规则分配明细追算历史实际成本。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OITT.html"
+      },
+      "type": "VARCHAR(8)",
+      "displayName": "第3维分配规则编码"
+    },
+    {
+      "name": "OcrCode4",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "所属对象保存的第4维分配规则；规则不同于成本中心，不据当前规则分配明细追算历史实际成本。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OITT.html"
+      },
+      "type": "VARCHAR(8)",
+      "displayName": "第4维分配规则编码"
+    },
+    {
+      "name": "OcrCode5",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "所属对象保存的第5维分配规则；规则不同于成本中心，不据当前规则分配明细追算历史实际成本。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OITT.html"
+      },
+      "type": "VARCHAR(8)",
+      "displayName": "第5维分配规则编码"
     }
   ],
   "displayName": "物料清单头",

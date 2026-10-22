@@ -1,0 +1,14 @@
+{
+  "name": "sap_obtq_obtn",
+  "models": [
+    "obtq",
+    "obtn"
+  ],
+  "joinType": "MANY_TO_ONE",
+  "condition": "obtq.MdAbsEntry = obtn.AbsEntry",
+  "displayName": "批次仓库当前数量关联批次主数据",
+  "properties": {
+    "description": "批次仓库数量关联批次主记录，避免单独SysNumber碰撞。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OBTQ.html"
+  }
+}

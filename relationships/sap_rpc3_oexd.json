@@ -1,0 +1,14 @@
+{
+  "name": "sap_rpc3_oexd",
+  "models": [
+    "rpc3",
+    "oexd"
+  ],
+  "joinType": "MANY_TO_ONE",
+  "condition": "rpc3.ExpnsCode = oexd.ExpnsCode",
+  "displayName": "应付贷项附加费用关联附加费用定义",
+  "properties": {
+    "description": "按本记录保存键关联对应维度或所属单据；连接条件为 rpc3.ExpnsCode = oexd.ExpnsCode。保留未匹配事实，不用当前主数据默认值覆盖保存值，头金额不按明细重复累计。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC3.html"
+  }
+}

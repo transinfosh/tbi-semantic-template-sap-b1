@@ -1,0 +1,14 @@
+{
+  "condition": "ocr1.PrcCode = oprc.PrcCode",
+  "displayName": "分配规则明细 → 成本中心",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "ocr1",
+    "oprc"
+  ],
+  "name": "ocr1_oprc",
+  "properties": {
+    "description": "按成本中心完整内部键解释名称；保留原规则有效期及行数，不以当前停用状态过滤历史规则，不据此重复累计或自动分摊分录金额。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCR1.html"
+  }
+}

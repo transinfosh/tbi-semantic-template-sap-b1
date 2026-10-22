@@ -19,7 +19,7 @@
       "name": "Price",
       "notNull": false,
       "properties": {
-        "description": "该价目表下的物料单价。",
+        "description": "本行价目表单价，须结合 Currency、UomEntry 和 PriceType 解释；不是历史库存成本。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITM1.html"
       },
       "type": "DECIMAL(19,6)"
@@ -31,10 +31,46 @@
       "name": "PriceList",
       "notNull": false,
       "properties": {
-        "description": "价目表编号；1 为库存明细原 SQL 使用的价目表。",
+        "description": "价目表编号，由业务明确指定，不默认使用某个编号。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITM1.html"
       },
       "type": "INTEGER"
+    },
+    {
+      "displayName": "价目表价格币种",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Currency",
+      "notNull": false,
+      "properties": {
+        "description": "本行 Price 的币种；不以公司本币或业务伙伴币种代替，跨币种报价不可直接比较。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITM1.html"
+      },
+      "type": "VARCHAR(3)"
+    },
+    {
+      "displayName": "计价单位内部键",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "UomEntry",
+      "notNull": false,
+      "properties": {
+        "description": "本行价格保存的单位键，关联 OUOM.UomEntry；结合 PriceType 解释，不以物料库存单位覆盖，特殊值可能没有单位主数据。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITM1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "价格类型",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "PriceType",
+      "notNull": false,
+      "properties": {
+        "description": "数据库代码 I=库存单位价格、P=计价单位价格、M=两者、O=其他单位价格；结合 UomEntry 与 Currency 解释 Price，不据此扩展完整定价规则。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITM1.html"
+      },
+      "type": "CHAR(1)"
     }
   ],
   "displayName": "物料价目表价格",

@@ -131,17 +131,6 @@
       "type": "VARCHAR(8)"
     },
     {
-      "displayName": "毛利基础价格",
-      "isCalculated": false,
-      "isHidden": false,
-      "name": "GrossBuyPr",
-      "notNull": false,
-      "properties": {
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGE1.html"
-      },
-      "type": "DECIMAL(19,6)"
-    },
-    {
       "displayName": "库存单位数量",
       "isCalculated": false,
       "isHidden": false,
@@ -482,6 +471,18 @@
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGE1.html"
       },
       "type": "VARCHAR(8)"
+    },
+    {
+      "name": "Project",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本单据行保存的项目编码；与头项目或当前物料信息分别解释。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGE1.html"
+      },
+      "type": "VARCHAR(20)",
+      "displayName": "行项目编码"
     }
   ],
   "displayName": "发货/发料单行",

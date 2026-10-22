@@ -1,0 +1,14 @@
+{
+  "name": "sap_osrq_oitm",
+  "models": [
+    "osrq",
+    "oitm"
+  ],
+  "joinType": "MANY_TO_ONE",
+  "condition": "osrq.ItemCode = oitm.ItemCode",
+  "displayName": "序列号仓库当前数量关联物料主数据",
+  "properties": {
+    "description": "当前数量的物料。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSRQ.html"
+  }
+}

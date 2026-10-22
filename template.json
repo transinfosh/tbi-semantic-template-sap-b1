@@ -8,7 +8,7 @@
   },
   "dataSource": "MSSQL",
   "defaultSchema": "dbo",
-  "description": "SAP Business One 标准表与关系模板，覆盖销售、采购、库存、生产和财务。按单据来源类型和复合键追溯，区分过账日期、凭证日期、创建日期及数量、币种和金额粒度。模板没有公司库连接、工作区信息或客户自定义指标；导入时须核验目标数据库的表、列和版本。库存成本、工单业务及历史余额仍需目标公司库和 SAP 标准报表验证。",
+  "description": "SAP Business One 标准表与关系模板，覆盖销售、采购、库存、生产和财务。按单据来源类型和复合键追溯，区分过账日期、凭证日期、创建日期及数量、币种和金额粒度。模板没有公司库连接、工作区信息或客户自定义指标；导入时须核验目标数据库的表、列和版本。库存成本、工单业务及历史余额仍需目标公司库和 SAP 标准报表验证。 本币代码统一取同一公司库 OADM.MainCurncy，系统币代码取 OADM.SysCurrncy；已确认按单据币种计量的外币金额取所属单据 DocCur，行价格和特殊外币字段按各自定义解释。",
   "formatVersion": 1,
   "groups": "groups.json",
   "id": "sap-business-one-mssql",
@@ -36,5 +36,8 @@
     "deferred": "validation/deferred.json",
     "structural": "validation/reference-contract.json"
   },
-  "version": "0.6.3"
+  "version": "0.8.1",
+  "translations": {
+    "en": "locales/en.json"
+  }
 }

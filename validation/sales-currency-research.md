@@ -76,3 +76,13 @@ SAP KBA 3368993 的公开摘要说明，外币营销单据的本币总额按行�
 | 含行折扣、头折扣、税、费用和舍入差异 | 以 SAP 显示与已存字段核对；不预设“头总额等于行不含税合计”或“FC 乘汇率等于 LC”。 |
 | 物料类与服务类单据 | 分别验证 `OpenSum` 适用性，避免把服务类 DI 规则泛化。 |
 | 部分收款、内部核销、贷项、取消与历史截止日 | 区分累计已付、当前未清、收款发生额及历史余额；本研究未提供统一公式。 |
+
+## 币种来源字段与说明归属（2026-10-21）
+
+逐表核对七张销售表头：`CurSource` 均为 `VarChar(1)`，官方名称为 Base Currency，默认 `C`，有效值 `L=Local Currency、S=System Currency、C=BP Currency`。来源分别为 [OQUT](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OQUT.html)、[ORDR](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORDR.html)、[ODLN](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ODLN.html)、[ORDN](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORDN.html)、[OINV](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OINV.html)、[ORIN](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html)、[ODPI](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/odpi.html)。新增模型列采用 `VARCHAR(1)`，不将数据库默认值转换为查询过滤，也不在 Frappe 中新增业务枚举校验。
+
+`C` 的官方含义是业务伙伴币种，不能直接写成“外币”。实际单据币种由 [Documents.DocCurrency](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DocCurrency.html) 对应的 `DocCur` 表达；其默认规则也明确存在本币情形。公司本币和系统币代码分别由 [OADM.MainCurncy / SysCurrncy](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OADM.html) 定义。
+
+采用统一读取 OADM 的规则，是基于上述官方定义的建模选择：不需要先按 CurSource 分支，也不从单据的一个币种代码推断另一公司币种。CurSource 不改变已经确认的金额字段 LC/FC/SC 角色；普通销售外币金额与 DocCur 的映射仍保留本文原有组合解释等级，预付款与抵扣附表的待核项保持不变。
+
+说明按职责存放：模型描述记录跨表规则；销售表头描述记录三币金额和单据粒度；CurSource 字段记录取值及误用边界；DocCur 和公司配置字段记录各自币种来源。已有金额列的详细口径继续在字段说明维护。本次没有核验所有采购、库存单据的 CurSource，不向这些表自动新增同名列。

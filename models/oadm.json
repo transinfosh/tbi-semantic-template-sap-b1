@@ -79,7 +79,7 @@
       "name": "MainCurncy",
       "notNull": false,
       "properties": {
-        "description": "公司本地账簿币种代码，解释已确认的LC金额。官方永续库存规则以本币计算物料成本，需结合ContInvnt及具体库存业务定义使用，不据此给所有交易价格赋币种。正常账套产生规定业务记录后不能修改本币；非标准迁移或账套合并须另核历史。",
+        "description": "公司本币代码，是已确认 LC 金额的统一币种来源，无论单据 CurSource 选用哪种来源、DocCur 是否为外币均读取本字段。公司本地账簿币种代码，解释已确认的LC金额。官方永续库存规则以本币计算物料成本，需结合ContInvnt及具体库存业务定义使用，不据此给所有交易价格赋币种。正常账套产生规定业务记录后不能修改本币；非标准迁移或账套合并须另核历史。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OADM.html"
       },
       "type": "VARCHAR(3)"
@@ -115,7 +115,7 @@
       "name": "SysCurrncy",
       "notNull": false,
       "properties": {
-        "description": "同一公司并行记账的系统币代码，解释已确认的SC金额，包括JDT1.SYSDeb/SYSCred及BalSc类余额、OJDT.SysTotal和销售系统币金额；可能与MainCurncy相同或不同，不代替行外币。",
+        "description": "公司系统币代码，是已确认 SC 金额的统一币种来源，不随单据 CurSource 或 DocCur 切换。同一公司并行记账的系统币代码，解释已确认的SC金额，包括JDT1.SYSDeb/SYSCred及BalSc类余额、OJDT.SysTotal和销售系统币金额；可能与MainCurncy相同或不同，不代替行外币。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OADM.html"
       },
       "type": "VARCHAR(3)"
@@ -150,7 +150,7 @@
   "name": "oadm",
   "primaryKey": "Code",
   "properties": {
-    "description": "主键Code；公司数据库配置，不是交易事实。通过配置读取解释币种、汇率方向和成本维度，禁止与事实无条件连接。 销售金额中的本币 LC 由 MainCurncy 解释，系统币 SC 由 SysCurrncy 解释；两者可能相同也可能不同。外币 FC 的币种须按具体单据字段定义读取，不能用公司本币或系统币替代。跨公司库汇总仍须保留公司与币种范围。",
+    "description": "主键Code；公司数据库配置，不是交易事实。通过配置读取解释币种、汇率方向和成本维度，禁止与事实无条件连接。 销售金额中的本币 LC 由 MainCurncy 解释，系统币 SC 由 SysCurrncy 解释；两者可能相同也可能不同。外币 FC 的币种须按具体单据字段定义读取，不能用公司本币或系统币替代。跨公司库汇总仍须保留公司与币种范围。 本币和系统币代码统一在本表读取，不从某张单据反推；本表不提供各张业务单据的实际外币代码。",
     "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OADM.html"
   },
   "tableReference": {

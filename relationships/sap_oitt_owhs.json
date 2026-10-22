@@ -1,0 +1,14 @@
+{
+  "name": "sap_oitt_owhs",
+  "models": [
+    "oitt",
+    "owhs"
+  ],
+  "joinType": "MANY_TO_ONE",
+  "condition": "oitt.ToWH = owhs.WhsCode",
+  "displayName": "物料清单头关联仓库主数据",
+  "properties": {
+    "description": "BOM产品默认仓库。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITT.html"
+  }
+}

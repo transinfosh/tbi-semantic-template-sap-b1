@@ -239,6 +239,30 @@
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITR1.html"
       },
       "type": "DECIMAL(19,6)"
+    },
+    {
+      "name": "ExpSumFC",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "核销参与行保存的外币附加费用金额；外币由本行FrgnCurr解释，不以OITR.ReconCurr自动替代。不是新的现金流入，不在借贷两侧重复计作回款。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITR1.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "核销附加费用（外币）"
+    },
+    {
+      "name": "ExpSumSC",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "核销参与行保存的系统币附加费用金额；币种来自同公司OADM.SysCurrncy。不是新的现金流入，不在借贷两侧重复计作回款。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITR1.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "核销附加费用（系统币）"
     }
   ],
   "displayName": "内部核销参与行",

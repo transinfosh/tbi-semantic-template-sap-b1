@@ -61,37 +61,37 @@
       "type": "VARCHAR(200)"
     },
     {
-      "displayName": "现金本币金额",
+      "displayName": "现金金额（本币）",
       "isCalculated": false,
       "isHidden": false,
       "name": "CashSum",
       "notNull": false,
       "properties": {
-        "description": "现金支付方式金额；不是收付款全部金额。",
+        "description": "现金方式金额（本币），属于付款表头粒度；币种来自同公司OADM.MainCurncy，不是可与全部应用行混加的独立增量。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
       },
       "type": "DECIMAL(19,6)"
     },
     {
-      "displayName": "支票收款金额",
+      "displayName": "支票金额（本币）",
       "isCalculated": false,
       "isHidden": false,
       "name": "CheckSum",
       "notNull": false,
       "properties": {
-        "description": "收款单中的支票收款金额。",
+        "description": "支票方式金额（本币），属于付款表头粒度；币种来自同公司OADM.MainCurncy，不是可与全部应用行混加的独立增量。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
       },
       "type": "DECIMAL(19,6)"
     },
     {
-      "displayName": "信用卡收款金额",
+      "displayName": "信用卡金额（本币）",
       "isCalculated": false,
       "isHidden": false,
       "name": "CreditSum",
       "notNull": false,
       "properties": {
-        "description": "收款单中的信用卡收款金额。",
+        "description": "信用卡方式金额（本币），属于付款表头粒度；币种来自同公司OADM.MainCurncy，不是可与全部应用行混加的独立增量。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
       },
       "type": "DECIMAL(19,6)"
@@ -211,19 +211,19 @@
       "name": "DocType",
       "notNull": false,
       "properties": {
-        "description": "DB值C客户、S供应商、A科目；DI枚举对应0/2/1，不能将枚举数字直接作DB过滤。",
+        "description": "常用数据库值C客户、S供应商、A科目；官方还列有P/T/D等地区或税务类别，三类不是穷尽枚举。保持原值，不将未知类别强归业务伙伴；DI数字枚举不是数据库筛选值。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
       },
       "type": "VARCHAR(1)"
     },
     {
-      "displayName": "未指定单据本币金额",
+      "displayName": "未指定单据金额（本币）",
       "isCalculated": false,
       "isHidden": false,
       "name": "NoDocSum",
       "notNull": false,
       "properties": {
-        "description": "未应用到指定单据的金额；后续可手工核销。",
+        "description": "未应用到指定单据的挂账金额（本币），属于收付款表头粒度，独立于现金、转账等支付方式；币种取同公司OADM.MainCurncy，不与发票应用金额重复相加。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
       },
       "type": "DECIMAL(19,6)"
@@ -289,13 +289,13 @@
       "type": "VARCHAR(1)"
     },
     {
-      "displayName": "Project",
+      "displayName": "收付款项目编码",
       "isCalculated": false,
       "isHidden": false,
       "name": "PrjCode",
       "notNull": false,
       "properties": {
-        "description": "收款单字段；官方含义：Project。",
+        "description": "收付款头项目代码，关联OPRJ.PrjCode；不覆盖目标发票、付款科目行或分录行的项目。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
       },
       "type": "VARCHAR(20)"
@@ -325,16 +325,196 @@
       "type": "INTEGER"
     },
     {
-      "displayName": "转账本币金额",
+      "displayName": "银行转账金额（本币）",
       "isCalculated": false,
       "isHidden": false,
       "name": "TrsfrSum",
       "notNull": false,
       "properties": {
-        "description": "银行转账方式金额。",
+        "description": "银行转账方式金额（本币），属于付款表头粒度；币种来自同公司OADM.MainCurncy，不是可与全部应用行混加的独立增量。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORCT.html"
       },
       "type": "DECIMAL(19,6)"
+    },
+    {
+      "name": "CashSumFC",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "现金金额（外币），属于收付款表头粒度。按同一付款头DocCurr解释，不与目标发票的应用行外币无条件统一；不跨币种累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/ORCT.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "现金金额（外币）"
+    },
+    {
+      "name": "CashSumSy",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "现金金额（系统币），属于收付款表头粒度。币种取同公司OADM.SysCurrncy；不与本币或外币金额混加。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/ORCT.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "现金金额（系统币）"
+    },
+    {
+      "name": "CheckSumFC",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "支票金额（外币），属于收付款表头粒度。按同一付款头DocCurr解释，不与目标发票的应用行外币无条件统一；不跨币种累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/ORCT.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "支票金额（外币）"
+    },
+    {
+      "name": "CheckSumSy",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "支票金额（系统币），属于收付款表头粒度。币种取同公司OADM.SysCurrncy；不与本币或外币金额混加。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/ORCT.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "支票金额（系统币）"
+    },
+    {
+      "name": "CredSumFC",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "信用卡金额（外币），属于收付款表头粒度。按同一付款头DocCurr解释，不与目标发票的应用行外币无条件统一；不跨币种累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/ORCT.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "信用卡金额（外币）"
+    },
+    {
+      "name": "CredSumSy",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "信用卡金额（系统币），属于收付款表头粒度。币种取同公司OADM.SysCurrncy；不与本币或外币金额混加。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/ORCT.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "信用卡金额（系统币）"
+    },
+    {
+      "name": "TrsfrSumFC",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "银行转账金额（外币），属于收付款表头粒度。按同一付款头DocCurr解释，不与目标发票的应用行外币无条件统一；不跨币种累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/ORCT.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "银行转账金额（外币）"
+    },
+    {
+      "name": "TrsfrSumSy",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "银行转账金额（系统币），属于收付款表头粒度。币种取同公司OADM.SysCurrncy；不与本币或外币金额混加。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/ORCT.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "银行转账金额（系统币）"
+    },
+    {
+      "name": "NoDocSumFC",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "未指定单据金额（外币），属于收付款表头粒度。按同一付款头DocCurr解释，不与目标发票的应用行外币无条件统一；不跨币种累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/ORCT.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "未指定单据金额（外币）"
+    },
+    {
+      "name": "NoDocSumSy",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "未指定单据金额（系统币），属于收付款表头粒度。币种取同公司OADM.SysCurrncy；不与本币或外币金额混加。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/ORCT.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "未指定单据金额（系统币）"
+    },
+    {
+      "name": "TrsfrDate",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "支付方式中保存的银行转账日期；不替代单据过账日、银行对账确认日或核销日。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/ORCT.html"
+      },
+      "type": "TIMESTAMP",
+      "displayName": "银行转账日期"
+    },
+    {
+      "name": "TrsfrRef",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "银行转账方式的参考信息或用途；不是保证唯一的银行流水号，不作连接键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/ORCT.html"
+      },
+      "type": "VARCHAR(27)",
+      "displayName": "银行转账参考信息"
+    },
+    {
+      "name": "CashAcct",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "现金支付方式使用的总账科目代码，关联OACT.AcctCode；不等同科目收付款行的目标AcctCode。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/ORCT.html"
+      },
+      "type": "VARCHAR(15)",
+      "displayName": "现金科目编码"
+    },
+    {
+      "name": "CheckAcct",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "支票支付方式使用的总账科目代码，关联OACT.AcctCode；不等同支票明细或清算事件。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/ORCT.html"
+      },
+      "type": "VARCHAR(15)",
+      "displayName": "支票科目编码"
+    },
+    {
+      "name": "TrsfrAcct",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "银行转账支付方式使用的总账科目代码，关联OACT.AcctCode；不是银行主数据编号或账号。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/ORCT.html"
+      },
+      "type": "VARCHAR(15)",
+      "displayName": "银行转账科目编码"
     }
   ],
   "displayName": "收款单",

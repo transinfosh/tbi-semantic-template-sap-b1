@@ -22,7 +22,7 @@
         "description": "与LogEntry及SysNumber组成主键。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITL1.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR(50)"
     },
     {
       "displayName": "交易日志内部标识",

@@ -12,17 +12,6 @@
       "type": "VARCHAR(254)"
     },
     {
-      "displayName": "采购收货取消日期",
-      "isCalculated": false,
-      "isHidden": false,
-      "name": "CancelDate",
-      "notNull": false,
-      "properties": {
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPDN.html"
-      },
-      "type": "TIMESTAMP"
-    },
-    {
       "displayName": "取消状态",
       "isCalculated": false,
       "isHidden": false,
@@ -136,7 +125,7 @@
       "name": "DocDueDate",
       "notNull": false,
       "properties": {
-        "description": "FP2508 DI API：销售报价为有效期截止、销售订单为交付日、发票为到期/价值日；其他对象按各自界面用途核验，不能统一解释为付款到期。",
+        "description": "采购收货单保存的到期/交付日期，不作为供应商付款到期或实际付款日期；实际收货过账以本单DocDate为准。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPDN.html"
       },
       "type": "TIMESTAMP"
@@ -146,7 +135,7 @@
       "isCalculated": false,
       "isHidden": false,
       "name": "DocEntry",
-      "notNull": false,
+      "notNull": true,
       "properties": {
         "description": "本表内部主键；关联使用该键，不能用显示单号 DocNum 代替。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPDN.html"
@@ -190,13 +179,13 @@
       "type": "CHAR(1)"
     },
     {
-      "displayName": "单据合计",
+      "displayName": "单据合计（本币）",
       "isCalculated": false,
       "isHidden": false,
       "name": "DocTotal",
       "notNull": false,
       "properties": {
-        "description": "单据级合计；不是净收入或库存成本，连接多行后不得重复求和，须配合币种和税费口径。",
+        "description": "本单保存本币合计；不是已付款或库存成本，连接商品、费用或抵扣记录后不重复累计。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPDN.html"
       },
       "type": "DECIMAL(19,6)"
@@ -232,20 +221,10 @@
       "name": "DocType",
       "notNull": false,
       "properties": {
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPDN.html"
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPDN.html",
+        "description": "I=物料，S=服务；服务单据行可以没有物料主数据匹配，必须保留。"
       },
       "type": "CHAR(1)"
-    },
-    {
-      "displayName": "毛利",
-      "isCalculated": false,
-      "isHidden": false,
-      "name": "GrosProfit",
-      "notNull": false,
-      "properties": {
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPDN.html"
-      },
-      "type": "DECIMAL(19,6)"
     },
     {
       "displayName": "付款条件代码",
@@ -257,17 +236,6 @@
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPDN.html"
       },
       "type": "SMALLINT"
-    },
-    {
-      "displayName": "日记账备注",
-      "isCalculated": false,
-      "isHidden": false,
-      "name": "JrnlMemo",
-      "notNull": false,
-      "properties": {
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPDN.html"
-      },
-      "type": "VARCHAR(254)"
     },
     {
       "displayName": "业务伙伴参考号",
@@ -293,53 +261,6 @@
       "type": "VARCHAR(20)"
     },
     {
-      "displayName": "累计已收付金额（外币）",
-      "isCalculated": false,
-      "isHidden": false,
-      "name": "PaidFC",
-      "notNull": false,
-      "properties": {
-        "description": "单据当前累计收付外币金额；按币种使用，不是外币未付金额。",
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPDN.html"
-      },
-      "type": "DECIMAL(19,6)"
-    },
-    {
-      "displayName": "累计已收付金额（系统币）",
-      "isCalculated": false,
-      "isHidden": false,
-      "name": "PaidSys",
-      "notNull": false,
-      "properties": {
-        "description": "单据当前累计收付系统币金额。",
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPDN.html"
-      },
-      "type": "DECIMAL(19,6)"
-    },
-    {
-      "displayName": "累计已收付金额（本币）",
-      "isCalculated": false,
-      "isHidden": false,
-      "name": "PaidToDate",
-      "notNull": false,
-      "properties": {
-        "description": "单据当前累计收付本币金额；不能当作指定历史期间的收付款发生额。",
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPDN.html"
-      },
-      "type": "DECIMAL(19,6)"
-    },
-    {
-      "displayName": "采购收货需求日期",
-      "isCalculated": false,
-      "isHidden": false,
-      "name": "ReqDate",
-      "notNull": false,
-      "properties": {
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPDN.html"
-      },
-      "type": "TIMESTAMP"
-    },
-    {
       "displayName": "编号系列",
       "isCalculated": false,
       "isHidden": false,
@@ -351,13 +272,14 @@
       "type": "INTEGER"
     },
     {
-      "displayName": "业务员编码",
+      "displayName": "销售/采购员代码",
       "isCalculated": false,
       "isHidden": false,
       "name": "SlpCode",
       "notNull": false,
       "properties": {
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPDN.html"
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPDN.html",
+        "description": "本记录保存的销售/采购员代码，关联OSLP.SlpCode；不是单据所有者或申请人，也不以当前供应商负责人覆盖。"
       },
       "type": "INTEGER"
     },
@@ -368,19 +290,20 @@
       "name": "TaxDate",
       "notNull": false,
       "properties": {
-        "description": "数据库参考标为单据日期，FP2508 DI API 说明为税额计算或支付日期；按本地化及实际业务用途解释，区别于过账日期 DocDate。",
+        "description": "本单单据或税务日期；与过账DocDate、创建CreateDate分开，本地化用途需另核，不当作实际付款日期。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPDN.html"
       },
       "type": "TIMESTAMP"
     },
     {
-      "displayName": "运费总额",
+      "displayName": "附加费用总额（本币）",
       "isCalculated": false,
       "isHidden": false,
       "name": "TotalExpns",
       "notNull": false,
       "properties": {
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPDN.html"
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPDN.html",
+        "description": "整单保存附加费用总额，按对应币种使用；不只包括运输费，不再叠加到已包含费用的DocTotal。"
       },
       "type": "DECIMAL(19,6)"
     },
@@ -440,6 +363,150 @@
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPDN.html"
       },
       "type": "DECIMAL(19,6)"
+    },
+    {
+      "name": "CurSource",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "L=公司本币，S=系统币，C=业务伙伴币种；C不等于外币。实际单据币种结合DocCur，金额列币种职责不因此改变。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OPDN.html"
+      },
+      "type": "CHAR(1)",
+      "displayName": "币种来源"
+    },
+    {
+      "name": "Project",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本记录保存的项目代码，关联OPRJ；头项目与行项目分别使用，不相互覆盖。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OPDN.html"
+      },
+      "type": "VARCHAR(20)",
+      "displayName": "项目代码"
+    },
+    {
+      "name": "OwnerCode",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "单据所有者的员工内部键，关联OHEM.empID；不是采购员或申请人。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OPDN.html"
+      },
+      "type": "INTEGER",
+      "displayName": "单据所有者员工键"
+    },
+    {
+      "name": "VatSumFC",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本记录保存的税额（外币），按对应币种读取；不能从当前税率重算或与不同粒度重复累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OPDN.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "税额（外币）"
+    },
+    {
+      "name": "VatSumSy",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本记录保存的税额（系统币），按对应币种读取；不能从当前税率重算或与不同粒度重复累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OPDN.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "税额（系统币）"
+    },
+    {
+      "name": "DiscSumFC",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "整单保存折扣金额，按对应币种使用；不是行折扣，不能重复扣减。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OPDN.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "整单折扣额（外币）"
+    },
+    {
+      "name": "DiscSumSy",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "整单保存折扣金额，按对应币种使用；不是行折扣，不能重复扣减。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OPDN.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "整单折扣额（系统币）"
+    },
+    {
+      "name": "TotalExpFC",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "整单保存附加费用总额，按对应币种使用；不只包括运输费，不再叠加到已包含费用的DocTotal。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OPDN.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "附加费用总额（外币）"
+    },
+    {
+      "name": "TotalExpSC",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "整单保存附加费用总额，按对应币种使用；不只包括运输费，不再叠加到已包含费用的DocTotal。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OPDN.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "附加费用总额（系统币）"
+    },
+    {
+      "name": "RoundDif",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "整单保存舍入差额，按对应币种使用；不以显示精度重算。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OPDN.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "舍入差额（本币）"
+    },
+    {
+      "name": "RoundDifFC",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "整单保存舍入差额，按对应币种使用；不以显示精度重算。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OPDN.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "舍入差额（外币）"
+    },
+    {
+      "name": "RoundDifSy",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "整单保存舍入差额，按对应币种使用；不以显示精度重算。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OPDN.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "舍入差额（系统币）"
     }
   ],
   "displayName": "采购收货",

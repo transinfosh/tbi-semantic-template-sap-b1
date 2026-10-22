@@ -118,17 +118,6 @@
       "type": "VARCHAR(100)"
     },
     {
-      "displayName": "毛利基价",
-      "isCalculated": false,
-      "isHidden": false,
-      "name": "GrossBuyPr",
-      "notNull": false,
-      "properties": {
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RPC1.html"
-      },
-      "type": "DECIMAL(19,6)"
-    },
-    {
       "displayName": "库存单位数量",
       "isCalculated": false,
       "isHidden": false,
@@ -444,6 +433,258 @@
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RPC1.html"
       },
       "type": "VARCHAR(8)"
+    },
+    {
+      "name": "PriceAfVAT",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "折后含税单价，结合本行Currency与计价单位，不当作本币库存成本。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC1.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "折后含税单价"
+    },
+    {
+      "name": "VatSum",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本记录保存的税额（本币），按对应币种读取；不能从当前税率重算或与不同粒度重复累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC1.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "税额（本币）"
+    },
+    {
+      "name": "VatSumFrgn",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本记录保存的税额（外币），按对应币种读取；不能从当前税率重算或与不同粒度重复累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC1.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "税额（外币）"
+    },
+    {
+      "name": "VatSumSy",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本记录保存的税额（系统币），按对应币种读取；不能从当前税率重算或与不同粒度重复累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC1.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "税额（系统币）"
+    },
+    {
+      "name": "GTotal",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本行保存含税金额，按对应币种汇总；不等于整张单据合计，也不再叠加到头总额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC1.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "含税行金额（本币）"
+    },
+    {
+      "name": "GTotalFC",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本行保存含税金额，按对应币种汇总；不等于整张单据合计，也不再叠加到头总额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC1.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "含税行金额（外币）"
+    },
+    {
+      "name": "GTotalSC",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本行保存含税金额，按对应币种汇总；不等于整张单据合计，也不再叠加到头总额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC1.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "含税行金额（系统币）"
+    },
+    {
+      "name": "OpenSum",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "服务单据本行当前未清金额，按对应币种使用；不是付款余额、历史账龄或库存数量。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC1.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "未清金额（本币）"
+    },
+    {
+      "name": "OpenSumFC",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "服务单据本行当前未清金额，按对应币种使用；不是付款余额、历史账龄或库存数量。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC1.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "未清金额（外币）"
+    },
+    {
+      "name": "OpenSumSys",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "服务单据本行当前未清金额，按对应币种使用；不是付款余额、历史账龄或库存数量。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC1.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "未清金额（系统币）"
+    },
+    {
+      "name": "Project",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本记录保存的项目代码，关联OPRJ；头项目与行项目分别使用，不相互覆盖。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC1.html"
+      },
+      "type": "VARCHAR(20)",
+      "displayName": "项目代码"
+    },
+    {
+      "name": "SlpCode",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本记录保存的销售/采购员代码，关联OSLP.SlpCode；不是单据所有者或申请人，也不以当前供应商负责人覆盖。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC1.html"
+      },
+      "type": "INTEGER",
+      "displayName": "销售/采购员代码"
+    },
+    {
+      "name": "TreeType",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "N非BOM，A组装，S销售BOM，I销售BOM组件，P生产，T模板；按本行保存值分析，不自动推导父子键或删除组件。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC1.html"
+      },
+      "type": "CHAR(1)",
+      "displayName": "BOM 类型"
+    },
+    {
+      "name": "OcrCode",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本行成本分配规则代码，关联OOCR.OcrCode；不是单个成本中心，规则分配细节由财务解释。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC1.html"
+      },
+      "type": "VARCHAR(8)",
+      "displayName": "分配规则1"
+    },
+    {
+      "name": "OcrCode2",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本行成本分配规则代码，关联OOCR.OcrCode；不是单个成本中心，规则分配细节由财务解释。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC1.html"
+      },
+      "type": "VARCHAR(8)",
+      "displayName": "分配规则2"
+    },
+    {
+      "name": "OcrCode3",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本行成本分配规则代码，关联OOCR.OcrCode；不是单个成本中心，规则分配细节由财务解释。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC1.html"
+      },
+      "type": "VARCHAR(8)",
+      "displayName": "分配规则3"
+    },
+    {
+      "name": "OcrCode4",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本行成本分配规则代码，关联OOCR.OcrCode；不是单个成本中心，规则分配细节由财务解释。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC1.html"
+      },
+      "type": "VARCHAR(8)",
+      "displayName": "分配规则4"
+    },
+    {
+      "name": "OcrCode5",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本行成本分配规则代码，关联OOCR.OcrCode；不是单个成本中心，规则分配细节由财务解释。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC1.html"
+      },
+      "type": "VARCHAR(8)",
+      "displayName": "分配规则5"
+    },
+    {
+      "name": "DedVatSum",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本记录保存的可抵扣税额，按对应币种使用；不把全部税额当作采购成本，不据此生成税务申报。费用DI API对应属性标为Internal use only；这里只保留数据库记录值用于核对，不定义受支持的税额计算或回写接口。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC1.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "可抵扣税额（本币）"
+    },
+    {
+      "name": "DedVatSumF",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本记录保存的可抵扣税额，按对应币种使用；不把全部税额当作采购成本，不据此生成税务申报。费用DI API对应属性标为Internal use only；这里只保留数据库记录值用于核对，不定义受支持的税额计算或回写接口。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC1.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "可抵扣税额（外币）"
+    },
+    {
+      "name": "DedVatSumS",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本记录保存的可抵扣税额，按对应币种使用；不把全部税额当作采购成本，不据此生成税务申报。费用DI API对应属性标为Internal use only；这里只保留数据库记录值用于核对，不定义受支持的税额计算或回写接口。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC1.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "可抵扣税额（系统币）"
     }
   ],
   "displayName": "应付贷项凭证明细",

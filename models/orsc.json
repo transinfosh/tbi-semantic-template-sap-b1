@@ -82,7 +82,7 @@
         "description": "资源主数据唯一内部键；关联资源组件使用本列，不用显示编号 VisResCode 替代。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSC.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR(50)"
     },
     {
       "displayName": "资源组编码",
@@ -106,7 +106,7 @@
         "description": "当前资源主数据描述；历史生产单据描述可能不同。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSC.html"
       },
-      "type": "VARCHAR(100)"
+      "type": "VARCHAR(200)"
     },
     {
       "displayName": "资源类型",
@@ -166,7 +166,7 @@
         "description": "界面资源编号；DI API VisCode，可由编号规则产生，与内部键 ResCode 区分。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORSC.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR(50)"
     }
   ],
   "displayName": "生产资源",

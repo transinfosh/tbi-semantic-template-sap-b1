@@ -131,17 +131,6 @@
       "type": "VARCHAR(8)"
     },
     {
-      "displayName": "毛利基础价",
-      "isCalculated": false,
-      "isHidden": false,
-      "name": "GrossBuyPr",
-      "notNull": false,
-      "properties": {
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WTR1.html"
-      },
-      "type": "DECIMAL(19,6)"
-    },
-    {
       "displayName": "库存单位数量",
       "isCalculated": false,
       "isHidden": false,
@@ -320,18 +309,6 @@
       "type": "DECIMAL(19,6)"
     },
     {
-      "displayName": "单据行成本价值字段",
-      "isCalculated": false,
-      "isHidden": false,
-      "name": "StockValue",
-      "notNull": false,
-      "properties": {
-        "description": "SDK列为总成本价值字段；不能未经验证替代库存估价层交易额。",
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WTR1.html"
-      },
-      "type": "DECIMAL(19,6)"
-    },
-    {
       "displayName": "目标单据类型",
       "isCalculated": false,
       "isHidden": false,
@@ -470,6 +447,30 @@
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WTR1.html"
       },
       "type": "VARCHAR(8)"
+    },
+    {
+      "name": "Project",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本单据行保存的项目编码；与头项目或当前物料信息分别解释。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WTR1.html"
+      },
+      "type": "VARCHAR(20)",
+      "displayName": "行项目编码"
+    },
+    {
+      "name": "StockSum",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "单据行已存库存金额；与LineTotal及估价交易SumStock分别解释，不由它自动重建调出调入两方过账。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WTR1.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "调拨行库存合计"
     }
   ],
   "displayName": "库存调拨行",

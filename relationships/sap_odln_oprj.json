@@ -1,0 +1,12 @@
+{
+  "name": "sap_odln_oprj",
+  "models": [
+    "odln",
+    "oprj"
+  ],
+  "joinType": "MANY_TO_ONE",
+  "condition": "odln.Project = oprj.PrjCode",
+  "properties": {
+    "description": "本对象保存的 Project 按 OPRJ.PrjCode 关联，多对零或一；头行项目不互相替代，不按当前主数据启用、锁定或有效期过滤历史事实，缺失或未匹配时按问题保留业务行。"
+  }
+}

@@ -179,6 +179,246 @@
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RPC11.html"
       },
       "type": "VARCHAR(20)"
+    },
+    {
+      "name": "LineTotal",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本抵扣或费用记录保存净额，按本记录粒度和对应币种使用；不得与商品行展开或再次加到单据总额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC11.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "本记录净额（本币）"
+    },
+    {
+      "name": "TotalFrgn",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本抵扣或费用记录保存净额，按本记录粒度和对应币种使用；不得与商品行展开或再次加到单据总额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC11.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "本记录净额（外币）"
+    },
+    {
+      "name": "TotalSumSy",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本抵扣或费用记录保存净额，按本记录粒度和对应币种使用；不得与商品行展开或再次加到单据总额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC11.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "本记录净额（系统币）"
+    },
+    {
+      "name": "VatSum",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本记录保存的税额（本币），按对应币种读取；不能从当前税率重算或与不同粒度重复累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC11.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "税额（本币）"
+    },
+    {
+      "name": "VatSumFrgn",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本记录保存的税额（外币），按对应币种读取；不能从当前税率重算或与不同粒度重复累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC11.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "税额（外币）"
+    },
+    {
+      "name": "VatSumSys",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本记录保存的税额（系统币），按对应币种读取；不能从当前税率重算或与不同粒度重复累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC11.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "税额（系统币）"
+    },
+    {
+      "name": "ApplNet",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "抵扣记录的已应用净额（本币）；基础、已应用、净额、税额和含税职责分开；外币来源仍待具体核实，不与普通物料行展开累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC11.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "已应用净额（本币）"
+    },
+    {
+      "name": "ApplNetFc",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "抵扣记录的已应用净额（外币）；基础、已应用、净额、税额和含税职责分开；外币来源仍待具体核实，不与普通物料行展开累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC11.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "已应用净额（外币）"
+    },
+    {
+      "name": "ApplNetSc",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "抵扣记录的已应用净额（系统币）；基础、已应用、净额、税额和含税职责分开；外币来源仍待具体核实，不与普通物料行展开累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC11.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "已应用净额（系统币）"
+    },
+    {
+      "name": "BaseNet",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "抵扣记录的基础净额（本币）；基础、已应用、净额、税额和含税职责分开；外币来源仍待具体核实，不与普通物料行展开累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC11.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "基础净额（本币）"
+    },
+    {
+      "name": "BaseNetFc",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "抵扣记录的基础净额（外币）；基础、已应用、净额、税额和含税职责分开；外币来源仍待具体核实，不与普通物料行展开累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC11.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "基础净额（外币）"
+    },
+    {
+      "name": "BaseNetSc",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "抵扣记录的基础净额（系统币）；基础、已应用、净额、税额和含税职责分开；外币来源仍待具体核实，不与普通物料行展开累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC11.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "基础净额（系统币）"
+    },
+    {
+      "name": "ApplGrossF",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "抵扣记录的已应用含税额（外币）；基础、已应用、净额、税额和含税职责分开；外币来源仍待具体核实，不与普通物料行展开累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC11.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "已应用含税额（外币）"
+    },
+    {
+      "name": "ApplGrossS",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "抵扣记录的已应用含税额（系统币）；基础、已应用、净额、税额和含税职责分开；外币来源仍待具体核实，不与普通物料行展开累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC11.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "已应用含税额（系统币）"
+    },
+    {
+      "name": "ApplVatFc",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "抵扣记录的已应用税额（外币）；基础、已应用、净额、税额和含税职责分开；外币来源仍待具体核实，不与普通物料行展开累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC11.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "已应用税额（外币）"
+    },
+    {
+      "name": "ApplVatSc",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "抵扣记录的已应用税额（系统币）；基础、已应用、净额、税额和含税职责分开；外币来源仍待具体核实，不与普通物料行展开累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC11.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "已应用税额（系统币）"
+    },
+    {
+      "name": "BaseGrossF",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "抵扣记录的基础含税额（外币）；基础、已应用、净额、税额和含税职责分开；外币来源仍待具体核实，不与普通物料行展开累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC11.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "基础含税额（外币）"
+    },
+    {
+      "name": "BaseGrossS",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "抵扣记录的基础含税额（系统币）；基础、已应用、净额、税额和含税职责分开；外币来源仍待具体核实，不与普通物料行展开累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC11.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "基础含税额（系统币）"
+    },
+    {
+      "name": "BaseVatFc",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "抵扣记录的基础税额（外币）；基础、已应用、净额、税额和含税职责分开；外币来源仍待具体核实，不与普通物料行展开累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC11.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "基础税额（外币）"
+    },
+    {
+      "name": "BaseVatSc",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "抵扣记录的基础税额（系统币）；基础、已应用、净额、税额和含税职责分开；外币来源仍待具体核实，不与普通物料行展开累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/RPC11.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "基础税额（系统币）"
     }
   ],
   "displayName": "应付贷项预付款抵扣明细",
@@ -190,7 +430,7 @@
     "LineSeq"
   ],
   "properties": {
-    "description": "应付贷项预付款抵扣的税额/舍入明细，主键 (DocEntry, LineNum, LineSeq)。与物料行不同粒度；不能与同单据全部物料行直接连接后求和。",
+    "description": "应付贷项预付款抵扣明细，包含净额、税额、含税额及舍入，主键 (DocEntry, LineNum, LineSeq)。与物料行不同粒度；不能与同单据全部物料行直接连接后求和，不作为另一次税务扣除或销售/采购金额。",
     "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RPC11.html"
   },
   "tableReference": {

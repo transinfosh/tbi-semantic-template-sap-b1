@@ -232,7 +232,7 @@
       "isCalculated": false,
       "isHidden": false,
       "name": "TransSeq",
-      "notNull": false,
+      "notNull": true,
       "properties": {
         "description": "库存估价交易唯一标识，只标识交易，不标识估价层。COUNT(TransSeq)得到交易数；一条交易仍可对应多条 IVL1 估价层记录，不能据此判断只有一层或未发生分层。层记录按 IVL1.TransSeq+LayerID 区分；只有需要判断层数或层成本时才按该完整键读取，不把交易数称为层数。不能用单据号、物料或单据行组合替代本交易主键。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
@@ -274,6 +274,18 @@
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
       },
       "type": "DECIMAL(19,6)"
+    },
+    {
+      "name": "PostStatus",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "N无、P部分、C完成；保留状态，不能未经报表口径确认就默认只取C。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIVL.html"
+      },
+      "type": "CHAR(1)",
+      "displayName": "估价过账状态"
     }
   ],
   "displayName": "库存估价交易流水",

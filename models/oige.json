@@ -12,17 +12,6 @@
       "type": "VARCHAR(254)"
     },
     {
-      "displayName": "取消日期",
-      "isCalculated": false,
-      "isHidden": false,
-      "name": "CancelDate",
-      "notNull": false,
-      "properties": {
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIGE.html"
-      },
-      "type": "TIMESTAMP"
-    },
-    {
       "displayName": "取消标志",
       "isCalculated": false,
       "isHidden": false,
@@ -235,39 +224,6 @@
       "type": "CHAR(1)"
     },
     {
-      "displayName": "毛利润",
-      "isCalculated": false,
-      "isHidden": false,
-      "name": "GrosProfit",
-      "notNull": false,
-      "properties": {
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIGE.html"
-      },
-      "type": "DECIMAL(19,6)"
-    },
-    {
-      "displayName": "价格清单",
-      "isCalculated": false,
-      "isHidden": false,
-      "name": "GroupNum",
-      "notNull": false,
-      "properties": {
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIGE.html"
-      },
-      "type": "SMALLINT"
-    },
-    {
-      "displayName": "日记账备注",
-      "isCalculated": false,
-      "isHidden": false,
-      "name": "JrnlMemo",
-      "notNull": false,
-      "properties": {
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIGE.html"
-      },
-      "type": "VARCHAR(254)"
-    },
-    {
       "displayName": "业务伙伴参考号",
       "isCalculated": false,
       "isHidden": false,
@@ -289,42 +245,6 @@
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIGE.html"
       },
       "type": "VARCHAR(20)"
-    },
-    {
-      "displayName": "累计已收付金额（外币）",
-      "isCalculated": false,
-      "isHidden": false,
-      "name": "PaidFC",
-      "notNull": false,
-      "properties": {
-        "description": "单据当前累计收付外币金额；按币种使用，不是外币未付金额。",
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIGE.html"
-      },
-      "type": "DECIMAL(19,6)"
-    },
-    {
-      "displayName": "累计已收付金额（系统币）",
-      "isCalculated": false,
-      "isHidden": false,
-      "name": "PaidSys",
-      "notNull": false,
-      "properties": {
-        "description": "单据当前累计收付系统币金额。",
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIGE.html"
-      },
-      "type": "DECIMAL(19,6)"
-    },
-    {
-      "displayName": "累计已收付金额（本币）",
-      "isCalculated": false,
-      "isHidden": false,
-      "name": "PaidToDate",
-      "notNull": false,
-      "properties": {
-        "description": "单据当前累计收付本币金额；不能当作指定历史期间的收付款发生额。",
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIGE.html"
-      },
-      "type": "DECIMAL(19,6)"
     },
     {
       "displayName": "需求日期",
@@ -445,7 +365,7 @@
   "name": "oige",
   "primaryKey": "DocEntry",
   "properties": {
-    "description": "每个DocEntry一行；包括普通库存发货及生产领料，生产归属由行BaseType和BaseEntry确定。",
+    "description": "库存出库及生产发料表头，按DocEntry计量；实际物料、仓库与来源在行层读取。累计收付款不属于本对象职责，单据金额不自动等于实际库存估价或最终工单成本。连接明细后头金额不能重复累计。",
     "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OIGE.html"
   },
   "tableReference": {

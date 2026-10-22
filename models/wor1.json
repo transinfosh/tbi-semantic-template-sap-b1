@@ -41,7 +41,7 @@
       "isCalculated": false,
       "isHidden": false,
       "name": "DocEntry",
-      "notNull": false,
+      "notNull": true,
       "properties": {
         "description": "关联OWOR.DocEntry。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
@@ -101,7 +101,7 @@
       "isCalculated": false,
       "isHidden": false,
       "name": "LineNum",
-      "notNull": false,
+      "notNull": true,
       "properties": {
         "description": "与DocEntry组成组件行主键；生产发料使用IGE1.BaseEntry=DocEntry及IGE1.BaseLine=LineNum，并限定BaseType=202。IGE1.LineNum是当前发料单行号；同物料可在多工单、多组件行重复，不能按ItemCode替代复合键。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
@@ -167,6 +167,114 @@
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
       },
       "type": "VARCHAR(8)"
+    },
+    {
+      "name": "ItemName",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "工单保存的组件描述；不以当前物料、资源或BOM描述覆盖。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
+      },
+      "type": "VARCHAR(200)",
+      "displayName": "组件名称快照"
+    },
+    {
+      "name": "Project",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "工单组件行项目；不假定恒等于表头项目。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
+      },
+      "type": "VARCHAR(20)",
+      "displayName": "组件项目编码"
+    },
+    {
+      "name": "WipActCode",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "工单组件在制品科目配置；执行时的实际科目仍由交易单据和分录核对。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
+      },
+      "type": "VARCHAR(15)",
+      "displayName": "组件在制品科目编码"
+    },
+    {
+      "name": "StageId",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "工单内工序标识；须与DocEntry一起定位WOR4，不能直接连接ORST.AbsEntry。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
+      },
+      "type": "INTEGER",
+      "displayName": "工单工序内部序号"
+    },
+    {
+      "name": "OcrCode",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "所属对象保存的第1维分配规则；规则不同于成本中心，不据当前规则分配明细追算历史实际成本。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
+      },
+      "type": "VARCHAR(8)",
+      "displayName": "第1维分配规则编码"
+    },
+    {
+      "name": "OcrCode2",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "所属对象保存的第2维分配规则；规则不同于成本中心，不据当前规则分配明细追算历史实际成本。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
+      },
+      "type": "VARCHAR(8)",
+      "displayName": "第2维分配规则编码"
+    },
+    {
+      "name": "OcrCode3",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "所属对象保存的第3维分配规则；规则不同于成本中心，不据当前规则分配明细追算历史实际成本。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
+      },
+      "type": "VARCHAR(8)",
+      "displayName": "第3维分配规则编码"
+    },
+    {
+      "name": "OcrCode4",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "所属对象保存的第4维分配规则；规则不同于成本中心，不据当前规则分配明细追算历史实际成本。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
+      },
+      "type": "VARCHAR(8)",
+      "displayName": "第4维分配规则编码"
+    },
+    {
+      "name": "OcrCode5",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "所属对象保存的第5维分配规则；规则不同于成本中心，不据当前规则分配明细追算历史实际成本。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
+      },
+      "type": "VARCHAR(8)",
+      "displayName": "第5维分配规则编码"
     }
   ],
   "displayName": "生产订单组件行",

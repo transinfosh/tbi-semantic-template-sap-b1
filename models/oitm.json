@@ -217,7 +217,7 @@
       "name": "LastPurPrc",
       "notNull": false,
       "properties": {
-        "description": "最近采购价格，不是库存估价流水金额或历史生产领料成本。",
+        "description": "最近采购价格，结合 LastPurCur 和 LastPurDat 解释；不是库存估价流水金额或历史生产领料成本。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
       },
       "type": "DECIMAL(19,6)"
@@ -450,35 +450,38 @@
       "type": "VARCHAR"
     },
     {
-      "displayName": "是否有效",
+      "displayName": "启用标志",
       "isCalculated": false,
       "isHidden": false,
       "name": "validFor",
       "notNull": false,
       "properties": {
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html",
+        "description": "启用设置标志，数据库保存 Y/N；结合对应期间及另一组启停用设置解释，不单凭该标志推导指定日期可用性。"
       },
       "type": "CHAR(1)"
     },
     {
-      "displayName": "生效日期",
+      "displayName": "启用起始日期",
       "isCalculated": false,
       "isHidden": false,
       "name": "validFrom",
       "notNull": false,
       "properties": {
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html",
+        "description": "启用设置的起始日期；保留空日期，不自行推定启停用优先级或默认过滤历史单据。"
       },
       "type": "TIMESTAMP"
     },
     {
-      "displayName": "失效日期",
+      "displayName": "启用截止日期",
       "isCalculated": false,
       "isHidden": false,
       "name": "validTo",
       "notNull": false,
       "properties": {
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html",
+        "description": "启用设置的截止日期；保留空日期，不自行推定启停用优先级或默认过滤历史单据。"
       },
       "type": "TIMESTAMP"
     },
@@ -504,6 +507,54 @@
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
       },
       "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "最近采购币种",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LastPurCur",
+      "notNull": false,
+      "properties": {
+        "description": "LastPurPrc 对应的最近采购币种，与 LastPurDat 配对；不以公司本币替代，不从当前值推导历史采购来源。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "VARCHAR(3)"
+    },
+    {
+      "displayName": "停用标志",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "frozenFor",
+      "notNull": false,
+      "properties": {
+        "description": "停用设置标志，数据库保存 Y/N；结合对应期间及另一组启停用设置解释，不单凭该标志推导指定日期可用性。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "停用起始日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "frozenFrom",
+      "notNull": false,
+      "properties": {
+        "description": "停用设置的起始日期；保留空日期，不自行推定启停用优先级或默认过滤历史单据。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "停用截止日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "frozenTo",
+      "notNull": false,
+      "properties": {
+        "description": "停用设置的截止日期；保留空日期，不自行推定启停用优先级或默认过滤历史单据。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html"
+      },
+      "type": "TIMESTAMP"
     }
   ],
   "displayName": "物料主数据",

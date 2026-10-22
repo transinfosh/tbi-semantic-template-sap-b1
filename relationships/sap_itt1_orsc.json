@@ -1,0 +1,14 @@
+{
+  "name": "sap_itt1_orsc",
+  "models": [
+    "itt1",
+    "orsc"
+  ],
+  "joinType": "MANY_TO_ONE",
+  "condition": "itt1.Code = orsc.ResCode AND itt1.Type = 290",
+  "displayName": "物料清单组件行关联生产资源",
+  "properties": {
+    "description": "只连接BOM资源组件；不使用资源显示编号，当前资源成本不替代历史实际成本。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITT1.html"
+  }
+}

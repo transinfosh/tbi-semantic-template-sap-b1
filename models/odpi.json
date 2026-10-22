@@ -109,13 +109,25 @@
       "type": "DECIMAL(19,6)"
     },
     {
+      "displayName": "币种来源",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CurSource",
+      "notNull": false,
+      "properties": {
+        "description": "单据币种来源：L=本币，S=系统币，C=业务伙伴币种。C 不等于外币标识，实际单据币种读取 DocCur 并与公司本币比较。本币和系统币代码分别读取同一公司库 OADM.MainCurncy 和 OADM.SysCurrncy。本字段不改变各金额列已定义的 LC/FC/SC 口径，也不代替行价格 Currency。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ODPI.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
       "displayName": "单据币种",
       "isCalculated": false,
       "isHidden": false,
       "name": "DocCur",
       "notNull": false,
       "properties": {
-        "description": "单据币种，可能是本币或外币；外币单据的 DocTotalFC/PaidFC 按此币种解释。本币金额的币种取 OADM.MainCurncy，系统币金额取 OADM.SysCurrncy；行 Currency 表示价格币种，不能代替本字段或给所有金额赋币种。",
+        "description": "单据实际币种代码，可等于公司本币。CurSource 记录币种来源选择，其中 C=业务伙伴币种，不直接表示外币；外币适用性结合本字段与公司本币判断。正常外币单据的 DocTotalFC/PaidFC 按此币种解释；DocTotal/PaidToDate 的本币代码统一取同一公司库 OADM.MainCurncy，DocTotalSy/PaidSys 的系统币代码统一取 OADM.SysCurrncy。行 Currency 只解释行价格币种，不给所有金额列赋币种。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ODPI.html"
       },
       "type": "VARCHAR(3)"
@@ -187,7 +199,7 @@
       "name": "DocStatus",
       "notNull": false,
       "properties": {
-        "description": "预付款单据开闭状态，仅 O=未结、C=已结。结合 CANCELED：N/O=未取消未结，N/C=未取消已结；CANCELED=Y 表示已取消，不能仅由 DocStatus 判断取消。请求、发票、收款和抵扣需分别判断，已结本身不证明已经足额收款或全额抵扣。",
+        "description": "预付款单据开闭状态，仅 O=未结、C=已结。结合 CANCELED：N/O=未取消未结，N/C=未取消已结；CANCELED=Y 表示已取消，不能仅由 DocStatus 判断取消。请求、发票、收款和抵扣需分别判断，已结本身不证明已经足额收款或全额抵扣。 API 属性 DocumentStatus 的 bost_Open/bost_Close（序号 0/1）对应开闭含义；SQL 筛选本列仍用 O/C，不用 API 名称或序号，也不扩展共享枚举的其他值。未定义值保持待核实。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ODPI.html"
       },
       "type": "CHAR"
@@ -235,7 +247,7 @@
       "name": "DocType",
       "notNull": false,
       "properties": {
-        "description": "I=物料单据，S=服务单据；与 ObjType 的单据对象类型代码不同。服务行可以没有 ItemCode，应结合行 Dscription 和 AcctCode 解释，不能因缺少物料编码排除服务金额。",
+        "description": "I=物料单据，S=服务单据；与 ObjType 的单据对象类型代码不同。服务行可以没有 ItemCode，应结合行 Dscription 和 AcctCode 解释，不能因缺少物料编码排除服务金额。 API 枚举 dDocument_Items/dDocument_Service（序号 0/1）仅供对照；SQL 筛选本列使用 I/S，不使用枚举名或序号。未定义值保持待核实。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ODPI.html"
       },
       "type": "CHAR(1)"
@@ -331,7 +343,7 @@
       "name": "ObjType",
       "notNull": false,
       "properties": {
-        "description": "本单据对象类型代码；与来源行 BaseType 区分，实际数据库类型须核验。",
+        "description": "本单据对象类型代码；与来源行 BaseType 区分，实际数据库类型须核验。 本表对象为 DownPayments，对象类型代码为 203；不是 DocType 的 I/S，也不表示来源对象。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ODPI.html"
       },
       "type": "VARCHAR(20)"
@@ -551,6 +563,18 @@
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ODPI.html"
       },
       "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "单据项目代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Project",
+      "notNull": false,
+      "properties": {
+        "description": "本单据头保存的 Project 项目代码，按 OPRJ.PrjCode 关联；与明细行 Project 分别解释，不能把头项目覆盖到所有行，也不按当前项目启用状态过滤历史单据。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/odpi.html"
+      },
+      "type": "VARCHAR(20)"
     }
   ],
   "displayName": "应收预付款",
@@ -558,7 +582,7 @@
   "name": "odpi",
   "primaryKey": "DocEntry",
   "properties": {
-    "description": "单据表头粒度，主键 DocEntry。预付款业务单据；来源单据与最终发票抵扣是两类关系，已收款、已抵扣与已过账分别判断。 金额分别保存本币、外币、系统币口径：DocTotal/PaidToDate 的币种取同一公司库 OADM.MainCurncy，DocTotalSy/PaidSys 取 OADM.SysCurrncy；外币单据的 DocTotalFC/PaidFC 按本表 DocCur 解释并按币种汇总。DocCur 也可等于本币，不是所有金额列的统一币种。单据总额、当前累计已收付额和行金额分开使用；头金额不能在连接多行后重复累计。",
+    "description": "单据表头粒度，主键 DocEntry。对应 Service Layer 销售对象 DownPayments（ObjType=203），物理表为 ODPI。预付款业务单据；来源单据与最终发票抵扣是两类关系，已收款、已抵扣与已过账分别判断。 金额分别保存本币、外币、系统币口径：DocTotal/PaidToDate 的币种取同一公司库 OADM.MainCurncy，DocTotalSy/PaidSys 取 OADM.SysCurrncy；外币单据的 DocTotalFC/PaidFC 按本表 DocCur 解释并按币种汇总。DocCur 也可等于本币，不是所有金额列的统一币种。单据总额、当前累计已收付额和行金额分开使用；头金额不能在连接多行后重复累计。 CurSource 表示币种来源选择，取值见字段说明；不据此切换各金额列的 LC/FC/SC 定义。本币和系统币代码始终由同一公司库 OADM 读取。",
     "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ODPI.html"
   },
   "tableReference": {

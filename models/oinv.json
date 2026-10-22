@@ -13,18 +13,6 @@
       "type": "VARCHAR(254)"
     },
     {
-      "displayName": "取消日期",
-      "isCalculated": false,
-      "isHidden": false,
-      "name": "CancelDate",
-      "notNull": false,
-      "properties": {
-        "description": "单据被取消的日期。",
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OINV.html"
-      },
-      "type": "TIMESTAMP"
-    },
-    {
       "displayName": "取消状态",
       "isCalculated": false,
       "isHidden": false,
@@ -133,13 +121,25 @@
       "type": "DECIMAL(19,6)"
     },
     {
+      "displayName": "币种来源",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "CurSource",
+      "notNull": false,
+      "properties": {
+        "description": "单据币种来源：L=本币，S=系统币，C=业务伙伴币种。C 不等于外币标识，实际单据币种读取 DocCur 并与公司本币比较。本币和系统币代码分别读取同一公司库 OADM.MainCurncy 和 OADM.SysCurrncy。本字段不改变各金额列已定义的 LC/FC/SC 口径，也不代替行价格 Currency。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OINV.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
       "displayName": "单据币种",
       "isCalculated": false,
       "isHidden": false,
       "name": "DocCur",
       "notNull": false,
       "properties": {
-        "description": "单据币种，可能是本币或外币；外币单据的 DocTotalFC/PaidFC 按此币种解释。本币金额的币种取 OADM.MainCurncy，系统币金额取 OADM.SysCurrncy；行 Currency 表示价格币种，不能代替本字段或给所有金额赋币种。",
+        "description": "单据实际币种代码，可等于公司本币。CurSource 记录币种来源选择，其中 C=业务伙伴币种，不直接表示外币；外币适用性结合本字段与公司本币判断。正常外币单据的 DocTotalFC/PaidFC 按此币种解释；DocTotal/PaidToDate 的本币代码统一取同一公司库 OADM.MainCurncy，DocTotalSy/PaidSys 的系统币代码统一取 OADM.SysCurrncy。行 Currency 只解释行价格币种，不给所有金额列赋币种。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OINV.html"
       },
       "type": "VARCHAR(3)"
@@ -211,7 +211,7 @@
       "name": "DocStatus",
       "notNull": false,
       "properties": {
-        "description": "单据开闭状态，仅 O=未结、C=已结。结合 CANCELED 判断：N/O=未取消且未结，N/C=未取消但已结；完成反向取消后，原单为 Y/C，新取消单为 C/C。DocStatus 的 C 表示关闭，与 CANCELED 的 C 表示取消单据不同；已结本身不能证明已交齐或已收齐。",
+        "description": "单据开闭状态，仅 O=未结、C=已结。结合 CANCELED 判断：N/O=未取消且未结，N/C=未取消但已结；完成反向取消后，原单为 Y/C，新取消单为 C/C。DocStatus 的 C 表示关闭，与 CANCELED 的 C 表示取消单据不同；已结本身不能证明已交齐或已收齐。 API 属性 DocumentStatus 的 bost_Open/bost_Close（序号 0/1）对应开闭含义；SQL 筛选本列仍用 O/C，不用 API 名称或序号，也不扩展共享枚举的其他值。未定义值保持待核实。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OINV.html"
       },
       "type": "CHAR(1)"
@@ -261,7 +261,7 @@
       "name": "DocType",
       "notNull": false,
       "properties": {
-        "description": "I=物料单据，S=服务单据；与 ObjType 的单据对象类型代码不同。服务行可以没有 ItemCode，应结合行 Dscription 和 AcctCode 解释，不能因缺少物料编码排除服务金额。",
+        "description": "I=物料单据，S=服务单据；与 ObjType 的单据对象类型代码不同。服务行可以没有 ItemCode，应结合行 Dscription 和 AcctCode 解释，不能因缺少物料编码排除服务金额。 API 枚举 dDocument_Items/dDocument_Service（序号 0/1）仅供对照；SQL 筛选本列使用 I/S，不使用枚举名或序号。未定义值保持待核实。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OINV.html"
       },
       "type": "CHAR(1)"
@@ -335,7 +335,7 @@
       "name": "ObjType",
       "notNull": false,
       "properties": {
-        "description": "本单据对象类型代码；与来源行 BaseType 区分，实际数据库类型须核验。",
+        "description": "本单据对象类型代码；与来源行 BaseType 区分，实际数据库类型须核验。 本表对象为 Invoices，对象类型代码为 13；不是 DocType 的 I/S，也不表示来源对象。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OINV.html"
       },
       "type": "VARCHAR(20)"
@@ -377,13 +377,13 @@
       "type": "DECIMAL(19,6)"
     },
     {
-      "displayName": "需求日期",
+      "displayName": "客户期望收货日期",
       "isCalculated": false,
       "isHidden": false,
       "name": "ReqDate",
       "notNull": false,
       "properties": {
-        "description": "需求日期或要求交货日期。",
+        "description": "客户期望收到货物的日期，不是取消日、过账日或实际签收日；与 DocDueDate 及行 ShipDate 各自保存的计划日期分别使用。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OINV.html"
       },
       "type": "TIMESTAMP"
@@ -579,6 +579,30 @@
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OINV.html"
       },
       "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "单据项目代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Project",
+      "notNull": false,
+      "properties": {
+        "description": "本单据头保存的 Project 项目代码，按 OPRJ.PrjCode 关联；与明细行 Project 分别解释，不能把头项目覆盖到所有行，也不按当前项目启用状态过滤历史单据。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OINV.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "单据仓库开闭状态",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "InvntSttus",
+      "notNull": false,
+      "properties": {
+        "description": "仓库状态：O=未结，C=已结；与 DocStatus 的单据开闭分开。尤其预留发票 isIns=Y 可以已经结算而尚未交货，不能由 DocStatus=C 或本字段单独推断付款、取消或实际交付数量。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OINV.html"
+      },
+      "type": "VARCHAR(1)"
     }
   ],
   "displayName": "应收发票",
@@ -586,7 +610,7 @@
   "name": "oinv",
   "primaryKey": "DocEntry",
   "properties": {
-    "description": "单据表头粒度，主键 DocEntry。应收开票单据；含预留发票情形，须用 isIns 区分，不能假定每张均发生库存移动。 金额分别保存本币、外币、系统币口径：DocTotal/PaidToDate 的币种取同一公司库 OADM.MainCurncy，DocTotalSy/PaidSys 取 OADM.SysCurrncy；外币单据的 DocTotalFC/PaidFC 按本表 DocCur 解释并按币种汇总。DocCur 也可等于本币，不是所有金额列的统一币种。单据总额、当前累计已收付额和行金额分开使用；头金额不能在连接多行后重复累计。",
+    "description": "单据表头粒度，主键 DocEntry。对应 Service Layer 销售对象 Invoices（ObjType=13），物理表为 OINV。应收开票单据；含预留发票情形，须用 isIns 区分，不能假定每张均发生库存移动。 金额分别保存本币、外币、系统币口径：DocTotal/PaidToDate 的币种取同一公司库 OADM.MainCurncy，DocTotalSy/PaidSys 取 OADM.SysCurrncy；外币单据的 DocTotalFC/PaidFC 按本表 DocCur 解释并按币种汇总。DocCur 也可等于本币，不是所有金额列的统一币种。单据总额、当前累计已收付额和行金额分开使用；头金额不能在连接多行后重复累计。 CurSource 表示币种来源选择，取值见字段说明；不据此切换各金额列的 LC/FC/SC 定义。本币和系统币代码始终由同一公司库 OADM 读取。",
     "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OINV.html"
   },
   "tableReference": {

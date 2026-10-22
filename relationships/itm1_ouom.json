@@ -1,0 +1,14 @@
+{
+  "condition": "itm1.UomEntry = ouom.UomEntry",
+  "displayName": "物料价格 → 计价单位",
+  "joinType": "MANY_TO_ONE",
+  "models": [
+    "itm1",
+    "ouom"
+  ],
+  "name": "itm1_ouom",
+  "properties": {
+    "description": "保存的计价单位键解释，不默认转换价格或覆盖 PriceType，缺单位匹配不应删除原价格行。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITM1.html"
+  }
+}

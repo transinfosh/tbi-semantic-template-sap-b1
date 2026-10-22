@@ -1,0 +1,14 @@
+{
+  "name": "sap_orpd_nnm1",
+  "models": [
+    "orpd",
+    "nnm1"
+  ],
+  "joinType": "MANY_TO_ONE",
+  "condition": "orpd.Series = nnm1.Series AND orpd.ObjType = nnm1.ObjectCode",
+  "displayName": "采购退货关联单据编号系列",
+  "properties": {
+    "description": "按本记录保存键关联对应维度或所属单据；连接条件为 orpd.Series = nnm1.Series AND orpd.ObjType = nnm1.ObjectCode。保留未匹配事实，不用当前主数据默认值覆盖保存值，头金额不按明细重复累计。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORPD.html"
+  }
+}

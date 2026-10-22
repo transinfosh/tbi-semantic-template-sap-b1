@@ -203,6 +203,54 @@
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN9.html"
       },
       "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "已应用净额（外币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ApplDrawnF",
+      "notNull": false,
+      "properties": {
+        "description": "本抵扣记录保存的已应用净额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum 粒度计量，不能与整张单据全部物料行连接后重复求和。具体外币代码须结合所属单据、来源预付款及跨币抵扣核实；本轮未确认统一币种来源，不按相邻列或物料行 Currency 推定，不跨币种合计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN9.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "已应用净额（系统币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ApplDrawnS",
+      "notNull": false,
+      "properties": {
+        "description": "本抵扣记录保存的已应用净额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum 粒度计量，不能与整张单据全部物料行连接后重复求和。币种取同一公司库 OADM.SysCurrncy。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN9.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "抵扣税额（外币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "VatFc",
+      "notNull": false,
+      "properties": {
+        "description": "本抵扣记录保存的抵扣税额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum 粒度计量，不能与整张单据全部物料行连接后重复求和。具体外币代码须结合所属单据、来源预付款及跨币抵扣核实；本轮未确认统一币种来源，不按相邻列或物料行 Currency 推定，不跨币种合计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN9.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "抵扣税额（系统币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "VatSc",
+      "notNull": false,
+      "properties": {
+        "description": "本抵扣记录保存的抵扣税额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum 粒度计量，不能与整张单据全部物料行连接后重复求和。币种取同一公司库 OADM.SysCurrncy。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN9.html"
+      },
+      "type": "DECIMAL(19,6)"
     }
   ],
   "displayName": "应收贷项预付款抵扣",

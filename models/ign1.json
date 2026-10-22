@@ -131,17 +131,6 @@
       "type": "VARCHAR(8)"
     },
     {
-      "displayName": "毛利基础价格",
-      "isCalculated": false,
-      "isHidden": false,
-      "name": "GrossBuyPr",
-      "notNull": false,
-      "properties": {
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGN1.html"
-      },
-      "type": "DECIMAL(19,6)"
-    },
-    {
       "displayName": "库存单位数量",
       "isCalculated": false,
       "isHidden": false,
@@ -396,7 +385,7 @@
       "name": "TranType",
       "notNull": false,
       "properties": {
-        "description": "DI API TransactionType映射TranType；枚举0完成、1拒收。OWOR完成/拒收数量分别依据该类型汇总IGN1.Quantity；还须限定工单及收货业务角色。",
+        "description": "数据库C=完成、R=拒收；DI API枚举0/1不可直接作为TranType过滤值。仍需区分产品收货、组件退回及拆卸业务角色。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGN1.html"
       },
       "type": "VARCHAR(1)"
@@ -494,6 +483,18 @@
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGN1.html"
       },
       "type": "VARCHAR(8)"
+    },
+    {
+      "name": "Project",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本单据行保存的项目编码；与头项目或当前物料信息分别解释。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGN1.html"
+      },
+      "type": "VARCHAR(20)",
+      "displayName": "行项目编码"
     }
   ],
   "displayName": "收货单行",

@@ -1,0 +1,14 @@
+{
+  "name": "sap_wtr1_oprj",
+  "models": [
+    "wtr1",
+    "oprj"
+  ],
+  "joinType": "MANY_TO_ONE",
+  "condition": "wtr1.Project = oprj.PrjCode",
+  "displayName": "库存调拨行关联项目代码主数据",
+  "properties": {
+    "description": "单据行项目；不把当前主数据反推为历史项目。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WTR1.html"
+  }
+}

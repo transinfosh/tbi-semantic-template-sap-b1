@@ -52,7 +52,7 @@
       "isCalculated": false,
       "isHidden": false,
       "name": "Father",
-      "notNull": false,
+      "notNull": true,
       "properties": {
         "description": "关联OITT.Code。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITT1.html"
@@ -128,7 +128,7 @@
         "description": "组件库存单位名称，不是OUOM内部标识。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITT1.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR(100)"
     },
     {
       "displayName": "组件默认仓库",
@@ -141,6 +141,126 @@
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITT1.html"
       },
       "type": "VARCHAR(8)"
+    },
+    {
+      "name": "VisOrder",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "界面行顺序，不能替代ChildNum作为组件主键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITT1.html"
+      },
+      "type": "INTEGER",
+      "displayName": "组件显示顺序"
+    },
+    {
+      "name": "ItemName",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "BOM保存的组件描述；物料、资源和文本行均按Type解释，不从当前主数据覆盖。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITT1.html"
+      },
+      "type": "VARCHAR(200)",
+      "displayName": "BOM组件名称"
+    },
+    {
+      "name": "AddQuantit",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "BOM附加组件量；字段拼写保留源表AddQuantit，不改为工单的AdditQty。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITT1.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "BOM附加用量"
+    },
+    {
+      "name": "WipActCode",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "BOM组件在制品科目配置，不代表历史交易最终过账科目。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITT1.html"
+      },
+      "type": "VARCHAR(15)",
+      "displayName": "BOM在制品科目编码"
+    },
+    {
+      "name": "StageId",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "工序在当前BOM内的标识；不是ORST主键，须与Father一起定位ITT2。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITT1.html"
+      },
+      "type": "INTEGER",
+      "displayName": "BOM工序内部序号"
+    },
+    {
+      "name": "OcrCode",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "所属对象保存的第1维分配规则；规则不同于成本中心，不据当前规则分配明细追算历史实际成本。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITT1.html"
+      },
+      "type": "VARCHAR(8)",
+      "displayName": "第1维分配规则编码"
+    },
+    {
+      "name": "OcrCode2",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "所属对象保存的第2维分配规则；规则不同于成本中心，不据当前规则分配明细追算历史实际成本。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITT1.html"
+      },
+      "type": "VARCHAR(8)",
+      "displayName": "第2维分配规则编码"
+    },
+    {
+      "name": "OcrCode3",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "所属对象保存的第3维分配规则；规则不同于成本中心，不据当前规则分配明细追算历史实际成本。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITT1.html"
+      },
+      "type": "VARCHAR(8)",
+      "displayName": "第3维分配规则编码"
+    },
+    {
+      "name": "OcrCode4",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "所属对象保存的第4维分配规则；规则不同于成本中心，不据当前规则分配明细追算历史实际成本。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITT1.html"
+      },
+      "type": "VARCHAR(8)",
+      "displayName": "第4维分配规则编码"
+    },
+    {
+      "name": "OcrCode5",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "所属对象保存的第5维分配规则；规则不同于成本中心，不据当前规则分配明细追算历史实际成本。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITT1.html"
+      },
+      "type": "VARCHAR(8)",
+      "displayName": "第5维分配规则编码"
     }
   ],
   "displayName": "物料清单组件行",

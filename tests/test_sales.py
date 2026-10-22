@@ -51,6 +51,152 @@ class SalesTest(unittest.TestCase):
         self.assertEqual(len(matches), 1, f"Expected one relationship between {first} and {second}")
         return matches[0]
 
+    def test_document_expenses_preserve_records_types_and_currency_without_item_fanout(self) -> None:
+        for expense, header, line in (("inv3", "oinv", "inv1"), ("rin3", "orin", "rin1"), ("pch3", "opch", "pch1"), ("rpc3", "orpc", "rpc1")):
+            with self.subTest(expense=expense), closing(sqlite3.connect(":memory:")) as connection:
+                connection.executescript(
+                    f"CREATE TABLE {header} (DocEntry INT PRIMARY KEY, DocCur TEXT, DocTotal NUMERIC);"
+                    f"CREATE TABLE {expense} (DocEntry INT, LineNum INT, ExpnsCode INT, "
+                    "LineTotal NUMERIC, TotalFrgn NUMERIC, PRIMARY KEY (DocEntry, LineNum));"
+                    "CREATE TABLE oexd (ExpnsCode INT PRIMARY KEY, ExpnsName TEXT);"
+                    f"INSERT INTO {header} VALUES (10, 'USD', 1100), (20, 'EUR', 2200);"
+                    f"INSERT INTO {expense} VALUES (10, 4, 1, 100, 14), (10, 8, 1, 20, 3), "
+                    "(10, 11, 2, 30, 4), (20, 4, 99, 200, 25);"
+                    "INSERT INTO oexd VALUES (1, 'Freight'), (2, 'Insurance');"
+                )
+                parent = self.relation_between(expense, header)
+                types = self.relation_between(expense, "oexd")
+                self.assertEqual(parent["joinType"], "MANY_TO_ONE")
+                self.assertEqual(types["joinType"], "MANY_TO_ONE")
+                joined = (
+                    f"FROM {expense} LEFT JOIN {header} ON {parent['condition']} "
+                    f"LEFT JOIN oexd ON {types['condition']}"
+                )
+                by_type = connection.execute(
+                    f"SELECT oexd.ExpnsName, SUM({expense}.LineTotal) {joined} "
+                    "GROUP BY oexd.ExpnsName ORDER BY oexd.ExpnsName"
+                ).fetchall()
+                self.assertEqual(by_type, [(None, 200), ("Freight", 120), ("Insurance", 30)])
+                by_currency = connection.execute(
+                    f"SELECT {header}.DocCur, SUM({expense}.TotalFrgn) {joined} "
+                    f"GROUP BY {header}.DocCur ORDER BY {header}.DocCur"
+                ).fetchall()
+                self.assertEqual(by_currency, [("EUR", 25), ("USD", 21)])
+                # A repeated expense code is still a separate record; retain unmatched types.
+                self.assertEqual(connection.execute(f"SELECT COUNT(*) {joined}").fetchone()[0], 4)
+                self.assertEqual(self.models[expense]["primaryKey"], ["DocEntry", "LineNum"])
+                self.assertFalse(any(set(r["models"]) == {expense, line} for r in self.relations.values()))
+
+    def test_formal_quotation_scope_keeps_alternatives_and_confirmation_distinct(self) -> None:
+        for model, fields in (("oqut", {"Confirmed"}), ("qut1", {"LineType", "TreeType"})):
+            self.assertTrue(fields <= {c["name"] for c in self.models[model]["columns"]})
+        with closing(sqlite3.connect(":memory:")) as connection:
+            connection.executescript(
+                "CREATE TABLE oqut (DocEntry INT PRIMARY KEY, Confirmed TEXT, DocStatus TEXT);"
+                "CREATE TABLE qut1 (DocEntry INT, LineNum INT, LineType TEXT, TreeType TEXT, "
+                "Quantity NUMERIC, LineTotal NUMERIC, PRIMARY KEY (DocEntry, LineNum));"
+                "INSERT INTO oqut VALUES (1, 'Y', 'O'), (2, 'N', 'O');"
+                "INSERT INTO qut1 VALUES (1, 2, 'R', 'S', 2, 100), "
+                "(1, 5, 'R', 'I', 6, 0), (1, 9, 'A', 'N', 2, 180), "
+                "(1, 12, '?', 'N', 2, 700), (2, 0, 'R', 'N', 1, 90);"
+            )
+            joined = f"FROM oqut JOIN qut1 ON {self.relation_between('oqut', 'qut1')['condition']}"
+            regular = connection.execute(
+                f"SELECT SUM(qut1.LineTotal) {joined} WHERE oqut.Confirmed='Y' AND qut1.LineType='R'"
+            ).fetchone()[0]
+            alternatives = connection.execute(
+                f"SELECT SUM(qut1.LineTotal) {joined} WHERE oqut.Confirmed='Y' AND qut1.LineType='A'"
+            ).fetchone()[0]
+            roles = connection.execute(
+                "SELECT TreeType, SUM(Quantity) FROM qut1 WHERE DocEntry=1 AND LineType='R' "
+                "GROUP BY TreeType ORDER BY TreeType"
+            ).fetchall()
+            self.assertEqual((regular, alternatives), (100, 180))
+            self.assertEqual(roles, [("I", 6), ("S", 2)])
+            # These are explicit question scopes, not new universal filtering rules.
+            self.assertEqual(connection.execute("SELECT COUNT(*) FROM qut1").fetchone()[0], 5)
+
+    def test_service_open_amount_and_reserve_delivery_status_have_separate_roles(self) -> None:
+        for header, line, _ in DOCUMENTS:
+            self.assertTrue(
+                {"OpenSum", "OpenSumFC", "OpenSumSys"}
+                <= {c["name"] for c in self.models[line]["columns"]}
+            )
+        self.assertIn("InvntSttus", {c["name"] for c in self.models["oinv"]["columns"]})
+        with closing(sqlite3.connect(":memory:")) as connection:
+            connection.executescript(
+                "CREATE TABLE oinv (DocEntry INT PRIMARY KEY, DocType TEXT, isIns TEXT, "
+                "DocStatus TEXT, InvntSttus TEXT);"
+                "CREATE TABLE inv1 (DocEntry INT, LineNum INT, OpenQty NUMERIC, OpenSum NUMERIC);"
+                "INSERT INTO oinv VALUES (1, 'S', 'N', 'O', 'C'), "
+                "(2, 'I', 'Y', 'C', 'O'), (3, 'I', 'Y', 'C', 'C');"
+                "INSERT INTO inv1 VALUES (1, 0, 1, 150), (2, 0, 4, 0), (3, 0, 0, 0);"
+            )
+            amount = connection.execute(
+                "SELECT SUM(inv1.OpenSum) FROM oinv JOIN inv1 "
+                f"ON {self.relation_between('oinv', 'inv1')['condition']} WHERE oinv.DocType='S'"
+            ).fetchone()[0]
+            pending_delivery = connection.execute(
+                "SELECT DocEntry FROM oinv WHERE isIns='Y' AND InvntSttus='O'"
+            ).fetchall()
+            self.assertEqual(amount, 150)
+            self.assertEqual(pending_delivery, [(2,)])
+
+    def test_line_projects_and_salespeople_keep_their_own_keys_and_unmatched_rows(self) -> None:
+        for header, line, _ in DOCUMENTS:
+            with self.subTest(line=line), closing(sqlite3.connect(":memory:")) as connection:
+                connection.executescript(
+                    f"CREATE TABLE {header} (DocEntry INT PRIMARY KEY, Project TEXT, SlpCode INT);"
+                    f"CREATE TABLE {line} (DocEntry INT, LineNum INT, Project TEXT, SlpCode INT);"
+                    "CREATE TABLE oprj (PrjCode TEXT PRIMARY KEY, PrjName TEXT, Active TEXT);"
+                    "CREATE TABLE oslp (SlpCode INT PRIMARY KEY, SlpName TEXT);"
+                    f"INSERT INTO {header} VALUES (1, 'HEAD', 8);"
+                    f"INSERT INTO {line} VALUES (1, 0, 'LINE', 7), (1, 1, NULL, -1), "
+                    "(1, 2, 'MISSING', 99);"
+                    "INSERT INTO oprj VALUES ('HEAD', 'Header project', 'Y'), "
+                    "('LINE', 'Saved line project', 'N');"
+                    "INSERT INTO oslp VALUES (7, 'Line salesperson'), (8, 'Header salesperson');"
+                )
+                rows = connection.execute(
+                    f"SELECT {line}.LineNum, oprj.PrjName, oslp.SlpName FROM {header} "
+                    f"JOIN {line} ON {self.relation_between(header, line)['condition']} "
+                    f"LEFT JOIN oprj ON {self.relation_between(line, 'oprj')['condition']} "
+                    f"LEFT JOIN oslp ON {self.relation_between(line, 'oslp')['condition']} "
+                    f"ORDER BY {line}.LineNum"
+                ).fetchall()
+                self.assertEqual(
+                    rows,
+                    [(0, "Saved line project", "Line salesperson"), (1, None, None), (2, None, None)],
+                )
+                header_project = self.relation_between(header, "oprj")
+                self.assertEqual(header_project["condition"], f"{header}.Project = oprj.PrjCode")
+
+    def test_drawn_payment_roles_have_saved_currency_families_at_their_own_grain(self) -> None:
+        for model in ("inv9", "rin9", "inv11", "rin11"):
+            columns = {c["name"]: c for c in self.models[model]["columns"]}
+            families = (
+                [("ApplDrawn", "ApplDrawnF", "ApplDrawnS"), ("Vat", "VatFc", "VatSc")]
+                if model.endswith("9")
+                else [
+                    ("LineTotal", "TotalFrgn", "TotalSumSy"),
+                    ("VatSum", "VatSumFrgn", "VatSumSys"),
+                    ("ApplNet", "ApplNetFc", "ApplNetSc"),
+                    ("ApplVat", "ApplVatFc", "ApplVatSc"),
+                    ("ApplGross", "ApplGrossF", "ApplGrossS"),
+                    ("BaseNet", "BaseNetFc", "BaseNetSc"),
+                    ("BaseVat", "BaseVatFc", "BaseVatSc"),
+                    ("BaseGross", "BaseGrossF", "BaseGrossS"),
+                ]
+            )
+            for family in families:
+                with self.subTest(model=model, family=family):
+                    for field in family:
+                        self.assertTrue(columns[field]["type"].startswith("DECIMAL"))
+            self.assertEqual(
+                self.models[model]["primaryKey"],
+                ["DocEntry", "LineNum", "LineSeq"] if model.endswith("11") else ["DocEntry", "LineNum"],
+            )
+
     def condition(self, name: str) -> str:
         return self.relations[name]["condition"]
 

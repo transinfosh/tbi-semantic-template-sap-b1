@@ -31,7 +31,7 @@
       "name": "BaseLine",
       "notNull": false,
       "properties": {
-        "description": "营销单据来源行号；与 BaseEntry、BaseType 组成来源三元组。",
+        "description": "营销单据来源行号；与 BaseEntry、BaseType 组成来源三元组。 指向来源单据实际保存的 LineNum，不是来源集合的 API 数组下标或界面显示顺序。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDN1.html"
       },
       "type": "INTEGER"
@@ -43,7 +43,7 @@
       "name": "BaseType",
       "notNull": false,
       "properties": {
-        "description": "只记录本行直接来源类型；必须与 BaseEntry、BaseLine 一起连接，不能据流程图补造直接边。",
+        "description": "只记录本行直接来源类型；必须与 BaseEntry、BaseLine 一起连接，不能据流程图补造直接边。 SQL 条件使用来源对象类型数字代码，不使用 API 实体名称；允许的直接来源以已声明关系为准。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDN1.html"
       },
       "type": "INTEGER"
@@ -175,7 +175,7 @@
       "name": "LineNum",
       "notNull": true,
       "properties": {
-        "description": "参与复合主键及 BaseLine 来源连接；不是界面排序号 VisOrder。",
+        "description": "参与复合主键及 BaseLine 来源连接；不是界面排序号 VisOrder。 行号不保证连续，不可用 API 集合数组下标重建。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDN1.html"
       },
       "type": "INTEGER"
@@ -443,6 +443,78 @@
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDN1.html"
       },
       "type": "VARCHAR(8)"
+    },
+    {
+      "displayName": "行项目代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "Project",
+      "notNull": false,
+      "properties": {
+        "description": "本行保存的 Project 项目代码，按 OPRJ.PrjCode 关联；不默认使用表头项目，不按当前项目启用或有效期删除历史行。空项目与有编码但主数据未匹配分开。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDN1.html"
+      },
+      "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "行销售员代码",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "SlpCode",
+      "notNull": false,
+      "properties": {
+        "description": "本行保存的销售员代码，按 OSLP.SlpCode 关联；与表头销售员和业务伙伴主数据中的现任销售员分开，不强制三者相等。空值、未指定代码与主数据未匹配不能默认为同一销售员。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDN1.html"
+      },
+      "type": "INTEGER"
+    },
+    {
+      "displayName": "行BOM角色",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TreeType",
+      "notNull": false,
+      "properties": {
+        "description": "单据行 BOM 角色：N=非BOM，A=组装，S=销售BOM，I=销售BOM组件，P=生产BOM，T=模板。用于区分销售父项和组件等行角色；不能只凭该标志重建父子行键，也不统一删除全部组件或把父项与组件数量无差别相加。价格和数量按实际行角色与设置解释，未知值单列核实。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDN1.html"
+      },
+      "type": "VARCHAR(1)"
+    },
+    {
+      "displayName": "服务行未清金额（本币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OpenSum",
+      "notNull": false,
+      "properties": {
+        "description": "仅适用于所属 ORDN.DocType=S 的服务单据行，表示该行当前业务未清金额；与 LineStatus 分开解释，不用 OpenQty 代替金额。不是现金收款、整单应收欠款或任意历史时点账龄，不用数量乘当前价格重算覆盖保存值。币种取同一公司库 OADM.MainCurncy。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDN1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "服务行未清金额（外币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OpenSumFC",
+      "notNull": false,
+      "properties": {
+        "description": "仅适用于所属 ORDN.DocType=S 的服务单据行，表示该行当前业务未清金额；与 LineStatus 分开解释，不用 OpenQty 代替金额。不是现金收款、整单应收欠款或任意历史时点账龄，不用数量乘当前价格重算覆盖保存值。外币适用性及币种结合所属单据核实，不能以行价格 Currency 替代；跨币种分别汇总。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDN1.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "服务行未清金额（系统币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "OpenSumSys",
+      "notNull": false,
+      "properties": {
+        "description": "仅适用于所属 ORDN.DocType=S 的服务单据行，表示该行当前业务未清金额；与 LineStatus 分开解释，不用 OpenQty 代替金额。不是现金收款、整单应收欠款或任意历史时点账龄，不用数量乘当前价格重算覆盖保存值。币种取同一公司库 OADM.SysCurrncy。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDN1.html"
+      },
+      "type": "DECIMAL(19,6)"
     }
   ],
   "displayName": "销售退货明细",
@@ -453,7 +525,7 @@
     "LineNum"
   ],
   "properties": {
-    "description": "单据行粒度，主键 (DocEntry, LineNum)。销售退货单据；向订单追溯通常须经交货行，不存在通用 BaseType=17 的直接来源边。 金额口径：LineTotal 为不含税本币行金额，币种取同一公司库 OADM.MainCurncy；TotalSumSy 为系统币行金额，币种取 OADM.SysCurrncy；外币单据的 TotalFrgn 按所属 ORDN.DocCur 解释，以本行 DocEntry 关联 ORDN.DocEntry。本行 Currency 是价格币种，不是所有行金额的统一币种。跨币种外币金额分别汇总；头总额与不含税行金额不能直接等同。",
+    "description": "单据行粒度，主键 (DocEntry, LineNum)。对应 Returns.DocumentLines 集合中的 DocumentLine，物理表为 RDN1；同名共享类型在其他父单据下对应不同表。销售退货单据；向订单追溯通常须经交货行，不存在通用 BaseType=17 的直接来源边。 金额口径：LineTotal 为不含税本币行金额，币种取同一公司库 OADM.MainCurncy；TotalSumSy 为系统币行金额，币种取 OADM.SysCurrncy；外币单据的 TotalFrgn 按所属 ORDN.DocCur 解释，以本行 DocEntry 关联 ORDN.DocEntry。本行 Currency 是价格币种，不是所有行金额的统一币种。跨币种外币金额分别汇总；头总额与不含税行金额不能直接等同。 服务型明细的当前未清金额见 OpenSum/OpenSumFC/OpenSumSys；BOM角色见 TreeType；项目与销售员分别取本行保存值，不由表头或当前主数据替代。",
     "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RDN1.html"
   },
   "tableReference": {

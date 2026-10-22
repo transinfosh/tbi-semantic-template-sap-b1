@@ -1,0 +1,14 @@
+{
+  "name": "sap_owor_owhs",
+  "models": [
+    "owor",
+    "owhs"
+  ],
+  "joinType": "MANY_TO_ONE",
+  "condition": "owor.Warehouse = owhs.WhsCode",
+  "displayName": "生产订单关联仓库主数据",
+  "properties": {
+    "description": "工单产品仓库，不等同组件与实际收发货仓库。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWOR.html"
+  }
+}

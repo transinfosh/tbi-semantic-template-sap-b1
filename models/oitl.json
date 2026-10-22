@@ -142,7 +142,7 @@
         "description": "关联OITM。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITL.html"
       },
-      "type": "VARCHAR(20)"
+      "type": "VARCHAR(50)"
     },
     {
       "displayName": "仓库位置代码",
@@ -215,6 +215,30 @@
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITL.html"
       },
       "type": "INTEGER"
+    },
+    {
+      "name": "LocType",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "与LocCode共同解释位置；未核实枚举时不自动将位置全部连接仓库。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITL.html"
+      },
+      "type": "INTEGER",
+      "displayName": "位置类型"
+    },
+    {
+      "name": "CreateDate",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "系统创建日期，与DocDate交易过账日期分别使用。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITL.html"
+      },
+      "type": "TIMESTAMP",
+      "displayName": "日志创建日期"
     }
   ],
   "displayName": "物料批序列交易日志",

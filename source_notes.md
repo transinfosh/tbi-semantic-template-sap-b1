@@ -2,6 +2,18 @@
 
 字段标题已能清楚表达含义时，描述可以留空，不重复英文标签或“SAP Business One 官方字段定义”等来源前缀。描述用于补充业务角色、计算依据及容易误用的边界。官方链接、版本和内容哈希统一维护在本文。
 
+## 官方 MCP 销售说明补充（2026-10-21）
+
+本次只吸收官方样例中可由既有字典交叉核实的销售对象名称、共享明细父上下文、枚举表示区别与内部来源键。七对销售头行增加14处表说明和42处字段说明，不改其他分组、金额规则或关系。具体范围及兼容约定见[销售规格](validation/销售语义-规格契约.md#34-官方-mcp-样例的销售语义吸收2026-10-21)，取舍见[官方样例研究](validation/sap-b1-official-mcp-research.md)。
+
+- [SAP 官方 MCP 样例包](https://help.sap.com/doc/a3145f6e106a43b989b14c4c5342742d/10.0/en-US/b1-mcp-server.zip)：下载包SHA256为 `8ea0a9ee324d38f180fd1c6d4f523c9fc93741dc4bda64aaa1c302883d439348`；`src/tools/b1-constants.ts` 核对七个实体与对象类型，`src/services/b1-metadata-parser.ts` 的枚举及复杂类型解析只作为机制证据，不冒充目标公司metadata。
+- [Service Layer API Reference](https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html)：核对销售实体的 `DocumentLines` 集合；API集合不自动证明物理键、类型或任意SQL连接。
+- [DocumentStatus](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DocumentStatus.html) 与 [BoStatus](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Enumerations~BoStatus_EN.html)：属性对应数据库 `DocStatus`；API开闭名称及序号与逐表数据库 `O/C` 分开。共享枚举的已付、已交付成员不加入七张表的有效值。
+- [DocType](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DocType.html) 与 [BoDocumentTypes](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Enumerations~BoDocumentTypes_EN.html)：API物料/服务枚举和序号只供对照，SQL仍使用逐表定义的 `I/S`。
+- [BaseLine](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Document_Lines~BaseLine.html)：来源单据行号与 `BaseEntry/BaseType` 配合；数组位置不能代替保存的真实行号。
+
+本次没有获取目标Service Layer metadata，也没有安装或运行样例。样例取消常量、简化发票余额公式和固定分期号未采用；既有报价审查待办仍保留。
+
 ## 证据顺序
 
 1. SAP Business One 数据库参考确定标准表、字段、键和存储枚举。
@@ -444,3 +456,40 @@
 2026-10-21 逐表重新核对七张销售表头的官方字段参考，确认 `DocStatus` 均为 `O/C`；`CANCELED` 在 `ORDR/ODPI` 为 `N/Y`，在 `OQUT/ODLN/ORDN/OINV/ORIN` 为 `N/Y/C`。两字段有效值、官方取消操作及组合推导分别记录在[流程研究第8节](validation/sales-lifecycle-research.md#8-2026-10-21-补充取消角色与-docstatus-的组合)。
 
 反向取消会另建取消单，原单与取消单均关闭的依据来自[取消销售和采购单据](https://help.sap.com/docs/SAP_BUSINESS_ONE/55b49079e1f24a68b77828e703f99fb2/ca080f4f7ad8498b9a39eae01f95764c.html)；`DocStatus` 开闭语义及数据库字段映射来自[DocumentStatus](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/SAPbobsCOM~Documents~DocumentStatus.html)。`Y/C`、`C/C` 为字段定义加已完成反向取消流程的组合推导，不宣称官方直接给出全部交叉状态表，也不扩展为报价、订单及预付款请求所有取消记录的强制数据约束。本轮只更新14处字段描述，不改变源数据或运行规则。
+
+## 币种来源字段补充
+
+`0.6.4` 逐表确认七张销售表头的 `CurSource` 为 `VarChar(1)`、取值 `L/S/C`，其中 `C` 表示业务伙伴币种。七个新增标准列及各层说明的依据与边界见[币种研究补充](validation/sales-currency-research.md#币种来源字段与说明归属2026-10-21)。本币和系统币代码统一读取同一公司库 OADM，普通单据外币与行价格各按自身字段定义解释；不新增运行时判断或通用换算公式。
+
+## 0.7.0 销售字段选择（2026-10-22）
+
+逐表官方字典及每个来源页面SHA256见[字段选择清单](validation/sales-field-selection.json)，业务用途、反证和未确认边界见[字段取舍研究](validation/sales-field-selection-research.md)。18表原692个字段均按身份追溯、状态适用性、日期、历史维度、数量单位、金额价格税币职责记录保留或删除，补入101列、移除23列；不是把SAP约6000列全量暴露为基础模型。
+
+新增的普通/备选报价、确认、服务行未清金额、BOM角色、仓库状态、项目与行销售员都有独立业务用途；四张抵扣表补齐净额、税额、含税额及基础/已应用的三币保存值。字段精确拼写按逐表字典，尤其`VatSumSys`、`ApplGrossF/S`、`BaseGrossF/S`；不按相邻物料行后缀生成字段名。旧API中项目长度8与表参考长度20不同，采用逐表长度20，并要求使用方核验目标库。
+
+共享Paid列和备注删除属于精选分析范围取舍，不证明源列不存在、恒零或订单不能收订金；订单CancelDate保留并更正为禁止发货截止，不是取消操作时间。预付款FC归属、成本分配、分支、批次序列、复杂审批与完整毛利族没有在本轮被宣称全覆盖。源数据库、客户业务金额及历史冻结发布不因模板字段整理而修改。
+
+## 0.7.1 整单附加费用（2026-10-22）
+
+新增INV3/RIN3，逐表确认DocEntry + LineNum主键与18个精选字段的名称、类型和长度；没有按费用编码去重，也没有把费用记录号当物料行。费用类型来源OEXD、税组来源OVTG、项目来源OPRJ。数据库字典定义费用金额、税额及三币字段；[费用子对象成员](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/SAPbobsCOM~DocumentsAdditionalExpenses_members.html)进一步确认LineTotal、TotalFrgn、TotalSumSy的币种角色与费用/税额职责。普通FC结合所属单据DocCur的解释沿用[币种研究](validation/sales-currency-research.md)，不以字段后缀单独证明所有特殊本地化。
+
+| 表 | 官方参考 | 本轮读取文本摘录SHA256 |
+| --- | --- | --- |
+| INV3 | [官方表定义](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV3.html) | `0a2d8bbf7ff2e025980b35b2b3cec59b99f17c7a91eefb6aa880c9599cf05bfe` |
+| RIN3 | [官方表定义](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/RIN3.html) | `08b7025e1e3a406fd6eedd905f9704e95823daf39f0999238f76e65673f4195c` |
+
+哈希对应本轮工具读取的官方页面表格文本摘录，并非原始HTML。只保留选择与解释记录，未附带官方资料全文。目标列兼容性由使用方只读系统元数据验证，不把物理存在当实际启用，也不以此宣称真实费用已对账。费用主数据与交易事实分组、双重计量、币种、取消/贷项边界见[销售规格](validation/销售语义-规格契约.md#071-整单附加费用2026-10-22)。
+
+## 0.8.0 采购、生产、库存与财务（2026-10-22）
+
+逐表字段定义、类型、枚举、关系和保留/新增/移除职责分别见[采购](validation/purchasing-review-research.md)、[生产](validation/production-review-research.md)、[库存](validation/inventory-review-research.md)、[财务收付款](validation/finance-payments-review-research.md)。各报告引用SAP官方数据库参考、DI API及业务帮助；源列存在不代表业务启用、金额正确或特殊流程已验收。完整取舍与验证见[汇总](validation/cross-module-review.md)。
+
+目标兼容只查询系统元数据，不读取业务金额或记录；17个已声明主键列按其源非空性质纠正notNull标记，字符串长度扩容不修改源库。PCH3/RPC3与销售费用同为整单费用粒度，另保留官方可抵扣税字段且注明DI Internal use only，不作为税务计算/回写/申报承诺。OSRQ是序列号仓库当前数量，不是历史流水。IGN1.TranType明确用数据库C/R，与SDK的0/1分开。
+
+原有275条关系保持，既有deferred清单未解除；新的多角色分配/资金科目查询、盘点/库位、落地成本、工序/产能和历史余额分别保留待验证边界。共享维度不因销售/采购分析而复制进业务组，也不新增SAP专用运行特判。
+
+## 0.8.1 审查修补（2026-10-22）
+
+补齐价格解释与启停用原始字段，直接依据 [ITM1](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ITM1.html)、[OITM](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OITM.html)、[OCRD](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html)。新13列经目标连接只读元数据核对存在：两个币种为nvarchar(3)，计价单位为int，标志／价格类型为char(1)，期间为datetime；模板沿用VARCHAR(3)、INTEGER、CHAR(1)、TIMESTAMP表达。
+
+计价单位关系由ITM1.UomEntry关联既有OUOM完整键；成本中心名称关系由 [OCR1.PrcCode](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCR1.html) 关联 [OPRC.PrcCode](https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OPRC.html)。两者只解释原保存键，不新增价格换算或财务分摊公式。当前批序列余额的单位取现有OITM.InvntryUom；历史交易单位保持原定义。审查撤回项不实施，原deferred边不自动放行。

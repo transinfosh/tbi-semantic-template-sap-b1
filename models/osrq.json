@@ -1,0 +1,119 @@
+{
+  "name": "osrq",
+  "displayName": "序列号仓库当前数量",
+  "group": "inventory",
+  "primaryKey": "AbsEntry",
+  "uniqueKeys": [
+    [
+      "ItemCode",
+      "SysNumber",
+      "WhsCode"
+    ]
+  ],
+  "properties": {
+    "description": "每个物料、系统序列号和仓库组合的当前数量记录；不是历史时点库存，也不是收发流水。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSRQ.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "OSRQ"
+  },
+  "columns": [
+    {
+      "name": "AbsEntry",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": true,
+      "properties": {
+        "description": "记录主键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSRQ.html"
+      },
+      "type": "INTEGER",
+      "displayName": "内部标识"
+    },
+    {
+      "name": "ItemCode",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "与SysNumber及WhsCode组成系统唯一键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSRQ.html"
+      },
+      "type": "VARCHAR(50)",
+      "displayName": "物料编码"
+    },
+    {
+      "name": "SysNumber",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "须在物料上下文使用。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSRQ.html"
+      },
+      "type": "INTEGER",
+      "displayName": "系统序列编号"
+    },
+    {
+      "name": "WhsCode",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "当前数量所属仓库。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSRQ.html"
+      },
+      "type": "VARCHAR(8)",
+      "displayName": "仓库编码"
+    },
+    {
+      "name": "Quantity",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "当前仓库数量，不按日期直接累加为期间收发。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSRQ.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "当前序列号在手数量"
+    },
+    {
+      "name": "CommitQty",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "与实际在手数量分开。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSRQ.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "当前承诺数量"
+    },
+    {
+      "name": "CountQty",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "数量字段不等于完整盘点单据历史。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSRQ.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "盘点数量"
+    },
+    {
+      "name": "MdAbsEntry",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "关联OSRN.AbsEntry。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OSRQ.html"
+      },
+      "type": "INTEGER",
+      "displayName": "序列号主记录标识"
+    }
+  ]
+}

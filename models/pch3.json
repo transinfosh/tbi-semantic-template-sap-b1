@@ -1,0 +1,272 @@
+{
+  "name": "pch3",
+  "displayName": "应付发票附加费用",
+  "group": "purchasing",
+  "primaryKey": [
+    "DocEntry",
+    "LineNum"
+  ],
+  "uniqueKeys": [],
+  "properties": {
+    "description": "每条整单费用记录一行；DocEntry+LineNum为键，LineNum不是商品行号，ExpnsCode可重复。按费用自身粒度与币种计量，不与商品行展开累计或再次加到单据总额。不是落地成本分摊或库存估价。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/PCH3.html"
+  },
+  "tableReference": {
+    "schema": "dbo",
+    "table": "PCH3"
+  },
+  "columns": [
+    {
+      "name": "DocEntry",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": true,
+      "properties": {
+        "description": "费用所属单据的内部键；不能用DocNum显示单号替代。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/PCH3.html"
+      },
+      "type": "INTEGER",
+      "displayName": "所属单据内部键"
+    },
+    {
+      "name": "LineNum",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": true,
+      "properties": {
+        "description": "费用记录行号，与DocEntry构成复合键；不是商品行号，费用类型可以重复。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/PCH3.html"
+      },
+      "type": "INTEGER",
+      "displayName": "费用记录行号"
+    },
+    {
+      "name": "ExpnsCode",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "费用类型代码，关联已有OEXD；不是费用记录主键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/PCH3.html"
+      },
+      "type": "INTEGER",
+      "displayName": "附加费用类型代码"
+    },
+    {
+      "name": "ObjType",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "所属当前单据的对象类型；不是来源单据类型BaseType。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/PCH3.html"
+      },
+      "type": "VARCHAR(20)",
+      "displayName": "单据对象类型"
+    },
+    {
+      "name": "LineTotal",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本抵扣或费用记录保存净额，按本记录粒度和对应币种使用；不得与商品行展开或再次加到单据总额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/PCH3.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "本记录净额（本币）"
+    },
+    {
+      "name": "TotalFrgn",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本抵扣或费用记录保存净额，按本记录粒度和对应币种使用；不得与商品行展开或再次加到单据总额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/PCH3.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "本记录净额（外币）"
+    },
+    {
+      "name": "TotalSumSy",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本抵扣或费用记录保存净额，按本记录粒度和对应币种使用；不得与商品行展开或再次加到单据总额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/PCH3.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "本记录净额（系统币）"
+    },
+    {
+      "name": "VatSum",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本记录保存的税额（本币），按对应币种读取；不能从当前税率重算或与不同粒度重复累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/PCH3.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "税额（本币）"
+    },
+    {
+      "name": "VatSumFrgn",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本记录保存的税额（外币），按对应币种读取；不能从当前税率重算或与不同粒度重复累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/PCH3.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "税额（外币）"
+    },
+    {
+      "name": "VatSumSy",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本记录保存的税额（系统币），按对应币种读取；不能从当前税率重算或与不同粒度重复累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/PCH3.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "税额（系统币）"
+    },
+    {
+      "name": "DistrbMthd",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "N不分摊、Q数量、V体积、W重量、E平均、T行总额；只是保存的方法，不等于已有逐物料分摊金额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/PCH3.html"
+      },
+      "type": "CHAR(1)",
+      "displayName": "费用分摊方法"
+    },
+    {
+      "name": "TaxStatus",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "Y应税，N非应税；保存值不取代当地税务规则。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/PCH3.html"
+      },
+      "type": "CHAR(1)",
+      "displayName": "应税标志"
+    },
+    {
+      "name": "TaxDistMtd",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "保存的费用税额分摊方法，与费用本身DistrbMthd分开；不等于已保存逐物料分摊金额，不据此重算历史税额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/PCH3.html"
+      },
+      "type": "CHAR(1)",
+      "displayName": "费用税额分摊方法"
+    },
+    {
+      "name": "TaxType",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "Y普通税、N无税、U使用税；保持地区化适用边界。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/PCH3.html"
+      },
+      "type": "CHAR(1)",
+      "displayName": "税类型"
+    },
+    {
+      "name": "VatGroup",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本记录税组，关联OVTG.Code；与TaxCode对应的其他税配置分开，不用当前税组重算历史税额。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/PCH3.html"
+      },
+      "type": "VARCHAR(8)",
+      "displayName": "税组代码"
+    },
+    {
+      "name": "VatPrcnt",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本记录保存税率；税额读取保存值，不据税率重算复杂税费。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/PCH3.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "税率"
+    },
+    {
+      "name": "Project",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本记录保存的项目代码，关联OPRJ；头项目与行项目分别使用，不相互覆盖。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/PCH3.html"
+      },
+      "type": "VARCHAR(20)",
+      "displayName": "项目代码"
+    },
+    {
+      "name": "Comments",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本费用记录备注；不代替结构化来源关系或费用类型。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/PCH3.html"
+      },
+      "type": "VARCHAR(100)",
+      "displayName": "备注"
+    },
+    {
+      "name": "DedVatSum",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本记录保存的可抵扣税额，按对应币种使用；不把全部税额当作采购成本，不据此生成税务申报。费用DI API对应属性标为Internal use only；这里只保留数据库记录值用于核对，不定义受支持的税额计算或回写接口。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/PCH3.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "可抵扣税额（本币）"
+    },
+    {
+      "name": "DedVatSumF",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本记录保存的可抵扣税额，按对应币种使用；不把全部税额当作采购成本，不据此生成税务申报。费用DI API对应属性标为Internal use only；这里只保留数据库记录值用于核对，不定义受支持的税额计算或回写接口。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/PCH3.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "可抵扣税额（外币）"
+    },
+    {
+      "name": "DedVatSumS",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本记录保存的可抵扣税额，按对应币种使用；不把全部税额当作采购成本，不据此生成税务申报。费用DI API对应属性标为Internal use only；这里只保留数据库记录值用于核对，不定义受支持的税额计算或回写接口。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/PCH3.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "可抵扣税额（系统币）"
+    }
+  ]
+}

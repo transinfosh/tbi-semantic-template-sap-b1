@@ -1,0 +1,14 @@
+{
+  "name": "sap_inv3_oprj",
+  "displayName": "应收发票附加费用项目",
+  "models": [
+    "inv3",
+    "oprj"
+  ],
+  "joinType": "MANY_TO_ONE",
+  "condition": "inv3.Project = oprj.PrjCode",
+  "properties": {
+    "description": "费用项目按本费用记录 Project 关联 OPRJ.PrjCode；空值、未匹配及停用项目不应删除费用记录。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV3.html"
+  }
+}

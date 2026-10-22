@@ -1,0 +1,14 @@
+{
+  "name": "sap_wor1_oact_wip",
+  "models": [
+    "wor1",
+    "oact"
+  ],
+  "joinType": "MANY_TO_ONE",
+  "condition": "wor1.WipActCode = oact.AcctCode",
+  "displayName": "生产订单组件行关联总账科目主数据",
+  "properties": {
+    "description": "在制品科目配置；不是所有实际会计过账的替代路径。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/WOR1.html"
+  }
+}

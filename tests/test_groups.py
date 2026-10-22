@@ -31,7 +31,7 @@ class TestTemplateGroups(unittest.TestCase):
         self.assertTrue(all(set(group) == {"name", "title"} for group in self.groups["groups"]))
         codes = {group["name"] for group in self.groups["groups"]}
         names = [model["name"] for model in self.sources["models"] if model["group"] in codes]
-        self.assertEqual(len(names), 96)
+        self.assertEqual(len(names), 101)
         self.assertEqual(set(names), {model["name"] for model in self.mdl["models"]})
         self.assertEqual(len(names), len(set(names)))
         self.assertNotIn("groups", self.mdl)

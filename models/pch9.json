@@ -203,6 +203,54 @@
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/PCH9.html"
       },
       "type": "DECIMAL(19,6)"
+    },
+    {
+      "name": "ApplDrawnF",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "抵扣记录的已应用净额（外币）；基础、已应用、净额、税额和含税职责分开；外币来源仍待具体核实，不与普通物料行展开累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/PCH9.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "已应用净额（外币）"
+    },
+    {
+      "name": "ApplDrawnS",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "抵扣记录的已应用净额（系统币）；基础、已应用、净额、税额和含税职责分开；外币来源仍待具体核实，不与普通物料行展开累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/PCH9.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "已应用净额（系统币）"
+    },
+    {
+      "name": "VatFc",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本记录保存的税额（外币），按对应币种读取；不能从当前税率重算或与不同粒度重复累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/PCH9.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "税额（外币）"
+    },
+    {
+      "name": "VatSc",
+      "isCalculated": false,
+      "isHidden": false,
+      "notNull": false,
+      "properties": {
+        "description": "本记录保存的税额（系统币），按对应币种读取；不能从当前税率重算或与不同粒度重复累计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/PCH9.html"
+      },
+      "type": "DECIMAL(19,6)",
+      "displayName": "税额（系统币）"
     }
   ],
   "displayName": "应付发票预付款抵扣",

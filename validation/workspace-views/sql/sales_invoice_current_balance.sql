@@ -1,0 +1,21 @@
+SELECT
+    i."DocEntry" AS "invoice_entry",
+    i."DocNum" AS "invoice_no",
+    i."CardCode" AS "partner_code",
+    i."CardName" AS "partner_name",
+    i."DocDate" AS "posting_date",
+    i."DocDueDate" AS "due_date",
+    i."CANCELED" AS "cancellation_status",
+    i."DocStatus" AS "document_status",
+    i."isIns" AS "reserve_invoice_flag",
+    i."DocCur" AS "document_currency",
+    i."DocTotal" AS "document_total_lc",
+    i."PaidToDate" AS "settled_amount_lc",
+    CAST(i."DocTotal"-i."PaidToDate" AS DECIMAL(19,6)) AS "current_open_amount_lc",
+    i."DocTotalFC" AS "document_total_fc",
+    i."PaidFC" AS "settled_amount_fc",
+    CAST(i."DocTotalFC"-i."PaidFC" AS DECIMAL(19,6)) AS "current_open_amount_fc",
+    i."DocTotalSy" AS "document_total_sc",
+    i."PaidSys" AS "settled_amount_sc",
+    CAST(i."DocTotalSy"-i."PaidSys" AS DECIMAL(19,6)) AS "current_open_amount_sc"
+FROM "oinv" i

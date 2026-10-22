@@ -1,0 +1,14 @@
+{
+  "name": "sap_inv3_oexd",
+  "displayName": "应收发票附加费用费用类型",
+  "models": [
+    "inv3",
+    "oexd"
+  ],
+  "joinType": "MANY_TO_ONE",
+  "condition": "inv3.ExpnsCode = oexd.ExpnsCode",
+  "properties": {
+    "description": "按费用类型编码关联共享 OEXD，名称和默认设置不覆盖费用记录保存金额；缺失类型不应丢失费用事实。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV3.html"
+  }
+}

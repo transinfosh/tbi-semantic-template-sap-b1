@@ -1,0 +1,14 @@
+{
+  "name": "sap_inv3_oinv",
+  "displayName": "应收发票附加费用所属单据",
+  "models": [
+    "inv3",
+    "oinv"
+  ],
+  "joinType": "MANY_TO_ONE",
+  "condition": "inv3.DocEntry = oinv.DocEntry",
+  "properties": {
+    "description": "费用记录归属的单据头；头金额连接后重复，不能按费用记录重复累加。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV3.html"
+  }
+}

@@ -19,10 +19,10 @@
       "name": "AcctName",
       "notNull": false,
       "properties": {
-        "description": "该行记录的科目名称。",
+        "description": "付款科目行保存的科目名称快照，保留至200字符；不由当前OACT名称覆盖，不作关系键。",
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/VPM4.html"
       },
-      "type": "VARCHAR(100)"
+      "type": "VARCHAR(200)"
     },
     {
       "displayName": "税额基础类别",

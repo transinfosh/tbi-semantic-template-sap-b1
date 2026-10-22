@@ -12,17 +12,6 @@
       "type": "VARCHAR(254)"
     },
     {
-      "displayName": "取消日期",
-      "isCalculated": false,
-      "isHidden": false,
-      "name": "CancelDate",
-      "notNull": false,
-      "properties": {
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTR.html"
-      },
-      "type": "TIMESTAMP"
-    },
-    {
       "displayName": "取消标志",
       "isCalculated": false,
       "isHidden": false,
@@ -235,39 +224,6 @@
       "type": "CHAR(1)"
     },
     {
-      "displayName": "毛利",
-      "isCalculated": false,
-      "isHidden": false,
-      "name": "GrosProfit",
-      "notNull": false,
-      "properties": {
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTR.html"
-      },
-      "type": "DECIMAL(19,6)"
-    },
-    {
-      "displayName": "价格表",
-      "isCalculated": false,
-      "isHidden": false,
-      "name": "GroupNum",
-      "notNull": false,
-      "properties": {
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTR.html"
-      },
-      "type": "SMALLINT"
-    },
-    {
-      "displayName": "日记账备注",
-      "isCalculated": false,
-      "isHidden": false,
-      "name": "JrnlMemo",
-      "notNull": false,
-      "properties": {
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTR.html"
-      },
-      "type": "VARCHAR(254)"
-    },
-    {
       "displayName": "业务伙伴参考号",
       "isCalculated": false,
       "isHidden": false,
@@ -289,42 +245,6 @@
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTR.html"
       },
       "type": "VARCHAR(20)"
-    },
-    {
-      "displayName": "累计已收付金额（外币）",
-      "isCalculated": false,
-      "isHidden": false,
-      "name": "PaidFC",
-      "notNull": false,
-      "properties": {
-        "description": "单据当前累计收付外币金额；按币种使用，不是外币未付金额。",
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTR.html"
-      },
-      "type": "DECIMAL(19,6)"
-    },
-    {
-      "displayName": "累计已收付金额（系统币）",
-      "isCalculated": false,
-      "isHidden": false,
-      "name": "PaidSys",
-      "notNull": false,
-      "properties": {
-        "description": "单据当前累计收付系统币金额。",
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTR.html"
-      },
-      "type": "DECIMAL(19,6)"
-    },
-    {
-      "displayName": "累计已收付金额（本币）",
-      "isCalculated": false,
-      "isHidden": false,
-      "name": "PaidToDate",
-      "notNull": false,
-      "properties": {
-        "description": "单据当前累计收付本币金额；不能当作指定历史期间的收付款发生额。",
-        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTR.html"
-      },
-      "type": "DECIMAL(19,6)"
     },
     {
       "displayName": "要求日期",
@@ -445,7 +365,7 @@
   "name": "owtr",
   "primaryKey": "DocEntry",
   "properties": {
-    "description": "每个DocEntry一行；表示仓库间实际调拨；按仓库观察有出入方向，跨仓库数量不能重复相加。",
+    "description": "已执行的库存调拨表头，按DocEntry计量；源仓和目标仓在行层分别保存。公司内部仓间移动不作为对外销售或采购，实际数量、库存金额与凭证分别追溯，连接行后不重复累计头金额。",
     "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OWTR.html"
   },
   "tableReference": {

@@ -1,0 +1,234 @@
+{
+  "name": "inv3",
+  "displayName": "应收发票附加费用",
+  "group": "sales",
+  "columns": [
+    {
+      "name": "DocEntry",
+      "displayName": "所属单据内部键",
+      "type": "INTEGER",
+      "notNull": true,
+      "isHidden": false,
+      "isCalculated": false,
+      "properties": {
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV3.html",
+        "description": "所属单据的 DocEntry，不是显示单号。"
+      }
+    },
+    {
+      "name": "LineNum",
+      "displayName": "费用记录行号",
+      "type": "INTEGER",
+      "notNull": true,
+      "isHidden": false,
+      "isCalculated": false,
+      "properties": {
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV3.html",
+        "description": "费用记录行号；不是物料行号，也不是费用类型编码。"
+      }
+    },
+    {
+      "name": "ExpnsCode",
+      "displayName": "费用类型编码",
+      "type": "INTEGER",
+      "notNull": false,
+      "isHidden": false,
+      "isCalculated": false,
+      "properties": {
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV3.html",
+        "description": "关联 OEXD.ExpnsCode；费用类型名称和默认设置属于共享主数据。"
+      }
+    },
+    {
+      "name": "ObjType",
+      "displayName": "单据对象类型",
+      "type": "VARCHAR(20)",
+      "notNull": false,
+      "isHidden": false,
+      "isCalculated": false,
+      "properties": {
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV3.html"
+      }
+    },
+    {
+      "name": "LineTotal",
+      "displayName": "费用金额（本币）",
+      "type": "DECIMAL(19,6)",
+      "notNull": false,
+      "isHidden": false,
+      "isCalculated": false,
+      "properties": {
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV3.html",
+        "description": "费用记录保存的金额，税额另读 VatSum。币种取同一公司库 OADM.MainCurncy；不能与头 TotalExpns 重复相加。"
+      }
+    },
+    {
+      "name": "TotalFrgn",
+      "displayName": "费用金额（外币）",
+      "type": "DECIMAL(19,6)",
+      "notNull": false,
+      "isHidden": false,
+      "isCalculated": false,
+      "properties": {
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV3.html",
+        "description": "费用记录保存的外币金额，币种取所属单据 DocCur，仅适用于对应外币口径；不同币种不直接合计。"
+      }
+    },
+    {
+      "name": "TotalSumSy",
+      "displayName": "费用金额（系统币）",
+      "type": "DECIMAL(19,6)",
+      "notNull": false,
+      "isHidden": false,
+      "isCalculated": false,
+      "properties": {
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV3.html",
+        "description": "费用记录保存的系统币金额；币种取同一公司库 OADM.SysCurrncy。"
+      }
+    },
+    {
+      "name": "VatSum",
+      "displayName": "费用税额（本币）",
+      "type": "DECIMAL(19,6)",
+      "notNull": false,
+      "isHidden": false,
+      "isCalculated": false,
+      "properties": {
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV3.html",
+        "description": "本费用记录的保存税额；币种取同一公司库 OADM.MainCurncy，不根据当前税组重算历史税额。"
+      }
+    },
+    {
+      "name": "VatSumFrgn",
+      "displayName": "费用税额（外币）",
+      "type": "DECIMAL(19,6)",
+      "notNull": false,
+      "isHidden": false,
+      "isCalculated": false,
+      "properties": {
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV3.html",
+        "description": "本费用记录的外币税额，币种取所属单据 DocCur，仅适用于对应外币口径。"
+      }
+    },
+    {
+      "name": "VatSumSy",
+      "displayName": "费用税额（系统币）",
+      "type": "DECIMAL(19,6)",
+      "notNull": false,
+      "isHidden": false,
+      "isCalculated": false,
+      "properties": {
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV3.html",
+        "description": "本费用记录的系统币税额；币种取同一公司库 OADM.SysCurrncy。"
+      }
+    },
+    {
+      "name": "DistrbMthd",
+      "displayName": "费用分摊方法",
+      "type": "VARCHAR(1)",
+      "notNull": false,
+      "isHidden": false,
+      "isCalculated": false,
+      "properties": {
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV3.html",
+        "description": "N=无，Q=数量，V=体积，W=重量，E=平均，T=行总额。记录方法不等于已有逐物料分摊结果。"
+      }
+    },
+    {
+      "name": "TaxDistMtd",
+      "displayName": "费用税额分摊方法",
+      "type": "VARCHAR(1)",
+      "notNull": false,
+      "isHidden": false,
+      "isCalculated": false,
+      "properties": {
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV3.html",
+        "description": "N=无，Q=数量，V=体积，W=重量，E=平均，T=行总额；与费用分摊方法分别解释。"
+      }
+    },
+    {
+      "name": "TaxStatus",
+      "displayName": "费用是否应税",
+      "type": "VARCHAR(1)",
+      "notNull": false,
+      "isHidden": false,
+      "isCalculated": false,
+      "properties": {
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV3.html",
+        "description": "Y=是，N=否；保存的应税标志不能替代实际税额。"
+      }
+    },
+    {
+      "name": "TaxType",
+      "displayName": "费用税类型",
+      "type": "VARCHAR(1)",
+      "notNull": false,
+      "isHidden": false,
+      "isCalculated": false,
+      "properties": {
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV3.html",
+        "description": "Y=普通税，N=无税，U=使用税；按实际本地化解释，不统一重算。"
+      }
+    },
+    {
+      "name": "VatGroup",
+      "displayName": "费用税组",
+      "type": "VARCHAR(8)",
+      "notNull": false,
+      "isHidden": false,
+      "isCalculated": false,
+      "properties": {
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV3.html",
+        "description": "费用记录保存的税组编码；当前税组定义不能覆盖历史保存税额。"
+      }
+    },
+    {
+      "name": "VatPrcnt",
+      "displayName": "费用税率（%）",
+      "type": "DECIMAL(19,6)",
+      "notNull": false,
+      "isHidden": false,
+      "isCalculated": false,
+      "properties": {
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV3.html",
+        "description": "费用记录保存的百分比税率，不作为历史税额的通用重算公式。"
+      }
+    },
+    {
+      "name": "Comments",
+      "displayName": "费用备注",
+      "type": "VARCHAR(100)",
+      "notNull": false,
+      "isHidden": false,
+      "isCalculated": false,
+      "properties": {
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV3.html"
+      }
+    },
+    {
+      "name": "Project",
+      "displayName": "费用项目编码",
+      "type": "VARCHAR(20)",
+      "notNull": false,
+      "isHidden": false,
+      "isCalculated": false,
+      "properties": {
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV3.html",
+        "description": "本费用记录保存的 Project，关联 OPRJ.PrjCode；不以表头或当前主数据默认值替代。"
+      }
+    }
+  ],
+  "primaryKey": [
+    "DocEntry",
+    "LineNum"
+  ],
+  "uniqueKeys": [],
+  "tableReference": {
+    "schema": "dbo",
+    "table": "INV3"
+  },
+  "properties": {
+    "description": "OINV 的整单附加费用记录，按 DocEntry + LineNum 计量；LineNum 不是物料行号。费用类型关联共享 OEXD；金额是单据向客户列示的费用，不是物流供应商实际成本。头金额在多条费用记录下重复；不将费用与头总额或行分摊额重复相加，也不与整单全部物料行直接展开求和。本币取同一公司库 OADM.MainCurncy，系统币取 OADM.SysCurrncy，适用外币取所属单据 DocCur；不同币种分别汇总。贷项方向和取消范围按所属单据保留，不默认取负或 ABS。",
+    "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV3.html"
+  }
+}

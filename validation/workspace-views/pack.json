@@ -1,0 +1,1021 @@
+{
+  "formatVersion": 1,
+  "scope": "Workspace draft extension; not part of template.json default import. No connection, workspace identity or customer business rows.",
+  "models": [
+    {
+      "name": "obtl",
+      "displayName": "库位事务明细",
+      "group": "inventory",
+      "primaryKey": "AbsEntry",
+      "uniqueKeys": [],
+      "properties": {
+        "description": "每个AbsEntry一行。历史库位事务，保留原始数量和消息动作，不等同当前库存；MessageID与ITLEntry是不同日志键。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OBTL.html"
+      },
+      "tableReference": {
+        "schema": "dbo",
+        "table": "OBTL"
+      },
+      "columns": [
+        {
+          "name": "AbsEntry",
+          "displayName": "内部标识",
+          "type": "INTEGER",
+          "notNull": true,
+          "isCalculated": false,
+          "isHidden": false,
+          "properties": {
+            "description": "",
+            "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OBTL.html"
+          }
+        },
+        {
+          "name": "MessageID",
+          "displayName": "库存消息标识",
+          "type": "INTEGER",
+          "notNull": false,
+          "isCalculated": false,
+          "isHidden": false,
+          "properties": {
+            "description": "",
+            "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OBTL.html"
+          }
+        },
+        {
+          "name": "BinAbs",
+          "displayName": "库位内部标识",
+          "type": "INTEGER",
+          "notNull": false,
+          "isCalculated": false,
+          "isHidden": false,
+          "properties": {
+            "description": "",
+            "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OBTL.html"
+          }
+        },
+        {
+          "name": "SnBMDAbs",
+          "displayName": "批次或序列主记录标识",
+          "type": "INTEGER",
+          "notNull": false,
+          "isCalculated": false,
+          "isHidden": false,
+          "properties": {
+            "description": "原值；普通物料或未分配时可为-1。",
+            "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OBTL.html"
+          }
+        },
+        {
+          "name": "Quantity",
+          "displayName": "库位分配原始数量",
+          "type": "DECIMAL(19,6)",
+          "notNull": false,
+          "isCalculated": false,
+          "isHidden": false,
+          "properties": {
+            "description": "",
+            "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OBTL.html"
+          }
+        },
+        {
+          "name": "ITLEntry",
+          "displayName": "库存批序列日志标识",
+          "type": "INTEGER",
+          "notNull": false,
+          "isCalculated": false,
+          "isHidden": false,
+          "properties": {
+            "description": "原值；普通物料或未分配时可为-1。",
+            "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OBTL.html"
+          }
+        }
+      ]
+    },
+    {
+      "name": "oibq",
+      "displayName": "物料库位当前库存",
+      "group": "inventory",
+      "primaryKey": "AbsEntry",
+      "uniqueKeys": [
+        [
+          "ItemCode",
+          "BinAbs"
+        ]
+      ],
+      "properties": {
+        "description": "每个AbsEntry一行。当前余额，不是历史截止库存。OIBQ是物料库位总量，OBBQ/OSBQ是批序列分量，不可将两者相加。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OIBQ.html"
+      },
+      "tableReference": {
+        "schema": "dbo",
+        "table": "OIBQ"
+      },
+      "columns": [
+        {
+          "name": "AbsEntry",
+          "displayName": "内部标识",
+          "type": "INTEGER",
+          "notNull": true,
+          "isCalculated": false,
+          "isHidden": false,
+          "properties": {
+            "description": "",
+            "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OIBQ.html"
+          }
+        },
+        {
+          "name": "ItemCode",
+          "displayName": "物料编码",
+          "type": "VARCHAR(50)",
+          "notNull": true,
+          "isCalculated": false,
+          "isHidden": false,
+          "properties": {
+            "description": "",
+            "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OIBQ.html"
+          }
+        },
+        {
+          "name": "BinAbs",
+          "displayName": "库位内部标识",
+          "type": "INTEGER",
+          "notNull": true,
+          "isCalculated": false,
+          "isHidden": false,
+          "properties": {
+            "description": "",
+            "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OIBQ.html"
+          }
+        },
+        {
+          "name": "OnHandQty",
+          "displayName": "当前在手数量",
+          "type": "DECIMAL(19,6)",
+          "notNull": false,
+          "isCalculated": false,
+          "isHidden": false,
+          "properties": {
+            "description": "",
+            "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OIBQ.html"
+          }
+        },
+        {
+          "name": "WhsCode",
+          "displayName": "仓库编码",
+          "type": "VARCHAR(8)",
+          "notNull": false,
+          "isCalculated": false,
+          "isHidden": false,
+          "properties": {
+            "description": "",
+            "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OIBQ.html"
+          }
+        }
+      ]
+    },
+    {
+      "name": "obbq",
+      "displayName": "批次库位当前库存",
+      "group": "inventory",
+      "primaryKey": "AbsEntry",
+      "uniqueKeys": [
+        [
+          "SnBMDAbs",
+          "BinAbs"
+        ]
+      ],
+      "properties": {
+        "description": "每个AbsEntry一行。当前余额，不是历史截止库存。OIBQ是物料库位总量，OBBQ/OSBQ是批序列分量，不可将两者相加。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OBBQ.html"
+      },
+      "tableReference": {
+        "schema": "dbo",
+        "table": "OBBQ"
+      },
+      "columns": [
+        {
+          "name": "AbsEntry",
+          "displayName": "内部标识",
+          "type": "INTEGER",
+          "notNull": true,
+          "isCalculated": false,
+          "isHidden": false,
+          "properties": {
+            "description": "",
+            "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OBBQ.html"
+          }
+        },
+        {
+          "name": "ItemCode",
+          "displayName": "物料编码",
+          "type": "VARCHAR(50)",
+          "notNull": false,
+          "isCalculated": false,
+          "isHidden": false,
+          "properties": {
+            "description": "",
+            "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OBBQ.html"
+          }
+        },
+        {
+          "name": "SnBMDAbs",
+          "displayName": "批次或序列主记录标识",
+          "type": "INTEGER",
+          "notNull": true,
+          "isCalculated": false,
+          "isHidden": false,
+          "properties": {
+            "description": "",
+            "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OBBQ.html"
+          }
+        },
+        {
+          "name": "BinAbs",
+          "displayName": "库位内部标识",
+          "type": "INTEGER",
+          "notNull": true,
+          "isCalculated": false,
+          "isHidden": false,
+          "properties": {
+            "description": "",
+            "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OBBQ.html"
+          }
+        },
+        {
+          "name": "OnHandQty",
+          "displayName": "当前在手数量",
+          "type": "DECIMAL(19,6)",
+          "notNull": false,
+          "isCalculated": false,
+          "isHidden": false,
+          "properties": {
+            "description": "",
+            "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OBBQ.html"
+          }
+        },
+        {
+          "name": "WhsCode",
+          "displayName": "仓库编码",
+          "type": "VARCHAR(8)",
+          "notNull": false,
+          "isCalculated": false,
+          "isHidden": false,
+          "properties": {
+            "description": "",
+            "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OBBQ.html"
+          }
+        }
+      ]
+    },
+    {
+      "name": "osbq",
+      "displayName": "序列号库位当前库存",
+      "group": "inventory",
+      "primaryKey": "AbsEntry",
+      "uniqueKeys": [
+        [
+          "SnBMDAbs",
+          "BinAbs"
+        ]
+      ],
+      "properties": {
+        "description": "每个AbsEntry一行。当前余额，不是历史截止库存。OIBQ是物料库位总量，OBBQ/OSBQ是批序列分量，不可将两者相加。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OSBQ.html"
+      },
+      "tableReference": {
+        "schema": "dbo",
+        "table": "OSBQ"
+      },
+      "columns": [
+        {
+          "name": "AbsEntry",
+          "displayName": "内部标识",
+          "type": "INTEGER",
+          "notNull": true,
+          "isCalculated": false,
+          "isHidden": false,
+          "properties": {
+            "description": "",
+            "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OSBQ.html"
+          }
+        },
+        {
+          "name": "ItemCode",
+          "displayName": "物料编码",
+          "type": "VARCHAR(50)",
+          "notNull": false,
+          "isCalculated": false,
+          "isHidden": false,
+          "properties": {
+            "description": "",
+            "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OSBQ.html"
+          }
+        },
+        {
+          "name": "SnBMDAbs",
+          "displayName": "批次或序列主记录标识",
+          "type": "INTEGER",
+          "notNull": true,
+          "isCalculated": false,
+          "isHidden": false,
+          "properties": {
+            "description": "",
+            "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OSBQ.html"
+          }
+        },
+        {
+          "name": "BinAbs",
+          "displayName": "库位内部标识",
+          "type": "INTEGER",
+          "notNull": true,
+          "isCalculated": false,
+          "isHidden": false,
+          "properties": {
+            "description": "",
+            "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OSBQ.html"
+          }
+        },
+        {
+          "name": "OnHandQty",
+          "displayName": "当前在手数量",
+          "type": "DECIMAL(19,6)",
+          "notNull": false,
+          "isCalculated": false,
+          "isHidden": false,
+          "properties": {
+            "description": "",
+            "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OSBQ.html"
+          }
+        },
+        {
+          "name": "WhsCode",
+          "displayName": "仓库编码",
+          "type": "VARCHAR(8)",
+          "notNull": false,
+          "isCalculated": false,
+          "isHidden": false,
+          "properties": {
+            "description": "",
+            "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKhelp/OSBQ.html"
+          }
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "name": "common_obtl_oilm",
+      "displayName": "库位事务所属库存消息",
+      "models": [
+        "obtl",
+        "oilm"
+      ],
+      "joinType": "MANY_TO_ONE",
+      "condition": "obtl.MessageID = oilm.MessageID",
+      "properties": {
+        "description": "按内部键定位；未匹配保留来源事实。"
+      }
+    },
+    {
+      "name": "common_obtl_obin",
+      "displayName": "库位事务所属库位",
+      "models": [
+        "obtl",
+        "obin"
+      ],
+      "joinType": "MANY_TO_ONE",
+      "condition": "obtl.BinAbs = obin.AbsEntry",
+      "properties": {
+        "description": "按内部键定位；未匹配保留来源事实。"
+      }
+    },
+    {
+      "name": "common_obtl_oitl",
+      "displayName": "库位事务关联批序列日志",
+      "models": [
+        "obtl",
+        "oitl"
+      ],
+      "joinType": "MANY_TO_ONE",
+      "condition": "obtl.ITLEntry = oitl.LogEntry",
+      "properties": {
+        "description": "按内部键定位；未匹配保留来源事实。"
+      }
+    },
+    {
+      "name": "common_oibq_obin",
+      "displayName": "当前库存所属库位",
+      "models": [
+        "oibq",
+        "obin"
+      ],
+      "joinType": "MANY_TO_ONE",
+      "condition": "oibq.BinAbs = obin.AbsEntry",
+      "properties": {
+        "description": "按内部键定位；未匹配保留来源事实。"
+      }
+    },
+    {
+      "name": "common_oibq_owhs",
+      "displayName": "当前库存所属仓库",
+      "models": [
+        "oibq",
+        "owhs"
+      ],
+      "joinType": "MANY_TO_ONE",
+      "condition": "oibq.WhsCode = owhs.WhsCode",
+      "properties": {
+        "description": "按内部键定位；未匹配保留来源事实。"
+      }
+    },
+    {
+      "name": "common_oibq_oitm",
+      "displayName": "当前库存物料",
+      "models": [
+        "oibq",
+        "oitm"
+      ],
+      "joinType": "MANY_TO_ONE",
+      "condition": "oibq.ItemCode = oitm.ItemCode",
+      "properties": {
+        "description": "按内部键定位；未匹配保留来源事实。"
+      }
+    },
+    {
+      "name": "common_obbq_obin",
+      "displayName": "当前库存所属库位",
+      "models": [
+        "obbq",
+        "obin"
+      ],
+      "joinType": "MANY_TO_ONE",
+      "condition": "obbq.BinAbs = obin.AbsEntry",
+      "properties": {
+        "description": "按内部键定位；未匹配保留来源事实。"
+      }
+    },
+    {
+      "name": "common_obbq_owhs",
+      "displayName": "当前库存所属仓库",
+      "models": [
+        "obbq",
+        "owhs"
+      ],
+      "joinType": "MANY_TO_ONE",
+      "condition": "obbq.WhsCode = owhs.WhsCode",
+      "properties": {
+        "description": "按内部键定位；未匹配保留来源事实。"
+      }
+    },
+    {
+      "name": "common_obbq_oitm",
+      "displayName": "当前库存物料",
+      "models": [
+        "obbq",
+        "oitm"
+      ],
+      "joinType": "MANY_TO_ONE",
+      "condition": "obbq.ItemCode = oitm.ItemCode",
+      "properties": {
+        "description": "按内部键定位；未匹配保留来源事实。"
+      }
+    },
+    {
+      "name": "common_osbq_obin",
+      "displayName": "当前库存所属库位",
+      "models": [
+        "osbq",
+        "obin"
+      ],
+      "joinType": "MANY_TO_ONE",
+      "condition": "osbq.BinAbs = obin.AbsEntry",
+      "properties": {
+        "description": "按内部键定位；未匹配保留来源事实。"
+      }
+    },
+    {
+      "name": "common_osbq_owhs",
+      "displayName": "当前库存所属仓库",
+      "models": [
+        "osbq",
+        "owhs"
+      ],
+      "joinType": "MANY_TO_ONE",
+      "condition": "osbq.WhsCode = owhs.WhsCode",
+      "properties": {
+        "description": "按内部键定位；未匹配保留来源事实。"
+      }
+    },
+    {
+      "name": "common_osbq_oitm",
+      "displayName": "当前库存物料",
+      "models": [
+        "osbq",
+        "oitm"
+      ],
+      "joinType": "MANY_TO_ONE",
+      "condition": "osbq.ItemCode = oitm.ItemCode",
+      "properties": {
+        "description": "按内部键定位；未匹配保留来源事实。"
+      }
+    },
+    {
+      "name": "common_obbq_obtn",
+      "displayName": "当前库存批序列主记录",
+      "models": [
+        "obbq",
+        "obtn"
+      ],
+      "joinType": "MANY_TO_ONE",
+      "condition": "obbq.SnBMDAbs = obtn.AbsEntry AND obbq.ItemCode = obtn.ItemCode",
+      "properties": {
+        "description": "按内部键定位；未匹配保留来源事实。"
+      }
+    },
+    {
+      "name": "common_osbq_osrn",
+      "displayName": "当前库存批序列主记录",
+      "models": [
+        "osbq",
+        "osrn"
+      ],
+      "joinType": "MANY_TO_ONE",
+      "condition": "osbq.SnBMDAbs = osrn.AbsEntry AND osbq.ItemCode = osrn.ItemCode",
+      "properties": {
+        "description": "按内部键定位；未匹配保留来源事实。"
+      }
+    }
+  ],
+  "views": [
+    {
+      "name": "sales_order_to_cash_trace",
+      "title": "销售订单到收款追溯",
+      "group": "sales",
+      "description": "销售订单到收款追溯：以订单原始行展开后续物流行、发票行和收款应用行的关联路径；只提供身份、日期、状态，不包含可求和的数量或金额。正常物流后开票、订单直接开票、预留发票后物流分别保留；未发生的后继为空。一张订单可分批、一发票可合并多订单、一发票可多次收款，路径数不是单据数。按order_entry/order_line定位，不按物料或显示单号猜测。取消记录保留，须按问题筛选各阶段状态。收款仅指该发票通过RCT2的明确应用，不代表全部内部核销、预付款抵扣或纯现金结清；金额查独立发票收款应用明细。没有订单来源的独立单据不属于本视图。",
+      "statementFile": "sql/sales_order_to_cash_trace.sql",
+      "columnTitles": {
+        "path_kind": "来源路径",
+        "order_entry": "订单内部标识",
+        "order_no": "订单编号",
+        "order_line": "订单原始行号",
+        "order_date": "订单过账日期",
+        "order_due_date": "订单交付日期",
+        "order_cancellation": "订单取消状态",
+        "order_status": "订单状态",
+        "partner_code": "客户编码",
+        "partner_name": "客户名称",
+        "item_code": "订单行物料编码",
+        "item_description": "订单行历史描述",
+        "order_line_status": "订单行状态",
+        "order_line_manual_close": "订单行手工关闭标志",
+        "logistics_entry": "交货内部标识",
+        "logistics_no": "交货编号",
+        "logistics_line": "交货原始行号",
+        "logistics_date": "交货过账日期",
+        "logistics_cancellation": "交货取消状态",
+        "invoice_entry": "发票内部标识",
+        "invoice_no": "发票编号",
+        "invoice_line": "发票原始行号",
+        "invoice_date": "发票过账日期",
+        "invoice_cancellation": "发票取消状态",
+        "reserve_invoice_flag": "预留发票标志",
+        "payment_entry": "收款父单内部标识",
+        "payment_no": "收款编号",
+        "payment_application_line": "收款应用行号",
+        "installment_id": "分期内部标识",
+        "payment_date": "收款过账日期",
+        "payment_cancellation": "收款取消状态"
+      }
+    },
+    {
+      "name": "sales_invoice_receipt_applications",
+      "title": "应收发票收款应用明细",
+      "group": "finance",
+      "description": "发票收款应用明细，一行=RCT2.DocNum+InvoiceId；InvType=13限定本类发票。DocNum是父ORCT.DocEntry内部键，不是父显示单号；发票用DocEntry定位。SumApplied/AppliedFC/AppliedSys按应用行保存，不复制发票头或收款头总额，也不按发票商品行展开。FC以目标发票币种解释，不能用付款头币种覆盖；LC/SC代码另取同公司OADM.MainCurncy/SysCurrncy。跨币种不可直接合计FC。折扣、预扣税和差异是独立成分，应用金额不等于实收现金。保留取消状态，未包含其他单据类型、在账收付后续内部核销及预付抵扣；不能由无应用行推断未结清。DocLine原值不构成商品行分摊规则。",
+      "statementFile": "sql/sales_invoice_receipt_applications.sql",
+      "columnTitles": {
+        "payment_entry": "收款父单内部标识",
+        "application_line": "收款应用行号",
+        "target_object_type": "被应用单据类型",
+        "invoice_entry": "发票内部标识",
+        "installment_id": "分期内部标识",
+        "target_document_line": "源应用记录单据行号",
+        "payment_no": "收款编号",
+        "payment_date": "收款过账日期",
+        "payment_cancellation": "收款取消状态",
+        "payment_currency": "收款单据币种",
+        "invoice_no": "发票编号",
+        "invoice_date": "发票过账日期",
+        "invoice_due_date": "发票到期日期",
+        "invoice_cancellation": "发票取消状态",
+        "partner_code": "客户编码",
+        "partner_name": "客户名称",
+        "invoice_currency": "发票单据币种",
+        "applied_amount_lc": "发票应用金额（本币）",
+        "applied_amount_fc": "发票应用金额（外币）",
+        "applied_amount_sc": "发票应用金额（系统币）",
+        "cash_discount_lc": "现金折扣（本币）",
+        "cash_discount_fc": "现金折扣（外币）",
+        "cash_discount_sc": "现金折扣（系统币）",
+        "withholding_applied_lc": "已应用预扣税（本币）",
+        "application_date": "应用关联日期"
+      }
+    },
+    {
+      "name": "sales_invoice_current_balance",
+      "title": "应收发票当前账面未结",
+      "group": "finance",
+      "description": "每个发票DocEntry一行，当前头记录总额、已付及其差额，不展开商品行或付款行。PaidToDate等是账面已付值，不专指现金；差额不代替包含贷项、预付款抵扣、内部核销和特殊本地化的完整历史账龄报表。无历史截止维度，不能将当前值贴到过去日期。未自动排除取消/冲销/预留发票，使用时筛选状态和角色。LC/SC币种另取同公司OADM，FC依DocCur分组；NULL保留，不把未知补为0。",
+      "statementFile": "sql/sales_invoice_current_balance.sql",
+      "columnTitles": {
+        "invoice_entry": "发票内部标识",
+        "invoice_no": "发票编号",
+        "partner_code": "客户编码",
+        "partner_name": "客户名称",
+        "posting_date": "过账日期",
+        "due_date": "到期日期",
+        "cancellation_status": "取消状态",
+        "document_status": "单据状态",
+        "reserve_invoice_flag": "预留发票标志",
+        "document_currency": "单据币种",
+        "document_total_lc": "整单含税总额（本币）",
+        "settled_amount_lc": "头记录已付金额（本币）",
+        "current_open_amount_lc": "当前头记录未结差额（本币）",
+        "document_total_fc": "整单含税总额（外币）",
+        "settled_amount_fc": "头记录已付金额（外币）",
+        "current_open_amount_fc": "当前头记录未结差额（外币）",
+        "document_total_sc": "整单含税总额（系统币）",
+        "settled_amount_sc": "头记录已付金额（系统币）",
+        "current_open_amount_sc": "当前头记录未结差额（系统币）"
+      }
+    },
+    {
+      "name": "purchase_order_to_payment_trace",
+      "title": "采购订单到付款追溯",
+      "group": "purchasing",
+      "description": "采购订单到付款追溯：以订单原始行展开后续物流行、发票行和付款应用行的关联路径；只提供身份、日期、状态，不包含可求和的数量或金额。正常物流后开票、订单直接开票、预留发票后物流分别保留；未发生的后继为空。一张订单可分批、一发票可合并多订单、一发票可多次付款，路径数不是单据数。按order_entry/order_line定位，不按物料或显示单号猜测。取消记录保留，须按问题筛选各阶段状态。付款仅指该发票通过VPM2的明确应用，不代表全部内部核销、预付款抵扣或纯现金结清；金额查独立发票付款应用明细。没有订单来源的独立单据不属于本视图。",
+      "statementFile": "sql/purchase_order_to_payment_trace.sql",
+      "columnTitles": {
+        "path_kind": "来源路径",
+        "order_entry": "订单内部标识",
+        "order_no": "订单编号",
+        "order_line": "订单原始行号",
+        "order_date": "订单过账日期",
+        "order_due_date": "订单交付日期",
+        "order_cancellation": "订单取消状态",
+        "order_status": "订单状态",
+        "partner_code": "供应商编码",
+        "partner_name": "供应商名称",
+        "item_code": "订单行物料编码",
+        "item_description": "订单行历史描述",
+        "order_line_status": "订单行状态",
+        "order_line_manual_close": "订单行手工关闭标志",
+        "logistics_entry": "采购收货内部标识",
+        "logistics_no": "采购收货编号",
+        "logistics_line": "采购收货原始行号",
+        "logistics_date": "采购收货过账日期",
+        "logistics_cancellation": "采购收货取消状态",
+        "invoice_entry": "发票内部标识",
+        "invoice_no": "发票编号",
+        "invoice_line": "发票原始行号",
+        "invoice_date": "发票过账日期",
+        "invoice_cancellation": "发票取消状态",
+        "reserve_invoice_flag": "预留发票标志",
+        "payment_entry": "付款父单内部标识",
+        "payment_no": "付款编号",
+        "payment_application_line": "付款应用行号",
+        "installment_id": "分期内部标识",
+        "payment_date": "付款过账日期",
+        "payment_cancellation": "付款取消状态"
+      }
+    },
+    {
+      "name": "purchase_invoice_payment_applications",
+      "title": "应付发票付款应用明细",
+      "group": "finance",
+      "description": "发票付款应用明细，一行=VPM2.DocNum+InvoiceId；InvType=18限定本类发票。DocNum是父OVPM.DocEntry内部键，不是父显示单号；发票用DocEntry定位。SumApplied/AppliedFC/AppliedSys按应用行保存，不复制发票头或付款头总额，也不按发票商品行展开。FC以目标发票币种解释，不能用付款头币种覆盖；LC/SC代码另取同公司OADM.MainCurncy/SysCurrncy。跨币种不可直接合计FC。折扣、预扣税和差异是独立成分，应用金额不等于实收现金。保留取消状态，未包含其他单据类型、在账收付后续内部核销及预付抵扣；不能由无应用行推断未结清。DocLine原值不构成商品行分摊规则。",
+      "statementFile": "sql/purchase_invoice_payment_applications.sql",
+      "columnTitles": {
+        "payment_entry": "付款父单内部标识",
+        "application_line": "付款应用行号",
+        "target_object_type": "被应用单据类型",
+        "invoice_entry": "发票内部标识",
+        "installment_id": "分期内部标识",
+        "target_document_line": "源应用记录单据行号",
+        "payment_no": "付款编号",
+        "payment_date": "付款过账日期",
+        "payment_cancellation": "付款取消状态",
+        "payment_currency": "付款单据币种",
+        "invoice_no": "发票编号",
+        "invoice_date": "发票过账日期",
+        "invoice_due_date": "发票到期日期",
+        "invoice_cancellation": "发票取消状态",
+        "partner_code": "供应商编码",
+        "partner_name": "供应商名称",
+        "invoice_currency": "发票单据币种",
+        "applied_amount_lc": "发票应用金额（本币）",
+        "applied_amount_fc": "发票应用金额（外币）",
+        "applied_amount_sc": "发票应用金额（系统币）",
+        "cash_discount_lc": "现金折扣（本币）",
+        "cash_discount_fc": "现金折扣（外币）",
+        "cash_discount_sc": "现金折扣（系统币）",
+        "withholding_applied_lc": "已应用预扣税（本币）",
+        "application_date": "应用关联日期"
+      }
+    },
+    {
+      "name": "purchase_invoice_current_balance",
+      "title": "应付发票当前账面未结",
+      "group": "finance",
+      "description": "每个发票DocEntry一行，当前头记录总额、已付及其差额，不展开商品行或付款行。PaidToDate等是账面已付值，不专指现金；差额不代替包含贷项、预付款抵扣、内部核销和特殊本地化的完整历史账龄报表。无历史截止维度，不能将当前值贴到过去日期。未自动排除取消/冲销/预留发票，使用时筛选状态和角色。LC/SC币种另取同公司OADM，FC依DocCur分组；NULL保留，不把未知补为0。",
+      "statementFile": "sql/purchase_invoice_current_balance.sql",
+      "columnTitles": {
+        "invoice_entry": "发票内部标识",
+        "invoice_no": "发票编号",
+        "partner_code": "供应商编码",
+        "partner_name": "供应商名称",
+        "posting_date": "过账日期",
+        "due_date": "到期日期",
+        "cancellation_status": "取消状态",
+        "document_status": "单据状态",
+        "reserve_invoice_flag": "预留发票标志",
+        "document_currency": "单据币种",
+        "document_total_lc": "整单含税总额（本币）",
+        "settled_amount_lc": "头记录已付金额（本币）",
+        "current_open_amount_lc": "当前头记录未结差额（本币）",
+        "document_total_fc": "整单含税总额（外币）",
+        "settled_amount_fc": "头记录已付金额（外币）",
+        "current_open_amount_fc": "当前头记录未结差额（外币）",
+        "document_total_sc": "整单含税总额（系统币）",
+        "settled_amount_sc": "头记录已付金额（系统币）",
+        "current_open_amount_sc": "当前头记录未结差额（系统币）"
+      }
+    },
+    {
+      "name": "production_issue_detail",
+      "title": "生产发料明细",
+      "group": "production",
+      "description": "生产发料明细，一行=IGE1.DocEntry+LineNum；与普通库存单据共用OIGE/IGE1，BaseType=202筛选生产来源。实际日期取头DocDate，不受工单日期截断。工单未匹配时保留来源行，原BaseLine表示来源组件而非当前LineNum。保留物料4/资源290、历史单位、取消状态和保存金额；StockSum是单据行库存金额，不是OIVL带符号仓库日记账金额，StockPrice的公司本币/库存单位条件另按当前语义核实。数量不跨物料/单位混加。退料、冲销不自动ABS或改号。",
+      "statementFile": "sql/production_issue_detail.sql",
+      "columnTitles": {
+        "production_order_entry": "生产工单内部标识",
+        "production_order_no": "生产工单编号",
+        "production_order_type": "生产工单类型",
+        "production_order_status": "生产工单状态",
+        "order_product_code": "工单产品编码",
+        "document_entry": "生产发料内部标识",
+        "document_no": "生产发料编号",
+        "document_line": "原始单据行号",
+        "posting_date": "实际单据过账日期",
+        "cancellation_status": "单据取消状态",
+        "source_component_line": "来源组件行号",
+        "item_type": "行类型",
+        "item_code": "行物料或资源编码",
+        "item_description": "历史行描述",
+        "warehouse_code": "仓库编码",
+        "document_quantity": "单据单位数量",
+        "inventory_quantity": "库存单位数量",
+        "historical_document_unit": "历史单据单位",
+        "historical_uom_code": "历史单位编码",
+        "use_base_unit": "使用库存单位标志",
+        "items_per_unit": "每单据单位的库存单位数",
+        "document_stock_sum_lc": "单据行库存金额（本币）",
+        "stored_inventory_price": "保存的库存单价",
+        "line_project_code": "单据行项目编码",
+        "component_code": "来源组件编码",
+        "issue_method": "组件发料方式"
+      }
+    },
+    {
+      "name": "production_receipt_detail",
+      "title": "生产收货明细",
+      "group": "production",
+      "description": "生产收货明细，一行=IGN1.DocEntry+LineNum；与普通库存单据共用OIGN/IGN1，BaseType=202筛选生产来源。实际日期取头DocDate，不受工单日期截断。工单未匹配时保留来源行，原BaseLine表示来源组件而非当前LineNum。保留物料4/资源290、历史单位、取消状态和保存金额；StockSum是单据行库存金额，不是OIVL带符号仓库日记账金额，StockPrice的公司本币/库存单位条件另按当前语义核实。数量不跨物料/单位混加。生产收货可能是退回组件、拆卸组件或拒收，不能全部累计为成品产量；TranType数据库C/R不是SDK枚举0/1。",
+      "statementFile": "sql/production_receipt_detail.sql",
+      "columnTitles": {
+        "production_order_entry": "生产工单内部标识",
+        "production_order_no": "生产工单编号",
+        "production_order_type": "生产工单类型",
+        "production_order_status": "生产工单状态",
+        "order_product_code": "工单产品编码",
+        "document_entry": "生产收货内部标识",
+        "document_no": "生产收货编号",
+        "document_line": "原始单据行号",
+        "posting_date": "实际单据过账日期",
+        "cancellation_status": "单据取消状态",
+        "source_component_line": "来源组件行号",
+        "item_type": "行类型",
+        "item_code": "行物料或资源编码",
+        "item_description": "历史行描述",
+        "warehouse_code": "仓库编码",
+        "document_quantity": "单据单位数量",
+        "inventory_quantity": "库存单位数量",
+        "historical_document_unit": "历史单据单位",
+        "historical_uom_code": "历史单位编码",
+        "use_base_unit": "使用库存单位标志",
+        "items_per_unit": "每单据单位的库存单位数",
+        "document_stock_sum_lc": "单据行库存金额（本币）",
+        "stored_inventory_price": "保存的库存单价",
+        "line_project_code": "单据行项目编码",
+        "receipt_transaction_type": "收货完成或拒收类型"
+      }
+    },
+    {
+      "name": "inventory_batch_serial_movements",
+      "title": "库存收发批次序列明细",
+      "group": "inventory",
+      "description": "批次序列库存变动明细，一行=ITL1.LogEntry+ItemCode+SysNumber，仅OITL.StockEff=1现存量影响，排除同单据的承诺/订购分配日志。ManagedBy区分批次10000044/序列10000045，按物料+系统编号唯一键连接相应主数据。Quantity保留原始库存单位符号，不ABS或二次乘负号；不等于单据单位数量。Doc/Apply是不同角色，都保留，不能OR合并后重复累计。同一单据行可多日志多批次，调拨保留两边；LocCode应结合LocType解释。缺批序列主数据保留事实与空显示号，普通未管理物料不在本视图。",
+      "statementFile": "sql/inventory_batch_serial_movements.sql",
+      "columnTitles": {
+        "log_entry": "库存批序列日志标识",
+        "item_code": "物料编码",
+        "system_number": "系统批次或序列编号",
+        "master_entry": "分配记录主数据标识",
+        "management_type": "批次或序列管理类型",
+        "batch_serial_number": "批次或序列号",
+        "document_type": "日志单据类型",
+        "document_entry": "日志单据内部标识",
+        "document_line": "日志单据原始行号",
+        "apply_document_type": "被应用单据类型",
+        "apply_document_entry": "被应用单据内部标识",
+        "apply_document_line": "被应用单据行号",
+        "posting_date": "日志单据日期",
+        "warehouse_code": "日志地点编码",
+        "location_type": "日志地点类型",
+        "stock_effect": "库存影响类型",
+        "signed_inventory_quantity": "批序列库存变动原始数量"
+      }
+    },
+    {
+      "name": "sales_delivery_batch_serial_detail",
+      "title": "销售交货批次序列明细",
+      "group": "sales",
+      "description": "销售交货批次追溯，一行=交货行+ITL1日志物料系统编号。通过OITL.DocType=15、DocEntry/DocLine/ItemCode绑定交货原始行，仅StockEff=1，避免同交货单的承诺日志重复。提供带符号库存变动数量，常规发货为负；保留取消记录及Doc/Apply两个角色。仅覆盖作为日志单据的交货库存影响，不把仅Apply角色的记录或无日志普通物料伪造成实际交货批次。特殊预留/取消/退货需按目标公司的库存动作与SAP核对。",
+      "statementFile": "sql/sales_delivery_batch_serial_detail.sql",
+      "columnTitles": {
+        "delivery_entry": "交货内部标识",
+        "delivery_no": "交货编号",
+        "delivery_line": "交货原始行号",
+        "delivery_date": "交货过账日期",
+        "delivery_cancellation": "交货取消状态",
+        "customer_code": "客户编码",
+        "customer_name": "客户名称",
+        "item_description": "历史交货行描述",
+        "log_entry": "库存批序列日志标识",
+        "item_code": "物料编码",
+        "system_number": "系统批次或序列编号",
+        "master_entry": "分配记录主数据标识",
+        "management_type": "批次或序列管理类型",
+        "batch_serial_number": "批次或序列号",
+        "document_type": "日志单据类型",
+        "document_entry": "日志单据内部标识",
+        "document_line": "日志单据原始行号",
+        "apply_document_type": "被应用单据类型",
+        "apply_document_entry": "被应用单据内部标识",
+        "apply_document_line": "被应用单据行号",
+        "posting_date": "日志单据日期",
+        "warehouse_code": "日志地点编码",
+        "location_type": "日志地点类型",
+        "stock_effect": "库存影响类型",
+        "signed_inventory_quantity": "批序列库存变动原始数量"
+      }
+    },
+    {
+      "name": "inventory_bin_movements",
+      "title": "库存收发批次库位流水",
+      "group": "inventory",
+      "description": "历史库位事务，一行=OBTL.AbsEntry，库位与批序列来自同一原始分配行，不能按单据行分别展开后相乘。MessageID连接OILM，BinAbs连接OBIN，SnBMDAbs结合OILM.SnBType和ItemCode连接批或序列主数据；普通物料/-1/缺主数据保留原事实。raw_bin_quantity是OBTL.Quantity原值，未统一符号；动作1/19入、2/20出，其余other，不自动ABS或再次变号，不把它直接当已验证净收发量。AccumType/动作与方向都保留，调拨两边独立；不要将消息级数量金额复制至每个库位求和。方向和数量符号须按目标公司的库存事务核对。",
+      "statementFile": "sql/inventory_bin_movements.sql",
+      "columnTitles": {
+        "bin_transaction_entry": "库位事务内部标识",
+        "message_entry": "库存消息标识",
+        "batch_serial_log_entry": "批序列日志标识",
+        "document_type": "库存事务单据类型",
+        "document_entry": "单据内部标识",
+        "document_line": "单据原始行号",
+        "document_subline": "单据子行号",
+        "posting_date": "库存消息过账日期",
+        "item_code": "物料编码",
+        "action_type": "库存动作类型",
+        "accumulator_type": "库存累加类型",
+        "management_type": "批次或序列管理类型",
+        "master_entry": "批次或序列主记录标识",
+        "batch_serial_number": "批次或序列号",
+        "bin_entry": "库位内部标识",
+        "bin_code": "库位编码",
+        "warehouse_code": "库位所属仓库",
+        "message_location_code": "库存消息地点编码",
+        "message_location_type": "库存消息地点类型",
+        "raw_bin_quantity": "库位事务原始数量",
+        "movement_direction": "动作方向"
+      }
+    },
+    {
+      "name": "inventory_bin_current_balance",
+      "title": "物料库位当前库存",
+      "group": "inventory",
+      "description": "当前物料库位总库存，一行=OIBQ.AbsEntry，物料+库位唯一。包含批次/序列管理物料的物料级总量，不能再叠加批序列库位分量。未筛掉0或负库存，非库位管理仓库不在本表；无历史日期维度，不能回答过去时点库存。单位为当前物料库存单位，不用于覆盖历史交易单位。",
+      "statementFile": "sql/inventory_bin_current_balance.sql",
+      "columnTitles": {
+        "balance_entry": "余额记录内部标识",
+        "item_code": "物料编码",
+        "item_name": "当前物料名称",
+        "warehouse_code": "仓库编码",
+        "bin_entry": "库位内部标识",
+        "bin_code": "库位编码",
+        "on_hand_quantity": "当前库位在手数量",
+        "current_inventory_unit": "当前物料库存单位"
+      }
+    },
+    {
+      "name": "inventory_batch_serial_bin_current_balance",
+      "title": "批次序列库位当前库存",
+      "group": "inventory",
+      "description": "批次和序列号按管理类型分别读取后UNION ALL；行键=management_type+balance_entry，两类AbsEntry可重号。当前批序列×库位分量，不与OIBQ物料总量相加。无历史截止维度，不是收发流水。保留零值、负值和缺主数据事实；显示批号不保证唯一，筛选应结合物料与管理类型。 数量按物料和当前库存单位解释；单位取当前 OITM.InvntryUom，不代表历史单位，不因当前启停用设置删除余额。",
+      "statementFile": "sql/inventory_batch_serial_bin_current_balance.sql",
+      "columnTitles": {
+        "balance_entry": "余额记录内部标识",
+        "management_type": "批次或序列管理类型",
+        "item_code": "物料编码",
+        "master_entry": "批次或序列主记录标识",
+        "batch_serial_number": "批次或序列号",
+        "warehouse_code": "仓库编码",
+        "bin_entry": "库位内部标识",
+        "bin_code": "库位编码",
+        "on_hand_quantity": "当前在手数量",
+        "current_inventory_unit": "当前物料库存单位"
+      }
+    },
+    {
+      "name": "inventory_batch_serial_warehouse_current_balance",
+      "title": "批次序列仓库当前库存",
+      "group": "inventory",
+      "description": "批次和序列号按管理类型分别读取后UNION ALL；行键=management_type+balance_entry，两类AbsEntry可重号。当前批序列×仓库余额，支持未启用库位的仓库；与库位余额是不同层级，不相加。无历史截止维度，不是收发流水。保留零值、负值和缺主数据事实；显示批号不保证唯一，筛选应结合物料与管理类型。 数量按物料和当前库存单位解释；单位取当前 OITM.InvntryUom，不代表历史单位，不因当前启停用设置删除余额。",
+      "statementFile": "sql/inventory_batch_serial_warehouse_current_balance.sql",
+      "columnTitles": {
+        "balance_entry": "余额记录内部标识",
+        "management_type": "批次或序列管理类型",
+        "item_code": "物料编码",
+        "master_entry": "批次或序列主记录标识",
+        "batch_serial_number": "批次或序列号",
+        "warehouse_code": "仓库编码",
+        "on_hand_quantity": "当前在手数量",
+        "committed_quantity": "当前承诺数量",
+        "current_inventory_unit": "当前物料库存单位"
+      }
+    },
+    {
+      "name": "inventory_warehouse_current_balance",
+      "title": "物料仓库当前库存",
+      "group": "inventory",
+      "description": "一行=OITW.ItemCode+WhsCode，当前仓库总量及OnHand-IsCommited+OnOrder预计可用量；不是即时可拣货量、批序列明细、库位明细或历史库存。不得与同层批序列分量再相加，数量按物料及库存单位汇总。保留零和负数，主数据名称/单位为当前配置。",
+      "statementFile": "sql/inventory_warehouse_current_balance.sql",
+      "columnTitles": {
+        "item_code": "物料编码",
+        "item_name": "当前物料名称",
+        "warehouse_code": "仓库编码",
+        "warehouse_name": "当前仓库名称",
+        "current_inventory_unit": "当前库存单位",
+        "on_hand_quantity": "当前在手数量",
+        "committed_quantity": "当前承诺数量",
+        "on_order_quantity": "当前订购数量",
+        "projected_available_quantity": "当前预计可用数量",
+        "warehouse_item_locked": "物料仓库锁定标志"
+      }
+    },
+    {
+      "name": "finance_journal_line_detail",
+      "title": "财务凭证分录明细",
+      "group": "finance",
+      "description": "一行=JDT1.TransId+Line_ID，凭证头和科目名称不增加分录行数。posting_date/document_date/due_date取OJDT凭证头日期；line_posting_date/line_document_date/line_due_date取JDT1分录行日期，分别用于头日期与行日期口径，不互相回填。借贷及借减贷保留存储符号，不ABS，不由科目名称推导损益方向。项目取行Project，头项目另查原表。LC/SC代码取同公司OADM，FC按FCCurrency分组，跨外币不能直接合计。未展开核销参与行、未排除冲销记录，不等同历史账龄或现金流量报表。",
+      "statementFile": "sql/finance_journal_line_detail.sql",
+      "columnTitles": {
+        "journal_entry": "凭证内部标识",
+        "journal_line": "凭证原始行号",
+        "journal_no": "凭证编号",
+        "posting_date": "凭证头过账日期",
+        "document_date": "凭证头单据日期",
+        "due_date": "凭证头到期日期",
+        "account_code": "科目内部编码",
+        "account_display_code": "科目显示编码",
+        "account_name": "当前科目名称",
+        "partner_or_account_code": "业务伙伴或科目短代码",
+        "line_memo": "凭证行摘要",
+        "line_project_code": "行项目编码",
+        "debit_lc": "借方金额（本币）",
+        "credit_lc": "贷方金额（本币）",
+        "net_debit_lc": "借减贷净额（本币）",
+        "debit_fc": "借方金额（外币）",
+        "credit_fc": "贷方金额（外币）",
+        "foreign_currency": "行外币代码",
+        "debit_sc": "借方金额（系统币）",
+        "credit_sc": "贷方金额（系统币）",
+        "transaction_type": "来源事务类型",
+        "line_posting_date": "分录行过账日期",
+        "line_document_date": "分录行单据日期",
+        "line_due_date": "分录行到期日期"
+      }
+    }
+  ],
+  "cubes": []
+}

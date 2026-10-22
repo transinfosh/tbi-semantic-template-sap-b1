@@ -376,6 +376,78 @@
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
       },
       "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "启用标志",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "validFor",
+      "notNull": false,
+      "properties": {
+        "description": "启用设置标志，数据库保存 Y/N；结合对应期间及另一组启停用设置解释，不单凭该标志推导指定日期可用性。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "启用起始日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "validFrom",
+      "notNull": false,
+      "properties": {
+        "description": "启用设置的起始日期；保留空日期，不自行推定启停用优先级或默认过滤历史单据。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "启用截止日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "validTo",
+      "notNull": false,
+      "properties": {
+        "description": "启用设置的截止日期；保留空日期，不自行推定启停用优先级或默认过滤历史单据。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "停用标志",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "frozenFor",
+      "notNull": false,
+      "properties": {
+        "description": "停用设置标志，数据库保存 Y/N；结合对应期间及另一组启停用设置解释，不单凭该标志推导指定日期可用性。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "CHAR(1)"
+    },
+    {
+      "displayName": "停用起始日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "frozenFrom",
+      "notNull": false,
+      "properties": {
+        "description": "停用设置的起始日期；保留空日期，不自行推定启停用优先级或默认过滤历史单据。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "TIMESTAMP"
+    },
+    {
+      "displayName": "停用截止日期",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "frozenTo",
+      "notNull": false,
+      "properties": {
+        "description": "停用设置的截止日期；保留空日期，不自行推定启停用优先级或默认过滤历史单据。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/OCRD.html"
+      },
+      "type": "TIMESTAMP"
     }
   ],
   "displayName": "业务伙伴主数据",

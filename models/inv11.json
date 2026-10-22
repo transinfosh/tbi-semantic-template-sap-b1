@@ -179,6 +179,246 @@
         "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
       },
       "type": "VARCHAR(20)"
+    },
+    {
+      "displayName": "已应用含税额（外币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ApplGrossF",
+      "notNull": false,
+      "properties": {
+        "description": "本抵扣记录保存的已应用含税额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。具体外币代码须结合所属单据、来源预付款及跨币抵扣核实；本轮未确认统一币种来源，不按相邻列或物料行 Currency 推定，不跨币种合计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "已应用含税额（系统币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ApplGrossS",
+      "notNull": false,
+      "properties": {
+        "description": "本抵扣记录保存的已应用含税额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。币种取同一公司库 OADM.SysCurrncy。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "已应用税额（外币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ApplVatFc",
+      "notNull": false,
+      "properties": {
+        "description": "本抵扣记录保存的已应用税额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。具体外币代码须结合所属单据、来源预付款及跨币抵扣核实；本轮未确认统一币种来源，不按相邻列或物料行 Currency 推定，不跨币种合计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "已应用税额（系统币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ApplVatSc",
+      "notNull": false,
+      "properties": {
+        "description": "本抵扣记录保存的已应用税额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。币种取同一公司库 OADM.SysCurrncy。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "基础含税额（外币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BaseGrossF",
+      "notNull": false,
+      "properties": {
+        "description": "本抵扣记录保存的基础含税额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。具体外币代码须结合所属单据、来源预付款及跨币抵扣核实；本轮未确认统一币种来源，不按相邻列或物料行 Currency 推定，不跨币种合计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "基础含税额（系统币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BaseGrossS",
+      "notNull": false,
+      "properties": {
+        "description": "本抵扣记录保存的基础含税额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。币种取同一公司库 OADM.SysCurrncy。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "基础税额（外币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BaseVatFc",
+      "notNull": false,
+      "properties": {
+        "description": "本抵扣记录保存的基础税额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。具体外币代码须结合所属单据、来源预付款及跨币抵扣核实；本轮未确认统一币种来源，不按相邻列或物料行 Currency 推定，不跨币种合计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "基础税额（系统币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BaseVatSc",
+      "notNull": false,
+      "properties": {
+        "description": "本抵扣记录保存的基础税额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。币种取同一公司库 OADM.SysCurrncy。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "抵扣明细净额（本币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "LineTotal",
+      "notNull": false,
+      "properties": {
+        "description": "本抵扣记录保存的抵扣明细净额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。币种取同一公司库 OADM.MainCurncy。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "抵扣明细净额（外币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TotalFrgn",
+      "notNull": false,
+      "properties": {
+        "description": "本抵扣记录保存的抵扣明细净额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。具体外币代码须结合所属单据、来源预付款及跨币抵扣核实；本轮未确认统一币种来源，不按相邻列或物料行 Currency 推定，不跨币种合计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "抵扣明细净额（系统币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "TotalSumSy",
+      "notNull": false,
+      "properties": {
+        "description": "本抵扣记录保存的抵扣明细净额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。币种取同一公司库 OADM.SysCurrncy。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "抵扣明细税额（本币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "VatSum",
+      "notNull": false,
+      "properties": {
+        "description": "本抵扣记录保存的抵扣明细税额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。币种取同一公司库 OADM.MainCurncy。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "抵扣明细税额（外币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "VatSumFrgn",
+      "notNull": false,
+      "properties": {
+        "description": "本抵扣记录保存的抵扣明细税额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。具体外币代码须结合所属单据、来源预付款及跨币抵扣核实；本轮未确认统一币种来源，不按相邻列或物料行 Currency 推定，不跨币种合计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "抵扣明细税额（系统币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "VatSumSys",
+      "notNull": false,
+      "properties": {
+        "description": "本抵扣记录保存的抵扣明细税额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。币种取同一公司库 OADM.SysCurrncy。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "已应用净额（本币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ApplNet",
+      "notNull": false,
+      "properties": {
+        "description": "本抵扣记录保存的已应用净额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。币种取同一公司库 OADM.MainCurncy。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "已应用净额（外币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ApplNetFc",
+      "notNull": false,
+      "properties": {
+        "description": "本抵扣记录保存的已应用净额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。具体外币代码须结合所属单据、来源预付款及跨币抵扣核实；本轮未确认统一币种来源，不按相邻列或物料行 Currency 推定，不跨币种合计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "已应用净额（系统币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "ApplNetSc",
+      "notNull": false,
+      "properties": {
+        "description": "本抵扣记录保存的已应用净额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。币种取同一公司库 OADM.SysCurrncy。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "基础净额（本币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BaseNet",
+      "notNull": false,
+      "properties": {
+        "description": "本抵扣记录保存的基础净额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。币种取同一公司库 OADM.MainCurncy。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "基础净额（外币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BaseNetFc",
+      "notNull": false,
+      "properties": {
+        "description": "本抵扣记录保存的基础净额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。具体外币代码须结合所属单据、来源预付款及跨币抵扣核实；本轮未确认统一币种来源，不按相邻列或物料行 Currency 推定，不跨币种合计。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+      },
+      "type": "DECIMAL(19,6)"
+    },
+    {
+      "displayName": "基础净额（系统币）",
+      "isCalculated": false,
+      "isHidden": false,
+      "name": "BaseNetSc",
+      "notNull": false,
+      "properties": {
+        "description": "本抵扣记录保存的基础净额；当前、已应用、基础金额与净额、税额、含税额分别使用，不作为额外销售收入。按本表 DocEntry/LineNum/LineSeq 粒度计量，不能与整张单据全部物料行连接后重复求和。币种取同一公司库 OADM.SysCurrncy。",
+        "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV11.html"
+      },
+      "type": "DECIMAL(19,6)"
     }
   ],
   "displayName": "应收发票预付款抵扣明细",
