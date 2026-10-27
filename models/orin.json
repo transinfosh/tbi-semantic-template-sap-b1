@@ -582,7 +582,7 @@
   "name": "orin",
   "primaryKey": "DocEntry",
   "properties": {
-    "description": "单据表头粒度，主键 DocEntry。对应 Service Layer 销售对象 CreditNotes（ObjType=14），物理表为 ORIN。应收冲减单据；可基于退货、发票、预付款或退货请求，数量及库存效果应结合来源和标志。 金额分别保存本币、外币、系统币口径：DocTotal/PaidToDate 的币种取同一公司库 OADM.MainCurncy，DocTotalSy/PaidSys 取 OADM.SysCurrncy；外币单据的 DocTotalFC/PaidFC 按本表 DocCur 解释并按币种汇总。DocCur 也可等于本币，不是所有金额列的统一币种。单据总额、当前累计已收付额和行金额分开使用；头金额不能在连接多行后重复累计。 CurSource 表示币种来源选择，取值见字段说明；不据此切换各金额列的 LC/FC/SC 定义。本币和系统币代码始终由同一公司库 OADM 读取。",
+    "description": "应收贷项单头，键DocEntry；冲减应收，可源于退货、发票、预付款或退货请求，数量/库存效果结合来源和标志判断。DocTotal/PaidToDate为本币，DocTotalSy/PaidSys为系统币，币种取同库OADM.MainCurncy/SysCurrncy；外币DocTotalFC/PaidFC按DocCur分币种汇总。DocCur可为本币，非所有金额的币种；CurSource不改变金额列口径。总额、当前累计已收付额、行金额分开，连明细不得重复累计头金额。",
     "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORIN.html"
   },
   "tableReference": {

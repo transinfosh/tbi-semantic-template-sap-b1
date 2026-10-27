@@ -558,7 +558,7 @@
   "name": "ordr",
   "primaryKey": "DocEntry",
   "properties": {
-    "description": "单据表头粒度，主键 DocEntry。对应 Service Layer 销售对象 Orders（ObjType=17），物理表为 ORDR。客户订购承诺；订单数量、未结数量与实际交货、开票分别统计。 金额分别保存本币、外币、系统币口径：DocTotal 的币种取同一公司库 OADM.MainCurncy，DocTotalSy 取 OADM.SysCurrncy；外币单据的 DocTotalFC 按本表 DocCur 解释并按币种汇总。DocCur 也可等于本币，不是所有金额列的统一币种。单据总额和行金额分开使用；头金额不能在连接多行后重复累计。 CurSource 表示币种来源选择，取值见字段说明；不据此切换各金额列的 LC/FC/SC 定义。本币和系统币代码始终由同一公司库 OADM 读取。 本对象不承载已确认的收款或应收余额指标；下游预付款、应收单据和实际收付款需按各自业务事实追溯。",
+    "description": "销售订单头，键DocEntry；客户订购承诺，订单量、未结量与实际交货、开票分别统计。DocTotal为本币，DocTotalSy为系统币，币种取同库OADM.MainCurncy/SysCurrncy；外币DocTotalFC按DocCur分币种汇总。DocCur可为本币，非所有金额的币种；CurSource不改变金额列口径。头总额与行金额分开，连明细不得重复累计头金额。本表不承载已确认收款或应收余额；下游预付款、应收及实际收付款按各自事实追溯。",
     "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ORDR.html"
   },
   "tableReference": {

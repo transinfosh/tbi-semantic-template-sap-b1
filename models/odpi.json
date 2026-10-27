@@ -582,7 +582,7 @@
   "name": "odpi",
   "primaryKey": "DocEntry",
   "properties": {
-    "description": "单据表头粒度，主键 DocEntry。对应 Service Layer 销售对象 DownPayments（ObjType=203），物理表为 ODPI。预付款业务单据；来源单据与最终发票抵扣是两类关系，已收款、已抵扣与已过账分别判断。 金额分别保存本币、外币、系统币口径：DocTotal/PaidToDate 的币种取同一公司库 OADM.MainCurncy，DocTotalSy/PaidSys 取 OADM.SysCurrncy；外币单据的 DocTotalFC/PaidFC 按本表 DocCur 解释并按币种汇总。DocCur 也可等于本币，不是所有金额列的统一币种。单据总额、当前累计已收付额和行金额分开使用；头金额不能在连接多行后重复累计。 CurSource 表示币种来源选择，取值见字段说明；不据此切换各金额列的 LC/FC/SC 定义。本币和系统币代码始终由同一公司库 OADM 读取。",
+    "description": "预付款单头，键DocEntry；来源与最终发票抵扣为两类关系，已收款、已抵扣、已过账分别判断。DocTotal/PaidToDate为本币，DocTotalSy/PaidSys为系统币，币种取同库OADM.MainCurncy/SysCurrncy；外币DocTotalFC/PaidFC按DocCur分币种汇总。DocCur可为本币，非所有金额的币种；CurSource不改变金额列口径。总额、当前累计已收付额、行金额分开，连明细不得重复累计头金额。",
     "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/ODPI.html"
   },
   "tableReference": {

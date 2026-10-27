@@ -493,7 +493,7 @@
     "LineNum"
   ],
   "properties": {
-    "description": "库存发货单明细，唯一粒度为DocEntry+LineNum；同一单据同一物料可出现多行，DocNum+ItemCode分组不能代表原始行，AVG(StockPrice)也不能称原始行单价。生产来源为BaseType=202、BaseEntry指向OWOR，BaseLine指向WOR1组件；业务分类按用户或工作区确认。实际日期取OIGE.DocDate，不以工单日期截断发料历史。仓库日记账的带符号过账金额来自OIVL.SumStock，经TransType=60、CreatedBy=DocEntry、DocLineNum=LineNum关联并按发料行聚合；本表StockSum用于单据行库存金额核对，不能把本表命名为估价日记账。正常永续库存成本的前提与币种由OADM.ContInvnt、MainCurncy确定，库存单位按历史UseBaseUn、NumPerMsr、unitMsr解释。非库存费用可能无OIVL，缺估价不是已确认零成本。",
+    "description": "库存发货行，键DocEntry+LineNum；同单同料可多行，均价非原行价。生产BaseType=202，BaseEntry→OWOR、BaseLine→WOR1组件；分类由用户/工作区确认。日期OIGE.DocDate，不按工单日期截断。带符号过账金额OIVL.SumStock按TransType=60、CreatedBy=DocEntry、DocLineNum=LineNum关联按行聚合；本表非估价日记账，StockSum用于核对。成本口径及历史单位见字段说明；非库存费用可无估价，缺估价不等于零成本。",
     "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/IGE1.html"
   },
   "tableReference": {

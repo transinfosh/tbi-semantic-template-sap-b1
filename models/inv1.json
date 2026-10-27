@@ -621,7 +621,7 @@
     "LineNum"
   ],
   "properties": {
-    "description": "单据行粒度，主键 (DocEntry, LineNum)。对应 Invoices.DocumentLines 集合中的 DocumentLine，物理表为 INV1；同名共享类型在其他父单据下对应不同表。应收开票单据；含预留发票情形，须用 isIns 区分，不能假定每张均发生库存移动。 金额口径：LineTotal 为不含税本币行金额，币种取同一公司库 OADM.MainCurncy；TotalSumSy 为系统币行金额，币种取 OADM.SysCurrncy；外币单据的 TotalFrgn 按所属 OINV.DocCur 解释，以本行 DocEntry 关联 OINV.DocEntry。本行 Currency 是价格币种，不是所有行金额的统一币种。跨币种外币金额分别汇总；头总额与不含税行金额不能直接等同。 服务型明细的当前未清金额见 OpenSum/OpenSumFC/OpenSumSys；BOM角色见 TreeType；项目与销售员分别取本行保存值，不由表头或当前主数据替代。",
+    "description": "应收发票行，键DocEntry+LineNum；isIns区分预留发票，不能假定每张均有库存移动。LineTotal为不含税本币，TotalSumSy为系统币，币种取同库OADM；外币单据的TotalFrgn按表头DocCur分币种汇总（DocEntry关联）。Currency仅价格币种，头总额不等于不含税行金额。服务行当前未清金额见OpenSum/OpenSumFC/OpenSumSys，BOM角色见TreeType；项目、销售员取行保存值，不用表头或当前主数据替代。",
     "sap_b1_source": "https://help.sap.com/doc/089315d8d0f8475a9fc84fb919b501a3/10.0/en-US/SDKHelp/INV1.html"
   },
   "tableReference": {

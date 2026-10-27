@@ -551,7 +551,7 @@
       "name": "sales_order_to_cash_trace",
       "title": "销售订单到收款追溯",
       "group": "sales",
-      "description": "销售订单到收款追溯：以订单原始行展开后续物流行、发票行和收款应用行的关联路径；只提供身份、日期、状态，不包含可求和的数量或金额。正常物流后开票、订单直接开票、预留发票后物流分别保留；未发生的后继为空。一张订单可分批、一发票可合并多订单、一发票可多次收款，路径数不是单据数。按order_entry/order_line定位，不按物料或显示单号猜测。取消记录保留，须按问题筛选各阶段状态。收款仅指该发票通过RCT2的明确应用，不代表全部内部核销、预付款抵扣或纯现金结清；金额查独立发票收款应用明细。没有订单来源的独立单据不属于本视图。",
+      "description": "按order_entry/order_line订单原始行展开物流→发票→收款应用路径，不按物料/显示单号猜测；仅身份、日期、状态，无可求和数量/金额。保留物流后开票、订单直开发票、预留发票后物流；后继未发生为空。订单可分批、发票可合并多订单及多次收款，路径数≠单据数。保留取消记录，须按问题筛选各阶段状态。收款仅指发票经RCT2的明确应用，非全部内部核销、预付款抵扣或纯现金结清；金额查独立发票收款应用明细。无订单来源的独立单据不在本视图。",
       "statementFile": "sql/sales_order_to_cash_trace.sql",
       "columnTitles": {
         "path_kind": "来源路径",
@@ -591,7 +591,7 @@
       "name": "sales_invoice_receipt_applications",
       "title": "应收发票收款应用明细",
       "group": "finance",
-      "description": "发票收款应用明细，一行=RCT2.DocNum+InvoiceId；InvType=13限定本类发票。DocNum是父ORCT.DocEntry内部键，不是父显示单号；发票用DocEntry定位。SumApplied/AppliedFC/AppliedSys按应用行保存，不复制发票头或收款头总额，也不按发票商品行展开。FC以目标发票币种解释，不能用付款头币种覆盖；LC/SC代码另取同公司OADM.MainCurncy/SysCurrncy。跨币种不可直接合计FC。折扣、预扣税和差异是独立成分，应用金额不等于实收现金。保留取消状态，未包含其他单据类型、在账收付后续内部核销及预付抵扣；不能由无应用行推断未结清。DocLine原值不构成商品行分摊规则。",
+      "description": "一行=RCT2.DocNum+InvoiceId，InvType=13；DocNum=父ORCT.DocEntry非显示号，发票键DocEntry。SumApplied/AppliedFC/AppliedSys存应用行额，勿复制头额或按商品行展开。FC用目标发票币种非付款头，勿跨币合计；LC/SC取同公司OADM.MainCurncy/SysCurrncy。折扣/预扣税/差异独立，应用额≠实收现金。保留取消状态；不含其他单据、在账收付后续内部核销及预付抵扣；无应用行不代表未结清。DocLine非商品行分摊。",
       "statementFile": "sql/sales_invoice_receipt_applications.sql",
       "columnTitles": {
         "payment_entry": "收款父单内部标识",
@@ -653,7 +653,7 @@
       "name": "purchase_order_to_payment_trace",
       "title": "采购订单到付款追溯",
       "group": "purchasing",
-      "description": "采购订单到付款追溯：以订单原始行展开后续物流行、发票行和付款应用行的关联路径；只提供身份、日期、状态，不包含可求和的数量或金额。正常物流后开票、订单直接开票、预留发票后物流分别保留；未发生的后继为空。一张订单可分批、一发票可合并多订单、一发票可多次付款，路径数不是单据数。按order_entry/order_line定位，不按物料或显示单号猜测。取消记录保留，须按问题筛选各阶段状态。付款仅指该发票通过VPM2的明确应用，不代表全部内部核销、预付款抵扣或纯现金结清；金额查独立发票付款应用明细。没有订单来源的独立单据不属于本视图。",
+      "description": "按order_entry/order_line订单原始行展开物流→发票→付款应用路径，不按物料/显示单号猜测；仅身份、日期、状态，无可求和数量/金额。保留物流后开票、订单直开发票、预留发票后物流；后继未发生为空。订单可分批、发票可合并多订单及多次付款，路径数≠单据数。保留取消记录，须按问题筛选各阶段状态。付款仅指发票经VPM2的明确应用，非全部内部核销、预付款抵扣或纯现金结清；金额查独立发票付款应用明细。无订单来源的独立单据不在本视图。",
       "statementFile": "sql/purchase_order_to_payment_trace.sql",
       "columnTitles": {
         "path_kind": "来源路径",
@@ -693,7 +693,7 @@
       "name": "purchase_invoice_payment_applications",
       "title": "应付发票付款应用明细",
       "group": "finance",
-      "description": "发票付款应用明细，一行=VPM2.DocNum+InvoiceId；InvType=18限定本类发票。DocNum是父OVPM.DocEntry内部键，不是父显示单号；发票用DocEntry定位。SumApplied/AppliedFC/AppliedSys按应用行保存，不复制发票头或付款头总额，也不按发票商品行展开。FC以目标发票币种解释，不能用付款头币种覆盖；LC/SC代码另取同公司OADM.MainCurncy/SysCurrncy。跨币种不可直接合计FC。折扣、预扣税和差异是独立成分，应用金额不等于实收现金。保留取消状态，未包含其他单据类型、在账收付后续内部核销及预付抵扣；不能由无应用行推断未结清。DocLine原值不构成商品行分摊规则。",
+      "description": "一行=VPM2.DocNum+InvoiceId，InvType=18；DocNum=父OVPM.DocEntry非显示号，发票键DocEntry。SumApplied/AppliedFC/AppliedSys存应用行额，勿复制头额或按商品行展开。FC用目标发票币种非付款头，勿跨币合计；LC/SC取同公司OADM.MainCurncy/SysCurrncy。折扣/预扣税/差异独立，应用额≠实收现金。保留取消状态；不含其他单据、在账收付后续内部核销及预付抵扣；无应用行不代表未结清。DocLine非商品行分摊。",
       "statementFile": "sql/purchase_invoice_payment_applications.sql",
       "columnTitles": {
         "payment_entry": "付款父单内部标识",
@@ -790,7 +790,7 @@
       "name": "production_receipt_detail",
       "title": "生产收货明细",
       "group": "production",
-      "description": "生产收货明细，一行=IGN1.DocEntry+LineNum；与普通库存单据共用OIGN/IGN1，BaseType=202筛选生产来源。实际日期取头DocDate，不受工单日期截断。工单未匹配时保留来源行，原BaseLine表示来源组件而非当前LineNum。保留物料4/资源290、历史单位、取消状态和保存金额；StockSum是单据行库存金额，不是OIVL带符号仓库日记账金额，StockPrice的公司本币/库存单位条件另按当前语义核实。数量不跨物料/单位混加。生产收货可能是退回组件、拆卸组件或拒收，不能全部累计为成品产量；TranType数据库C/R不是SDK枚举0/1。",
+      "description": "一行=IGN1.DocEntry+LineNum，与普通库存单共用OIGN/IGN1；生产来源BaseType=202。日期取头DocDate，不受工单日期截断；工单未匹配仍保留行，BaseLine为来源组件非LineNum。保留物料4/资源290、历史单位、取消状态及原金额。StockSum为单据行库存额，非OIVL带符号仓库日记账额；StockPrice本币/库存单位条件按当前语义核实。数量不跨物料/单位混加；收货可含退回/拆卸组件、拒收，不能全算成品产量；TranType库值C/R非SDK枚举0/1。",
       "statementFile": "sql/production_receipt_detail.sql",
       "columnTitles": {
         "production_order_entry": "生产工单内部标识",
@@ -824,7 +824,7 @@
       "name": "inventory_batch_serial_movements",
       "title": "库存收发批次序列明细",
       "group": "inventory",
-      "description": "批次序列库存变动明细，一行=ITL1.LogEntry+ItemCode+SysNumber，仅OITL.StockEff=1现存量影响，排除同单据的承诺/订购分配日志。ManagedBy区分批次10000044/序列10000045，按物料+系统编号唯一键连接相应主数据。Quantity保留原始库存单位符号，不ABS或二次乘负号；不等于单据单位数量。Doc/Apply是不同角色，都保留，不能OR合并后重复累计。同一单据行可多日志多批次，调拨保留两边；LocCode应结合LocType解释。缺批序列主数据保留事实与空显示号，普通未管理物料不在本视图。",
+      "description": "一行=ITL1.LogEntry+ItemCode+SysNumber；仅OITL.StockEff=1现存量影响，排除承诺/订购分配日志。ManagedBy：批次10000044/序列10000045，按物料+系统编号连对应主数据。Quantity保留原始库存单位符号，不ABS/再乘负号，非单据单位数量。Doc/Apply角色不同，均保留，不可OR合并重复累计。同一单据行可多日志多批次，调拨保留两边；LocCode结合LocType解释。缺批序列主数据保留事实与空显示号；不含普通未管理物料。",
       "statementFile": "sql/inventory_batch_serial_movements.sql",
       "columnTitles": {
         "log_entry": "库存批序列日志标识",
@@ -884,7 +884,7 @@
       "name": "inventory_bin_movements",
       "title": "库存收发批次库位流水",
       "group": "inventory",
-      "description": "历史库位事务，一行=OBTL.AbsEntry，库位与批序列来自同一原始分配行，不能按单据行分别展开后相乘。MessageID连接OILM，BinAbs连接OBIN，SnBMDAbs结合OILM.SnBType和ItemCode连接批或序列主数据；普通物料/-1/缺主数据保留原事实。raw_bin_quantity是OBTL.Quantity原值，未统一符号；动作1/19入、2/20出，其余other，不自动ABS或再次变号，不把它直接当已验证净收发量。AccumType/动作与方向都保留，调拨两边独立；不要将消息级数量金额复制至每个库位求和。方向和数量符号须按目标公司的库存事务核对。",
+      "description": "库位历史，一行=OBTL.AbsEntry；库位/批序列同分配行，勿按单据行交叉展开。MessageID连OILM，BinAbs连OBIN，SnBMDAbs+OILM.SnBType+ItemCode连批/序列主数据；普通物料/-1/缺主数据保留。raw_bin_quantity=OBTL.Quantity原值，符号未统一；1/19入、2/20出、余other，勿自动ABS/变号，非已验净收发量。保留AccumType/动作/方向，调拨两边独立；勿按库位累计消息级量额；方向/数量符号按目标公司库存事务核对。",
       "statementFile": "sql/inventory_bin_movements.sql",
       "columnTitles": {
         "bin_transaction_entry": "库位事务内部标识",
@@ -987,7 +987,7 @@
       "name": "finance_journal_line_detail",
       "title": "财务凭证分录明细",
       "group": "finance",
-      "description": "一行=JDT1.TransId+Line_ID，凭证头和科目名称不增加分录行数。posting_date/document_date/due_date取OJDT凭证头日期；line_posting_date/line_document_date/line_due_date取JDT1分录行日期，分别用于头日期与行日期口径，不互相回填。借贷及借减贷保留存储符号，不ABS，不由科目名称推导损益方向。项目取行Project，头项目另查原表。LC/SC代码取同公司OADM，FC按FCCurrency分组，跨外币不能直接合计。未展开核销参与行、未排除冲销记录，不等同历史账龄或现金流量报表。",
+      "description": "一行=JDT1.TransId+Line_ID，头和科目名称不增加行数。posting_date/document_date/due_date取OJDT头日期，对应line_前缀字段取JDT1行日期，各用各口径、不互相回填。借贷及借减贷保留存储符号、不ABS，不由科目名推导损益方向。项目取行Project，头项目另查原表。LC/SC代码取同公司OADM，FC按FCCurrency分组，禁止跨外币合计。未展开核销参与行、未排除冲销记录，非历史账龄或现金流量报表。",
       "statementFile": "sql/finance_journal_line_detail.sql",
       "columnTitles": {
         "journal_entry": "凭证内部标识",
