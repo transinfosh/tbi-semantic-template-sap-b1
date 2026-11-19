@@ -1,0 +1,24 @@
+{
+  "title": {
+    "en": "Monthly Net Amount",
+    "zh": "月度净额趋势"
+  },
+  "cube": "sap_sales",
+  "visualization_type": "Line",
+  "measures": [
+    {
+      "measure": "net_amount"
+    }
+  ],
+  "dimensions": [],
+  "time_dimensions": [
+    {
+      "time_dimension": "posting_date",
+      "granularity": "month"
+    }
+  ],
+  "visualization_spec": {
+    "x_axis": "posting_date__month"
+  },
+  "row_limit": 0
+}

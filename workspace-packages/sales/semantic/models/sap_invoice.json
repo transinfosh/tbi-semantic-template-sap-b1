@@ -1,0 +1,46 @@
+{
+  "name": "sap_invoice",
+  "displayName": "A/R Invoices",
+  "tableReference": {
+    "table": "OINV",
+    "schema": "dbo"
+  },
+  "columns": [
+    {
+      "name": "DocEntry",
+      "type": "INTEGER",
+      "displayName": "Internal Document ID"
+    },
+    {
+      "name": "DocNum",
+      "type": "INTEGER",
+      "displayName": "Document Number"
+    },
+    {
+      "name": "DocDate",
+      "type": "TIMESTAMP",
+      "displayName": "Posting Date"
+    },
+    {
+      "name": "CardCode",
+      "type": "VARCHAR",
+      "displayName": "Customer Code"
+    },
+    {
+      "name": "CardName",
+      "type": "VARCHAR",
+      "displayName": "Customer Name"
+    },
+    {
+      "name": "CANCELED",
+      "type": "CHAR",
+      "displayName": "Cancellation Status"
+    },
+    {
+      "name": "DocTotal",
+      "type": "DECIMAL",
+      "displayName": "Document Total In Local Currency"
+    }
+  ],
+  "primaryKey": "DocEntry"
+}

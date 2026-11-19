@@ -1,0 +1,72 @@
+{
+  "name": "sap_sales",
+  "displayName": "Sales Documents",
+  "baseObject": "sap_sales_documents",
+  "description": "Valid A/R invoices minus valid A/R credit memos by their own posting dates. Includes tax and uses company local currency.",
+  "measures": [
+    {
+      "name": "net_amount",
+      "expression": "SUM(\"invoice_amount\") - SUM(\"credit_amount\")",
+      "type": "DECIMAL",
+      "displayName": "Net A/R Documents"
+    },
+    {
+      "name": "invoice_total",
+      "expression": "SUM(\"invoice_amount\")",
+      "type": "DECIMAL",
+      "displayName": "A/R Invoice Total"
+    },
+    {
+      "name": "credit_total",
+      "expression": "SUM(\"credit_amount\")",
+      "type": "DECIMAL",
+      "displayName": "A/R Credit Memo Total"
+    }
+  ],
+  "dimensions": [
+    {
+      "name": "document_kind",
+      "expression": "\"document_kind\"",
+      "type": "VARCHAR",
+      "displayName": "Document Type"
+    },
+    {
+      "name": "document_id",
+      "expression": "\"document_id\"",
+      "type": "INTEGER",
+      "displayName": "Internal ID"
+    },
+    {
+      "name": "document_number",
+      "expression": "\"document_number\"",
+      "type": "INTEGER",
+      "displayName": "Document Number"
+    },
+    {
+      "name": "customer_code",
+      "expression": "\"customer_code\"",
+      "type": "VARCHAR",
+      "displayName": "Customer Code"
+    },
+    {
+      "name": "customer_name",
+      "expression": "\"customer_name\"",
+      "type": "VARCHAR",
+      "displayName": "Customer Name"
+    },
+    {
+      "name": "currency",
+      "expression": "\"currency\"",
+      "type": "VARCHAR",
+      "displayName": "Currency"
+    }
+  ],
+  "timeDimensions": [
+    {
+      "name": "posting_date",
+      "expression": "\"posting_date\"",
+      "type": "DATE",
+      "displayName": "Posting Date"
+    }
+  ]
+}

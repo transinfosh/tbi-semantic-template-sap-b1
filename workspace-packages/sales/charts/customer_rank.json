@@ -1,0 +1,29 @@
+{
+  "title": {
+    "en": "Customers Ranked By Net Amount",
+    "zh": "客户净额排名"
+  },
+  "cube": "sap_sales",
+  "visualization_type": "Row",
+  "measures": [
+    {
+      "measure": "net_amount"
+    }
+  ],
+  "dimensions": [
+    {
+      "dimension": "customer_code"
+    }
+  ],
+  "time_dimensions": [],
+  "visualization_spec": {
+    "x_axis": "customer_code",
+    "order_by": [
+      {
+        "column": "net_amount",
+        "direction": "desc"
+      }
+    ]
+  },
+  "row_limit": 10
+}

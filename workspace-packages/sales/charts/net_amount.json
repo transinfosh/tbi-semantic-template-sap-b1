@@ -1,0 +1,21 @@
+{
+  "title": {
+    "en": "Net A/R Documents",
+    "zh": "有效应收单据净额"
+  },
+  "cube": "sap_sales",
+  "visualization_type": "Number",
+  "measures": [
+    {
+      "measure": "net_amount"
+    }
+  ],
+  "dimensions": [],
+  "time_dimensions": [],
+  "visualization_spec": {
+    "table_values": [
+      "net_amount"
+    ]
+  },
+  "row_limit": 0
+}

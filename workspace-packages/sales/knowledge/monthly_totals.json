@@ -1,0 +1,30 @@
+{
+  "question": {
+    "en": "What are the invoice total, credit memo total, and net amount of valid A/R documents in the requested period, in local currency?",
+    "zh": "所选期间 的有效应收单据净额、发票总额和贷项凭证总额分别是多少？请以公司本币显示。"
+  },
+  "requested_limit": 32,
+  "agent_query": {
+    "kind": "semantic_query",
+    "source": "sap_sales",
+    "joins": [],
+    "dimensions": [],
+    "time_dimensions": [],
+    "measures": [
+      {
+        "metric": "net_amount",
+        "alias": "net_amount"
+      },
+      {
+        "metric": "invoice_total",
+        "alias": "invoice_total"
+      },
+      {
+        "metric": "credit_total",
+        "alias": "credit_total"
+      }
+    ],
+    "filters": [],
+    "order_by": []
+  }
+}

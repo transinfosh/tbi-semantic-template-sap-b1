@@ -1,0 +1,15 @@
+{
+  "name": "sap_company",
+  "displayName": "Company Currency Settings",
+  "tableReference": {
+    "table": "OADM",
+    "schema": "dbo"
+  },
+  "columns": [
+    {
+      "name": "MainCurncy",
+      "type": "VARCHAR",
+      "displayName": "Local Currency"
+    }
+  ]
+}

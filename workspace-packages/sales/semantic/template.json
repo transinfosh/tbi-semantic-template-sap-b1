@@ -1,0 +1,17 @@
+{
+  "formatVersion": 1,
+  "layoutVersion": 4,
+  "dataSource": "MSSQL",
+  "catalog": "sap_b1",
+  "defaultSchema": "dbo",
+  "language": "en",
+  "translations": {
+    "zh": "locales/zh.json"
+  },
+  "sources": {
+    "models": "models",
+    "relationships": "relationships",
+    "views": "views",
+    "cubes": "cubes"
+  }
+}

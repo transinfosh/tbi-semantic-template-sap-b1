@@ -1,0 +1,21 @@
+{
+  "title": {
+    "en": "A/R Invoice Total",
+    "zh": "应收发票总额"
+  },
+  "cube": "sap_sales",
+  "visualization_type": "Number",
+  "measures": [
+    {
+      "measure": "invoice_total"
+    }
+  ],
+  "dimensions": [],
+  "time_dimensions": [],
+  "visualization_spec": {
+    "table_values": [
+      "invoice_total"
+    ]
+  },
+  "row_limit": 0
+}

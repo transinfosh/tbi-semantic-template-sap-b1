@@ -1,0 +1,95 @@
+{
+  "title": {
+    "en": "Sales Overview",
+    "zh": "销售概览"
+  },
+  "description": {
+    "en": "Valid invoice totals less credit memos in company local currency.",
+    "zh": "有效发票总额减去有效贷项凭证总额，按公司本币展示。"
+  },
+  "items": [
+    {
+      "chart": "net_amount",
+      "x": 0,
+      "y": 1,
+      "width": 7,
+      "height": 4
+    },
+    {
+      "chart": "invoice_total",
+      "x": 7,
+      "y": 1,
+      "width": 7,
+      "height": 4
+    },
+    {
+      "chart": "credit_total",
+      "x": 14,
+      "y": 1,
+      "width": 6,
+      "height": 4
+    },
+    {
+      "chart": "monthly_trend",
+      "x": 0,
+      "y": 5,
+      "width": 12,
+      "height": 8
+    },
+    {
+      "chart": "customer_rank",
+      "x": 12,
+      "y": 5,
+      "width": 8,
+      "height": 8
+    },
+    {
+      "chart": "document_detail",
+      "x": 0,
+      "y": 13,
+      "width": 20,
+      "height": 10
+    }
+  ],
+  "filters": [
+    {
+      "filter_name": {
+        "en": "Posting Date From",
+        "zh": "过账起始日"
+      },
+      "dimension": "posting_date",
+      "operator": "gte",
+      "value_type": "date",
+      "x": 0,
+      "y": 0,
+      "width": 5,
+      "height": 1
+    },
+    {
+      "filter_name": {
+        "en": "Posting Date Before",
+        "zh": "过账截止日前"
+      },
+      "dimension": "posting_date",
+      "operator": "lt",
+      "value_type": "date",
+      "x": 5,
+      "y": 0,
+      "width": 5,
+      "height": 1
+    },
+    {
+      "filter_name": {
+        "en": "Customer Code",
+        "zh": "客户编码"
+      },
+      "dimension": "customer_code",
+      "operator": "eq",
+      "value_type": "string",
+      "x": 10,
+      "y": 0,
+      "width": 5,
+      "height": 1
+    }
+  ]
+}

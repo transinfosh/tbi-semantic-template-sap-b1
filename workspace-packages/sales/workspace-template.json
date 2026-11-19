@@ -1,0 +1,9 @@
+{
+  "formatVersion": 1,
+  "id": "sap-b1-sales",
+  "version": "1.0.0",
+  "title": {
+    "en": "SAP Business One Sales Analytics",
+    "zh": "SAP Business One 销售分析"
+  }
+}

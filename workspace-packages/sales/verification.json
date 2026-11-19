@@ -1,0 +1,21 @@
+{
+  "dashboard": "sales_overview",
+  "date_chart": "document_detail",
+  "date_column": "posting_date__day",
+  "filter_dimension": "posting_date",
+  "amounts": {
+    "net_amount": {
+      "chart": "net_amount",
+      "column": "net_amount"
+    },
+    "invoice_total": {
+      "chart": "invoice_total",
+      "column": "invoice_total"
+    },
+    "credit_total": {
+      "chart": "credit_total",
+      "column": "credit_total"
+    }
+  },
+  "primary_question": "monthly_totals"
+}

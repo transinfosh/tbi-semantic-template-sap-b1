@@ -1,0 +1,14 @@
+{
+  "monthly_totals": {
+    "en": "What are the invoice total, credit memo total, and net amount of valid A/R documents in {month}, in local currency?",
+    "zh": "{month} 的有效应收单据净额、发票总额和贷项凭证总额分别是多少？请以公司本币显示。"
+  },
+  "weekly_trend": {
+    "en": "Show the weekly trend of net A/R document amounts in {month}.",
+    "zh": "请按周展示 {month} 有效应收单据净额趋势。"
+  },
+  "customer_top_five": {
+    "en": "Rank the top five customers by net A/R document amounts in {month}.",
+    "zh": "请列出 {month} 有效应收单据净额最高的五个客户。"
+  }
+}

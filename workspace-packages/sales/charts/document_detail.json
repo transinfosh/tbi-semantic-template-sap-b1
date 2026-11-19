@@ -1,0 +1,54 @@
+{
+  "title": {
+    "en": "Sales Document Details",
+    "zh": "销售单据明细"
+  },
+  "cube": "sap_sales",
+  "visualization_type": "Table",
+  "measures": [
+    {
+      "measure": "net_amount"
+    },
+    {
+      "measure": "invoice_total"
+    },
+    {
+      "measure": "credit_total"
+    }
+  ],
+  "dimensions": [
+    {
+      "dimension": "document_kind"
+    },
+    {
+      "dimension": "document_id"
+    },
+    {
+      "dimension": "document_number"
+    },
+    {
+      "dimension": "customer_code"
+    },
+    {
+      "dimension": "customer_name"
+    },
+    {
+      "dimension": "currency"
+    }
+  ],
+  "time_dimensions": [
+    {
+      "time_dimension": "posting_date",
+      "granularity": "day"
+    }
+  ],
+  "visualization_spec": {
+    "order_by": [
+      {
+        "column": "posting_date__day",
+        "direction": "desc"
+      }
+    ]
+  },
+  "row_limit": 25
+}

@@ -1,0 +1,28 @@
+{
+  "question": {
+    "en": "Show the weekly trend of net A/R document amounts in the requested period.",
+    "zh": "请按周展示 所选期间 有效应收单据净额趋势。"
+  },
+  "requested_limit": 32,
+  "agent_query": {
+    "kind": "semantic_query",
+    "source": "sap_sales",
+    "joins": [],
+    "dimensions": [],
+    "time_dimensions": [
+      {
+        "field": "posting_date",
+        "alias": "week",
+        "granularity": "week"
+      }
+    ],
+    "measures": [
+      {
+        "metric": "net_amount",
+        "alias": "net_amount"
+      }
+    ],
+    "filters": [],
+    "order_by": []
+  }
+}

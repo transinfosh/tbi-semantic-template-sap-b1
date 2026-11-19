@@ -1,0 +1,113 @@
+{
+  "formatVersion": 1,
+  "models": {
+    "sap_invoice": {
+      "displayName": "应收发票",
+      "columns": {
+        "DocEntry": {
+          "displayName": "单据内部标识"
+        },
+        "DocNum": {
+          "displayName": "单据号"
+        },
+        "DocDate": {
+          "displayName": "过账日期"
+        },
+        "CardCode": {
+          "displayName": "客户编码"
+        },
+        "CardName": {
+          "displayName": "客户名称"
+        },
+        "CANCELED": {
+          "displayName": "取消状态"
+        },
+        "DocTotal": {
+          "displayName": "单据本币总额"
+        }
+      }
+    },
+    "sap_credit_memo": {
+      "displayName": "应收贷项凭证",
+      "columns": {
+        "DocEntry": {
+          "displayName": "单据内部标识"
+        },
+        "DocNum": {
+          "displayName": "单据号"
+        },
+        "DocDate": {
+          "displayName": "过账日期"
+        },
+        "CardCode": {
+          "displayName": "客户编码"
+        },
+        "CardName": {
+          "displayName": "客户名称"
+        },
+        "CANCELED": {
+          "displayName": "取消状态"
+        },
+        "DocTotal": {
+          "displayName": "单据本币总额"
+        }
+      }
+    },
+    "sap_company": {
+      "displayName": "公司币种配置",
+      "columns": {
+        "MainCurncy": {
+          "displayName": "本币"
+        }
+      }
+    }
+  },
+  "views": {
+    "sap_sales_documents": {
+      "displayName": "有效销售单据",
+      "description": "每行一张有效发票或贷项凭证。金额为公司本币的单据总额。"
+    }
+  },
+  "cubes": {
+    "sap_sales": {
+      "displayName": "销售单据",
+      "description": "按各单据过账日期汇总有效发票与贷项凭证，取单据本币含税总额。",
+      "measures": {
+        "net_amount": {
+          "displayName": "有效应收单据净额"
+        },
+        "invoice_total": {
+          "displayName": "应收发票总额"
+        },
+        "credit_total": {
+          "displayName": "应收贷项总额"
+        }
+      },
+      "dimensions": {
+        "document_kind": {
+          "displayName": "单据类型"
+        },
+        "document_id": {
+          "displayName": "内部标识"
+        },
+        "document_number": {
+          "displayName": "单据号"
+        },
+        "customer_code": {
+          "displayName": "客户编码"
+        },
+        "customer_name": {
+          "displayName": "客户名称"
+        },
+        "currency": {
+          "displayName": "币种"
+        }
+      },
+      "timeDimensions": {
+        "posting_date": {
+          "displayName": "过账日期"
+        }
+      }
+    }
+  }
+}
